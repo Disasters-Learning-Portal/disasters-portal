@@ -31,16 +31,16 @@ export const RESPOND_CONTENT: ThemeContent = {
     {
       type: "stacCompare",
       heading: "Data Visualization",
-      initialViewState: { longitude: -82.0, latitude: 33.5, zoom: 10 },
+      initialViewState: { longitude: -95.97, latitude: 41.45, zoom: 7 },
       leftLayerConfig: {
         type: "raster",
-        collectionId: "blackmarble-june2026-composite",
-        dateRange: { from: "2024-08-01", to: "2024-08-31" },
+        collectionId: "sentinel2-truecolor-subdaily",
+        dateRange: { from: "2019-03-15", to: "2019-03-17" },
       },
       rightLayerConfig: {
         type: "raster",
-        collectionId: "blackmarble-hd-daily-june2026",
-        dateRange: { from: "2024-09-28", to: "2024-09-28" },
+        collectionId: "sentinel2-mndwi-subdaily",
+        dateRange: { from: "2019-03-15", to: "2019-03-17" },
       },
     },
   ],
