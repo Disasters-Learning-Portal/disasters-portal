@@ -94,14 +94,14 @@ export type TrainingContent = Omit<MinimumCardContent, "contentType"> & {
   date: string;
   mastheadImage: MastheadImage;
   body: ContentBlock[];
-  relatedContent?: string[];
+  relatedContentIds?: string[];
 };
 
 export type DatasetContent = Omit<MinimumCardContent, "contentType"> & {
   contentType: "dataset";
   mastheadImage: MastheadImage;
   body: ContentBlock[];
-  relatedContent?: string[];
+  relatedContentIds?: string[];
 };
 
 export type NewsContent = Omit<MinimumCardContent, "contentType"> & {

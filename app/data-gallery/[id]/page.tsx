@@ -18,7 +18,7 @@ export default async function DatasetItemPage(props: PageProps<"/data-gallery/[i
     themes,
     categories,
     body,
-    relatedContent: relatedIds = [],
+    relatedContentIds: relatedIds = [],
   } = dataset;
 
   // TODO: Move to content helpers, and broaden to fit any content type use case

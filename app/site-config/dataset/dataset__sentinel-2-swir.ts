@@ -15,7 +15,7 @@ export const DATASET__SENTINEL_2_SWIR: DatasetContent = {
   },
   themes: [],
   categories: [],
-  relatedContent: ["sentinel-2-true-color", "sentinel-2-color-infrared"],
+  relatedContentIds: ["sentinel-2-true-color", "sentinel-2-color-infrared"],
   body: [
     {
       type: "text",
