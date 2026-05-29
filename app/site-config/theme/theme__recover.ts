@@ -30,7 +30,7 @@ export const RECOVER_CONTENT: ThemeContent = {
     {
       type: "stacCompare",
       heading: "Data Visualization",
-      initialViewState: { longitude: 118.24, latitude: 34.05, zoom: 7 },
+      initialViewState: { longitude: -118.24, latitude: 34.05, zoom: 7 },
       leftLayerConfig: {
         type: "raster",
         collectionId: "gaia-january2025-total-composite-tmp",
