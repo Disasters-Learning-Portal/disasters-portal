@@ -137,6 +137,7 @@ export type EventContent = Omit<MinimumCardContent, "contentType"> & {
   date?: string;
   overview?: OverviewSection;
   body?: ContentBlock[];
+  products?: string[];
 };
 
 export type ThemeContent = {

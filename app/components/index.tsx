@@ -5,6 +5,7 @@ export { ImageComparison } from "./ImageComparison";
 export { OverviewBlock } from "./OverviewSection";
 export { PageMasthead } from "./PageMasthead";
 export { PageStatus } from "./PageStatus";
+export { ProductGallerySection } from "./ProductGallerySection";
 export { Section, type SectionProps } from "./Section";
 export { SectionCardCarousel } from "./SectionCardCarousel";
 export { SectionCardMini } from "./SectionCardMini";

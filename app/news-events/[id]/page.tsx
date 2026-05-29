@@ -1,5 +1,11 @@
 import { notFound } from "next/navigation";
-import { ContentBlockRenderer, OverviewBlock, PageMasthead, Section } from "@/app/components";
+import {
+  ContentBlockRenderer,
+  OverviewBlock,
+  PageMasthead,
+  ProductGallerySection,
+  Section,
+} from "@/app/components";
 import { DatasetSidebar } from "@/app/data-gallery/[id]/DatasetSidebar";
 import { makeCardMastHeadProps } from "@/app/site-config/content.helpers";
 import { EVENTS } from "@/app/site-config/event";
@@ -38,6 +44,10 @@ export default async function EventItemPage(props: PageProps<"/news-events/[id]"
               // biome-ignore lint/suspicious/noArrayIndexKey: static content blocks, never reorder
               <ContentBlockRenderer key={i} block={block} isMultiColumnLayout={showSidebar} />
             ))}
+            {/* Product Gallery */}
+            {event.products && event.products.length > 0 && (
+              <ProductGallerySection datasetIds={event.products} />
+            )}
           </div>
         </div>
       </Section>
