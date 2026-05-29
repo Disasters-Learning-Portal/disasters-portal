@@ -54,4 +54,5 @@ export const EVENT__TYPHOON_SINLAKU_2026: EventContent = {
       height: 1080,
     },
   ],
+  products: ["umbra-backscatter"],
 };
