@@ -1,7 +1,10 @@
 import { CARTO_DARK_WITH_LABELS_BASEMAP_STYLE, Link } from "@teamimpact/veda-ui-blocks";
 import { Fragment } from "react";
 import type { EventContent } from "@/app/site-config/types";
-
+import { DATASET__SENTINEL_2_DNBR } from "../dataset/dataset__sentinel-2-dnbr";
+import { DATASET__SENTINEL_2_SWIR } from "../dataset/dataset__sentinel-2-swir";
+import { DATASET__SENTINEL_2_TRUE_COLOR } from "../dataset/dataset__sentinel-2-true-color";
+import { DATASET__AVIRIS_3_EARLY_COLOR_IMAGERY } from "../dataset/dataset_aviris-3-early-color-imagery";
 import { TRAINING__EO_PRE_POST_FIRE_MONITORING } from "../training/training__eo-pre-post-fire-monitoring";
 import { TRAINING__FUNDAMENTALS_REMOTE_SENSING } from "../training/training__fundamentals-remote-sensing";
 import { TRAINING__LIFELINES_WILDFIRE_WORKFLOW } from "../training/training__lifelines-wildfire-workflow";
@@ -78,6 +81,16 @@ export const EVENT__SOUTHERN_CALIFORNIA_FIRE_JAN_2025: EventContent = {
         collectionAssetId: "rgb",
         dateRange: { from: "2025-01-16", to: "2025-01-16" },
       },
+    },
+    {
+      type: "sectionProductGallery",
+      heading: "Resources & Learning",
+      cards: [
+        DATASET__SENTINEL_2_TRUE_COLOR,
+        DATASET__AVIRIS_3_EARLY_COLOR_IMAGERY,
+        DATASET__SENTINEL_2_DNBR,
+        DATASET__SENTINEL_2_SWIR,
+      ],
     },
     {
       type: "sectionCardSimple",

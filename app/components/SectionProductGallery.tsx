@@ -20,7 +20,7 @@ export const SectionProductGallery = ({
       {sectionHeading && sectionHeading}
       <div className="grid-col-12 grid-gap-2 margin-bottom-neg-2">
         {cards.map((props) => (
-          <div key={props.id} className={`grid-row margin-bottom-2 height-card-sm`}>
+          <div key={props.id} className={`display-flex margin-bottom-2 height-card-sm`}>
             <CardDetailed imagePosition="left" {...props} />
           </div>
         ))}
