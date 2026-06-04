@@ -10,7 +10,11 @@ import {
 } from "@/app/components";
 import { StacCompareBlock, StacSingleLayerBlock } from "@/app/components/blocks";
 import { SectionProductGallery } from "@/app/components/SectionProductGallery";
-import { makeCardFeaturedProps, makeCardSimpleProps, makeCardDetailedImageLeftProps } from "@/app/site-config/content.helpers";
+import {
+  makeCardDetailedImageLeftProps,
+  makeCardFeaturedProps,
+  makeCardSimpleProps,
+} from "@/app/site-config/content.helpers";
 import { typedMap } from "@/app/site-config/typed.helpers";
 import type { ContentBlock } from "@/app/site-config/types";
 
@@ -191,7 +195,8 @@ export const ContentBlockRenderer = ({
             )
           }
           cards={typedMap(block.cards, makeCardDetailedImageLeftProps)}
-
+        />
+      );
     case "sectionCardFeatured":
       return (
         <SectionCardFeatured

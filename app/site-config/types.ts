@@ -5,7 +5,11 @@ import type {
 } from "@teamimpact/veda-ui-blocks";
 import type { ReactNode } from "react";
 import type { AppRoutes } from "@/.next/types/routes";
-import type { CardFeaturedPropsArgs, CardSimplePropsArgs, CardDetailedPropsArgs } from "@/app/site-config/content.helpers";
+import type {
+  CardDetailedPropsArgs,
+  CardFeaturedPropsArgs,
+  CardSimplePropsArgs,
+} from "@/app/site-config/content.helpers";
 
 export const CONTENT_TYPES: Record<ContentType, { route: AppRoutes; label: string }> = {
   dataset: { route: "/data-gallery", label: "data" },
@@ -117,7 +121,9 @@ export type ContentBlock =
       type: "sectionProductGallery";
       heading?: string;
       href?: GalleryRoute;
-      cards: CardDetailedPropsArgs[];}|
+      cards: CardDetailedPropsArgs[];
+    }
+  | {
       type: "sectionCardFeatured";
       card: CardFeaturedPropsArgs;
     };
