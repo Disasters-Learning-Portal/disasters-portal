@@ -25,6 +25,11 @@ export default async function NewsEventsItemPage(props: PageProps<"/news-events/
   // event page layout
   if (contentType === "event") return EventItemPage(contentItem);
 
+  // external datastory has no local page, redirect to external URL
+  if (contentType === "datastory" && "url" in contentItem) {
+    return notFound();
+  }
+
   // story, datastory, news page layout
   const { title, mastheadImage, themes, categories, body } = contentItem;
 

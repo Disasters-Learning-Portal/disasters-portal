@@ -1,6 +1,7 @@
 import { CARTO_DARK_WITH_LABELS_BASEMAP_STYLE } from "@teamimpact/veda-ui-blocks";
 import type {
   DataStoryContent,
+  DataStoryContentExternal,
   EventContent,
   NewsContent,
   StoryContent,
@@ -52,7 +53,6 @@ export const RECOVER_CONTENT: ThemeContent = {
   ],
 } as const;
 
-// TODO: these would be fetched based on content id
 export const RECOVER_STORIES: [
   NewsContent | StoryContent | EventContent,
   NewsContent | StoryContent | EventContent,
@@ -65,13 +65,11 @@ export const RECOVER_STORIES: [
   STORY__IDENTIFYING_INFRASTRUCTURE_RISKS_HURRICANE,
 ];
 
-// TODO: these would be fetched based on content id
-export const RECOVER_DATASTORIES: DataStoryContent[] = [
+export const RECOVER_DATASTORIES: (DataStoryContent | DataStoryContentExternal)[] = [
   DATASTORY__HURRICANE_HELENE_SEPTEMBER_2024,
   DATASTORY__HURRICANE_MILTON_OCTOBER_2024,
 ];
 
-// TODO: these would be fetched based on content id
 export const RECOVER_TRAININGS: (TrainingContent | TrainingContentExternal)[] = [
   TRAINING__EO_BUILDING_EXPOSURE,
   TRAINING__FUNDAMENTALS_REMOTE_SENSING,
