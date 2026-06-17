@@ -41,7 +41,7 @@ export const TRAINING__EO_BUILDING_EXPOSURE: TrainingContent = {
     },
     {
       type: "video",
-      src: "https://disasters.openveda.cloud/training-content/1-1-what-is-building-exposure-data/1-1-what-is-building-exposure-data.m3u8",
+      src: "https://disasters.openveda.cloud/training-content/eo-building-exposure-huyck/1-1-what-is-building-exposure-data.mp4",
     },
     {
       type: "text",
@@ -53,7 +53,7 @@ export const TRAINING__EO_BUILDING_EXPOSURE: TrainingContent = {
     },
     {
       type: "video",
-      src: "https://disasters.openveda.cloud/training-content/1-2-from-building-exposure-to-decisions/1-2-from-building-exposure-to-decisions.m3u8",
+      src: "https://disasters.openveda.cloud/training-content/eo-building-exposure-huyck/1-2-from-building-exposure-to-decisions.mp4",
     },
     {
       type: "text",
@@ -65,7 +65,7 @@ export const TRAINING__EO_BUILDING_EXPOSURE: TrainingContent = {
     },
     {
       type: "video",
-      src: "https://disasters.openveda.cloud/training-content/1-3-practical-illustrations/1-3-practical-illustrations.m3u8",
+      src: "https://disasters.openveda.cloud/training-content/eo-building-exposure-huyck/1-3-practical-illustrations.mp4",
     },
     {
       type: "text",
@@ -77,7 +77,7 @@ export const TRAINING__EO_BUILDING_EXPOSURE: TrainingContent = {
     },
     {
       type: "video",
-      src: "https://disasters.openveda.cloud/training-content/1-4-gaia-the-global-atlas-of-infrastructure-assets/1-4-gaia-the-global-atlas-of-infrastructure-assets.m3u8",
+      src: "https://disasters.openveda.cloud/training-content/eo-building-exposure-huyck/1-4-gaia-the-global-atlas-of-infrastructure-assets.mp4",
     },
     {
       type: "text",
@@ -89,7 +89,7 @@ export const TRAINING__EO_BUILDING_EXPOSURE: TrainingContent = {
     },
     {
       type: "video",
-      src: "https://disasters.openveda.cloud/training-content/1-5-levels-of-exposure-data-development/1-5-levels-of-exposure-data-development.m3u8",
+      src: "https://disasters.openveda.cloud/training-content/eo-building-exposure-huyck/1-5-levels-of-exposure-data-development.mp4",
     },
     {
       type: "text",
@@ -101,7 +101,7 @@ export const TRAINING__EO_BUILDING_EXPOSURE: TrainingContent = {
     },
     {
       type: "video",
-      src: "https://disasters.openveda.cloud/training-content/1-6-brief-overview-of-exposure-data-development/1-6-brief-overview-of-exposure-data-development.m3u8",
+      src: "https://disasters.openveda.cloud/training-content/eo-building-exposure-huyck/1-6-brief-overview-of-exposure-data-development.mp4",
     },
     {
       type: "text",
@@ -113,7 +113,7 @@ export const TRAINING__EO_BUILDING_EXPOSURE: TrainingContent = {
     },
     {
       type: "video",
-      src: "https://disasters.openveda.cloud/training-content/1-7-limits-uncertainty-and-how-to-use-the-data/1-7-limits-uncertainty-and-how-to-use-the-data.m3u8",
+      src: "https://disasters.openveda.cloud/training-content/eo-building-exposure-huyck/1-7-limits-uncertainty-and-how-to-use-the-data.mp4",
     },
     {
       type: "text",
@@ -125,7 +125,7 @@ export const TRAINING__EO_BUILDING_EXPOSURE: TrainingContent = {
     },
     {
       type: "video",
-      src: "https://disasters.openveda.cloud/training-content/1-8-using-exposure-data-responsibly/1-8-using-exposure-data-responsibly.m3u8",
+      src: "https://disasters.openveda.cloud/training-content/eo-building-exposure-huyck/1-8-using-exposure-data-responsibly.mp4",
     },
 
     // ── Section 2 ────────────────────────────────────────────────────────────
@@ -150,7 +150,7 @@ export const TRAINING__EO_BUILDING_EXPOSURE: TrainingContent = {
     },
     {
       type: "video",
-      src: "https://disasters.openveda.cloud/training-content/2-1-understanding-the-levels-of-exposure-data-development/2-1-understanding-the-levels-of-exposure-data-development.m3u8",
+      src: "https://disasters.openveda.cloud/training-content/eo-building-exposure-huyck/2-1-understanding-the-levels-of-exposure-data-development.mp4",
     },
     {
       type: "text",
@@ -168,7 +168,7 @@ export const TRAINING__EO_BUILDING_EXPOSURE: TrainingContent = {
     },
     {
       type: "video",
-      src: "https://disasters.openveda.cloud/training-content/2-2a-establishing-development-patterns/2-2a-establishing-development-patterns.m3u8",
+      src: "https://disasters.openveda.cloud/training-content/eo-building-exposure-huyck/2-2a-establishing-development-patterns.mp4",
     },
     {
       type: "text",
@@ -178,7 +178,7 @@ export const TRAINING__EO_BUILDING_EXPOSURE: TrainingContent = {
     },
     {
       type: "video",
-      src: "https://disasters.openveda.cloud/training-content/2-2b-remote-sensing-classification/2-2b-remote-sensing-classification.m3u8",
+      src: "https://disasters.openveda.cloud/training-content/eo-building-exposure-huyck/2-2b-remote-sensing-classification.mp4",
     },
     {
       type: "text",
@@ -188,7 +188,7 @@ export const TRAINING__EO_BUILDING_EXPOSURE: TrainingContent = {
     },
     {
       type: "video",
-      src: "https://disasters.openveda.cloud/training-content/2-2c-developing-mapping-schemes-and-sampling-protocols/2-2c-developing-mapping-schemes-and-sampling-protocols.m3u8",
+      src: "https://disasters.openveda.cloud/training-content/eo-building-exposure-huyck/2-2c-developing-mapping-schemes-and-sampling-protocols.mp4",
     },
     {
       type: "text",
@@ -198,7 +198,7 @@ export const TRAINING__EO_BUILDING_EXPOSURE: TrainingContent = {
     },
     {
       type: "video",
-      src: "https://disasters.openveda.cloud/training-content/2-2d-case-study-costa-rica/2-2d-case-study-costa-rica.m3u8",
+      src: "https://disasters.openveda.cloud/training-content/eo-building-exposure-huyck/2-2d-case-study-costa-rica.mp4",
     },
     {
       type: "text",
@@ -208,7 +208,7 @@ export const TRAINING__EO_BUILDING_EXPOSURE: TrainingContent = {
     },
     {
       type: "video",
-      src: "https://disasters.openveda.cloud/training-content/2-2e-population-buildings-rc/2-2e-population-buildings-rc.m3u8",
+      src: "https://disasters.openveda.cloud/training-content/eo-building-exposure-huyck/2-2e-population-buildings-rc.mp4",
     },
     {
       type: "text",
@@ -218,7 +218,7 @@ export const TRAINING__EO_BUILDING_EXPOSURE: TrainingContent = {
     },
     {
       type: "video",
-      src: "https://disasters.openveda.cloud/training-content/2-2f-exposure-modeling/2-2f-exposure-modeling.m3u8",
+      src: "https://disasters.openveda.cloud/training-content/eo-building-exposure-huyck/2-2f-exposure-modeling.mp4",
     },
     {
       type: "text",
@@ -228,7 +228,7 @@ export const TRAINING__EO_BUILDING_EXPOSURE: TrainingContent = {
     },
     {
       type: "video",
-      src: "https://disasters.openveda.cloud/training-content/2-2g-validation-ensuring-quality/2-2g-validation-ensuring-quality.m3u8",
+      src: "https://disasters.openveda.cloud/training-content/eo-building-exposure-huyck/2-2g-validation-ensuring-quality.mp4",
     },
 
     // ── Section 3 ────────────────────────────────────────────────────────────
@@ -253,7 +253,7 @@ export const TRAINING__EO_BUILDING_EXPOSURE: TrainingContent = {
     },
     {
       type: "video",
-      src: "https://disasters.openveda.cloud/training-content/3-1-application-to-insurance-and-loss-estimation-tunisia/3-1-application-to-insurance-and-loss-estimation-tunisia.m3u8",
+      src: "https://disasters.openveda.cloud/training-content/eo-building-exposure-huyck/3-1-application-to-insurance-and-loss-estimation-tunisia.mp4",
     },
     {
       type: "text",
@@ -265,7 +265,7 @@ export const TRAINING__EO_BUILDING_EXPOSURE: TrainingContent = {
     },
     {
       type: "video",
-      src: "https://disasters.openveda.cloud/training-content/3-2-infrastructure-mitigation-from-coastal-hazards-antigua-and-barbuda/3-2-infrastructure-mitigation-from-coastal-hazards-antigua-and-barbuda.m3u8",
+      src: "https://disasters.openveda.cloud/training-content/eo-building-exposure-huyck/3-2-infrastructure-mitigation-from-coastal-hazards-antigua-and-barbuda.mp4",
     },
   ],
 };
