@@ -8,7 +8,11 @@ import {
   SectionCardSimple,
   SectionHeading,
 } from "@/app/components";
-import { StacCompareBlock, StacSingleLayerBlock } from "@/app/components/blocks";
+import {
+  CogCollectionBlock,
+  StacCompareBlock,
+  StacSingleLayerBlock,
+} from "@/app/components/blocks";
 import { makeCardFeaturedProps, makeCardSimpleProps } from "@/app/site-config/content.helpers";
 import { typedMap } from "@/app/site-config/typed.helpers";
 import type { ContentBlock } from "@/app/site-config/types";
@@ -155,6 +159,23 @@ export const ContentBlockRenderer = ({
           )}
           <figure className="margin-0">
             <StacCompareBlock block={block} />
+            {block.caption && (
+              <figcaption className="font-body-sm text-base margin-top-1">
+                {block.caption}
+              </figcaption>
+            )}
+          </figure>
+        </Section>
+      );
+
+    case "cogCollection":
+      return (
+        <Section isMultiColumnLayout={isMultiColumnLayout}>
+          {block.heading && (
+            <ContentHeading heading={block.heading} headingLevel={block.headingLevel} />
+          )}
+          <figure className="margin-0">
+            <CogCollectionBlock block={block} />
             {block.caption && (
               <figcaption className="font-body-sm text-base margin-top-1">
                 {block.caption}

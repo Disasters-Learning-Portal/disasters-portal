@@ -3,6 +3,7 @@ import type {
   StacCompareMapProps,
   StacSingleLayerMapProps,
 } from "@teamimpact/veda-ui-blocks";
+import type { StyleSpecification } from "maplibre-gl";
 import type { ReactNode } from "react";
 import type { AppRoutes } from "@/.next/types/routes";
 import type { CardFeaturedPropsArgs, CardSimplePropsArgs } from "@/app/site-config/content.helpers";
@@ -107,6 +108,21 @@ export type ContentBlock =
         headingLevel?: "h2" | "h3" | "h4";
         caption?: string;
       })
+  | {
+      // Renders every COG in a *static* STAC collection (collection.json on
+      // object storage, not ingested into a STAC API) via titiler's /cog
+      // endpoints. Use this when the data is not registered in pgstac.
+      type: "cogCollection";
+      heading?: string;
+      headingLevel?: "h2" | "h3" | "h4";
+      caption?: string;
+      collectionUrl: string;
+      assetKey?: string;
+      bidx?: number[];
+      titilerBaseUrl?: string;
+      baseMapStyle?: string | StyleSpecification;
+      initialViewState?: { longitude: number; latitude: number; zoom: number };
+    }
   | {
       type: "sectionCardSimple";
       heading?: string;
