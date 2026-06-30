@@ -8,8 +8,8 @@ import type {
   TrainingContent,
   TrainingContentExternal,
 } from "@/app/site-config/types";
-import { DATASTORY__HURRICANE_HELENE_SEPTEMBER_2024 } from "../datastory/datastory__hurricane-helene-september-2024";
-import { DATASTORY__HURRICANE_MILTON_OCTOBER_2024 } from "../datastory/datastory__hurricane-milton-october-2024";
+import { DATASTORY__LAHAINA_FIRE } from "../datastory/datastory__lahaina-fire";
+import { DATASTORY__SO2_VOLCANOES } from "../datastory/datastory__so2-volcanoes";
 import { STORY__CLEARING_THE_WAY_DEBRIS_MAPPING } from "../story/story__clearing-the-way-debris-mapping";
 import { STORY__ESTIMATING_LOSS_RECOVERY } from "../story/story__estimating-loss-recovery";
 import { STORY__IDENTIFYING_INFRASTRUCTURE_RISKS_HURRICANE } from "../story/story__identifying-infrastructure-risks-hurricane";
@@ -67,8 +67,8 @@ export const RECOVER_STORIES: [
 
 // TODO: these would be fetched based on content id
 export const RECOVER_DATASTORIES: DataStoryContent[] = [
-  DATASTORY__HURRICANE_HELENE_SEPTEMBER_2024,
-  DATASTORY__HURRICANE_MILTON_OCTOBER_2024,
+  DATASTORY__SO2_VOLCANOES,
+  DATASTORY__LAHAINA_FIRE,
 ];
 
 // TODO: these would be fetched based on content id

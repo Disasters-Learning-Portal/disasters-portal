@@ -12,6 +12,17 @@ const nextConfig: NextConfig = {
     root: __dirname,
   },
   typedRoutes: true,
+  images: {
+    // Allows referencing VEDA dashboard story cover images directly (no repo
+    // binary). These are temporary data-story links; remove when they are.
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "www.earthdata.nasa.gov",
+        pathname: "/dashboard/**",
+      },
+    ],
+  },
 };
 
 export default nextConfig;
