@@ -1,0 +1,20 @@
+/*
+ * Overrides for @teamimpact/veda-ui-blocks (disasters.css).
+ * Keep selectors at or above the library's specificity so they win
+ * regardless of stylesheet import order.
+ */
+
+/*
+ * CardDetailed: the library stretches CTA buttons with `flex: 1` so two
+ * CTAs split the row evenly. When a card has a single CTA this makes the
+ * button span the full width. Restore natural width for the single-CTA case.
+ *
+ * Upstream regression: NASA-IMPACT/tinacms-portal-monorepo#337
+ * Remove this override once that is fixed and the fix is released.
+ */
+[class*="grid-col-"]
+  > .blocks-card-detailed
+  .blocks-card-detailed__actions
+  > .blocks-link:only-child {
+  flex: initial;
+}
