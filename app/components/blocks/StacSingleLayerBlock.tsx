@@ -22,6 +22,7 @@ export function StacSingleLayerBlock({ block }: StacSingleLayerBlockProps) {
           baseMapStyle={baseMapStyle}
           initialViewState={initialViewState}
           layerConfig={layerConfig}
+          showScrollGuard
         />
       </div>
     </GeoConfigProvider>
