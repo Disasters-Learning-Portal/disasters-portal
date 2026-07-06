@@ -1,8 +1,5 @@
 import type { DataStoryContent } from "../types";
-import { DATASTORY__HURRICANE_HELENE_SEPTEMBER_2024 } from "./datastory__hurricane-helene-september-2024";
-import { DATASTORY__HURRICANE_MILTON_OCTOBER_2024 } from "./datastory__hurricane-milton-october-2024";
+import { DATASTORY__LAHAINA_FIRE } from "./datastory__lahaina-fire";
+import { DATASTORY__SO2_VOLCANOES } from "./datastory__so2-volcanoes";
 
-export const DATASTORIES: DataStoryContent[] = [
-  DATASTORY__HURRICANE_HELENE_SEPTEMBER_2024,
-  DATASTORY__HURRICANE_MILTON_OCTOBER_2024,
-];
+export const DATASTORIES: DataStoryContent[] = [DATASTORY__SO2_VOLCANOES, DATASTORY__LAHAINA_FIRE];

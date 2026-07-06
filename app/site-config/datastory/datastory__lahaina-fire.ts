@@ -1,0 +1,19 @@
+import type { DataStoryContent } from "../types";
+
+export const DATASTORY__LAHAINA_FIRE: DataStoryContent = {
+  id: "lahaina-fire",
+  contentType: "datastory",
+  title: "The Devastating August 8th, 2023 Lahaina, Hawai'i Wildfire",
+  description: "A Satellite-Based Overview of the Lahaina Wildfire",
+  thumbnailImage: {
+    src: "https://www.earthdata.nasa.gov/dashboard/lahaina-fire-background.e21f19be.jpg",
+    alt: "Fire erupting over Lahaina, HI.",
+  },
+  themes: ["respond", "recover"],
+  categories: ["fire"],
+  mastheadImage: {
+    src: "https://www.earthdata.nasa.gov/dashboard/lahaina-fire-background.e21f19be.jpg",
+    alt: "Fire erupting over Lahaina, HI.",
+  },
+  url: "https://www.earthdata.nasa.gov/dashboard/stories/lahaina-fire",
+};

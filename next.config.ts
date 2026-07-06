@@ -12,6 +12,10 @@ const nextConfig: NextConfig = {
     root: __dirname,
   },
   typedRoutes: true,
+  images: {
+    // Allowlisted remote hosts for next/image
+    remotePatterns: [{ protocol: "https", hostname: "**" }],
+  },
 };
 
 export default nextConfig;
