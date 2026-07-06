@@ -30,6 +30,7 @@ export function StacCompareBlock({ block }: StacCompareBlockProps) {
           initialViewState={initialViewState}
           leftLayerConfig={leftLayerConfig}
           rightLayerConfig={rightLayerConfig}
+          showScrollGuard
         />
       </div>
     </GeoConfigProvider>

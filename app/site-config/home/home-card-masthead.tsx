@@ -4,25 +4,25 @@ const MOCK_FEATURE_CTACARDS_PROPS = [
   {
     title: "Prepare",
     description: "Anticipate risk and boost readiness",
-    url: "/prepare",
+    href: "/prepare",
     accentColor: "#f67e09",
   },
   {
     title: "Respond",
     description: "Support real-time decisions with timely insights",
-    url: "/respond",
+    href: "/respond",
     accentColor: "#c91b6e",
   },
   {
     title: "Recover",
     description: "Assess impacts and rebuild stronger",
-    url: "/recover",
+    href: "/recover",
     accentColor: "#4f6fae",
   },
   {
     title: "Build Resilience",
     description: "Safeguard communities for enduring impact",
-    url: "/resilience",
+    href: "/resilience",
     accentColor: "#1d9950",
   },
 ];
