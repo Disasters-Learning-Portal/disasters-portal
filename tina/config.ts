@@ -1,5 +1,5 @@
 import { defineConfig } from "tinacms";
-import { siteBlockTemplates } from "./blocks";
+import { galleryBlockTemplates, siteBlockTemplates } from "./blocks";
 
 // Your hosting provider likely exposes this as an environment variable
 const branch =
@@ -44,7 +44,34 @@ export default defineConfig({
             name: "blocks",
             label: "Content Blocks",
             list: true,
+            // generic pages: every registered block is offered
             templates: siteBlockTemplates,
+          },
+        ],
+      },
+      {
+        name: "galleryPage",
+        label: "Gallery Pages",
+        path: "content/gallery-pages",
+        format: "json",
+        ui: {
+          router: ({ document }) => `/${document._sys.filename}`,
+        },
+        fields: [
+          {
+            type: "string",
+            name: "title",
+            label: "Page Title",
+            isTitle: true,
+            required: true,
+          },
+          {
+            type: "object",
+            name: "blocks",
+            label: "Content Blocks",
+            list: true,
+            // restricted page type: only the gallery slice of the registry
+            templates: galleryBlockTemplates,
           },
         ],
       },

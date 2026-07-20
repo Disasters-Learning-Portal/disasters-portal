@@ -6,7 +6,7 @@
     "useIgnoreFile": true
   },
   "files": {
-    "includes": ["**", "!**/tina-lock.json", "!content/**"]
+    "includes": ["**", "!**/tina-lock.json", "!content"]
   },
   "formatter": {
     "enabled": true,

@@ -5,7 +5,7 @@ import { DataGalleryBlocks } from "@/tina/blocks";
 import { makeCardMastHeadProps } from "../site-config/content.helpers";
 
 export default async function DataGalleryPage() {
-  const { query, variables, data } = await client.queries.page({
+  const { query, variables, data } = await client.queries.galleryPage({
     relativePath: "data-gallery.json",
   });
 
