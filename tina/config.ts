@@ -1,5 +1,5 @@
 import { defineConfig } from "tinacms";
-import { trainingBlockTemplates } from "./blocks";
+import { siteBlockTemplates } from "./blocks";
 
 // Your hosting provider likely exposes this as an environment variable
 const branch =
@@ -44,7 +44,7 @@ export default defineConfig({
             name: "blocks",
             label: "Content Blocks",
             list: true,
-            templates: trainingBlockTemplates,
+            templates: siteBlockTemplates,
           },
         ],
       },
