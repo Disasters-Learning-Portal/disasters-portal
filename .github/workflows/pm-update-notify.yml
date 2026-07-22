@@ -1,0 +1,56 @@
+name: PM-Update Notify
+
+on:
+  issues:
+    types: [closed]
+  pull_request_target:
+    types: [closed]
+
+permissions:
+  issues: write
+  pull-requests: write
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    if: >-
+      (github.event_name == 'issues'
+        && github.event.issue.state_reason != 'not_planned'
+        && contains(github.event.issue.labels.*.name, 'PM-Update'))
+      ||
+      (github.event_name == 'pull_request_target'
+        && github.event.pull_request.merged == true
+        && contains(github.event.pull_request.labels.*.name, 'PM-Update'))
+    steps:
+      - name: Comment and tag recipients
+        uses: actions/github-script@v7
+        env:
+          RECIPIENTS: ${{ vars.PM_UPDATE_RECIPIENTS }}
+        with:
+          script: |
+            const raw = process.env.RECIPIENTS || '';
+            const mentions = raw
+              .split(/[\s,]+/)
+              .filter(Boolean)
+              .map(h => '@' + h.replace(/^@+/, ''))
+              .join(' ');
+
+            const isPR = context.eventName === 'pull_request_target';
+            const item = isPR ? context.payload.pull_request : context.payload.issue;
+            const kind = isPR ? 'PR' : 'issue';
+
+            const body = [
+              `✅ **PM-Update ${kind} completed** — #${item.number} ${item.title}`,
+              '',
+              mentions || '_No recipients configured — set the `PM_UPDATE_RECIPIENTS` repository variable (space-separated GitHub handles)._',
+              '',
+              '---',
+              '_Sent automatically from a GitHub Action (`PM-Update Notify` workflow)._'
+            ].join('\n');
+
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: item.number,
+              body,
+            });
