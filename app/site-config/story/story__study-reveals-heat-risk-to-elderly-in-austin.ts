@@ -9,12 +9,12 @@ export const STORY__STUDY_REVEALS_HEAT_RISK_ELDERLY_AUSTIN: StoryContent = {
   description:
     "For most people, home is where they go to escape the heat. But for older adults in Austin, Texas, a new study reveals that staying indoors during extreme heat may carry unexpected risks.",
   thumbnailImage: {
-    src: "/img/placeholder/card-masthead.webp",
-    alt: "Placeholder image for Austin heat risk study story",
+    src: "/img/story/austin-heat-risk.webp",
+    alt: "Photo of the Austin, Texas skyline",
   },
   mastheadImage: {
-    src: "/img/placeholder/card-masthead.webp",
-    alt: "Placeholder image for Austin heat risk study story",
+    src: "/img/story/austin-heat-risk.webp",
+    alt: "Photo of the Austin, Texas skyline",
   },
   themes: ["build"],
   categories: ["heat"],
@@ -31,10 +31,10 @@ export const STORY__STUDY_REVEALS_HEAT_RISK_ELDERLY_AUSTIN: StoryContent = {
     },
     {
       type: "image",
-      src: "/img/placeholder/card-masthead.webp",
-      alt: "Placeholder image for the Building and Environment study extreme heat risk graphic",
-      width: 1920,
-      height: 1470,
+      src: "/img/story/austin-heat-risk__risk-map.webp",
+      alt: "A graphic from the Building and Environment study showing extreme heat risk at the neighborhood scale in Austin, Texas",
+      width: 1400,
+      height: 1283,
       maxWidth: "40rem",
       caption:
         "A graphic from the study published Feb. 1, 2026 in Building and Environment, shows (a), (c) Median extreme heat risk at the neighborhood scale during the extreme event (Heatwave + power outage), (b), (d) Increase (in %) of extreme heat risk due to additional urban heating or climatic shifts. Credits: From comfort to survival: Indoor heat vulnerability during extreme events, Calvin J. Lin, Drury B. Crawley, Marc Coudert, Dev Niyogi, Zoltan Nagy",

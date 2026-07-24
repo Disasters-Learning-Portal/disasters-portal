@@ -7,12 +7,12 @@ export const NEWS__NASA_SELECTS_SEVEN_NEW_PROJECTS: NewsContent = {
   description:
     "The NASA Disasters Program has selected seven groundbreaking projects that will harness the power of Earth observations to help communities better understand, prepare for, and recover from disasters and extreme events.",
   thumbnailImage: {
-    src: "/img/placeholder/card-masthead.webp",
-    alt: "Placeholder image for the NASA Disasters Program news story",
+    src: "/img/news/nasa-seven-new-projects.webp",
+    alt: "Satellite map of nighttime lights in Augusta, Georgia, with many areas dark following power outages from Hurricane Helene",
   },
   mastheadImage: {
-    src: "/img/placeholder/card-masthead.webp",
-    alt: "Placeholder image for the NASA Disasters Program news story",
+    src: "/img/news/nasa-seven-new-projects.webp",
+    alt: "Satellite map of nighttime lights in Augusta, Georgia, with many areas dark following power outages from Hurricane Helene",
   },
   themes: [],
   categories: [],
@@ -50,10 +50,10 @@ export const NEWS__NASA_SELECTS_SEVEN_NEW_PROJECTS: NewsContent = {
     },
     {
       type: "image",
-      src: "/img/placeholder/card-masthead.webp",
-      alt: "Placeholder image for NASA Black Marble nighttime lights imagery of Augusta, Georgia",
-      width: 1920,
-      height: 1470,
+      src: "/img/news/nasa-seven-new-projects.webp",
+      alt: "NASA Black Marble nighttime lights imagery of Augusta, Georgia",
+      width: 1280,
+      height: 1067,
       maxWidth: "40rem",
       caption:
         "This NASA Black Marble imagery shows nighttime lights in Augusta, Georgia, on Sept. 28, 2024, after the city was struck by widespread power outages in the wake of Hurricane Helene. Credit: NASA Earth Observatory images by Lauren Dauphin, using Black Marble data courtesy of Ranjay Shrestha/NASA Goddard Space Flight Center.",

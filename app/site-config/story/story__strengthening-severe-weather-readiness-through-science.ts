@@ -8,12 +8,12 @@ export const STORY__STRENGTHENING_SEVERE_WEATHER_READINESS: StoryContent = {
   description:
     "Severe weather events, such as powerful thunderstorms, destructive hailstorms, and intense windstorms, pose ongoing threats to communities throughout most of the U.S.",
   thumbnailImage: {
-    src: "/img/placeholder/card-masthead.webp",
-    alt: "Placeholder image for severe weather readiness story",
+    src: "/img/story/severe-weather.webp",
+    alt: "Overhead view of tornado damage in Chattanooga, Tennessee",
   },
   mastheadImage: {
-    src: "/img/placeholder/card-masthead.webp",
-    alt: "Placeholder image for severe weather readiness story",
+    src: "/img/story/severe-weather.webp",
+    alt: "Overhead view of tornado damage in Chattanooga, Tennessee",
   },
   themes: ["prepare"],
   categories: ["severewx"],
@@ -26,10 +26,10 @@ export const STORY__STRENGTHENING_SEVERE_WEATHER_READINESS: StoryContent = {
     },
     {
       type: "image",
-      src: "/img/placeholder/card-masthead.webp",
-      alt: "Placeholder image for tornado damage in Lake City, Arkansas",
-      width: 1920,
-      height: 1470,
+      src: "/img/story/severe-weather__lake-city-tornado.webp",
+      alt: "Destroyed houses and rubble under a cloudy sky in Lake City, Arkansas",
+      width: 576,
+      height: 768,
       maxWidth: "40rem",
       caption:
         "Homes destroyed in Lake City, Arkansas during a wave of tornadoes that moved across the region April 2, 2025. Credits: National Weather Service Forecast Office in Memphis, Tennessee",
@@ -50,10 +50,10 @@ export const STORY__STRENGTHENING_SEVERE_WEATHER_READINESS: StoryContent = {
     },
     {
       type: "image",
-      src: "/img/placeholder/card-masthead.webp",
-      alt: "Placeholder image for straight-line wind damage to transmission towers in Houston, Texas",
-      width: 1920,
-      height: 1470,
+      src: "/img/story/severe-weather__houston-towers.webp",
+      alt: "Downed power transmission lines under a cloudy sky in Houston, Texas",
+      width: 864,
+      height: 531,
       maxWidth: "40rem",
       caption:
         "Straight-line wind damage inflicted transmission towers in Houston, Texas. Credits: National Weather Service",
