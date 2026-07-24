@@ -1,0 +1,111 @@
+# When a new issue is opened, add it to the "Disasters Learning Portal" project
+# (org project #5) and set the current Program Increment (PI) and Sprint.
+#
+# "Current" is derived from each iteration field's dates at run time, so it keeps
+# working as PIs/sprints roll over — no need to edit this file each cycle.
+#
+# Requires the DSE_GH_TOKEN secret to be a token with `project` scope (classic PAT
+# with `repo` + `project`, or a fine-grained token with org Projects read/write).
+# The default GITHUB_TOKEN cannot modify org-level Projects v2.
+
+name: Add Issues to Project
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: read
+
+jobs:
+  add-to-project:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Add issue to project and set current PI + Sprint
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.DSE_GH_TOKEN }}
+          script: |
+            const ORG = 'Disasters-Learning-Portal';
+            const PROJECT_NUMBER = 5;
+            const PI_FIELD_NAME = 'Program Increment';
+            const SPRINT_FIELD_NAME = 'Sprint';
+
+            const issueNodeId = context.payload.issue.node_id;
+
+            // 1. Look up the project id and its iteration fields (with their iterations).
+            const data = await github.graphql(`
+              query($org: String!, $number: Int!) {
+                organization(login: $org) {
+                  projectV2(number: $number) {
+                    id
+                    fields(first: 50) {
+                      nodes {
+                        ... on ProjectV2IterationField {
+                          id
+                          name
+                          configuration {
+                            iterations { id title startDate duration }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }`, { org: ORG, number: PROJECT_NUMBER });
+
+            const project = data.organization.projectV2;
+            const fields = project.fields.nodes.filter(n => n && n.name);
+
+            // Current iteration = the one whose [start, start + duration) window contains
+            // today (UTC), falling back to the next upcoming iteration if we're between them.
+            const today = new Date();
+            today.setUTCHours(0, 0, 0, 0);
+            function currentIteration(fieldName) {
+              const field = fields.find(f => f.name === fieldName);
+              if (!field) {
+                core.warning(`Iteration field "${fieldName}" not found; skipping.`);
+                return null;
+              }
+              const iters = field.configuration.iterations; // current + future, ascending
+              const match = iters.find(it => {
+                const start = new Date(`${it.startDate}T00:00:00Z`);
+                const end = new Date(start);
+                end.setUTCDate(end.getUTCDate() + it.duration);
+                return today >= start && today < end;
+              }) || iters[0] || null;
+              if (!match) {
+                core.warning(`No active or upcoming iteration for "${fieldName}"; skipping.`);
+                return null;
+              }
+              return { fieldId: field.id, iterationId: match.id, title: match.title };
+            }
+
+            const pi = currentIteration(PI_FIELD_NAME);
+            const sprint = currentIteration(SPRINT_FIELD_NAME);
+
+            // 2. Add the issue to the project (idempotent: returns the existing item if
+            //    it was already added, e.g. by a built-in project workflow).
+            const added = await github.graphql(`
+              mutation($project: ID!, $content: ID!) {
+                addProjectV2ItemById(input: { projectId: $project, contentId: $content }) {
+                  item { id }
+                }
+              }`, { project: project.id, content: issueNodeId });
+            const itemId = added.addProjectV2ItemById.item.id;
+
+            // 3. Set the current PI and Sprint on the new item.
+            async function setIteration(target) {
+              if (!target) return;
+              await github.graphql(`
+                mutation($project: ID!, $item: ID!, $field: ID!, $iter: String!) {
+                  updateProjectV2ItemFieldValue(input: {
+                    projectId: $project, itemId: $item, fieldId: $field,
+                    value: { iterationId: $iter }
+                  }) { projectV2Item { id } }
+                }`, { project: project.id, item: itemId, field: target.fieldId, iter: target.iterationId });
+              core.info(`Set "${target.title}" on issue #${context.payload.issue.number}`);
+            }
+
+            await setIteration(pi);
+            await setIteration(sprint);
