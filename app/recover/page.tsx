@@ -3,8 +3,8 @@ import {
   PageMasthead,
   SectionCardCarousel,
   SectionCardSimple,
-  SectionCardSimpleMosaic,
   SectionHeading,
+  SectionStoriesOfImpact,
 } from "@/app/components/";
 import {
   makeCardCarouselProps,
@@ -25,12 +25,7 @@ export default function RecoverPage() {
   return (
     <>
       <PageMasthead {...makeCardMastHeadProps({ title, subtitle, theme, mastheadImage })} />
-      <SectionCardSimpleMosaic
-        sectionHeading={
-          <SectionHeading href="/news-events?contenttype=story">Stories of Impact</SectionHeading>
-        }
-        cards={typedMap(RECOVER_STORIES, makeCardSimpleProps)}
-      />
+      <SectionStoriesOfImpact stories={RECOVER_STORIES} />
       {RECOVER_CONTENT.body.map((block, index) => (
         // biome-ignore lint/suspicious/noArrayIndexKey: static content, never reorders
         <ContentBlockRenderer key={index} block={block} />

@@ -3,8 +3,8 @@ import {
   PageMasthead,
   SectionCardCarousel,
   SectionCardSimple,
-  SectionCardSimpleMosaic,
   SectionHeading,
+  SectionStoriesOfImpact,
 } from "@/app/components/";
 import { SectionCardMini } from "../components/SectionCardMini";
 import {
@@ -28,12 +28,7 @@ export default function RespondPage() {
   return (
     <>
       <PageMasthead {...makeCardMastHeadProps({ title, subtitle, theme, mastheadImage })} />
-      <SectionCardSimpleMosaic
-        sectionHeading={
-          <SectionHeading href="/news-events?contenttype=story">Stories of Impact</SectionHeading>
-        }
-        cards={typedMap(RESPOND_STORIES, makeCardSimpleProps)}
-      />
+      <SectionStoriesOfImpact stories={RESPOND_STORIES} />
       {RESPOND_CONTENT.body.map((block, index) => (
         // biome-ignore lint/suspicious/noArrayIndexKey: static content, never reorders
         <ContentBlockRenderer key={index} block={block} />
