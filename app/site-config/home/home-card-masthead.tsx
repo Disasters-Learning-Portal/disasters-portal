@@ -1,28 +1,30 @@
 import { CardCTA, type CardProps } from "@teamimpact/veda-ui-blocks";
 
+import { withBasePath } from "@/app/site-config/base-path";
+
 const MOCK_FEATURE_CTACARDS_PROPS = [
   {
     title: "Prepare",
     description: "Anticipate risk and boost readiness",
-    href: "/prepare",
+    href: withBasePath("/prepare"),
     accentColor: "#f67e09",
   },
   {
     title: "Respond",
     description: "Support real-time decisions with timely insights",
-    href: "/respond",
+    href: withBasePath("/respond"),
     accentColor: "#c91b6e",
   },
   {
     title: "Recover",
     description: "Assess impacts and rebuild stronger",
-    href: "/recover",
+    href: withBasePath("/recover"),
     accentColor: "#4f6fae",
   },
   {
     title: "Build Resilience",
     description: "Safeguard communities for enduring impact",
-    href: "/resilience",
+    href: withBasePath("/resilience"),
     accentColor: "#1d9950",
   },
 ];
@@ -42,11 +44,12 @@ const MOCK_FEATURE_CTACARDS_SECTION = (
 
 export const MOCK_CARD_MASTHEAD: CardProps = {
   image: (
+    // Raw <video>, not next/image — the base path has to be applied by hand.
     <video
-      src="/img/home/home-card-hero-video.mp4"
+      src={withBasePath("/img/home/home-card-hero-video.mp4")}
       aria-hidden="true"
       tabIndex={-1}
-      poster="/img/home/home-card-hero-poster.webp"
+      poster={withBasePath("/img/home/home-card-hero-poster.webp")}
       autoPlay
       muted
       loop

@@ -1,8 +1,7 @@
 import { Card, Tag } from "@teamimpact/veda-ui-blocks";
-import Image from "next/image";
 import { notFound } from "next/navigation";
-
 import { ContentBlockRenderer, PageStatus, Section, ThemeTag } from "@/app/components";
+import { Image } from "@/app/components/Image";
 import { toLongDate } from "@/app/site-config/content.helpers";
 import { TRAININGS } from "@/app/site-config/training";
 

@@ -1,5 +1,5 @@
 import type { CardProps } from "@teamimpact/veda-ui-blocks";
-import Image from "next/image";
+import { Image } from "@/app/components/Image";
 
 export const MOCK_CARD_LETSCONNECT: CardProps = {
   title: "Let's Connect",

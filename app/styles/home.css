@@ -5,7 +5,8 @@
   @media (min-width: 640px) {
     .blocks-card__content-container:before {
       content: "";
-      background-image: url("/img/logo-emblem.svg");
+      /* Set by app/page.tsx so the URL picks up the configured base path. */
+      background-image: var(--home-masthead-logo);
       background-position: center;
       background-repeat: no-repeat;
       background-size: contain;

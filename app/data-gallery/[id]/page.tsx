@@ -7,6 +7,7 @@ import {
   PageStatus,
   Section,
 } from "@/app/components";
+import { withBasePath } from "@/app/site-config/base-path";
 import { makeCardMastHeadProps } from "@/app/site-config/content.helpers";
 import { DATASETS } from "@/app/site-config/dataset";
 import { EVENTS } from "@/app/site-config/event";
@@ -37,7 +38,7 @@ export default async function DatasetItemPage(props: PageProps<"/data-gallery/[i
       {
         id: rel.id,
         title: rel.title,
-        href: `${CONTENT_TYPES[rel.contentType].route}/${rel.id}`,
+        href: withBasePath(`${CONTENT_TYPES[rel.contentType].route}/${rel.id}`),
         themes: rel.themes,
         categories: rel.categories,
       },

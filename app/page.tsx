@@ -9,6 +9,7 @@ import {
 
 import "./styles/home.css";
 
+import { withBasePath } from "./site-config/base-path";
 import { makeCardSimpleProps } from "./site-config/content.helpers";
 import { MOCK_CARD_LETSCONNECT } from "./site-config/home/home-card-lets_connect";
 import { MOCK_CARD_MASTHEAD } from "./site-config/home/home-card-masthead";
@@ -20,7 +21,14 @@ import { typedMap } from "./site-config/typed.helpers";
 export default function Home() {
   return (
     <>
-      <div className="home-card-masthead display-flex minh-card-xl">
+      <div
+        className="home-card-masthead display-flex minh-card-xl"
+        style={
+          {
+            "--home-masthead-logo": `url("${withBasePath("/img/logo-emblem.svg")}")`,
+          } as React.CSSProperties
+        }
+      >
         <Card {...MOCK_CARD_MASTHEAD} />
       </div>
       <SectionCardSimpleMosaic

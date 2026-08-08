@@ -1,7 +1,6 @@
-import Image from "next/image";
-
 import { Section } from "@/app/components";
 import { ContentBlockRenderer } from "@/app/components/ContentBlockRenderer";
+import { Image } from "@/app/components/Image";
 import { ABOUT_PAGE_BODY } from "@/app/site-config/about/about__page";
 
 export default function AboutPage() {

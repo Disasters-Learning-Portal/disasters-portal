@@ -5,7 +5,8 @@ import {
   type CardSimpleProps,
   Tag,
 } from "@teamimpact/veda-ui-blocks";
-import Image from "next/image";
+import { Image } from "@/app/components/Image";
+import { withBasePath } from "@/app/site-config/base-path";
 import {
   type Category,
   CONTENT_THEMES,
@@ -107,8 +108,11 @@ export const makeCardFeaturedProps = (
   } = props;
   return {
     id,
-    callToAction,
-    callToActionSecondary,
+    callToAction: callToAction && { ...callToAction, href: withBasePath(callToAction.href) },
+    callToActionSecondary: callToActionSecondary && {
+      ...callToActionSecondary,
+      href: withBasePath(callToActionSecondary.href),
+    },
     image: (
       <Image
         alt={image.alt}
@@ -156,7 +160,7 @@ export const makeCardDetailedProps = ({
   imagePosition: "top",
   tags: (tags ?? []).map((t) => makeSimpleTag(t)),
   callToAction: {
-    href: url ? url : `${CONTENT_TYPES[contentType].route}/${id}`,
+    href: withBasePath(url ? url : `${CONTENT_TYPES[contentType].route}/${id}`),
     label: `View ${toTitleCase(CONTENT_TYPES[contentType].label)}`,
     isExternal: !!url,
   },
@@ -176,7 +180,7 @@ export const makeCardDetailedImageLeftProps = ({
   imagePosition: "left",
   tags: (tags ?? []).map((t) => makeSimpleTag(t)),
   callToAction: {
-    href: url ? url : `${CONTENT_TYPES[contentType].route}/${id}`,
+    href: withBasePath(url ? url : `${CONTENT_TYPES[contentType].route}/${id}`),
     label: `View ${toTitleCase(CONTENT_TYPES[contentType].label)}`,
     isExternal: !!url,
   },
@@ -211,7 +215,7 @@ export const makeCardSimpleProps = ({
     : themes?.[0]
       ? makeThemeTag(themes[0])
       : makeContentTypeTag(contentType),
-  href: url ? url : `${CONTENT_TYPES[contentType].route}/${id}`,
+  href: withBasePath(url ? url : `${CONTENT_TYPES[contentType].route}/${id}`),
   isExternal: !!url,
   ...rest,
 });
@@ -244,7 +248,7 @@ export const makeCardMiniProps = ({
         ),
       }
     : {}),
-  href: `${CONTENT_TYPES[contentType].route}/${id}`,
+  href: withBasePath(`${CONTENT_TYPES[contentType].route}/${id}`),
   ...rest,
 });
 
@@ -278,7 +282,7 @@ export const makeCardCarouselProps = ({
   ),
   tag: makeContentTypeTag(contentType),
   callToAction: {
-    href: url ? url : `${CONTENT_TYPES[contentType].route}/${id}`,
+    href: withBasePath(url ? url : `${CONTENT_TYPES[contentType].route}/${id}`),
     label: `View ${toTitleCase(CONTENT_TYPES[contentType].label)}`,
     isExternal: !!url,
   },

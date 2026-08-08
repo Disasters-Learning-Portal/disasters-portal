@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
+import { Image } from "@/app/components/Image";
 
 type ImageComparisonProps = {
   before: { src: string; alt: string };

@@ -1,11 +1,15 @@
 import type { FooterProps } from "@teamimpact/veda-ui-blocks";
-import Image from "next/image";
+import { Image } from "@/app/components/Image";
 
+import { withBasePath } from "@/app/site-config/base-path";
+
+// The Footer renders plain <a> elements, so internal hrefs need the base path
+// applied manually — Next only prefixes next/link for us.
 const primaryNavItems: FooterProps["primaryNavItems"] = [
-  { label: "About Us", href: "/about" },
-  { label: "Data Gallery", href: "/data-gallery" },
-  { label: "News & Events", href: "/news-events" },
-  { label: "Training", href: "/training" },
+  { label: "About Us", href: withBasePath("/about") },
+  { label: "Data Gallery", href: withBasePath("/data-gallery") },
+  { label: "News & Events", href: withBasePath("/news-events") },
+  { label: "Training", href: withBasePath("/training") },
 ];
 
 const secondaryNavItems: FooterProps["secondaryNavItems"] = [

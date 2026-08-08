@@ -1,6 +1,6 @@
 import { Link } from "@teamimpact/veda-ui-blocks";
-import Image from "next/image";
 import { Fragment } from "react";
+import { Image } from "@/app/components/Image";
 import type { ContentBlock } from "@/app/site-config/types";
 
 export type AboutPageBody = {

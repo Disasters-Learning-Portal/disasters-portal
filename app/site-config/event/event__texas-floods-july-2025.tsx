@@ -1,5 +1,6 @@
 import { CARTO_DARK_WITH_LABELS_BASEMAP_STYLE, Link } from "@teamimpact/veda-ui-blocks";
 import { Fragment } from "react";
+import { withBasePath } from "@/app/site-config/base-path";
 import type { EventContent } from "@/app/site-config/types";
 import { TRAINING__EO_BUILDING_EXPOSURE } from "../training/training__eo-building-exposure";
 import { TRAINING__FUNDAMENTALS_REMOTE_SENSING } from "../training/training__fundamentals-remote-sensing";
@@ -36,12 +37,12 @@ export const EVENT__TEXAS_FLOODS_JULY_2025: EventContent = {
         <Fragment key="texas-floods-july-2025-parargraph-1">
           The NASA Disasters Program activated to support the Texas Department of Emergency
           Management, FEMA Region 6, and the non-profit Save the Children. NASA{" "}
-          <Link href="/news-events/finding-floods">deployed two aircraft</Link> over the San Gabriel
-          and Colorado river basins, collecting high-resolution optical imagery to support search
-          and rescue operations, and UAVSAR radar imagery to identify flooded regions when clouds
-          and trees obscured other sensors. NASA also shared satellite precipitation data, landslide
-          risk assessments, and infrastructure impact analyses to help guide responders in deploying
-          resources.
+          <Link href={withBasePath("/news-events/finding-floods")}>deployed two aircraft</Link> over
+          the San Gabriel and Colorado river basins, collecting high-resolution optical imagery to
+          support search and rescue operations, and UAVSAR radar imagery to identify flooded regions
+          when clouds and trees obscured other sensors. NASA also shared satellite precipitation
+          data, landslide risk assessments, and infrastructure impact analyses to help guide
+          responders in deploying resources.
         </Fragment>,
       ],
     },

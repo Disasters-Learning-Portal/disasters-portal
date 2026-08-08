@@ -1,6 +1,4 @@
 import { Link } from "@teamimpact/veda-ui-blocks";
-import Image from "next/image";
-
 import {
   ImageComparison,
   Section,
@@ -9,6 +7,8 @@ import {
   SectionHeading,
 } from "@/app/components";
 import { StacCompareBlock, StacSingleLayerBlock } from "@/app/components/blocks";
+import { Image } from "@/app/components/Image";
+import { withBasePath } from "@/app/site-config/base-path";
 import { makeCardFeaturedProps, makeCardSimpleProps } from "@/app/site-config/content.helpers";
 import { typedMap } from "@/app/site-config/typed.helpers";
 import type { ContentBlock } from "@/app/site-config/types";
@@ -61,7 +61,7 @@ export const ContentBlockRenderer = ({
                 <li key={i}>{item}</li>
               ) : (
                 <li key={item.href}>
-                  <Link href={item.href}>{item.label}</Link>
+                  <Link href={withBasePath(item.href)}>{item.label}</Link>
                 </li>
               ),
             )}
@@ -99,7 +99,8 @@ export const ContentBlockRenderer = ({
           )}
           {block.src ? (
             <video controls className="width-full display-block">
-              <source src={block.src} />
+              {/* Raw <source>, not next/image — base path applied by hand. */}
+              <source src={withBasePath(block.src)} />
               <track kind="captions" />
             </video>
           ) : (
