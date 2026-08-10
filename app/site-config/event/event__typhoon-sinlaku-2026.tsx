@@ -48,11 +48,12 @@ export const EVENT__TYPHOON_SINLAKU_2026: EventContent = {
       width: 1920,
       height: 1080,
     },
-    {
-      type: "text",
-      heading: "Product Gallery",
-      headingLevel: "h2",
-      paragraphs: ["Product galleries under development. Will be available by September release."],
-    },
+  ],
+  relatedProducts: [
+    "sentinel-2-true-color",
+    "sentinel-2-color-infrared",
+    "sentinel-2-swir",
+    "sentinel-2-nbr",
+    "sentinel-2-dnbr",
   ],
 };

@@ -1,6 +1,7 @@
 import {
   Section,
   SectionCardCarousel,
+  SectionCardDetailed,
   SectionCardMini,
   SectionCardSimple,
   SectionCardSimpleMosaic,
@@ -8,7 +9,12 @@ import {
   ThemeTag,
 } from "@/app/components/";
 import type { EventContent } from "@/app/site-config/types";
-import { makeCardCarouselProps, makeCardSimpleProps } from "../site-config/content.helpers";
+import {
+  makeCardCarouselProps,
+  makeCardDetailedImageLeftProps,
+  makeCardSimpleProps,
+} from "../site-config/content.helpers";
+import { DATASETS } from "../site-config/dataset";
 import { DATASTORIES } from "../site-config/datastory";
 import { EVENTS } from "../site-config/event";
 import { transformEventToCardMiniProps } from "../site-config/event/event.helpers";
@@ -88,6 +94,18 @@ export default function ComponentsPage() {
             </SectionCardSimpleMosaic>`}
         </code>
       </SectionCardSimpleMosaic>
+
+      <SectionCardDetailed
+        sectionHeading={<SectionHeading>SectionCardDetailed Component</SectionHeading>}
+        cards={typedMap(DATASETS, makeCardDetailedImageLeftProps)}
+      >
+        <code className="bg-base-lighter font-code-xs">
+          {`<SectionCardDetailed
+              sectionHeading={<SectionHeading>SectionCardDetailed Component</SectionHeading>}
+              cards={typedMap(DATASETS, makeCardDetailedImageLeftProps)}
+            />`}
+        </code>
+      </SectionCardDetailed>
 
       <SectionCardSimple
         sectionHeading={<SectionHeading>SectionCardSimple Component</SectionHeading>}

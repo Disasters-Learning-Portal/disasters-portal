@@ -137,11 +137,12 @@ export const EVENT__SOUTHERN_CALIFORNIA_FIRE_JAN_2025: EventContent = {
         },
       ],
     },
-    {
-      type: "text",
-      heading: "Product Gallery",
-      headingLevel: "h2",
-      paragraphs: ["Product galleries under development. Will be available by September release."],
-    },
+  ],
+  relatedProducts: [
+    "sentinel-2-true-color",
+    "sentinel-2-color-infrared",
+    "sentinel-2-swir",
+    "sentinel-2-nbr",
+    "sentinel-2-dnbr",
   ],
 };

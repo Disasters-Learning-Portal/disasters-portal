@@ -1,6 +1,6 @@
-import { CardDetailed } from "@teamimpact/veda-ui-blocks";
-import { PageMasthead, Section } from "@/app/components";
+import { PageMasthead, SectionCardDetailed } from "@/app/components";
 import { DATA_GALLERY_CARD_MASTHEAD } from "@/app/site-config/dataset/toplevel-page__card-masthead";
+import { typedMap } from "@/app/site-config/typed.helpers";
 import {
   makeCardDetailedImageLeftProps,
   makeCardMastHeadProps,
@@ -11,23 +11,7 @@ export default function DataGalleryPage() {
   return (
     <>
       <PageMasthead {...makeCardMastHeadProps(DATA_GALLERY_CARD_MASTHEAD)} />
-      <Section>
-        <div className="grid-row grid-gap">
-          {DATASETS.map(({ id, thumbnailImage, categories, themes, ...card }) => (
-            <div key={id} className="grid-col-12 margin-y-1 desktop:margin-y-2">
-              <CardDetailed
-                {...makeCardDetailedImageLeftProps({
-                  id,
-                  thumbnailImage,
-                  tags: [...categories, ...themes],
-                  ...card,
-                })}
-                className="height-card-sm"
-              />
-            </div>
-          ))}
-        </div>
-      </Section>
+      <SectionCardDetailed cards={typedMap(DATASETS, makeCardDetailedImageLeftProps)} />
     </>
   );
 }
