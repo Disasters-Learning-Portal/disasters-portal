@@ -4,13 +4,17 @@ import Image from "next/image";
 import {
   ImageComparison,
   Section,
+  SectionCardDetailed,
   SectionCardFeatured,
   SectionCardSimple,
   SectionHeading,
 } from "@/app/components";
 import { StacCompareBlock, StacSingleLayerBlock } from "@/app/components/blocks";
-import { makeCardFeaturedProps, makeCardSimpleProps } from "@/app/site-config/content.helpers";
-import { typedMap } from "@/app/site-config/typed.helpers";
+import {
+  makeCardDetailedImageLeftProps,
+  makeCardFeaturedProps,
+  makeCardSimpleProps,
+} from "@/app/site-config/content.helpers";
 import type { ContentBlock } from "@/app/site-config/types";
 
 function ContentHeading({
@@ -130,6 +134,7 @@ export const ContentBlockRenderer = ({
           </figure>
         </Section>
       );
+
     case "stacSingleLayer":
       return (
         <Section isMultiColumnLayout={isMultiColumnLayout}>
@@ -164,7 +169,18 @@ export const ContentBlockRenderer = ({
         </Section>
       );
 
-    case "sectionCardSimple":
+    case "sectionCardSimple": {
+      const cards = block.cards.map(({ id, contentType, themes, thumbnailImage, title, ...rest }) =>
+        makeCardSimpleProps({
+          id,
+          contentType,
+          themes,
+          thumbnailImage,
+          title,
+          url: "url" in rest ? rest.url : undefined,
+        }),
+      );
+
       return (
         <SectionCardSimple
           isMultiColumnLayout={isMultiColumnLayout}
@@ -175,9 +191,40 @@ export const ContentBlockRenderer = ({
               </SectionHeading>
             )
           }
-          cards={typedMap(block.cards, makeCardSimpleProps)}
+          cards={cards}
         />
       );
+    }
+
+    case "sectionCardGallery": {
+      const cards = block.cards.map(
+        ({ id, contentType, title, description, thumbnailImage, categories, themes, ...rest }) =>
+          makeCardDetailedImageLeftProps({
+            id,
+            contentType,
+            title,
+            description,
+            thumbnailImage,
+            themes,
+            categories,
+            url: "url" in rest ? rest.url : undefined,
+          }),
+      );
+
+      return (
+        <SectionCardDetailed
+          isMultiColumnLayout={isMultiColumnLayout}
+          sectionHeading={
+            block.heading && (
+              <SectionHeading {...(block.href ? { href: block.href } : {})}>
+                {block.heading}
+              </SectionHeading>
+            )
+          }
+          cards={cards}
+        />
+      );
+    }
 
     case "sectionCardFeatured":
       return (
