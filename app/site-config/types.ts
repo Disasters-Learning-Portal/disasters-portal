@@ -211,8 +211,6 @@ export type EventContent = Omit<MinimumCardContent, "contentType"> & {
   linkUSGovernment?: { label: string; href: string };
   body?: ContentBlock[];
   relatedContent?: string[];
-  /** List of dataset ids, to be rendered as related products. */
-  relatedProducts?: string[];
 };
 
 export type ThemeContent = {

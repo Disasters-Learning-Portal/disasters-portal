@@ -1,6 +1,7 @@
 import { CARTO_DARK_WITH_LABELS_BASEMAP_STYLE, Link } from "@teamimpact/veda-ui-blocks";
 import { Fragment } from "react";
 import type { EventContent } from "@/app/site-config/types";
+import { DATASETS } from "../dataset";
 import { TRAINING__EO_BUILDING_EXPOSURE } from "../training/training__eo-building-exposure";
 import { TRAINING__FUNDAMENTALS_REMOTE_SENSING } from "../training/training__fundamentals-remote-sensing";
 import { TRAINING__INTRODUCTION_TO_SAR } from "../training/training__introduction-to-sar";
@@ -76,6 +77,11 @@ export const EVENT__TEXAS_FLOODS_JULY_2025: EventContent = {
       },
     },
     {
+      type: "sectionCardGallery",
+      heading: "Related Products",
+      cards: DATASETS,
+    },
+    {
       type: "sectionCardSimple",
       heading: "Resources & Learning",
       cards: [
@@ -84,12 +90,5 @@ export const EVENT__TEXAS_FLOODS_JULY_2025: EventContent = {
         TRAINING__EO_BUILDING_EXPOSURE,
       ],
     },
-  ],
-  relatedProducts: [
-    "sentinel-2-true-color",
-    "sentinel-2-color-infrared",
-    "sentinel-2-swir",
-    "sentinel-2-nbr",
-    "sentinel-2-dnbr",
   ],
 };

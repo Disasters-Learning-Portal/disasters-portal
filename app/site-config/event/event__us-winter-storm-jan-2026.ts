@@ -1,4 +1,5 @@
 import type { EventContent } from "@/app/site-config/types";
+import { DATASETS } from "../dataset";
 
 export const EVENT__US_WINTER_STORM_2026: EventContent = {
   id: "us-winter-storm-jan-2026",
@@ -24,12 +25,10 @@ export const EVENT__US_WINTER_STORM_2026: EventContent = {
         "A large winter storm impacted much of the continental U.S., bringing snow, ice, and subfreezing temperatures. NASA’s Disasters Program is sharing maps and data to support state and federal response agencies.",
       ],
     },
-  ],
-  relatedProducts: [
-    "sentinel-2-true-color",
-    "sentinel-2-color-infrared",
-    "sentinel-2-swir",
-    "sentinel-2-nbr",
-    "sentinel-2-dnbr",
+    {
+      type: "sectionCardGallery",
+      heading: "Related Products",
+      cards: DATASETS,
+    },
   ],
 };

@@ -1,6 +1,7 @@
 import { Link } from "@teamimpact/veda-ui-blocks";
 import { Fragment } from "react/jsx-runtime";
 import type { EventContent } from "@/app/site-config/types";
+import { DATASETS } from "../dataset";
 
 export const EVENT__TYPHOON_SINLAKU_2026: EventContent = {
   id: "typhoon-sinlaku-2026",
@@ -48,12 +49,10 @@ export const EVENT__TYPHOON_SINLAKU_2026: EventContent = {
       width: 1920,
       height: 1080,
     },
-  ],
-  relatedProducts: [
-    "sentinel-2-true-color",
-    "sentinel-2-color-infrared",
-    "sentinel-2-swir",
-    "sentinel-2-nbr",
-    "sentinel-2-dnbr",
+    {
+      type: "sectionCardGallery",
+      heading: "Related Products",
+      cards: DATASETS,
+    },
   ],
 };
