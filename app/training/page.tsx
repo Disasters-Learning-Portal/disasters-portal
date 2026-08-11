@@ -1,23 +1,20 @@
-import { CardDetailed } from "@teamimpact/veda-ui-blocks";
 import { PageMasthead, Section } from "@/app/components";
-import { TRAININGS, TRAININGS_EXTERNAL } from "@/app/site-config/training";
 import { TRAINING_CARD_MASTHEAD } from "@/app/site-config/training/toplevel-page__card-masthead";
-import { makeCardDetailedProps, makeCardMastHeadProps } from "../site-config/content.helpers";
+import client from "@/tina/__generated__/client";
+import { TrainingBlocks } from "@/tina/blocks";
+import { makeCardMastHeadProps } from "../site-config/content.helpers";
 
-export default function TrainingCollectionPage() {
+export default async function TrainingCollectionPage() {
+  const { query, variables, data } = await client.queries.page({
+    relativePath: "training.json",
+  });
+
   return (
     <>
       <PageMasthead {...makeCardMastHeadProps(TRAINING_CARD_MASTHEAD)} />
       <Section>
         <div className="grid-row grid-gap">
-          {[...TRAININGS, ...TRAININGS_EXTERNAL].map(({ id, categories, themes, ...card }) => (
-            <div key={id} className="grid-col-12 tablet:grid-col-6 margin-y-1 desktop:margin-y-2">
-              <CardDetailed
-                {...makeCardDetailedProps({ ...card, id })}
-                className="height-card-lg"
-              />
-            </div>
-          ))}
+          <TrainingBlocks query={query} variables={variables} data={data} />
         </div>
       </Section>
     </>

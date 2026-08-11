@@ -1,31 +1,20 @@
-import { CardDetailed } from "@teamimpact/veda-ui-blocks";
 import { PageMasthead, Section } from "@/app/components";
 import { DATA_GALLERY_CARD_MASTHEAD } from "@/app/site-config/dataset/toplevel-page__card-masthead";
-import {
-  makeCardDetailedImageLeftProps,
-  makeCardMastHeadProps,
-} from "../site-config/content.helpers";
-import { DATASETS } from "../site-config/dataset";
+import client from "@/tina/__generated__/client";
+import { DataGalleryBlocks } from "@/tina/blocks";
+import { makeCardMastHeadProps } from "../site-config/content.helpers";
 
-export default function DataGalleryPage() {
+export default async function DataGalleryPage() {
+  const { query, variables, data } = await client.queries.galleryPage({
+    relativePath: "data-gallery.json",
+  });
+
   return (
     <>
       <PageMasthead {...makeCardMastHeadProps(DATA_GALLERY_CARD_MASTHEAD)} />
       <Section>
         <div className="grid-row grid-gap">
-          {DATASETS.map(({ id, thumbnailImage, categories, themes, ...card }) => (
-            <div key={id} className="grid-col-12 margin-y-1 desktop:margin-y-2">
-              <CardDetailed
-                {...makeCardDetailedImageLeftProps({
-                  id,
-                  thumbnailImage,
-                  tags: [...categories, ...themes],
-                  ...card,
-                })}
-                className="height-card-sm"
-              />
-            </div>
-          ))}
+          <DataGalleryBlocks query={query} variables={variables} data={data} />
         </div>
       </Section>
     </>

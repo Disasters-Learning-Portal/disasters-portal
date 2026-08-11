@@ -1,0 +1,124 @@
+{
+  "title": "Data Gallery",
+  "blocks": [
+    {
+      "title": "Sentinel-2 True Color Imagery",
+      "description": "The True Color RGB composite provides a product of how the surface would look to the naked eye from space.",
+      "image": {
+        "src": "/img/dataset/sentinel-2-true-color.webp",
+        "alt": "Sentinel-2 True Color imagery example"
+      },
+      "tags": [
+        "severewx",
+        "fire",
+        "heat",
+        "flood",
+        "tropical cyclone",
+        "earthquake",
+        "winter weather",
+        "respond",
+        "build",
+        "prepare",
+        "recover"
+      ],
+      "callToAction": {
+        "label": "View Product",
+        "href": "/data-gallery/sentinel-2-true-color",
+        "isExternal": false
+      },
+      "_template": "datasetCard"
+    },
+    {
+      "title": "Sentinel-2 Color Infrared Imagery",
+      "description": "Created using near-infrared, red, and green channels to see areas impacted by floods, fires, or other hazards.",
+      "image": {
+        "src": "/img/dataset/sentinel-2-color-infrared.webp",
+        "alt": "Sentinel-2 Color Infrared imagery example"
+      },
+      "tags": [
+        "severewx",
+        "fire",
+        "heat",
+        "flood",
+        "tropical cyclone",
+        "earthquake",
+        "winter weather",
+        "respond",
+        "build",
+        "prepare",
+        "recover"
+      ],
+      "callToAction": {
+        "label": "View Product",
+        "href": "/data-gallery/sentinel-2-color-infrared",
+        "isExternal": false
+      },
+      "_template": "datasetCard"
+    },
+    {
+      "title": "Sentinel-2 Shortwave Infrared Imagery",
+      "description": "Created using SWIR, Near Infrared (NIR), and Red channels for flood detection.",
+      "image": {
+        "src": "/img/dataset/sentinel-2-swir.webp",
+        "alt": "Sentinel-2 Shortwave Infrared imagery example"
+      },
+      "tags": [
+        "severewx",
+        "fire",
+        "heat",
+        "flood",
+        "tropical cyclone",
+        "earthquake",
+        "winter weather",
+        "respond",
+        "build",
+        "prepare",
+        "recover"
+      ],
+      "callToAction": {
+        "label": "View Product",
+        "href": "/data-gallery/sentinel-2-swir",
+        "isExternal": false
+      },
+      "_template": "datasetCard"
+    },
+    {
+      "title": "Sentinel-2 Normalized Burn Ratio (NBR)",
+      "description": "Normalized Burn Ratio (NBR) is defined mathematically as (NIR – SWIR)/(NIR + SWIR) where NIR is near-infrared and SWIR is short-wave infrared. NBR is commonly used as a proxy to indicate areas which have charred vegetation.",
+      "image": {
+        "src": "/img/dataset/sentinel-2-nbr.webp",
+        "alt": "Sentinel-2 Normalized Burn Ratio (NBR)"
+      },
+      "tags": [
+        "fire",
+        "respond",
+        "recover"
+      ],
+      "callToAction": {
+        "label": "View Product",
+        "href": "/data-gallery/sentinel-2-nbr",
+        "isExternal": false
+      },
+      "_template": "datasetCard"
+    },
+    {
+      "title": "Sentinel-2 Differenced Normalized Burn Ratio (dNBR)",
+      "description": "Differenced Normalized Burn Ratio (dNBR) is computed by the difference between the pre-fire NBR and the post-fire NBR. ",
+      "image": {
+        "src": "/img/dataset/sentinel-2-dnbr.webp",
+        "alt": "Sentinel-2 Differenced Normalized Burn Ratio (dNBR)"
+      },
+      "tags": [
+        "fire",
+        "respond",
+        "recover"
+      ],
+      "callToAction": {
+        "label": "View Product",
+        "href": "/data-gallery/sentinel-2-dnbr",
+        "isExternal": false
+      },
+      "_template": "datasetCard"
+    }
+  ]
+}
