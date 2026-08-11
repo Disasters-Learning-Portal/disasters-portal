@@ -1,4 +1,5 @@
-import { PageMasthead, SectionCardDetailed } from "@/app/components";
+import { CardDetailed } from "@teamimpact/veda-ui-blocks";
+import { PageMasthead, Section } from "@/app/components";
 import {
   makeCardDetailedImageLeftProps,
   makeCardMastHeadProps,
@@ -28,9 +29,24 @@ export default async function NewsEventsCollectionPage(props: PageProps<"/news-e
   return (
     <>
       <PageMasthead {...makeCardMastHeadProps(NEWS_EVENTS_CARD_MASTHEAD)} />
-      <SectionCardDetailed
-        cards={filteredItems.map((item) => makeCardDetailedImageLeftProps(item))}
-      />
+      <Section>
+        <div className="grid-row grid-gap">
+          {filteredItems.map(({ id, thumbnailImage, contentType, categories, themes, ...card }) => (
+            <div key={id} className="grid-col-12 margin-y-1 desktop:margin-y-2">
+              <CardDetailed
+                {...makeCardDetailedImageLeftProps({
+                  id,
+                  thumbnailImage,
+                  contentType,
+                  tags: [...themes, ...categories],
+                  ...card,
+                })}
+                className="height-card-sm"
+              />
+            </div>
+          ))}
+        </div>
+      </Section>
     </>
   );
 }

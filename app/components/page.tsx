@@ -97,12 +97,22 @@ export default function ComponentsPage() {
 
       <SectionCardDetailed
         sectionHeading={<SectionHeading>SectionCardDetailed Component</SectionHeading>}
-        cards={typedMap(DATASETS, makeCardDetailedImageLeftProps)}
+        cards={DATASETS.map(
+          ({ id, contentType, title, description, thumbnailImage, categories, themes }) =>
+            makeCardDetailedImageLeftProps({
+              id,
+              contentType,
+              title,
+              description,
+              thumbnailImage,
+              tags: [...categories, ...themes],
+            }),
+        )}
       >
         <code className="bg-base-lighter font-code-xs">
           {`<SectionCardDetailed
               sectionHeading={<SectionHeading>SectionCardDetailed Component</SectionHeading>}
-              cards={typedMap(DATASETS, makeCardDetailedImageLeftProps)}
+              cards={DATASETS.map((dataset) => makeCardDetailedImageLeftProps({ ...dataset }))}
             />`}
         </code>
       </SectionCardDetailed>

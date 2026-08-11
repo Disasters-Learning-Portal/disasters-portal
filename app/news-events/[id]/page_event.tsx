@@ -22,7 +22,9 @@ export default async function EventItemPage(contentItem: EventContent) {
   const { contentType, themes, categories, body, relatedProducts = [] } = contentItem;
 
   // Unknown ids are dropped, matching the related content lookup on the dataset page.
-  const products = relatedProducts.flatMap((id) => DATASETS.find((d) => d.id === id) ?? []);
+  const products = relatedProducts
+    .flatMap((id) => DATASETS.find((d) => d.id === id))
+    .filter((d) => !!d);
 
   return (
     <>
@@ -61,11 +63,25 @@ export default async function EventItemPage(contentItem: EventContent) {
                   <SectionCardDetailed
                     isMultiColumnLayout
                     sectionHeading={<SectionHeading>Related Products</SectionHeading>}
-                    // No card links until we know where a product should send people from an event.
-                    cards={products.map((product) => ({
-                      ...makeCardDetailedImageLeftProps(product),
-                      callToAction: undefined,
-                    }))}
+                    cards={products.map(
+                      ({
+                        id,
+                        contentType,
+                        title,
+                        description,
+                        thumbnailImage,
+                        categories,
+                        themes,
+                      }) =>
+                        makeCardDetailedImageLeftProps({
+                          id,
+                          contentType,
+                          title,
+                          description,
+                          thumbnailImage,
+                          tags: [...categories, ...themes],
+                        }),
+                    )}
                   />
                 )}
               </div>

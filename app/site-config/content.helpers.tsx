@@ -12,7 +12,6 @@ import {
   CONTENT_TYPES,
   type ContentType,
   type IterableItemWithId,
-  type MinimumCardContent,
   type Theme,
 } from "@/app/site-config/types";
 
@@ -164,33 +163,24 @@ export const makeCardDetailedProps = ({
   ...rest,
 });
 
-/**
- * Builds the image-left card used by the full-width listings: the Data Gallery, News &
- * Events, and the Related Products section on event pages. Takes a content record and
- * picks only card-relevant fields, so heavier fields (`body`, `mastheadImage`,
- * `relatedContent`) never reach the card and end up on the DOM.
- */
 export const makeCardDetailedImageLeftProps = ({
   id,
   contentType,
-  title,
-  description,
   thumbnailImage,
-  themes,
-  categories,
+  tags,
   url,
-}: MinimumCardContent & { url?: string }): IterableItemWithId<CardDetailedProps> => ({
+  ...rest
+}: CardDetailedPropsArgs): IterableItemWithId<CardDetailedProps> => ({
   id,
-  title,
-  description,
   image: <Image {...thumbnailImage} fill sizes="200px" />,
   imagePosition: "left",
-  tags: [...categories, ...themes].map((t) => makeSimpleTag(t)),
+  tags: (tags ?? []).map((t) => makeSimpleTag(t)),
   callToAction: {
     href: url ? url : `${CONTENT_TYPES[contentType].route}/${id}`,
     label: `View ${toTitleCase(CONTENT_TYPES[contentType].label)}`,
     isExternal: !!url,
   },
+  ...rest,
 });
 
 export type CardSimplePropsArgs = Omit<CardSimpleProps, "image" | "tag" | "isExternal" | "href"> & {
