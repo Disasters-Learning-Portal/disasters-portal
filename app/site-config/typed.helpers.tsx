@@ -4,10 +4,12 @@ export function isInternalContent(c: unknown): c is InternalContent {
   return (
     typeof c === "object" &&
     c !== null &&
+    "id" in c &&
     "mastheadImage" in c &&
     "title" in c &&
     "themes" in c &&
-    "categories" in c
+    "categories" in c &&
+    (!("url" in c) || "body" in c)
   );
 }
 
