@@ -5,10 +5,11 @@ import { notFound } from "next/navigation";
 import { ContentBlockRenderer, PageStatus, Section, ThemeTag } from "@/app/components";
 import { toLongDate } from "@/app/site-config/content.helpers";
 import { TRAININGS } from "@/app/site-config/training";
+import { isInternalContent } from "@/app/site-config/typed.helpers";
 
 export default async function TrainingItemPage(props: PageProps<"/training/[id]">) {
   const { id } = await props.params;
-  const training = TRAININGS.find((t) => t.id === id);
+  const training = TRAININGS.filter(isInternalContent).find((t) => t.id === id);
 
   if (!training) notFound();
 
