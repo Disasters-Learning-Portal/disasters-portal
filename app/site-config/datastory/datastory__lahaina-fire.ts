@@ -1,6 +1,6 @@
-import type { DataStoryContent } from "../types";
+import type { DataStoryContentExternal } from "../types";
 
-export const DATASTORY__LAHAINA_FIRE: DataStoryContent = {
+export const DATASTORY__LAHAINA_FIRE: DataStoryContentExternal = {
   id: "lahaina-fire",
   contentType: "datastory",
   title: "The Devastating August 8th, 2023 Lahaina, Hawai'i Wildfire",
@@ -11,9 +11,5 @@ export const DATASTORY__LAHAINA_FIRE: DataStoryContent = {
   },
   themes: ["respond", "recover"],
   categories: ["fire"],
-  mastheadImage: {
-    src: "https://www.earthdata.nasa.gov/dashboard/lahaina-fire-background.e21f19be.jpg",
-    alt: "Fire erupting over Lahaina, HI.",
-  },
   url: "https://www.earthdata.nasa.gov/dashboard/stories/lahaina-fire",
 };

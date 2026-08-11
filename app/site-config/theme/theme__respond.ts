@@ -1,6 +1,7 @@
 import { CARTO_DARK_WITH_LABELS_BASEMAP_STYLE } from "@teamimpact/veda-ui-blocks";
 import type {
   DataStoryContent,
+  DataStoryContentExternal,
   EventContent,
   NewsContent,
   StoryContent,
@@ -74,7 +75,7 @@ export const RESPOND_EVENTS: EventContent[] = [
 ];
 
 // TODO: these would be fetched based on content id
-export const RESPOND_DATASTORIES: DataStoryContent[] = [
+export const RESPOND_DATASTORIES: (DataStoryContent | DataStoryContentExternal)[] = [
   DATASTORY__SO2_VOLCANOES,
   DATASTORY__LAHAINA_FIRE,
 ];

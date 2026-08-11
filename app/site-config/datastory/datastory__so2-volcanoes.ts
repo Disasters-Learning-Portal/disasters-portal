@@ -1,6 +1,6 @@
-import type { DataStoryContent } from "../types";
+import type { DataStoryContentExternal } from "../types";
 
-export const DATASTORY__SO2_VOLCANOES: DataStoryContent = {
+export const DATASTORY__SO2_VOLCANOES: DataStoryContentExternal = {
   id: "so2-volcanoes",
   contentType: "datastory",
   title: "Monitoring Volcanic Sulfur Dioxide Emissions",
@@ -11,9 +11,5 @@ export const DATASTORY__SO2_VOLCANOES: DataStoryContent = {
   },
   themes: ["respond", "recover"],
   categories: ["volcano"],
-  mastheadImage: {
-    src: "https://www.earthdata.nasa.gov/dashboard/volcano--discovery-cover.1aa79686.jpg",
-    alt: "Ash cloud over mountain",
-  },
   url: "https://www.earthdata.nasa.gov/dashboard/stories/so2-volcanoes",
 };
