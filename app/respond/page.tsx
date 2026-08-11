@@ -4,7 +4,6 @@ import {
   SectionCardCarousel,
   SectionCardSimple,
   SectionHeading,
-  SectionStoriesOfImpact,
 } from "@/app/components/";
 import { SectionCardMini } from "../components/SectionCardMini";
 import {
@@ -28,7 +27,12 @@ export default function RespondPage() {
   return (
     <>
       <PageMasthead {...makeCardMastHeadProps({ title, subtitle, theme, mastheadImage })} />
-      <SectionStoriesOfImpact stories={RESPOND_STORIES} />
+      <SectionCardSimple
+        sectionHeading={
+          <SectionHeading href="/news-events?contenttype=story">Stories of Impact</SectionHeading>
+        }
+        cards={typedMap(RESPOND_STORIES.slice(0, 2), makeCardSimpleProps)}
+      />
       {RESPOND_CONTENT.body.map((block, index) => (
         // biome-ignore lint/suspicious/noArrayIndexKey: static content, never reorders
         <ContentBlockRenderer key={index} block={block} />
