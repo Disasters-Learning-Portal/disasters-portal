@@ -123,7 +123,7 @@ export const makeCardFeaturedProps = (
   };
 };
 
-type CardDetailedPropsArgs = Omit<
+export type CardDetailedPropsArgs = Omit<
   CardDetailedProps,
   "image" | "imagePosition" | "tags" | "callToAction"
 > & {
@@ -133,6 +133,8 @@ type CardDetailedPropsArgs = Omit<
     alt: string;
     src: string;
   };
+  themes?: Theme[];
+  categories?: Category[];
   tags?: (Theme | ContentType | Category)[];
   url?: string;
 };
@@ -142,6 +144,8 @@ export const makeCardDetailedProps = ({
   contentType,
   thumbnailImage,
   tags,
+  themes,
+  categories,
   url,
   ...rest
 }: CardDetailedPropsArgs): IterableItemWithId<CardDetailedProps> => ({
@@ -154,7 +158,13 @@ export const makeCardDetailedProps = ({
     />
   ),
   imagePosition: "top",
-  tags: (tags ?? []).map((t) => makeSimpleTag(t)),
+  tags: tags
+    ? tags.map((t) => makeSimpleTag(t))
+    : [
+        ...(themes ?? []).map((t) => makeThemeTag(t)),
+        ...(categories ?? []).map((c) => makeSimpleTag(c)),
+        makeSimpleTag(contentType),
+      ],
   callToAction: {
     href: url ? url : `${CONTENT_TYPES[contentType].route}/${id}`,
     label: `View ${toTitleCase(CONTENT_TYPES[contentType].label)}`,
@@ -168,13 +178,21 @@ export const makeCardDetailedImageLeftProps = ({
   contentType,
   thumbnailImage,
   tags,
+  themes,
+  categories,
   url,
   ...rest
 }: CardDetailedPropsArgs): IterableItemWithId<CardDetailedProps> => ({
   id,
   image: <Image {...thumbnailImage} fill sizes="200px" />,
   imagePosition: "left",
-  tags: (tags ?? []).map((t) => makeSimpleTag(t)),
+  tags: tags
+    ? tags.map((t) => makeSimpleTag(t))
+    : [
+        ...(themes ?? []).map((t) => makeThemeTag(t)),
+        ...(categories ?? []).map((c) => makeSimpleTag(c)),
+        makeSimpleTag(contentType),
+      ],
   callToAction: {
     href: url ? url : `${CONTENT_TYPES[contentType].route}/${id}`,
     label: `View ${toTitleCase(CONTENT_TYPES[contentType].label)}`,
