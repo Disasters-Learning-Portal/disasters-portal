@@ -10,14 +10,34 @@ export default function TrainingCollectionPage() {
       <PageMasthead {...makeCardMastHeadProps(TRAINING_CARD_MASTHEAD)} />
       <Section>
         <div className="grid-row grid-gap">
-          {[...TRAININGS, ...TRAININGS_EXTERNAL].map(({ id, categories, themes, ...card }) => (
-            <div key={id} className="grid-col-12 tablet:grid-col-6 margin-y-1 desktop:margin-y-2">
-              <CardDetailed
-                {...makeCardDetailedProps({ ...card, id })}
-                className="height-card-lg"
-              />
-            </div>
-          ))}
+          {[...TRAININGS, ...TRAININGS_EXTERNAL].map(
+            ({
+              id,
+              contentType,
+              title,
+              description,
+              thumbnailImage,
+              categories,
+              themes,
+              ...rest
+            }) => (
+              <div key={id} className="grid-col-12 tablet:grid-col-6 margin-y-1 desktop:margin-y-2">
+                <CardDetailed
+                  {...makeCardDetailedProps({
+                    id,
+                    contentType,
+                    title,
+                    description,
+                    thumbnailImage,
+                    categories,
+                    themes,
+                    url: "url" in rest ? rest.url : undefined,
+                  })}
+                  className="height-card-lg"
+                />
+              </div>
+            ),
+          )}
         </div>
       </Section>
     </>
