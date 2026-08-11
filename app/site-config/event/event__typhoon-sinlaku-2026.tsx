@@ -51,7 +51,7 @@ export const EVENT__TYPHOON_SINLAKU_2026: EventContent = {
     },
     {
       type: "sectionCardGallery",
-      heading: "Related Products",
+      heading: "Product Gallery",
       cards: DATASETS,
     },
   ],

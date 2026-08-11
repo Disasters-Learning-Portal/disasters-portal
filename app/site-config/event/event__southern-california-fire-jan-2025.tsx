@@ -81,7 +81,7 @@ export const EVENT__SOUTHERN_CALIFORNIA_FIRE_JAN_2025: EventContent = {
     },
     {
       type: "sectionCardGallery",
-      heading: "Related Products",
+      heading: "Product Gallery",
       cards: DATASETS,
     },
     {
