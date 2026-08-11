@@ -124,11 +124,14 @@ type Content =
   | TrainingContentExternal
   | DatasetContent
   | DataStoryContent
+  | DataStoryContentExternal
   | StoryContent
   | NewsContent
   | EventContent;
 
 export type ContentType = Content["contentType"];
+
+export type InternalContent = StoryContent | DataStoryContent | NewsContent | EventContent;
 
 export type MinimumCardContent = {
   id: string;

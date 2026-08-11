@@ -11,12 +11,15 @@ import { DATASTORIES } from "@/app/site-config/datastory";
 import { EVENTS } from "@/app/site-config/event";
 import { NEWS } from "@/app/site-config/news";
 import { STORIES } from "@/app/site-config/story";
+import { isInternalContent } from "@/app/site-config/typed.helpers";
 import EventItemPage from "./page_event";
 
 export default async function NewsEventsItemPage(props: PageProps<"/news-events/[id]">) {
   const { id } = await props.params;
 
-  const contentItem = [...STORIES, ...DATASTORIES, ...NEWS, ...EVENTS].find((i) => i.id === id);
+  const contentItem = [...STORIES, ...DATASTORIES, ...NEWS, ...EVENTS]
+    .filter(isInternalContent)
+    .find((i) => i.id === id);
 
   if (!contentItem) notFound();
 
