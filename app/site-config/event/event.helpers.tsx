@@ -10,9 +10,12 @@ import type { EventContent, IterableItemWithId } from "@/app/site-config/types";
 export const transformEventToCardMiniProps = (
   event: EventContent,
 ): IterableItemWithId<CardMiniProps> => {
-  const { isLatest, ...eventRest } = event;
+  const { isLatest, id, contentType, thumbnailImage, title } = event;
   return makeCardMiniProps({
-    ...eventRest,
+    id,
+    contentType,
+    thumbnailImage,
+    title,
     ...(isLatest ? { tag: "Latest Activation" } : {}),
   });
 };
