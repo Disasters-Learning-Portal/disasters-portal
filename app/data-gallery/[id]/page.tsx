@@ -10,11 +10,12 @@ import {
 import { makeCardMastHeadProps } from "@/app/site-config/content.helpers";
 import { DATASETS } from "@/app/site-config/dataset";
 import { EVENTS } from "@/app/site-config/event";
+import { isInternalContent } from "@/app/site-config/typed.helpers";
 import { CONTENT_TYPES } from "@/app/site-config/types";
 
 export default async function DatasetItemPage(props: PageProps<"/data-gallery/[id]">) {
   const { id } = await props.params;
-  const dataset = DATASETS.find((d) => d.id === id);
+  const dataset = DATASETS.filter(isInternalContent).find((d) => d.id === id);
 
   if (!dataset) notFound();
 

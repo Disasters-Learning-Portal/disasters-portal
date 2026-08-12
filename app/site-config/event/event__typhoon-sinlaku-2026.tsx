@@ -1,6 +1,7 @@
 import { Link } from "@teamimpact/veda-ui-blocks";
 import { Fragment } from "react/jsx-runtime";
 import type { EventContent } from "@/app/site-config/types";
+import { DATASETS } from "../dataset";
 
 export const EVENT__TYPHOON_SINLAKU_2026: EventContent = {
   id: "typhoon-sinlaku-2026",
@@ -49,10 +50,9 @@ export const EVENT__TYPHOON_SINLAKU_2026: EventContent = {
       height: 1080,
     },
     {
-      type: "text",
+      type: "sectionCardGallery",
       heading: "Product Gallery",
-      headingLevel: "h2",
-      paragraphs: ["Product galleries under development. Will be available by September release."],
+      cards: DATASETS,
     },
   ],
 };

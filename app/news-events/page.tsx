@@ -31,20 +31,34 @@ export default async function NewsEventsCollectionPage(props: PageProps<"/news-e
       <PageMasthead {...makeCardMastHeadProps(NEWS_EVENTS_CARD_MASTHEAD)} />
       <Section>
         <div className="grid-row grid-gap">
-          {filteredItems.map(({ id, thumbnailImage, contentType, categories, themes, ...card }) => (
-            <div key={id} className="grid-col-12 margin-y-1 desktop:margin-y-2">
-              <CardDetailed
-                {...makeCardDetailedImageLeftProps({
-                  id,
-                  thumbnailImage,
-                  contentType,
-                  tags: [...themes, ...categories],
-                  ...card,
-                })}
-                className="height-card-sm"
-              />
-            </div>
-          ))}
+          {filteredItems.map(
+            ({
+              id,
+              contentType,
+              title,
+              description,
+              thumbnailImage,
+              themes,
+              categories,
+              ...rest
+            }) => (
+              <div key={id} className="grid-col-12 margin-y-1 desktop:margin-y-2">
+                <CardDetailed
+                  {...makeCardDetailedImageLeftProps({
+                    id,
+                    contentType,
+                    title,
+                    description,
+                    thumbnailImage,
+                    categories,
+                    themes,
+                    url: "url" in rest ? rest.url : undefined,
+                  })}
+                  className="height-card-sm"
+                />
+              </div>
+            ),
+          )}
         </div>
       </Section>
     </>

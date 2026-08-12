@@ -1,4 +1,5 @@
 import type { EventContent } from "@/app/site-config/types";
+import { DATASETS } from "../dataset";
 
 export const EVENT__US_WINTER_STORM_2026: EventContent = {
   id: "us-winter-storm-jan-2026",
@@ -25,10 +26,9 @@ export const EVENT__US_WINTER_STORM_2026: EventContent = {
       ],
     },
     {
-      type: "text",
+      type: "sectionCardGallery",
       heading: "Product Gallery",
-      headingLevel: "h2",
-      paragraphs: ["Data will be added as it comes available."],
+      cards: DATASETS,
     },
   ],
 };

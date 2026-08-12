@@ -1,3 +1,18 @@
+import type { InternalContent } from "./types";
+
+export function isInternalContent(c: unknown): c is InternalContent {
+  return (
+    typeof c === "object" &&
+    c !== null &&
+    "id" in c &&
+    "mastheadImage" in c &&
+    "title" in c &&
+    "themes" in c &&
+    "categories" in c &&
+    (!("url" in c) || "body" in c)
+  );
+}
+
 /**
  * Tuple-preserving map. Unlike `Array.prototype.map`, this retains the length
  * and positional structure of the input tuple in the return type.

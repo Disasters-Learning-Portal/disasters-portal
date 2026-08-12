@@ -5,7 +5,11 @@ import type {
 } from "@teamimpact/veda-ui-blocks";
 import type { ReactNode } from "react";
 import type { AppRoutes } from "@/.next/types/routes";
-import type { CardFeaturedPropsArgs, CardSimplePropsArgs } from "@/app/site-config/content.helpers";
+import type {
+  CardDetailedPropsArgs,
+  CardFeaturedPropsArgs,
+  CardSimplePropsArgs,
+} from "@/app/site-config/content.helpers";
 
 export const CONTENT_TYPES: Record<ContentType, { route: AppRoutes; label: string }> = {
   dataset: { route: "/data-gallery", label: "product" },
@@ -115,6 +119,12 @@ export type ContentBlock =
       cards: CardSimplePropsArgs[];
     }
   | {
+      type: "sectionCardGallery";
+      heading?: string;
+      href?: GalleryRoute;
+      cards: CardDetailedPropsArgs[];
+    }
+  | {
       type: "sectionCardFeatured";
       card: CardFeaturedPropsArgs;
     };
@@ -124,11 +134,14 @@ type Content =
   | TrainingContentExternal
   | DatasetContent
   | DataStoryContent
+  | DataStoryContentExternal
   | StoryContent
   | NewsContent
   | EventContent;
 
 export type ContentType = Content["contentType"];
+
+export type InternalContent = StoryContent | DataStoryContent | NewsContent | EventContent;
 
 export type MinimumCardContent = {
   id: string;
@@ -180,7 +193,11 @@ export type DataStoryContent = Omit<MinimumCardContent, "contentType"> & {
   contentType: "datastory";
   mastheadImage: MastheadImage;
   body?: ContentBlock[];
-  url?: string;
+};
+
+export type DataStoryContentExternal = Omit<MinimumCardContent, "contentType"> & {
+  contentType: "datastory";
+  url: string;
 };
 
 export type EventContent = Omit<MinimumCardContent, "contentType"> & {
