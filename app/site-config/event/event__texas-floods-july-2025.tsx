@@ -78,7 +78,7 @@ export const EVENT__TEXAS_FLOODS_JULY_2025: EventContent = {
     },
     {
       type: "sectionCardGallery",
-      heading: "Product Gallery",
+      heading: "Related Data",
       cards: DATA,
     },
     {

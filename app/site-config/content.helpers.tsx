@@ -33,7 +33,7 @@ export const makeThemeTag = (tag: Theme) => {
 const makeContentTypeTag = (tag: ContentType) => {
   const { label } = CONTENT_TYPES[tag];
   return (
-    <Tag key={label} variant="solid">
+    <Tag key={label} variant="solid" color="primary-lighter">
       {label}
     </Tag>
   );
@@ -163,7 +163,7 @@ export const makeCardDetailedProps = ({
     : [
         ...(themes ?? []).map((t) => makeThemeTag(t)),
         ...(categories ?? []).map((c) => makeSimpleTag(c)),
-        makeSimpleTag(contentType),
+        makeContentTypeTag(contentType),
       ],
   callToAction: {
     href: url ? url : `${CONTENT_TYPES[contentType].route}/${id}`,
@@ -191,7 +191,7 @@ export const makeCardDetailedImageLeftProps = ({
     : [
         ...(themes ?? []).map((t) => makeThemeTag(t)),
         ...(categories ?? []).map((c) => makeSimpleTag(c)),
-        makeSimpleTag(contentType),
+        makeContentTypeTag(contentType),
       ],
   callToAction: {
     href: url ? url : `${CONTENT_TYPES[contentType].route}/${id}`,

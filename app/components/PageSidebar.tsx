@@ -5,6 +5,7 @@ import { ThemeTag } from "@/app/components";
 import {
   type Category,
   CONTENT_SIDEBAR_CONTENT_TYPES,
+  CONTENT_TYPES,
   type ContentType,
   type Theme,
 } from "@/app/site-config/types";
@@ -39,7 +40,7 @@ export function PageSidebar({
               <MetaGroup label="Type">
                 <div className="margin-right-1 margin-bottom-1">
                   <Tag color="primary-lighter" textColor="primary-dark">
-                    {contentType}
+                    {CONTENT_TYPES[contentType].label}
                   </Tag>
                 </div>
               </MetaGroup>

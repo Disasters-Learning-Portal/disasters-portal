@@ -12,11 +12,11 @@ import type {
 } from "@/app/site-config/content.helpers";
 
 export const CONTENT_TYPES: Record<ContentType, { route: AppRoutes; label: string }> = {
-  data: { route: "/data-gallery", label: "product" },
+  data: { route: "/data-gallery", label: "data" },
   event: { route: "/news-events", label: "event" },
   news: { route: "/news-events", label: "news" },
   story: { route: "/news-events", label: "story" },
-  datastory: { route: "/news-events", label: "Data Story" },
+  datastory: { route: "/news-events", label: "data story" },
   training: { route: "/training", label: "training" },
 };
 

@@ -27,7 +27,7 @@ export const EVENT__US_WINTER_STORM_2026: EventContent = {
     },
     {
       type: "sectionCardGallery",
-      heading: "Product Gallery",
+      heading: "Related Data",
       cards: DATA,
     },
   ],
