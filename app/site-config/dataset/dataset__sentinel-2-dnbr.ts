@@ -1,8 +1,8 @@
-import type { DatasetContent } from "@/app/site-config/types";
+import type { DataContent } from "@/app/site-config/types";
 
-export const DATASET__SENTINEL_2_DNBR: DatasetContent = {
+export const DATA__SENTINEL_2_DNBR: DataContent = {
   id: "sentinel-2-dnbr",
-  contentType: "dataset",
+  contentType: "data",
   title: "Sentinel-2 Differenced Normalized Burn Ratio (dNBR)",
   description:
     "Differenced Normalized Burn Ratio (dNBR) is computed by the difference between the pre-fire NBR and the post-fire NBR. ",

@@ -1,8 +1,8 @@
-import type { DatasetContent } from "@/app/site-config/types";
+import type { DataContent } from "@/app/site-config/types";
 
-export const DATASET__SENTINEL_2_COLOR_INFRARED: DatasetContent = {
+export const DATA__SENTINEL_2_COLOR_INFRARED: DataContent = {
   id: "sentinel-2-color-infrared",
-  contentType: "dataset",
+  contentType: "data",
   title: "Sentinel-2 Color Infrared Imagery",
   description:
     "Created using near-infrared, red, and green channels to see areas impacted by floods, fires, or other hazards.",

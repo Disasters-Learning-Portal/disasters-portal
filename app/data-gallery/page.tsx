@@ -5,7 +5,7 @@ import {
   makeCardDetailedImageLeftProps,
   makeCardMastHeadProps,
 } from "../site-config/content.helpers";
-import { DATASETS } from "../site-config/dataset";
+import { DATA } from "../site-config/dataset";
 
 export default function DataGalleryPage() {
   return (
@@ -13,7 +13,7 @@ export default function DataGalleryPage() {
       <PageMasthead {...makeCardMastHeadProps(DATA_GALLERY_CARD_MASTHEAD)} />
       <Section>
         <div className="grid-row grid-gap">
-          {DATASETS.map(
+          {DATA.map(
             ({ id, contentType, title, description, thumbnailImage, categories, themes }) => (
               <div key={id} className="grid-col-12 margin-y-1 desktop:margin-y-2">
                 <CardDetailed

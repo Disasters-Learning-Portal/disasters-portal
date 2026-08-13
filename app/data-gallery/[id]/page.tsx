@@ -8,16 +8,16 @@ import {
   Section,
 } from "@/app/components";
 import { makeCardMastHeadProps } from "@/app/site-config/content.helpers";
-import { DATASETS } from "@/app/site-config/dataset";
+import { DATA } from "@/app/site-config/dataset";
 import { EVENTS } from "@/app/site-config/event";
 import { isInternalContent } from "@/app/site-config/typed.helpers";
 import { CONTENT_TYPES } from "@/app/site-config/types";
 
-export default async function DatasetItemPage(props: PageProps<"/data-gallery/[id]">) {
+export default async function DataItemPage(props: PageProps<"/data-gallery/[id]">) {
   const { id } = await props.params;
-  const dataset = DATASETS.filter(isInternalContent).find((d) => d.id === id);
+  const dataItem = DATA.filter(isInternalContent).find((d) => d.id === id);
 
-  if (!dataset) notFound();
+  if (!dataItem) notFound();
 
   const {
     contentType,
@@ -27,12 +27,12 @@ export default async function DatasetItemPage(props: PageProps<"/data-gallery/[i
     categories,
     body,
     relatedContent: relatedIds = [],
-  } = dataset;
+  } = dataItem;
 
   // TODO: Move to content helpers, and broaden to fit any content type use case
   // Can related content be of a different content type?
   const relatedItems = relatedIds.flatMap((relId) => {
-    const rel = DATASETS.find((d) => d.id === relId) || EVENTS.find((e) => e.id === relId);
+    const rel = DATA.find((d) => d.id === relId) || EVENTS.find((e) => e.id === relId);
     if (!rel) return [];
     return [
       {
@@ -62,7 +62,6 @@ export default async function DatasetItemPage(props: PageProps<"/data-gallery/[i
         <Section>
           <div className="grid-row grid-gap">
             <div className="grid-col-12 desktop:grid-col-3">
-              {/* TO DO: DatasetSidebar needs to be updated to a generic sidebar component */}
               <PageSidebar
                 contentType={contentType}
                 themes={themes}

@@ -1,8 +1,8 @@
-import type { DatasetContent } from "@/app/site-config/types";
+import type { DataContent } from "@/app/site-config/types";
 
-export const DATASET__SENTINEL_2_TRUE_COLOR: DatasetContent = {
+export const DATA__SENTINEL_2_TRUE_COLOR: DataContent = {
   id: "sentinel-2-true-color",
-  contentType: "dataset",
+  contentType: "data",
   title: "Sentinel-2 True Color Imagery",
   description:
     "The True Color RGB composite provides a product of how the surface would look to the naked eye from space.",

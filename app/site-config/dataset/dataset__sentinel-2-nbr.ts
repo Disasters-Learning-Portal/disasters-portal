@@ -1,8 +1,8 @@
-import type { DatasetContent } from "@/app/site-config/types";
+import type { DataContent } from "@/app/site-config/types";
 
-export const DATASET__SENTINEL_2_NBR: DatasetContent = {
+export const DATA__SENTINEL_2_NBR: DataContent = {
   id: "sentinel-2-nbr",
-  contentType: "dataset",
+  contentType: "data",
   title: "Sentinel-2 Normalized Burn Ratio (NBR)",
   description:
     "Normalized Burn Ratio (NBR) is defined mathematically as (NIR – SWIR)/(NIR + SWIR) where NIR is near-infrared and SWIR is short-wave infrared. NBR is commonly used as a proxy to indicate areas which have charred vegetation.",
