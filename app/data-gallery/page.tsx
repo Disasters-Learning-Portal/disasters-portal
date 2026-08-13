@@ -1,11 +1,11 @@
 import { CardDetailed } from "@teamimpact/veda-ui-blocks";
 import { PageMasthead, Section } from "@/app/components";
-import { DATA_GALLERY_CARD_MASTHEAD } from "@/app/site-config/dataset/toplevel-page__card-masthead";
+import { DATA_GALLERY_CARD_MASTHEAD } from "@/app/site-config/data/toplevel-page__card-masthead";
 import {
   makeCardDetailedImageLeftProps,
   makeCardMastHeadProps,
 } from "../site-config/content.helpers";
-import { DATA } from "../site-config/dataset";
+import { DATA } from "../site-config/data";
 
 export default function DataGalleryPage() {
   return (

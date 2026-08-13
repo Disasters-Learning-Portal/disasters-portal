@@ -1,18 +1,17 @@
 import type { DataContent } from "@/app/site-config/types";
 
-export const DATA__SENTINEL_2_TRUE_COLOR: DataContent = {
-  id: "sentinel-2-true-color",
+export const DATA__SENTINEL_2_SWIR: DataContent = {
+  id: "sentinel-2-swir",
   contentType: "data",
-  title: "Sentinel-2 True Color Imagery",
-  description:
-    "The True Color RGB composite provides a product of how the surface would look to the naked eye from space.",
+  title: "Sentinel-2 Shortwave Infrared Imagery",
+  description: "Created using SWIR, Near Infrared (NIR), and Red channels for flood detection.",
   thumbnailImage: {
-    src: "/img/dataset/sentinel-2-true-color.webp",
-    alt: "Sentinel-2 True Color imagery example",
+    src: "/img/data/sentinel-2-swir.webp",
+    alt: "Sentinel-2 Shortwave Infrared imagery example",
   },
   mastheadImage: {
-    src: "/img/dataset/sentinel-2-true-color.webp",
-    alt: "Sentinel-2 True Color imagery example",
+    src: "/img/data/sentinel-2-swir.webp",
+    alt: "Sentinel-2 Shortwave Infrared imagery example",
   },
   themes: ["respond", "build", "prepare", "recover"],
   categories: [
@@ -24,14 +23,14 @@ export const DATA__SENTINEL_2_TRUE_COLOR: DataContent = {
     "earthquake",
     "winter weather",
   ],
-  relatedContent: ["sentinel-2-color-infrared", "sentinel-2-swir"],
+  relatedContent: ["sentinel-2-true-color", "sentinel-2-color-infrared"],
   body: [
     {
       type: "text",
       heading: "Summary",
       headingLevel: "h3",
       paragraphs: [
-        "The True Color RGB composite provides a product of how the surface would look to the naked eye from space. The RGB is created using the red, green, and blue channels of the respective instrument.",
+        "The Short Wave Infrared (SWIR) RGB is a product that is created using the SWIR, Near Infrared (NIR), and Red channels of the respective instrument.",
       ],
     },
     {
@@ -39,7 +38,7 @@ export const DATA__SENTINEL_2_TRUE_COLOR: DataContent = {
       heading: "Suggested Use",
       headingLevel: "h3",
       paragraphs: [
-        "The True Color RGB provides a product of how the surface would look to the naked eye from space. The True Color RGB is produced using the 3 visible wavelength bands (red, green, and blue) from the respective sensor. Some minor atmospheric corrections have occurred.",
+        "The Short Wave Infrared (SWIR) RGB is a product that can provide value in flood detection. Areas of water will appear blue, healthy green vegetation will appear as a bright green, urban areas in various shades of magenta, snow will appear as a bright blue/cyan, and bare soils being multicolor dependent on their makeup.",
       ],
     },
     {
@@ -54,7 +53,7 @@ export const DATA__SENTINEL_2_TRUE_COLOR: DataContent = {
       type: "text",
       heading: "Resolution",
       headingLevel: "h3",
-      paragraphs: ["10 meters"],
+      paragraphs: ["20 meters"],
     },
     {
       type: "text",

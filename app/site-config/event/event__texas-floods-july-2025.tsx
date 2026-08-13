@@ -1,7 +1,7 @@
 import { CARTO_DARK_WITH_LABELS_BASEMAP_STYLE, Link } from "@teamimpact/veda-ui-blocks";
 import { Fragment } from "react";
 import type { EventContent } from "@/app/site-config/types";
-import { DATA } from "../dataset";
+import { DATA } from "../data";
 import { TRAINING__EO_BUILDING_EXPOSURE } from "../training/training__eo-building-exposure";
 import { TRAINING__FUNDAMENTALS_REMOTE_SENSING } from "../training/training__fundamentals-remote-sensing";
 import { TRAINING__INTRODUCTION_TO_SAR } from "../training/training__introduction-to-sar";

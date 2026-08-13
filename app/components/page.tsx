@@ -14,7 +14,7 @@ import {
   makeCardDetailedImageLeftProps,
   makeCardSimpleProps,
 } from "../site-config/content.helpers";
-import { DATA } from "../site-config/dataset";
+import { DATA } from "../site-config/data";
 import { DATASTORIES } from "../site-config/datastory";
 import { EVENTS } from "../site-config/event";
 import { transformEventToCardMiniProps } from "../site-config/event/event.helpers";

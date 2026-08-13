@@ -1,17 +1,18 @@
 import type { DataContent } from "@/app/site-config/types";
 
-export const DATA__SENTINEL_2_SWIR: DataContent = {
-  id: "sentinel-2-swir",
+export const DATA__SENTINEL_2_COLOR_INFRARED: DataContent = {
+  id: "sentinel-2-color-infrared",
   contentType: "data",
-  title: "Sentinel-2 Shortwave Infrared Imagery",
-  description: "Created using SWIR, Near Infrared (NIR), and Red channels for flood detection.",
+  title: "Sentinel-2 Color Infrared Imagery",
+  description:
+    "Created using near-infrared, red, and green channels to see areas impacted by floods, fires, or other hazards.",
   thumbnailImage: {
-    src: "/img/dataset/sentinel-2-swir.webp",
-    alt: "Sentinel-2 Shortwave Infrared imagery example",
+    src: "/img/data/sentinel-2-color-infrared.webp",
+    alt: "Sentinel-2 Color Infrared imagery example",
   },
   mastheadImage: {
-    src: "/img/dataset/sentinel-2-swir.webp",
-    alt: "Sentinel-2 Shortwave Infrared imagery example",
+    src: "/img/data/sentinel-2-color-infrared.webp",
+    alt: "Sentinel-2 Color Infrared imagery example",
   },
   themes: ["respond", "build", "prepare", "recover"],
   categories: [
@@ -23,14 +24,14 @@ export const DATA__SENTINEL_2_SWIR: DataContent = {
     "earthquake",
     "winter weather",
   ],
-  relatedContent: ["sentinel-2-true-color", "sentinel-2-color-infrared"],
+  relatedContent: ["sentinel-2-true-color", "sentinel-2-swir"],
   body: [
     {
       type: "text",
       heading: "Summary",
       headingLevel: "h3",
       paragraphs: [
-        "The Short Wave Infrared (SWIR) RGB is a product that is created using the SWIR, Near Infrared (NIR), and Red channels of the respective instrument.",
+        "The Color Infrared composite is created using the near-infrared, red, and green channels, allowing for the ability to see areas impacted by floods, fires, or other hazards in conditions with light clouds or smoke. The near infrared gives the ability to see through thin clouds. Healthy vegetation is shown as red; water is blue; burned areas are black.",
       ],
     },
     {
@@ -38,7 +39,7 @@ export const DATA__SENTINEL_2_SWIR: DataContent = {
       heading: "Suggested Use",
       headingLevel: "h3",
       paragraphs: [
-        "The Short Wave Infrared (SWIR) RGB is a product that can provide value in flood detection. Areas of water will appear blue, healthy green vegetation will appear as a bright green, urban areas in various shades of magenta, snow will appear as a bright blue/cyan, and bare soils being multicolor dependent on their makeup.",
+        "A Color Infrared composite depicts healthy vegetation as red, water as blue. Some minor atmospheric corrections have occurred.",
       ],
     },
     {
@@ -53,7 +54,7 @@ export const DATA__SENTINEL_2_SWIR: DataContent = {
       type: "text",
       heading: "Resolution",
       headingLevel: "h3",
-      paragraphs: ["20 meters"],
+      paragraphs: ["10 meters"],
     },
     {
       type: "text",

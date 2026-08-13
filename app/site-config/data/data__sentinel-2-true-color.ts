@@ -1,18 +1,18 @@
 import type { DataContent } from "@/app/site-config/types";
 
-export const DATA__SENTINEL_2_COLOR_INFRARED: DataContent = {
-  id: "sentinel-2-color-infrared",
+export const DATA__SENTINEL_2_TRUE_COLOR: DataContent = {
+  id: "sentinel-2-true-color",
   contentType: "data",
-  title: "Sentinel-2 Color Infrared Imagery",
+  title: "Sentinel-2 True Color Imagery",
   description:
-    "Created using near-infrared, red, and green channels to see areas impacted by floods, fires, or other hazards.",
+    "The True Color RGB composite provides a product of how the surface would look to the naked eye from space.",
   thumbnailImage: {
-    src: "/img/dataset/sentinel-2-color-infrared.webp",
-    alt: "Sentinel-2 Color Infrared imagery example",
+    src: "/img/data/sentinel-2-true-color.webp",
+    alt: "Sentinel-2 True Color imagery example",
   },
   mastheadImage: {
-    src: "/img/dataset/sentinel-2-color-infrared.webp",
-    alt: "Sentinel-2 Color Infrared imagery example",
+    src: "/img/data/sentinel-2-true-color.webp",
+    alt: "Sentinel-2 True Color imagery example",
   },
   themes: ["respond", "build", "prepare", "recover"],
   categories: [
@@ -24,14 +24,14 @@ export const DATA__SENTINEL_2_COLOR_INFRARED: DataContent = {
     "earthquake",
     "winter weather",
   ],
-  relatedContent: ["sentinel-2-true-color", "sentinel-2-swir"],
+  relatedContent: ["sentinel-2-color-infrared", "sentinel-2-swir"],
   body: [
     {
       type: "text",
       heading: "Summary",
       headingLevel: "h3",
       paragraphs: [
-        "The Color Infrared composite is created using the near-infrared, red, and green channels, allowing for the ability to see areas impacted by floods, fires, or other hazards in conditions with light clouds or smoke. The near infrared gives the ability to see through thin clouds. Healthy vegetation is shown as red; water is blue; burned areas are black.",
+        "The True Color RGB composite provides a product of how the surface would look to the naked eye from space. The RGB is created using the red, green, and blue channels of the respective instrument.",
       ],
     },
     {
@@ -39,7 +39,7 @@ export const DATA__SENTINEL_2_COLOR_INFRARED: DataContent = {
       heading: "Suggested Use",
       headingLevel: "h3",
       paragraphs: [
-        "A Color Infrared composite depicts healthy vegetation as red, water as blue. Some minor atmospheric corrections have occurred.",
+        "The True Color RGB provides a product of how the surface would look to the naked eye from space. The True Color RGB is produced using the 3 visible wavelength bands (red, green, and blue) from the respective sensor. Some minor atmospheric corrections have occurred.",
       ],
     },
     {

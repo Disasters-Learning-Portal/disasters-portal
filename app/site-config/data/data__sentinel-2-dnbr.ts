@@ -7,11 +7,11 @@ export const DATA__SENTINEL_2_DNBR: DataContent = {
   description:
     "Differenced Normalized Burn Ratio (dNBR) is computed by the difference between the pre-fire NBR and the post-fire NBR. ",
   thumbnailImage: {
-    src: "/img/dataset/sentinel-2-dnbr.webp",
+    src: "/img/data/sentinel-2-dnbr.webp",
     alt: "Sentinel-2 Differenced Normalized Burn Ratio (dNBR)",
   },
   mastheadImage: {
-    src: "/img/dataset/sentinel-2-dnbr.webp",
+    src: "/img/data/sentinel-2-dnbr.webp",
     alt: "Sentinel-2 Differenced Normalized Burn Ratio (dNBR)",
   },
   themes: ["respond", "recover"],

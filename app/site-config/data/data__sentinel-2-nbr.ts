@@ -7,11 +7,11 @@ export const DATA__SENTINEL_2_NBR: DataContent = {
   description:
     "Normalized Burn Ratio (NBR) is defined mathematically as (NIR – SWIR)/(NIR + SWIR) where NIR is near-infrared and SWIR is short-wave infrared. NBR is commonly used as a proxy to indicate areas which have charred vegetation.",
   thumbnailImage: {
-    src: "/img/dataset/sentinel-2-nbr.webp",
+    src: "/img/data/sentinel-2-nbr.webp",
     alt: "Sentinel-2 Normalized Burn Ratio (NBR)",
   },
   mastheadImage: {
-    src: "/img/dataset/sentinel-2-nbr.webp",
+    src: "/img/data/sentinel-2-nbr.webp",
     alt: "Sentinel-2 Normalized Burn Ratio (NBR)",
   },
   themes: ["respond", "recover"],

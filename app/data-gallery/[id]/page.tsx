@@ -8,7 +8,7 @@ import {
   Section,
 } from "@/app/components";
 import { makeCardMastHeadProps } from "@/app/site-config/content.helpers";
-import { DATA } from "@/app/site-config/dataset";
+import { DATA } from "@/app/site-config/data";
 import { EVENTS } from "@/app/site-config/event";
 import { isInternalContent } from "@/app/site-config/typed.helpers";
 import { CONTENT_TYPES } from "@/app/site-config/types";
