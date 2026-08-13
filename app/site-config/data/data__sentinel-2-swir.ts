@@ -1,16 +1,16 @@
-import type { DatasetContent } from "@/app/site-config/types";
+import type { DataContent } from "@/app/site-config/types";
 
-export const DATASET__SENTINEL_2_SWIR: DatasetContent = {
+export const DATA__SENTINEL_2_SWIR: DataContent = {
   id: "sentinel-2-swir",
-  contentType: "dataset",
+  contentType: "data",
   title: "Sentinel-2 Shortwave Infrared Imagery",
   description: "Created using SWIR, Near Infrared (NIR), and Red channels for flood detection.",
   thumbnailImage: {
-    src: "/img/dataset/sentinel-2-swir.webp",
+    src: "/img/data/sentinel-2-swir.webp",
     alt: "Sentinel-2 Shortwave Infrared imagery example",
   },
   mastheadImage: {
-    src: "/img/dataset/sentinel-2-swir.webp",
+    src: "/img/data/sentinel-2-swir.webp",
     alt: "Sentinel-2 Shortwave Infrared imagery example",
   },
   themes: ["respond", "build", "prepare", "recover"],

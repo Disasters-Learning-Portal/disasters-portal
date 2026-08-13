@@ -1,7 +1,7 @@
 import { Link } from "@teamimpact/veda-ui-blocks";
 import { Fragment } from "react/jsx-runtime";
 import type { EventContent } from "@/app/site-config/types";
-import { DATASETS } from "../dataset";
+import { DATA } from "../data";
 
 export const EVENT__TYPHOON_SINLAKU_2026: EventContent = {
   id: "typhoon-sinlaku-2026",
@@ -51,8 +51,8 @@ export const EVENT__TYPHOON_SINLAKU_2026: EventContent = {
     },
     {
       type: "sectionCardGallery",
-      heading: "Product Gallery",
-      cards: DATASETS,
+      heading: "Related Data",
+      cards: DATA,
     },
   ],
 };

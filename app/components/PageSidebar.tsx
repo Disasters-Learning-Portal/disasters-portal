@@ -5,6 +5,7 @@ import { ThemeTag } from "@/app/components";
 import {
   type Category,
   CONTENT_SIDEBAR_CONTENT_TYPES,
+  CONTENT_TYPES,
   type ContentType,
   type Theme,
 } from "@/app/site-config/types";
@@ -27,7 +28,7 @@ export function PageSidebar({
         // Begin section on themes, categories, related content
         CONTENT_SIDEBAR_CONTENT_TYPES.includes(contentType) && (
           <div className="bg-base-lightest padding-4 margin-bottom-4">
-            {contentType === "dataset" && (
+            {contentType === "data" && (
               <div className="margin-bottom-3">
                 <button type="button" className="usa-button width-full">
                   View Data
@@ -39,7 +40,7 @@ export function PageSidebar({
               <MetaGroup label="Type">
                 <div className="margin-right-1 margin-bottom-1">
                   <Tag color="primary-lighter" textColor="primary-dark">
-                    {contentType}
+                    {CONTENT_TYPES[contentType].label}
                   </Tag>
                 </div>
               </MetaGroup>

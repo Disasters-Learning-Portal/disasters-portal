@@ -14,7 +14,7 @@ import {
   makeCardDetailedImageLeftProps,
   makeCardSimpleProps,
 } from "../site-config/content.helpers";
-import { DATASETS } from "../site-config/dataset";
+import { DATA } from "../site-config/data";
 import { DATASTORIES } from "../site-config/datastory";
 import { EVENTS } from "../site-config/event";
 import { transformEventToCardMiniProps } from "../site-config/event/event.helpers";
@@ -97,7 +97,7 @@ export default function ComponentsPage() {
 
       <SectionCardDetailed
         sectionHeading={<SectionHeading>SectionCardDetailed Component</SectionHeading>}
-        cards={DATASETS.map(
+        cards={DATA.map(
           ({ id, contentType, title, description, thumbnailImage, categories, themes }) =>
             makeCardDetailedImageLeftProps({
               id,
@@ -112,7 +112,7 @@ export default function ComponentsPage() {
         <code className="bg-base-lighter font-code-xs">
           {`<SectionCardDetailed
               sectionHeading={<SectionHeading>SectionCardDetailed Component</SectionHeading>}
-              cards={DATASETS.map((dataset) => makeCardDetailedImageLeftProps({ ...dataset }))}
+              cards={DATA.map((dataItem) => makeCardDetailedImageLeftProps({ ...dataItem }))}
             />`}
         </code>
       </SectionCardDetailed>

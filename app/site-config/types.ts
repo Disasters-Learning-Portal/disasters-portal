@@ -12,11 +12,11 @@ import type {
 } from "@/app/site-config/content.helpers";
 
 export const CONTENT_TYPES: Record<ContentType, { route: AppRoutes; label: string }> = {
-  dataset: { route: "/data-gallery", label: "product" },
+  data: { route: "/data-gallery", label: "data" },
   event: { route: "/news-events", label: "event" },
   news: { route: "/news-events", label: "news" },
   story: { route: "/news-events", label: "story" },
-  datastory: { route: "/news-events", label: "Data Story" },
+  datastory: { route: "/news-events", label: "data story" },
   training: { route: "/training", label: "training" },
 };
 
@@ -43,7 +43,7 @@ export const CONTENT_THEMES: Record<Theme, { label: string; color: string; textC
 };
 
 export const CONTENT_SIDEBAR_CONTENT_TYPES: ContentType[] = [
-  "dataset",
+  "data",
   "story",
   "datastory",
   "training",
@@ -132,7 +132,7 @@ export type ContentBlock =
 type Content =
   | TrainingContent
   | TrainingContentExternal
-  | DatasetContent
+  | DataContent
   | DataStoryContent
   | DataStoryContentExternal
   | StoryContent
@@ -169,8 +169,8 @@ export type TrainingContent = Omit<MinimumCardContent, "contentType"> & {
   relatedContent?: string[];
 };
 
-export type DatasetContent = Omit<MinimumCardContent, "contentType"> & {
-  contentType: "dataset";
+export type DataContent = Omit<MinimumCardContent, "contentType"> & {
+  contentType: "data";
   mastheadImage: MastheadImage;
   body?: ContentBlock[];
   relatedContent?: string[];
