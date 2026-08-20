@@ -1,11 +1,13 @@
 import { Link, Tag } from "@teamimpact/veda-ui-blocks";
 import type { ReactNode } from "react";
-
+import {
+  makeContentTypeTagProps,
+  makeSimpleTagProps,
+  makeThemeTagProps,
+} from "@/app/site-config/content.helpers";
 import {
   type Category,
   CONTENT_SIDEBAR_CONTENT_TYPES,
-  CONTENT_THEMES,
-  CONTENT_TYPES,
   type ContentType,
   type Theme,
 } from "@/app/site-config/types";
@@ -39,7 +41,7 @@ export function PageSidebar({
             <div className="border-top border-base-lighter padding-top-3 margin-bottom-3">
               <MetaGroup label="Type">
                 <div className="margin-right-1 margin-bottom-1">
-                  <Tag>{CONTENT_TYPES[contentType].label}</Tag>
+                  <Tag {...makeContentTypeTagProps(contentType)} />
                 </div>
               </MetaGroup>
 
@@ -47,12 +49,7 @@ export function PageSidebar({
                 <MetaGroup label="Theme">
                   {themes.map((theme) => (
                     <div key={theme} className="margin-right-1 margin-bottom-1">
-                      <Tag
-                        color={CONTENT_THEMES[theme].color}
-                        textColor={CONTENT_THEMES[theme].textColor}
-                      >
-                        {CONTENT_THEMES[theme].label}
-                      </Tag>
+                      <Tag {...makeThemeTagProps(theme)} />
                     </div>
                   ))}
                 </MetaGroup>
@@ -62,7 +59,7 @@ export function PageSidebar({
                 <MetaGroup label="Hazard">
                   {categories.map((category) => (
                     <div key={category} className="margin-right-1 margin-bottom-1">
-                      <Tag>{category}</Tag>
+                      <Tag {...makeSimpleTagProps(category)} />
                     </div>
                   ))}
                 </MetaGroup>
@@ -114,14 +111,12 @@ function RelatedContentItem({ item }: { item: RelatedItem }) {
       <div className="display-flex flex-wrap">
         {item.themes.map((theme) => (
           <div key={theme} className="margin-right-1 margin-bottom-1">
-            <Tag color={CONTENT_THEMES[theme].color} textColor={CONTENT_THEMES[theme].textColor}>
-              {CONTENT_THEMES[theme].label}
-            </Tag>
+            <Tag {...makeThemeTagProps(theme)} />
           </div>
         ))}
         {item.categories.map((category) => (
           <div key={category} className="margin-right-1 margin-bottom-1">
-            <Tag>{category}</Tag>
+            <Tag {...makeSimpleTagProps(category)} />
           </div>
         ))}
       </div>

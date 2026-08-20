@@ -14,7 +14,7 @@ import {
   type Theme,
 } from "@/app/site-config/types";
 
-export const makeSimpleTagProps = (tag: Theme | ContentType | Category) => ({
+export const makeSimpleTagProps = (tag: string) => ({
   variant: "solid" as const,
   children: tag,
 });

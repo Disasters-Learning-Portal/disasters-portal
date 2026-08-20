@@ -13,13 +13,14 @@ import {
   makeCardCarouselProps,
   makeCardDetailedImageLeftProps,
   makeCardSimpleProps,
+  makeThemeTagProps,
 } from "../site-config/content.helpers";
 import { DATA } from "../site-config/data";
 import { DATASTORIES } from "../site-config/datastory";
 import { EVENTS } from "../site-config/event";
 import { transformEventToCardMiniProps } from "../site-config/event/event.helpers";
 import { NEWS_EVENTS_CARDS } from "../site-config/home/home-sectioncardmosaic-news-events";
-import { typedMap } from "../site-config/typed.helpers";
+import { getTypedEntries, typedMap } from "../site-config/typed.helpers";
 
 const MOCK_EVENT_CARDS: [EventContent, EventContent, EventContent, EventContent] = [
   EVENTS[0],
@@ -173,15 +174,11 @@ export default function ComponentsPage() {
       <Section>
         <SectionHeading>ThemeTag</SectionHeading>
         <div className="grid-row margin-bottom-2">
-          <code className="font-code-xs display-block bg-base-lighter margin-y-1">{`<Tag color={CONTENT_THEMES[<theme>].color} textColor={CONTENT_THEMES[<theme>].textColor}>
-                {CONTENT_THEMES[<theme>].label}
-              </Tag>`}</code>
+          <code className="font-code-xs display-block bg-base-lighter margin-y-1">{`<Tag {...makeThemeTagProps(theme)} />`}</code>
         </div>
-        {Object.entries(CONTENT_THEMES).map(([_themeKey, { label, color, textColor }]) => (
-          <div key={label} className="grid-row flex-align-center margin-bottom-2">
-            <Tag color={color} textColor={textColor}>
-              {label}
-            </Tag>
+        {getTypedEntries(CONTENT_THEMES).map(([theme, _]) => (
+          <div key={theme} className="grid-row flex-align-center margin-bottom-2">
+            <Tag {...makeThemeTagProps(theme)} />
           </div>
         ))}
       </Section>
