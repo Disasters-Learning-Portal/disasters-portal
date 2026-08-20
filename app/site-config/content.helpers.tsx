@@ -14,6 +14,11 @@ import {
   type Theme,
 } from "@/app/site-config/types";
 
+const makeSimpleTagProps = (tag: Theme | ContentType | Category) => ({
+  variant: "solid" as const,
+  label: tag,
+});
+
 const makeThemeTagProps = (tag: Theme) => {
   const { label, color, textColor } = CONTENT_THEMES[tag];
   return { variant: "solid" as const, color, textColor, label };
@@ -26,11 +31,6 @@ const makeContentTypeTagProps = (tag: ContentType) => {
     label,
   };
 };
-
-const makeSimpleTagProps = (tag: Theme | ContentType | Category) => ({
-  variant: "solid" as const,
-  label: tag,
-});
 
 export type CardMastheadPropsArgs = Omit<
   CardProps,
