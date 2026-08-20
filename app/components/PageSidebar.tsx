@@ -39,9 +39,7 @@ export function PageSidebar({
             <div className="border-top border-base-lighter padding-top-3 margin-bottom-3">
               <MetaGroup label="Type">
                 <div className="margin-right-1 margin-bottom-1">
-                  <Tag color="primary-lighter" textColor="primary-dark">
-                    {CONTENT_TYPES[contentType].label}
-                  </Tag>
+                  <Tag>{CONTENT_TYPES[contentType].label}</Tag>
                 </div>
               </MetaGroup>
 
@@ -123,9 +121,7 @@ function RelatedContentItem({ item }: { item: RelatedItem }) {
         ))}
         {item.categories.map((category) => (
           <div key={category} className="margin-right-1 margin-bottom-1">
-            <Tag color="primary-lighter" textColor="primary-dark">
-              {category}
-            </Tag>
+            <Tag>{category}</Tag>
           </div>
         ))}
       </div>
