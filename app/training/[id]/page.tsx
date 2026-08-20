@@ -1,98 +1,62 @@
-import { Card, Tag } from "@teamimpact/veda-ui-blocks";
-import Image from "next/image";
 import { notFound } from "next/navigation";
-
-import { ContentBlockRenderer, PageStatus, Section } from "@/app/components";
 import {
+  ContentBlockRenderer,
+  PageMasthead,
+  PageSidebar,
+  PageStatus,
+  Section,
+} from "@/app/components";
+import {
+  makeCardMastHeadProps,
   makeSimpleTagProps,
-  makeThemeTagProps,
   toLongDate,
 } from "@/app/site-config/content.helpers";
+
 import { TRAININGS } from "@/app/site-config/training";
 import { isInternalContent } from "@/app/site-config/typed.helpers";
 
 export default async function TrainingItemPage(props: PageProps<"/training/[id]">) {
   const { id } = await props.params;
-  const training = TRAININGS.filter(isInternalContent).find((t) => t.id === id);
+  const contentItem = TRAININGS.filter(isInternalContent).find((t) => t.id === id);
 
-  if (!training) notFound();
+  if (!contentItem) notFound();
+
+  const { contentType, date, mastheadImage, title, themes, categories, body } = contentItem;
 
   return (
     <>
       {/* Hero */}
-      <Section>
-        <Card
-          image={
-            <Image
-              src={training.mastheadImage.src}
-              alt={training.mastheadImage.alt}
-              fill
-              preload={true}
-              sizes="(max-width: 1400px) 100vw, 1400px"
-            />
-          }
-          imagePosition="cover"
-          className="minh-masthead"
-        />
-
-        {/* Full-width title and date */}
-        <h1 className="font-heading-2xl margin-bottom-2">{training.title}</h1>
-        <Tag {...makeSimpleTagProps(`Updated: ${toLongDate(training.date)}`)} />
-      </Section>
+      <PageMasthead
+        {...makeCardMastHeadProps({ mastheadImage, title })}
+        tag={(({ children: label, ...rest }) => ({ label, ...rest }))(
+          makeSimpleTagProps(`Updated ${toLongDate(date)}`),
+        )}
+      />
 
       {/* Placeholder content only */}
-      {!training.body && (
+      {!body && (
         <PageStatus
           heading="Under Development"
           description="The page you're looking for is under development."
         />
       )}
 
-      {/* Content */}
-      {training.body && (
-        <Section>
-          <div className="grid-row grid-gap">
-            {/* Sidebar */}
-            <div className="grid-col-12 desktop:grid-col-3">
-              <aside className="bg-base-lightest padding-4 margin-bottom-4">
-                {training.themes.length > 0 && (
-                  <div className="margin-bottom-3">
-                    <p className="text-bold font-body-sm margin-top-0 margin-bottom-2">Theme</p>
-                    <div className="display-flex flex-wrap grid-gap-sm">
-                      {training.themes.map((theme) => (
-                        <div key={theme} className="margin-right-1 margin-bottom-1">
-                          <Tag key={theme} {...makeThemeTagProps(theme)} />
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
-
-                {training.categories.length > 0 && (
-                  <div className="margin-bottom-3">
-                    <p className="text-bold font-body-sm margin-top-0 margin-bottom-2">Hazard</p>
-                    <div className="display-flex flex-wrap">
-                      {training.categories.map((category) => (
-                        <div key={category} className="margin-right-1 margin-bottom-1">
-                          <Tag {...makeSimpleTagProps(category)} />
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </aside>
-            </div>
-
-            {/* Main content */}
-            <div className="grid-col-12 desktop:grid-col-9 margin-top-neg-7">
-              {training.body?.map((block, i) => (
-                // biome-ignore lint/suspicious/noArrayIndexKey: static content blocks, never reorder
-                <ContentBlockRenderer key={i} block={block} isMultiColumnLayout />
-              ))}
-            </div>
+      <Section>
+        <div className="grid-row grid-gap">
+          {/* Sidebar */}
+          <div className="grid-col-12 desktop:grid-col-3">
+            <PageSidebar contentType={contentType} themes={themes} categories={categories} />
           </div>
-        </Section>
-      )}
+
+          {/* Content */}
+          <div className="grid-col-12 desktop:grid-col-9 margin-top-neg-7">
+            {contentItem.body?.map((block, i) => (
+              // biome-ignore lint/suspicious/noArrayIndexKey: static content blocks, never reorder
+              <ContentBlockRenderer key={i} block={block} isMultiColumnLayout />
+            ))}
+          </div>
+        </div>
+      </Section>
     </>
   );
 }
