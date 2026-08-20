@@ -14,21 +14,21 @@ import {
   type Theme,
 } from "@/app/site-config/types";
 
-const makeSimpleTagProps = (tag: Theme | ContentType | Category) => ({
+export const makeSimpleTagProps = (tag: Theme | ContentType | Category) => ({
   variant: "solid" as const,
-  label: tag,
+  children: tag,
 });
 
-const makeThemeTagProps = (tag: Theme) => {
+export const makeThemeTagProps = (tag: Theme) => {
   const { label, color, textColor } = CONTENT_THEMES[tag];
-  return { variant: "solid" as const, color, textColor, label };
+  return { variant: "solid" as const, color, textColor, children: label };
 };
 
-const makeContentTypeTagProps = (tag: ContentType) => {
+export const makeContentTypeTagProps = (tag: ContentType) => {
   const { label } = CONTENT_TYPES[tag];
   return {
     variant: "solid" as const,
-    label,
+    children: label,
   };
 };
 
@@ -151,13 +151,14 @@ export const makeCardDetailedProps = ({
     />
   ),
   imagePosition: "top",
-  tags: tags
+  tags: (tags
     ? tags.map((t) => makeSimpleTagProps(t))
     : [
         ...(themes ?? []).map((t) => makeThemeTagProps(t)),
         ...(categories ?? []).map((c) => makeSimpleTagProps(c)),
         makeContentTypeTagProps(contentType),
-      ],
+      ]
+  ).map(({ children, ...rest }) => ({ label: children, ...rest })),
   callToAction: {
     href: url ? url : `${CONTENT_TYPES[contentType].route}/${id}`,
     label: `View ${toTitleCase(CONTENT_TYPES[contentType].label)}`,
@@ -179,13 +180,14 @@ export const makeCardDetailedImageLeftProps = ({
   id,
   image: <Image {...thumbnailImage} fill sizes="200px" />,
   imagePosition: "left",
-  tags: tags
+  tags: (tags
     ? tags.map((t) => makeSimpleTagProps(t))
     : [
         ...(themes ?? []).map((t) => makeThemeTagProps(t)),
         ...(categories ?? []).map((c) => makeSimpleTagProps(c)),
         makeContentTypeTagProps(contentType),
-      ],
+      ]
+  ).map(({ children, ...rest }) => ({ label: children, ...rest })),
   callToAction: {
     href: url ? url : `${CONTENT_TYPES[contentType].route}/${id}`,
     label: `View ${toTitleCase(CONTENT_TYPES[contentType].label)}`,
@@ -217,11 +219,13 @@ export const makeCardSimpleProps = ({
 }: CardSimplePropsArgs): IterableItemWithId<CardSimpleProps> => ({
   id,
   image: <Image {...thumbnailImage} fill sizes="(max-width: 1400px) 100vw, 1400px" />,
-  tag: tag // TODO update function to allow user to choose which tag should be rendered
-    ? makeSimpleTagProps(tag)
-    : themes?.[0]
-      ? makeThemeTagProps(themes[0])
-      : makeContentTypeTagProps(contentType),
+  tag: (({ children, ...rest }) => ({ label: children, ...rest }))(
+    tag
+      ? makeSimpleTagProps(tag)
+      : themes?.[0]
+        ? makeThemeTagProps(themes[0])
+        : makeContentTypeTagProps(contentType),
+  ),
   href: url ? url : `${CONTENT_TYPES[contentType].route}/${id}`,
   isExternal: !!url,
   ...rest,
@@ -276,7 +280,9 @@ export const makeCardCarouselProps = ({
       sizes="(max-width: 640px) 100vw, (max-width: 1400px) 50vw, 700px"
     />
   ),
-  tag: makeContentTypeTagProps(contentType),
+  tag: (({ children, ...rest }) => ({ label: children, ...rest }))(
+    makeContentTypeTagProps(contentType),
+  ),
   callToAction: {
     href: url ? url : `${CONTENT_TYPES[contentType].route}/${id}`,
     label: `View ${toTitleCase(CONTENT_TYPES[contentType].label)}`,
