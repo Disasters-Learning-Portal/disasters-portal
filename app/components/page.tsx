@@ -8,19 +8,19 @@ import {
   SectionCardSimpleMosaic,
   SectionHeading,
 } from "@/app/components/";
-import { CONTENT_THEMES, type EventContent } from "@/app/site-config/types";
 import {
   makeCardCarouselProps,
   makeCardDetailedImageLeftProps,
   makeCardSimpleProps,
   makeThemeTagProps,
-} from "../site-config/content.helpers";
-import { DATA } from "../site-config/data";
-import { DATASTORIES } from "../site-config/datastory";
-import { EVENTS } from "../site-config/event";
-import { transformEventToCardMiniProps } from "../site-config/event/event.helpers";
-import { NEWS_EVENTS_CARDS } from "../site-config/home/home-sectioncardmosaic-news-events";
-import { getTypedEntries, typedMap } from "../site-config/typed.helpers";
+} from "@/app/site-config/content.helpers";
+import { DATA } from "@/app/site-config/data";
+import { DATASTORIES } from "@/app/site-config/datastory";
+import { EVENTS } from "@/app/site-config/event";
+import { transformEventToCardMiniProps } from "@/app/site-config/event/event.helpers";
+import { NEWS_EVENTS_CARDS } from "@/app/site-config/home/home-sectioncardmosaic-news-events";
+import { getTypedEntries, typedMap } from "@/app/site-config/typed.helpers";
+import { CONTENT_THEMES, type EventContent } from "@/app/site-config/types";
 
 const MOCK_EVENT_CARDS: [EventContent, EventContent, EventContent, EventContent] = [
   EVENTS[0],

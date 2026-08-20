@@ -1,4 +1,4 @@
-import type { StoryContent } from "../types";
+import type { StoryContent } from "@/app/site-config/types";
 
 export const STORY__TRACKING_TORNADOES_FROM_SPACE: StoryContent = {
   id: "tracking-tornadoes-from-space",

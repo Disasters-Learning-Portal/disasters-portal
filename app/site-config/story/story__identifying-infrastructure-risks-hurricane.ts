@@ -1,4 +1,4 @@
-import type { StoryContent } from "../types";
+import type { StoryContent } from "@/app/site-config/types";
 
 export const STORY__IDENTIFYING_INFRASTRUCTURE_RISKS_HURRICANE: StoryContent = {
   id: "identifying-infrastructure-risks-hurricane",

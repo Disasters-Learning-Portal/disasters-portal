@@ -1,10 +1,10 @@
 import { CARTO_DARK_WITH_LABELS_BASEMAP_STYLE, Link } from "@teamimpact/veda-ui-blocks";
 import { Fragment } from "react";
+import { DATA } from "@/app/site-config/data";
+import { TRAINING__EO_BUILDING_EXPOSURE } from "@/app/site-config/training/training__eo-building-exposure";
+import { TRAINING__FUNDAMENTALS_REMOTE_SENSING } from "@/app/site-config/training/training__fundamentals-remote-sensing";
+import { TRAINING__INTRODUCTION_TO_SAR } from "@/app/site-config/training/training__introduction-to-sar";
 import type { EventContent } from "@/app/site-config/types";
-import { DATA } from "../data";
-import { TRAINING__EO_BUILDING_EXPOSURE } from "../training/training__eo-building-exposure";
-import { TRAINING__FUNDAMENTALS_REMOTE_SENSING } from "../training/training__fundamentals-remote-sensing";
-import { TRAINING__INTRODUCTION_TO_SAR } from "../training/training__introduction-to-sar";
 
 export const EVENT__TEXAS_FLOODS_JULY_2025: EventContent = {
   id: "texas-floods-july-2025",

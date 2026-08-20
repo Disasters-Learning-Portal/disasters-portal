@@ -1,4 +1,4 @@
-import type { StoryContent } from "../types";
+import type { StoryContent } from "@/app/site-config/types";
 
 export const STORY__MAPPING_OIL_SPILLS_FROM_SPACE: StoryContent = {
   id: "mapping_oil_spills_from_space",

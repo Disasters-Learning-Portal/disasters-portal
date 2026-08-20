@@ -1,7 +1,7 @@
 import { Link } from "@teamimpact/veda-ui-blocks";
 import { Fragment } from "react/jsx-runtime";
+import { DATA } from "@/app/site-config/data";
 import type { EventContent } from "@/app/site-config/types";
-import { DATA } from "../data";
 
 export const EVENT__TYPHOON_SINLAKU_2026: EventContent = {
   id: "typhoon-sinlaku-2026",
