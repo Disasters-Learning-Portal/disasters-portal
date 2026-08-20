@@ -2,10 +2,11 @@ import { Card, Tag } from "@teamimpact/veda-ui-blocks";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
-import { ContentBlockRenderer, PageStatus, Section, ThemeTag } from "@/app/components";
+import { ContentBlockRenderer, PageStatus, Section } from "@/app/components";
 import { toLongDate } from "@/app/site-config/content.helpers";
 import { TRAININGS } from "@/app/site-config/training";
 import { isInternalContent } from "@/app/site-config/typed.helpers";
+import { CONTENT_THEMES } from "@/app/site-config/types";
 
 export default async function TrainingItemPage(props: PageProps<"/training/[id]">) {
   const { id } = await props.params;
@@ -59,7 +60,13 @@ export default async function TrainingItemPage(props: PageProps<"/training/[id]"
                     <div className="display-flex flex-wrap grid-gap-sm">
                       {training.themes.map((theme) => (
                         <div key={theme} className="margin-right-1 margin-bottom-1">
-                          <ThemeTag key={theme} theme={theme} />
+                          <Tag
+                            key={theme}
+                            color={CONTENT_THEMES[theme].color}
+                            textColor={CONTENT_THEMES[theme].textColor}
+                          >
+                            {CONTENT_THEMES[theme].label}
+                          </Tag>
                         </div>
                       ))}
                     </div>
@@ -72,9 +79,7 @@ export default async function TrainingItemPage(props: PageProps<"/training/[id]"
                     <div className="display-flex flex-wrap">
                       {training.categories.map((category) => (
                         <div key={category} className="margin-right-1 margin-bottom-1">
-                          <Tag color="primary-lighter" textColor="primary-dark">
-                            {category}
-                          </Tag>
+                          <Tag>{category}</Tag>
                         </div>
                       ))}
                     </div>

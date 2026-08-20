@@ -1,3 +1,4 @@
+import { Tag } from "@teamimpact/veda-ui-blocks";
 import {
   Section,
   SectionCardCarousel,
@@ -6,9 +7,8 @@ import {
   SectionCardSimple,
   SectionCardSimpleMosaic,
   SectionHeading,
-  ThemeTag,
 } from "@/app/components/";
-import type { EventContent } from "@/app/site-config/types";
+import { CONTENT_THEMES, type EventContent } from "@/app/site-config/types";
 import {
   makeCardCarouselProps,
   makeCardDetailedImageLeftProps,
@@ -172,38 +172,18 @@ export default function ComponentsPage() {
 
       <Section>
         <SectionHeading>ThemeTag</SectionHeading>
-        <div className="grid-row grid-gap-2 flex-align-center">
-          <div className="grid-cell">
-            <ThemeTag theme="respond" />
-          </div>
-          <div className="grid-cell">
-            <code className="font-code-xs display-block bg-base-lighter margin-y-1">{`<ThemeTag theme="respond" />`}</code>
-          </div>
+        <div className="grid-row margin-bottom-2">
+          <code className="font-code-xs display-block bg-base-lighter margin-y-1">{`<Tag color={CONTENT_THEMES[<theme>].color} textColor={CONTENT_THEMES[<theme>].textColor}>
+                {CONTENT_THEMES[<theme>].label}
+              </Tag>`}</code>
         </div>
-        <div className="grid-row grid-gap-2 flex-align-center">
-          <div className="grid-cell">
-            <ThemeTag theme="build" />
+        {Object.entries(CONTENT_THEMES).map(([_themeKey, { label, color, textColor }]) => (
+          <div key={label} className="grid-row flex-align-center margin-bottom-2">
+            <Tag color={color} textColor={textColor}>
+              {label}
+            </Tag>
           </div>
-          <div className="grid-cell">
-            <code className="font-code-xs display-block bg-base-lighter margin-y-1">{`<ThemeTag theme="build" />`}</code>
-          </div>
-        </div>
-        <div className="grid-row grid-gap-2 flex-align-center">
-          <div className="grid-cell">
-            <ThemeTag theme="prepare" />
-          </div>
-          <div className="grid-cell">
-            <code className="font-code-xs display-block bg-base-lighter margin-y-1">{`<ThemeTag theme="prepare" />`}</code>
-          </div>
-        </div>
-        <div className="grid-row grid-gap-2 flex-align-center">
-          <div className="grid-cell">
-            <ThemeTag theme="recover" />
-          </div>
-          <div className="grid-cell">
-            <code className="font-code-xs display-block bg-base-lighter margin-y-1">{`<ThemeTag theme="recover" />`}</code>
-          </div>
-        </div>
+        ))}
       </Section>
     </>
   );

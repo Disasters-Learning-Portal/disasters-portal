@@ -1,10 +1,10 @@
 import { Link, Tag } from "@teamimpact/veda-ui-blocks";
 import type { ReactNode } from "react";
 
-import { ThemeTag } from "@/app/components";
 import {
   type Category,
   CONTENT_SIDEBAR_CONTENT_TYPES,
+  CONTENT_THEMES,
   CONTENT_TYPES,
   type ContentType,
   type Theme,
@@ -49,7 +49,12 @@ export function PageSidebar({
                 <MetaGroup label="Theme">
                   {themes.map((theme) => (
                     <div key={theme} className="margin-right-1 margin-bottom-1">
-                      <ThemeTag theme={theme} />
+                      <Tag
+                        color={CONTENT_THEMES[theme].color}
+                        textColor={CONTENT_THEMES[theme].textColor}
+                      >
+                        {CONTENT_THEMES[theme].label}
+                      </Tag>
                     </div>
                   ))}
                 </MetaGroup>
@@ -59,9 +64,7 @@ export function PageSidebar({
                 <MetaGroup label="Hazard">
                   {categories.map((category) => (
                     <div key={category} className="margin-right-1 margin-bottom-1">
-                      <Tag color="primary-lighter" textColor="primary-dark">
-                        {category}
-                      </Tag>
+                      <Tag>{category}</Tag>
                     </div>
                   ))}
                 </MetaGroup>
@@ -113,7 +116,9 @@ function RelatedContentItem({ item }: { item: RelatedItem }) {
       <div className="display-flex flex-wrap">
         {item.themes.map((theme) => (
           <div key={theme} className="margin-right-1 margin-bottom-1">
-            <ThemeTag theme={theme} />
+            <Tag color={CONTENT_THEMES[theme].color} textColor={CONTENT_THEMES[theme].textColor}>
+              {CONTENT_THEMES[theme].label}
+            </Tag>
           </div>
         ))}
         {item.categories.map((category) => (

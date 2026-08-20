@@ -1,9 +1,8 @@
-import {
-  type CardDetailedProps,
-  type CardMiniProps,
-  type CardProps,
-  type CardSimpleProps,
-  Tag,
+import type {
+  CardDetailedProps,
+  CardMiniProps,
+  CardProps,
+  CardSimpleProps,
 } from "@teamimpact/veda-ui-blocks";
 import Image from "next/image";
 import {
@@ -15,29 +14,23 @@ import {
   type Theme,
 } from "@/app/site-config/types";
 
-export const makeSimpleTag = (tag: Theme | ContentType | Category) => (
-  <Tag key={tag} variant="solid" color="primary-lighter">
-    {tag}
-  </Tag>
-);
-
-export const makeThemeTag = (tag: Theme) => {
-  const { label, ...rest } = CONTENT_THEMES[tag];
-  return (
-    <Tag key={tag} variant="solid" {...rest}>
-      {tag}
-    </Tag>
-  );
+const makeThemeTagProps = (tag: Theme) => {
+  const { label, color, textColor } = CONTENT_THEMES[tag];
+  return { variant: "solid" as const, color, textColor, label };
 };
 
-const makeContentTypeTag = (tag: ContentType) => {
+const makeContentTypeTagProps = (tag: ContentType) => {
   const { label } = CONTENT_TYPES[tag];
-  return (
-    <Tag key={label} variant="solid" color="primary-lighter">
-      {label}
-    </Tag>
-  );
+  return {
+    variant: "solid" as const,
+    label,
+  };
 };
+
+const makeSimpleTagProps = (tag: Theme | ContentType | Category) => ({
+  variant: "solid" as const,
+  label: tag,
+});
 
 export type CardMastheadPropsArgs = Omit<
   CardProps,
@@ -159,11 +152,11 @@ export const makeCardDetailedProps = ({
   ),
   imagePosition: "top",
   tags: tags
-    ? tags.map((t) => makeSimpleTag(t))
+    ? tags.map((t) => makeSimpleTagProps(t))
     : [
-        ...(themes ?? []).map((t) => makeThemeTag(t)),
-        ...(categories ?? []).map((c) => makeSimpleTag(c)),
-        makeContentTypeTag(contentType),
+        ...(themes ?? []).map((t) => makeThemeTagProps(t)),
+        ...(categories ?? []).map((c) => makeSimpleTagProps(c)),
+        makeContentTypeTagProps(contentType),
       ],
   callToAction: {
     href: url ? url : `${CONTENT_TYPES[contentType].route}/${id}`,
@@ -187,11 +180,11 @@ export const makeCardDetailedImageLeftProps = ({
   image: <Image {...thumbnailImage} fill sizes="200px" />,
   imagePosition: "left",
   tags: tags
-    ? tags.map((t) => makeSimpleTag(t))
+    ? tags.map((t) => makeSimpleTagProps(t))
     : [
-        ...(themes ?? []).map((t) => makeThemeTag(t)),
-        ...(categories ?? []).map((c) => makeSimpleTag(c)),
-        makeContentTypeTag(contentType),
+        ...(themes ?? []).map((t) => makeThemeTagProps(t)),
+        ...(categories ?? []).map((c) => makeSimpleTagProps(c)),
+        makeContentTypeTagProps(contentType),
       ],
   callToAction: {
     href: url ? url : `${CONTENT_TYPES[contentType].route}/${id}`,
@@ -225,10 +218,10 @@ export const makeCardSimpleProps = ({
   id,
   image: <Image {...thumbnailImage} fill sizes="(max-width: 1400px) 100vw, 1400px" />,
   tag: tag // TODO update function to allow user to choose which tag should be rendered
-    ? makeSimpleTag(tag)
+    ? makeSimpleTagProps(tag)
     : themes?.[0]
-      ? makeThemeTag(themes[0])
-      : makeContentTypeTag(contentType),
+      ? makeThemeTagProps(themes[0])
+      : makeContentTypeTagProps(contentType),
   href: url ? url : `${CONTENT_TYPES[contentType].route}/${id}`,
   isExternal: !!url,
   ...rest,
@@ -241,27 +234,16 @@ type CardSimpleMiniArgs = Omit<CardMiniProps, "image" | "tag" | "href"> & {
     alt: string;
     src: string;
   };
-  tag?: string;
 };
 
 export const makeCardMiniProps = ({
   id,
   contentType,
   thumbnailImage,
-  tag,
   ...rest
 }: CardSimpleMiniArgs): IterableItemWithId<CardMiniProps> => ({
   id,
   image: <Image {...thumbnailImage} fill sizes="200px" />,
-  ...(tag
-    ? {
-        tag: (
-          <Tag variant="text" color="secondary">
-            {tag}
-          </Tag>
-        ),
-      }
-    : {}),
   href: `${CONTENT_TYPES[contentType].route}/${id}`,
   ...rest,
 });
@@ -294,7 +276,7 @@ export const makeCardCarouselProps = ({
       sizes="(max-width: 640px) 100vw, (max-width: 1400px) 50vw, 700px"
     />
   ),
-  tag: makeContentTypeTag(contentType),
+  tag: makeContentTypeTagProps(contentType),
   callToAction: {
     href: url ? url : `${CONTENT_TYPES[contentType].route}/${id}`,
     label: `View ${toTitleCase(CONTENT_TYPES[contentType].label)}`,
