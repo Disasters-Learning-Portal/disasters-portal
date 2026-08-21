@@ -1,5 +1,5 @@
 import type { CardProps } from "@teamimpact/veda-ui-blocks";
-import Image from "next/image";
+import { AppImage } from "@/app/components/AppImage";
 
 export const MOCK_CARD_LETSCONNECT: CardProps = {
   title: "Let's Connect",
@@ -14,7 +14,7 @@ export const MOCK_CARD_LETSCONNECT: CardProps = {
     href: "mailto:nasa-disasters-portal-owner@lists.nasa.gov",
   },
   image: (
-    <Image
+    <AppImage
       alt="Earth from space"
       src="/img/home/home-cardfeatured-letsconnect.webp"
       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 50vw"

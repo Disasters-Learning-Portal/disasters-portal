@@ -1,5 +1,4 @@
 import { Link } from "@teamimpact/veda-ui-blocks";
-import Image from "next/image";
 
 import {
   ImageComparison,
@@ -9,7 +8,10 @@ import {
   SectionCardSimple,
   SectionHeading,
 } from "@/app/components";
+import { AppImage } from "@/app/components/AppImage";
+import { AppLink } from "@/app/components/AppLink";
 import { StacCompareBlock, StacSingleLayerBlock } from "@/app/components/blocks";
+import { withBasePath } from "@/app/site-config/base-path.helpers";
 import {
   makeCardDetailedImageLeftProps,
   makeCardFeaturedProps,
@@ -65,7 +67,9 @@ export const ContentBlockRenderer = ({
                 <li key={i}>{item}</li>
               ) : (
                 <li key={item.href}>
-                  <Link href={item.href}>{item.label}</Link>
+                  <Link as={AppLink} href={item.href}>
+                    {item.label}
+                  </Link>
                 </li>
               ),
             )}
@@ -103,7 +107,8 @@ export const ContentBlockRenderer = ({
           )}
           {block.src ? (
             <video controls className="width-full display-block">
-              <source src={block.src} />
+              {/* Raw <source> — basePath applied by hand, Next only prefixes its own assets. */}
+              <source src={withBasePath(block.src)} />
               <track kind="captions" />
             </video>
           ) : (
@@ -119,7 +124,7 @@ export const ContentBlockRenderer = ({
       return (
         <Section isMultiColumnLayout={isMultiColumnLayout}>
           <figure className="margin-0">
-            <Image
+            <AppImage
               src={block.src}
               alt={block.alt}
               width={block.width}

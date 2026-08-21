@@ -1,5 +1,8 @@
 import { CardCTA, type CardProps } from "@teamimpact/veda-ui-blocks";
 
+import { AppLink } from "@/app/components/AppLink";
+import { withBasePath } from "@/app/site-config/base-path.helpers";
+
 const MOCK_FEATURE_CTACARDS_PROPS = [
   {
     title: "Prepare",
@@ -34,7 +37,7 @@ const MOCK_FEATURE_CTACARDS_SECTION = (
         key={cardProps.title}
         className="grid-col-12 tablet:grid-col-6 desktop:grid-col-3 padding-top-205"
       >
-        <CardCTA {...cardProps} />
+        <CardCTA {...cardProps} as={AppLink} />
       </div>
     ))}
   </div>
@@ -42,11 +45,12 @@ const MOCK_FEATURE_CTACARDS_SECTION = (
 
 export const MOCK_CARD_MASTHEAD: CardProps = {
   image: (
+    // Raw <video> — basePath applied by hand, Next only prefixes its own assets.
     <video
-      src="/img/home/home-card-hero-video.mp4"
+      src={withBasePath("/img/home/home-card-hero-video.mp4")}
       aria-hidden="true"
       tabIndex={-1}
-      poster="/img/home/home-card-hero-poster.webp"
+      poster={withBasePath("/img/home/home-card-hero-poster.webp")}
       autoPlay
       muted
       loop

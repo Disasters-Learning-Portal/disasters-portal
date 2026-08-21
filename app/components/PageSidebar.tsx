@@ -1,5 +1,6 @@
 import { Link, Tag } from "@teamimpact/veda-ui-blocks";
 import type { ReactNode } from "react";
+import { AppLink } from "@/app/components/AppLink";
 import {
   makeContentTypeTagProps,
   makeSimpleTagProps,
@@ -103,7 +104,7 @@ function MetaGroup({ label, children }: { label: string; children: ReactNode }) 
 function RelatedContentItem({ item }: { item: RelatedItem }) {
   return (
     <div className="margin-bottom-3">
-      <Link href={item.href} className="text-no-underline">
+      <Link as={AppLink} href={item.href} className="text-no-underline">
         <p className="font-heading-md text-bold text-primary-dark margin-top-0 margin-bottom-1">
           {item.title}
         </p>

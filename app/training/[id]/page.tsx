@@ -1,8 +1,7 @@
 import { Card, Tag } from "@teamimpact/veda-ui-blocks";
-import Image from "next/image";
 import { notFound } from "next/navigation";
-
 import { ContentBlockRenderer, PageStatus, Section } from "@/app/components";
+import { AppImage } from "@/app/components/AppImage";
 import {
   makeSimpleTagProps,
   makeThemeTagProps,
@@ -23,7 +22,7 @@ export default async function TrainingItemPage(props: PageProps<"/training/[id]"
       <Section>
         <Card
           image={
-            <Image
+            <AppImage
               src={training.mastheadImage.src}
               alt={training.mastheadImage.alt}
               fill
