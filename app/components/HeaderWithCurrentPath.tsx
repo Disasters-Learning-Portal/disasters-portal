@@ -2,7 +2,7 @@
 import { Header } from "@teamimpact/veda-ui-blocks";
 import { usePathname } from "next/navigation";
 
-import { MOCK_HEADER_PROPS } from "../site-config/header";
+import { MOCK_HEADER_PROPS } from "@/app/site-config/header";
 
 /**
  * Site navigation header component with active route highlighting.

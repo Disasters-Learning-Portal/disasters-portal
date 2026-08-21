@@ -1,4 +1,4 @@
-import type { DataStoryContentExternal } from "../types";
+import type { DataStoryContentExternal } from "@/app/site-config/types";
 
 export const DATASTORY__SO2_VOLCANOES: DataStoryContentExternal = {
   id: "so2-volcanoes",

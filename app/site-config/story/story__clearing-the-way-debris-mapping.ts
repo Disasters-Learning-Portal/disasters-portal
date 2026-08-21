@@ -1,4 +1,4 @@
-import type { StoryContent } from "../types";
+import type { StoryContent } from "@/app/site-config/types";
 
 export const STORY__CLEARING_THE_WAY_DEBRIS_MAPPING: StoryContent = {
   id: "clearing-the-way-debris-mapping",

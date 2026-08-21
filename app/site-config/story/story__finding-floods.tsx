@@ -1,8 +1,8 @@
 import { CARTO_DARK_WITH_LABELS_BASEMAP_STYLE, Link } from "@teamimpact/veda-ui-blocks";
 import { Fragment } from "react";
+import { EVENT__TEXAS_FLOODS_JULY_2025 } from "@/app/site-config/event/event__texas-floods-july-2025";
+import { EVENT__US_WINTER_STORM_2026 } from "@/app/site-config/event/event__us-winter-storm-jan-2026";
 import type { StoryContent } from "@/app/site-config/types";
-import { EVENT__TEXAS_FLOODS_JULY_2025 } from "../event/event__texas-floods-july-2025";
-import { EVENT__US_WINTER_STORM_2026 } from "../event/event__us-winter-storm-jan-2026";
 
 export const STORY__FINDING_FLOODS: StoryContent = {
   id: "finding-floods",

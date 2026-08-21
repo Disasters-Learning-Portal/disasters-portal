@@ -1,4 +1,4 @@
-import type { NewsContent } from "../types";
+import type { NewsContent } from "@/app/site-config/types";
 
 export const NEWS__NEW_DISASTERS_PORTAL_TEST_HELP: NewsContent = {
   id: "new-disasters-portal-test-help",

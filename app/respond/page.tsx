@@ -5,23 +5,23 @@ import {
   SectionCardSimple,
   SectionHeading,
 } from "@/app/components/";
-import { SectionCardMini } from "../components/SectionCardMini";
+import { SectionCardMini } from "@/app/components/SectionCardMini";
 import {
   type CardMastheadPropsArgs,
   type CardSimplePropsArgs,
   makeCardCarouselProps,
   makeCardMastHeadProps,
   makeCardSimpleProps,
-} from "../site-config/content.helpers";
-import { transformEventToCardMiniProps } from "../site-config/event/event.helpers";
+} from "@/app/site-config/content.helpers";
+import { transformEventToCardMiniProps } from "@/app/site-config/event/event.helpers";
 import {
   RESPOND_CONTENT,
   RESPOND_DATASTORIES,
   RESPOND_EVENTS,
   RESPOND_STORIES,
   RESPOND_TRAININGS,
-} from "../site-config/theme/theme__respond";
-import { typedMap } from "../site-config/typed.helpers";
+} from "@/app/site-config/theme/theme__respond";
+import { typedMap } from "@/app/site-config/typed.helpers";
 
 export default function RespondPage() {
   const { title, theme, subtitle, mastheadImage }: CardMastheadPropsArgs = RESPOND_CONTENT;
