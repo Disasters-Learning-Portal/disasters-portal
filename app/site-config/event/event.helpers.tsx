@@ -1,7 +1,8 @@
-import { type CardMiniProps, type CardProps, Link, Tag } from "@teamimpact/veda-ui-blocks";
+import { type CardMiniProps, type CardProps, Link } from "@teamimpact/veda-ui-blocks";
 import {
   makeCardMastHeadProps,
   makeCardMiniProps,
+  makeSimpleTagProps,
   toLongDate,
   toTitleCase,
 } from "@/app/site-config/content.helpers";
@@ -16,7 +17,9 @@ export const transformEventToCardMiniProps = (
     contentType,
     thumbnailImage,
     title,
-    ...(isLatest ? { tag: "Latest Activation" } : {}),
+    ...(isLatest
+      ? { tag: { variant: "text" as const, color: "secondary", label: "Latest Activation" } }
+      : {}),
   });
 };
 
@@ -27,11 +30,11 @@ export const transformEventToPageMastHeadProps = (event: EventContent): CardProp
     mastheadImage,
     title,
     description,
-    tag: lastUpdatedDate ? (
-      <Tag color="primary-lighter" textColor="primary-dark">
-        Updated: {toLongDate(lastUpdatedDate)}
-      </Tag>
-    ) : undefined,
+    tag: lastUpdatedDate
+      ? (({ children, ...rest }) => ({ label: children, ...rest }))(
+          makeSimpleTagProps(`Updated: ${toLongDate(lastUpdatedDate)}`),
+        )
+      : undefined,
   });
 };
 

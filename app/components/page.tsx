@@ -1,3 +1,4 @@
+import { Tag } from "@teamimpact/veda-ui-blocks";
 import {
   Section,
   SectionCardCarousel,
@@ -6,20 +7,20 @@ import {
   SectionCardSimple,
   SectionCardSimpleMosaic,
   SectionHeading,
-  ThemeTag,
 } from "@/app/components/";
-import type { EventContent } from "@/app/site-config/types";
+import { CONTENT_THEMES, type EventContent } from "@/app/site-config/types";
 import {
   makeCardCarouselProps,
   makeCardDetailedImageLeftProps,
   makeCardSimpleProps,
+  makeThemeTagProps,
 } from "../site-config/content.helpers";
 import { DATA } from "../site-config/data";
 import { DATASTORIES } from "../site-config/datastory";
 import { EVENTS } from "../site-config/event";
 import { transformEventToCardMiniProps } from "../site-config/event/event.helpers";
 import { NEWS_EVENTS_CARDS } from "../site-config/home/home-sectioncardmosaic-news-events";
-import { typedMap } from "../site-config/typed.helpers";
+import { getTypedEntries, typedMap } from "../site-config/typed.helpers";
 
 const MOCK_EVENT_CARDS: [EventContent, EventContent, EventContent, EventContent] = [
   EVENTS[0],
@@ -172,38 +173,14 @@ export default function ComponentsPage() {
 
       <Section>
         <SectionHeading>ThemeTag</SectionHeading>
-        <div className="grid-row grid-gap-2 flex-align-center">
-          <div className="grid-cell">
-            <ThemeTag theme="respond" />
-          </div>
-          <div className="grid-cell">
-            <code className="font-code-xs display-block bg-base-lighter margin-y-1">{`<ThemeTag theme="respond" />`}</code>
-          </div>
+        <div className="grid-row margin-bottom-2">
+          <code className="font-code-xs display-block bg-base-lighter margin-y-1">{`<Tag {...makeThemeTagProps(theme)} />`}</code>
         </div>
-        <div className="grid-row grid-gap-2 flex-align-center">
-          <div className="grid-cell">
-            <ThemeTag theme="build" />
+        {getTypedEntries(CONTENT_THEMES).map(([theme, _]) => (
+          <div key={theme} className="grid-row flex-align-center margin-bottom-2">
+            <Tag {...makeThemeTagProps(theme)} />
           </div>
-          <div className="grid-cell">
-            <code className="font-code-xs display-block bg-base-lighter margin-y-1">{`<ThemeTag theme="build" />`}</code>
-          </div>
-        </div>
-        <div className="grid-row grid-gap-2 flex-align-center">
-          <div className="grid-cell">
-            <ThemeTag theme="prepare" />
-          </div>
-          <div className="grid-cell">
-            <code className="font-code-xs display-block bg-base-lighter margin-y-1">{`<ThemeTag theme="prepare" />`}</code>
-          </div>
-        </div>
-        <div className="grid-row grid-gap-2 flex-align-center">
-          <div className="grid-cell">
-            <ThemeTag theme="recover" />
-          </div>
-          <div className="grid-cell">
-            <code className="font-code-xs display-block bg-base-lighter margin-y-1">{`<ThemeTag theme="recover" />`}</code>
-          </div>
-        </div>
+        ))}
       </Section>
     </>
   );

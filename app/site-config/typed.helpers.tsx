@@ -31,3 +31,20 @@ export function typedMap<T, U, const Arr extends T[]>(
 ): { [K in keyof Arr]: U } {
   return arr.map(fn) as { [K in keyof Arr]: U };
 }
+
+/**
+ * Returns an array of _typed_ key/values of the enumerable properties of an object.
+ *
+ * Note: Limiting Object.entries to a specific type may lead to inconsistencies between type-checking and runtime behavior.
+ * Use this function when you are certain of the objects keys.
+ */
+// eslint-disable-next-line @typescript-eslint/consistent-type-assertions -- provides a valid type for Object.entries
+export const getTypedEntries = Object.entries as <T extends object>(
+  obj: T,
+  // Using `ToStringKey` because Object.entries returns all keys as strings.
+) => Array<[ToStringKey<T>, T[keyof T]]>;
+
+/**
+ * Converts object keys to their string literal types.
+ */
+type ToStringKey<T> = `${Extract<keyof T, string | number>}`;
