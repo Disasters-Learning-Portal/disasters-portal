@@ -2,6 +2,7 @@ import { type CardMiniProps, type CardProps, Link } from "@teamimpact/veda-ui-bl
 import {
   makeCardMastHeadProps,
   makeCardMiniProps,
+  makeSimpleTagProps,
   toLongDate,
   toTitleCase,
 } from "@/app/site-config/content.helpers";
@@ -30,9 +31,9 @@ export const transformEventToPageMastHeadProps = (event: EventContent): CardProp
     title,
     description,
     tag: lastUpdatedDate
-      ? {
-          label: `Updated: ${toLongDate(lastUpdatedDate)}`,
-        }
+      ? (({ children, ...rest }) => ({ label: children, ...rest }))(
+          makeSimpleTagProps(`Updated: ${toLongDate(lastUpdatedDate)}`),
+        )
       : undefined,
   });
 };

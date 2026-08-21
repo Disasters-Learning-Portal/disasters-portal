@@ -16,6 +16,8 @@ import {
 
 export const makeSimpleTagProps = (tag: string) => ({
   variant: "solid" as const,
+  color: "primary-lighter",
+  textColor: "primary-dark",
   children: tag,
 });
 
@@ -28,6 +30,8 @@ export const makeContentTypeTagProps = (tag: ContentType) => {
   const { label } = CONTENT_TYPES[tag];
   return {
     variant: "solid" as const,
+    color: "primary-lighter",
+    textColor: "primary-dark",
     children: label,
   };
 };
