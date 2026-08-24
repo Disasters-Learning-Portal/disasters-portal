@@ -5,7 +5,7 @@ import type { ComponentProps } from "react";
 import { AppLink } from "@/app/components/AppLink";
 
 type SectionHeadingProps = ComponentProps<"h2"> & {
-  href?: string;
+  href?: ComponentProps<typeof AppLink>["href"];
 };
 
 export const SectionHeading = ({ href, children, className, ...props }: SectionHeadingProps) => {
