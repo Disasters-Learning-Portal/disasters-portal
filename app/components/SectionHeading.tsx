@@ -1,9 +1,7 @@
 "use client";
 
 import { Link } from "@teamimpact/veda-ui-blocks";
-
 import type { ComponentProps } from "react";
-
 import { AppLink } from "@/app/components/AppLink";
 
 type SectionHeadingProps = ComponentProps<"h2"> & {

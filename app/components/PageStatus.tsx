@@ -1,3 +1,5 @@
+import { Link } from "@teamimpact/veda-ui-blocks";
+
 import { AppLink } from "@/app/components/AppLink";
 
 interface PageStatusProps {
@@ -15,9 +17,9 @@ export function PageStatus({ label, heading, description }: PageStatusProps) {
         {heading}
       </h1>
       {description && <p className="font-body-md text-base margin-bottom-6">{description}</p>}
-      <AppLink href="/" className="usa-button">
+      <Link as={AppLink} href="/" variant="button">
         Return to Home Page
-      </AppLink>
+      </Link>
     </div>
   );
 }

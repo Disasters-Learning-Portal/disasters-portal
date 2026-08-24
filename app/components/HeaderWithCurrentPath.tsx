@@ -1,7 +1,6 @@
 "use client";
 import { Header } from "@teamimpact/veda-ui-blocks";
 import { usePathname } from "next/navigation";
-
 import { AppLink } from "@/app/components/AppLink";
 import { MOCK_HEADER_PROPS } from "@/app/site-config/header";
 

@@ -1,5 +1,4 @@
 import { Link } from "@teamimpact/veda-ui-blocks";
-
 import {
   ImageComparison,
   Section,
