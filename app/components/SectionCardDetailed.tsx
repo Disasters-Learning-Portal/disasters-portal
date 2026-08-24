@@ -1,12 +1,12 @@
 import { CardDetailed, type CardDetailedProps } from "@teamimpact/veda-ui-blocks";
+import type NextLink from "next/link";
 import type { ReactNode } from "react";
 import { Section, type SectionProps } from "@/app/components";
-import type { AppLink } from "@/app/components/Link";
 import type { IterableItemWithId } from "@/app/site-config/types";
 
 type SectionCardDetailedProps = SectionProps & {
   sectionHeading?: ReactNode;
-  cards: IterableItemWithId<CardDetailedProps<typeof AppLink>>[];
+  cards: IterableItemWithId<CardDetailedProps<typeof NextLink>>[];
 };
 
 export const SectionCardDetailed = ({

@@ -1,6 +1,6 @@
 import { CardCTA, type CardProps } from "@teamimpact/veda-ui-blocks";
 import { AppVideo } from "@/app/components/AppVideo";
-import { AppLink } from "@/app/components/Link";
+import { Link } from "@/app/components/Link";
 
 const MOCK_FEATURE_CTACARDS_PROPS = [
   {
@@ -36,7 +36,7 @@ const MOCK_FEATURE_CTACARDS_SECTION = (
         key={cardProps.title}
         className="grid-col-12 tablet:grid-col-6 desktop:grid-col-3 padding-top-205"
       >
-        <CardCTA {...cardProps} as={AppLink} />
+        <CardCTA {...cardProps} as={Link} />
       </div>
     ))}
   </div>

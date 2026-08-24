@@ -4,8 +4,8 @@ import type {
   CardProps,
   CardSimpleProps,
 } from "@teamimpact/veda-ui-blocks";
+import NextLink from "next/link";
 import { Image } from "@/app/components/Image";
-import { AppLink } from "@/app/components/Link";
 import {
   type Category,
   CONTENT_THEMES,
@@ -94,7 +94,7 @@ export type CardFeaturedPropsArgs = Omit<
 
 export const makeCardFeaturedProps = (
   props: CardFeaturedPropsArgs,
-): IterableItemWithId<CardProps<typeof AppLink, typeof AppLink>> => {
+): IterableItemWithId<CardProps<typeof NextLink, typeof NextLink>> => {
   const {
     id,
     callToAction,
@@ -105,8 +105,8 @@ export const makeCardFeaturedProps = (
   } = props;
   return {
     id,
-    callToAction: callToAction && { ...callToAction, as: AppLink },
-    callToActionSecondary: callToActionSecondary && { ...callToActionSecondary, as: AppLink },
+    callToAction: callToAction && { ...callToAction, as: NextLink },
+    callToActionSecondary: callToActionSecondary && { ...callToActionSecondary, as: NextLink },
     image: (
       <Image
         alt={image.alt}
@@ -146,7 +146,7 @@ export const makeCardDetailedProps = ({
   categories,
   url,
   ...rest
-}: CardDetailedPropsArgs): IterableItemWithId<CardDetailedProps<typeof AppLink>> => ({
+}: CardDetailedPropsArgs): IterableItemWithId<CardDetailedProps<typeof NextLink>> => ({
   id,
   image: (
     <Image
@@ -168,7 +168,7 @@ export const makeCardDetailedProps = ({
     href: url ? url : `${CONTENT_TYPES[contentType].route}/${id}`,
     label: `View ${toTitleCase(CONTENT_TYPES[contentType].label)}`,
     isExternal: !!url,
-    as: AppLink,
+    as: NextLink,
   },
   ...rest,
 });
@@ -182,7 +182,7 @@ export const makeCardDetailedImageLeftProps = ({
   categories,
   url,
   ...rest
-}: CardDetailedPropsArgs): IterableItemWithId<CardDetailedProps<typeof AppLink>> => ({
+}: CardDetailedPropsArgs): IterableItemWithId<CardDetailedProps<typeof NextLink>> => ({
   id,
   image: <Image {...thumbnailImage} fill sizes="200px" />,
   imagePosition: "left",
@@ -198,7 +198,7 @@ export const makeCardDetailedImageLeftProps = ({
     href: url ? url : `${CONTENT_TYPES[contentType].route}/${id}`,
     label: `View ${toTitleCase(CONTENT_TYPES[contentType].label)}`,
     isExternal: !!url,
-    as: AppLink,
+    as: NextLink,
   },
   ...rest,
 });
@@ -226,7 +226,7 @@ export const makeCardSimpleProps = ({
   themes,
   url,
   ...rest
-}: CardSimplePropsArgs): IterableItemWithId<CardSimpleProps<typeof AppLink>> => ({
+}: CardSimplePropsArgs): IterableItemWithId<CardSimpleProps<typeof NextLink>> => ({
   id,
   image: <Image {...thumbnailImage} fill sizes="(max-width: 1400px) 100vw, 1400px" />,
   tag: (({ children, ...rest }) => ({ label: children, ...rest }))(
@@ -238,7 +238,7 @@ export const makeCardSimpleProps = ({
   ),
   href: url ? url : `${CONTENT_TYPES[contentType].route}/${id}`,
   isExternal: !!url,
-  as: AppLink,
+  as: NextLink,
   ...rest,
 });
 
@@ -256,10 +256,10 @@ export const makeCardMiniProps = ({
   contentType,
   thumbnailImage,
   ...rest
-}: CardSimpleMiniArgs): IterableItemWithId<CardMiniProps<typeof AppLink>> => ({
+}: CardSimpleMiniArgs): IterableItemWithId<CardMiniProps<typeof NextLink>> => ({
   id,
   image: <Image {...thumbnailImage} fill sizes="200px" />,
-  as: AppLink,
+  as: NextLink,
   href: `${CONTENT_TYPES[contentType].route}/${id}`,
   ...rest,
 });
@@ -283,7 +283,7 @@ export const makeCardCarouselProps = ({
   thumbnailImage,
   url,
   ...rest
-}: CardCarouselPropsArgs): IterableItemWithId<CardProps<typeof AppLink>> => ({
+}: CardCarouselPropsArgs): IterableItemWithId<CardProps<typeof NextLink>> => ({
   id,
   image: (
     <Image
@@ -299,7 +299,7 @@ export const makeCardCarouselProps = ({
     href: url ? url : `${CONTENT_TYPES[contentType].route}/${id}`,
     label: `View ${toTitleCase(CONTENT_TYPES[contentType].label)}`,
     isExternal: !!url,
-    as: AppLink,
+    as: NextLink,
   },
   imagePosition: "cover",
   colorMode: "dark",

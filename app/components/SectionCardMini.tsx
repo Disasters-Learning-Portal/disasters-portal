@@ -1,14 +1,14 @@
 import type { CardMiniProps } from "@teamimpact/veda-ui-blocks";
 import { CardMini } from "@teamimpact/veda-ui-blocks";
+import type NextLink from "next/link";
 import type { ReactNode } from "react";
 import { Section, type SectionProps } from "@/app/components";
-import type { AppLink } from "@/app/components/Link";
 import type { IterableItemWithId } from "@/app/site-config/types";
 import { getGridColumnClass } from "./component.helpers";
 
 type SectionCardMiniProps = SectionProps & {
   sectionHeading?: ReactNode;
-  cards: IterableItemWithId<CardMiniProps<typeof AppLink>>[];
+  cards: IterableItemWithId<CardMiniProps<typeof NextLink>>[];
 };
 
 export const SectionCardMini = ({

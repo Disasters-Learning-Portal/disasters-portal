@@ -1,10 +1,10 @@
 import { CardSimple, type CardSimpleProps } from "@teamimpact/veda-ui-blocks";
+import type NextLink from "next/link";
 import type { ReactNode } from "react";
 import { Section, type SectionProps } from "@/app/components/";
-import type { AppLink } from "@/app/components/Link";
 import type { IterableItemWithId } from "@/app/site-config/types";
 
-type MosaicCard = IterableItemWithId<CardSimpleProps<typeof AppLink>>;
+type MosaicCard = IterableItemWithId<CardSimpleProps<typeof NextLink>>;
 
 type SectionCardSimpleMosaicProps = SectionProps & {
   sectionHeading?: ReactNode;

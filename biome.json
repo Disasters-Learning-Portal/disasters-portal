@@ -23,8 +23,7 @@
           "level": "error",
           "options": {
             "paths": {
-              "next/link": "Use AppLink (@/app/components/AppLink) instead: a 'use client' re-export of next/link. Passing next/link directly from a server module as an `as`/`linksAs` prop fails RSC serialization.",
-              "next/image": "Use Image (@/app/components/AppImage) instead for basepath support."
+              "next/image": "Use Image (@/app/components/Image) instead for basepath support."
             }
           }
         }
@@ -33,7 +32,7 @@
   },
   "overrides": [
     {
-      "includes": ["app/components/AppLink.tsx", "app/components/Image.tsx"],
+      "includes": ["app/components/Image.tsx"],
       "linter": {
         "rules": {
           "style": {

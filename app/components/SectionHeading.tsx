@@ -1,10 +1,10 @@
 "use client";
 
 import type { ComponentProps } from "react";
-import { type AppLink, Link } from "@/app/components/Link";
+import { Link, type LinkProps } from "@/app/components/Link";
 
 type SectionHeadingProps = ComponentProps<"h2"> & {
-  href?: ComponentProps<typeof AppLink>["href"];
+  href?: LinkProps["href"];
 };
 
 export const SectionHeading = ({ href, children, className, ...props }: SectionHeadingProps) => {

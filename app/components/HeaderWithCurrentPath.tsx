@@ -1,7 +1,7 @@
 "use client";
 import { Header } from "@teamimpact/veda-ui-blocks";
+import NextLink from "next/link";
 import { usePathname } from "next/navigation";
-import { AppLink } from "@/app/components/Link";
 import { MOCK_HEADER_PROPS } from "@/app/site-config/header";
 
 /**
@@ -10,5 +10,5 @@ import { MOCK_HEADER_PROPS } from "@/app/site-config/header";
  */
 export function HeaderWithCurrentPath() {
   const pathname = usePathname();
-  return <Header {...MOCK_HEADER_PROPS} currentPath={pathname} linksAs={AppLink} />;
+  return <Header {...MOCK_HEADER_PROPS} currentPath={pathname} linksAs={NextLink} />;
 }

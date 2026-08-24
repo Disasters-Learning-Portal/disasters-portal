@@ -3,8 +3,8 @@ import type { Metadata } from "next";
 import "@teamimpact/veda-ui-blocks/disasters.css";
 import "./styles/overrides.css";
 
+import NextLink from "next/link";
 import { HeaderWithCurrentPath } from "@/app/components";
-import { AppLink } from "@/app/components/Link";
 import { MOCK_FOOTER_PROPS } from "./site-config/footer";
 
 export const metadata: Metadata = {
@@ -28,7 +28,7 @@ export default function RootLayout({
       >
         <HeaderWithCurrentPath />
         <main>{children}</main>
-        <Footer {...MOCK_FOOTER_PROPS} linksAs={AppLink} />
+        <Footer {...MOCK_FOOTER_PROPS} linksAs={NextLink} />
       </body>
     </html>
   );

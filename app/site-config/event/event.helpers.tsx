@@ -1,5 +1,5 @@
 import { type CardMiniProps, type CardProps, Link } from "@teamimpact/veda-ui-blocks";
-import type { AppLink } from "@/app/components/Link";
+import type NextLink from "next/link";
 import {
   makeCardMastHeadProps,
   makeCardMiniProps,
@@ -11,7 +11,7 @@ import type { EventContent, IterableItemWithId } from "@/app/site-config/types";
 
 export const transformEventToCardMiniProps = (
   event: EventContent,
-): IterableItemWithId<CardMiniProps<typeof AppLink>> => {
+): IterableItemWithId<CardMiniProps<typeof NextLink>> => {
   const { isLatest, id, contentType, thumbnailImage, title } = event;
   return makeCardMiniProps({
     id,
