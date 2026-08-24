@@ -4,11 +4,6 @@
 
 export const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
-/** Whether a path is app-internal, i.e. starts with "/" but not protocol-relative "//". */
-export function isInternalPath(path: string): boolean {
-  return path.startsWith("/") && !path.startsWith("//");
-}
-
 /**
  * Prefix an app-internal absolute path with {@link BASE_PATH}.
  * Applies only to internal paths, other paths are returned unchanged.
@@ -16,8 +11,13 @@ export function isInternalPath(path: string): boolean {
  * @returns The prefixed path.
  */
 export function withBasePath(path: string): string {
+  // no base path provided
   if (!BASE_PATH) return path;
-  if (!isInternalPath(path)) return path;
+  // not an absolute path from root
+  if (!path.startsWith("/")) return path;
+  // is a protocol-relative full url path (ex. //domain.com/img/logo.png)
+  if (path.startsWith("//")) return path;
+  // base path already appended
   if (path === BASE_PATH || path.startsWith(`${BASE_PATH}/`)) return path;
   return `${BASE_PATH}${path}`;
 }
