@@ -9,7 +9,7 @@ import {
 import { AppVideo } from "@/app/components/AppVideo";
 import { StacCompareBlock, StacSingleLayerBlock } from "@/app/components/blocks";
 import { Image } from "@/app/components/Image";
-import { AppLinkStyled } from "@/app/components/Link";
+import { Link } from "@/app/components/Link";
 import {
   makeCardDetailedImageLeftProps,
   makeCardFeaturedProps,
@@ -65,7 +65,7 @@ export const ContentBlockRenderer = ({
                 <li key={i}>{item}</li>
               ) : (
                 <li key={item.href}>
-                  <AppLinkStyled href={item.href}>{item.label}</AppLinkStyled>
+                  <Link href={item.href}>{item.label}</Link>
                 </li>
               ),
             )}

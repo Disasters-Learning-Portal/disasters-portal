@@ -1,4 +1,4 @@
-import { AppLinkStyled } from "@/app/components/Link";
+import { Link } from "@/app/components/Link";
 
 interface PageStatusProps {
   label?: string;
@@ -15,9 +15,9 @@ export function PageStatus({ label, heading, description }: PageStatusProps) {
         {heading}
       </h1>
       {description && <p className="font-body-md text-base margin-bottom-6">{description}</p>}
-      <AppLinkStyled href="/" variant="button">
+      <Link href="/" variant="button">
         Return to Home Page
-      </AppLinkStyled>
+      </Link>
     </div>
   );
 }

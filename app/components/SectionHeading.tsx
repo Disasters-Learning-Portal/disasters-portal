@@ -1,7 +1,7 @@
 "use client";
 
 import type { ComponentProps } from "react";
-import { type AppLink, AppLinkStyled } from "@/app/components/Link";
+import { type AppLink, Link } from "@/app/components/Link";
 
 type SectionHeadingProps = ComponentProps<"h2"> & {
   href?: ComponentProps<typeof AppLink>["href"];
@@ -14,9 +14,9 @@ export const SectionHeading = ({ href, children, className, ...props }: SectionH
         {children}
       </h2>
       {href && (
-        <AppLinkStyled href={href} variant="arrow" size="lg">
+        <Link href={href} variant="arrow" size="lg">
           View All
-        </AppLinkStyled>
+        </Link>
       )}
     </div>
   );
