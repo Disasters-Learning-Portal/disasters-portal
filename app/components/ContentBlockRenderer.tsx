@@ -6,10 +6,10 @@ import {
   SectionCardSimple,
   SectionHeading,
 } from "@/app/components";
-import { AppImage } from "@/app/components/AppImage";
 import { AppLinkStyled } from "@/app/components/AppLink";
 import { AppVideo } from "@/app/components/AppVideo";
 import { StacCompareBlock, StacSingleLayerBlock } from "@/app/components/blocks";
+import { Image } from "@/app/components/Image";
 import {
   makeCardDetailedImageLeftProps,
   makeCardFeaturedProps,
@@ -118,7 +118,7 @@ export const ContentBlockRenderer = ({
       return (
         <Section isMultiColumnLayout={isMultiColumnLayout}>
           <figure className="margin-0">
-            <AppImage
+            <Image
               src={block.src}
               alt={block.alt}
               width={block.width}

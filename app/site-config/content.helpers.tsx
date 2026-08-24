@@ -4,8 +4,8 @@ import type {
   CardProps,
   CardSimpleProps,
 } from "@teamimpact/veda-ui-blocks";
-import { AppImage } from "@/app/components/AppImage";
 import { AppLink } from "@/app/components/AppLink";
+import { Image } from "@/app/components/Image";
 import {
   type Category,
   CONTENT_THEMES,
@@ -55,7 +55,7 @@ export const makeCardMastHeadProps = ({
   theme,
   ...rest
 }: CardMastheadPropsArgs): CardProps => ({
-  image: <AppImage {...mastheadImage} sizes="100vw" fill preload={true} />,
+  image: <Image {...mastheadImage} sizes="100vw" fill preload={true} />,
   ...(title || theme
     ? {
         title: (
@@ -108,7 +108,7 @@ export const makeCardFeaturedProps = (
     callToAction: callToAction && { ...callToAction, as: AppLink },
     callToActionSecondary: callToActionSecondary && { ...callToActionSecondary, as: AppLink },
     image: (
-      <AppImage
+      <Image
         alt={image.alt}
         src={image.src}
         sizes="(max-width: 640px) 100vw, (max-width: 1400px) 50vw, 700px"
@@ -149,7 +149,7 @@ export const makeCardDetailedProps = ({
 }: CardDetailedPropsArgs): IterableItemWithId<CardDetailedProps<typeof AppLink>> => ({
   id,
   image: (
-    <AppImage
+    <Image
       {...thumbnailImage}
       fill
       sizes="(max-width: 640px) 100vw, (max-width: 1400px) 50vw, 700px"
@@ -184,7 +184,7 @@ export const makeCardDetailedImageLeftProps = ({
   ...rest
 }: CardDetailedPropsArgs): IterableItemWithId<CardDetailedProps<typeof AppLink>> => ({
   id,
-  image: <AppImage {...thumbnailImage} fill sizes="200px" />,
+  image: <Image {...thumbnailImage} fill sizes="200px" />,
   imagePosition: "left",
   tags: (tags
     ? tags.map((t) => makeSimpleTagProps(t))
@@ -228,7 +228,7 @@ export const makeCardSimpleProps = ({
   ...rest
 }: CardSimplePropsArgs): IterableItemWithId<CardSimpleProps<typeof AppLink>> => ({
   id,
-  image: <AppImage {...thumbnailImage} fill sizes="(max-width: 1400px) 100vw, 1400px" />,
+  image: <Image {...thumbnailImage} fill sizes="(max-width: 1400px) 100vw, 1400px" />,
   tag: (({ children, ...rest }) => ({ label: children, ...rest }))(
     tag
       ? makeSimpleTagProps(tag)
@@ -258,7 +258,7 @@ export const makeCardMiniProps = ({
   ...rest
 }: CardSimpleMiniArgs): IterableItemWithId<CardMiniProps<typeof AppLink>> => ({
   id,
-  image: <AppImage {...thumbnailImage} fill sizes="200px" />,
+  image: <Image {...thumbnailImage} fill sizes="200px" />,
   as: AppLink,
   href: `${CONTENT_TYPES[contentType].route}/${id}`,
   ...rest,
@@ -286,7 +286,7 @@ export const makeCardCarouselProps = ({
 }: CardCarouselPropsArgs): IterableItemWithId<CardProps<typeof AppLink>> => ({
   id,
   image: (
-    <AppImage
+    <Image
       {...thumbnailImage}
       fill
       sizes="(max-width: 640px) 100vw, (max-width: 1400px) 50vw, 700px"

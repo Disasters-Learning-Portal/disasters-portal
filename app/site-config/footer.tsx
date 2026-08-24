@@ -1,6 +1,6 @@
 import type { FooterProps } from "@teamimpact/veda-ui-blocks";
 import logoEmblem from "@/app/assets/logo-emblem.svg";
-import { AppImage } from "@/app/components/AppImage";
+import { Image } from "@/app/components/Image";
 
 const primaryNavItems: FooterProps["primaryNavItems"] = [
   { label: "About Us", href: "/about" },
@@ -39,7 +39,7 @@ const portalDetails: FooterProps["portalDetails"] = {
       email: "shanna.n.mcclain@nasa.gov",
     },
   ],
-  logo: <AppImage src={logoEmblem} alt="Disasters.gov" width={121} height={124} preload />,
+  logo: <Image src={logoEmblem} alt="Disasters.gov" width={121} height={124} preload />,
   title: "NASA Disasters PORTAL",
   tagline: "Partnership-Oriented Resource for Training, Analysis, and Learning",
   updatedDate: "June 1, 2026",

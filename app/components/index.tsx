@@ -1,7 +1,7 @@
-export { AppImage } from "./AppImage";
 export * from "./blocks";
 export { ContentBlockRenderer } from "./ContentBlockRenderer";
 export { HeaderWithCurrentPath } from "./HeaderWithCurrentPath";
+export { Image } from "./Image";
 export { ImageComparison } from "./ImageComparison";
 export { PageMasthead } from "./PageMasthead";
 export { PageSidebar } from "./PageSidebar";

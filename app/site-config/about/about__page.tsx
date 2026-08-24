@@ -1,6 +1,6 @@
 import { Link } from "@teamimpact/veda-ui-blocks";
 import { Fragment } from "react";
-import { AppImage } from "@/app/components/AppImage";
+import { Image } from "@/app/components/Image";
 import type { ContentBlock } from "@/app/site-config/types";
 
 export type AboutPageBody = {
@@ -29,7 +29,7 @@ export const ABOUT_PAGE_BODY: AboutPageBody = {
       headingLevel: "h2",
       paragraphs: [
         // biome-ignore lint/correctness/useJsxKeyInIterable: static content, never reorders
-        <AppImage
+        <Image
           src="/img/about/disasters-team.webp"
           alt="NASA Disasters Team"
           width="1200"
