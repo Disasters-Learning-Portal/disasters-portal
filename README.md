@@ -15,9 +15,9 @@ Open <http://localhost:3000>
 
 Set `NEXT_PUBLIC_BASE_PATH` at build time to serve the app under a subpath (e.g. `/disasters`). Unset serves from the root. See `.env.example` and `app/site-config/base-path.helpers.ts`.
 
-## Assets
+Use `app/components/Link` which wraps veda-ui-blocks `Link` and ensures `NextLink` is used which automatically supports href base path handling. 
 
-Use `AppImage` and `AppVideo` instead of the raw elements — they apply the base path (external URLs pass through unchanged).
+Use `app/components/Image` and `app/components/Video` instead of the raw elements — they apply the base path (external URLs pass through unchanged).
 
 Placement:
 
