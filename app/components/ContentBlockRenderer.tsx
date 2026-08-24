@@ -9,8 +9,8 @@ import {
 } from "@/app/components";
 import { AppImage } from "@/app/components/AppImage";
 import { AppLink } from "@/app/components/AppLink";
+import { AppVideo } from "@/app/components/AppVideo";
 import { StacCompareBlock, StacSingleLayerBlock } from "@/app/components/blocks";
-import { withBasePath } from "@/app/site-config/base-path.helpers";
 import {
   makeCardDetailedImageLeftProps,
   makeCardFeaturedProps,
@@ -105,11 +105,9 @@ export const ContentBlockRenderer = ({
             <ContentHeading heading={block.heading} headingLevel={block.headingLevel} />
           )}
           {block.src ? (
-            <video controls className="width-full display-block">
-              {/* Raw <source> — basePath applied by hand, Next only prefixes its own assets. */}
-              <source src={withBasePath(block.src)} />
+            <AppVideo src={block.src} controls className="width-full display-block">
               <track kind="captions" />
-            </video>
+            </AppVideo>
           ) : (
             <div className="width-full bg-base-lightest display-flex flex-align-center flex-justify-center height-card padding-x-4">
               <p className="text-base margin-0">Video coming soon</p>
