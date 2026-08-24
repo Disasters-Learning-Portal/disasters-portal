@@ -14,7 +14,6 @@ const nextConfig: NextConfig = {
     root: __dirname,
   },
   ...(BASE_PATH ? { basePath: BASE_PATH } : {}),
-  typedRoutes: true,
   images: {
     // Allowlisted remote hosts for next/image
     remotePatterns: [{ protocol: "https", hostname: "**" }],
