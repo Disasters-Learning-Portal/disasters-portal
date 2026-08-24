@@ -1,21 +1,28 @@
 "use client";
 
+import { Link, type LinkProps } from "@teamimpact/veda-ui-blocks";
+import NextLink from "next/link";
+
 /*
- * next/link re-exported behind a "use client" boundary.
+ * AppLink: next/link re-exported from a "use client" module.
  *
- * Server modules (layout, site config, card factories) pass this component as
- * an `as`/`linksAs` prop to veda-ui-blocks client components. Props crossing
- * the server -> client boundary must be serializable, and a component function
- * only serializes when exported from a "use client" module (it becomes a
- * client reference). Importing next/link directly in a server module resolves
- * to its server-side variant, a plain function, which fails at runtime with
- * "Functions cannot be passed directly to Client Components".
+ * Server modules pass this as an `as`/`linksAs` prop to veda-ui-blocks client
+ * components. A component prop must cross the server -> client boundary as a
+ * client reference, which only a "use client" export becomes -- importing
+ * next/link directly in a server module resolves to its server-side variant
+ * and fails at runtime ("Functions cannot be passed directly to Client
+ * Components"). next/link itself handles the base path and external hrefs.
  *
- * This is the wrapper pattern recommended by the Next.js docs:
- * https://nextjs.org/docs/app/getting-started/server-and-client-components#third-party-components
- * Serialization rules: https://react.dev/reference/rsc/use-client
- *
- * next/link already applies the base path and renders external hrefs as plain
- * anchors, so no wrapper logic is needed.
+ * Pattern: https://nextjs.org/docs/app/getting-started/server-and-client-components#third-party-components
+ * Serialization: https://react.dev/reference/rsc/use-client
  */
 export { default as AppLink } from "next/link";
+
+/*
+ * AppLinkStyled: blocks Link pre-bound to next/link, for inline content links
+ * using the blocks styling (variant, size). Structural slots (Header/Footer
+ * `linksAs`, Card `as`) style their own anchors -- pass the bare AppLink there.
+ */
+export function AppLinkStyled(props: Omit<LinkProps<typeof NextLink>, "as">) {
+  return <Link as={NextLink} {...props} />;
+}

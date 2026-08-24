@@ -1,8 +1,7 @@
 "use client";
 
-import { Link } from "@teamimpact/veda-ui-blocks";
 import type { ComponentProps } from "react";
-import { AppLink } from "@/app/components/AppLink";
+import { type AppLink, AppLinkStyled } from "@/app/components/AppLink";
 
 type SectionHeadingProps = ComponentProps<"h2"> & {
   href?: ComponentProps<typeof AppLink>["href"];
@@ -15,9 +14,9 @@ export const SectionHeading = ({ href, children, className, ...props }: SectionH
         {children}
       </h2>
       {href && (
-        <Link as={AppLink} href={href} variant="arrow" size="lg">
+        <AppLinkStyled href={href} variant="arrow" size="lg">
           View All
-        </Link>
+        </AppLinkStyled>
       )}
     </div>
   );

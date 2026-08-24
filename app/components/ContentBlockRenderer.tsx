@@ -1,4 +1,3 @@
-import { Link } from "@teamimpact/veda-ui-blocks";
 import {
   ImageComparison,
   Section,
@@ -8,7 +7,7 @@ import {
   SectionHeading,
 } from "@/app/components";
 import { AppImage } from "@/app/components/AppImage";
-import { AppLink } from "@/app/components/AppLink";
+import { AppLinkStyled } from "@/app/components/AppLink";
 import { AppVideo } from "@/app/components/AppVideo";
 import { StacCompareBlock, StacSingleLayerBlock } from "@/app/components/blocks";
 import {
@@ -66,9 +65,7 @@ export const ContentBlockRenderer = ({
                 <li key={i}>{item}</li>
               ) : (
                 <li key={item.href}>
-                  <Link as={AppLink} href={item.href}>
-                    {item.label}
-                  </Link>
+                  <AppLinkStyled href={item.href}>{item.label}</AppLinkStyled>
                 </li>
               ),
             )}
