@@ -6,10 +6,10 @@ import {
   SectionCardSimple,
   SectionHeading,
 } from "@/app/components";
-import { AppVideo } from "@/app/components/AppVideo";
 import { StacCompareBlock, StacSingleLayerBlock } from "@/app/components/blocks";
 import { Image } from "@/app/components/Image";
 import { Link } from "@/app/components/Link";
+import { Video } from "@/app/components/Video";
 import {
   makeCardDetailedImageLeftProps,
   makeCardFeaturedProps,
@@ -102,9 +102,9 @@ export const ContentBlockRenderer = ({
             <ContentHeading heading={block.heading} headingLevel={block.headingLevel} />
           )}
           {block.src ? (
-            <AppVideo src={block.src} controls className="width-full display-block">
+            <Video src={block.src} controls className="width-full display-block">
               <track kind="captions" />
-            </AppVideo>
+            </Video>
           ) : (
             <div className="width-full bg-base-lightest display-flex flex-align-center flex-justify-center height-card padding-x-4">
               <p className="text-base margin-0">Video coming soon</p>
