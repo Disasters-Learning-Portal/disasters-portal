@@ -1,4 +1,4 @@
-import { AppLinkStyled } from "@/app/components/AppLink";
+import { AppLinkStyled } from "@/app/components/Link";
 
 interface PageStatusProps {
   label?: string;

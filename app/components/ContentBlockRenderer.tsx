@@ -6,10 +6,10 @@ import {
   SectionCardSimple,
   SectionHeading,
 } from "@/app/components";
-import { AppLinkStyled } from "@/app/components/AppLink";
 import { AppVideo } from "@/app/components/AppVideo";
 import { StacCompareBlock, StacSingleLayerBlock } from "@/app/components/blocks";
 import { Image } from "@/app/components/Image";
+import { AppLinkStyled } from "@/app/components/Link";
 import {
   makeCardDetailedImageLeftProps,
   makeCardFeaturedProps,

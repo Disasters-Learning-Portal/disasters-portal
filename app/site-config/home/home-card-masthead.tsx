@@ -1,7 +1,6 @@
 import { CardCTA, type CardProps } from "@teamimpact/veda-ui-blocks";
-
-import { AppLink } from "@/app/components/AppLink";
 import { AppVideo } from "@/app/components/AppVideo";
+import { AppLink } from "@/app/components/Link";
 
 const MOCK_FEATURE_CTACARDS_PROPS = [
   {

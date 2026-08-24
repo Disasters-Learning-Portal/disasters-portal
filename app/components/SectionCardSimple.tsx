@@ -2,7 +2,7 @@ import type { CardSimpleProps } from "@teamimpact/veda-ui-blocks";
 import { CardSimple } from "@teamimpact/veda-ui-blocks";
 import type { ReactNode } from "react";
 import { Section, type SectionProps } from "@/app/components";
-import type { AppLink } from "@/app/components/AppLink";
+import type { AppLink } from "@/app/components/Link";
 import type { IterableItemWithId } from "@/app/site-config/types";
 import { getGridColumnClass } from "./component.helpers";
 

@@ -4,7 +4,7 @@ import "@teamimpact/veda-ui-blocks/disasters.css";
 import "./styles/overrides.css";
 
 import { HeaderWithCurrentPath } from "@/app/components";
-import { AppLink } from "@/app/components/AppLink";
+import { AppLink } from "@/app/components/Link";
 import { MOCK_FOOTER_PROPS } from "./site-config/footer";
 
 export const metadata: Metadata = {

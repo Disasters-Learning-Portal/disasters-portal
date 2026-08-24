@@ -1,6 +1,6 @@
 import { CARTO_DARK_WITH_LABELS_BASEMAP_STYLE } from "@teamimpact/veda-ui-blocks";
 import { Fragment } from "react";
-import { AppLinkStyled } from "@/app/components/AppLink";
+import { AppLinkStyled } from "@/app/components/Link";
 import { DATA } from "@/app/site-config/data";
 import { TRAINING__EO_BUILDING_EXPOSURE } from "@/app/site-config/training/training__eo-building-exposure";
 import { TRAINING__FUNDAMENTALS_REMOTE_SENSING } from "@/app/site-config/training/training__fundamentals-remote-sensing";

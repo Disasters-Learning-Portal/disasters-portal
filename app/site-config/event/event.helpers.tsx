@@ -1,5 +1,5 @@
 import { type CardMiniProps, type CardProps, Link } from "@teamimpact/veda-ui-blocks";
-import type { AppLink } from "@/app/components/AppLink";
+import type { AppLink } from "@/app/components/Link";
 import {
   makeCardMastHeadProps,
   makeCardMiniProps,

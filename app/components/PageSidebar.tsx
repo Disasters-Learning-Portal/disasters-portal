@@ -1,6 +1,6 @@
 import { Tag } from "@teamimpact/veda-ui-blocks";
 import type { ReactNode } from "react";
-import { AppLinkStyled } from "@/app/components/AppLink";
+import { AppLinkStyled } from "@/app/components/Link";
 import {
   makeContentTypeTagProps,
   makeSimpleTagProps,

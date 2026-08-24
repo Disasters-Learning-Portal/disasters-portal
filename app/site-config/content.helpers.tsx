@@ -4,8 +4,8 @@ import type {
   CardProps,
   CardSimpleProps,
 } from "@teamimpact/veda-ui-blocks";
-import { AppLink } from "@/app/components/AppLink";
 import { Image } from "@/app/components/Image";
+import { AppLink } from "@/app/components/Link";
 import {
   type Category,
   CONTENT_THEMES,
