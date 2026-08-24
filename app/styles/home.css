@@ -5,8 +5,7 @@
   @media (min-width: 640px) {
     .blocks-card__content-container:before {
       content: "";
-      /* Relative url so the bundler emits it under /_next, which gets the base path. */
-      background-image: url("../../public/img/logo-emblem.svg");
+      background-image: url("../assets/logo-emblem.svg");
       background-position: center;
       background-repeat: no-repeat;
       background-size: contain;
