@@ -1,6 +1,7 @@
 export { AppImage } from "./AppImage";
 export * from "./blocks";
 export { ContentBlockRenderer } from "./ContentBlockRenderer";
+export { Gallery, type GalleryProps } from "./Gallery/Gallery";
 export { HeaderWithCurrentPath } from "./HeaderWithCurrentPath";
 export { ImageComparison } from "./ImageComparison";
 export { PageMasthead } from "./PageMasthead";
