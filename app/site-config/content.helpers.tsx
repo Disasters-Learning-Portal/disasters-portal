@@ -6,6 +6,7 @@ import type {
 } from "@teamimpact/veda-ui-blocks";
 import { AppImage } from "@/app/components/AppImage";
 import { AppLink } from "@/app/components/AppLink";
+import type { GalleryItem } from "@/app/components/Gallery/Gallery.helpers";
 import {
   type Category,
   CONTENT_THEMES,
@@ -171,6 +172,34 @@ export const makeCardDetailedProps = ({
     as: AppLink,
   },
   ...rest,
+});
+
+/**
+ * Card recipe for gallery pages.
+ *
+ * Intentionally repeats makeCardDetailedProps rather than extending it. Should be folded together if they converge. TODO: #372
+ */
+export const makeGalleryCardProps = (item: GalleryItem): CardDetailedProps<typeof AppLink> => ({
+  image: (
+    <AppImage
+      {...item.thumbnailImage}
+      fill
+      sizes="(max-width: 640px) 100vw, (max-width: 1400px) 50vw, 700px"
+    />
+  ),
+  imagePosition: "top",
+  title: item.title,
+  description: item.description,
+  tags: [...item.themes.map(makeThemeTagProps), ...item.categories.map(makeSimpleTagProps)].map(
+    ({ children, ...rest }) => ({ label: children, ...rest }),
+  ),
+  callToAction: {
+    href: item.url ?? `${CONTENT_TYPES[item.contentType].route}/${item.id}`,
+    label: `View ${toTitleCase(CONTENT_TYPES[item.contentType].label)}`,
+    isExternal: !!item.url,
+    variant: "arrow",
+    as: AppLink,
+  },
 });
 
 export const makeCardDetailedImageLeftProps = ({
