@@ -1,5 +1,7 @@
 import type { NextConfig } from "next";
 
+import { BASE_PATH } from "./app/site-config/base-path.helpers";
+
 /*
  * Silences the "Next.js inferred your workspace root" warning.
  * This happens when a lockfile exists in a parent directory and Turbopack
@@ -11,7 +13,7 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: __dirname,
   },
-  typedRoutes: true,
+  ...(BASE_PATH ? { basePath: BASE_PATH } : {}),
   images: {
     // Allowlisted remote hosts for next/image
     remotePatterns: [{ protocol: "https", hostname: "**" }],

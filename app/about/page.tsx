@@ -1,6 +1,5 @@
-import Image from "next/image";
-
 import { Section } from "@/app/components";
+import { AppImage } from "@/app/components/AppImage";
 import { ContentBlockRenderer } from "@/app/components/ContentBlockRenderer";
 import { ABOUT_PAGE_BODY } from "@/app/site-config/about/about__page";
 
@@ -13,7 +12,7 @@ export default function AboutPage() {
           <div className="grid-col-12">
             <div className="display-flex flex-row flex-align-center">
               <div className="margin-right-3">
-                <Image
+                <AppImage
                   src="/img/logo-emblem-primary.svg"
                   alt="NASA Disasters Program emblem"
                   width={134}

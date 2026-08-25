@@ -1,6 +1,3 @@
-import { Link } from "@teamimpact/veda-ui-blocks";
-import Image from "next/image";
-
 import {
   ImageComparison,
   Section,
@@ -9,6 +6,9 @@ import {
   SectionCardSimple,
   SectionHeading,
 } from "@/app/components";
+import { AppImage } from "@/app/components/AppImage";
+import { AppLinkStyled } from "@/app/components/AppLink";
+import { AppVideo } from "@/app/components/AppVideo";
 import { StacCompareBlock, StacSingleLayerBlock } from "@/app/components/blocks";
 import {
   makeCardDetailedImageLeftProps,
@@ -65,7 +65,7 @@ export const ContentBlockRenderer = ({
                 <li key={i}>{item}</li>
               ) : (
                 <li key={item.href}>
-                  <Link href={item.href}>{item.label}</Link>
+                  <AppLinkStyled href={item.href}>{item.label}</AppLinkStyled>
                 </li>
               ),
             )}
@@ -102,10 +102,9 @@ export const ContentBlockRenderer = ({
             <ContentHeading heading={block.heading} headingLevel={block.headingLevel} />
           )}
           {block.src ? (
-            <video controls className="width-full display-block">
-              <source src={block.src} />
+            <AppVideo src={block.src} controls className="width-full display-block">
               <track kind="captions" />
-            </video>
+            </AppVideo>
           ) : (
             <div className="width-full bg-base-lightest display-flex flex-align-center flex-justify-center height-card padding-x-4">
               <p className="text-base margin-0">Video coming soon</p>
@@ -119,7 +118,7 @@ export const ContentBlockRenderer = ({
       return (
         <Section isMultiColumnLayout={isMultiColumnLayout}>
           <figure className="margin-0">
-            <Image
+            <AppImage
               src={block.src}
               alt={block.alt}
               width={block.width}

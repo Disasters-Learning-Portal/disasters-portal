@@ -1,3 +1,4 @@
+export { AppImage } from "./AppImage";
 export * from "./blocks";
 export { ContentBlockRenderer } from "./ContentBlockRenderer";
 export { HeaderWithCurrentPath } from "./HeaderWithCurrentPath";

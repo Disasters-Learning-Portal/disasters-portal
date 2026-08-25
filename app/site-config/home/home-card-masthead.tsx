@@ -1,5 +1,8 @@
 import { CardCTA, type CardProps } from "@teamimpact/veda-ui-blocks";
 
+import { AppLink } from "@/app/components/AppLink";
+import { AppVideo } from "@/app/components/AppVideo";
+
 const MOCK_FEATURE_CTACARDS_PROPS = [
   {
     title: "Prepare",
@@ -34,7 +37,7 @@ const MOCK_FEATURE_CTACARDS_SECTION = (
         key={cardProps.title}
         className="grid-col-12 tablet:grid-col-6 desktop:grid-col-3 padding-top-205"
       >
-        <CardCTA {...cardProps} />
+        <CardCTA {...cardProps} as={AppLink} />
       </div>
     ))}
   </div>
@@ -42,7 +45,7 @@ const MOCK_FEATURE_CTACARDS_SECTION = (
 
 export const MOCK_CARD_MASTHEAD: CardProps = {
   image: (
-    <video
+    <AppVideo
       src="/img/home/home-card-hero-video.mp4"
       aria-hidden="true"
       tabIndex={-1}

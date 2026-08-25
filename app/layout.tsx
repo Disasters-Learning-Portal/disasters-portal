@@ -4,6 +4,8 @@ import "@teamimpact/veda-ui-blocks/disasters.css";
 import "./styles/overrides.css";
 
 import { HeaderWithCurrentPath } from "@/app/components";
+import { AppLink } from "@/app/components/AppLink";
+import { withBasePath } from "@/app/site-config/base-path.helpers";
 import { MOCK_FOOTER_PROPS } from "./site-config/footer";
 
 export const metadata: Metadata = {
@@ -18,6 +20,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      {/* CSS cannot resolve public/ URLs under a base path; expose them as vars */}
+      <style>{`:root { --image-logo-emblem-url: url("${withBasePath("/img/logo-emblem.svg")}"); }`}</style>
       <body
         className="minh-viewport"
         style={{
@@ -27,7 +31,7 @@ export default function RootLayout({
       >
         <HeaderWithCurrentPath />
         <main>{children}</main>
-        <Footer {...MOCK_FOOTER_PROPS} />
+        <Footer {...MOCK_FOOTER_PROPS} linksAs={AppLink} />
       </body>
     </html>
   );
