@@ -23,8 +23,8 @@
           "level": "error",
           "options": {
             "paths": {
-              "next/link": "Use AppLink (@/app/components/AppLink) instead: a 'use client' re-export of next/link. Passing next/link directly from a server module as an `as`/`linksAs` prop fails RSC serialization.",
-              "next/image": "Use AppImage (@/app/components/AppImage) instead: applies the base path to src, which next/image does not."
+              "next/link": "Use AppLink (@/app/components/AppLink) for type definitions or 'as' prop definitions with base path support. Use AppLinkStyled for link components to be rendered with base path support.",
+              "next/image": "Use AppImage (@/app/components/AppImage) for base path support."
             }
           }
         }
