@@ -17,12 +17,7 @@ Set `NEXT_PUBLIC_BASE_PATH` at build time to serve the app under a subpath (e.g.
 
 ## Assets
 
-Use `AppImage` and `AppVideo` instead of the raw elements — they apply the base path (external URLs pass through unchanged).
-
-Placement:
-
-- `public/` — assets referenced by string path (e.g. `/img/story/...`) through the wrappers above.
-- `app/assets/` — assets used from CSS or statically imported. The bundler applies the base path and a content hash; CSS cannot reference `public/` under a base path.
+Assets live in `public/`. Use `AppImage` and `AppVideo` instead of the raw elements — they apply the base path (external URLs pass through unchanged). CSS cannot resolve `public/` URLs under a base path; `layout.tsx` exposes those as CSS variables (see `--image-logo-emblem-url`).
 
 ## How It Works
 
