@@ -36,14 +36,14 @@ export const RECOVER_CONTENT: ThemeContent = {
       baseMapStyle: CARTO_DARK_WITH_LABELS_BASEMAP_STYLE,
       leftLayerConfig: {
         type: "raster",
-        collectionId: "gaia-january2025-total-composite-tmp",
+        collectionId: "gaia-total-composite",
         collectionAssetId: "total",
         dateRange: { from: "2025-01-01", to: "2025-01-01" },
         hideLegend: true,
       },
       rightLayerConfig: {
         type: "raster",
-        collectionId: "gaia-january2025-wood-composite-tmp",
+        collectionId: "gaia-wood-composite",
         collectionAssetId: "wood",
         dateRange: { from: "2025-01-01", to: "2025-01-01" },
       },
