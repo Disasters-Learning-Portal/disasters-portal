@@ -155,6 +155,42 @@ export const contentToGalleryItem = (content: Content): GalleryItem => ({
   url: "url" in content ? content.url : undefined,
 });
 
+export const makeCardDetailedProps = ({
+  id,
+  contentType,
+  thumbnailImage,
+  tags,
+  themes,
+  categories,
+  url,
+  ...rest
+}: CardDetailedPropsArgs): IterableItemWithId<CardDetailedProps<typeof AppLink>> => ({
+  id,
+  image: (
+    <AppImage
+      {...thumbnailImage}
+      fill
+      sizes="(max-width: 640px) 100vw, (max-width: 1400px) 50vw, 700px"
+    />
+  ),
+  imagePosition: "top",
+  tags: (tags
+    ? tags.map((t) => makeSimpleTagProps(t))
+    : [
+        ...(themes ?? []).map((t) => makeThemeTagProps(t)),
+        ...(categories ?? []).map((c) => makeSimpleTagProps(c)),
+        makeContentTypeTagProps(contentType),
+      ]
+  ).map(({ children, ...rest }) => ({ label: children, ...rest })),
+  callToAction: {
+    href: url ? url : `${CONTENT_TYPES[contentType].route}/${id}`,
+    label: `View ${toTitleCase(CONTENT_TYPES[contentType].label)}`,
+    isExternal: !!url,
+    as: AppLink,
+  },
+  ...rest,
+});
+
 export const makeCardDetailedImageLeftProps = ({
   id,
   contentType,
