@@ -152,37 +152,7 @@ export const contentToGalleryItem = (content: Content): GalleryItem => ({
   thumbnailImage: content.thumbnailImage,
   themes: content.themes,
   categories: content.categories,
-  href:
-    "url" in content ? content.url : `${CONTENT_TYPES[content.contentType].route}/${content.id}`,
-  isExternal: "url" in content,
-});
-
-/**
- * Card recipe for gallery pages.
- *
- * Intentionally repeats makeCardDetailedImageLeftProps rather than extending it. Should be folded together if they converge. TODO: #372
- */
-export const makeGalleryCardProps = (item: GalleryItem): CardDetailedProps<typeof AppLink> => ({
-  image: (
-    <AppImage
-      {...item.thumbnailImage}
-      fill
-      sizes="(max-width: 640px) 100vw, (max-width: 1400px) 50vw, 700px"
-    />
-  ),
-  imagePosition: "top",
-  title: item.title,
-  description: item.description,
-  tags: [...item.themes.map(makeThemeTagProps), ...item.categories.map(makeSimpleTagProps)].map(
-    ({ children, ...rest }) => ({ label: children, ...rest }),
-  ),
-  callToAction: {
-    href: item.href,
-    label: `View ${toTitleCase(CONTENT_TYPES[item.contentType].label)}`,
-    isExternal: item.isExternal,
-    variant: "arrow",
-    as: AppLink,
-  },
+  url: "url" in content ? content.url : undefined,
 });
 
 export const makeCardDetailedImageLeftProps = ({
