@@ -1,4 +1,3 @@
-import { Suspense } from "react";
 import { Gallery, PageMasthead, Section } from "@/app/components";
 import { toGalleryItem } from "@/app/components/Gallery/Gallery.helpers";
 import { makeCardMastHeadProps } from "@/app/site-config/content.helpers";
@@ -10,9 +9,7 @@ export default function DataGalleryPage() {
     <>
       <PageMasthead {...makeCardMastHeadProps(DATA_GALLERY_CARD_MASTHEAD)} />
       <Section>
-        <Suspense>
-          <Gallery items={DATA.map(toGalleryItem)} />
-        </Suspense>
+        <Gallery items={DATA.map(toGalleryItem)} />
       </Section>
     </>
   );

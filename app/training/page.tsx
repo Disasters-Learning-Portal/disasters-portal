@@ -1,4 +1,3 @@
-import { Suspense } from "react";
 import { Gallery, PageMasthead, Section } from "@/app/components";
 import { toGalleryItem } from "@/app/components/Gallery/Gallery.helpers";
 import { TRAININGS, TRAININGS_EXTERNAL } from "@/app/site-config/training";
@@ -12,9 +11,7 @@ export default function TrainingCollectionPage() {
     <>
       <PageMasthead {...makeCardMastHeadProps(TRAINING_CARD_MASTHEAD)} />
       <Section>
-        <Suspense>
-          <Gallery items={items} />
-        </Suspense>
+        <Gallery items={items} />
       </Section>
     </>
   );
