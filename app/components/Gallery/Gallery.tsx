@@ -4,7 +4,7 @@ import { CardDetailed } from "@teamimpact/veda-ui-blocks";
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 import { makeGalleryCardProps } from "@/app/site-config/content.helpers";
-import { type GalleryItem, paginate, parsePage } from "./Gallery.helpers";
+import { type GalleryItem, getPaginationState, parsePageParam } from "./Gallery.helpers";
 import { PaginationBar } from "./PaginationBar";
 
 export type GalleryProps = {
@@ -26,8 +26,8 @@ export function Gallery(props: GalleryProps) {
 
 function GalleryInner({ items }: GalleryProps) {
   const searchParams = useSearchParams();
-  const page = parsePage(searchParams);
-  const { pageItems, totalPages, currentPage } = paginate(items, page);
+  const requestedPage = parsePageParam(searchParams);
+  const { pageItems, totalPages, currentPage } = getPaginationState(items, requestedPage);
 
   return (
     <>
