@@ -1,7 +1,10 @@
 import type { MinimumCardContent } from "@/app/site-config/types";
 
-// Pure helpers for the Gallery component. No React imports so they stay
-// unit-testable and usable from server and client modules alike.
+/** Results per gallery page. */
+const PAGE_SIZE = 6;
+
+/** Query-string key shared by parsePageParam and PaginationBar's hrefs. */
+export const PAGE_PARAM = "page";
 
 export type GalleryItem = MinimumCardContent & { url?: string };
 
@@ -33,30 +36,18 @@ export const toGalleryItem = ({
   url,
 });
 
-/** Figma shows 6 results per gallery page. */
-export const PAGE_SIZE = 6;
-
-/** Query-string key shared by parsePage and PaginationBar's hrefs. */
-export const PAGE_PARAM = "page";
-
-/** Read the 1-based page from the query string; invalid or missing -> 1. */
-export function parsePage(params: URLSearchParams): number {
+export function parsePageParam(params: URLSearchParams): number {
   // Number() instead of parseInt() so trailing junk ("3abc") is invalid, not 3
   const parsed = Number(params.get(PAGE_PARAM) ?? "");
   return Number.isInteger(parsed) && parsed >= 1 ? parsed : 1;
 }
 
-/**
- * Data-side pagination: blocks Pagination only renders the nav and exports no
- * data helpers, so slicing items is the app's job. Clamps the page itself —
- * the clamp decides which items are sliced, not just which links render.
- */
-export function paginate<T>(
+export function getPaginationState<T>(
   items: T[],
-  page: number,
+  requestedPage: number,
 ): { pageItems: T[]; totalPages: number; currentPage: number } {
   const totalPages = Math.max(1, Math.ceil(items.length / PAGE_SIZE));
-  const currentPage = Math.min(Math.max(1, page), totalPages);
+  const currentPage = Math.min(Math.max(1, requestedPage), totalPages);
   const start = (currentPage - 1) * PAGE_SIZE;
   return { pageItems: items.slice(start, start + PAGE_SIZE), totalPages, currentPage };
 }
