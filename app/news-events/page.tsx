@@ -1,9 +1,7 @@
-import { CardDetailed } from "@teamimpact/veda-ui-blocks";
-import { PageMasthead, Section } from "@/app/components";
-import {
-  makeCardDetailedImageLeftProps,
-  makeCardMastHeadProps,
-} from "@/app/site-config/content.helpers";
+import { Suspense } from "react";
+import { Gallery, PageMasthead, Section } from "@/app/components";
+import { toGalleryItem } from "@/app/components/Gallery/Gallery.helpers";
+import { makeCardMastHeadProps } from "@/app/site-config/content.helpers";
 import { DATASTORIES } from "@/app/site-config/datastory";
 import { EVENTS } from "@/app/site-config/event";
 import { NEWS } from "@/app/site-config/news";
@@ -30,36 +28,9 @@ export default async function NewsEventsCollectionPage(props: PageProps<"/news-e
     <>
       <PageMasthead {...makeCardMastHeadProps(NEWS_EVENTS_CARD_MASTHEAD)} />
       <Section>
-        <div className="grid-row grid-gap">
-          {filteredItems.map(
-            ({
-              id,
-              contentType,
-              title,
-              description,
-              thumbnailImage,
-              themes,
-              categories,
-              ...rest
-            }) => (
-              <div key={id} className="grid-col-12 margin-y-1 desktop:margin-y-2">
-                <CardDetailed
-                  {...makeCardDetailedImageLeftProps({
-                    id,
-                    contentType,
-                    title,
-                    description,
-                    thumbnailImage,
-                    categories,
-                    themes,
-                    url: "url" in rest ? rest.url : undefined,
-                  })}
-                  className="height-card-sm"
-                />
-              </div>
-            ),
-          )}
-        </div>
+        <Suspense>
+          <Gallery items={filteredItems.map(toGalleryItem)} />
+        </Suspense>
       </Section>
     </>
   );
