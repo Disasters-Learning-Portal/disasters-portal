@@ -138,46 +138,10 @@ export type CardDetailedPropsArgs = Omit<
   url?: string;
 };
 
-export const makeCardDetailedProps = ({
-  id,
-  contentType,
-  thumbnailImage,
-  tags,
-  themes,
-  categories,
-  url,
-  ...rest
-}: CardDetailedPropsArgs): IterableItemWithId<CardDetailedProps<typeof AppLink>> => ({
-  id,
-  image: (
-    <AppImage
-      {...thumbnailImage}
-      fill
-      sizes="(max-width: 640px) 100vw, (max-width: 1400px) 50vw, 700px"
-    />
-  ),
-  imagePosition: "top",
-  tags: (tags
-    ? tags.map((t) => makeSimpleTagProps(t))
-    : [
-        ...(themes ?? []).map((t) => makeThemeTagProps(t)),
-        ...(categories ?? []).map((c) => makeSimpleTagProps(c)),
-        makeContentTypeTagProps(contentType),
-      ]
-  ).map(({ children, ...rest }) => ({ label: children, ...rest })),
-  callToAction: {
-    href: url ? url : `${CONTENT_TYPES[contentType].route}/${id}`,
-    label: `View ${toTitleCase(CONTENT_TYPES[contentType].label)}`,
-    isExternal: !!url,
-    as: AppLink,
-  },
-  ...rest,
-});
-
 /**
  * Card recipe for gallery pages.
  *
- * Intentionally repeats makeCardDetailedProps rather than extending it. Should be folded together if they converge. TODO: #372
+ * Intentionally repeats makeCardDetailedImageLeftProps rather than extending it. Should be folded together if they converge. TODO: #372
  */
 export const makeGalleryCardProps = (item: GalleryItem): CardDetailedProps<typeof AppLink> => ({
   image: (
