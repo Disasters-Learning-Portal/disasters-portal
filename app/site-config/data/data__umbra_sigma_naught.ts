@@ -22,14 +22,7 @@ export const DATA__UMBRA_SIGMA_NAUGHT: DataContent = {
 
   themes: ["respond", "prepare", "recover"],
 
-  categories: [
-    "severewx",
-    "fire",
-    "flood",
-    "tropical cyclone",
-    "earthquake",
-    "winter weather",
-  ],
+  categories: ["severewx", "fire", "flood", "tropical cyclone", "earthquake", "winter weather"],
 
   relatedContent: [],
 
