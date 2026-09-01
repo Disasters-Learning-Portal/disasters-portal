@@ -4,19 +4,21 @@ import { CardDetailed } from "@teamimpact/veda-ui-blocks";
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 import { makeGalleryCardProps } from "@/app/site-config/content.helpers";
-import { type GalleryItem, getPaginationState, parsePageParam } from "./Gallery.helpers";
+import type { GalleryItem } from "@/app/site-config/types";
+import { getPaginationState, parsePageParam } from "./Gallery.helpers";
 import { PaginationBar } from "./PaginationBar";
 
 export type GalleryProps = {
-  // Plain serializable card data; use toGalleryItem() to derive from content
-  // objects. Callers pre-filter (e.g. news-events contenttype) before passing.
   items: GalleryItem[];
 };
 
-/** Paginated card grid driven by the `page` query param. Filters land in later PRs (#372). */
+/**
+ * GalleryInner reads the page from the URL via useSearchParams, which only
+ * has a value at request time. On statically prerendered pages Next.js
+ * therefore requires a Suspense boundary above the call (build error
+ * otherwise); the boundary lives here so every consumer gets it for free.
+ */
 export function Gallery(props: GalleryProps) {
-  // useSearchParams needs a Suspense boundary above it on statically
-  // prerendered pages; owning it here keeps pages from having to remember it.
   return (
     <Suspense>
       <GalleryInner {...props} />

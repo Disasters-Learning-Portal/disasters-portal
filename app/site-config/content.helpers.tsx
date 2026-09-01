@@ -6,12 +6,13 @@ import type {
 } from "@teamimpact/veda-ui-blocks";
 import { AppImage } from "@/app/components/AppImage";
 import { AppLink } from "@/app/components/AppLink";
-import type { GalleryItem } from "@/app/components/Gallery/Gallery.helpers";
 import {
   type Category,
   CONTENT_THEMES,
   CONTENT_TYPES,
+  type Content,
   type ContentType,
+  type GalleryItem,
   type IterableItemWithId,
   type Theme,
 } from "@/app/site-config/types";
@@ -137,6 +138,22 @@ export type CardDetailedPropsArgs = Omit<
   tags?: (Theme | ContentType | Category)[];
   url?: string;
 };
+
+/**
+ * Project a content entry down to the serializable card fields the Gallery
+ * needs. Content types carry non-serializable extras (ContentBlock bodies
+ * with JSX) that must not cross the server -> client boundary.
+ */
+export const contentToGalleryItem = (content: Content): GalleryItem => ({
+  id: content.id,
+  contentType: content.contentType,
+  title: content.title,
+  description: content.description,
+  thumbnailImage: content.thumbnailImage,
+  themes: content.themes,
+  categories: content.categories,
+  url: "url" in content ? content.url : undefined,
+});
 
 /**
  * Card recipe for gallery pages.

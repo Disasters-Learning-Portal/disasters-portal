@@ -129,7 +129,7 @@ export type ContentBlock =
       card: CardFeaturedPropsArgs;
     };
 
-type Content =
+export type Content =
   | TrainingContent
   | TrainingContentExternal
   | DataContent
@@ -155,6 +155,8 @@ export type MinimumCardContent = {
   categories: Category[];
   description?: string;
 };
+
+export type GalleryItem = MinimumCardContent & { url?: string };
 
 export type TrainingContentExternal = Omit<MinimumCardContent, "contentType"> & {
   contentType: "training";
