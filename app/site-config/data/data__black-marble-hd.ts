@@ -8,11 +8,11 @@ export const DATA__BLACK_MARBLE_HD: DataContent = {
   title: "Black Marble HD Nighttime Lights",
 
   description:
-    "NASA VEDA Black Marble HD combines VIIRS nighttime lights with Landsat-derived land surface information and OpenStreetMap road networks to create enhanced 30-meter nighttime light imagery for disaster impact assessment.",
+    "HD Black Marble combines VIIRS nighttime lights with Landsat-derived land surface information and OpenStreetMap road networks to create enhanced 30-meter nighttime light imagery for disaster impact assessment.",
 
   thumbnailImage: {
     src: "/img/data/black-marble-hd.webp",
-    alt: "NASA VEDA Black Marble HD nighttime lights imagery",
+    alt: "HD Black Marble nighttime lights imagery",
   },
 
   mastheadImage: {
@@ -39,7 +39,7 @@ export const DATA__BLACK_MARBLE_HD: DataContent = {
       heading: "Summary",
       headingLevel: "h3",
       paragraphs: [
-        "NASA VEDA Black Marble HD is a high-resolution nighttime lights visualization that combines NASA's VIIRS Black Marble nighttime lights with Landsat-derived land surface information and OpenStreetMap road networks. The processing pipeline uses the daily, moonlight- and atmosphere-corrected VIIRS VNP46A2 nighttime lights product together with Landsat-derived Normalized Difference Vegetation Index (NDVI) and Normalized Difference Water Index (NDWI) information and road-density patterns from OpenStreetMap. These higher-resolution datasets are used to spatially enhance the VIIRS nighttime lights and produce a 30-meter representation of nighttime illumination.",
+        "HD Black Marble is a high-resolution nighttime lights visualization that combines NASA's VIIRS Black Marble nighttime lights with Landsat-derived land surface information and OpenStreetMap road networks. The processing pipeline uses the daily, moonlight- and atmosphere-corrected VIIRS VNP46A2 nighttime lights product together with Landsat-derived Normalized Difference Vegetation Index (NDVI) and Normalized Difference Water Index (NDWI) information and road-density patterns from OpenStreetMap. These higher-resolution datasets are used to spatially enhance the VIIRS nighttime lights and produce a 30-meter representation of nighttime illumination.",
       ],
     },
 
@@ -84,7 +84,7 @@ export const DATA__BLACK_MARBLE_HD: DataContent = {
       heading: "Tags",
       headingLevel: "h3",
       paragraphs: [
-        "NASA, VEDA, Black Marble, Black Marble HD, VIIRS, Nighttime Lights, Day/Night Band, DNB, VNP46A2, Landsat, OpenStreetMap, OSM, Power Outage, Disaster Response, Disaster Recovery",
+        "NASA, Black Marble, Black Marble HD, VIIRS, Nighttime Lights, Day/Night Band, DNB, VNP46A2, Landsat, OpenStreetMap, OSM, Power Outage, Disaster Response, Disaster Recovery",
       ],
     },
   ],
