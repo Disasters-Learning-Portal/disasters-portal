@@ -41,8 +41,9 @@ export const PAGE_PARAM = "page";
 
 /** Read the 1-based page from the query string; invalid or missing -> 1. */
 export function parsePage(params: URLSearchParams): number {
-  const parsed = Number.parseInt(params.get(PAGE_PARAM) ?? "", 10);
-  return Number.isNaN(parsed) ? 1 : Math.max(1, parsed);
+  // Number() instead of parseInt() so trailing junk ("3abc") is invalid, not 3
+  const parsed = Number(params.get(PAGE_PARAM) ?? "");
+  return Number.isInteger(parsed) && parsed >= 1 ? parsed : 1;
 }
 
 /**
