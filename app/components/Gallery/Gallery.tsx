@@ -2,6 +2,7 @@
 
 import { CardDetailed } from "@teamimpact/veda-ui-blocks";
 import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 import { makeGalleryCardProps } from "@/app/site-config/content.helpers";
 import { type GalleryItem, paginate, parsePage } from "./Gallery.helpers";
 import { PaginationBar } from "./PaginationBar";
@@ -13,7 +14,17 @@ export type GalleryProps = {
 };
 
 /** Paginated card grid driven by the `page` query param. Filters land in later PRs (#372). */
-export function Gallery({ items }: GalleryProps) {
+export function Gallery(props: GalleryProps) {
+  // useSearchParams needs a Suspense boundary above it on statically
+  // prerendered pages; owning it here keeps pages from having to remember it.
+  return (
+    <Suspense>
+      <GalleryInner {...props} />
+    </Suspense>
+  );
+}
+
+function GalleryInner({ items }: GalleryProps) {
   const searchParams = useSearchParams();
   const page = parsePage(searchParams);
   const { pageItems, totalPages, currentPage } = paginate(items, page);

@@ -1,4 +1,3 @@
-import { Suspense } from "react";
 import { Gallery, PageMasthead, Section } from "@/app/components";
 import { toGalleryItem } from "@/app/components/Gallery/Gallery.helpers";
 import { makeCardMastHeadProps } from "@/app/site-config/content.helpers";
@@ -28,9 +27,7 @@ export default async function NewsEventsCollectionPage(props: PageProps<"/news-e
     <>
       <PageMasthead {...makeCardMastHeadProps(NEWS_EVENTS_CARD_MASTHEAD)} />
       <Section>
-        <Suspense>
-          <Gallery items={filteredItems.map(toGalleryItem)} />
-        </Suspense>
+        <Gallery items={filteredItems.map(toGalleryItem)} />
       </Section>
     </>
   );
