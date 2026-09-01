@@ -3,7 +3,7 @@
 import { CardDetailed } from "@teamimpact/veda-ui-blocks";
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
-import { makeCardDetailedImageLeftProps } from "@/app/site-config/content.helpers";
+import { makeCardDetailedProps } from "@/app/site-config/content.helpers";
 import type { GalleryItem } from "@/app/site-config/types";
 import { getPaginationState, parsePageParam } from "./Gallery.helpers";
 import { PaginationBar } from "./PaginationBar";
@@ -35,7 +35,7 @@ function GalleryInner({ items }: GalleryProps) {
     <>
       <div className="grid-row grid-gap">
         {pageItems.map((item) => {
-          const { id, ...cardProps } = makeCardDetailedImageLeftProps(item);
+          const { id, ...cardProps } = makeCardDetailedProps(item);
           return (
             <div
               key={id}
