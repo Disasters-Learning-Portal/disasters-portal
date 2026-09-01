@@ -156,7 +156,10 @@ export type MinimumCardContent = {
   description?: string;
 };
 
-export type GalleryItem = MinimumCardContent & { url?: string };
+export type GalleryItem = MinimumCardContent & {
+  href: string;
+  isExternal: boolean;
+};
 
 export type TrainingContentExternal = Omit<MinimumCardContent, "contentType"> & {
   contentType: "training";

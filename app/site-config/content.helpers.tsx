@@ -152,7 +152,9 @@ export const contentToGalleryItem = (content: Content): GalleryItem => ({
   thumbnailImage: content.thumbnailImage,
   themes: content.themes,
   categories: content.categories,
-  url: "url" in content ? content.url : undefined,
+  href:
+    "url" in content ? content.url : `${CONTENT_TYPES[content.contentType].route}/${content.id}`,
+  isExternal: "url" in content,
 });
 
 /**
@@ -175,9 +177,9 @@ export const makeGalleryCardProps = (item: GalleryItem): CardDetailedProps<typeo
     ({ children, ...rest }) => ({ label: children, ...rest }),
   ),
   callToAction: {
-    href: item.url ?? `${CONTENT_TYPES[item.contentType].route}/${item.id}`,
+    href: item.href,
     label: `View ${toTitleCase(CONTENT_TYPES[item.contentType].label)}`,
-    isExternal: !!item.url,
+    isExternal: item.isExternal,
     variant: "arrow",
     as: AppLink,
   },
