@@ -18,11 +18,20 @@ type AppliedFiltersProps = {
   onFiltersChange: (filters: FilterState) => void;
 };
 
-/** Pills for the active facet values, the search result count, and the empty state. */
+/** Pills for the applied query and facet values, the search result count, and the empty state. */
 export function AppliedFilters({ filters, resultCount, onFiltersChange }: AppliedFiltersProps) {
   const applyFacets = (facets: FacetSelection) => onFiltersChange({ ...filters, facets });
 
-  const pills = FACET_KEYS.flatMap((key) => {
+  // The quoted query pill is the only removal affordance for an applied
+  // search besides submitting an empty one.
+  const queryPill = filters.query
+    ? {
+        id: "query",
+        label: `Text: “${filters.query}”`,
+        remove: () => onFiltersChange({ ...filters, query: "" }),
+      }
+    : null;
+  const facetPills = FACET_KEYS.flatMap((key) => {
     const selected: readonly string[] = filters.facets[key];
     return selected.map((value) => ({
       id: `${key}-${value}`,
@@ -31,28 +40,36 @@ export function AppliedFilters({ filters, resultCount, onFiltersChange }: Applie
         applyFacets({ ...filters.facets, [key]: toggleValue(selected, value) } as FacetSelection),
     }));
   });
+  const pills = [...(queryPill ? [queryPill] : []), ...facetPills];
 
   return (
     <>
       {pills.length > 0 && (
         <div className="display-flex flex-wrap flex-align-center margin-bottom-3">
+          <span className="text-bold margin-right-1">Filters applied:</span>
           {pills.map((pill) => (
             <Tag key={pill.id} onClose={pill.remove} className="margin-right-1">
               {pill.label}
             </Tag>
           ))}
-          <Link as="button" variant="text" onClick={() => applyFacets(EMPTY_FACETS)}>
-            Clear all
-          </Link>
+          {pills.length > 1 && (
+            <Link
+              as="button"
+              variant="text"
+              onClick={() => onFiltersChange({ query: "", facets: EMPTY_FACETS })}
+            >
+              Clear all
+            </Link>
+          )}
         </div>
       )}
-      {filters.query && (
+      {pills.length > 0 && (
         <p role="status" className="font-heading-lg text-bold margin-bottom-3">
-          {resultCount} search {resultCount === 1 ? "result" : "results"} for{" "}
-          <span className="text-primary">{filters.query}</span>
+          {resultCount === 0
+            ? "No results match your filters."
+            : `${resultCount} search ${resultCount === 1 ? "result" : "results"}`}
         </p>
       )}
-      {resultCount === 0 && <p>No results match your filters.</p>}
     </>
   );
 }
