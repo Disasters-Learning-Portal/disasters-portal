@@ -66,8 +66,7 @@ const FACETS: Record<keyof FacetSelection, FacetConfig> = {
     getItemValues: (item) => item.categories,
   },
   contentTypes: {
-    // One word for compatibility with pre-existing ?contenttype= links.
-    param: "contenttype",
+    param: "type",
     title: "Content Type",
     options: Object.keys(CONTENT_TYPES),
     label: (type) => toTitleCase(CONTENT_TYPES[type as ContentType].label),
@@ -169,6 +168,7 @@ export function listFacetOptions(
     const options = config.options.filter(
       (value) => available.includes(value) || selected.includes(value),
     );
+
     if (options.length < (config.hideWhenSingleOption ? 2 : 1)) {
       return [];
     }
