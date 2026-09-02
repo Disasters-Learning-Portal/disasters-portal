@@ -42,6 +42,17 @@ export const CONTENT_THEMES: Record<Theme, { label: string; color: string; textC
   },
 };
 
+export const CONTENT_HAZARDS: Record<Category, string> = {
+  earthquake: "Earthquake",
+  fire: "Fire",
+  flood: "Flood",
+  heat: "Heat",
+  severewx: "Severe Weather",
+  "tropical cyclone": "Tropical Cyclone",
+  volcano: "Volcano",
+  "winter weather": "Winter Weather",
+};
+
 export const CONTENT_SIDEBAR_CONTENT_TYPES: ContentType[] = [
   "data",
   "story",

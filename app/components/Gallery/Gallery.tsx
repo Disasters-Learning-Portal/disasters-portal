@@ -6,8 +6,13 @@ import { Suspense } from "react";
 import { makeCardDetailedProps } from "@/app/site-config/content.helpers";
 import type { GalleryItem } from "@/app/site-config/types";
 import { FilterToolbar } from "./FilterToolbar";
-import { applyFilters, parseQueryParam } from "./filter.helpers";
-import { getPaginationState, parsePageParam } from "./Gallery.helpers";
+import {
+  applyFilters,
+  collectAvailableFacets,
+  getPaginationState,
+  parseFilters,
+  parsePageParam,
+} from "./Gallery.helpers";
 import { PaginationBar } from "./PaginationBar";
 
 export type GalleryProps = {
@@ -31,13 +36,18 @@ export function Gallery(props: GalleryProps) {
 function GalleryInner({ items }: GalleryProps) {
   const searchParams = useSearchParams();
   const requestedPage = parsePageParam(searchParams);
-  const query = parseQueryParam(searchParams);
-  const filteredItems = applyFilters(items, query);
+  const filters = parseFilters(searchParams);
+  const availableFacets = collectAvailableFacets(items);
+  const filteredItems = applyFilters(items, filters);
   const { pageItems, totalPages, currentPage } = getPaginationState(filteredItems, requestedPage);
 
   return (
     <>
-      <FilterToolbar query={query} resultCount={filteredItems.length} />
+      <FilterToolbar
+        filters={filters}
+        availableFacets={availableFacets}
+        resultCount={filteredItems.length}
+      />
       <div className="grid-row grid-gap">
         {pageItems.map((item) => {
           const { id, ...cardProps } = makeCardDetailedProps(item);
