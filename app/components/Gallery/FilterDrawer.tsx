@@ -1,20 +1,13 @@
 "use client";
 
 import { Accordion, Checkbox, Drawer, Link } from "@teamimpact/veda-ui-blocks";
-import { toTitleCase } from "@/app/site-config/content.helpers";
 import {
-  type Category,
-  CONTENT_HAZARDS,
-  CONTENT_THEMES,
-  CONTENT_TYPES,
-  type ContentType,
-  type Theme,
-} from "@/app/site-config/types";
-import { EMPTY_FACETS, type FacetSelection, toggleValue } from "./Gallery.helpers";
-
-const THEME_OPTIONS = Object.keys(CONTENT_THEMES) as Theme[];
-const HAZARD_OPTIONS = Object.keys(CONTENT_HAZARDS) as Category[];
-const CONTENT_TYPE_OPTIONS = Object.keys(CONTENT_TYPES) as ContentType[];
+  EMPTY_FACETS,
+  FACET_KEYS,
+  FACETS,
+  type FacetSelection,
+  toggleValue,
+} from "./Gallery.helpers";
 
 type FilterDrawerProps = {
   isOpen: boolean;
@@ -35,56 +28,25 @@ export function FilterDrawer({
   onDraftChange,
   onApply,
 }: FilterDrawerProps) {
-  // Union with the draft so a URL-selected value absent from the data can still be unchecked.
-  const facetSections = [
-    {
-      id: "filter-theme",
-      title: "Theme",
-      selected: draft.themes as string[],
-      options: THEME_OPTIONS.filter(
-        (theme) => availableFacets.themes.includes(theme) || draft.themes.includes(theme),
-      ).map((theme) => ({
-        value: theme,
-        label: toTitleCase(CONTENT_THEMES[theme].label),
-      })),
+  const facetSections = FACET_KEYS.map((key) => {
+    const config = FACETS[key];
+    const selected: readonly string[] = draft[key];
+    const available: readonly string[] = availableFacets[key];
+    // Union with the draft so a URL-selected value absent from the data can still be unchecked.
+    const options = config.options.filter(
+      (value) => available.includes(value) || selected.includes(value),
+    );
+    return {
+      id: `filter-${config.param}`,
+      title: config.title,
+      label: config.label,
+      selected,
+      options,
+      hidden: options.length < (config.hideWhenSingleOption ? 2 : 1),
       toggle: (value: string) =>
-        onDraftChange({ ...draft, themes: toggleValue(draft.themes, value as Theme) }),
-    },
-    {
-      id: "filter-hazard",
-      title: "Hazard",
-      selected: draft.hazards as string[],
-      options: HAZARD_OPTIONS.filter(
-        (hazard) => availableFacets.hazards.includes(hazard) || draft.hazards.includes(hazard),
-      ).map((hazard) => ({
-        value: hazard,
-        label: CONTENT_HAZARDS[hazard],
-      })),
-      toggle: (value: string) =>
-        onDraftChange({ ...draft, hazards: toggleValue(draft.hazards, value as Category) }),
-    },
-    {
-      id: "filter-content-type",
-      title: "Content Type",
-      selected: draft.contentTypes as string[],
-      // Each item has exactly one content type, so a single-option section
-      // (e.g. on /training) cannot change results; hidden below via the flag.
-      // Theme/Hazard stay even with one option: they can exclude items with
-      // an empty taxonomy.
-      hideWhenSingleOption: true,
-      options: CONTENT_TYPE_OPTIONS.filter(
-        (type) => availableFacets.contentTypes.includes(type) || draft.contentTypes.includes(type),
-      ).map((type) => ({
-        value: type,
-        label: toTitleCase(CONTENT_TYPES[type].label),
-      })),
-      toggle: (value: string) =>
-        onDraftChange({
-          ...draft,
-          contentTypes: toggleValue(draft.contentTypes, value as ContentType),
-        }),
-    },
-  ].filter((section) => section.options.length > (section.hideWhenSingleOption ? 1 : 0));
+        onDraftChange({ ...draft, [key]: toggleValue(selected, value) } as FacetSelection),
+    };
+  }).filter((section) => !section.hidden);
 
   return (
     <Drawer
@@ -119,15 +81,15 @@ export function FilterDrawer({
           id: section.id,
           title: section.title,
           expanded: true,
-          content: section.options.map((option) => (
+          content: section.options.map((value) => (
             <Checkbox
-              key={option.value}
+              key={value}
               name={section.id}
-              label={option.label}
-              value={option.value}
+              label={section.label(value)}
+              value={value}
               inputProps={{
-                checked: section.selected.includes(option.value),
-                onChange: () => section.toggle(option.value),
+                checked: section.selected.includes(value),
+                onChange: () => section.toggle(value),
               }}
             />
           )),

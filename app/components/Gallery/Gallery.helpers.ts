@@ -1,3 +1,4 @@
+import { toTitleCase } from "@/app/site-config/content.helpers";
 import {
   type Category,
   CONTENT_HAZARDS,
@@ -32,11 +33,6 @@ export function getPaginationState<T>(
 
 /** Query-string key for the free-text search filter. */
 export const QUERY_PARAM = "q";
-/** Query-string keys for the facet filters; repeated for multi-value. */
-export const THEME_PARAM = "theme";
-export const HAZARD_PARAM = "hazard";
-/** Kept as one word for compatibility with pre-existing ?contenttype= links. */
-export const CONTENT_TYPE_PARAM = "contenttype";
 
 export type FacetSelection = {
   themes: Theme[];
@@ -52,19 +48,68 @@ export type FilterState = {
   facets: FacetSelection;
 };
 
-const isTheme = (value: string): value is Theme => value in CONTENT_THEMES;
-const isHazard = (value: string): value is Category => value in CONTENT_HAZARDS;
-const isContentType = (value: string): value is ContentType => value in CONTENT_TYPES;
+type FacetConfig = {
+  /** Query-string key; repeated for multi-value. */
+  param: string;
+  /** Drawer section heading. */
+  title: string;
+  /** All canonical values, in display order. */
+  options: readonly string[];
+  /** Display label per value, shared by the drawer checkboxes and the applied pills. */
+  label: (value: string) => string;
+  /** Values an item carries for this facet; empty means it matches nothing while the facet is active. */
+  getItemValues: (item: GalleryItem) => readonly string[];
+  /**
+   * Hide the drawer section when the data offers fewer than two options.
+   * Only valid for scalar facets (every item carries exactly one value), where
+   * a single option cannot change results. Multi-value facets keep single
+   * options: they can still exclude items with an empty taxonomy.
+   */
+  hideWhenSingleOption?: boolean;
+};
+
+/**
+ * One entry per facet: parsing, matching, URL writing, drawer sections and
+ * applied pills all iterate this registry, so adding a facet is one entry.
+ * Configs work on plain strings; FacetSelection keeps the boundary typed and
+ * parseFilters guarantees only canonical values enter.
+ */
+export const FACETS: Record<keyof FacetSelection, FacetConfig> = {
+  themes: {
+    param: "theme",
+    title: "Theme",
+    options: Object.keys(CONTENT_THEMES),
+    label: (theme) => toTitleCase(CONTENT_THEMES[theme as Theme].label),
+    getItemValues: (item) => item.themes,
+  },
+  hazards: {
+    param: "hazard",
+    title: "Hazard",
+    options: Object.keys(CONTENT_HAZARDS),
+    label: (hazard) => CONTENT_HAZARDS[hazard as Category],
+    getItemValues: (item) => item.categories,
+  },
+  contentTypes: {
+    // One word for compatibility with pre-existing ?contenttype= links.
+    param: "contenttype",
+    title: "Content Type",
+    options: Object.keys(CONTENT_TYPES),
+    label: (type) => toTitleCase(CONTENT_TYPES[type as ContentType].label),
+    getItemValues: (item) => [item.contentType],
+    hideWhenSingleOption: true,
+  },
+};
+
+export const FACET_KEYS = Object.keys(FACETS) as (keyof FacetSelection)[];
 
 export function parseFilters(params: URLSearchParams): FilterState {
-  return {
-    query: params.get(QUERY_PARAM)?.trim() ?? "",
-    facets: {
-      themes: params.getAll(THEME_PARAM).filter(isTheme),
-      hazards: params.getAll(HAZARD_PARAM).filter(isHazard),
-      contentTypes: params.getAll(CONTENT_TYPE_PARAM).filter(isContentType),
-    },
-  };
+  const facets = Object.fromEntries(
+    FACET_KEYS.map((key) => [
+      key,
+      params.getAll(FACETS[key].param).filter((value) => FACETS[key].options.includes(value)),
+    ]),
+  ) as FacetSelection;
+  return { query: params.get(QUERY_PARAM)?.trim() ?? "", facets };
 }
 
 export function matchesQuery(item: GalleryItem, query: string): boolean {
@@ -76,14 +121,13 @@ export function matchesQuery(item: GalleryItem, query: string): boolean {
 
 /** OR within a facet, AND across facets; an item without the facet's field matches nothing. */
 export function matchesFacets(item: GalleryItem, facets: FacetSelection): boolean {
-  const themeOk =
-    facets.themes.length === 0 || item.themes.some((theme) => facets.themes.includes(theme));
-  const hazardOk =
-    facets.hazards.length === 0 ||
-    item.categories.some((category) => facets.hazards.includes(category));
-  const contentTypeOk =
-    facets.contentTypes.length === 0 || facets.contentTypes.includes(item.contentType);
-  return themeOk && hazardOk && contentTypeOk;
+  return FACET_KEYS.every((key) => {
+    const selected: readonly string[] = facets[key];
+    return (
+      selected.length === 0 ||
+      FACETS[key].getItemValues(item).some((value) => selected.includes(value))
+    );
+  });
 }
 
 export function applyFilters(items: GalleryItem[], { query, facets }: FilterState): GalleryItem[] {
@@ -94,29 +138,21 @@ export function applyFilters(items: GalleryItem[], { query, facets }: FilterStat
 
 /** Facet values occurring in at least one item; options absent from the data would filter nothing. */
 export function collectAvailableFacets(items: GalleryItem[]): FacetSelection {
-  const themes = new Set<Theme>();
-  const hazards = new Set<Category>();
-  const contentTypes = new Set<ContentType>();
-  for (const item of items) {
-    for (const theme of item.themes) {
-      themes.add(theme);
-    }
-    for (const category of item.categories) {
-      hazards.add(category);
-    }
-    contentTypes.add(item.contentType);
-  }
-  return { themes: [...themes], hazards: [...hazards], contentTypes: [...contentTypes] };
+  return Object.fromEntries(
+    FACET_KEYS.map((key) => {
+      const present = new Set(items.flatMap((item) => FACETS[key].getItemValues(item)));
+      return [key, FACETS[key].options.filter((value) => present.has(value))];
+    }),
+  ) as FacetSelection;
 }
 
-export function toggleValue<T>(list: T[], value: T): T[] {
+export function toggleValue<T>(list: readonly T[], value: T): T[] {
   return list.includes(value) ? list.filter((entry) => entry !== value) : [...list, value];
 }
 
 /**
  * Href for the current location with the full filter state written: owned
- * params (q/theme/hazard/contenttype) replaced, paging reset, all other
- * params preserved.
+ * params (query, facets, page) replaced, all other params preserved.
  */
 export function buildFiltersUrl(
   currentParams: URLSearchParams,
@@ -124,20 +160,17 @@ export function buildFiltersUrl(
   { query, facets }: FilterState,
 ): string {
   const params = new URLSearchParams(currentParams);
-  for (const owned of [QUERY_PARAM, THEME_PARAM, HAZARD_PARAM, CONTENT_TYPE_PARAM, PAGE_PARAM]) {
+  const ownedParams = [QUERY_PARAM, PAGE_PARAM, ...FACET_KEYS.map((key) => FACETS[key].param)];
+  for (const owned of ownedParams) {
     params.delete(owned);
   }
   if (query) {
     params.set(QUERY_PARAM, query);
   }
-  for (const theme of facets.themes) {
-    params.append(THEME_PARAM, theme);
-  }
-  for (const hazard of facets.hazards) {
-    params.append(HAZARD_PARAM, hazard);
-  }
-  for (const contentType of facets.contentTypes) {
-    params.append(CONTENT_TYPE_PARAM, contentType);
+  for (const key of FACET_KEYS) {
+    for (const value of facets[key]) {
+      params.append(FACETS[key].param, value);
+    }
   }
   const queryString = params.toString();
   return queryString ? `?${queryString}` : pathname;
