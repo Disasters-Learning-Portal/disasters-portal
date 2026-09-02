@@ -42,7 +42,7 @@ export function StacCompareBlock({ block }: StacCompareBlockProps) {
        * would be unreachable until the map is activated.
        */}
       {infoHref && (
-        <p className="font-body-sm margin-top-1 margin-bottom-0">
+        <p className="font-body-sm margin-top-1 margin-bottom-0 text-right">
           <AppLinkStyled href={infoHref}>
             <SvgInfoOutline className="usa-icon margin-right-05" />
             {infoLabel}
