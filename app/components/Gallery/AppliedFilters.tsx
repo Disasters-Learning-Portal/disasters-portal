@@ -42,34 +42,44 @@ export function AppliedFilters({ filters, resultCount, onFiltersChange }: Applie
   });
   const pills = [...(queryPill ? [queryPill] : []), ...facetPills];
 
+  const statusText = () => {
+    if (pills.length === 0) {
+      return `${resultCount} ${resultCount === 1 ? "item" : "items"}`;
+    }
+    if (resultCount === 0) {
+      return "No results match your filters.";
+    }
+    return `${resultCount} search ${resultCount === 1 ? "result" : "results"}`;
+  };
+
   return (
     <>
-      {pills.length > 0 && (
-        <div className="display-flex flex-wrap flex-align-center margin-bottom-3">
-          <span className="text-bold margin-right-1">Filters applied:</span>
-          {pills.map((pill) => (
-            <Tag key={pill.id} onClose={pill.remove} className="margin-right-1">
-              {pill.label}
-            </Tag>
-          ))}
-          {pills.length > 1 && (
-            <Link
-              as="button"
-              variant="text"
-              onClick={() => onFiltersChange({ query: "", facets: EMPTY_FACETS })}
-            >
-              Clear all
-            </Link>
-          )}
-        </div>
-      )}
-      {pills.length > 0 && (
-        <p role="status" className="font-heading-lg text-bold margin-bottom-3">
-          {resultCount === 0
-            ? "No results match your filters."
-            : `${resultCount} search ${resultCount === 1 ? "result" : "results"}`}
-        </p>
-      )}
+      <p role="status" className="font-heading-lg text-bold margin-bottom-3">
+        {statusText()}
+      </p>
+      <div className="display-flex flex-wrap flex-align-center margin-bottom-3">
+        {pills.length === 0 ? (
+          <span>No filters applied</span>
+        ) : (
+          <>
+            <span className="text-bold margin-right-1">Filters applied:</span>
+            {pills.map((pill) => (
+              <Tag key={pill.id} onClose={pill.remove} className="margin-right-1">
+                {pill.label}
+              </Tag>
+            ))}
+            {pills.length > 1 && (
+              <Link
+                as="button"
+                variant="text"
+                onClick={() => onFiltersChange({ query: "", facets: EMPTY_FACETS })}
+              >
+                Clear all
+              </Link>
+            )}
+          </>
+        )}
+      </div>
     </>
   );
 }
