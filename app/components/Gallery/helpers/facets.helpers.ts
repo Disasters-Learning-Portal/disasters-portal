@@ -9,30 +9,11 @@ import {
   type Theme,
 } from "@/app/site-config/types";
 
-/** Results per gallery page. */
-const PAGE_SIZE = 6;
-
-/** Query-string key shared by parsePageParam and PaginationBar's hrefs. */
-export const PAGE_PARAM = "page";
-
-export function parsePageParam(params: URLSearchParams): number {
-  // Number() instead of parseInt() so trailing junk ("3abc") is invalid, not 3
-  const parsed = Number(params.get(PAGE_PARAM) ?? "");
-  return Number.isInteger(parsed) && parsed >= 1 ? parsed : 1;
-}
-
-export function getPaginationState<T>(
-  items: T[],
-  requestedPage: number,
-): { pageItems: T[]; totalPages: number; currentPage: number } {
-  const totalPages = Math.max(1, Math.ceil(items.length / PAGE_SIZE));
-  const currentPage = Math.min(Math.max(1, requestedPage), totalPages);
-  const start = (currentPage - 1) * PAGE_SIZE;
-  return { pageItems: items.slice(start, start + PAGE_SIZE), totalPages, currentPage };
-}
-
-/** Query-string key for the free-text search filter. */
-export const QUERY_PARAM = "q";
+/**
+ * The facet domain: the registry of filterable taxonomies and every pure
+ * operation on a FacetSelection. filters.helpers.ts composes this with the text
+ * query into the gallery's URL state; nothing else imports this module.
+ */
 
 export type FacetSelection = {
   themes: Theme[];
@@ -41,12 +22,6 @@ export type FacetSelection = {
 };
 
 export const EMPTY_FACETS: FacetSelection = { themes: [], hazards: [], contentTypes: [] };
-
-/** Everything the filter UI owns in the URL, as one parse/serialize unit. */
-export type FilterState = {
-  query: string;
-  facets: FacetSelection;
-};
 
 type FacetConfig = {
   /** Query-string key; repeated for multi-value. */
@@ -72,9 +47,9 @@ type FacetConfig = {
  * One entry per facet: parsing, matching, URL writing, drawer sections and
  * applied pills all iterate this registry, so adding a facet is one entry.
  * Configs work on plain strings; FacetSelection keeps the boundary typed and
- * parseFilters guarantees only canonical values enter.
+ * parseFacets guarantees only canonical values enter.
  */
-export const FACETS: Record<keyof FacetSelection, FacetConfig> = {
+const FACETS: Record<keyof FacetSelection, FacetConfig> = {
   themes: {
     param: "theme",
     title: "Theme",
@@ -100,23 +75,27 @@ export const FACETS: Record<keyof FacetSelection, FacetConfig> = {
   },
 };
 
-export const FACET_KEYS = Object.keys(FACETS) as (keyof FacetSelection)[];
+const FACET_KEYS = Object.keys(FACETS) as (keyof FacetSelection)[];
 
-export function parseFilters(params: URLSearchParams): FilterState {
-  const facets = Object.fromEntries(
+/** Query-string keys the facets own, for filters.helpers.ts to clear before serializing. */
+export const FACET_PARAMS = FACET_KEYS.map((key) => FACETS[key].param);
+
+export function parseFacets(params: URLSearchParams): FacetSelection {
+  return Object.fromEntries(
     FACET_KEYS.map((key) => [
       key,
       params.getAll(FACETS[key].param).filter((value) => FACETS[key].options.includes(value)),
     ]),
   ) as FacetSelection;
-  return { query: params.get(QUERY_PARAM)?.trim() ?? "", facets };
 }
 
-export function matchesQuery(item: GalleryItem, query: string): boolean {
-  const q = query.toLowerCase();
-  return (
-    item.title.toLowerCase().includes(q) || (item.description?.toLowerCase().includes(q) ?? false)
-  );
+/** Append the selection as repeated params; callers clear FACET_PARAMS first. */
+export function appendFacetParams(params: URLSearchParams, facets: FacetSelection): void {
+  for (const key of FACET_KEYS) {
+    for (const value of facets[key]) {
+      params.append(FACETS[key].param, value);
+    }
+  }
 }
 
 /** OR within a facet, AND across facets; an item without the facet's field matches nothing. */
@@ -130,12 +109,6 @@ export function matchesFacets(item: GalleryItem, facets: FacetSelection): boolea
   });
 }
 
-export function applyFilters(items: GalleryItem[], { query, facets }: FilterState): GalleryItem[] {
-  return items.filter(
-    (item) => (!query || matchesQuery(item, query)) && matchesFacets(item, facets),
-  );
-}
-
 /** Facet values occurring in at least one item; options absent from the data would filter nothing. */
 export function collectAvailableFacets(items: GalleryItem[]): FacetSelection {
   return Object.fromEntries(
@@ -146,32 +119,69 @@ export function collectAvailableFacets(items: GalleryItem[]): FacetSelection {
   ) as FacetSelection;
 }
 
-export function toggleValue<T>(list: readonly T[], value: T): T[] {
+function toggleValue<T>(list: readonly T[], value: T): T[] {
   return list.includes(value) ? list.filter((entry) => entry !== value) : [...list, value];
 }
 
+/** Toggle one value in a facet's selection, returning a new selection. */
+export function toggleFacetValue(
+  facets: FacetSelection,
+  key: keyof FacetSelection,
+  value: string,
+): FacetSelection {
+  const selected: readonly string[] = facets[key];
+  return { ...facets, [key]: toggleValue(selected, value) } as FacetSelection;
+}
+
+/** Selected values across all facets with their display labels, in registry order. */
+export function listSelectedFacetValues(
+  facets: FacetSelection,
+): { key: keyof FacetSelection; value: string; label: string }[] {
+  return FACET_KEYS.flatMap((key) => {
+    const selected: readonly string[] = facets[key];
+    return selected.map((value) => ({ key, value, label: FACETS[key].label(value) }));
+  });
+}
+
+export type FacetOptionGroup = {
+  key: keyof FacetSelection;
+  /** Stable per-facet identifier for the UI (the query-string key). */
+  param: string;
+  title: string;
+  options: { value: string; label: string; selected: boolean }[];
+};
+
 /**
- * Href for the current location with the full filter state written: owned
- * params (query, facets, page) replaced, all other params preserved.
+ * The options each facet should offer, given a selection and the values
+ * available in the data. Unions in the selection so a URL-selected value
+ * absent from the data can still be unchecked; facets flagged
+ * hideWhenSingleOption drop out when fewer than two options remain.
  */
-export function buildFiltersUrl(
-  currentParams: URLSearchParams,
-  pathname: string,
-  { query, facets }: FilterState,
-): string {
-  const params = new URLSearchParams(currentParams);
-  const ownedParams = [QUERY_PARAM, PAGE_PARAM, ...FACET_KEYS.map((key) => FACETS[key].param)];
-  for (const owned of ownedParams) {
-    params.delete(owned);
-  }
-  if (query) {
-    params.set(QUERY_PARAM, query);
-  }
-  for (const key of FACET_KEYS) {
-    for (const value of facets[key]) {
-      params.append(FACETS[key].param, value);
+export function listFacetOptions(
+  selection: FacetSelection,
+  availableFacets: FacetSelection,
+): FacetOptionGroup[] {
+  return FACET_KEYS.flatMap((key) => {
+    const config = FACETS[key];
+    const selected: readonly string[] = selection[key];
+    const available: readonly string[] = availableFacets[key];
+    const options = config.options.filter(
+      (value) => available.includes(value) || selected.includes(value),
+    );
+    if (options.length < (config.hideWhenSingleOption ? 2 : 1)) {
+      return [];
     }
-  }
-  const queryString = params.toString();
-  return queryString ? `?${queryString}` : pathname;
+    return [
+      {
+        key,
+        param: config.param,
+        title: config.title,
+        options: options.map((value) => ({
+          value,
+          label: config.label(value),
+          selected: selected.includes(value),
+        })),
+      },
+    ];
+  });
 }

@@ -1,29 +1,22 @@
 "use client";
 
-import { CardDetailed } from "@teamimpact/veda-ui-blocks";
-import { useSearchParams } from "next/navigation";
+import { CardDetailed, Pagination } from "@teamimpact/veda-ui-blocks";
 import { Suspense } from "react";
+import { AppLink } from "@/app/components/AppLink";
 import { makeCardDetailedProps } from "@/app/site-config/content.helpers";
 import type { GalleryItem } from "@/app/site-config/types";
 import { FilterToolbar } from "./FilterToolbar";
-import {
-  applyFilters,
-  collectAvailableFacets,
-  getPaginationState,
-  parseFilters,
-  parsePageParam,
-} from "./Gallery.helpers";
-import { PaginationBar } from "./PaginationBar";
+import { useGallery } from "./hooks/useGallery";
 
 export type GalleryProps = {
   items: GalleryItem[];
 };
 
 /**
- * GalleryInner reads the page from the URL via useSearchParams, which only
- * has a value at request time. On statically prerendered pages Next.js
- * therefore requires a Suspense boundary above the call (build error
- * otherwise); the boundary lives here so every consumer gets it for free.
+ * useGallery reads the URL via useSearchParams, which only has a value at
+ * request time. On statically prerendered pages Next.js therefore requires
+ * a Suspense boundary above the call (build error otherwise); the boundary
+ * lives here so every consumer gets it for free.
  */
 export function Gallery(props: GalleryProps) {
   return (
@@ -34,22 +27,13 @@ export function Gallery(props: GalleryProps) {
 }
 
 function GalleryInner({ items }: GalleryProps) {
-  const searchParams = useSearchParams();
-  const requestedPage = parsePageParam(searchParams);
-  const filters = parseFilters(searchParams);
-  const availableFacets = collectAvailableFacets(items);
-  const filteredItems = applyFilters(items, filters);
-  const { pageItems, totalPages, currentPage } = getPaginationState(filteredItems, requestedPage);
+  const gallery = useGallery(items);
 
   return (
     <>
-      <FilterToolbar
-        filters={filters}
-        availableFacets={availableFacets}
-        resultCount={filteredItems.length}
-      />
+      <FilterToolbar gallery={gallery} />
       <div className="grid-row grid-gap">
-        {pageItems.map((item) => {
+        {gallery.pageItems.map((item) => {
           const { id, ...cardProps } = makeCardDetailedProps(item);
           return (
             <div
@@ -61,7 +45,15 @@ function GalleryInner({ items }: GalleryProps) {
           );
         })}
       </div>
-      <PaginationBar currentPage={currentPage} totalPages={totalPages} />
+      {gallery.totalPages > 1 && (
+        <Pagination
+          getHref={gallery.getPageHref}
+          currentPage={gallery.currentPage}
+          totalPages={gallery.totalPages}
+          linksAs={AppLink}
+          className="margin-top-4 display-flex flex-justify-center"
+        />
+      )}
     </>
   );
 }

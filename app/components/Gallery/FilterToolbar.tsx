@@ -1,56 +1,20 @@
 "use client";
 
 import { Link, SearchInput, SvgFilterList } from "@teamimpact/veda-ui-blocks";
-import { usePathname, useSearchParams } from "next/navigation";
-import { type SubmitEvent, useState } from "react";
+import type { SubmitEvent } from "react";
 import { AppliedFilters } from "./AppliedFilters";
 import { FilterDrawer } from "./FilterDrawer";
-import {
-  buildFiltersUrl,
-  EMPTY_FACETS,
-  type FacetSelection,
-  type FilterState,
-  QUERY_PARAM,
-} from "./Gallery.helpers";
+import { QUERY_PARAM, type UseGalleryResult } from "./hooks/useGallery";
 
 type FilterToolbarProps = {
-  /** Currently applied filter state, from the URL. */
-  filters: FilterState;
-  /** Facet values present in the data; the drawer only offers these. */
-  availableFacets: FacetSelection;
-  /** Number of items left after filtering. */
-  resultCount: number;
+  gallery: UseGalleryResult;
 };
 
-/**
- * Submitting the search or applying drawer facets writes the URL via
- * history.replaceState, which Next syncs back into useSearchParams without a
- * navigation.
- */
-export function FilterToolbar({ filters, availableFacets, resultCount }: FilterToolbarProps) {
-  const searchParams = useSearchParams();
-  const pathname = usePathname();
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-  const [draftFacets, setDraftFacets] = useState(EMPTY_FACETS);
-
-  const applyFilterState = (nextFilters: FilterState) => {
-    history.replaceState(null, "", buildFiltersUrl(searchParams, pathname, nextFilters));
-  };
-
+/** Search form, drawer trigger, applied pills and the drawer, all driven by one useGallery result. */
+export function FilterToolbar({ gallery }: FilterToolbarProps) {
   const onSubmit = (event: SubmitEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const submittedQuery = String(new FormData(event.currentTarget).get(QUERY_PARAM) ?? "").trim();
-    applyFilterState({ ...filters, query: submittedQuery });
-  };
-
-  const openDrawer = () => {
-    setDraftFacets(filters.facets);
-    setIsDrawerOpen(true);
-  };
-
-  const applyDraft = () => {
-    applyFilterState({ ...filters, facets: draftFacets });
-    setIsDrawerOpen(false);
+    gallery.setQuery(String(new FormData(event.currentTarget).get(QUERY_PARAM) ?? ""));
   };
 
   return (
@@ -59,17 +23,17 @@ export function FilterToolbar({ filters, availableFacets, resultCount }: FilterT
         <form onSubmit={onSubmit} className="maxw-mobile-lg width-full">
           {/* key remounts the uncontrolled input when the URL changes externally (back button) */}
           <SearchInput
-            key={filters.query}
+            key={gallery.query}
             label="Search"
             name={QUERY_PARAM}
-            inputProps={{ defaultValue: filters.query }}
+            inputProps={{ defaultValue: gallery.query }}
           />
         </form>
         <Link
           as="button"
           variant="text"
           className="text-bold text-no-underline text-uppercase"
-          onClick={openDrawer}
+          onClick={gallery.drawer.open}
         >
           Sort & Filter{" "}
           <span className="display-inline-flex flex-align-center flex-justify-center bg-white border-1px border-base-light radius-pill padding-05 margin-left-05">
@@ -77,19 +41,8 @@ export function FilterToolbar({ filters, availableFacets, resultCount }: FilterT
           </span>
         </Link>
       </div>
-      <AppliedFilters
-        filters={filters}
-        resultCount={resultCount}
-        onFiltersChange={applyFilterState}
-      />
-      <FilterDrawer
-        isOpen={isDrawerOpen}
-        onClose={() => setIsDrawerOpen(false)}
-        draft={draftFacets}
-        availableFacets={availableFacets}
-        onDraftChange={setDraftFacets}
-        onApply={applyDraft}
-      />
+      <AppliedFilters gallery={gallery} />
+      <FilterDrawer drawer={gallery.drawer} />
     </>
   );
 }
