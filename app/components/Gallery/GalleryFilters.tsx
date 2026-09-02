@@ -2,16 +2,16 @@
 
 import { Link, SearchInput, SvgFilterList } from "@teamimpact/veda-ui-blocks";
 import type { SubmitEvent } from "react";
-import { AppliedFilters } from "./AppliedFilters";
 import { FilterDrawer } from "./FilterDrawer";
 import { QUERY_PARAM, type UseGalleryResult } from "./hooks/useGallery";
+import { ResultsSummary } from "./ResultsSummary";
 
-type FilterToolbarProps = {
+type GalleryFiltersProps = {
   gallery: UseGalleryResult;
 };
 
-/** Search form, drawer trigger, applied pills and the drawer, all driven by one useGallery result. */
-export function FilterToolbar({ gallery }: FilterToolbarProps) {
+/** The gallery's filter block: search form, drawer trigger, results summary and the drawer. */
+export function GalleryFilters({ gallery }: GalleryFiltersProps) {
   const onSubmit = (event: SubmitEvent<HTMLFormElement>) => {
     event.preventDefault();
     gallery.setQuery(String(new FormData(event.currentTarget).get(QUERY_PARAM) ?? ""));
@@ -41,7 +41,7 @@ export function FilterToolbar({ gallery }: FilterToolbarProps) {
           </span>
         </Link>
       </div>
-      <AppliedFilters gallery={gallery} />
+      <ResultsSummary gallery={gallery} />
       <FilterDrawer drawer={gallery.drawer} />
     </>
   );

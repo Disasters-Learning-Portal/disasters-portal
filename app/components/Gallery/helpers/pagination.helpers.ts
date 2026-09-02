@@ -1,4 +1,6 @@
-/** Pure pagination logic for the gallery; React glue lives in useFilters.ts. */
+import { toHref } from "./url.helpers";
+
+/** Pure pagination logic for the gallery; React glue lives in useGallery.ts. */
 
 /** Results per gallery page. */
 const PAGE_SIZE = 6;
@@ -34,6 +36,5 @@ export function buildPageHref(
   } else {
     params.set(PAGE_PARAM, String(page));
   }
-  const queryString = params.toString();
-  return queryString ? `?${queryString}` : pathname;
+  return toHref(params, pathname);
 }

@@ -12,10 +12,10 @@ import {
 export type DrawerSection = {
   id: string;
   title: string;
-  options: { value: string; label: string; checked: boolean; toggle: () => void }[];
+  options: { value: string; label: string; selected: boolean; toggle: () => void }[];
 };
 
-export type UseDrawerResult = {
+export type UseFilterDrawerResult = {
   isOpen: boolean;
   open: () => void;
   close: () => void;
@@ -29,11 +29,11 @@ export type UseDrawerResult = {
  * staged while the drawer is open. Opening seeds the draft from the applied
  * facets; only apply commits it (via onApply), and closing discards it.
  */
-export function useDrawer(
+export function useFilterDrawer(
   appliedFacets: FacetSelection,
   availableFacets: FacetSelection,
   onApply: (facets: FacetSelection) => void,
-): UseDrawerResult {
+): UseFilterDrawerResult {
   const [isOpen, setIsOpen] = useState(false);
   const [draft, setDraft] = useState(EMPTY_FACETS);
 
@@ -41,9 +41,7 @@ export function useDrawer(
     id: `filter-${group.param}`,
     title: group.title,
     options: group.options.map((option) => ({
-      value: option.value,
-      label: option.label,
-      checked: option.selected,
+      ...option,
       toggle: () => setDraft(toggleFacetValue(draft, group.key, option.value)),
     })),
   }));

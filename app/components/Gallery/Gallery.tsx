@@ -5,7 +5,7 @@ import { Suspense } from "react";
 import { AppLink } from "@/app/components/AppLink";
 import { makeCardDetailedProps } from "@/app/site-config/content.helpers";
 import type { GalleryItem } from "@/app/site-config/types";
-import { FilterToolbar } from "./FilterToolbar";
+import { GalleryFilters } from "./GalleryFilters";
 import { useGallery } from "./hooks/useGallery";
 
 export type GalleryProps = {
@@ -31,7 +31,7 @@ function GalleryInner({ items }: GalleryProps) {
 
   return (
     <>
-      <FilterToolbar gallery={gallery} />
+      <GalleryFilters gallery={gallery} />
       <div className="grid-row grid-gap">
         {gallery.pageItems.map((item) => {
           const { id, ...cardProps } = makeCardDetailedProps(item);

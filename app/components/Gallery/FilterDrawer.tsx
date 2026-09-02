@@ -1,10 +1,10 @@
 "use client";
 
 import { Accordion, Checkbox, Drawer, Link } from "@teamimpact/veda-ui-blocks";
-import type { UseDrawerResult } from "./hooks/useDrawer";
+import type { UseFilterDrawerResult } from "./hooks/useFilterDrawer";
 
 type FilterDrawerProps = {
-  drawer: UseDrawerResult;
+  drawer: UseFilterDrawerResult;
 };
 
 export function FilterDrawer({ drawer }: FilterDrawerProps) {
@@ -42,7 +42,7 @@ export function FilterDrawer({ drawer }: FilterDrawerProps) {
               name={section.id}
               label={option.label}
               value={option.value}
-              inputProps={{ checked: option.checked, onChange: option.toggle }}
+              inputProps={{ checked: option.selected, onChange: option.toggle }}
             />
           )),
         }))}

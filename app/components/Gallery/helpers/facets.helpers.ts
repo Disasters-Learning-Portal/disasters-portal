@@ -11,8 +11,9 @@ import {
 
 /**
  * The facet domain: the registry of filterable taxonomies and every pure
- * operation on a FacetSelection. filters.helpers.ts composes this with the text
- * query into the gallery's URL state; nothing else imports this module.
+ * operation on a FacetSelection. filters.helpers.ts composes this with the
+ * text query into the gallery's URL state; the hooks derive pills and
+ * drawer options from it.
  */
 
 export type FacetSelection = {

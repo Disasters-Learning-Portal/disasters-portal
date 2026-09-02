@@ -3,12 +3,12 @@
 import { Link, Tag } from "@teamimpact/veda-ui-blocks";
 import type { UseGalleryResult } from "./hooks/useGallery";
 
-type AppliedFiltersProps = {
+type ResultsSummaryProps = {
   gallery: UseGalleryResult;
 };
 
-/** Pills for the applied query and facet values, the search result count, and the empty state. */
-export function AppliedFilters({ gallery }: AppliedFiltersProps) {
+/** The result count line and the applied-filter pills row, with their empty states. */
+export function ResultsSummary({ gallery }: ResultsSummaryProps) {
   const { appliedFilters, clearAllFilters } = gallery;
   const resultCount = gallery.filteredItems.length;
 

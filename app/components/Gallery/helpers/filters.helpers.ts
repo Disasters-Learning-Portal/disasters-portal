@@ -9,11 +9,12 @@ import {
   toggleFacetValue,
 } from "./facets.helpers";
 import { PAGE_PARAM } from "./pagination.helpers";
+import { toHref } from "./url.helpers";
 
 /**
  * The gallery's filter state as one unit: the text query plus the facet
  * selection, parsed from and serialized to the URL. Pure; the React glue
- * lives in useFilters.ts.
+ * lives in useGallery.ts.
  */
 
 /** Query-string key for the free-text search filter; also the search input's field name. */
@@ -59,8 +60,7 @@ export function buildFiltersUrl(
     params.set(QUERY_PARAM, query);
   }
   appendFacetParams(params, facets);
-  const queryString = params.toString();
-  return queryString ? `?${queryString}` : pathname;
+  return toHref(params, pathname);
 }
 
 /** A removable-pill descriptor for one applied filter. */

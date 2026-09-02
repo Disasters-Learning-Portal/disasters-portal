@@ -12,7 +12,7 @@ import {
   parseFilters,
 } from "../helpers/filters.helpers";
 import { buildPageHref, paginate, parsePageParam } from "../helpers/pagination.helpers";
-import { type UseDrawerResult, useDrawer } from "./useDrawer";
+import { type UseFilterDrawerResult, useFilterDrawer } from "./useFilterDrawer";
 
 export { QUERY_PARAM } from "../helpers/filters.helpers";
 
@@ -32,7 +32,7 @@ export type UseGalleryResult = {
   /** Pills for the applied query and facet values, in display order. */
   appliedFilters: AppliedFilter[];
   clearAllFilters: () => void;
-  drawer: UseDrawerResult;
+  drawer: UseFilterDrawerResult;
 };
 
 /**
@@ -57,7 +57,7 @@ export function useGallery(items: GalleryItem[]): UseGalleryResult {
     history.replaceState(null, "", buildFiltersUrl(searchParams, pathname, next));
   };
 
-  const drawer = useDrawer(filters.facets, collectAvailableFacets(items), (facets) =>
+  const drawer = useFilterDrawer(filters.facets, collectAvailableFacets(items), (facets) =>
     setFilters({ ...filters, facets }),
   );
 
