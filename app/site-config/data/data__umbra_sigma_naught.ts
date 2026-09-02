@@ -26,6 +26,9 @@ export const DATA__UMBRA_SIGMA_NAUGHT: DataContent = {
 
   relatedContent: [],
 
+  exploreDataUrl:
+    "https://science-dev.data.nasa.gov/disasters/data-visualization/?mission=disasters_learning_portal&mapLon=-112.31880351606668&mapLat=38.69507428074502&mapZoom=12.572317339504892&globeLon=undefined&globeLat=undefined&panePercents=0,100,0&on=083e52ee-a54f-46b9-a828-36905be5c01c$1.00&startTime=2012-01-19T00:00:00.000Z&endTime=2026-08-12T00:00:00.000Z&live=0",
+
   body: [
     {
       type: "text",

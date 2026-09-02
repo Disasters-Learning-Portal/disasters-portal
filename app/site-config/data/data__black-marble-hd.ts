@@ -26,6 +26,9 @@ export const DATA__BLACK_MARBLE_HD: DataContent = {
 
   relatedContent: ["black-marble-blue-yellow"],
 
+  exploreDataUrl:
+    "https://science-dev.data.nasa.gov/disasters/data-visualization/?mission=disasters_learning_portal&mapLon=-95.68645212378203&mapLat=29.73868631885867&mapZoom=8.24913213967701&globeLon=undefined&globeLat=undefined&panePercents=0,100,0&on=d63e2073-4089-4e7b-95fe-a781bf8b015e$1.00&startTime=2012-01-19T00:00:00.000Z&endTime=2026-08-12T00:00:00.000Z&live=0",
+
   body: [
     {
       type: "text",

@@ -18,11 +18,13 @@ export function PageSidebar({
   themes,
   categories,
   relatedContent = [],
+  exploreDataUrl,
 }: {
   contentType: ContentType;
   themes: Theme[];
   categories: Category[];
   relatedContent?: RelatedItem[];
+  exploreDataUrl?: string;
 }) {
   // TODO: update to include inpage navigation
   return (
@@ -33,9 +35,20 @@ export function PageSidebar({
           <div className="bg-base-lightest padding-4 margin-bottom-4">
             {contentType === "data" && (
               <div className="margin-bottom-3">
-                <button type="button" className="usa-button width-full">
-                  Explore Data
-                </button>
+                {exploreDataUrl ? (
+                  <a
+                    href={exploreDataUrl}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    className="usa-button width-full text-center"
+                  >
+                    Explore Data
+                  </a>
+                ) : (
+                  <button type="button" className="usa-button width-full">
+                    Explore Data
+                  </button>
+                )}
               </div>
             )}
 
