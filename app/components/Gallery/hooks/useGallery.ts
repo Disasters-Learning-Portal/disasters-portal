@@ -1,5 +1,12 @@
 "use client";
 
+/**
+ * React glue for the gallery: one hook composing the pure helpers into a
+ * single result object (query, filtered items, pagination, pills, drawer)
+ * that the components render from. Exists to keep every piece of logic out
+ * of the view layer; components only call back into this result.
+ */
+
 import { usePathname, useSearchParams } from "next/navigation";
 import type { GalleryItem } from "@/app/site-config/types";
 import { collectAvailableFacets, EMPTY_FACETS } from "../helpers/facets.helpers";

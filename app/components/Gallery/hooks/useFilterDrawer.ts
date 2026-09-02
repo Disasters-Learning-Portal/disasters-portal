@@ -1,5 +1,11 @@
 "use client";
 
+/**
+ * The gallery's only local React state: drawer visibility plus the facet
+ * draft staged while it is open. Split out of useGallery so URL-derived
+ * state and transient UI state don't mix in one hook.
+ */
+
 import { useState } from "react";
 import {
   EMPTY_FACETS,

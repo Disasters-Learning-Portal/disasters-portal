@@ -7,6 +7,11 @@ type FilterDrawerProps = {
   drawer: UseFilterDrawerResult;
 };
 
+/**
+ * The Sort & Filter drawer: an accordion of facet checkboxes with an
+ * Apply/Clear footer. Pure rendering over useFilterDrawer's sections;
+ * checkbox toggles edit its draft and nothing commits until Apply.
+ */
 export function FilterDrawer({ drawer }: FilterDrawerProps) {
   return (
     <Drawer

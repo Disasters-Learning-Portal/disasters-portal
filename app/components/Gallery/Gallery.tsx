@@ -1,5 +1,12 @@
 "use client";
 
+/**
+ * The shared searchable, filterable, paginated card grid used by the
+ * training, news-events and data-gallery pages. All state lives in the URL
+ * via useGallery; this file only composes the filter block, the card grid
+ * and the pagination.
+ */
+
 import { CardDetailed, Pagination } from "@teamimpact/veda-ui-blocks";
 import { Suspense } from "react";
 import { AppLink } from "@/app/components/AppLink";

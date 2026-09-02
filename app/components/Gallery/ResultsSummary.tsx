@@ -7,7 +7,11 @@ type ResultsSummaryProps = {
   gallery: UseGalleryResult;
 };
 
-/** The result count line and the applied-filter pills row, with their empty states. */
+/**
+ * The result count line and the applied-filter pills row, with their empty
+ * states ("N items" / "No filters applied"). Pure rendering; removing a
+ * pill or clearing all writes the URL through the useGallery callbacks.
+ */
 export function ResultsSummary({ gallery }: ResultsSummaryProps) {
   const { appliedFilters, clearAllFilters } = gallery;
   const resultCount = gallery.filteredItems.length;

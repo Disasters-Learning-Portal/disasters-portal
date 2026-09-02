@@ -1,12 +1,20 @@
-import { toHref } from "./url.helpers";
-
-/** Pure pagination logic for the gallery; React glue lives in useGallery.ts. */
+/**
+ * Pure pagination logic for the gallery: page param parsing, clamping and
+ * slicing, plus href building (toHref is shared with filters.helpers.ts).
+ * React glue lives in useGallery.ts.
+ */
 
 /** Results per gallery page. */
 const PAGE_SIZE = 6;
 
 /** Query-string key for pagination; filters delete it on every write to reset the page. */
 export const PAGE_PARAM = "page";
+
+/** "?query-string" for the given params, or the bare pathname when they are empty. */
+export function toHref(params: URLSearchParams, pathname: string): string {
+  const queryString = params.toString();
+  return queryString ? `?${queryString}` : pathname;
+}
 
 export function parsePageParam(params: URLSearchParams): number {
   // Number() instead of parseInt() so trailing junk ("3abc") is invalid, not 3

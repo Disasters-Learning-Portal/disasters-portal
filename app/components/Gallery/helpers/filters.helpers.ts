@@ -8,8 +8,7 @@ import {
   parseFacets,
   toggleFacetValue,
 } from "./facets.helpers";
-import { PAGE_PARAM } from "./pagination.helpers";
-import { toHref } from "./url.helpers";
+import { PAGE_PARAM, toHref } from "./pagination.helpers";
 
 /**
  * The gallery's filter state as one unit: the text query plus the facet
@@ -75,21 +74,24 @@ export function buildAppliedFilters(
   filters: FilterState,
   setFilters: (next: FilterState) => void,
 ): AppliedFilter[] {
-  // The quoted query pill is the only removal affordance for an applied
-  // search besides submitting an empty one.
-  const queryPill: AppliedFilter[] = filters.query
-    ? [
-        {
-          id: "query",
-          label: `Text: “${filters.query}”`,
-          remove: () => setFilters({ ...filters, query: "" }),
-        },
-      ]
-    : [];
-  const facetPills = listSelectedFacetValues(filters.facets).map(({ key, value, label }) => ({
-    id: `${key}-${value}`,
-    label,
-    remove: () => setFilters({ ...filters, facets: toggleFacetValue(filters.facets, key, value) }),
-  }));
-  return [...queryPill, ...facetPills];
+  const pills: AppliedFilter[] = [];
+  if (filters.query) {
+    // The quoted query pill is the only removal affordance for an applied
+    // search besides submitting an empty one.
+    pills.push({
+      id: "query",
+      label: `Text: “${filters.query}”`,
+      remove: () => setFilters({ ...filters, query: "" }),
+    });
+  }
+  for (const { key, value, label } of listSelectedFacetValues(filters.facets)) {
+    // Toggling a selected value deselects it.
+    pills.push({
+      id: `${key}-${value}`,
+      label,
+      remove: () =>
+        setFilters({ ...filters, facets: toggleFacetValue(filters.facets, key, value) }),
+    });
+  }
+  return pills;
 }

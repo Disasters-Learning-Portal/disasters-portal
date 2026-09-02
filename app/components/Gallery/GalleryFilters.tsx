@@ -10,7 +10,11 @@ type GalleryFiltersProps = {
   gallery: UseGalleryResult;
 };
 
-/** The gallery's filter block: search form, drawer trigger, results summary and the drawer. */
+/**
+ * The gallery's filter block: search form, Sort & Filter drawer trigger,
+ * results summary and the drawer. Pure rendering; every state read and
+ * write goes through the useGallery result passed in as a prop.
+ */
 export function GalleryFilters({ gallery }: GalleryFiltersProps) {
   const onSubmit = (event: SubmitEvent<HTMLFormElement>) => {
     event.preventDefault();
