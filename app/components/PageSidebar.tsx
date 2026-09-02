@@ -34,7 +34,7 @@ export function PageSidebar({
             {contentType === "data" && (
               <div className="margin-bottom-3">
                 <button type="button" className="usa-button width-full">
-                  View Data
+                  Explore Data
                 </button>
               </div>
             )}

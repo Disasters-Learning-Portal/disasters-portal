@@ -57,27 +57,21 @@ export const DATA__GAIA: DataContent = {
       type: "text",
       heading: "Source",
       headingLevel: "h3",
-      paragraphs: [
-        "ImageCat, with funding from the NASA Disasters Program",
-      ],
+      paragraphs: ["ImageCat, with funding from the NASA Disasters Program"],
     },
 
     {
       type: "text",
       heading: "Resolution",
       headingLevel: "h3",
-      paragraphs: [
-        "Building-level vector data; no fixed spatial resolution",
-      ],
+      paragraphs: ["Building-level vector data; no fixed spatial resolution"],
     },
 
     {
       type: "text",
       heading: "Credits",
       headingLevel: "h3",
-      paragraphs: [
-        "ImageCat, NASA Disasters Program",
-      ],
+      paragraphs: ["ImageCat, NASA Disasters Program"],
     },
 
     {

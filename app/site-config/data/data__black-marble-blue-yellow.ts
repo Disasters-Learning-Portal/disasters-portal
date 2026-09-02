@@ -22,14 +22,7 @@ export const DATA__BLACK_MARBLE_BLUE_YELLOW: DataContent = {
 
   themes: ["respond", "recover"],
 
-  categories: [
-    "severewx",
-    "fire",
-    "flood",
-    "tropical cyclone",
-    "earthquake",
-    "winter weather",
-  ],
+  categories: ["severewx", "fire", "flood", "tropical cyclone", "earthquake", "winter weather"],
 
   relatedContent: [],
 
