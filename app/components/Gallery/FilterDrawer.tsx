@@ -6,12 +6,15 @@ import {
   type Category,
   CONTENT_HAZARDS,
   CONTENT_THEMES,
+  CONTENT_TYPES,
+  type ContentType,
   type Theme,
 } from "@/app/site-config/types";
 import { EMPTY_FACETS, type FacetSelection, toggleValue } from "./Gallery.helpers";
 
 const THEME_OPTIONS = Object.keys(CONTENT_THEMES) as Theme[];
 const HAZARD_OPTIONS = Object.keys(CONTENT_HAZARDS) as Category[];
+const CONTENT_TYPE_OPTIONS = Object.keys(CONTENT_TYPES) as ContentType[];
 
 type FilterDrawerProps = {
   isOpen: boolean;
@@ -60,7 +63,28 @@ export function FilterDrawer({
       toggle: (value: string) =>
         onDraftChange({ ...draft, hazards: toggleValue(draft.hazards, value as Category) }),
     },
-  ];
+    {
+      id: "filter-content-type",
+      title: "Content Type",
+      selected: draft.contentTypes as string[],
+      // Each item has exactly one content type, so a single-option section
+      // (e.g. on /training) cannot change results; hidden below via the flag.
+      // Theme/Hazard stay even with one option: they can exclude items with
+      // an empty taxonomy.
+      hideWhenSingleOption: true,
+      options: CONTENT_TYPE_OPTIONS.filter(
+        (type) => availableFacets.contentTypes.includes(type) || draft.contentTypes.includes(type),
+      ).map((type) => ({
+        value: type,
+        label: toTitleCase(CONTENT_TYPES[type].label),
+      })),
+      toggle: (value: string) =>
+        onDraftChange({
+          ...draft,
+          contentTypes: toggleValue(draft.contentTypes, value as ContentType),
+        }),
+    },
+  ].filter((section) => section.options.length > (section.hideWhenSingleOption ? 1 : 0));
 
   return (
     <Drawer

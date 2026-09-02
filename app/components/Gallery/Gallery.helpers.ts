@@ -2,6 +2,8 @@ import {
   type Category,
   CONTENT_HAZARDS,
   CONTENT_THEMES,
+  CONTENT_TYPES,
+  type ContentType,
   type GalleryItem,
   type Theme,
 } from "@/app/site-config/types";
@@ -33,13 +35,16 @@ export const QUERY_PARAM = "q";
 /** Query-string keys for the facet filters; repeated for multi-value. */
 export const THEME_PARAM = "theme";
 export const HAZARD_PARAM = "hazard";
+/** Kept as one word for compatibility with pre-existing ?contenttype= links. */
+export const CONTENT_TYPE_PARAM = "contenttype";
 
 export type FacetSelection = {
   themes: Theme[];
   hazards: Category[];
+  contentTypes: ContentType[];
 };
 
-export const EMPTY_FACETS: FacetSelection = { themes: [], hazards: [] };
+export const EMPTY_FACETS: FacetSelection = { themes: [], hazards: [], contentTypes: [] };
 
 /** Everything the filter UI owns in the URL, as one parse/serialize unit. */
 export type FilterState = {
@@ -49,6 +54,7 @@ export type FilterState = {
 
 const isTheme = (value: string): value is Theme => value in CONTENT_THEMES;
 const isHazard = (value: string): value is Category => value in CONTENT_HAZARDS;
+const isContentType = (value: string): value is ContentType => value in CONTENT_TYPES;
 
 export function parseFilters(params: URLSearchParams): FilterState {
   return {
@@ -56,6 +62,7 @@ export function parseFilters(params: URLSearchParams): FilterState {
     facets: {
       themes: params.getAll(THEME_PARAM).filter(isTheme),
       hazards: params.getAll(HAZARD_PARAM).filter(isHazard),
+      contentTypes: params.getAll(CONTENT_TYPE_PARAM).filter(isContentType),
     },
   };
 }
@@ -74,7 +81,9 @@ export function matchesFacets(item: GalleryItem, facets: FacetSelection): boolea
   const hazardOk =
     facets.hazards.length === 0 ||
     item.categories.some((category) => facets.hazards.includes(category));
-  return themeOk && hazardOk;
+  const contentTypeOk =
+    facets.contentTypes.length === 0 || facets.contentTypes.includes(item.contentType);
+  return themeOk && hazardOk && contentTypeOk;
 }
 
 export function applyFilters(items: GalleryItem[], { query, facets }: FilterState): GalleryItem[] {
@@ -87,6 +96,7 @@ export function applyFilters(items: GalleryItem[], { query, facets }: FilterStat
 export function collectAvailableFacets(items: GalleryItem[]): FacetSelection {
   const themes = new Set<Theme>();
   const hazards = new Set<Category>();
+  const contentTypes = new Set<ContentType>();
   for (const item of items) {
     for (const theme of item.themes) {
       themes.add(theme);
@@ -94,8 +104,9 @@ export function collectAvailableFacets(items: GalleryItem[]): FacetSelection {
     for (const category of item.categories) {
       hazards.add(category);
     }
+    contentTypes.add(item.contentType);
   }
-  return { themes: [...themes], hazards: [...hazards] };
+  return { themes: [...themes], hazards: [...hazards], contentTypes: [...contentTypes] };
 }
 
 export function toggleValue<T>(list: T[], value: T): T[] {
@@ -104,7 +115,8 @@ export function toggleValue<T>(list: T[], value: T): T[] {
 
 /**
  * Href for the current location with the full filter state written: owned
- * params (q/theme/hazard) replaced, paging reset, all other params preserved.
+ * params (q/theme/hazard/contenttype) replaced, paging reset, all other
+ * params preserved.
  */
 export function buildFiltersUrl(
   currentParams: URLSearchParams,
@@ -112,7 +124,7 @@ export function buildFiltersUrl(
   { query, facets }: FilterState,
 ): string {
   const params = new URLSearchParams(currentParams);
-  for (const owned of [QUERY_PARAM, THEME_PARAM, HAZARD_PARAM, PAGE_PARAM]) {
+  for (const owned of [QUERY_PARAM, THEME_PARAM, HAZARD_PARAM, CONTENT_TYPE_PARAM, PAGE_PARAM]) {
     params.delete(owned);
   }
   if (query) {
@@ -123,6 +135,9 @@ export function buildFiltersUrl(
   }
   for (const hazard of facets.hazards) {
     params.append(HAZARD_PARAM, hazard);
+  }
+  for (const contentType of facets.contentTypes) {
+    params.append(CONTENT_TYPE_PARAM, contentType);
   }
   const queryString = params.toString();
   return queryString ? `?${queryString}` : pathname;
