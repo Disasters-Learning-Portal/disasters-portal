@@ -1,9 +1,4 @@
-import type {
-  CardDetailedProps,
-  CardMiniProps,
-  CardProps,
-  CardSimpleProps,
-} from "@teamimpact/veda-ui-blocks";
+import type { CardDetailedProps, CardProps, CardSimpleProps } from "@teamimpact/veda-ui-blocks";
 import { AppImage } from "@/app/components/AppImage";
 import { AppLink } from "@/app/components/AppLink";
 import {
@@ -17,8 +12,8 @@ import {
 
 export const makeSimpleTagProps = (tag: string) => ({
   variant: "solid" as const,
-  color: "primary-lighter",
-  textColor: "primary-dark",
+  color: tag === "active" ? "secondary" : "primary-lighter",
+  textColor: tag === "active" ? "white" : "primary-dark",
   children: tag,
 });
 
@@ -213,7 +208,7 @@ export type CardSimplePropsArgs = Omit<
     alt: string;
     src: string;
   };
-  tag?: Theme | ContentType | Category;
+  tag?: Theme | ContentType | Category | "active";
   themes?: Theme[];
   url?: string;
 };
@@ -239,28 +234,6 @@ export const makeCardSimpleProps = ({
   href: url ? url : `${CONTENT_TYPES[contentType].route}/${id}`,
   isExternal: !!url,
   as: AppLink,
-  ...rest,
-});
-
-type CardSimpleMiniArgs = Omit<CardMiniProps, "image" | "tag" | "href" | "as"> & {
-  id: string;
-  contentType: ContentType;
-  thumbnailImage: {
-    alt: string;
-    src: string;
-  };
-};
-
-export const makeCardMiniProps = ({
-  id,
-  contentType,
-  thumbnailImage,
-  ...rest
-}: CardSimpleMiniArgs): IterableItemWithId<CardMiniProps<typeof AppLink>> => ({
-  id,
-  image: <AppImage {...thumbnailImage} fill sizes="200px" />,
-  as: AppLink,
-  href: `${CONTENT_TYPES[contentType].route}/${id}`,
   ...rest,
 });
 
