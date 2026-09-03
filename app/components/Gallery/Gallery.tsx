@@ -5,6 +5,8 @@ import { Suspense } from "react";
 import { AppLink } from "@/app/components/AppLink";
 import { makeCardDetailedProps } from "@/app/site-config/content.helpers";
 import type { GalleryItem } from "@/app/site-config/types";
+import { GalleryResultsSummary } from "./GalleryResultsSummary";
+import { GallerySearch } from "./GallerySearch";
 import { useGallery } from "./useGallery";
 
 export type GalleryProps = {
@@ -26,10 +28,13 @@ export function Gallery(props: GalleryProps) {
 }
 
 function GalleryInner({ items }: GalleryProps) {
-  const { pageItems, totalPages, currentPage, getPageHref } = useGallery(items);
+  const { pageItems, resultCount, totalPages, currentPage, getPageHref, query, setQuery } =
+    useGallery(items);
 
   return (
     <>
+      <GallerySearch query={query} onSearch={setQuery} />
+      <GalleryResultsSummary query={query} resultCount={resultCount} />
       <div className="grid-row grid-gap">
         {pageItems.map((item) => {
           const { id, ...cardProps } = makeCardDetailedProps(item);
