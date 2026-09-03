@@ -3,7 +3,7 @@
 import { Pagination } from "@teamimpact/veda-ui-blocks";
 import { usePathname, useSearchParams } from "next/navigation";
 import { AppLink } from "@/app/components/AppLink";
-import { PAGE_PARAM } from "./Gallery.helpers";
+import { PAGE_PARAM } from "./pagination.helpers";
 
 type PaginationBarProps = {
   currentPage: number;
