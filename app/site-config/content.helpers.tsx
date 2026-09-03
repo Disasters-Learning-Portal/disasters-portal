@@ -12,8 +12,8 @@ import {
 
 export const makeSimpleTagProps = (tag: string) => ({
   variant: "solid" as const,
-  color: "primary-lighter",
-  textColor: "primary-dark",
+  color: tag === "active" ? "secondary" : "primary-lighter",
+  textColor: tag === "active" ? "white" : "primary-dark",
   children: tag,
 });
 
@@ -208,7 +208,7 @@ export type CardSimplePropsArgs = Omit<
     alt: string;
     src: string;
   };
-  tag?: Theme | ContentType | Category;
+  tag?: Theme | ContentType | Category | "active";
   themes?: Theme[];
   url?: string;
 };

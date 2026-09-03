@@ -12,13 +12,13 @@ import type { EventContent, IterableItemWithId } from "@/app/site-config/types";
 export const transformEventToCardSimpleProps = (
   event: EventContent,
 ): IterableItemWithId<CardSimpleProps<typeof AppLink>> => {
-  const { isLatest: _, id, contentType, thumbnailImage, title } = event;
+  const { isLatest, id, contentType, thumbnailImage, title } = event;
   return makeCardSimpleProps({
     id,
     contentType,
     thumbnailImage,
     title,
-    // ...(isLatest ? { tag: { variant: "text" as const, color: "secondary", label: "Active" } } : {}),
+    ...(isLatest ? { tag: "active" } : { tag: contentType }),
   });
 };
 
