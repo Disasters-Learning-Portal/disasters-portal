@@ -1,26 +1,24 @@
-import { type CardMiniProps, type CardProps, Link } from "@teamimpact/veda-ui-blocks";
+import { type CardProps, type CardSimpleProps, Link } from "@teamimpact/veda-ui-blocks";
 import type { AppLink } from "@/app/components/AppLink";
 import {
   makeCardMastHeadProps,
-  makeCardMiniProps,
+  makeCardSimpleProps,
   makeSimpleTagProps,
   toLongDate,
   toTitleCase,
 } from "@/app/site-config/content.helpers";
 import type { EventContent, IterableItemWithId } from "@/app/site-config/types";
 
-export const transformEventToCardMiniProps = (
+export const transformEventToCardSimpleProps = (
   event: EventContent,
-): IterableItemWithId<CardMiniProps<typeof AppLink>> => {
-  const { isLatest, id, contentType, thumbnailImage, title } = event;
-  return makeCardMiniProps({
+): IterableItemWithId<CardSimpleProps<typeof AppLink>> => {
+  const { isLatest: _, id, contentType, thumbnailImage, title } = event;
+  return makeCardSimpleProps({
     id,
     contentType,
     thumbnailImage,
     title,
-    ...(isLatest
-      ? { tag: { variant: "text" as const, color: "secondary", label: "Latest Activation" } }
-      : {}),
+    // ...(isLatest ? { tag: { variant: "text" as const, color: "secondary", label: "Active" } } : {}),
   });
 };
 

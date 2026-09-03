@@ -3,8 +3,8 @@ import {
   Section,
   SectionCardCarousel,
   SectionCardDetailed,
-  SectionCardMini,
   SectionCardSimple,
+  SectionCardSimpleMini,
   SectionCardSimpleMosaic,
   SectionHeading,
 } from "@/app/components/";
@@ -17,7 +17,7 @@ import {
 import { DATA } from "@/app/site-config/data";
 import { DATASTORIES } from "@/app/site-config/datastory";
 import { EVENTS } from "@/app/site-config/event";
-import { transformEventToCardMiniProps } from "@/app/site-config/event/event.helpers";
+import { transformEventToCardSimpleProps } from "@/app/site-config/event/event.helpers";
 import { NEWS_EVENTS_CARDS } from "@/app/site-config/home/home-sectioncardmosaic-news-events";
 import { getTypedEntries, typedMap } from "@/app/site-config/typed.helpers";
 import { CONTENT_THEMES, type EventContent } from "@/app/site-config/types";
@@ -135,22 +135,22 @@ export default function ComponentsPage() {
         </code>
       </SectionCardSimple>
 
-      <SectionCardMini
-        sectionHeading={<SectionHeading>SectionCardMini Component</SectionHeading>}
-        cards={typedMap(MOCK_EVENT_CARDS, transformEventToCardMiniProps)}
+      <SectionCardSimpleMini
+        sectionHeading={<SectionHeading>SectionCardSimpleMini Component</SectionHeading>}
+        cards={typedMap(MOCK_EVENT_CARDS, transformEventToCardSimpleProps)}
       >
         <p>Lorem ipsum dolor sit amet...</p>
         <code className="bg-base-lighter font-code-xs">
-          {`<SectionCardMini
-              sectionHeading={<SectionHeading>SectionCardMini Component</SectionHeading>}
-              cards={typedMap(MOCK_EVENT_CARDS, transformEventToCardMiniProps)}
+          {`<SectionCardSimpleMini
+              sectionHeading={<SectionHeading>SectionCardSimpleMini Component</SectionHeading>}
+              cards={typedMap(MOCK_EVENT_CARDS, transformEventToCardSimpleProps)}
             >
               <p>
                 Lorem ipsum dolor sit amet...
               </p>
-            </SectionCardMini>`}
+            </SectionCardSimpleMini>`}
         </code>
-      </SectionCardMini>
+      </SectionCardSimpleMini>
 
       <SectionCardCarousel
         sectionHeading={
