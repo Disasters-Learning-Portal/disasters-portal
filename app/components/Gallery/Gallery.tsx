@@ -6,12 +6,13 @@ import { Suspense } from "react";
 import { AppLink } from "@/app/components/AppLink";
 import { makeCardDetailedProps } from "@/app/site-config/content.helpers";
 import type { GalleryCard } from "@/app/site-config/types";
+import { filterByContentType, parseContentTypeParam } from "./filters.helpers";
 import {
   getPaginationState,
   PAGE_PARAM,
   PRESERVED_PARAMS,
   parsePageParam,
-} from "./Gallery.helpers";
+} from "./pagination.helpers";
 
 export type GalleryProps = {
   items: GalleryCard[];
@@ -34,8 +35,9 @@ export function Gallery(props: GalleryProps) {
 function GalleryInner({ items }: GalleryProps) {
   const searchParams = useSearchParams();
   const pathname = usePathname();
+  const filteredItems = filterByContentType(items, parseContentTypeParam(searchParams));
   const requestedPage = parsePageParam(searchParams);
-  const { pageItems, totalPages, currentPage } = getPaginationState(items, requestedPage);
+  const { pageItems, totalPages, currentPage } = getPaginationState(filteredItems, requestedPage);
 
   // Link-based pagination: hrefs carry only gallery-owned params (see
   // PRESERVED_PARAMS) so filters survive page changes but stray params don't.
