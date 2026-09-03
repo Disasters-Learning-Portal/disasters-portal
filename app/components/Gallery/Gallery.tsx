@@ -1,23 +1,21 @@
 "use client";
 
-import { CardDetailed } from "@teamimpact/veda-ui-blocks";
-import { useSearchParams } from "next/navigation";
+import { CardDetailed, Pagination } from "@teamimpact/veda-ui-blocks";
 import { Suspense } from "react";
+import { AppLink } from "@/app/components/AppLink";
 import { makeCardDetailedProps } from "@/app/site-config/content.helpers";
 import type { GalleryItem } from "@/app/site-config/types";
-import { filterByContentType, parseContentTypeParam } from "./filters.helpers";
-import { PaginationBar } from "./PaginationBar";
-import { getPaginationState, parsePageParam } from "./pagination.helpers";
+import { useGallery } from "./useGallery";
 
 export type GalleryProps = {
   items: GalleryItem[];
 };
 
 /**
- * GalleryInner reads the page from the URL via useSearchParams, which only
- * has a value at request time. On statically prerendered pages Next.js
- * therefore requires a Suspense boundary above the call (build error
- * otherwise); the boundary lives here so every consumer gets it for free.
+ * useGallery reads the URL via useSearchParams, which only has a value at
+ * request time. On statically prerendered pages Next.js therefore requires
+ * a Suspense boundary above the call (build error otherwise); the boundary
+ * lives here so every consumer gets it for free.
  */
 export function Gallery(props: GalleryProps) {
   return (
@@ -28,10 +26,7 @@ export function Gallery(props: GalleryProps) {
 }
 
 function GalleryInner({ items }: GalleryProps) {
-  const searchParams = useSearchParams();
-  const filteredItems = filterByContentType(items, parseContentTypeParam(searchParams));
-  const requestedPage = parsePageParam(searchParams);
-  const { pageItems, totalPages, currentPage } = getPaginationState(filteredItems, requestedPage);
+  const { pageItems, totalPages, currentPage, getPageHref } = useGallery(items);
 
   return (
     <>
@@ -48,7 +43,15 @@ function GalleryInner({ items }: GalleryProps) {
           );
         })}
       </div>
-      <PaginationBar currentPage={currentPage} totalPages={totalPages} />
+      {totalPages > 1 && (
+        <Pagination
+          getHref={getPageHref}
+          currentPage={currentPage}
+          totalPages={totalPages}
+          linksAs={AppLink}
+          className="margin-top-4 display-flex flex-justify-center"
+        />
+      )}
     </>
   );
 }
