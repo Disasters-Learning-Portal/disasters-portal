@@ -18,7 +18,7 @@ export const transformEventToCardSimpleProps = (
     contentType,
     thumbnailImage,
     title,
-    ...(isLatest ? { tag: "active" } : { tag: contentType }),
+    ...(isLatest ? { tag: "active" } : {}),
   });
 };
 
