@@ -41,6 +41,8 @@ export const RECOVER_CONTENT: ThemeContent = {
         dateRange: { from: "2025-01-01", to: "2025-01-01" },
         hideLegend: true,
       },
+      infoHref: "/data-gallery/gaia-infrastructure-assets",
+      infoLabel: "Learn more about GAIA",
       rightLayerConfig: {
         type: "raster",
         collectionId: "gaia-wood-composite",
