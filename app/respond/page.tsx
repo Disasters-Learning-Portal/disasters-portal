@@ -5,7 +5,7 @@ import {
   SectionCardSimple,
   SectionHeading,
 } from "@/app/components/";
-import { SectionCardMini } from "@/app/components/SectionCardMini";
+import { SectionCardSimpleMini } from "@/app/components/SectionCardSimpleMini";
 import {
   type CardMastheadPropsArgs,
   type CardSimplePropsArgs,
@@ -13,7 +13,7 @@ import {
   makeCardMastHeadProps,
   makeCardSimpleProps,
 } from "@/app/site-config/content.helpers";
-import { transformEventToCardMiniProps } from "@/app/site-config/event/event.helpers";
+import { transformEventToCardSimpleProps } from "@/app/site-config/event/event.helpers";
 import {
   RESPOND_CONTENT,
   RESPOND_DATASTORIES,
@@ -58,11 +58,11 @@ export default function RespondPage() {
         // biome-ignore lint/suspicious/noArrayIndexKey: static content, never reorders
         <ContentBlockRenderer key={index} block={block} />
       ))}
-      <SectionCardMini
+      <SectionCardSimpleMini
         sectionHeading={
           <SectionHeading href="/news-events?contenttype=event">Latest Events</SectionHeading>
         }
-        cards={typedMap(RESPOND_EVENTS, transformEventToCardMiniProps)}
+        cards={typedMap(RESPOND_EVENTS, transformEventToCardSimpleProps)}
       />
       <SectionCardCarousel
         sectionHeading={
