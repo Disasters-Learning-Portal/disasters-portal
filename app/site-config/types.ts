@@ -174,6 +174,8 @@ export type DataContent = Omit<MinimumCardContent, "contentType"> & {
   mastheadImage: MastheadImage;
   body?: ContentBlock[];
   relatedContent?: string[];
+  /** External VEDA data-visualization deep link for the sidebar "Explore Data" button. */
+  exploreDataUrl?: string;
 };
 
 export type NewsContent = Omit<MinimumCardContent, "contentType"> & {
