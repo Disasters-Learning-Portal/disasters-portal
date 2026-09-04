@@ -1,44 +1,16 @@
-import { CardDetailed } from "@teamimpact/veda-ui-blocks";
-import { PageMasthead, Section } from "@/app/components";
+import { Gallery, PageMasthead, Section } from "@/app/components";
+import { contentToGalleryItem, makeCardMastHeadProps } from "@/app/site-config/content.helpers";
 import { TRAININGS, TRAININGS_EXTERNAL } from "@/app/site-config/training";
 import { TRAINING_CARD_MASTHEAD } from "@/app/site-config/training/toplevel-page__card-masthead";
-import { makeCardDetailedProps, makeCardMastHeadProps } from "../site-config/content.helpers";
 
 export default function TrainingCollectionPage() {
+  const items = [...TRAININGS, ...TRAININGS_EXTERNAL].map(contentToGalleryItem);
+
   return (
     <>
       <PageMasthead {...makeCardMastHeadProps(TRAINING_CARD_MASTHEAD)} />
       <Section>
-        <div className="grid-row grid-gap">
-          {[...TRAININGS, ...TRAININGS_EXTERNAL].map(
-            ({
-              id,
-              contentType,
-              title,
-              description,
-              thumbnailImage,
-              categories,
-              themes,
-              ...rest
-            }) => (
-              <div key={id} className="grid-col-12 tablet:grid-col-6 margin-y-1 desktop:margin-y-2">
-                <CardDetailed
-                  {...makeCardDetailedProps({
-                    id,
-                    contentType,
-                    title,
-                    description,
-                    thumbnailImage,
-                    categories,
-                    themes,
-                    url: "url" in rest ? rest.url : undefined,
-                  })}
-                  className="height-card-lg"
-                />
-              </div>
-            ),
-          )}
-        </div>
+        <Gallery items={items} />
       </Section>
     </>
   );
