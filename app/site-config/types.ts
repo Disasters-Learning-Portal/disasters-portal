@@ -111,6 +111,10 @@ export type ContentBlock =
         heading?: string;
         headingLevel?: "h2" | "h3" | "h4";
         caption?: string;
+        /** Optional app-internal path to a page describing the mapped data. */
+        infoHref?: string;
+        /** Optional link text for {@link infoHref}. Defaults to "Learn more about this data". */
+        infoLabel?: string;
       })
   | {
       type: "sectionCardSimple";
