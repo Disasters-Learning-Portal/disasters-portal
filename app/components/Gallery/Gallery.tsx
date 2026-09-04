@@ -41,7 +41,7 @@ function GalleryInner({ items }: GalleryProps) {
               key={id}
               className="grid-col-12 tablet:grid-col-6 desktop:grid-col-4 margin-y-1 desktop:margin-y-2"
             >
-              <CardDetailed {...cardProps} className="height-full" />
+              <CardDetailed {...cardProps} className="height-card-sm" />
             </div>
           );
         })}
