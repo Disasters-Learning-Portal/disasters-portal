@@ -5,28 +5,15 @@ import { EVENTS } from "@/app/site-config/event";
 import { NEWS } from "@/app/site-config/news";
 import { NEWS_EVENTS_CARD_MASTHEAD } from "@/app/site-config/news-events/toplevel-page__card-masthead";
 import { STORIES } from "@/app/site-config/story";
-import type { ContentType } from "@/app/site-config/types";
 
-type FilterContentType = Extract<ContentType, "news" | "story" | "datastory" | "event">;
-const CONTENT_TYPE_FILTER_VALUES: FilterContentType[] = ["news", "story", "datastory", "event"];
-
-export default async function NewsEventsCollectionPage(props: PageProps<"/news-events">) {
-  const { contenttype = "" } = (await props.searchParams) ?? {};
-
-  const contentTypeFilter = CONTENT_TYPE_FILTER_VALUES.includes(contenttype as FilterContentType)
-    ? (contenttype as FilterContentType)
-    : null;
-
+export default function NewsEventsCollectionPage() {
   const allItems = [...NEWS, ...STORIES, ...DATASTORIES, ...EVENTS];
-  const filteredItems = contentTypeFilter
-    ? allItems.filter((item) => item.contentType === contentTypeFilter)
-    : allItems;
 
   return (
     <>
       <PageMasthead {...makeCardMastHeadProps(NEWS_EVENTS_CARD_MASTHEAD)} />
       <Section>
-        <Gallery items={filteredItems.map(contentToGalleryItem)} />
+        <Gallery items={allItems.map(contentToGalleryItem)} />
       </Section>
     </>
   );

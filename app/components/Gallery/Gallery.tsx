@@ -5,8 +5,9 @@ import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 import { makeCardDetailedProps } from "@/app/site-config/content.helpers";
 import type { GalleryItem } from "@/app/site-config/types";
-import { getPaginationState, parsePageParam } from "./Gallery.helpers";
+import { filterByContentType, parseContentTypeParam } from "./filters.helpers";
 import { PaginationBar } from "./PaginationBar";
+import { getPaginationState, parsePageParam } from "./pagination.helpers";
 
 export type GalleryProps = {
   items: GalleryItem[];
@@ -28,8 +29,9 @@ export function Gallery(props: GalleryProps) {
 
 function GalleryInner({ items }: GalleryProps) {
   const searchParams = useSearchParams();
+  const filteredItems = filterByContentType(items, parseContentTypeParam(searchParams));
   const requestedPage = parsePageParam(searchParams);
-  const { pageItems, totalPages, currentPage } = getPaginationState(items, requestedPage);
+  const { pageItems, totalPages, currentPage } = getPaginationState(filteredItems, requestedPage);
 
   return (
     <>
