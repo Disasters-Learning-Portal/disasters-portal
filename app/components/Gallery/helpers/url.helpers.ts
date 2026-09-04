@@ -3,6 +3,7 @@ import type { FilterState } from "./filters.helpers";
 
 export const CONTENT_TYPE_PARAM = "contenttype";
 export const PAGE_PARAM = "page";
+export const PRESERVED_PARAMS = [CONTENT_TYPE_PARAM, PAGE_PARAM] as const;
 
 export function parseFilters(params: URLSearchParams): FilterState {
   return {
@@ -21,13 +22,18 @@ export function parsePageParam(params: URLSearchParams): number {
   return Number.isInteger(parsed) && parsed >= 1 ? parsed : 1;
 }
 
-/** Href for a page link; every param the pagination doesn't own is preserved. */
+/** Href for a page link; rebuilt from gallery-owned params only, so tracking params don't leak into hrefs. */
 export function buildPageHref(
   currentParams: URLSearchParams,
   pathname: string,
   page: number,
 ): string {
-  const params = new URLSearchParams(currentParams);
+  const params = new URLSearchParams();
+  for (const key of PRESERVED_PARAMS) {
+    const value = currentParams.get(key);
+    if (value !== null) params.set(key, value);
+  }
+
   if (page <= 1) {
     params.delete(PAGE_PARAM);
   } else {
