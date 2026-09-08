@@ -53,18 +53,14 @@ export const DATA__AVIRIS_3_DNBR: DataContent = {
       type: "text",
       heading: "Satellite/Sensor",
       headingLevel: "h3",
-      paragraphs: [
-        "Airborne Visible/Infrared Imaging Spectrometer 3rd-Generation (AVIRIS-3)",
-      ],
+      paragraphs: ["Airborne Visible/Infrared Imaging Spectrometer 3rd-Generation (AVIRIS-3)"],
     },
 
     {
       type: "text",
       heading: "Resolution",
       headingLevel: "h3",
-      paragraphs: [
-        "Acquisition-dependent high spatial resolution",
-      ],
+      paragraphs: ["Acquisition-dependent high spatial resolution"],
     },
 
     {

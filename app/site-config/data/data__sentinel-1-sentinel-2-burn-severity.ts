@@ -58,9 +58,7 @@ export const DATA__SENTINEL_1_SENTINEL_2_BURN_SEVERITY: DataContent = {
       type: "text",
       heading: "Resolution",
       headingLevel: "h3",
-      paragraphs: [
-        "Approximately 10 meters",
-      ],
+      paragraphs: ["Approximately 10 meters"],
     },
 
     {
