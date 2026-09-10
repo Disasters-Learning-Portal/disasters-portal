@@ -39,9 +39,7 @@ export const DATA__VENEZUELA_EQ_JUN_2026: DataContent[] = [
   DATA__UMBRA_SIGMA_NAUGHT,
 ];
 
-export const DATA__TYPHOON_SINLAKU_APR_2026: DataContent[] = [
-  DATA__BLACK_MARBLE_BLUE_YELLOW,
-];
+export const DATA__TYPHOON_SINLAKU_APR_2026: DataContent[] = [DATA__BLACK_MARBLE_BLUE_YELLOW];
 
 export const DATA__US_WINTER_STORM_JAN_2026: DataContent[] = [
   DATA__BLACK_MARBLE_BLUE_YELLOW,
