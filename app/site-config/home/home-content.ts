@@ -9,18 +9,18 @@ export const HOME_CONTENT: ContentBlock[] = [
     baseMapStyle: CARTO_DARK_WITH_LABELS_BASEMAP_STYLE,
     leftLayerConfig: {
       type: "raster",
-      collectionId: "blackmarble-june2026-composite",
-      collectionAssetId: "blackmarble_hd",
-      dateRange: { from: "2024-08-01", to: "2024-08-31" },
+      collectionId: "blackmarble-brdf-daily",
+      collectionAssetId: "blackmarble_brdf",
+      dateRange: { from: "2024-09-22", to: "2024-09-22" },
       hideLegend: true,
     },
     rightLayerConfig: {
       type: "raster",
-      collectionId: "blackmarble-hd-daily-june2026",
-      collectionAssetId: "blackmarble_hd",
-      dateRange: { from: "2024-09-28", to: "2024-09-28" },
+      collectionId: "blackmarble-brdf-daily",
+      collectionAssetId: "blackmarble_brdf",
+      dateRange: { from: "2024-10-02", to: "2024-10-02" },
     },
     caption:
-      "NASA Black Marble Day-Night Band (BRDF-Corrected) HD Pre- and Post-Hurricane Helene Images for the Augusta, Georgia area. The image is in an inferno color scale. Yellow represents the presence of more light; dark blue less lights. Observations may be obscured by total or partial cloud cover. Other factors such as snow reflectance, moon phase, wildfires, and wildfire smoke may distort light radiance and require further analysis when assessing power outages.",
+      "NASA Black Marble Day-Night Band (BRDF-Corrected) Pre- and Post-Hurricane Helene Images for the Augusta, Georgia area. The image is in an inferno color scale. Yellow represents the presence of more light; dark blue less lights. Observations may be obscured by total or partial cloud cover. Other factors such as snow reflectance, moon phase, wildfires, and wildfire smoke may distort light radiance and require further analysis when assessing power outages.",
   },
 ];
