@@ -1,4 +1,3 @@
-import { DATA } from "@/app/site-config/data";
 import type { EventContent } from "@/app/site-config/types";
 
 export const EVENT__HURRICANE_HELENE_SEPT_2024: EventContent = {
@@ -21,17 +20,17 @@ export const EVENT__HURRICANE_HELENE_SEPT_2024: EventContent = {
   body: [
     {
       type: "text",
-      paragraphs: [
-        "x.",
-      ],
+      paragraphs: ["x."],
     },
     {
       type: "sectionCardGallery",
       heading: "Related Data",
-      cards: [DATA__BLACK_MARBLE_BLUE_YELLOW,
+      cards: [
+              DATA__BLACK_MARBLE_BLUE_YELLOW,
               DATA__BLACK_MARBLE_HD,
               DATA__SENTINEL_2_TRUE_COLOR,
-              DATA__SENTINEL_2_SWIR],
+              DATA__SENTINEL_2_SWIR,
+            ],
     },
   ],
 };
