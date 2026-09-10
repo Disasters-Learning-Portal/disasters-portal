@@ -5,7 +5,7 @@ import { EVENT__SOUTHERN_CALIFORNIA_FIRE_JAN_2025 } from "./event__southern-cali
 import { EVENT__TEXAS_FLOODS_JULY_2025 } from "./event__texas-floods-july-2025";
 import { EVENT__TYPHOON_SINLAKU_APR_2026 } from "./event__typhoon-sinlaku-apr-2026";
 import { EVENT__US_WINTER_STORM_JAN_2026 } from "./event__us-winter-storm-jan-2026";
-import { EVENT__VENEZUELA_EQ_JUN_2026 } from "./event__venezuela-earthquake-june-2026";
+import { EVENT__VENEZUELA_EQ_JUN_2026 } from "./event__venezuela-earthquake-jun-2026";
 
 export const EVENTS: EventContent[] = [
   EVENT__VENEZUELA_EQ_JUN_2026,

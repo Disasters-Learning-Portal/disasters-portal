@@ -1,4 +1,4 @@
-import { EVENT__TYPHOON_SINLAKU_2026 } from "@/app/site-config/event/event__typhoon-sinlaku-2026";
+import { EVENT__TYPHOON_SINLAKU_APR_2026 } from "@/app/site-config/event/event__typhoon-sinlaku-apr-2026";
 import { NEWS__NEW_DISASTERS_PORTAL_TEST_HELP } from "@/app/site-config/news/news__new-disasters-portal-test-help";
 import { STORY__ESTIMATING_LOSS_RECOVERY } from "@/app/site-config/story/story__estimating-loss-recovery";
 import { STORY__FINDING_FLOODS } from "@/app/site-config/story/story__finding-floods";
