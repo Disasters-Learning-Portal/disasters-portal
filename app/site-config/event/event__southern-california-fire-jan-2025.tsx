@@ -1,5 +1,7 @@
 import { CARTO_DARK_WITH_LABELS_BASEMAP_STYLE, Link } from "@teamimpact/veda-ui-blocks";
 import { Fragment } from "react";
+
+import { DATA__SOUTHERN_CALIFORNIA_FIRE_JAN_2025 } from "@/app/site-config/data";
 import { TRAINING__EO_PRE_POST_FIRE_MONITORING } from "@/app/site-config/training/training__eo-pre-post-fire-monitoring";
 import { TRAINING__FUNDAMENTALS_REMOTE_SENSING } from "@/app/site-config/training/training__fundamentals-remote-sensing";
 import { TRAINING__LIFELINES_WILDFIRE_WORKFLOW } from "@/app/site-config/training/training__lifelines-wildfire-workflow";
@@ -81,18 +83,7 @@ export const EVENT__SOUTHERN_CALIFORNIA_FIRE_JAN_2025: EventContent = {
     {
       type: "sectionCardGallery",
       heading: "Related Data",
-      cards: [
-        DATA__AVIRIS_3_DNBR,
-        DATA__AVIRIS_3_EARLY_COLOR_IMAGERY,
-        DATA__BLACK_MARBLE_BLUE_YELLOW,
-        DATA__OPERA_DIST_S1,
-        DATA__SENTINEL_1_SENTINEL_2_BURN_SEVERITY,
-        DATA__SENTINEL_2_TRUE_COLOR,
-        DATA__SENTINEL_2_COLOR_INFRARED,
-        DATA__SENTINEL_2_SWIR,
-        DATA__SENTINEL_2_NBR,
-        DATA__SENTINEL_2_DNBR,
-      ],
+      cards: DATA__SOUTHERN_CALIFORNIA_FIRE_JAN_2025,
     },
     {
       type: "sectionCardSimple",
