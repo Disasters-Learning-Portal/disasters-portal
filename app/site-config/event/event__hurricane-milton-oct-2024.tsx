@@ -26,11 +26,11 @@ export const EVENT__HURRICANE_MILTON_OCT_2024: EventContent = {
       type: "sectionCardGallery",
       heading: "Related Data",
       cards: [
-              DATA__BLACK_MARBLE_BLUE_YELLOW,
-              DATA__SENTINEL_2_TRUE_COLOR,
-              DATA__SENTINEL_2_COLOR_INFRARED,
-              DATA__SENTINEL_2_SWIR,
-            ],
+        DATA__BLACK_MARBLE_BLUE_YELLOW,
+        DATA__SENTINEL_2_TRUE_COLOR,
+        DATA__SENTINEL_2_COLOR_INFRARED,
+        DATA__SENTINEL_2_SWIR,
+      ],
     },
   ],
 };

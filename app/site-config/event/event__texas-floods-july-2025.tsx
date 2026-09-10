@@ -80,10 +80,10 @@ export const EVENT__TEXAS_FLOODS_JULY_2025: EventContent = {
       type: "sectionCardGallery",
       heading: "Related Data",
       cards: [
-              DATA__BLACK_MARBLE_BLUE_YELLOW,
-              DATA__SENTINEL_2_TRUE_COLOR,
-              DATA__SENTINEL_2_COLOR_INFRARED,
-            ],
+        DATA__BLACK_MARBLE_BLUE_YELLOW,
+        DATA__SENTINEL_2_TRUE_COLOR,
+        DATA__SENTINEL_2_COLOR_INFRARED,
+      ],
     },
     {
       type: "sectionCardSimple",

@@ -28,11 +28,11 @@ export const EVENT__US_WINTER_STORM_JAN_2026: EventContent = {
       type: "sectionCardGallery",
       heading: "Related Data",
       cards: [
-              DATA__BLACK_MARBLE_BLUE_YELLOW,
-              DATA__BLACK_MARBLE_HD,
-              DATA__SENTINEL_2_TRUE_COLOR,
-              DATA__SENTINEL_2_COLOR_INFRARED,
-            ],
+        DATA__BLACK_MARBLE_BLUE_YELLOW,
+        DATA__BLACK_MARBLE_HD,
+        DATA__SENTINEL_2_TRUE_COLOR,
+        DATA__SENTINEL_2_COLOR_INFRARED,
+      ],
     },
   ],
 };
