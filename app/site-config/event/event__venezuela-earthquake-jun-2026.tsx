@@ -1,11 +1,11 @@
 import { DATA } from "@/app/site-config/data";
 import type { EventContent } from "@/app/site-config/types";
 
-export const EVENT__US_WINTER_STORM_JAN_2026: EventContent = {
-  id: "us-winter-storm-jan-2026",
+export const EVENT__VENEZUELA_EQ_JUN_2026: EventContent = {
+  id: "venzuela-earthquake-jun-2026",
   contentType: "event",
-  title: "U.S. Winter Storm January 2026",
-  lastUpdatedDate: "2026-01-28",
+  title: "Venezuela Earthquake June 2026",
+  lastUpdatedDate: "2026-06-24",
   thumbnailImage: {
     src: "/img/event/us-winter-storm-jan-2026.webp",
     alt: "Hazard pattern swirls in shades of blue",
@@ -15,14 +15,14 @@ export const EVENT__US_WINTER_STORM_JAN_2026: EventContent = {
     alt: "Hazard pattern swirls in shades of blue",
   },
   themes: ["respond"],
-  categories: ["winter weather"],
-  region: "U.S., North America",
-  startDate: "2026-01-23",
+  categories: ["earthquake"],
+  region: "Venezuela, South America",
+  startDate: "2026-06-24",
   body: [
     {
       type: "text",
       paragraphs: [
-        "A large winter storm impacted much of the continental U.S., bringing snow, ice, and subfreezing temperatures. NASA’s Disasters Program is sharing maps and data to support state and federal response agencies.",
+        "x.",
       ],
     },
     {
@@ -30,8 +30,8 @@ export const EVENT__US_WINTER_STORM_JAN_2026: EventContent = {
       heading: "Related Data",
       cards: [DATA__BLACK_MARBLE_BLUE_YELLOW,
               DATA__BLACK_MARBLE_HD,
-              DATA__SENTINEL_2_TRUE_COLOR,
-              DATA__SENTINEL_2_COLOR_INFRARED],
+              DATA__OPERA_DISP_S1_COHERENCE,
+              DATA__UMBRA_SIGMA_NAUGHT],
     },
   ],
 };

@@ -82,7 +82,16 @@ export const EVENT__SOUTHERN_CALIFORNIA_FIRE_JAN_2025: EventContent = {
     {
       type: "sectionCardGallery",
       heading: "Related Data",
-      cards: DATA,
+      cards: [DATA__AVIRIS_3_DNBR,
+              DATA__AVIRIS_3_EARLY_COLOR_IMAGERY,
+              DATA__BLACK_MARBLE_BLUE_YELLOW,
+              DATA__OPERA_DIST_S1,
+              DATA__SENTINEL_1_SENTINEL_2_BURN_SEVERITY,
+              DATA__SENTINEL_2_TRUE_COLOR,
+              DATA__SENTINEL_2_COLOR_INFRARED,
+              DATA__SENTINEL_2_SWIR,
+              DATA__SENTINEL_2_NBR,
+              DATA__SENTINEL_2_DNBR],
     },
     {
       type: "sectionCardSimple",

@@ -1,11 +1,11 @@
 import { DATA } from "@/app/site-config/data";
 import type { EventContent } from "@/app/site-config/types";
 
-export const EVENT__US_WINTER_STORM_JAN_2026: EventContent = {
-  id: "us-winter-storm-jan-2026",
+export const EVENT__HURRICANE_MILTON_OCT_2024: EventContent = {
+  id: "hurricane-milton-oct-2024",
   contentType: "event",
-  title: "U.S. Winter Storm January 2026",
-  lastUpdatedDate: "2026-01-28",
+  title: "Hurricane Milton October 2024",
+  lastUpdatedDate: "2024-10-10",
   thumbnailImage: {
     src: "/img/event/us-winter-storm-jan-2026.webp",
     alt: "Hazard pattern swirls in shades of blue",
@@ -15,23 +15,23 @@ export const EVENT__US_WINTER_STORM_JAN_2026: EventContent = {
     alt: "Hazard pattern swirls in shades of blue",
   },
   themes: ["respond"],
-  categories: ["winter weather"],
-  region: "U.S., North America",
-  startDate: "2026-01-23",
+  categories: ["tropical cyclone"],
+  region: "Florida, U.S., North America",
+  startDate: "2024-10-10",
   body: [
     {
       type: "text",
       paragraphs: [
-        "A large winter storm impacted much of the continental U.S., bringing snow, ice, and subfreezing temperatures. NASA’s Disasters Program is sharing maps and data to support state and federal response agencies.",
+        "x.",
       ],
     },
     {
       type: "sectionCardGallery",
       heading: "Related Data",
       cards: [DATA__BLACK_MARBLE_BLUE_YELLOW,
-              DATA__BLACK_MARBLE_HD,
               DATA__SENTINEL_2_TRUE_COLOR,
-              DATA__SENTINEL_2_COLOR_INFRARED],
+              DATA__SENTINEL_2_COLOR_INFRARED,
+              DATA__SENTINEL_2_SWIR],
     },
   ],
 };
