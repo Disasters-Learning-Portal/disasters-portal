@@ -11,12 +11,12 @@ export const DATA__GAIA: DataContent = {
     "The Global Assessment of Infrastructure Assets (GAIA) provides building-level infrastructure exposure data to support disaster risk assessment, response, and recovery.",
 
   thumbnailImage: {
-    src: "/img/data/gaia-infrastructure-assets.webp",
+    src: "/img/training/eo-building-exposure.webp",
     alt: "GAIA building and infrastructure exposure data",
   },
 
   mastheadImage: {
-    src: "/img/data/gaia-infrastructure-assets.webp",
+    src: "/img/training/eo-building-exposure.webp",
     alt: "GAIA building and infrastructure exposure data",
   },
 
