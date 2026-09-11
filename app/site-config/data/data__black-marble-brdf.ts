@@ -12,12 +12,12 @@ export const DATA__BLACK_MARBLE_BRDF: DataContent = {
 
   thumbnailImage: {
     src: "/img/data/black-marble-brdf.webp",
-    alt: "Black Marble BRDF-corrected nighttime lights imagery",
+    alt: "Black Marble BRDF monthly nighttime lights composite over Guam, March 2026, pre-event baseline for Typhoon Sinlaku",
   },
 
   mastheadImage: {
     src: "/img/data/black-marble-brdf.webp",
-    alt: "Black Marble BRDF-corrected nighttime lights imagery",
+    alt: "Black Marble BRDF monthly nighttime lights composite over Guam, March 2026, pre-event baseline for Typhoon Sinlaku",
   },
 
   themes: ["respond", "recover"],
