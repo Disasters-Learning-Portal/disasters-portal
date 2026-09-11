@@ -3,6 +3,7 @@ import type { DataContent } from "@/app/site-config/types";
 import { DATA__AVIRIS_3_DNBR } from "./data__aviris-3-dnbr";
 import { DATA__AVIRIS_3_EARLY_COLOR_IMAGERY } from "./data__aviris-3-early-color-imagery";
 import { DATA__BLACK_MARBLE_BLUE_YELLOW } from "./data__black-marble-blue-yellow";
+import { DATA__BLACK_MARBLE_BRDF } from "./data__black-marble-brdf";
 import { DATA__BLACK_MARBLE_HD } from "./data__black-marble-hd";
 import { DATA__GAIA } from "./data__gaia";
 import { DATA__OPERA_DISP_S1_COHERENCE } from "./data__opera-disp-s1-coherence";
@@ -19,6 +20,7 @@ export const DATA: DataContent[] = [
   DATA__AVIRIS_3_DNBR,
   DATA__AVIRIS_3_EARLY_COLOR_IMAGERY,
   DATA__BLACK_MARBLE_BLUE_YELLOW,
+  DATA__BLACK_MARBLE_BRDF,
   DATA__BLACK_MARBLE_HD,
   DATA__GAIA,
   DATA__OPERA_DISP_S1_COHERENCE,
@@ -39,7 +41,10 @@ export const DATA__VENEZUELA_EQ_JUN_2026: DataContent[] = [
   DATA__UMBRA_SIGMA_NAUGHT,
 ];
 
-export const DATA__TYPHOON_SINLAKU_APR_2026: DataContent[] = [DATA__BLACK_MARBLE_BLUE_YELLOW];
+export const DATA__TYPHOON_SINLAKU_APR_2026: DataContent[] = [
+  DATA__BLACK_MARBLE_BLUE_YELLOW,
+  DATA__BLACK_MARBLE_BRDF,
+];
 
 export const DATA__US_WINTER_STORM_JAN_2026: DataContent[] = [
   DATA__BLACK_MARBLE_BLUE_YELLOW,
