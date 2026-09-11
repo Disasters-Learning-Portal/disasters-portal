@@ -22,7 +22,7 @@ export function StacSingleLayerBlock({ block }: StacSingleLayerBlockProps) {
           baseMapStyle={baseMapStyle}
           initialViewState={initialViewState}
           layerConfig={layerConfig}
-          showScrollGuard
+          cooperativeGestures
         />
       </div>
     </GeoConfigProvider>
