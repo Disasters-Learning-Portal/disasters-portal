@@ -7,7 +7,7 @@ import {
   CONTENT_TYPES,
   type Content,
   type ContentType,
-  type GalleryItem,
+  type GalleryCard,
   type IterableItemWithId,
   type Theme,
 } from "@/app/site-config/types";
@@ -139,7 +139,7 @@ export type CardDetailedPropsArgs = Omit<
  * needs. Content types carry non-serializable extras (ContentBlock bodies
  * with JSX) that must not cross the server -> client boundary.
  */
-export const contentToGalleryItem = (content: Content): GalleryItem => ({
+export const contentToGalleryCard = (content: Content): GalleryCard => ({
   id: content.id,
   contentType: content.contentType,
   title: content.title,

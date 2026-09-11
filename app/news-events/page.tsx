@@ -1,5 +1,5 @@
 import { Gallery, PageMasthead, Section } from "@/app/components";
-import { contentToGalleryItem, makeCardMastHeadProps } from "@/app/site-config/content.helpers";
+import { contentToGalleryCard, makeCardMastHeadProps } from "@/app/site-config/content.helpers";
 import { DATASTORIES } from "@/app/site-config/datastory";
 import { EVENTS } from "@/app/site-config/event";
 import { NEWS } from "@/app/site-config/news";
@@ -26,7 +26,7 @@ export default async function NewsEventsCollectionPage(props: PageProps<"/news-e
     <>
       <PageMasthead {...makeCardMastHeadProps(NEWS_EVENTS_CARD_MASTHEAD)} />
       <Section>
-        <Gallery items={filteredItems.map(contentToGalleryItem)} />
+        <Gallery items={filteredItems.map(contentToGalleryCard)} />
       </Section>
     </>
   );
