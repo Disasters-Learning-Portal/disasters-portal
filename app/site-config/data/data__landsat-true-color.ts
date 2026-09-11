@@ -80,9 +80,7 @@ export const DATA__LANDSAT_TRUE_COLOR: DataContent = {
       type: "text",
       heading: "Tags",
       headingLevel: "h3",
-      paragraphs: [
-        "NASA, USGS, Landsat, Landsat 8, Landsat 9, OLI, OLI-2, True Color, Optical",
-      ],
+      paragraphs: ["NASA, USGS, Landsat, Landsat 8, Landsat 9, OLI, OLI-2, True Color, Optical"],
     },
   ],
 };

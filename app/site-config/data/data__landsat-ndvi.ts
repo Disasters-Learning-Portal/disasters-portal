@@ -32,11 +32,7 @@ export const DATA__LANDSAT_NDVI: DataContent = {
     "winter weather",
   ],
 
-  relatedContent: [
-    "landsat-color-infrared",
-    "landsat-natural-color",
-    "landsat-nbr",
-  ],
+  relatedContent: ["landsat-color-infrared", "landsat-natural-color", "landsat-nbr"],
 
   body: [
     {

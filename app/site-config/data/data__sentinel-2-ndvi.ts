@@ -32,11 +32,7 @@ export const DATA__SENTINEL_2_NDVI: DataContent = {
     "winter weather",
   ],
 
-  relatedContent: [
-    "sentinel-2-color-infrared",
-    "sentinel-2-true-color",
-    "sentinel-2-nbr",
-  ],
+  relatedContent: ["sentinel-2-color-infrared", "sentinel-2-true-color", "sentinel-2-nbr"],
 
   body: [
     {
