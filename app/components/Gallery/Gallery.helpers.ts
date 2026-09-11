@@ -4,6 +4,12 @@ const PAGE_SIZE = 6;
 /** Query-string key shared by parsePageParam and the pagination hrefs. */
 export const PAGE_PARAM = "page";
 
+/**
+ * Query params owned by the gallery pages. Pagination hrefs are built from
+ * these only, so unrelated params (e.g. tracking) don't leak into every link.
+ */
+export const PRESERVED_PARAMS = ["contenttype", PAGE_PARAM] as const;
+
 export function parsePageParam(params: URLSearchParams): number {
   // Number() instead of parseInt() so trailing junk ("3abc") is invalid, not 3
   const parsed = Number(params.get(PAGE_PARAM) ?? "");
