@@ -24,7 +24,7 @@ export const DATA__SENTINEL_1_DAMAGE_ASSESSMENT: DataContent = {
 
   categories: ["fire"],
 
-  relatedContent: ["sentinel-1-sentinel-2-burn-severity","opera-disp-s1-coherence"],
+  relatedContent: ["sentinel-1-sentinel-2-burn-severity", "opera-disp-s1-coherence"],
 
   body: [
     {
