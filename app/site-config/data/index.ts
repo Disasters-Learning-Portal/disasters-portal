@@ -30,6 +30,8 @@ import { DATA__SENTINEL_2_NBR } from "./data__sentinel-2-nbr";
 import { DATA__SENTINEL_2_NDVI } from "./data__sentinel-2-ndvi";
 import { DATA__SENTINEL_2_SWIR } from "./data__sentinel-2-swir";
 import { DATA__SENTINEL_2_TRUE_COLOR } from "./data__sentinel-2-true-color";
+import { DATA__SKYSAT_COLOR_INFRARED } from "./data__skysat-color-infrared";
+import { DATA__SKYSAT_TRUE_COLOR } from "./data__skysat-true-color";
 import { DATA__UMBRA_SIGMA_NAUGHT } from "./data__umbra_sigma_naught";
 
 export const DATA: DataContent[] = [
@@ -63,6 +65,8 @@ export const DATA: DataContent[] = [
   DATA__SENTINEL_2_NDVI,
   DATA__SENTINEL_2_SWIR,
   DATA__SENTINEL_2_TRUE_COLOR,
+  DATA__SKYSAT_COLOR_INFRARED,
+  DATA__SKYSAT_TRUE_COLOR,
   DATA__UMBRA_SIGMA_NAUGHT,
 ];
 
@@ -81,6 +85,8 @@ export const DATA__TYPHOON_SINLAKU_APR_2026: DataContent[] = [
   DATA__ICEYE_BACKSCATTER,
   DATA__SATELLOGIC_COLOR_INFRARED,
   DATA__SATELLOGIC_TRUE_COLOR,
+  DATA__SKYSAT_COLOR_INFRARED,
+  DATA__SKYSAT_TRUE_COLOR,
   DATA__UMBRA_SIGMA_NAUGHT,
 ];
 
