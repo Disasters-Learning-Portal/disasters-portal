@@ -12,8 +12,11 @@ import { DATA__LANDSAT_NATURAL_COLOR } from "./data__landsat-natural-color";
 import { DATA__LANDSAT_NBR } from "./data__landsat-nbr";
 import { DATA__LANDSAT_NDVI } from "./data__landsat-ndvi";
 import { DATA__LANDSAT_TRUE_COLOR } from "./data__landsat-true-color";
+import { DATA__NISAR_GUNW_DISPLACEMENT } from "./data__nisar-gunw-displacement";
 import { DATA__OPERA_DISP_S1_COHERENCE } from "./data__opera-disp-s1-coherence";
 import { DATA__OPERA_DIST_S1 } from "./data__opera-dist-s1";
+import { DATA__PLANET_TRUE_COLOR } from "./data__planet-true-color";
+import { DATA__SENTINEL_1_DAMAGE_ASSESSMENT } from "./data__sentinel-1-damage-assessment";
 import { DATA__SENTINEL_1_SENTINEL_2_BURN_SEVERITY } from "./data__sentinel-1-sentinel-2-burn-severity";
 import { DATA__SENTINEL_2_COLOR_INFRARED } from "./data__sentinel-2-color-infrared";
 import { DATA__SENTINEL_2_DNBR } from "./data__sentinel-2-dnbr";
@@ -37,8 +40,11 @@ export const DATA: DataContent[] = [
   DATA__LANDSAT_NBR,
   DATA__LANDSAT_NDVI,
   DATA__LANDSAT_TRUE_COLOR,
+  DATA__NISAR_GUNW_DISPLACEMENT,
   DATA__OPERA_DISP_S1_COHERENCE,
   DATA__OPERA_DIST_S1,
+  DATA__PLANET_TRUE_COLOR,
+  DATA__SENTINEL_1_DAMAGE_ASSESSMENT,
   DATA__SENTINEL_1_SENTINEL_2_BURN_SEVERITY,
   DATA__SENTINEL_2_COLOR_INFRARED,
   DATA__SENTINEL_2_DNBR,
