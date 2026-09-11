@@ -1,43 +1,53 @@
-import { CardCTA, type CardProps } from "@teamimpact/veda-ui-blocks";
+import { CardCTA, type CardCTAProps, type CardProps } from "@teamimpact/veda-ui-blocks";
 
 import { AppLink } from "@/app/components/AppLink";
 import { AppVideo } from "@/app/components/AppVideo";
 
-const MOCK_FEATURE_CTACARDS_PROPS = [
+const MOCK_FEATURE_CARDCTAS_PROPS: CardCTAProps<typeof AppLink>[] = [
   {
     title: "Prepare",
-    description: "Anticipate risk and boost readiness",
-    href: "/prepare",
-    accentColor: "#f67e09",
+    callToAction: {
+      label: "Anticipate risk and boost readiness",
+      href: "/prepare",
+      as: AppLink,
+    },
+    colorMode: "dark",
   },
   {
     title: "Respond",
-    description: "Support real-time decisions with timely insights",
-    href: "/respond",
-    accentColor: "#c91b6e",
+    callToAction: {
+      label: "Support real-time decisions with timely insights",
+      href: "/respond",
+      as: AppLink,
+    },
+    colorMode: "dark",
   },
   {
     title: "Recover",
-    description: "Assess impacts and rebuild stronger",
-    href: "/recover",
-    accentColor: "#4f6fae",
+    callToAction: {
+      label: "Assess impacts and rebuild stronger",
+      href: "/recover",
+      as: AppLink,
+    },
+    colorMode: "dark",
   },
   {
     title: "Build Resilience",
-    description: "Safeguard communities for enduring impact",
-    href: "/resilience",
-    accentColor: "#1d9950",
+    callToAction: {
+      label: "Safeguard communities for enduring impact",
+      href: "/resilience",
+      as: AppLink,
+    },
+    colorMode: "dark",
   },
 ];
 
 const MOCK_FEATURE_CTACARDS_SECTION = (
   <div className="grid-row grid-gap-lg">
-    {MOCK_FEATURE_CTACARDS_PROPS.map((cardProps) => (
-      <div
-        key={cardProps.title}
-        className="grid-col-12 tablet:grid-col-6 desktop:grid-col-3 padding-top-205"
-      >
-        <CardCTA {...cardProps} as={AppLink} />
+    {MOCK_FEATURE_CARDCTAS_PROPS.map((cardCTAProps, i) => (
+      // biome-ignore lint/suspicious/noArrayIndexKey: <hardcoded list, order does not change>
+      <div key={i} className="grid-col-12 tablet:grid-col-6 desktop:grid-col-3 padding-top-205">
+        <CardCTA {...cardCTAProps} />
       </div>
     ))}
   </div>
