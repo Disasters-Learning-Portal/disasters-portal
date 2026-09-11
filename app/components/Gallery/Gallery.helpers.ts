@@ -1,7 +1,7 @@
 /** Results per gallery page. */
 const PAGE_SIZE = 6;
 
-/** Query-string key shared by parsePageParam and PaginationBar's hrefs. */
+/** Query-string key shared by parsePageParam and the pagination hrefs. */
 export const PAGE_PARAM = "page";
 
 export function parsePageParam(params: URLSearchParams): number {

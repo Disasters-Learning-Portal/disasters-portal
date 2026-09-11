@@ -1,12 +1,12 @@
 "use client";
 
-import { CardDetailed } from "@teamimpact/veda-ui-blocks";
-import { useSearchParams } from "next/navigation";
+import { CardDetailed, Pagination } from "@teamimpact/veda-ui-blocks";
+import { usePathname, useSearchParams } from "next/navigation";
 import { Suspense } from "react";
+import { AppLink } from "@/app/components/AppLink";
 import { makeCardDetailedProps } from "@/app/site-config/content.helpers";
 import type { GalleryCard } from "@/app/site-config/types";
-import { getPaginationState, parsePageParam } from "./Gallery.helpers";
-import { PaginationBar } from "./PaginationBar";
+import { getPaginationState, PAGE_PARAM, parsePageParam } from "./Gallery.helpers";
 
 export type GalleryProps = {
   items: GalleryCard[];
@@ -28,8 +28,22 @@ export function Gallery(props: GalleryProps) {
 
 function GalleryInner({ items }: GalleryProps) {
   const searchParams = useSearchParams();
+  const pathname = usePathname();
   const requestedPage = parsePageParam(searchParams);
   const { pageItems, totalPages, currentPage } = getPaginationState(items, requestedPage);
+
+  // Link-based pagination: hrefs are built from the current query string so
+  // every other param (filters, contenttype) survives page changes.
+  const getHref = (page: number) => {
+    const params = new URLSearchParams(searchParams);
+    if (page <= 1) {
+      params.delete(PAGE_PARAM);
+    } else {
+      params.set(PAGE_PARAM, String(page));
+    }
+    const queryString = params.toString();
+    return queryString ? `?${queryString}` : pathname;
+  };
 
   return (
     <>
@@ -46,7 +60,15 @@ function GalleryInner({ items }: GalleryProps) {
           );
         })}
       </div>
-      <PaginationBar currentPage={currentPage} totalPages={totalPages} />
+      {totalPages > 1 && (
+        <Pagination
+          getHref={getHref}
+          currentPage={currentPage}
+          totalPages={totalPages}
+          linksAs={AppLink}
+          className="margin-top-4 display-flex flex-justify-center"
+        />
+      )}
     </>
   );
 }
