@@ -5,6 +5,7 @@ import { DATA__AVIRIS_3_EARLY_COLOR_IMAGERY } from "./data__aviris-3-early-color
 import { DATA__BLACK_MARBLE_BLUE_YELLOW } from "./data__black-marble-blue-yellow";
 import { DATA__BLACK_MARBLE_BRDF } from "./data__black-marble-brdf";
 import { DATA__BLACK_MARBLE_HD } from "./data__black-marble-hd";
+import { DATA__CAPELLA_BACKSCATTER } from "./data__capella-backscatter";
 import { DATA__GAIA } from "./data__gaia";
 import { DATA__LANDSAT_COLOR_INFRARED } from "./data__landsat-color-infrared";
 import { DATA__LANDSAT_MNDWI } from "./data__landsat-mndwi";
@@ -33,6 +34,7 @@ export const DATA: DataContent[] = [
   DATA__BLACK_MARBLE_BLUE_YELLOW,
   DATA__BLACK_MARBLE_BRDF,
   DATA__BLACK_MARBLE_HD,
+  DATA__CAPELLA_BACKSCATTER,
   DATA__GAIA,
   DATA__LANDSAT_COLOR_INFRARED,
   DATA__LANDSAT_MNDWI,
@@ -66,6 +68,7 @@ export const DATA__VENEZUELA_EQ_JUN_2026: DataContent[] = [
 export const DATA__TYPHOON_SINLAKU_APR_2026: DataContent[] = [
   DATA__BLACK_MARBLE_BLUE_YELLOW,
   DATA__BLACK_MARBLE_BRDF,
+  DATA__CAPELLA_BACKSCATTER,
 ];
 
 export const DATA__US_WINTER_STORM_JAN_2026: DataContent[] = [
