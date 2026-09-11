@@ -7,6 +7,7 @@ import { DATA__BLACK_MARBLE_BRDF } from "./data__black-marble-brdf";
 import { DATA__BLACK_MARBLE_HD } from "./data__black-marble-hd";
 import { DATA__CAPELLA_BACKSCATTER } from "./data__capella-backscatter";
 import { DATA__GAIA } from "./data__gaia";
+import { DATA__GPM_IMERG_PRECIPITATION } from "./data__gpm-imerg-precipitation";
 import { DATA__LANDSAT_COLOR_INFRARED } from "./data__landsat-color-infrared";
 import { DATA__LANDSAT_MNDWI } from "./data__landsat-mndwi";
 import { DATA__LANDSAT_NATURAL_COLOR } from "./data__landsat-natural-color";
@@ -36,6 +37,7 @@ export const DATA: DataContent[] = [
   DATA__BLACK_MARBLE_HD,
   DATA__CAPELLA_BACKSCATTER,
   DATA__GAIA,
+  DATA__GPM_IMERG_PRECIPITATION,
   DATA__LANDSAT_COLOR_INFRARED,
   DATA__LANDSAT_MNDWI,
   DATA__LANDSAT_NATURAL_COLOR,
@@ -69,6 +71,7 @@ export const DATA__TYPHOON_SINLAKU_APR_2026: DataContent[] = [
   DATA__BLACK_MARBLE_BLUE_YELLOW,
   DATA__BLACK_MARBLE_BRDF,
   DATA__CAPELLA_BACKSCATTER,
+  DATA__GPM_IMERG_PRECIPITATION,
 ];
 
 export const DATA__US_WINTER_STORM_JAN_2026: DataContent[] = [
