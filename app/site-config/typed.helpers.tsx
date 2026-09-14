@@ -1,16 +1,14 @@
-import type { InternalContent } from "./types";
+import type { Content, ExternalContent } from "./types";
 
-export function isInternalContent(c: unknown): c is InternalContent {
-  return (
-    typeof c === "object" &&
-    c !== null &&
-    "id" in c &&
-    "mastheadImage" in c &&
-    "title" in c &&
-    "themes" in c &&
-    "categories" in c &&
-    (!("url" in c) || "body" in c)
-  );
+/**
+ * Narrows content items to their internal variants, excluding any external (URL-only) types.
+ *
+ * Generic over `T` so that `.filter(isInternalContent)` on a narrower array (e.g.
+ * `(DataStoryContent | DataStoryContentExternal)[]`) returns that same slice minus
+ * the external members.
+ */
+export function isInternalContent<T extends Content>(c: T): c is Exclude<T, ExternalContent> {
+  return !("url" in c);
 }
 
 /**
@@ -48,3 +46,13 @@ export const getTypedEntries = Object.entries as <T extends object>(
  * Converts object keys to their string literal types.
  */
 type ToStringKey<T> = `${Extract<keyof T, string | number>}`;
+
+/**
+ * Returns a new object containing only the specified keys, preserving their types.
+ *
+ * @example
+ * pickKeys(content, ["id", "title", "url"]);
+ * // => Pick<typeof content, "id" | "title" | "url">
+ */
+export const pickKeys = <T extends object, K extends keyof T>(obj: T, keys: K[]): Pick<T, K> =>
+  Object.fromEntries(keys.map((k) => [k, obj[k]])) as Pick<T, K>;
