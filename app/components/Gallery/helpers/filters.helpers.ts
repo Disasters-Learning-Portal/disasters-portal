@@ -1,9 +1,11 @@
 import type { ContentType, GalleryCardContent } from "@/app/site-config/types";
+import { type FacetSelection, matchesFacets } from "./facets.helpers";
 
 /** Every filter the gallery supports; url.helpers.ts translates it from and to the URL. */
 export type FilterState = {
   query: string;
   contentType: ContentType | null;
+  facets: FacetSelection;
 };
 
 export function applyFilters(
@@ -11,7 +13,10 @@ export function applyFilters(
   filters: FilterState,
 ): GalleryCardContent[] {
   return items.filter(
-    (item) => matchesContentType(item, filters.contentType) && matchesQuery(item, filters.query),
+    (item) =>
+      matchesContentType(item, filters.contentType) &&
+      matchesQuery(item, filters.query) &&
+      matchesFacets(item, filters.facets),
   );
 }
 
