@@ -62,9 +62,9 @@ function GalleryInner({ items }: GalleryProps) {
           return (
             <div
               key={id}
-              className="grid-col-12 tablet:grid-col-6 desktop:grid-col-4 margin-y-1 desktop:margin-y-2"
+              className="display-flex grid-col-12 tablet:grid-col-6 desktop:grid-col-4 margin-y-1 desktop:margin-y-2"
             >
-              <CardDetailed {...cardProps} className="height-card-sm" />
+              <CardDetailed {...cardProps} />
             </div>
           );
         })}
