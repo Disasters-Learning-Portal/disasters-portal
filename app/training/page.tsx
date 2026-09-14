@@ -1,10 +1,10 @@
 import { Gallery, PageMasthead, Section } from "@/app/components";
-import { contentToGalleryCard, makeCardMastHeadProps } from "@/app/site-config/content.helpers";
+import { makeCardMastHeadProps, makeGalleryCardContent } from "@/app/site-config/content.helpers";
 import { TRAININGS, TRAININGS_EXTERNAL } from "@/app/site-config/training";
 import { TRAINING_CARD_MASTHEAD } from "@/app/site-config/training/toplevel-page__card-masthead";
 
 export default function TrainingCollectionPage() {
-  const items = [...TRAININGS, ...TRAININGS_EXTERNAL].map(contentToGalleryCard);
+  const items = [...TRAININGS, ...TRAININGS_EXTERNAL].map(makeGalleryCardContent);
 
   return (
     <>

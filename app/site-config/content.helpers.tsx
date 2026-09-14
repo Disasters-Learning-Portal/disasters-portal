@@ -140,7 +140,7 @@ export type CardDetailedPropsArgs = Omit<
  * needs. Content types carry non-serializable extras (ContentBlock bodies
  * with JSX, etc).
  */
-export const contentToGalleryCard = (content: Content): GalleryCardContent => {
+export const makeGalleryCardContent = (content: Content): GalleryCardContent => {
   const base = pickKeys(content, [
     "id",
     "contentType",
