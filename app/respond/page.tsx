@@ -50,9 +50,7 @@ export default function RespondPage() {
       <PageMasthead {...makeCardMastHeadProps({ title, subtitle, theme, mastheadImage })} />
       <SectionCardSimple
         sectionHeading={
-          <SectionHeading href="/news-events-stories?contenttype=story">
-            Stories of Impact
-          </SectionHeading>
+          <SectionHeading href="/news-events-stories?type=story">Stories of Impact</SectionHeading>
         }
         cards={typedMap(stories, makeCardSimpleProps)}
       />
@@ -62,17 +60,13 @@ export default function RespondPage() {
       ))}
       <SectionCardSimpleMini
         sectionHeading={
-          <SectionHeading href="/news-events-stories?contenttype=event">
-            Latest Events
-          </SectionHeading>
+          <SectionHeading href="/news-events-stories?type=event">Latest Events</SectionHeading>
         }
         cards={typedMap(RESPOND_EVENTS, transformEventToCardSimpleProps)}
       />
       <SectionCardCarousel
         sectionHeading={
-          <SectionHeading href="/news-events-stories?contenttype=datastory">
-            Data Stories
-          </SectionHeading>
+          <SectionHeading href="/news-events-stories?type=datastory">Data Stories</SectionHeading>
         }
         cards={typedMap(RESPOND_DATASTORIES, makeCardCarouselProps)}
       />
