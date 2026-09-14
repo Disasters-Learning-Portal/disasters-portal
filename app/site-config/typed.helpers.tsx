@@ -8,7 +8,7 @@ import type { Content, ExternalContent } from "./types";
  * the external members.
  */
 export function isInternalContent<T extends Content>(c: T): c is Exclude<T, ExternalContent> {
-  return !("url" in c);
+  return !("url" in c); // TODO require body
 }
 
 /**

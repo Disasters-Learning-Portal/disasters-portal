@@ -146,42 +146,42 @@ export type ExternalCardContent = InternalCardContent & { url: string };
 
 export type GalleryCardContent = InternalCardContent | ExternalCardContent;
 
-export type TrainingContentExternal = Omit<ExternalCardContent, "contentType"> & {
-  contentType: "training";
-};
-
 export type TrainingContent = Omit<InternalCardContent, "contentType"> & {
   contentType: "training";
   date: string;
   mastheadImage: MastheadImage;
-  body?: ContentBlock[];
+  body?: ContentBlock[]; // TODO: require body
   relatedContent?: string[];
+};
+
+export type TrainingContentExternal = Omit<ExternalCardContent, "contentType"> & {
+  contentType: "training";
 };
 
 export type DataContent = Omit<InternalCardContent, "contentType"> & {
   contentType: "data";
   mastheadImage: MastheadImage;
-  body?: ContentBlock[];
+  body?: ContentBlock[]; // TODO: require body
   relatedContent?: string[];
 };
 
 export type NewsContent = Omit<InternalCardContent, "contentType"> & {
   contentType: "news";
   mastheadImage: MastheadImage;
-  body?: ContentBlock[];
+  body?: ContentBlock[]; // TODO: require body
 };
 
 export type StoryContent = Omit<InternalCardContent, "contentType"> & {
   contentType: "story";
   date?: string;
   mastheadImage: MastheadImage;
-  body?: ContentBlock[];
+  body?: ContentBlock[]; // TODO: require body
 };
 
 export type DataStoryContent = Omit<InternalCardContent, "contentType"> & {
   contentType: "datastory";
   mastheadImage: MastheadImage;
-  body?: ContentBlock[];
+  body?: ContentBlock[]; // TODO: require body
 };
 
 export type DataStoryContentExternal = Omit<ExternalCardContent, "contentType"> & {
@@ -197,7 +197,7 @@ export type EventContent = Omit<InternalCardContent, "contentType"> & {
   region: string;
   linkDHSFEMA?: { label: string; href: string };
   linkUSGovernment?: { label: string; href: string };
-  body?: ContentBlock[];
+  body?: ContentBlock[]; // TODO: require body
   relatedContent?: string[];
 };
 
