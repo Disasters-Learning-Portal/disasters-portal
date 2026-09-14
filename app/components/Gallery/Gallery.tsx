@@ -5,7 +5,7 @@ import { usePathname, useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 import { AppLink } from "@/app/components/AppLink";
 import { makeCardDetailedProps } from "@/app/site-config/content.helpers";
-import type { GalleryCard } from "@/app/site-config/types";
+import type { GalleryCardContent } from "@/app/site-config/types";
 import {
   getPaginationState,
   PAGE_PARAM,
@@ -14,7 +14,7 @@ import {
 } from "./Gallery.helpers";
 
 export type GalleryProps = {
-  items: GalleryCard[];
+  items: GalleryCardContent[];
 };
 
 /**
