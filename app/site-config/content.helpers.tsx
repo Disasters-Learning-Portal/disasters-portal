@@ -136,9 +136,10 @@ export type CardDetailedPropsArgs = Omit<
 };
 
 /**
- * Project a content entry down to the serializable card fields the Gallery
- * needs. Content types carry non-serializable extras (ContentBlock bodies
- * with JSX, etc).
+ * Project a content entry down to the card fields the Gallery needs.
+ * Gallery is a client component, so pages (server components) can only
+ * pass it serializable props: Content extras like ContentBlock bodies
+ * carry JSX and cannot cross the server -> client boundary.
  */
 export const makeGalleryCardContent = (content: Content): GalleryCardContent => {
   const base = pickKeys(content, [
