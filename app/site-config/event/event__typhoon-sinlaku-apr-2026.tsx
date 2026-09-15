@@ -1,9 +1,10 @@
 import { Link } from "@teamimpact/veda-ui-blocks";
 import { Fragment } from "react/jsx-runtime";
-import { DATA } from "@/app/site-config/data";
+
+import { DATA__TYPHOON_SINLAKU_APR_2026 } from "@/app/site-config/data";
 import type { EventContent } from "@/app/site-config/types";
 
-export const EVENT__TYPHOON_SINLAKU_2026: EventContent = {
+export const EVENT__TYPHOON_SINLAKU_APR_2026: EventContent = {
   id: "typhoon-sinlaku-2026",
   contentType: "event",
   title: "Typhoon Sinlaku April 2026",
@@ -52,7 +53,7 @@ export const EVENT__TYPHOON_SINLAKU_2026: EventContent = {
     {
       type: "sectionCardGallery",
       heading: "Related Data",
-      cards: DATA,
+      cards: DATA__TYPHOON_SINLAKU_APR_2026,
     },
   ],
 };
