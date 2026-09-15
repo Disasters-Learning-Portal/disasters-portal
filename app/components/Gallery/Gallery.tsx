@@ -4,13 +4,13 @@ import { CardDetailed, Pagination } from "@teamimpact/veda-ui-blocks";
 import { Suspense } from "react";
 import { AppLink } from "@/app/components/AppLink";
 import { makeCardDetailedProps } from "@/app/site-config/content.helpers";
-import type { GalleryCard } from "@/app/site-config/types";
+import type { GalleryCardContent } from "@/app/site-config/types";
 import { GalleryResultsSummary } from "./GalleryResultsSummary";
 import { GallerySearch } from "./GallerySearch";
 import { useGallery } from "./useGallery";
 
 export type GalleryProps = {
-  items: GalleryCard[];
+  items: GalleryCardContent[];
 };
 
 /**

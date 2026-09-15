@@ -1,5 +1,5 @@
 import { Gallery, PageMasthead, Section } from "@/app/components";
-import { contentToGalleryCard, makeCardMastHeadProps } from "@/app/site-config/content.helpers";
+import { makeCardMastHeadProps, makeGalleryCardContent } from "@/app/site-config/content.helpers";
 import { DATA } from "@/app/site-config/data";
 import { DATA_GALLERY_CARD_MASTHEAD } from "@/app/site-config/data/toplevel-page__card-masthead";
 
@@ -8,7 +8,7 @@ export default function DataGalleryPage() {
     <>
       <PageMasthead {...makeCardMastHeadProps(DATA_GALLERY_CARD_MASTHEAD)} />
       <Section>
-        <Gallery items={DATA.map(contentToGalleryCard)} />
+        <Gallery items={DATA.map(makeGalleryCardContent)} />
       </Section>
     </>
   );

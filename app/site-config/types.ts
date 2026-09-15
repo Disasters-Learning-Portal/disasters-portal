@@ -129,21 +129,7 @@ export type ContentBlock =
       card: CardFeaturedPropsArgs;
     };
 
-export type Content =
-  | TrainingContent
-  | TrainingContentExternal
-  | DataContent
-  | DataStoryContent
-  | DataStoryContentExternal
-  | StoryContent
-  | NewsContent
-  | EventContent;
-
-export type ContentType = Content["contentType"];
-
-export type InternalContent = StoryContent | DataStoryContent | NewsContent | EventContent;
-
-export type MinimumCardContent = {
+export type InternalCardContent = {
   id: string;
   contentType: ContentType;
   title: string;
@@ -156,53 +142,53 @@ export type MinimumCardContent = {
   description?: string;
 };
 
-export type GalleryCard = MinimumCardContent & { url?: string };
+export type ExternalCardContent = InternalCardContent & { url: string };
 
-export type TrainingContentExternal = Omit<MinimumCardContent, "contentType"> & {
-  contentType: "training";
-  url: string;
-};
+export type GalleryCardContent = InternalCardContent | ExternalCardContent;
 
-export type TrainingContent = Omit<MinimumCardContent, "contentType"> & {
+export type TrainingContent = Omit<InternalCardContent, "contentType"> & {
   contentType: "training";
   date: string;
   mastheadImage: MastheadImage;
-  body?: ContentBlock[];
+  body?: ContentBlock[]; // TODO: require body
   relatedContent?: string[];
 };
 
-export type DataContent = Omit<MinimumCardContent, "contentType"> & {
+export type TrainingContentExternal = Omit<ExternalCardContent, "contentType"> & {
+  contentType: "training";
+};
+
+export type DataContent = Omit<InternalCardContent, "contentType"> & {
   contentType: "data";
   mastheadImage: MastheadImage;
-  body?: ContentBlock[];
+  body?: ContentBlock[]; // TODO: require body
   relatedContent?: string[];
 };
 
-export type NewsContent = Omit<MinimumCardContent, "contentType"> & {
+export type NewsContent = Omit<InternalCardContent, "contentType"> & {
   contentType: "news";
   mastheadImage: MastheadImage;
-  body?: ContentBlock[];
+  body?: ContentBlock[]; // TODO: require body
 };
 
-export type StoryContent = Omit<MinimumCardContent, "contentType"> & {
+export type StoryContent = Omit<InternalCardContent, "contentType"> & {
   contentType: "story";
   date?: string;
   mastheadImage: MastheadImage;
-  body?: ContentBlock[];
+  body?: ContentBlock[]; // TODO: require body
 };
 
-export type DataStoryContent = Omit<MinimumCardContent, "contentType"> & {
+export type DataStoryContent = Omit<InternalCardContent, "contentType"> & {
   contentType: "datastory";
   mastheadImage: MastheadImage;
-  body?: ContentBlock[];
+  body?: ContentBlock[]; // TODO: require body
 };
 
-export type DataStoryContentExternal = Omit<MinimumCardContent, "contentType"> & {
+export type DataStoryContentExternal = Omit<ExternalCardContent, "contentType"> & {
   contentType: "datastory";
-  url: string;
 };
 
-export type EventContent = Omit<MinimumCardContent, "contentType"> & {
+export type EventContent = Omit<InternalCardContent, "contentType"> & {
   contentType: "event";
   mastheadImage: MastheadImage;
   isLatest?: boolean;
@@ -211,9 +197,23 @@ export type EventContent = Omit<MinimumCardContent, "contentType"> & {
   region: string;
   linkDHSFEMA?: { label: string; href: string };
   linkUSGovernment?: { label: string; href: string };
-  body?: ContentBlock[];
+  body?: ContentBlock[]; // TODO: require body
   relatedContent?: string[];
 };
+
+export type InternalContent =
+  | DataContent
+  | StoryContent
+  | DataStoryContent
+  | NewsContent
+  | EventContent
+  | TrainingContent;
+
+export type ExternalContent = DataStoryContentExternal | TrainingContentExternal;
+
+export type Content = InternalContent | ExternalContent;
+
+export type ContentType = Content["contentType"];
 
 export type ThemeContent = {
   id: string;

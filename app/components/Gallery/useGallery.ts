@@ -1,14 +1,14 @@
 "use client";
 
 import { usePathname, useSearchParams } from "next/navigation";
-import type { GalleryCard } from "@/app/site-config/types";
+import type { GalleryCardContent } from "@/app/site-config/types";
 import { applyFilters } from "./helpers/filters.helpers";
 import { getPaginationState } from "./helpers/pagination.helpers";
 import { buildPageHref, buildSearchUrl, parseFilters, parsePageParam } from "./helpers/url.helpers";
 
 export type UseGalleryResult = {
   /** Current page's slice of the filtered items. */
-  pageItems: GalleryCard[];
+  pageItems: GalleryCardContent[];
   /** Items matching the filters, before paging. */
   resultCount: number;
   /** Requested page clamped to the filtered results. */
@@ -33,7 +33,7 @@ function applyUrl(url: string) {
   history.replaceState(null, "", url);
 }
 
-export function useGallery(items: GalleryCard[]): UseGalleryResult {
+export function useGallery(items: GalleryCardContent[]): UseGalleryResult {
   const searchParams = useSearchParams();
   const pathname = usePathname();
 

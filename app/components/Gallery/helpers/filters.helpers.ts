@@ -1,4 +1,4 @@
-import type { ContentType, GalleryCard } from "@/app/site-config/types";
+import type { ContentType, GalleryCardContent } from "@/app/site-config/types";
 
 /** Every filter the gallery supports; url.helpers.ts translates it from and to the URL. */
 export type FilterState = {
@@ -6,17 +6,20 @@ export type FilterState = {
   contentType: ContentType | null;
 };
 
-export function applyFilters(items: GalleryCard[], filters: FilterState): GalleryCard[] {
+export function applyFilters(
+  items: GalleryCardContent[],
+  filters: FilterState,
+): GalleryCardContent[] {
   return items.filter(
     (item) => matchesContentType(item, filters.contentType) && matchesQuery(item, filters.query),
   );
 }
 
-function matchesContentType(item: GalleryCard, type: ContentType | null): boolean {
+function matchesContentType(item: GalleryCardContent, type: ContentType | null): boolean {
   return type === null || item.contentType === type;
 }
 
-function matchesQuery(item: GalleryCard, query: string): boolean {
+function matchesQuery(item: GalleryCardContent, query: string): boolean {
   if (!query) return true;
   const q = query.toLowerCase();
   return (
