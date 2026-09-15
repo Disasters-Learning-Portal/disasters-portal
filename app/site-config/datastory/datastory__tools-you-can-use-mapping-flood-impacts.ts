@@ -40,7 +40,6 @@ export const DATASTORY__TOOLS_YOU_CAN_USE_MAPPING_FLOOD_IMPACTS: DataStoryConten
       alt: "Example of HydroSAR data from April 2025 severe weather in the U.S.",
       width: 850,
       height: 707,
-      maxWidth: "40rem",
       caption:
         "The Copernicus Sentinel-1 satellite collected synthetic aperture radar (SAR) imagery over the southeast and central U.S. from April 4-9, 2025, capturing flooding from severe storms. On the left, HydroSAR surface water extents are shown in blue. These are overlaid on VH cross-pol SAR imagery (grayscale), in which still water and other flat surfaces appear black, while diffuse scatterers like vegetation appear in lighter shades. On the right, USGS National Land Cover Database data indicates whether affected areas may be developed, cropland, forest, or other classes of land use. Credits: (left) NASA Disasters Program, Alaska Satellite Facility. Contains modified Copernicus Sentinel data (2025) processed by ESA. (right) US Geologic Survey National Land Cover Database 2019 as published by U.S. Environmental Protection Agency, Office of Mission Support; Data Steward: Multi-resolution Land Characteristics Consortium.",
     },
@@ -91,7 +90,6 @@ export const DATASTORY__TOOLS_YOU_CAN_USE_MAPPING_FLOOD_IMPACTS: DataStoryConten
       alt: "Example Black Marble nighttime lights imagery over Missouri, Arkansas, Kentucky and Tennessee",
       width: 850,
       height: 707,
-      maxWidth: "40rem",
       caption:
         "This time-series map shows daily Black Marble Nighttime Blue/Yellow Composite imagery from March 29 – April 10, 2025 in parts of Missouri, Arkansas, Kentucky and Tennessee. The imagery reveals surface lights, indicative of human activity, and clouds. While power outages were minimal for this incident, Black Marble imagery allows users to view prolonged outages in rural communities and power restoration over time. Credits: NASA/GSFC/ESDIS",
     },
