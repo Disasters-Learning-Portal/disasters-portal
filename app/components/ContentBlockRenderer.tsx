@@ -169,14 +169,19 @@ export const ContentBlockRenderer = ({
       );
 
     case "sectionCardSimple": {
-      const cards = block.cards.map(({ id, contentType, themes, thumbnailImage, title, ...rest }) =>
-        makeCardSimpleProps({
-          id,
-          contentType,
-          themes,
-          thumbnailImage,
-          title,
-          url: "url" in rest ? rest.url : undefined,
+      // Card titles sit under the block's h2 section heading, so render them as h3.
+      // This also keeps them out of the page's in-page navigation, which lists h2s.
+      const cards = block.cards.map(
+        ({ id, contentType, themes, thumbnailImage, title, ...rest }) => ({
+          ...makeCardSimpleProps({
+            id,
+            contentType,
+            themes,
+            thumbnailImage,
+            title,
+            url: "url" in rest ? rest.url : undefined,
+          }),
+          titleAs: "h3" as const,
         }),
       );
 
