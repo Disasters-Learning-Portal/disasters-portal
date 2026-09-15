@@ -40,6 +40,8 @@ function GalleryInner({ items }: GalleryProps) {
     facets,
     setFacets,
     availableFacets,
+    appliedFilters,
+    clearAllFilters,
   } = useGallery(items);
   const [isFilterOpen, setIsFilterOpen] = useState(false);
 
@@ -59,7 +61,11 @@ function GalleryInner({ items }: GalleryProps) {
           </span>
         </Link>
       </div>
-      <GalleryResultsSummary query={query} resultCount={resultCount} />
+      <GalleryResultsSummary
+        resultCount={resultCount}
+        appliedFilters={appliedFilters}
+        clearAllFilters={clearAllFilters}
+      />
       <FilterDrawer
         isOpen={isFilterOpen}
         onClose={() => setIsFilterOpen(false)}
