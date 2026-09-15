@@ -17,6 +17,7 @@ import { DATA__LANDSAT_NDVI } from "./data__landsat-ndvi";
 import { DATA__LANDSAT_TRUE_COLOR } from "./data__landsat-true-color";
 import { DATA__NISAR_GUNW_DISPLACEMENT } from "./data__nisar-gunw-displacement";
 import { DATA__OPERA_DISP_S1_COHERENCE } from "./data__opera-disp-s1-coherence";
+import { DATA__OPERA_DIST_ALERT_GEN_DIST_STATUS } from "./data__opera-dist-alert-gen-dist-status";
 import { DATA__OPERA_DIST_S1 } from "./data__opera-dist-s1";
 import { DATA__PLANET_TRUE_COLOR } from "./data__planet-true-color";
 import { DATA__SATELLOGIC_COLOR_INFRARED } from "./data__satellogic-color-infrared";
@@ -52,6 +53,7 @@ export const DATA: DataContent[] = [
   DATA__LANDSAT_TRUE_COLOR,
   DATA__NISAR_GUNW_DISPLACEMENT,
   DATA__OPERA_DISP_S1_COHERENCE,
+  DATA__OPERA_DIST_ALERT_GEN_DIST_STATUS,
   DATA__OPERA_DIST_S1,
   DATA__PLANET_TRUE_COLOR,
   DATA__SATELLOGIC_COLOR_INFRARED,
@@ -99,6 +101,7 @@ export const DATA__US_WINTER_STORM_JAN_2026: DataContent[] = [
 
 export const DATA__TEXAS_FLOODS_JULY_2025: DataContent[] = [
   DATA__BLACK_MARBLE_BLUE_YELLOW,
+  DATA__OPERA_DIST_ALERT_GEN_DIST_STATUS,
   DATA__SENTINEL_2_TRUE_COLOR,
   DATA__SENTINEL_2_COLOR_INFRARED,
 ];
