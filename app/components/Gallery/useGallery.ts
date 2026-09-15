@@ -12,7 +12,7 @@ export type UseGalleryResult = {
   /** Requested page clamped to the filtered results. */
   currentPage: number;
   totalPages: number;
-  /** Href for a page link; every other param is preserved. */
+  /** Href for a page link */
   getPageHref: (page: number) => string;
 };
 
