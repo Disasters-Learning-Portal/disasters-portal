@@ -11,7 +11,7 @@ export const MOCK_CARD_LETSCONNECT: CardProps = {
   },
   callToActionSecondary: {
     label: "Contact Our Team",
-    href: "mailto:nasa-disasters-portal-owner@lists.nasa.gov",
+    href: "mailto:disasters@nasa.gov",
   },
   image: (
     <AppImage
