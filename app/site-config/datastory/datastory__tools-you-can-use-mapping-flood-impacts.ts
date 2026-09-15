@@ -129,6 +129,15 @@ export const DATASTORY__TOOLS_YOU_CAN_USE_MAPPING_FLOOD_IMPACTS: DataStoryConten
       ],
     },
     {
+      type: "image",
+      src: "/img/datastory/mapping-flood-impacts__lhasa.webp",
+      alt: "Global map of landslide hazard from NASA's LHASA model, with red and yellow along mountain ranges and dark blue elsewhere",
+      width: 1600,
+      height: 975,
+      caption:
+        "A global landslide nowcast from NASA's Landslide Hazard Assessment for Situational Awareness (LHASA) model, June 2021. Red and yellow along mountain ranges indicate the highest landslide hazard; dark blue indicates the lowest. Credit: NASA",
+    },
+    {
       type: "note",
       text: "The LHASA global nowcast is published as an interactive map showing the probability of landslide hazards for the next day. Blue indicates a very low probability of landslide hazards in that area, yellow and orange indicate moderate to high, and red indicates very high.",
     },
