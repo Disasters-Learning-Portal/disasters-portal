@@ -1,14 +1,10 @@
 import { CARTO_DARK_WITH_LABELS_BASEMAP_STYLE } from "@teamimpact/veda-ui-blocks";
-import { DATASTORY__LAHAINA_FIRE } from "@/app/site-config/datastory/datastory__lahaina-fire";
-import { DATASTORY__SO2_VOLCANOES } from "@/app/site-config/datastory/datastory__so2-volcanoes";
+import { DATASTORY__TOOLS_YOU_CAN_USE_MAPPING_FLOOD_IMPACTS } from "@/app/site-config/datastory/datastory__tools-you-can-use-mapping-flood-impacts";
 import { EVENT__SOUTHERN_CALIFORNIA_FIRE_JAN_2025 } from "@/app/site-config/event/event__southern-california-fire-jan-2025";
 import { EVENT__TEXAS_FLOODS_JULY_2025 } from "@/app/site-config/event/event__texas-floods-july-2025";
 import { EVENT__TYPHOON_SINLAKU_2026 } from "@/app/site-config/event/event__typhoon-sinlaku-2026";
 import { EVENT__US_WINTER_STORM_2026 } from "@/app/site-config/event/event__us-winter-storm-jan-2026";
 import { STORY__FINDING_FLOODS } from "@/app/site-config/story/story__finding-floods";
-import { STORY__SEEING_BEYOND_FLAMES } from "@/app/site-config/story/story__seeing-beyond-flames";
-import { STORY__SUPPORTING_COMMUNITIES_HURRICANE_HELENE } from "@/app/site-config/story/story__supporting-communities-hurricane-helene";
-import { STORY__TRACKING_TORNADOES_FROM_SPACE } from "@/app/site-config/story/story__tracking-tornadoes-from-space";
 import { TRAINING__EO_PRE_POST_FIRE_MONITORING } from "@/app/site-config/training/training__eo-pre-post-fire-monitoring";
 import { TRAINING__FUNDAMENTALS_REMOTE_SENSING } from "@/app/site-config/training/training__fundamentals-remote-sensing";
 import { TRAINING__INTRODUCTION_TO_SAR } from "@/app/site-config/training/training__introduction-to-sar";
@@ -54,16 +50,8 @@ export const RESPOND_CONTENT: ThemeContent = {
 } as const;
 
 // TODO: these would be fetched based on content id
-export const RESPOND_STORIES: [
-  NewsContent | StoryContent | EventContent,
-  NewsContent | StoryContent | EventContent,
-  NewsContent | StoryContent | EventContent,
-  NewsContent | StoryContent | EventContent,
-] = [
+export const RESPOND_STORIES: (NewsContent | StoryContent | EventContent)[] = [
   STORY__FINDING_FLOODS,
-  STORY__TRACKING_TORNADOES_FROM_SPACE,
-  STORY__SEEING_BEYOND_FLAMES,
-  STORY__SUPPORTING_COMMUNITIES_HURRICANE_HELENE,
 ];
 
 // TODO: these would be fetched based on content id
@@ -76,8 +64,7 @@ export const RESPOND_EVENTS: EventContent[] = [
 
 // TODO: these would be fetched based on content id
 export const RESPOND_DATASTORIES: (DataStoryContent | DataStoryContentExternal)[] = [
-  DATASTORY__SO2_VOLCANOES,
-  DATASTORY__LAHAINA_FIRE,
+  DATASTORY__TOOLS_YOU_CAN_USE_MAPPING_FLOOD_IMPACTS,
 ];
 
 // TODO: these would be fetched based on content id
