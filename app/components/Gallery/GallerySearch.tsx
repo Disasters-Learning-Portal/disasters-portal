@@ -31,7 +31,7 @@ export function GallerySearch({ query, onSearch }: GallerySearchProps) {
   };
 
   return (
-    <form ref={formRef} onSubmit={onSubmit} className="maxw-mobile-lg width-full margin-bottom-3">
+    <form ref={formRef} onSubmit={onSubmit} className="maxw-mobile-lg width-full">
       <SearchInput
         label="Search"
         name={QUERY_PARAM}
