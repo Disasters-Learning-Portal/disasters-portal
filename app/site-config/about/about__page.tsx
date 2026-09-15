@@ -43,7 +43,7 @@ export const ABOUT_PAGE_BODY: AboutPageBody = {
       headingLevel: "h2",
       paragraphs: [
         <Fragment key="hq-em-disasters@mail.nasa.gov">
-          <Link href="mailto:hq-em-disasters@mail.nasa.gov" variant="text">
+          <Link href="mailto:disasters@nasa.gov" variant="text">
             Contact Our Team
           </Link>
           <br />
