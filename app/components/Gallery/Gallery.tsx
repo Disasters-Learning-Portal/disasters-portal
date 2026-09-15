@@ -1,28 +1,21 @@
 "use client";
 
 import { CardDetailed, Pagination } from "@teamimpact/veda-ui-blocks";
-import { usePathname, useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 import { AppLink } from "@/app/components/AppLink";
 import { makeCardDetailedProps } from "@/app/site-config/content.helpers";
 import type { GalleryCard } from "@/app/site-config/types";
-import { filterByContentType, parseContentTypeParam } from "./filters.helpers";
-import {
-  getPaginationState,
-  PAGE_PARAM,
-  PRESERVED_PARAMS,
-  parsePageParam,
-} from "./pagination.helpers";
+import { useGallery } from "./useGallery";
 
 export type GalleryProps = {
   items: GalleryCard[];
 };
 
 /**
- * GalleryInner reads the page from the URL via useSearchParams, which only
- * has a value at request time. On statically prerendered pages Next.js
- * therefore requires a Suspense boundary above the call (build error
- * otherwise); the boundary lives here so every consumer gets it for free.
+ * useGallery reads the URL via useSearchParams, which only has a value at
+ * request time. On statically prerendered pages Next.js therefore requires
+ * a Suspense boundary above the call (build error otherwise); the boundary
+ * lives here so every consumer gets it for free.
  */
 export function Gallery(props: GalleryProps) {
   return (
@@ -33,28 +26,7 @@ export function Gallery(props: GalleryProps) {
 }
 
 function GalleryInner({ items }: GalleryProps) {
-  const searchParams = useSearchParams();
-  const pathname = usePathname();
-  const filteredItems = filterByContentType(items, parseContentTypeParam(searchParams));
-  const requestedPage = parsePageParam(searchParams);
-  const { pageItems, totalPages, currentPage } = getPaginationState(filteredItems, requestedPage);
-
-  // Link-based pagination: hrefs carry only gallery-owned params (see
-  // PRESERVED_PARAMS) so filters survive page changes but stray params don't.
-  const getHref = (page: number) => {
-    const params = new URLSearchParams();
-    for (const key of PRESERVED_PARAMS) {
-      const value = searchParams.get(key);
-      if (value !== null) params.set(key, value);
-    }
-    if (page <= 1) {
-      params.delete(PAGE_PARAM);
-    } else {
-      params.set(PAGE_PARAM, String(page));
-    }
-    const queryString = params.toString();
-    return queryString ? `?${queryString}` : pathname;
-  };
+  const { pageItems, totalPages, currentPage, getPageHref } = useGallery(items);
 
   return (
     <>
@@ -73,7 +45,7 @@ function GalleryInner({ items }: GalleryProps) {
       </div>
       {totalPages > 1 && (
         <Pagination
-          getHref={getHref}
+          getHref={getPageHref}
           currentPage={currentPage}
           totalPages={totalPages}
           linksAs={AppLink}
