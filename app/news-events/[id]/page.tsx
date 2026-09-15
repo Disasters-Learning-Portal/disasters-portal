@@ -1,3 +1,4 @@
+import { InPageNavigation } from "@teamimpact/veda-ui-blocks";
 import { notFound } from "next/navigation";
 import {
   ContentBlockRenderer,
@@ -52,11 +53,15 @@ export default async function NewsEventsItemPage(props: PageProps<"/news-events/
             {/* Sidebar */}
             <div className="grid-col-12 desktop:grid-col-3">
               <PageSidebar contentType={contentType} themes={themes} categories={categories} />
+              <InPageNavigation
+                data-main-content-selector="#news-events-item-body"
+                data-heading-elements="h2"
+              />
             </div>
 
             {/* Content */}
             <div className={"grid-col-12 desktop:grid-col-9"}>
-              <div className="margin-top-neg-7">
+              <div id="news-events-item-body" className="margin-top-neg-7">
                 {publishDate && (
                   <p className="font-body-sm text-base margin-top-0 margin-bottom-3">
                     Published: {toStyleDate(publishDate)}
