@@ -1,6 +1,7 @@
 "use client";
 
 import { usePathname, useSearchParams } from "next/navigation";
+import { useMemo } from "react";
 import type { GalleryCardContent } from "@/app/site-config/types";
 import { collectAvailableFacets, type FacetSelection } from "./helpers/facets.helpers";
 import { applyFilters, type FilterState } from "./helpers/filters.helpers";
@@ -49,7 +50,9 @@ export function useGallery(items: GalleryCardContent[]): UseGalleryResult {
   const searchParams = useSearchParams();
   const pathname = usePathname();
 
-  const filters = parseFilters(searchParams);
+  // Memoized so facets keep their identity until the URL changes; the
+  // drawer reseeds its draft on that identity.
+  const filters = useMemo(() => parseFilters(searchParams), [searchParams]);
   const filteredItems = applyFilters(items, filters);
   const { pageItems, currentPage, totalPages } = getPaginationState(
     filteredItems,

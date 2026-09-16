@@ -33,12 +33,11 @@ export function FilterDrawer({
 }: FilterDrawerProps) {
   const [draft, setDraft] = useState(EMPTY_FACETS);
 
-  // Reseed the draft each time the drawer opens; only the open transition
-  // matters, a fresh appliedFacets identity mid-edit must not clobber the draft.
-  // biome-ignore lint/correctness/useExhaustiveDependencies: reseed only on open
+  // Reseed the draft on open and whenever the applied selection changes
+  // (e.g. back/forward while open), so Apply never reverts the URL.
   useEffect(() => {
     if (isOpen) setDraft(appliedFacets);
-  }, [isOpen]);
+  }, [isOpen, appliedFacets]);
 
   return (
     <Drawer
