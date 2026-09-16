@@ -2,9 +2,14 @@
 
 import { usePathname, useSearchParams } from "next/navigation";
 import type { GalleryCardContent } from "@/app/site-config/types";
-import { applyFilters } from "./helpers/filters.helpers";
+import { applyFilters, type FilterState } from "./helpers/filters.helpers";
 import { getPaginationState } from "./helpers/pagination.helpers";
-import { buildPageHref, buildSearchUrl, parseFilters, parsePageParam } from "./helpers/url.helpers";
+import {
+  buildFiltersUrl,
+  buildPageHref,
+  parseFilters,
+  parsePageParam,
+} from "./helpers/url.helpers";
 
 export type UseGalleryResult = {
   /** Current page's slice of the filtered items. */
@@ -44,6 +49,8 @@ export function useGallery(items: GalleryCardContent[]): UseGalleryResult {
     parsePageParam(searchParams),
   );
 
+  const setFilters = (next: FilterState) => applyUrl(buildFiltersUrl(searchParams, pathname, next));
+
   return {
     pageItems,
     resultCount: filteredItems.length,
@@ -51,6 +58,6 @@ export function useGallery(items: GalleryCardContent[]): UseGalleryResult {
     totalPages,
     getPageHref: (page) => buildPageHref(searchParams, pathname, page),
     query: filters.query,
-    setQuery: (query) => applyUrl(buildSearchUrl(searchParams, pathname, query.trim())),
+    setQuery: (query) => setFilters({ ...filters, query: query.trim() }),
   };
 }
