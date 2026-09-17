@@ -22,7 +22,7 @@ export const DATA__SENTINEL_2_MNDWI: DataContent = {
 
   themes: ["respond", "build", "prepare", "recover"],
 
-  categories: ["severewx", "flood", "tropical cyclone", "winter weather"],
+  categories: ["severe weather", "flood", "tropical cyclone", "winter weather"],
 
   relatedContent: ["sentinel-2-true-color", "sentinel-2-color-infrared", "sentinel-2-swir"],
 
