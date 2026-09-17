@@ -58,7 +58,7 @@ export const CONTENT_CATEGORIES = [
   "fire",
   "flood",
   "heat",
-  "severewx",
+  "severe weather",
   "tropical cyclone",
   "volcano",
   "winter weather",

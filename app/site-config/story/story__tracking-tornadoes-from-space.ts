@@ -9,7 +9,7 @@ export const STORY__TRACKING_TORNADOES_FROM_SPACE: StoryContent = {
     alt: "A tornado in Florissant, Mo left downed trees and structural damage on March 14.",
   },
   themes: ["respond"],
-  categories: ["severewx"],
+  categories: ["severe weather"],
   mastheadImage: {
     src: "/img/story/tracking-tornadoes-from-space.webp",
     alt: "A tornado in Florissant, Mo left downed trees and structural damage on March 14.",

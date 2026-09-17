@@ -16,7 +16,7 @@ export const DATA__SENTINEL_2_TRUE_COLOR: DataContent = {
   },
   themes: ["respond", "build", "prepare", "recover"],
   categories: [
-    "severewx",
+    "severe weather",
     "fire",
     "heat",
     "flood",
