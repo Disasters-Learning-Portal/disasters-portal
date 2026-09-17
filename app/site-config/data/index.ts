@@ -8,6 +8,7 @@ import { DATA__SENTINEL_2_MNDWI } from "./data__sentinel-2-mndwi";
 import { DATA__SENTINEL_2_NBR } from "./data__sentinel-2-nbr";
 import { DATA__SENTINEL_2_SWIR } from "./data__sentinel-2-swir";
 import { DATA__SENTINEL_2_TRUE_COLOR } from "./data__sentinel-2-true-color";
+import { DATA__UMBRA_SIGMA_NAUGHT } from "./data__umbra-sigma-naught";
 
 export const DATA: DataContent[] = [
   DATA__BLACK_MARBLE_BLUE_YELLOW,
@@ -19,4 +20,5 @@ export const DATA: DataContent[] = [
   DATA__SENTINEL_2_MNDWI,
   DATA__SENTINEL_2_NBR,
   DATA__SENTINEL_2_DNBR,
+  DATA__UMBRA_SIGMA_NAUGHT,
 ];
