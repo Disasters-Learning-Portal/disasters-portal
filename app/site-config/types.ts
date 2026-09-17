@@ -58,9 +58,14 @@ export const CONTENT_CATEGORIES = [
   "fire",
   "flood",
   "heat",
+  "landslide",
   "severe weather",
   "tropical cyclone",
+  "hurricane",
+  "typhoon",
+  "cyclone",
   "volcano",
+  "tsunami",
   "winter weather",
 ] as const;
 
