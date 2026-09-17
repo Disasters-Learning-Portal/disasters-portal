@@ -1,7 +1,9 @@
 "use client";
 
 import { usePathname, useSearchParams } from "next/navigation";
+import { useMemo } from "react";
 import type { GalleryCardContent } from "@/app/site-config/types";
+import { collectAvailableFacets, type FacetSelection } from "./helpers/facets.helpers";
 import { applyFilters, type FilterState } from "./helpers/filters.helpers";
 import { getPaginationState } from "./helpers/pagination.helpers";
 import {
@@ -25,6 +27,12 @@ export type UseGalleryResult = {
   query: string;
   /** Writes the query to the URL and resets paging. */
   setQuery: (query: string) => void;
+  /** Applied facet selection, from the URL. */
+  facets: FacetSelection;
+  /** Writes the facet selection to the URL and resets paging. */
+  setFacets: (facets: FacetSelection) => void;
+  /** Facet values present in the data; the filter UI only offers these. */
+  availableFacets: FacetSelection;
 };
 
 /**
@@ -42,7 +50,9 @@ export function useGallery(items: GalleryCardContent[]): UseGalleryResult {
   const searchParams = useSearchParams();
   const pathname = usePathname();
 
-  const filters = parseFilters(searchParams);
+  // Memoized so facets keep their identity until the URL changes; the
+  // drawer reseeds its draft on that identity.
+  const filters = useMemo(() => parseFilters(searchParams), [searchParams]);
   const filteredItems = applyFilters(items, filters);
   const { pageItems, currentPage, totalPages } = getPaginationState(
     filteredItems,
@@ -59,5 +69,8 @@ export function useGallery(items: GalleryCardContent[]): UseGalleryResult {
     getPageHref: (page) => buildPageHref(searchParams, pathname, page),
     query: filters.query,
     setQuery: (query) => setFilters({ ...filters, query: query.trim() }),
+    facets: filters.facets,
+    setFacets: (facets) => setFilters({ ...filters, facets }),
+    availableFacets: collectAvailableFacets(items),
   };
 }
