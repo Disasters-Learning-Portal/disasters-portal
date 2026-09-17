@@ -1,5 +1,6 @@
 import type { DataContent } from "@/app/site-config/types";
 import { DATA__AVIRIS_3_DNBR } from "./data__aviris-3-dnbr";
+import { DATA__AVIRIS_3_EARLY_COLOR_IMAGERY } from "./data__aviris-3-early-color-imagery";
 import { DATA__BLACK_MARBLE_BLUE_YELLOW } from "./data__black-marble-blue-yellow";
 import { DATA__BLACK_MARBLE_BRDF } from "./data__black-marble-brdf";
 import { DATA__BLACK_MARBLE_HD } from "./data__black-marble-hd";
@@ -29,4 +30,5 @@ export const DATA: DataContent[] = [
   DATA__UMBRA_SIGMA_NAUGHT,
   DATA__OPERA_DIST_S1,
   DATA__AVIRIS_3_DNBR,
+  DATA__AVIRIS_3_EARLY_COLOR_IMAGERY,
 ];
