@@ -42,6 +42,7 @@ export const DATA__SENTINEL_2_MNDWI: DataContent = {
       headingLevel: "h3",
       paragraphs: [
         "Sentinel-2 MNDWI can be used to identify and map open water and changes in surface water extent associated with flooding, tropical cyclones, severe storms, and other hydrologic events. Positive MNDWI values are generally associated with water, while lower or negative values are more commonly associated with vegetation, bare ground, and developed surfaces. Thresholds may vary by location and environmental conditions, so MNDWI should be interpreted together with supporting imagery and local context.",
+        "Note: Areas of cloud cover will show up in varying shades of green/blue similar to water.",
       ],
     },
 
@@ -65,7 +66,10 @@ export const DATA__SENTINEL_2_MNDWI: DataContent = {
       type: "text",
       heading: "Credits",
       headingLevel: "h3",
-      paragraphs: ["NASA/GSFC, USGS, ESA Copernicus"],
+      paragraphs: [
+        "NASA, USGS, ESA Copernicus",
+        "Use of this product should include: “Contains modified Copernicus Sentinel data (2023-2026) processed by ESA”",
+      ],
     },
 
     {
