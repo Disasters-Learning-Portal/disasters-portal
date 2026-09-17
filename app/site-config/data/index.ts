@@ -34,6 +34,7 @@ import { DATA__SENTINEL_2_TRUE_COLOR } from "./data__sentinel-2-true-color";
 import { DATA__SKYSAT_COLOR_INFRARED } from "./data__skysat-color-infrared";
 import { DATA__SKYSAT_TRUE_COLOR } from "./data__skysat-true-color";
 import { DATA__UMBRA_SIGMA_NAUGHT } from "./data__umbra_sigma_naught";
+import { DATA__WB57_DYNAMITE } from "./data__wb57-dynamite";
 
 export const DATA: DataContent[] = [
   DATA__AVIRIS_3_DNBR,
@@ -70,6 +71,7 @@ export const DATA: DataContent[] = [
   DATA__SKYSAT_COLOR_INFRARED,
   DATA__SKYSAT_TRUE_COLOR,
   DATA__UMBRA_SIGMA_NAUGHT,
+  DATA__WB57_DYNAMITE,
 ];
 
 export const DATA__VENEZUELA_EQ_JUN_2026: DataContent[] = [
@@ -101,6 +103,7 @@ export const DATA__US_WINTER_STORM_JAN_2026: DataContent[] = [
 
 export const DATA__TEXAS_FLOODS_JULY_2025: DataContent[] = [
   DATA__BLACK_MARBLE_BLUE_YELLOW,
+  DATA__WB57_DYNAMITE,
   DATA__OPERA_DIST_ALERT_GEN_DIST_STATUS,
   DATA__SENTINEL_2_TRUE_COLOR,
   DATA__SENTINEL_2_COLOR_INFRARED,
