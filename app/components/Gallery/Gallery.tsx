@@ -53,7 +53,7 @@ function GalleryInner({ items }: GalleryProps) {
           className="text-bold text-no-underline text-uppercase"
           onClick={() => setIsFilterOpen(true)}
         >
-          Sort & Filter{" "}
+          Filters{" "}
           <span className="display-inline-flex flex-align-center flex-justify-center bg-white border-1px border-base-light radius-pill padding-05 margin-left-05">
             <SvgFilterList className="usa-icon" />
           </span>

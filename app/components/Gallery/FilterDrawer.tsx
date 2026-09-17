@@ -20,7 +20,7 @@ type FilterDrawerProps = {
 };
 
 /**
- * The Sort & Filter drawer: an accordion of facet checkboxes with an
+ * The Filters drawer: an accordion of facet checkboxes with an
  * Apply/Clear footer. Checkbox toggles edit a local draft and nothing
  * commits until Apply; closing discards the draft.
  */
@@ -41,7 +41,7 @@ export function FilterDrawer({
 
   return (
     <Drawer
-      title="Sort & Filter"
+      title="Filters"
       isOpen={isOpen}
       onClose={onClose}
       footer={
