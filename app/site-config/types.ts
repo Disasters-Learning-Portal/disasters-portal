@@ -111,6 +111,10 @@ export type ContentBlock =
         heading?: string;
         headingLevel?: "h2" | "h3" | "h4";
         caption?: string;
+        /** Optional app-internal path to a page describing the mapped data. */
+        infoHref?: string;
+        /** Optional link text for {@link infoHref}. Defaults to "Learn more about this data". */
+        infoLabel?: string;
       })
   | {
       type: "sectionCardSimple";
@@ -174,6 +178,8 @@ export type DataContent = Omit<MinimumCardContent, "contentType"> & {
   mastheadImage: MastheadImage;
   body?: ContentBlock[];
   relatedContent?: string[];
+  /** External VEDA data-visualization deep link for the sidebar "Explore Data" button. */
+  exploreDataUrl?: string;
 };
 
 export type NewsContent = Omit<MinimumCardContent, "contentType"> & {
