@@ -167,7 +167,6 @@ export type DataContent = Omit<InternalCardContent, "contentType"> & {
 
 export type NewsContent = Omit<InternalCardContent, "contentType"> & {
   contentType: "news";
-  /** Publish date, ISO `YYYY-MM-DD`. Rendered as "Published: …" at the top of the page. */
   date?: string;
   mastheadImage: MastheadImage;
   body?: ContentBlock[]; // TODO: require body
@@ -182,6 +181,7 @@ export type StoryContent = Omit<InternalCardContent, "contentType"> & {
 
 export type DataStoryContent = Omit<InternalCardContent, "contentType"> & {
   contentType: "datastory";
+  date?: string;
   mastheadImage: MastheadImage;
   body?: ContentBlock[]; // TODO: require body
 };
