@@ -8,8 +8,8 @@ import {
 } from "@/app/components";
 import {
   makeCardMastHeadProps,
-  makeSimpleTagProps,
-  toLongDate,
+  makeMastheadTagProps,
+  toStyleDate,
 } from "@/app/site-config/content.helpers";
 
 import { TRAININGS } from "@/app/site-config/training";
@@ -22,16 +22,12 @@ export default async function TrainingItemPage(props: PageProps<"/training/[id]"
   if (!contentItem) notFound();
 
   const { contentType, date, mastheadImage, title, themes, categories, body } = contentItem;
+  const tag = makeMastheadTagProps(`Updated: ${toStyleDate(date)}`);
 
   return (
     <>
       {/* Hero */}
-      <PageMasthead
-        {...makeCardMastHeadProps({ mastheadImage, title })}
-        tag={(({ children: label, ...rest }) => ({ label, ...rest }))(
-          makeSimpleTagProps(`Updated ${toLongDate(date)}`),
-        )}
-      />
+      <PageMasthead {...makeCardMastHeadProps({ mastheadImage, title, tag })} />
 
       {/* Placeholder content only */}
       {!body && (

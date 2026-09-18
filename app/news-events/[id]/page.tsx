@@ -6,7 +6,11 @@ import {
   PageStatus,
   Section,
 } from "@/app/components";
-import { makeCardMastHeadProps } from "@/app/site-config/content.helpers";
+import {
+  makeCardMastHeadProps,
+  makeMastheadTagProps,
+  toStyleDate,
+} from "@/app/site-config/content.helpers";
 import { DATASTORIES } from "@/app/site-config/datastory";
 import { EVENTS } from "@/app/site-config/event";
 import { NEWS } from "@/app/site-config/news";
@@ -30,11 +34,13 @@ export default async function NewsEventsItemPage(props: PageProps<"/news-events/
 
   // story, datastory, news page layout
   const { title, mastheadImage, themes, categories, body } = contentItem;
+  const date = "date" in contentItem ? contentItem.date : undefined;
+  const tag = date ? makeMastheadTagProps(`Published: ${toStyleDate(date)}`) : undefined;
 
   return (
     <>
       {/* Hero */}
-      <PageMasthead {...makeCardMastHeadProps({ mastheadImage, title })} />
+      <PageMasthead {...makeCardMastHeadProps({ mastheadImage, title, tag })} />
 
       {/* Placeholder content only */}
       {!body && (

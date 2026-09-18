@@ -20,6 +20,15 @@ export const makeSimpleTagProps = (tag: string) => ({
   children: tag,
 });
 
+// Tag takes its text as `children`, Cards take it as `label`.
+export const toCardTagProps = <T extends { children: string }>({ children, ...rest }: T) => ({
+  label: children,
+  ...rest,
+});
+
+// A masthead is a Card, and its tag is a date or a status.
+export const makeMastheadTagProps = (label: string) => toCardTagProps(makeSimpleTagProps(label));
+
 export const makeThemeTagProps = (tag: Theme) => {
   const { label, color, textColor } = CONTENT_THEMES[tag];
   return { variant: "solid" as const, color, textColor, children: label };
@@ -37,7 +46,7 @@ export const makeContentTypeTagProps = (tag: ContentType) => {
 
 export type CardMastheadPropsArgs = Omit<
   CardProps,
-  "title" | "image" | "colorMode" | "isMasthead"
+  "title" | "image" | "colorMode" | "isMastHead"
 > & {
   mastheadImage: {
     alt: string;
@@ -180,7 +189,7 @@ export const makeCardDetailedProps = ({
         ...(categories ?? []).map((c) => makeSimpleTagProps(c)),
         makeContentTypeTagProps(contentType),
       ]
-  ).map(({ children, ...rest }) => ({ label: children, ...rest })),
+  ).map(toCardTagProps),
   callToAction: {
     href: url ? url : `${CONTENT_TYPES[contentType].route}/${id}`,
     label: `View ${toTitleCase(CONTENT_TYPES[contentType].label)}`,
@@ -210,7 +219,7 @@ export const makeCardDetailedImageLeftProps = ({
         ...(categories ?? []).map((c) => makeSimpleTagProps(c)),
         makeContentTypeTagProps(contentType),
       ]
-  ).map(({ children, ...rest }) => ({ label: children, ...rest })),
+  ).map(toCardTagProps),
   callToAction: {
     href: url ? url : `${CONTENT_TYPES[contentType].route}/${id}`,
     label: `View ${toTitleCase(CONTENT_TYPES[contentType].label)}`,
@@ -246,7 +255,7 @@ export const makeCardSimpleProps = ({
 }: CardSimplePropsArgs): IterableItemWithId<CardSimpleProps<typeof AppLink>> => ({
   id,
   image: <AppImage {...thumbnailImage} fill sizes="(max-width: 1400px) 100vw, 1400px" />,
-  tag: (({ children, ...rest }) => ({ label: children, ...rest }))(
+  tag: toCardTagProps(
     tag
       ? makeSimpleTagProps(tag)
       : themes?.[0]
@@ -287,9 +296,7 @@ export const makeCardCarouselProps = ({
       sizes="(max-width: 640px) 100vw, (max-width: 1400px) 50vw, 700px"
     />
   ),
-  tag: (({ children, ...rest }) => ({ label: children, ...rest }))(
-    makeContentTypeTagProps(contentType),
-  ),
+  tag: toCardTagProps(makeContentTypeTagProps(contentType)),
   callToAction: {
     href: url ? url : `${CONTENT_TYPES[contentType].route}/${id}`,
     label: `View ${toTitleCase(CONTENT_TYPES[contentType].label)}`,
@@ -301,12 +308,29 @@ export const makeCardCarouselProps = ({
   ...rest,
 });
 
-export const toLongDate = (date: string) =>
-  new Date(date).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
+/**
+ * NASA Stylebook / AP style date: abbreviate months longer than five letters
+ * (Jan., Feb., Aug., Sept., Oct., Nov., Dec.), spell out March through July,
+ * no ordinal suffix. Input is an ISO date string; formatted in UTC.
+ */
+export const toStyleDate = (date: string) => {
+  const d = new Date(date);
+  const months = [
+    "Jan.",
+    "Feb.",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "Aug.",
+    "Sept.",
+    "Oct.",
+    "Nov.",
+    "Dec.",
+  ];
+  return `${months[d.getUTCMonth()]} ${d.getUTCDate()}, ${d.getUTCFullYear()}`;
+};
 
 export const toTitleCase = (str: string) =>
   str.toLowerCase().replace(/\b\w/g, (match) => match.toUpperCase());
