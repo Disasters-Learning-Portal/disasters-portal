@@ -24,7 +24,9 @@ export default function Home() {
         <Card {...MOCK_CARD_MASTHEAD} />
       </div>
       <SectionCardSimpleMosaic
-        sectionHeading={<SectionHeading href="/news-events">News & Events</SectionHeading>}
+        sectionHeading={
+          <SectionHeading href="/news-events-stories">News, Events & Stories</SectionHeading>
+        }
         cards={typedMap(NEWS_EVENTS_CARDS, makeCardSimpleProps)}
       />
       {HOME_CONTENT.map((block, index) => (
