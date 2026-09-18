@@ -53,15 +53,23 @@ export type IterableItemWithId<T> = T & { id: string };
 
 export type Theme = "respond" | "build" | "prepare" | "recover";
 
-export type Category =
-  | "severewx"
-  | "fire"
-  | "heat"
-  | "flood"
-  | "tropical cyclone"
-  | "earthquake"
-  | "winter weather"
-  | "volcano";
+export const CONTENT_CATEGORIES = [
+  "earthquake",
+  "fire",
+  "flood",
+  "heat",
+  "landslide",
+  "severe weather",
+  "tropical cyclone",
+  "hurricane",
+  "typhoon",
+  "cyclone",
+  "volcano",
+  "tsunami",
+  "winter weather",
+] as const;
+
+export type Category = (typeof CONTENT_CATEGORIES)[number];
 
 export type GalleryRoute = "/data-gallery" | "/news-events" | "/training"; // TODO: update to be dynamic
 
