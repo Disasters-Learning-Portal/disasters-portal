@@ -1,4 +1,4 @@
-export const NEWS_EVENTS_CARD_MASTHEAD = {
+export const NEWS_EVENTS_STORIES_CARD_MASTHEAD = {
   mastheadImage: { alt: "", src: "/img/placeholder/card-masthead.webp" },
   title: "News, Events & Stories",
   description:
