@@ -171,7 +171,7 @@ export type DataContent = Omit<InternalCardContent, "contentType"> & {
   mastheadImage: MastheadImage;
   body?: ContentBlock[]; // TODO: require body
   relatedContent?: string[];
-  /** External VEDA data-visualization deep link for the sidebar "Explore Data" button. */
+  /** The sidebar CTA renders only when this is set. */
   exploreDataUrl?: string;
 };
 
