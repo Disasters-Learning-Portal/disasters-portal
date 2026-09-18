@@ -6,7 +6,11 @@ import {
   PageStatus,
   Section,
 } from "@/app/components";
-import { makeCardMastHeadProps, toStyleDate } from "@/app/site-config/content.helpers";
+import {
+  makeCardMastHeadProps,
+  makeMastheadTagProps,
+  toStyleDate,
+} from "@/app/site-config/content.helpers";
 import { DATASTORIES } from "@/app/site-config/datastory";
 import { EVENTS } from "@/app/site-config/event";
 import { NEWS } from "@/app/site-config/news";
@@ -30,12 +34,13 @@ export default async function NewsEventsItemPage(props: PageProps<"/news-events/
 
   // story, datastory, news page layout
   const { title, mastheadImage, themes, categories, body } = contentItem;
-  const publishDate = "date" in contentItem ? contentItem.date : undefined;
+  const date = "date" in contentItem ? contentItem.date : undefined;
+  const tag = date ? makeMastheadTagProps(`Published: ${toStyleDate(date)}`) : undefined;
 
   return (
     <>
       {/* Hero */}
-      <PageMasthead {...makeCardMastHeadProps({ mastheadImage, title })} />
+      <PageMasthead {...makeCardMastHeadProps({ mastheadImage, title, tag })} />
 
       {/* Placeholder content only */}
       {!body && (
@@ -57,11 +62,6 @@ export default async function NewsEventsItemPage(props: PageProps<"/news-events/
             {/* Content */}
             <div className={"grid-col-12 desktop:grid-col-9"}>
               <div className="margin-top-neg-7">
-                {publishDate && (
-                  <p className="font-body-sm text-base margin-top-0 margin-bottom-3">
-                    Published: {toStyleDate(publishDate)}
-                  </p>
-                )}
                 {body?.map((block, i) => (
                   // biome-ignore lint/suspicious/noArrayIndexKey: static content blocks, never reorder
                   <ContentBlockRenderer key={i} block={block} isMultiColumnLayout />

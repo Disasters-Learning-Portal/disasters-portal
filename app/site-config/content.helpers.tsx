@@ -20,6 +20,17 @@ export const makeSimpleTagProps = (tag: string) => ({
   children: tag,
 });
 
+// The Tag component takes its text as `children`. Card components take the same
+// tag as a props object with `label` instead. The make*TagProps helpers
+// build Tag props; toCardTagProps converts one for a Card.
+export const toCardTagProps = <T extends { children: string }>({ children, ...rest }: T) => ({
+  label: children,
+  ...rest,
+});
+
+// Mastheads are Cards, and their tag (a date, a status) is always a simple tag.
+export const makeMastheadTagProps = (label: string) => toCardTagProps(makeSimpleTagProps(label));
+
 export const makeThemeTagProps = (tag: Theme) => {
   const { label, color, textColor } = CONTENT_THEMES[tag];
   return { variant: "solid" as const, color, textColor, children: label };
@@ -37,7 +48,7 @@ export const makeContentTypeTagProps = (tag: ContentType) => {
 
 export type CardMastheadPropsArgs = Omit<
   CardProps,
-  "title" | "image" | "colorMode" | "isMasthead"
+  "title" | "image" | "colorMode" | "isMastHead"
 > & {
   mastheadImage: {
     alt: string;
@@ -180,7 +191,7 @@ export const makeCardDetailedProps = ({
         ...(categories ?? []).map((c) => makeSimpleTagProps(c)),
         makeContentTypeTagProps(contentType),
       ]
-  ).map(({ children, ...rest }) => ({ label: children, ...rest })),
+  ).map(toCardTagProps),
   callToAction: {
     href: url ? url : `${CONTENT_TYPES[contentType].route}/${id}`,
     label: `View ${toTitleCase(CONTENT_TYPES[contentType].label)}`,
@@ -210,7 +221,7 @@ export const makeCardDetailedImageLeftProps = ({
         ...(categories ?? []).map((c) => makeSimpleTagProps(c)),
         makeContentTypeTagProps(contentType),
       ]
-  ).map(({ children, ...rest }) => ({ label: children, ...rest })),
+  ).map(toCardTagProps),
   callToAction: {
     href: url ? url : `${CONTENT_TYPES[contentType].route}/${id}`,
     label: `View ${toTitleCase(CONTENT_TYPES[contentType].label)}`,
@@ -246,7 +257,7 @@ export const makeCardSimpleProps = ({
 }: CardSimplePropsArgs): IterableItemWithId<CardSimpleProps<typeof AppLink>> => ({
   id,
   image: <AppImage {...thumbnailImage} fill sizes="(max-width: 1400px) 100vw, 1400px" />,
-  tag: (({ children, ...rest }) => ({ label: children, ...rest }))(
+  tag: toCardTagProps(
     tag
       ? makeSimpleTagProps(tag)
       : themes?.[0]
@@ -287,9 +298,7 @@ export const makeCardCarouselProps = ({
       sizes="(max-width: 640px) 100vw, (max-width: 1400px) 50vw, 700px"
     />
   ),
-  tag: (({ children, ...rest }) => ({ label: children, ...rest }))(
-    makeContentTypeTagProps(contentType),
-  ),
+  tag: toCardTagProps(makeContentTypeTagProps(contentType)),
   callToAction: {
     href: url ? url : `${CONTENT_TYPES[contentType].route}/${id}`,
     label: `View ${toTitleCase(CONTENT_TYPES[contentType].label)}`,
@@ -300,13 +309,6 @@ export const makeCardCarouselProps = ({
   colorMode: "dark",
   ...rest,
 });
-
-export const toLongDate = (date: string) =>
-  new Date(date).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
 
 /**
  * NASA Stylebook / AP style date: abbreviate months longer than five letters
