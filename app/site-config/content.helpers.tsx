@@ -20,15 +20,13 @@ export const makeSimpleTagProps = (tag: string) => ({
   children: tag,
 });
 
-// The Tag component takes its text as `children`. Card components take the same
-// tag as a props object with `label` instead. The make*TagProps helpers
-// build Tag props; toCardTagProps converts one for a Card.
+// Tag takes its text as `children`, Cards take it as `label`.
 export const toCardTagProps = <T extends { children: string }>({ children, ...rest }: T) => ({
   label: children,
   ...rest,
 });
 
-// Mastheads are Cards, and their tag (a date, a status) is always a simple tag.
+// A masthead is a Card, and its tag is a date or a status.
 export const makeMastheadTagProps = (label: string) => toCardTagProps(makeSimpleTagProps(label));
 
 export const makeThemeTagProps = (tag: Theme) => {
