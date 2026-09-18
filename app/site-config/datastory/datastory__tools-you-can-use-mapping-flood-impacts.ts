@@ -35,14 +35,17 @@ export const DATASTORY__TOOLS_YOU_CAN_USE_MAPPING_FLOOD_IMPACTS: DataStoryConten
       ],
     },
     {
-      type: "image",
-      src: "/img/datastory/mapping-flood-impacts__hydrosar.webp",
-      alt: "Example of HydroSAR data from April 2025 severe weather in the U.S.",
-      width: 850,
-      height: 707,
-      maxWidth: "40rem",
+      type: "stacSingleLayer",
+      heading: "Black Marble Nighttime Blue/Yellow Composite",
+      initialViewState: { longitude: -90.82, latitude: 34.00, zoom: 6 },
+      layerConfig: {
+        type: "raster",
+        collectionId: "sentinel1-hydrosar-wm-iw-dvr-subdaily",
+        collectionAssetId: "dvr",
+        dateRange: { from: "2025-04-04", to: "2025-04-09" },
+      },
       caption:
-        "The Copernicus Sentinel-1 satellite collected synthetic aperture radar (SAR) imagery over the southeast and central U.S. from April 4-9, 2025, capturing flooding from severe storms. On the left, HydroSAR surface water extents are shown in blue. These are overlaid on VH cross-pol SAR imagery (grayscale), in which still water and other flat surfaces appear black, while diffuse scatterers like vegetation appear in lighter shades. On the right, USGS National Land Cover Database data indicates whether affected areas may be developed, cropland, forest, or other classes of land use. Credits: (left) NASA Disasters Program, Alaska Satellite Facility. Contains modified Copernicus Sentinel data (2025) processed by ESA. (right) US Geologic Survey National Land Cover Database 2019 as published by U.S. Environmental Protection Agency, Office of Mission Support; Data Steward: Multi-resolution Land Characteristics Consortium.",
+        "The Copernicus Sentinel-1 satellite collected synthetic aperture radar (SAR) imagery over the southeast and central U.S. from April 4-9, 2025, capturing flooding from severe storms. HydroSAR surface water extents are shown in blue. These are overlaid on VH cross-pol SAR imagery (grayscale), in which still water and other flat surfaces appear black, while diffuse scatterers like vegetation appear in lighter shades. Credits: NASA Disasters Program, Alaska Satellite Facility. Contains modified Copernicus Sentinel data (2025) processed by ESA.",
     },
     {
       type: "list",
