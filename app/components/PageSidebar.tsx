@@ -93,7 +93,7 @@ export function PageSidebar({
   );
 }
 
-type RelatedItem = {
+export type RelatedItem = {
   id: string;
   title: string;
   href: string;
