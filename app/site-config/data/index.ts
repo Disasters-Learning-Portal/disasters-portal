@@ -8,6 +8,7 @@ import { DATA__BLACK_MARBLE_BLUE_YELLOW } from "./data__black-marble-blue-yellow
 import { DATA__BLACK_MARBLE_BRDF } from "./data__black-marble-brdf";
 import { DATA__BLACK_MARBLE_HD } from "./data__black-marble-hd";
 import { DATA__CAPELLA_BACKSCATTER } from "./data__capella-backscatter";
+import { DATA__ECOSTRESS_LAND_SURFACE_TEMPERATURE } from "./data__ecostress-land-surface-temperature";
 import { DATA__GAIA } from "./data__gaia";
 import { DATA__GPM_IMERG_PRECIPITATION } from "./data__gpm-imerg-precipitation";
 import { DATA__ICEYE_BACKSCATTER } from "./data__iceye-backscatter";
@@ -52,6 +53,7 @@ export const DATA: DataContent[] = [
   DATA__BLACK_MARBLE_BRDF,
   DATA__BLACK_MARBLE_HD,
   DATA__CAPELLA_BACKSCATTER,
+  DATA__ECOSTRESS_LAND_SURFACE_TEMPERATURE,
   DATA__GAIA,
   DATA__GPM_IMERG_PRECIPITATION,
   DATA__ICEYE_BACKSCATTER,
@@ -130,6 +132,7 @@ export const DATA__SOUTHERN_CALIFORNIA_FIRE_JAN_2025: DataContent[] = [
   DATA__AVIRIS_3_EARLY_COLOR_IMAGERY,
   DATA__AVIRIS_3_PCA,
   DATA__BLACK_MARBLE_BLUE_YELLOW,
+  DATA__ECOSTRESS_LAND_SURFACE_TEMPERATURE,
   DATA__OPERA_DIST_S1,
   DATA__SENTINEL_1_SENTINEL_2_BURN_SEVERITY,
   DATA__SENTINEL_2_TRUE_COLOR,
