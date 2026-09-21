@@ -5,10 +5,13 @@ import {
   type Category,
   CONTENT_THEMES,
   CONTENT_TYPES,
+  type Content,
   type ContentType,
+  type GalleryCardContent,
   type IterableItemWithId,
   type Theme,
 } from "@/app/site-config/types";
+import { isInternalContent, pickKeys } from "./typed.helpers";
 
 export const makeSimpleTagProps = (tag: string) => ({
   variant: "solid" as const,
@@ -130,6 +133,25 @@ export type CardDetailedPropsArgs = Omit<
   categories?: Category[];
   tags?: (Theme | ContentType | Category)[];
   url?: string;
+};
+
+/**
+ * Project a content entry down to the card fields the Gallery needs.
+ * Gallery is a client component, so pages (server components) can only
+ * pass it serializable props: Content extras like ContentBlock bodies
+ * carry JSX and cannot cross the server -> client boundary.
+ */
+export const makeGalleryCardContent = (content: Content): GalleryCardContent => {
+  const base = pickKeys(content, [
+    "id",
+    "contentType",
+    "title",
+    "description",
+    "thumbnailImage",
+    "themes",
+    "categories",
+  ]);
+  return isInternalContent(content) ? base : { ...base, url: content.url };
 };
 
 export const makeCardDetailedProps = ({

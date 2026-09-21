@@ -22,7 +22,7 @@ export const DATA__GPM_IMERG_PRECIPITATION: DataContent = {
 
   themes: ["respond", "prepare", "recover"],
 
-  categories: ["severewx", "flood", "tropical cyclone", "winter weather"],
+  categories: ["severe weather", "flood", "tropical cyclone", "winter weather"],
 
   relatedContent: [],
 

@@ -15,7 +15,7 @@ export const DATA__SENTINEL_2_SWIR: DataContent = {
   },
   themes: ["respond", "build", "prepare", "recover"],
   categories: [
-    "severewx",
+    "severe weather",
     "fire",
     "heat",
     "flood",

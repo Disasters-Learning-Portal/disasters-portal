@@ -5,7 +5,7 @@ import { STORY__FINDING_FLOODS } from "@/app/site-config/story/story__finding-fl
 import type { EventContent, NewsContent, StoryContent } from "@/app/site-config/types";
 
 // Layout order: [0] featured, [1] regular, [2] compact top, [3] compact bottom
-export const NEWS_EVENTS_CARDS: [
+export const NEWS_EVENTS_STORIES_CARDS: [
   NewsContent | StoryContent | EventContent,
   NewsContent | StoryContent | EventContent,
   NewsContent | StoryContent | EventContent,

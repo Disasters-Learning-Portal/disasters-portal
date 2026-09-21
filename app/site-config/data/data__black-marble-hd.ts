@@ -5,7 +5,7 @@ export const DATA__BLACK_MARBLE_HD: DataContent = {
 
   contentType: "data",
 
-  title: "Black Marble HD Nighttime Lights",
+  title: "Black Marble HD",
 
   description:
     "HD Black Marble combines VIIRS nighttime lights with Landsat-derived land surface information and OpenStreetMap road networks to create enhanced 30-meter nighttime light imagery for disaster impact assessment.",
@@ -22,7 +22,14 @@ export const DATA__BLACK_MARBLE_HD: DataContent = {
 
   themes: ["respond", "recover"],
 
-  categories: ["severewx", "fire", "flood", "tropical cyclone", "earthquake", "winter weather"],
+  categories: [
+    "severe weather",
+    "fire",
+    "flood",
+    "tropical cyclone",
+    "earthquake",
+    "winter weather",
+  ],
 
   relatedContent: ["black-marble-blue-yellow"],
 
@@ -35,7 +42,7 @@ export const DATA__BLACK_MARBLE_HD: DataContent = {
       heading: "Summary",
       headingLevel: "h3",
       paragraphs: [
-        "HD Black Marble is a high-resolution nighttime lights visualization that combines NASA's VIIRS Black Marble nighttime lights with Landsat-derived land surface information and OpenStreetMap road networks. The processing pipeline uses the daily, moonlight- and atmosphere-corrected VIIRS VNP46A2 nighttime lights product together with Landsat-derived Normalized Difference Vegetation Index (NDVI) and Normalized Difference Water Index (NDWI) information and road-density patterns from OpenStreetMap. These higher-resolution datasets are used to spatially enhance the VIIRS nighttime lights and produce a 30-meter representation of nighttime illumination.",
+        "Black Marble High-Definition (BMHD) images are created by the NASA Black Marble Science team, with directed funding from the NASA-Google Partnership program. Pre-event images will be depicted as a cloud-free monthly composite. There will be a layer to display where clouds are present in the post-event images. Comparing pre- and post-event images images is meant as a visual assessment of outage impacts from the disaster to aid various partners who are working to deliver emergency aids to local communities. Power outage maps like these help disaster response efforts in the short-term as well as long-term monitoring during the crucial stages of disaster recovery.",
       ],
     },
 
@@ -44,7 +51,8 @@ export const DATA__BLACK_MARBLE_HD: DataContent = {
       heading: "Suggested Use",
       headingLevel: "h3",
       paragraphs: [
-        "Black Marble HD can be used to visually assess changes in nighttime illumination associated with disasters, including potential power outages and subsequent electricity restoration. The enhanced spatial detail can help identify neighborhood-scale patterns that are difficult to distinguish in the native VIIRS nighttime lights product and can support situational awareness during response and recovery. The 30-meter imagery is a modeled, downscaled representation of VIIRS nighttime lights rather than a direct 30-meter nighttime radiance measurement and should therefore be used for visualization and qualitative assessment rather than quantitative analysis or identification of outages at individual buildings, homes, or roads.",
+        "NOTE: Black Marble HD images are downscaled from NASA’s Black Marble nighttime lights product (VNP46), and as such are a “modelled” or “best guess” estimate of how lights are distributed at a 30m resolution. These images should be used for visualization purposes, not for quantitative analysis.",
+        "The image is in inferno color scale. Yellow represents the presence of more light; dark blue less lights.",
       ],
     },
 
@@ -53,7 +61,7 @@ export const DATA__BLACK_MARBLE_HD: DataContent = {
       heading: "Satellite/Sensor",
       headingLevel: "h3",
       paragraphs: [
-        "Visible Infrared Imaging Radiometer Suite (VIIRS) Day/Night Band (DNB) aboard the Suomi National Polar-orbiting Partnership (Suomi NPP), combined with Landsat Collection 2 imagery and OpenStreetMap road network data",
+        "The primary data source, NASA’s Black Marble nighttime lights product suite (VNP46), utilized to generate this product is derived from the Visible Infrared Imaging Radiometer Suite (VIIRS) Day/Night Band (DNB) onboard the Suomi National Polar-orbiting Platform (SNPP) along with high resolution base layers - Landsat derived normalized index products (NDVI and NDWI) and OpenStreetMap (OSM) derived road layer",
       ],
     },
 
@@ -61,9 +69,7 @@ export const DATA__BLACK_MARBLE_HD: DataContent = {
       type: "text",
       heading: "Resolution",
       headingLevel: "h3",
-      paragraphs: [
-        "30 meters (modeled/downscaled from approximately 500-meter VIIRS nighttime lights)",
-      ],
+      paragraphs: ["Scaled resolution of 30 meters"],
     },
 
     {
@@ -71,7 +77,10 @@ export const DATA__BLACK_MARBLE_HD: DataContent = {
       heading: "Credits",
       headingLevel: "h3",
       paragraphs: [
-        "NASA Visualization, Exploration, and Data Analysis (VEDA), NASA Black Marble Science Team, NASA Goddard Space Flight Center (GSFC), U.S. Geological Survey (USGS), and OpenStreetMap contributors",
+        "NASA Black Marble Science team",
+        "Please cite the following two references when using this data:",
+        "Román MO, Stokes EC, Shrestha R, Wang Z, Schultz L, Carlo EA, Sun Q, Bell J, Molthan A, Kalb V, Ji C. Satellite-based assessment of electricity restoration efforts in Puerto Rico after Hurricane Maria. PloS one. 2019 Jun 28;14(6):e0218883.",
+        "Román MO, Wang Z, Sun Q, Kalb V, Miller SD, Molthan A, Schultz L, Bell J, Stokes EC, Pandey B, Seto KC. NASA's Black Marble nighttime lights product suite. Remote Sensing of Environment. 2018 Jun 1;210:113-43.",
       ],
     },
 

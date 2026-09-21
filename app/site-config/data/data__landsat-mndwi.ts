@@ -22,7 +22,7 @@ export const DATA__LANDSAT_MNDWI: DataContent = {
 
   themes: ["respond", "build", "prepare", "recover"],
 
-  categories: ["severewx", "flood", "tropical cyclone", "winter weather"],
+  categories: ["severe weather", "flood", "tropical cyclone", "winter weather"],
 
   relatedContent: ["landsat-true-color", "landsat-color-infrared", "landsat-natural-color"],
 

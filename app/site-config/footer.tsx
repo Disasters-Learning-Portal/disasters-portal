@@ -4,7 +4,7 @@ import { AppImage } from "@/app/components/AppImage";
 const primaryNavItems: FooterProps["primaryNavItems"] = [
   { label: "About Us", href: "/about" },
   { label: "Data Gallery", href: "/data-gallery" },
-  { label: "News & Events", href: "/news-events" },
+  { label: "News, Events & Stories", href: "/news-events-stories" },
   { label: "Training", href: "/training" },
 ];
 

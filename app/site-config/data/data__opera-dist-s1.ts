@@ -66,7 +66,9 @@ export const DATA__OPERA_DIST_S1: DataContent = {
       heading: "Credits",
       headingLevel: "h3",
       paragraphs: [
+        "This prototype product was developed by Harris Hardiman-Mostow (UCLA) under the guidance of Charlie Marshak and Al Handwerger. Further product development has been led by the JPL OPERA DIST-S1 team (Charlie Marshak, Talib Oliver Cabrera, Jungkyo Jung, Richard West)",
         "NASA Jet Propulsion Laboratory, California Institute of Technology; NASA OPERA; ESA Copernicus; NASA Disasters Program",
+        "Use of this product should include: “Contains modified Copernicus Sentinel data (2022-2026) processed by ESA”",
       ],
     },
 

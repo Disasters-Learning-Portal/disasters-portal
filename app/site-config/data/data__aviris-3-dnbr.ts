@@ -60,7 +60,7 @@ export const DATA__AVIRIS_3_DNBR: DataContent = {
       type: "text",
       heading: "Resolution",
       headingLevel: "h3",
-      paragraphs: ["Acquisition-dependent high spatial resolution"],
+      paragraphs: ["Variable, ranging from sub-meter to 13 meters, dependent on flight altitude."],
     },
 
     {

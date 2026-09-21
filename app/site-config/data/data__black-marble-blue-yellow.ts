@@ -22,7 +22,22 @@ export const DATA__BLACK_MARBLE_BLUE_YELLOW: DataContent = {
 
   themes: ["respond", "recover"],
 
-  categories: ["severewx", "fire", "flood", "tropical cyclone", "earthquake", "winter weather"],
+  // Applicable to any disaster type, so every hazard is tagged.
+  categories: [
+    "earthquake",
+    "fire",
+    "flood",
+    "heat",
+    "landslide",
+    "severe weather",
+    "tropical cyclone",
+    "hurricane",
+    "typhoon",
+    "cyclone",
+    "volcano",
+    "tsunami",
+    "winter weather",
+  ],
 
   relatedContent: [],
 

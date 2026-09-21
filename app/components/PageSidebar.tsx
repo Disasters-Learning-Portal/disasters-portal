@@ -33,26 +33,22 @@ export function PageSidebar({
         // Begin section on themes, categories, related content
         CONTENT_SIDEBAR_CONTENT_TYPES.includes(contentType) && (
           <div className="bg-base-lightest padding-4 margin-bottom-4">
-            {contentType === "data" && (
+            {exploreDataUrl && (
               <div className="margin-bottom-3">
-                {exploreDataUrl ? (
-                  <a
-                    href={exploreDataUrl}
-                    rel="noopener noreferrer"
-                    target="_blank"
-                    className="usa-button width-full text-center"
-                  >
-                    Explore Data
-                  </a>
-                ) : (
-                  <button type="button" className="usa-button width-full">
-                    Explore Data
-                  </button>
-                )}
+                <AppLinkStyled
+                  href={exploreDataUrl}
+                  variant="button"
+                  isExternal
+                  className="width-full"
+                >
+                  Explore Data
+                </AppLinkStyled>
               </div>
             )}
 
-            <div className="border-top border-base-lighter padding-top-3 margin-bottom-3">
+            <div
+              className={`${exploreDataUrl ? "border-top border-base-lighter " : ""}padding-top-3 margin-bottom-3`}
+            >
               <MetaGroup label="Type">
                 <div className="margin-right-1 margin-bottom-1">
                   <Tag {...makeContentTypeTagProps(contentType)} />
@@ -97,7 +93,7 @@ export function PageSidebar({
   );
 }
 
-type RelatedItem = {
+export type RelatedItem = {
   id: string;
   title: string;
   href: string;

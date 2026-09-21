@@ -22,7 +22,7 @@ export const DATA__OPERA_DIST_ALERT_GEN_DIST_STATUS: DataContent = {
 
   themes: ["respond", "recover"],
 
-  categories: ["flood", "fire", "severewx"],
+  categories: ["flood", "fire", "severe weather"],
 
   relatedContent: ["opera-dist-s1"],
 

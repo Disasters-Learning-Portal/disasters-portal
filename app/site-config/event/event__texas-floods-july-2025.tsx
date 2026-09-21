@@ -39,7 +39,9 @@ export const EVENT__TEXAS_FLOODS_JULY_2025: EventContent = {
         <Fragment key="texas-floods-july-2025-parargraph-1">
           The NASA Disasters Program activated to support the Texas Department of Emergency
           Management, FEMA Region 6, and the non-profit Save the Children. NASA{" "}
-          <AppLinkStyled href="/news-events/finding-floods">deployed two aircraft</AppLinkStyled>{" "}
+          <AppLinkStyled href="/news-events-stories/finding-floods">
+            deployed two aircraft
+          </AppLinkStyled>{" "}
           over the San Gabriel and Colorado river basins, collecting high-resolution optical imagery
           to support search and rescue operations, and UAVSAR radar imagery to identify flooded
           regions when clouds and trees obscured other sensors. NASA also shared satellite
@@ -57,7 +59,7 @@ export const EVENT__TEXAS_FLOODS_JULY_2025: EventContent = {
           "When flooding struck Texas Hill Country, NASA deployed two specialized aircraft to give responders a clearer picture.",
         callToAction: {
           label: "Learn More",
-          href: "/news-events/finding-floods",
+          href: "/news-events-stories/finding-floods",
         },
         image: {
           alt: "When flooding struck Texas Hill Country, NASA deployed two specialized aircraft to give responders a clearer picture.",

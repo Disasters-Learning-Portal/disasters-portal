@@ -22,13 +22,20 @@ export const DATA__GAIA: DataContent = {
 
   themes: ["respond", "prepare", "recover"],
 
+  // Applicable to any disaster type, so every hazard is tagged.
   categories: [
-    "severewx",
-    "fire",
-    "heat",
-    "flood",
-    "tropical cyclone",
     "earthquake",
+    "fire",
+    "flood",
+    "heat",
+    "landslide",
+    "severe weather",
+    "tropical cyclone",
+    "hurricane",
+    "typhoon",
+    "cyclone",
+    "volcano",
+    "tsunami",
     "winter weather",
   ],
 

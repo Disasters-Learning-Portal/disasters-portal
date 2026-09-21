@@ -41,7 +41,7 @@ import { DATA__UAVSAR_QUICKLOOK_CLASSIFIED } from "./data__uavsar-quicklook-clas
 import { DATA__UAVSAR_RGB } from "./data__uavsar-rgb";
 import { DATA__UAVSAR_UNET_CLASSIFIED } from "./data__uavsar-unet-classified";
 import { DATA__UAVSAR_UNET_CLASSIFIED_GRAYSCALE } from "./data__uavsar-unet-classified-grayscale";
-import { DATA__UMBRA_SIGMA_NAUGHT } from "./data__umbra_sigma_naught";
+import { DATA__UMBRA_SIGMA_NAUGHT } from "./data__umbra-sigma-naught";
 import { DATA__WB57_DYNAMITE } from "./data__wb57-dynamite";
 
 export const DATA: DataContent[] = [

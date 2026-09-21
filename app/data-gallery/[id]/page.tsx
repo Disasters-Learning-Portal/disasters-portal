@@ -1,12 +1,6 @@
 import { notFound } from "next/navigation";
 
-import {
-  ContentBlockRenderer,
-  PageMasthead,
-  PageSidebar,
-  PageStatus,
-  Section,
-} from "@/app/components";
+import { ContentPageLayout } from "@/app/components";
 import { makeCardMastHeadProps } from "@/app/site-config/content.helpers";
 import { DATA } from "@/app/site-config/data";
 import { EVENTS } from "@/app/site-config/event";
@@ -47,41 +41,14 @@ export default async function DataItemPage(props: PageProps<"/data-gallery/[id]"
   });
 
   return (
-    <>
-      <PageMasthead {...makeCardMastHeadProps({ mastheadImage, title })} />
-
-      {/* Placeholder content only */}
-      {!body && (
-        <PageStatus
-          heading="Under Development"
-          description="The page you're looking for is under development."
-        />
-      )}
-
-      {/* Content */}
-      {body && (
-        <Section>
-          <div className="grid-row grid-gap">
-            <div className="grid-col-12 desktop:grid-col-3">
-              <PageSidebar
-                contentType={contentType}
-                themes={themes}
-                categories={categories}
-                relatedContent={relatedItems}
-                exploreDataUrl={exploreDataUrl}
-              />
-            </div>
-            <div className="grid-col-12 desktop:grid-col-9">
-              <div className="margin-top-neg-7">
-                {body?.map((block, index) => (
-                  // biome-ignore lint/suspicious/noArrayIndexKey: static content, never reorders
-                  <ContentBlockRenderer key={index} block={block} isMultiColumnLayout />
-                ))}
-              </div>
-            </div>
-          </div>
-        </Section>
-      )}
-    </>
+    <ContentPageLayout
+      masthead={makeCardMastHeadProps({ mastheadImage, title })}
+      contentType={contentType}
+      themes={themes}
+      categories={categories}
+      body={body}
+      relatedContent={relatedItems}
+      exploreDataUrl={exploreDataUrl}
+    />
   );
 }

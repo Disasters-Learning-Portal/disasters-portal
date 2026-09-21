@@ -22,7 +22,7 @@ export const DATA__UAVSAR_DISPLACEMENT: DataContent = {
 
   themes: ["respond", "prepare", "recover"],
 
-  categories: ["earthquake", "volcano", "severewx"],
+  categories: ["earthquake", "volcano", "severe weather"],
 
   relatedContent: ["uavsar-rgb", "nisar-gunw-displacement", "opera-disp-s1-coherence"],
 

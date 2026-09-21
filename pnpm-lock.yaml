@@ -15,8 +15,8 @@ importers:
         specifier: ^5.99.0
         version: 5.100.9(react@19.2.3)
       '@teamimpact/veda-ui-blocks':
-        specifier: 0.1.0-beta.16
-        version: 0.1.0-beta.16(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+        specifier: 0.1.0-beta.18
+        version: 0.1.0-beta.18(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@trussworks/react-uswds':
         specifier: ^11.0.0
         version: 11.0.1(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(@uswds/uswds@3.13.0)(focus-trap-react@11.0.6(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
@@ -487,8 +487,8 @@ packages:
     peerDependencies:
       react: ^18 || ^19
 
-  '@teamimpact/veda-ui-blocks@0.1.0-beta.16':
-    resolution: {integrity: sha512-mbbk7yoG81yt+anz8Yn25nlOjZuKX/JqSgFKaPwE84h+yd8KyV7FgaJR2zED30EBW7s8sQ1b965IBS3CRqdiQg==}
+  '@teamimpact/veda-ui-blocks@0.1.0-beta.18':
+    resolution: {integrity: sha512-tHsZHef2lcT3RlQwpzE2p6BwJPO8Vc1tOIHzJADomWPtsBNdGE1bqU1+bwV90w85puD7VJVipS+dK3nYC89MCg==}
     peerDependencies:
       react: ^19.2.3
       react-dom: ^19.2.3
@@ -1239,7 +1239,7 @@ snapshots:
       '@tanstack/query-core': 5.100.9
       react: 19.2.3
 
-  '@teamimpact/veda-ui-blocks@0.1.0-beta.16(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
+  '@teamimpact/veda-ui-blocks@0.1.0-beta.18(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
     dependencies:
       '@developmentseed/stac-react': 1.0.0-alpha.2(@tanstack/react-query@5.100.9(react@19.2.3))(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@tanstack/react-query': 5.100.9(react@19.2.3)

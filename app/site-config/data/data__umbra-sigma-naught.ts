@@ -5,24 +5,31 @@ export const DATA__UMBRA_SIGMA_NAUGHT: DataContent = {
 
   contentType: "data",
 
-  title: "Umbra Sigma Naught SAR Backscatter",
+  title: "Umbra Backscatter",
 
   description:
     "Sigma Naught backscatter derived from high-resolution Umbra synthetic aperture radar (SAR) imagery acquired through NASA's Commercial Satellite Data Acquisition (CSDA) Program.",
 
   thumbnailImage: {
-    src: "/img/data/umbra-sigma-naught.webp",
-    alt: "Umbra Sigma Naught SAR backscatter imagery",
+    src: "/img/event/typhoon-sinlaku-2026__umbra-guam.webp",
+    alt: "Umbra radar backscatter image of Antonio B. Won Pat International Airport in Guam",
   },
 
   mastheadImage: {
-    src: "/img/data/umbra-sigma-naught.webp",
-    alt: "Umbra Sigma Naught SAR backscatter imagery",
+    src: "/img/event/typhoon-sinlaku-2026__umbra-guam.webp",
+    alt: "Umbra radar backscatter image of Antonio B. Won Pat International Airport in Guam",
   },
 
   themes: ["respond", "prepare", "recover"],
 
-  categories: ["severewx", "fire", "flood", "tropical cyclone", "earthquake", "winter weather"],
+  categories: [
+    "severe weather",
+    "fire",
+    "flood",
+    "tropical cyclone",
+    "earthquake",
+    "winter weather",
+  ],
 
   relatedContent: [],
 
@@ -44,7 +51,8 @@ export const DATA__UMBRA_SIGMA_NAUGHT: DataContent = {
       heading: "Suggested Use",
       headingLevel: "h3",
       paragraphs: [
-        "Umbra Sigma Naught imagery can be used to assess surface conditions and identify changes associated with natural hazards, including flooding, wildfire impacts, severe storm damage, tropical cyclones, earthquakes, and winter weather. Because SAR is an active microwave imaging system, observations can be collected during both day and night and through clouds, smoke, and many other atmospheric conditions that can obscure optical imagery. Differences in backscatter can help identify inundated areas, changes in surface roughness or moisture, and damage to vegetation or the built environment. Radar backscatter is also influenced by viewing geometry, incidence angle, polarization, and surface orientation, which should be considered when comparing scenes.",
+        "Umbra backscatter imagery can be used to assess surface conditions and identify changes associated with natural hazards, including flooding, wildfire impacts, severe storm damage, tropical cyclones, earthquakes, and winter weather. Because SAR is an active microwave imaging system, observations can be collected during both day and night and through clouds, smoke, and many other atmospheric conditions that can obscure optical imagery. Differences in backscatter can help identify inundated areas, changes in surface roughness or moisture, and damage to vegetation or the built environment. Debris may manifest in images via nonuniform shapes or with significant backscatter.",
+        "Radar backscatter is also influenced by viewing geometry, incidence angle, polarization, and surface orientation, which should be considered when comparing scenes.",
       ],
     },
 
@@ -71,7 +79,7 @@ export const DATA__UMBRA_SIGMA_NAUGHT: DataContent = {
       heading: "Credits",
       headingLevel: "h3",
       paragraphs: [
-        "Umbra Space, NASA Commercial Satellite Data Acquisition (CSDA) Program, NASA Disasters Program",
+        "NASA Disasters Program, processing by MSFC, Umbra. For derived products: “Includes copyrighted material of Umbra. All rights reserved.” This work utilized data made available through the NASA Commercial Satellite Data Acquisition (CSDA) program.",
       ],
     },
 

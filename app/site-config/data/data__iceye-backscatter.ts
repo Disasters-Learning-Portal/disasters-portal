@@ -22,7 +22,14 @@ export const DATA__ICEYE_BACKSCATTER: DataContent = {
 
   themes: ["respond", "prepare", "recover"],
 
-  categories: ["severewx", "fire", "flood", "tropical cyclone", "earthquake", "winter weather"],
+  categories: [
+    "severe weather",
+    "fire",
+    "flood",
+    "tropical cyclone",
+    "earthquake",
+    "winter weather",
+  ],
 
   relatedContent: ["capella-backscatter", "umbra-sigma-naught"],
 

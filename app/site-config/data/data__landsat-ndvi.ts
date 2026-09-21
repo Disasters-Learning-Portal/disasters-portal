@@ -23,7 +23,7 @@ export const DATA__LANDSAT_NDVI: DataContent = {
   themes: ["respond", "build", "prepare", "recover"],
 
   categories: [
-    "severewx",
+    "severe weather",
     "fire",
     "heat",
     "flood",

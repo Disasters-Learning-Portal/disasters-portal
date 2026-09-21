@@ -22,7 +22,7 @@ export const DATA__UAVSAR_UNET_CLASSIFIED: DataContent = {
 
   themes: ["respond", "recover"],
 
-  categories: ["flood", "tropical cyclone", "severewx"],
+  categories: ["flood", "tropical cyclone", "severe weather"],
 
   relatedContent: ["uavsar-rgb", "uavsar-unet-classified-grayscale", "uavsar-quicklook-classified"],
 
