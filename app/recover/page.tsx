@@ -47,7 +47,9 @@ export default function RecoverPage() {
       <PageMasthead {...makeCardMastHeadProps({ title, subtitle, theme, mastheadImage })} />
       <SectionCardSimple
         sectionHeading={
-          <SectionHeading href="/news-events?contenttype=story">Stories of Impact</SectionHeading>
+          <SectionHeading href="/news-events-stories?contenttype=story">
+            Stories of Impact
+          </SectionHeading>
         }
         cards={typedMap(stories, makeCardSimpleProps)}
       />
@@ -57,7 +59,9 @@ export default function RecoverPage() {
       ))}
       <SectionCardCarousel
         sectionHeading={
-          <SectionHeading href="/news-events?contenttype=datastory">Data Stories</SectionHeading>
+          <SectionHeading href="/news-events-stories?contenttype=datastory">
+            Data Stories
+          </SectionHeading>
         }
         cards={typedMap(RECOVER_DATASTORIES, makeCardCarouselProps)}
       />
