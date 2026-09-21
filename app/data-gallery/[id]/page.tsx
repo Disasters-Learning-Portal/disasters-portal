@@ -27,6 +27,7 @@ export default async function DataItemPage(props: PageProps<"/data-gallery/[id]"
     categories,
     body,
     relatedContent: relatedIds = [],
+    exploreDataUrl,
   } = dataItem;
 
   // TODO: Move to content helpers, and broaden to fit any content type use case
@@ -67,6 +68,7 @@ export default async function DataItemPage(props: PageProps<"/data-gallery/[id]"
                 themes={themes}
                 categories={categories}
                 relatedContent={relatedItems}
+                exploreDataUrl={exploreDataUrl}
               />
             </div>
             <div className="grid-col-12 desktop:grid-col-9">
