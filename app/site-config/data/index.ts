@@ -1,7 +1,9 @@
 import type { DataContent } from "@/app/site-config/types";
 
+import { DATA__AVIRIS_3_CHAR_AND_ASH } from "./data__aviris-3-char-and-ash";
 import { DATA__AVIRIS_3_DNBR } from "./data__aviris-3-dnbr";
 import { DATA__AVIRIS_3_EARLY_COLOR_IMAGERY } from "./data__aviris-3-early-color-imagery";
+import { DATA__AVIRIS_3_PCA } from "./data__aviris-3-pca";
 import { DATA__BLACK_MARBLE_BLUE_YELLOW } from "./data__black-marble-blue-yellow";
 import { DATA__BLACK_MARBLE_BRDF } from "./data__black-marble-brdf";
 import { DATA__BLACK_MARBLE_HD } from "./data__black-marble-hd";
@@ -42,8 +44,10 @@ import { DATA__UMBRA_SIGMA_NAUGHT } from "./data__umbra_sigma_naught";
 import { DATA__WB57_DYNAMITE } from "./data__wb57-dynamite";
 
 export const DATA: DataContent[] = [
+  DATA__AVIRIS_3_CHAR_AND_ASH,
   DATA__AVIRIS_3_DNBR,
   DATA__AVIRIS_3_EARLY_COLOR_IMAGERY,
+  DATA__AVIRIS_3_PCA,
   DATA__BLACK_MARBLE_BLUE_YELLOW,
   DATA__BLACK_MARBLE_BRDF,
   DATA__BLACK_MARBLE_HD,
@@ -121,8 +125,10 @@ export const DATA__TEXAS_FLOODS_JULY_2025: DataContent[] = [
 ];
 
 export const DATA__SOUTHERN_CALIFORNIA_FIRE_JAN_2025: DataContent[] = [
+  DATA__AVIRIS_3_CHAR_AND_ASH,
   DATA__AVIRIS_3_DNBR,
   DATA__AVIRIS_3_EARLY_COLOR_IMAGERY,
+  DATA__AVIRIS_3_PCA,
   DATA__BLACK_MARBLE_BLUE_YELLOW,
   DATA__OPERA_DIST_S1,
   DATA__SENTINEL_1_SENTINEL_2_BURN_SEVERITY,
