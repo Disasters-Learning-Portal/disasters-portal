@@ -171,6 +171,8 @@ export type DataContent = Omit<InternalCardContent, "contentType"> & {
   mastheadImage: MastheadImage;
   body?: ContentBlock[]; // TODO: require body
   relatedContent?: string[];
+  /** The sidebar CTA renders only when this is set. */
+  exploreDataUrl?: string;
 };
 
 export type NewsContent = Omit<InternalCardContent, "contentType"> & {
