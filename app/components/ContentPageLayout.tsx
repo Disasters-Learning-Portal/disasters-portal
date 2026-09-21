@@ -15,6 +15,7 @@ export function ContentPageLayout({
   categories,
   body,
   relatedContent,
+  exploreDataUrl,
   children,
 }: {
   masthead: CardProps;
@@ -23,6 +24,7 @@ export function ContentPageLayout({
   categories: Category[];
   body?: ContentBlock[];
   relatedContent?: RelatedItem[];
+  exploreDataUrl?: string;
   /** Rendered above the body blocks, e.g. the event Overview. */
   children?: ReactNode;
 }) {
@@ -46,6 +48,7 @@ export function ContentPageLayout({
                 themes={themes}
                 categories={categories}
                 relatedContent={relatedContent}
+                exploreDataUrl={exploreDataUrl}
               />
             </div>
 

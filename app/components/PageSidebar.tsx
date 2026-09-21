@@ -18,11 +18,13 @@ export function PageSidebar({
   themes,
   categories,
   relatedContent = [],
+  exploreDataUrl,
 }: {
   contentType: ContentType;
   themes: Theme[];
   categories: Category[];
   relatedContent?: RelatedItem[];
+  exploreDataUrl?: string;
 }) {
   // TODO: update to include inpage navigation
   return (
@@ -31,15 +33,22 @@ export function PageSidebar({
         // Begin section on themes, categories, related content
         CONTENT_SIDEBAR_CONTENT_TYPES.includes(contentType) && (
           <div className="bg-base-lightest padding-4 margin-bottom-4">
-            {contentType === "data" && (
+            {exploreDataUrl && (
               <div className="margin-bottom-3">
-                <button type="button" className="usa-button width-full">
-                  View Data
-                </button>
+                <AppLinkStyled
+                  href={exploreDataUrl}
+                  variant="button"
+                  isExternal
+                  className="width-full"
+                >
+                  Explore Data
+                </AppLinkStyled>
               </div>
             )}
 
-            <div className="border-top border-base-lighter padding-top-3 margin-bottom-3">
+            <div
+              className={`${exploreDataUrl ? "border-top border-base-lighter " : ""}padding-top-3 margin-bottom-3`}
+            >
               <MetaGroup label="Type">
                 <div className="margin-right-1 margin-bottom-1">
                   <Tag {...makeContentTypeTagProps(contentType)} />

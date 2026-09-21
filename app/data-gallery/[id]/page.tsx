@@ -21,6 +21,7 @@ export default async function DataItemPage(props: PageProps<"/data-gallery/[id]"
     categories,
     body,
     relatedContent: relatedIds = [],
+    exploreDataUrl,
   } = dataItem;
 
   // TODO: Move to content helpers, and broaden to fit any content type use case
@@ -47,6 +48,7 @@ export default async function DataItemPage(props: PageProps<"/data-gallery/[id]"
       categories={categories}
       body={body}
       relatedContent={relatedItems}
+      exploreDataUrl={exploreDataUrl}
     />
   );
 }

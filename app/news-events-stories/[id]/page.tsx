@@ -11,7 +11,9 @@ import { NEWS } from "@/app/site-config/news";
 import { STORIES } from "@/app/site-config/story";
 import { isInternalContent } from "@/app/site-config/typed.helpers";
 
-export default async function NewsEventsItemPage(props: PageProps<"/news-events/[id]">) {
+export default async function NewsEventsStoriesItemPage(
+  props: PageProps<"/news-events-stories/[id]">,
+) {
   const { id } = await props.params;
 
   const contentItem = [...STORIES, ...DATASTORIES, ...NEWS, ...EVENTS]
