@@ -33,6 +33,11 @@ import { DATA__SENTINEL_2_SWIR } from "./data__sentinel-2-swir";
 import { DATA__SENTINEL_2_TRUE_COLOR } from "./data__sentinel-2-true-color";
 import { DATA__SKYSAT_COLOR_INFRARED } from "./data__skysat-color-infrared";
 import { DATA__SKYSAT_TRUE_COLOR } from "./data__skysat-true-color";
+import { DATA__UAVSAR_DISPLACEMENT } from "./data__uavsar-displacement";
+import { DATA__UAVSAR_QUICKLOOK_CLASSIFIED } from "./data__uavsar-quicklook-classified";
+import { DATA__UAVSAR_RGB } from "./data__uavsar-rgb";
+import { DATA__UAVSAR_UNET_CLASSIFIED } from "./data__uavsar-unet-classified";
+import { DATA__UAVSAR_UNET_CLASSIFIED_GRAYSCALE } from "./data__uavsar-unet-classified-grayscale";
 import { DATA__UMBRA_SIGMA_NAUGHT } from "./data__umbra_sigma_naught";
 import { DATA__WB57_DYNAMITE } from "./data__wb57-dynamite";
 
@@ -70,6 +75,11 @@ export const DATA: DataContent[] = [
   DATA__SENTINEL_2_TRUE_COLOR,
   DATA__SKYSAT_COLOR_INFRARED,
   DATA__SKYSAT_TRUE_COLOR,
+  DATA__UAVSAR_DISPLACEMENT,
+  DATA__UAVSAR_QUICKLOOK_CLASSIFIED,
+  DATA__UAVSAR_RGB,
+  DATA__UAVSAR_UNET_CLASSIFIED,
+  DATA__UAVSAR_UNET_CLASSIFIED_GRAYSCALE,
   DATA__UMBRA_SIGMA_NAUGHT,
   DATA__WB57_DYNAMITE,
 ];
@@ -107,6 +117,7 @@ export const DATA__TEXAS_FLOODS_JULY_2025: DataContent[] = [
   DATA__OPERA_DIST_ALERT_GEN_DIST_STATUS,
   DATA__SENTINEL_2_TRUE_COLOR,
   DATA__SENTINEL_2_COLOR_INFRARED,
+  DATA__UAVSAR_UNET_CLASSIFIED,
 ];
 
 export const DATA__SOUTHERN_CALIFORNIA_FIRE_JAN_2025: DataContent[] = [
