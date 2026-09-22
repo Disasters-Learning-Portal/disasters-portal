@@ -28,6 +28,7 @@ import { DATA__OPERA_DSWX } from "./data__opera-dswx";
 import { DATA__OPERA_RTC_RGB_MOSAIC } from "./data__opera-rtc-rgb-mosaic";
 import { DATA__PLANET_NDVI } from "./data__planet-ndvi";
 import { DATA__PLANET_NDVI_CHANGE } from "./data__planet-ndvi-change";
+import { DATA__PLANET_NDWI } from "./data__planet-ndwi";
 import { DATA__PLANET_TRUE_COLOR } from "./data__planet-true-color";
 import { DATA__SATELLOGIC_COLOR_INFRARED } from "./data__satellogic-color-infrared";
 import { DATA__SATELLOGIC_TRUE_COLOR } from "./data__satellogic-true-color";
@@ -83,6 +84,7 @@ export const DATA: DataContent[] = [
   DATA__OPERA_RTC_RGB_MOSAIC,
   DATA__PLANET_NDVI,
   DATA__PLANET_NDVI_CHANGE,
+  DATA__PLANET_NDWI,
   DATA__PLANET_TRUE_COLOR,
   DATA__SATELLOGIC_COLOR_INFRARED,
   DATA__SATELLOGIC_TRUE_COLOR,
