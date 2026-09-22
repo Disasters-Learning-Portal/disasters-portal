@@ -48,6 +48,9 @@ import { DATA__UAVSAR_RGB } from "./data__uavsar-rgb";
 import { DATA__UAVSAR_UNET_CLASSIFIED } from "./data__uavsar-unet-classified";
 import { DATA__UAVSAR_UNET_CLASSIFIED_GRAYSCALE } from "./data__uavsar-unet-classified-grayscale";
 import { DATA__UMBRA_SIGMA_NAUGHT } from "./data__umbra-sigma-naught";
+import { DATA__VANTOR_COLOR_INFRARED } from "./data__vantor-color-infrared";
+import { DATA__VANTOR_PANCHROMATIC } from "./data__vantor-panchromatic";
+import { DATA__VANTOR_TRUE_COLOR } from "./data__vantor-true-color";
 import { DATA__WB57_DYNAMITE } from "./data__wb57-dynamite";
 
 export const DATA: DataContent[] = [
@@ -99,6 +102,9 @@ export const DATA: DataContent[] = [
   DATA__UAVSAR_UNET_CLASSIFIED,
   DATA__UAVSAR_UNET_CLASSIFIED_GRAYSCALE,
   DATA__UMBRA_SIGMA_NAUGHT,
+  DATA__VANTOR_COLOR_INFRARED,
+  DATA__VANTOR_PANCHROMATIC,
+  DATA__VANTOR_TRUE_COLOR,
   DATA__WB57_DYNAMITE,
 ];
 
@@ -107,6 +113,9 @@ export const DATA__VENEZUELA_EQ_JUN_2026: DataContent[] = [
   DATA__BLACK_MARBLE_HD,
   DATA__OPERA_DISP_S1_COHERENCE,
   DATA__UMBRA_SIGMA_NAUGHT,
+  DATA__VANTOR_COLOR_INFRARED,
+  DATA__VANTOR_PANCHROMATIC,
+  DATA__VANTOR_TRUE_COLOR,
 ];
 
 export const DATA__TYPHOON_SINLAKU_APR_2026: DataContent[] = [
