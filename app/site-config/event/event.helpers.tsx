@@ -3,8 +3,7 @@ import type { AppLink } from "@/app/components/AppLink";
 import {
   makeCardMastHeadProps,
   makeCardSimpleProps,
-  makeMastheadTagProps,
-  toStyleDate,
+  toNASAStyleDate,
   toTitleCase,
 } from "@/app/site-config/content.helpers";
 import type { EventContent, IterableItemWithId } from "@/app/site-config/types";
@@ -25,12 +24,7 @@ export const transformEventToCardSimpleProps = (
 export const transformEventToPageMastHeadProps = (event: EventContent): CardProps => {
   const { dateUpdated, mastheadImage, title, description } = event;
 
-  return makeCardMastHeadProps({
-    mastheadImage,
-    title,
-    description,
-    tag: dateUpdated ? makeMastheadTagProps(`Updated: ${toStyleDate(dateUpdated)}`) : undefined,
-  });
+  return makeCardMastHeadProps({ mastheadImage, title, description, dateUpdated });
 };
 
 export type SectionOverviewItemProps = {
@@ -45,7 +39,7 @@ export const transformEventToSectionOverviewProps = (
   return {
     overviewItems: [
       { title: "Region", content: region },
-      { title: "Start Date", content: toStyleDate(startDate) },
+      { title: "Start Date", content: toNASAStyleDate(startDate) },
       { title: "Hazard(s)", content: categories.map((c) => toTitleCase(c)).join(", ") },
       linkDHSFEMA
         ? {

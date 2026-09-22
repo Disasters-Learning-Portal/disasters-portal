@@ -6,7 +6,9 @@ import {
   CONTENT_THEMES,
   CONTENT_TYPES,
   type Content,
+  type ContentDates,
   type ContentType,
+  type DateString,
   type GalleryCardContent,
   type IterableItemWithId,
   type Theme,
@@ -26,8 +28,8 @@ const childrenToLabel = <T extends { children: string }>({ children, ...rest }: 
   ...rest,
 });
 
-// A masthead is a Card, and its tag is a date or a status.
-export const makeMastheadTagProps = (label: string) => childrenToLabel(makeSimpleTagProps(label));
+const makeDateTagProps = (prefix: "Published" | "Updated", date: DateString) =>
+  childrenToLabel(makeSimpleTagProps(`${prefix}: ${toNASAStyleDate(date)}`));
 
 export const makeThemeTagProps = (tag: Theme) => {
   const { label, color, textColor } = CONTENT_THEMES[tag];
@@ -46,23 +48,29 @@ export const makeContentTypeTagProps = (tag: ContentType) => {
 
 export type CardMastheadPropsArgs = Omit<
   CardProps,
-  "title" | "image" | "colorMode" | "isMastHead"
-> & {
-  mastheadImage: {
-    alt: string;
-    src: string;
+  "title" | "image" | "colorMode" | "isMastHead" | "tag"
+> &
+  ContentDates & {
+    mastheadImage: {
+      alt: string;
+      src: string;
+    };
+    title?: string;
+    theme?: Theme;
   };
-  title?: string;
-  theme?: Theme;
-};
 
 export const makeCardMastHeadProps = ({
   mastheadImage,
   title,
   theme,
+  datePublished,
+  dateUpdated,
   ...rest
 }: CardMastheadPropsArgs): CardProps => ({
   image: <AppImage {...mastheadImage} sizes="100vw" fill preload={true} />,
+  tag: datePublished
+    ? makeDateTagProps("Published", datePublished)
+    : dateUpdated && makeDateTagProps("Updated", dateUpdated),
   ...(title || theme
     ? {
         title: (
@@ -309,11 +317,13 @@ export const makeCardCarouselProps = ({
 });
 
 /**
- * NASA Stylebook / AP style date: abbreviate months longer than five letters
- * (Jan., Feb., Aug., Sept., Oct., Nov., Dec.), spell out March through July,
- * no ordinal suffix. Input is an ISO date string; formatted in UTC.
+ * NASA Stylebook v14 / AP style. The stylebook is not public; the sitewide rules
+ * are written up in
+ * https://github.com/Disasters-Learning-Portal/disasters-portal/issues/479
+ *
+ * Formatted in UTC so the day never shifts.
  */
-export const toStyleDate = (date: string) => {
+export const toNASAStyleDate = (date: DateString) => {
   const d = new Date(date);
   const months = [
     "Jan.",

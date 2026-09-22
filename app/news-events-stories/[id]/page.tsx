@@ -1,10 +1,6 @@
 import { notFound } from "next/navigation";
 import { ContentPageLayout, SectionOverview } from "@/app/components";
-import {
-  makeCardMastHeadProps,
-  makeMastheadTagProps,
-  toStyleDate,
-} from "@/app/site-config/content.helpers";
+import { makeCardMastHeadProps } from "@/app/site-config/content.helpers";
 import { DATASTORIES } from "@/app/site-config/datastory";
 import { EVENTS } from "@/app/site-config/event";
 import {
@@ -35,13 +31,7 @@ export default async function NewsEventsStoriesItemPage(
       masthead={
         isEvent
           ? transformEventToPageMastHeadProps(contentItem)
-          : makeCardMastHeadProps({
-              mastheadImage,
-              title,
-              tag: datePublished
-                ? makeMastheadTagProps(`Published: ${toStyleDate(datePublished)}`)
-                : undefined,
-            })
+          : makeCardMastHeadProps({ mastheadImage, title, datePublished })
       }
       contentType={contentType}
       themes={themes}
