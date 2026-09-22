@@ -11,6 +11,7 @@ import { DATA__CAPELLA_BACKSCATTER } from "./data__capella-backscatter";
 import { DATA__ECOSTRESS_LAND_SURFACE_TEMPERATURE } from "./data__ecostress-land-surface-temperature";
 import { DATA__GAIA } from "./data__gaia";
 import { DATA__GPM_IMERG_PRECIPITATION } from "./data__gpm-imerg-precipitation";
+import { DATA__HYDROSAR_S1_CLASSIFICATIONS } from "./data__hydrosar-s1-classifications";
 import { DATA__ICEYE_BACKSCATTER } from "./data__iceye-backscatter";
 import { DATA__LANDSAT_COLOR_INFRARED } from "./data__landsat-color-infrared";
 import { DATA__LANDSAT_MNDWI } from "./data__landsat-mndwi";
@@ -71,6 +72,7 @@ export const DATA: DataContent[] = [
   DATA__ECOSTRESS_LAND_SURFACE_TEMPERATURE,
   DATA__GAIA,
   DATA__GPM_IMERG_PRECIPITATION,
+  DATA__HYDROSAR_S1_CLASSIFICATIONS,
   DATA__ICEYE_BACKSCATTER,
   DATA__LANDSAT_COLOR_INFRARED,
   DATA__LANDSAT_MNDWI,
