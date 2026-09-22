@@ -80,9 +80,7 @@ export const DATA__SENTINEL_2_NDVI_CHANGE: DataContent = {
       type: "text",
       heading: "Credits",
       headingLevel: "h3",
-      paragraphs: [
-        "NASA/GSFC, USGS, ESA Copernicus, NASA Disasters Program",
-      ],
+      paragraphs: ["NASA/GSFC, USGS, ESA Copernicus, NASA Disasters Program"],
     },
 
     {
