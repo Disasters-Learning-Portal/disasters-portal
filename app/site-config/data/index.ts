@@ -20,6 +20,8 @@ import { DATA__LANDSAT_NDVI } from "./data__landsat-ndvi";
 import { DATA__LANDSAT_TRUE_COLOR } from "./data__landsat-true-color";
 import { DATA__NISAR_GUNW_DISPLACEMENT } from "./data__nisar-gunw-displacement";
 import { DATA__OPERA_DISP_S1_COHERENCE } from "./data__opera-disp-s1-coherence";
+import { DATA__OPERA_DIST_ALERT_DIST_VEG_ANOM } from "./data__opera-dist-alert-dist-veg-anom";
+import { DATA__OPERA_DIST_ALERT_DIST_VEG_STATUS } from "./data__opera-dist-alert-dist-veg-status";
 import { DATA__OPERA_DIST_ALERT_GEN_DIST_STATUS } from "./data__opera-dist-alert-gen-dist-status";
 import { DATA__OPERA_DIST_S1 } from "./data__opera-dist-s1";
 import { DATA__OPERA_DSWX } from "./data__opera-dswx";
