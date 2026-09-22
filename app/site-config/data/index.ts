@@ -20,6 +20,9 @@ import { DATA__LANDSAT_NDVI } from "./data__landsat-ndvi";
 import { DATA__LANDSAT_TRUE_COLOR } from "./data__landsat-true-color";
 import { DATA__NISAR_GUNW_DISPLACEMENT } from "./data__nisar-gunw-displacement";
 import { DATA__OPERA_DISP_S1_COHERENCE } from "./data__opera-disp-s1-coherence";
+import { DATA__OPERA_DISP_S1_RNG } from "./data__opera-disp-s1-rng";
+import { DATA__OPERA_DISP_S1_UNW } from "./data__opera-disp-s1-unw";
+import { DATA__OPERA_DISP_S1_WRP } from "./data__opera-disp-s1-wrp";
 import { DATA__OPERA_DIST_ALERT_DIST_VEG_ANOM } from "./data__opera-dist-alert-dist-veg-anom";
 import { DATA__OPERA_DIST_ALERT_DIST_VEG_STATUS } from "./data__opera-dist-alert-dist-veg-status";
 import { DATA__OPERA_DIST_ALERT_GEN_DIST_STATUS } from "./data__opera-dist-alert-gen-dist-status";
@@ -77,6 +80,9 @@ export const DATA: DataContent[] = [
   DATA__LANDSAT_TRUE_COLOR,
   DATA__NISAR_GUNW_DISPLACEMENT,
   DATA__OPERA_DISP_S1_COHERENCE,
+  DATA__OPERA_DISP_S1_RNG,
+  DATA__OPERA_DISP_S1_UNW,
+  DATA__OPERA_DISP_S1_WRP,
   DATA__OPERA_DIST_ALERT_DIST_VEG_ANOM,
   DATA__OPERA_DIST_ALERT_DIST_VEG_STATUS,
   DATA__OPERA_DIST_ALERT_GEN_DIST_STATUS,

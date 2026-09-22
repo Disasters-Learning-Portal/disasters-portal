@@ -11,12 +11,12 @@ export const DATA__OPERA_DIST_ALERT_DIST_VEG_ANOM: DataContent = {
     "The OPERA Land Surface Disturbance Alert (DIST-ALERT) VEG-ANOM-MAX layer reports the maximum observed decrease in vegetation cover relative to a historical baseline using Harmonized Landsat Sentinel-2 observations.",
 
   thumbnailImage: {
-    src: "/img/data/aria-dist-veg-anom.webp",
+    src: "/img/data/opera-dist-alert-dist-veg-anom.webp",
     alt: "OPERA DIST-ALERT maximum vegetation anomaly imagery",
   },
 
   mastheadImage: {
-    src: "/img/data/aria-dist-veg-anom.webp",
+    src: "/img/data/opera-dist-alert-dist-veg-anom.webp",
     alt: "OPERA DIST-ALERT maximum vegetation anomaly imagery",
   },
 
