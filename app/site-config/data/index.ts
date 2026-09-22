@@ -33,6 +33,7 @@ import { DATA__SENTINEL_1_SENTINEL_2_BURN_SEVERITY } from "./data__sentinel-1-se
 import { DATA__SENTINEL_2_COLOR_INFRARED } from "./data__sentinel-2-color-infrared";
 import { DATA__SENTINEL_2_DNBR } from "./data__sentinel-2-dnbr";
 import { DATA__SENTINEL_2_MNDWI } from "./data__sentinel-2-mndwi";
+import { DATA__SENTINEL_2_NATURAL_COLOR } from "./data__sentinel-2-natural-color";
 import { DATA__SENTINEL_2_NBR } from "./data__sentinel-2-nbr";
 import { DATA__SENTINEL_2_NDVI } from "./data__sentinel-2-ndvi";
 import { DATA__SENTINEL_2_SWIR } from "./data__sentinel-2-swir";
@@ -81,6 +82,7 @@ export const DATA: DataContent[] = [
   DATA__SENTINEL_2_COLOR_INFRARED,
   DATA__SENTINEL_2_DNBR,
   DATA__SENTINEL_2_MNDWI,
+  DATA__SENTINEL_2_NATURAL_COLOR,
   DATA__SENTINEL_2_NBR,
   DATA__SENTINEL_2_NDVI,
   DATA__SENTINEL_2_SWIR,
