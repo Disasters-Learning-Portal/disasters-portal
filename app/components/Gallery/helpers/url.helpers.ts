@@ -1,28 +1,15 @@
-import { CONTENT_TYPES, type ContentType } from "@/app/site-config/types";
 import { FACET_PARAMS, parseFacets, setFacetParams } from "./facets.helpers";
 import type { FilterState } from "./filters.helpers";
 
 export const QUERY_PARAM = "q";
-export const CONTENT_TYPE_PARAM = "contenttype";
 export const PAGE_PARAM = "page";
-export const PRESERVED_PARAMS: readonly string[] = [
-  QUERY_PARAM,
-  CONTENT_TYPE_PARAM,
-  PAGE_PARAM,
-  ...FACET_PARAMS,
-];
+export const PRESERVED_PARAMS: readonly string[] = [QUERY_PARAM, PAGE_PARAM, ...FACET_PARAMS];
 
 export function parseFilters(params: URLSearchParams): FilterState {
   return {
     query: params.get(QUERY_PARAM)?.trim() ?? "",
-    contentType: parseContentType(params.get(CONTENT_TYPE_PARAM)),
     facets: parseFacets(params),
   };
-}
-
-/** Unknown values mean "no filter" so stale links fall back to the unfiltered gallery. */
-function parseContentType(value: string | null): ContentType | null {
-  return value !== null && value in CONTENT_TYPES ? (value as ContentType) : null;
 }
 
 export function parsePageParam(params: URLSearchParams): number {
