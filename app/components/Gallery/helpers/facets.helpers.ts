@@ -116,6 +116,16 @@ export function toggleFacetValue(
   return { ...facets, [key]: next } as FacetSelection;
 }
 
+/** Flattened in registry order, so pills render in a stable sequence. */
+export function listSelectedFacetValues(
+  facets: FacetSelection,
+): { key: keyof FacetSelection; value: string }[] {
+  return FACET_KEYS.flatMap((key) => {
+    const selected: readonly string[] = facets[key];
+    return selected.map((value) => ({ key, value }));
+  });
+}
+
 export type FacetOptionGroup = {
   key: keyof FacetSelection;
   param: string;
