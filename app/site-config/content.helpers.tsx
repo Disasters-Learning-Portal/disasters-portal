@@ -20,14 +20,14 @@ export const makeSimpleTagProps = (tag: string) => ({
   children: tag,
 });
 
-// Tag takes its text as `children`, Cards take it as `label`.
-export const toCardTagProps = <T extends { children: string }>({ children, ...rest }: T) => ({
+// Tag takes its text as `children`, a Card wants it as `label`.
+const childrenToLabel = <T extends { children: string }>({ children, ...rest }: T) => ({
   label: children,
   ...rest,
 });
 
 // A masthead is a Card, and its tag is a date or a status.
-export const makeMastheadTagProps = (label: string) => toCardTagProps(makeSimpleTagProps(label));
+export const makeMastheadTagProps = (label: string) => childrenToLabel(makeSimpleTagProps(label));
 
 export const makeThemeTagProps = (tag: Theme) => {
   const { label, color, textColor } = CONTENT_THEMES[tag];
@@ -163,6 +163,21 @@ export const makeGalleryCardContent = (content: Content): GalleryCardContent => 
   return isInternalContent(content) ? base : { ...base, url: content.url };
 };
 
+const makeCardCTAProps = ({
+  id,
+  contentType,
+  url,
+}: {
+  id: string;
+  contentType: ContentType;
+  url?: string;
+}) => ({
+  href: url ? url : `${CONTENT_TYPES[contentType].route}/${id}`,
+  label: `View ${toTitleCase(CONTENT_TYPES[contentType].label)}`,
+  isExternal: !!url,
+  as: AppLink,
+});
+
 export const makeCardDetailedProps = ({
   id,
   contentType,
@@ -189,13 +204,8 @@ export const makeCardDetailedProps = ({
         ...(categories ?? []).map((c) => makeSimpleTagProps(c)),
         makeContentTypeTagProps(contentType),
       ]
-  ).map(toCardTagProps),
-  callToAction: {
-    href: url ? url : `${CONTENT_TYPES[contentType].route}/${id}`,
-    label: `View ${toTitleCase(CONTENT_TYPES[contentType].label)}`,
-    isExternal: !!url,
-    as: AppLink,
-  },
+  ).map(childrenToLabel),
+  callToAction: makeCardCTAProps({ id, contentType, url }),
   ...rest,
 });
 
@@ -219,13 +229,8 @@ export const makeCardDetailedImageLeftProps = ({
         ...(categories ?? []).map((c) => makeSimpleTagProps(c)),
         makeContentTypeTagProps(contentType),
       ]
-  ).map(toCardTagProps),
-  callToAction: {
-    href: url ? url : `${CONTENT_TYPES[contentType].route}/${id}`,
-    label: `View ${toTitleCase(CONTENT_TYPES[contentType].label)}`,
-    isExternal: !!url,
-    as: AppLink,
-  },
+  ).map(childrenToLabel),
+  callToAction: makeCardCTAProps({ id, contentType, url }),
   ...rest,
 });
 
@@ -255,7 +260,7 @@ export const makeCardSimpleProps = ({
 }: CardSimplePropsArgs): IterableItemWithId<CardSimpleProps<typeof AppLink>> => ({
   id,
   image: <AppImage {...thumbnailImage} fill sizes="(max-width: 1400px) 100vw, 1400px" />,
-  tag: toCardTagProps(
+  tag: childrenToLabel(
     tag
       ? makeSimpleTagProps(tag)
       : themes?.[0]
@@ -296,13 +301,8 @@ export const makeCardCarouselProps = ({
       sizes="(max-width: 640px) 100vw, (max-width: 1400px) 50vw, 700px"
     />
   ),
-  tag: toCardTagProps(makeContentTypeTagProps(contentType)),
-  callToAction: {
-    href: url ? url : `${CONTENT_TYPES[contentType].route}/${id}`,
-    label: `View ${toTitleCase(CONTENT_TYPES[contentType].label)}`,
-    isExternal: !!url,
-    as: AppLink,
-  },
+  tag: childrenToLabel(makeContentTypeTagProps(contentType)),
+  callToAction: makeCardCTAProps({ id, contentType, url }),
   imagePosition: "cover",
   colorMode: "dark",
   ...rest,
