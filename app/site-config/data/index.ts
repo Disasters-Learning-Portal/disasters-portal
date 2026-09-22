@@ -25,6 +25,7 @@ import { DATA__OPERA_DIST_ALERT_DIST_VEG_STATUS } from "./data__opera-dist-alert
 import { DATA__OPERA_DIST_ALERT_GEN_DIST_STATUS } from "./data__opera-dist-alert-gen-dist-status";
 import { DATA__OPERA_DIST_S1 } from "./data__opera-dist-s1";
 import { DATA__OPERA_DSWX } from "./data__opera-dswx";
+import { DATA__OPERA_RTC_RGB_MOSAIC } from "./data__opera-rtc-rgb-mosaic";
 import { DATA__PLANET_NDVI } from "./data__planet-ndvi";
 import { DATA__PLANET_NDVI_CHANGE } from "./data__planet-ndvi-change";
 import { DATA__PLANET_TRUE_COLOR } from "./data__planet-true-color";
@@ -79,6 +80,7 @@ export const DATA: DataContent[] = [
   DATA__OPERA_DIST_ALERT_GEN_DIST_STATUS,
   DATA__OPERA_DIST_S1,
   DATA__OPERA_DSWX,
+  DATA__OPERA_RTC_RGB_MOSAIC,
   DATA__PLANET_NDVI,
   DATA__PLANET_NDVI_CHANGE,
   DATA__PLANET_TRUE_COLOR,
