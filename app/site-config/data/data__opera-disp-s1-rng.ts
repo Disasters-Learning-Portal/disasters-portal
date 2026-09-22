@@ -24,11 +24,7 @@ export const DATA__OPERA_DISP_S1_RNG: DataContent = {
 
   categories: ["earthquake"],
 
-  relatedContent: [
-    "opera-disp-s1-coherence",
-    "opera-disp-s1-wrp",
-    "opera-disp-s1-unw",
-  ],
+  relatedContent: ["opera-disp-s1-coherence", "opera-disp-s1-wrp", "opera-disp-s1-unw"],
 
   body: [
     {
