@@ -24,10 +24,7 @@ export const DATA__OPERA_DIST_ALERT_DIST_VEG_ANOM: DataContent = {
 
   categories: ["flood", "fire", "severe weather"],
 
-  relatedContent: [
-    "aria-dist-veg-status",
-    "opera-dist-alert-gen-dist-status",
-  ],
+  relatedContent: ["aria-dist-veg-status", "opera-dist-alert-gen-dist-status"],
 
   body: [
     {
