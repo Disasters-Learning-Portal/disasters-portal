@@ -22,6 +22,8 @@ import { DATA__NISAR_GUNW_DISPLACEMENT } from "./data__nisar-gunw-displacement";
 import { DATA__OPERA_DISP_S1_COHERENCE } from "./data__opera-disp-s1-coherence";
 import { DATA__OPERA_DIST_ALERT_GEN_DIST_STATUS } from "./data__opera-dist-alert-gen-dist-status";
 import { DATA__OPERA_DIST_S1 } from "./data__opera-dist-s1";
+import { DATA__PLANET_NDVI } from "./data__planet-ndvi";
+import { DATA__PLANET_NDVI_CHANGE } from "./data__planet-ndvi-change";
 import { DATA__PLANET_TRUE_COLOR } from "./data__planet-true-color";
 import { DATA__SATELLOGIC_COLOR_INFRARED } from "./data__satellogic-color-infrared";
 import { DATA__SATELLOGIC_TRUE_COLOR } from "./data__satellogic-true-color";
@@ -67,6 +69,8 @@ export const DATA: DataContent[] = [
   DATA__OPERA_DISP_S1_COHERENCE,
   DATA__OPERA_DIST_ALERT_GEN_DIST_STATUS,
   DATA__OPERA_DIST_S1,
+  DATA__PLANET_NDVI,
+  DATA__PLANET_NDVI_CHANGE,
   DATA__PLANET_TRUE_COLOR,
   DATA__SATELLOGIC_COLOR_INFRARED,
   DATA__SATELLOGIC_TRUE_COLOR,
