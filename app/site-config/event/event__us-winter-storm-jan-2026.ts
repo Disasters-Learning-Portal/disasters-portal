@@ -5,7 +5,7 @@ export const EVENT__US_WINTER_STORM_2026: EventContent = {
   id: "us-winter-storm-jan-2026",
   contentType: "event",
   title: "U.S. Winter Storm January 2026",
-  lastUpdatedDate: "2026-01-28",
+  dateUpdated: "2026-01-28",
   thumbnailImage: {
     src: "/img/event/us-winter-storm-jan-2026.webp",
     alt: "Hazard pattern swirls in shades of blue",

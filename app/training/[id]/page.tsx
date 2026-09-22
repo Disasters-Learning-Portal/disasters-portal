@@ -15,8 +15,8 @@ export default async function TrainingItemPage(props: PageProps<"/training/[id]"
 
   if (!contentItem) notFound();
 
-  const { contentType, date, mastheadImage, title, themes, categories, body } = contentItem;
-  const tag = makeMastheadTagProps(`Updated: ${toStyleDate(date)}`);
+  const { contentType, dateUpdated, mastheadImage, title, themes, categories, body } = contentItem;
+  const tag = makeMastheadTagProps(`Updated: ${toStyleDate(dateUpdated)}`);
 
   return (
     <ContentPageLayout

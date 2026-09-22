@@ -26,9 +26,9 @@ export default async function NewsEventsStoriesItemPage(
 
   if (!contentItem) notFound();
 
-  const { contentType, title, mastheadImage, themes, categories, body } = contentItem;
+  const { contentType, title, mastheadImage, themes, categories, body, datePublished } =
+    contentItem;
   const isEvent = contentItem.contentType === "event";
-  const date = "date" in contentItem ? contentItem.date : undefined;
 
   return (
     <ContentPageLayout
@@ -38,7 +38,9 @@ export default async function NewsEventsStoriesItemPage(
           : makeCardMastHeadProps({
               mastheadImage,
               title,
-              tag: date ? makeMastheadTagProps(`Published: ${toStyleDate(date)}`) : undefined,
+              tag: datePublished
+                ? makeMastheadTagProps(`Published: ${toStyleDate(datePublished)}`)
+                : undefined,
             })
       }
       contentType={contentType}

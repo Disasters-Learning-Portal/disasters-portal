@@ -23,15 +23,13 @@ export const transformEventToCardSimpleProps = (
 };
 
 export const transformEventToPageMastHeadProps = (event: EventContent): CardProps => {
-  const { lastUpdatedDate, mastheadImage, title, description } = event;
+  const { dateUpdated, mastheadImage, title, description } = event;
 
   return makeCardMastHeadProps({
     mastheadImage,
     title,
     description,
-    tag: lastUpdatedDate
-      ? makeMastheadTagProps(`Updated: ${toStyleDate(lastUpdatedDate)}`)
-      : undefined,
+    tag: dateUpdated ? makeMastheadTagProps(`Updated: ${toStyleDate(dateUpdated)}`) : undefined,
   });
 };
 

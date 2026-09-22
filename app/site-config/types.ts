@@ -137,7 +137,25 @@ export type ContentBlock =
       card: CardFeaturedPropsArgs;
     };
 
-export type InternalCardContent = {
+type OneToNine = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
+type ZeroToNine = 0 | OneToNine;
+type YYYY = `20${ZeroToNine}${ZeroToNine}`;
+type MM = `0${OneToNine}` | `1${0 | 1 | 2}`;
+type DD = `0${OneToNine}` | `${1 | 2}${ZeroToNine}` | `3${0 | 1}`;
+
+/**
+ * Checks shape, not the calendar: 2026-02-30 passes. Years stay at 20xx to keep
+ * the union small enough for TypeScript to represent (ts2590).
+ */
+export type DateString = `${YYYY}-${MM}-${DD}`;
+
+/** News, stories and data stories are published. Training and events are updated. */
+export type ContentDates = {
+  datePublished?: DateString;
+  dateUpdated?: DateString;
+};
+
+export type InternalCardContent = ContentDates & {
   id: string;
   contentType: ContentType;
   title: string;
@@ -156,7 +174,7 @@ export type GalleryCardContent = InternalCardContent | ExternalCardContent;
 
 export type TrainingContent = Omit<InternalCardContent, "contentType"> & {
   contentType: "training";
-  date: string;
+  dateUpdated: DateString;
   mastheadImage: MastheadImage;
   body?: ContentBlock[]; // TODO: require body
   relatedContent?: string[];
@@ -177,21 +195,18 @@ export type DataContent = Omit<InternalCardContent, "contentType"> & {
 
 export type NewsContent = Omit<InternalCardContent, "contentType"> & {
   contentType: "news";
-  date?: string;
   mastheadImage: MastheadImage;
   body?: ContentBlock[]; // TODO: require body
 };
 
 export type StoryContent = Omit<InternalCardContent, "contentType"> & {
   contentType: "story";
-  date?: string;
   mastheadImage: MastheadImage;
   body?: ContentBlock[]; // TODO: require body
 };
 
 export type DataStoryContent = Omit<InternalCardContent, "contentType"> & {
   contentType: "datastory";
-  date?: string;
   mastheadImage: MastheadImage;
   body?: ContentBlock[]; // TODO: require body
 };
@@ -204,8 +219,7 @@ export type EventContent = Omit<InternalCardContent, "contentType"> & {
   contentType: "event";
   mastheadImage: MastheadImage;
   isLatest?: boolean;
-  lastUpdatedDate?: string;
-  startDate: string;
+  startDate: DateString;
   region: string;
   linkDHSFEMA?: { label: string; href: string };
   linkUSGovernment?: { label: string; href: string };
