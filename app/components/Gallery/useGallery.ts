@@ -3,8 +3,17 @@
 import { usePathname, useSearchParams } from "next/navigation";
 import { useMemo } from "react";
 import type { GalleryCardContent } from "@/app/site-config/types";
-import { collectAvailableFacets, type FacetSelection } from "./helpers/facets.helpers";
-import { applyFilters, type FilterState } from "./helpers/filters.helpers";
+import {
+  collectAvailableFacets,
+  EMPTY_FACETS,
+  type FacetSelection,
+} from "./helpers/facets.helpers";
+import {
+  type AppliedFilter,
+  applyFilters,
+  buildAppliedFilters,
+  type FilterState,
+} from "./helpers/filters.helpers";
 import { getPaginationState } from "./helpers/pagination.helpers";
 import {
   buildFiltersUrl,
@@ -33,6 +42,10 @@ export type UseGalleryResult = {
   setFacets: (facets: FacetSelection) => void;
   /** Facet values present in the data; the filter UI only offers these. */
   availableFacets: FacetSelection;
+  /** Pills for the applied query and facet values, in display order. */
+  appliedFilters: AppliedFilter[];
+  /** Clears the query and every facet in one URL write. */
+  clearAllFilters: () => void;
 };
 
 /**
@@ -72,5 +85,7 @@ export function useGallery(items: GalleryCardContent[]): UseGalleryResult {
     facets: filters.facets,
     setFacets: (facets) => setFilters({ ...filters, facets }),
     availableFacets: collectAvailableFacets(items),
+    appliedFilters: buildAppliedFilters(filters, setFilters),
+    clearAllFilters: () => setFilters({ query: "", facets: EMPTY_FACETS }),
   };
 }

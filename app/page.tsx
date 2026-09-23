@@ -7,13 +7,11 @@ import {
   SectionHeading,
 } from "@/app/components";
 
-import "./styles/home.css";
-
 import { makeCardSimpleProps } from "./site-config/content.helpers";
 import { MOCK_CARD_LETSCONNECT } from "./site-config/home/home-card-lets_connect";
 import { MOCK_CARD_MASTHEAD } from "./site-config/home/home-card-masthead";
 import { HOME_CONTENT } from "./site-config/home/home-content";
-import { NEWS_EVENTS_CARDS } from "./site-config/home/home-sectioncardmosaic-news-events";
+import { NEWS_EVENTS_STORIES_CARDS } from "./site-config/home/home-sectioncardmosaic-news-events-stories";
 import { RESOURCES_LEARNING_CARDS } from "./site-config/home/home-sectioncardsimple-resources-learning";
 import { typedMap } from "./site-config/typed.helpers";
 
@@ -24,8 +22,10 @@ export default function Home() {
         <Card {...MOCK_CARD_MASTHEAD} />
       </div>
       <SectionCardSimpleMosaic
-        sectionHeading={<SectionHeading href="/news-events">News & Events</SectionHeading>}
-        cards={typedMap(NEWS_EVENTS_CARDS, makeCardSimpleProps)}
+        sectionHeading={
+          <SectionHeading href="/news-events-stories">News, Events & Stories</SectionHeading>
+        }
+        cards={typedMap(NEWS_EVENTS_STORIES_CARDS, makeCardSimpleProps)}
       />
       {HOME_CONTENT.map((block, index) => (
         // biome-ignore lint/suspicious/noArrayIndexKey: static content, never reorders

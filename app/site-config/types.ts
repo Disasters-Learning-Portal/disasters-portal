@@ -13,23 +13,21 @@ import type {
 
 export const CONTENT_TYPES: Record<ContentType, { route: AppRoutes; label: string }> = {
   data: { route: "/data-gallery", label: "data" },
-  event: { route: "/news-events", label: "event" },
-  news: { route: "/news-events", label: "news" },
-  story: { route: "/news-events", label: "story" },
-  datastory: { route: "/news-events", label: "data story" },
+  event: { route: "/news-events-stories", label: "event" },
+  news: { route: "/news-events-stories", label: "news" },
+  story: { route: "/news-events-stories", label: "story" },
+  datastory: { route: "/news-events-stories", label: "data story" },
   training: { route: "/training", label: "training" },
 };
 
-export const CONTENT_THEMES: Record<Theme, { label: string; color: string; textColor?: string }> = {
+export const CONTENT_THEMES: Record<Theme, { label: string; color?: string }> = {
   respond: {
     label: "respond",
     color: "secondary",
-    textColor: "white",
   },
   build: {
     label: "build resilience",
     color: "success",
-    textColor: "white",
   },
   prepare: {
     label: "prepare",
@@ -38,7 +36,6 @@ export const CONTENT_THEMES: Record<Theme, { label: string; color: string; textC
   recover: {
     label: "recover",
     color: "accent-cool",
-    textColor: "white",
   },
 };
 
@@ -71,7 +68,7 @@ export const CONTENT_CATEGORIES = [
 
 export type Category = (typeof CONTENT_CATEGORIES)[number];
 
-export type GalleryRoute = "/data-gallery" | "/news-events" | "/training"; // TODO: update to be dynamic
+export type GalleryRoute = "/data-gallery" | "/news-events-stories" | "/training"; // TODO: update to be dynamic
 
 type GeoConfig = Omit<GeoConfigProviderProps, "children">;
 
@@ -171,6 +168,8 @@ export type DataContent = Omit<InternalCardContent, "contentType"> & {
   mastheadImage: MastheadImage;
   body?: ContentBlock[]; // TODO: require body
   relatedContent?: string[];
+  /** The sidebar CTA renders only when this is set. */
+  exploreDataUrl?: string;
 };
 
 export type NewsContent = Omit<InternalCardContent, "contentType"> & {
