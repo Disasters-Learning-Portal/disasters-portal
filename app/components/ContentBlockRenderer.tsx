@@ -169,14 +169,19 @@ export const ContentBlockRenderer = ({
       );
 
     case "sectionCardSimple": {
-      const cards = block.cards.map(({ id, contentType, themes, thumbnailImage, title, ...rest }) =>
-        makeCardSimpleProps({
-          id,
-          contentType,
-          themes,
-          thumbnailImage,
-          title,
-          url: "url" in rest ? rest.url : undefined,
+      const cards = block.cards.map(
+        ({ id, contentType, themes, thumbnailImage, title, ...rest }) => ({
+          ...makeCardSimpleProps({
+            id,
+            contentType,
+            themes,
+            thumbnailImage,
+            title,
+            url: "url" in rest ? rest.url : undefined,
+          }),
+          // Card titles sit under the block's h2 section heading.
+          // This should enforce that they sit at h3.
+          titleAs: "h3" as const,
         }),
       );
 
@@ -201,7 +206,10 @@ export const ContentBlockRenderer = ({
           makeCardDetailedImageLeftProps({
             id,
             contentType,
-            title,
+            // The section heading is h2, so card titles must be h3.
+            // CardDetailed has no titleAs option. This should be dropped if
+            // it ever becomes available.
+            title: <h3 className="blocks-card-detailed__title">{title}</h3>,
             description,
             thumbnailImage,
             themes,
@@ -229,7 +237,13 @@ export const ContentBlockRenderer = ({
       return (
         <SectionCardFeatured
           isMultiColumnLayout={isMultiColumnLayout}
-          card={makeCardFeaturedProps(block.card)}
+          card={makeCardFeaturedProps({
+            ...block.card,
+            // The section heading is h2, so card titles must be h3.
+            // Card has no titleAs option. This should be dropped if
+            // it ever becomes available.
+            title: <h3 className="blocks-card__title">{block.card.title}</h3>,
+          })}
         />
       );
   }

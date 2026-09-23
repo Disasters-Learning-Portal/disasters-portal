@@ -1,4 +1,4 @@
-import type { CardProps } from "@teamimpact/veda-ui-blocks";
+import { type CardProps, InPageNavigation } from "@teamimpact/veda-ui-blocks";
 import type { ReactNode } from "react";
 import { ContentBlockRenderer } from "@/app/components/ContentBlockRenderer";
 import { PageMasthead } from "@/app/components/PageMasthead";
@@ -6,6 +6,8 @@ import { PageSidebar, type RelatedItem } from "@/app/components/PageSidebar";
 import { PageStatus } from "@/app/components/PageStatus";
 import { Section } from "@/app/components/Section";
 import type { Category, ContentBlock, ContentType, Theme } from "@/app/site-config/types";
+
+const PAGE_CONTENT_ID = "page-content";
 
 /** Shared layout for data, story, news, datastory, event and training detail pages. */
 export function ContentPageLayout({
@@ -50,9 +52,10 @@ export function ContentPageLayout({
                 relatedContent={relatedContent}
                 exploreDataUrl={exploreDataUrl}
               />
+              <InPageNavigation data-main-content-selector={`#${PAGE_CONTENT_ID}`} />
             </div>
 
-            <div className="grid-col-12 desktop:grid-col-9">
+            <div id={PAGE_CONTENT_ID} className="grid-col-12 desktop:grid-col-9">
               {children}
               {/* Cancels the first block's own top margin, aligning the body with the sidebar. */}
               <div className="margin-top-neg-7">
