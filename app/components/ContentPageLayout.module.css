@@ -1,0 +1,16 @@
+/*
+ * Keeps the nav and the sidebar pinned together below the sticky header on
+ * desktop. The offset is the same one the hds theme gives the in-page nav
+ * ($theme-in-page-nav-top: 10, also html scroll-padding-top). The library does
+ * not expose it as a custom property yet, so we bind to the same unit token.
+ * 64em is the USWDS desktop breakpoint, where the column sits beside the body.
+ */
+@media (min-width: 64em) {
+  .aside {
+    --nav-top: var(--unit-10, 5rem);
+    position: sticky;
+    top: var(--nav-top);
+    max-height: calc(100vh - var(--nav-top));
+    overflow-y: auto;
+  }
+}

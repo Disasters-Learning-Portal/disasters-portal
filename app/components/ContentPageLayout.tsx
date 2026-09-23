@@ -6,6 +6,7 @@ import { PageSidebar, type RelatedItem } from "@/app/components/PageSidebar";
 import { PageStatus } from "@/app/components/PageStatus";
 import { Section } from "@/app/components/Section";
 import type { Category, ContentBlock, ContentType, Theme } from "@/app/site-config/types";
+import styles from "./ContentPageLayout.module.css";
 
 const PAGE_CONTENT_ID = "page-content";
 
@@ -45,14 +46,21 @@ export function ContentPageLayout({
         <Section>
           <div className="grid-row grid-gap">
             <div className="grid-col-12 desktop:grid-col-3">
-              <PageSidebar
-                contentType={contentType}
-                themes={themes}
-                categories={categories}
-                relatedContent={relatedContent}
-                exploreDataUrl={exploreDataUrl}
-              />
-              <InPageNavigation data-main-content-selector={`#${PAGE_CONTENT_ID}`} />
+              <div className={styles.aside}>
+                <InPageNavigation
+                  // disable the default sticky behavior of the nav as it
+                  // would conflict with the scrolling column.
+                  className="position-static"
+                  data-main-content-selector={`#${PAGE_CONTENT_ID}`}
+                />
+                <PageSidebar
+                  contentType={contentType}
+                  themes={themes}
+                  categories={categories}
+                  relatedContent={relatedContent}
+                  exploreDataUrl={exploreDataUrl}
+                />
+              </div>
             </div>
 
             <div id={PAGE_CONTENT_ID} className="grid-col-12 desktop:grid-col-9">
