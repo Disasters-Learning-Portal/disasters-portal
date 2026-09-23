@@ -11,7 +11,6 @@ import {
   CONTENT_THEMES,
   CONTENT_TYPES,
   type Content,
-  type ContentDates,
   type ContentType,
   type DateString,
   type GalleryCardContent,
@@ -45,8 +44,8 @@ const childrenToLabel = <T extends { children: string }>({ children, ...rest }: 
   ...rest,
 });
 
-const makeDateTagProps = (prefix: "Published" | "Updated", date: DateString) =>
-  childrenToLabel(makeTextTagProps(`${prefix}: ${toNASAStyleDate(date)}`));
+const makeDateTagProps = (date: DateString) =>
+  childrenToLabel(makeTextTagProps(`Published: ${toNASAStyleDate(date)}`));
 
 export const makeThemeTagProps = (tag: Theme) => {
   const { label } = CONTENT_THEMES[tag];
@@ -61,29 +60,26 @@ export const makeContentTypeTagProps = (tag: ContentType) => {
 export type CardMastheadPropsArgs = Omit<
   CardProps,
   "title" | "image" | "colorMode" | "isMastHead" | "tag"
-> &
-  ContentDates & {
-    mastheadImage: {
-      alt: string;
-      src: string;
-    };
-    title?: string;
-    theme?: Theme;
+> & {
+  mastheadImage: {
+    alt: string;
+    src: string;
   };
+  title?: string;
+  theme?: Theme;
+  datePublished?: DateString;
+};
 
 export const makeCardMastHeadProps = ({
   mastheadImage,
   title,
   theme,
   datePublished,
-  dateUpdated,
   ...rest
 }: CardMastheadPropsArgs): CardProps => ({
   className: "blocks-card--contentpage",
   image: <AppImage {...mastheadImage} sizes="100vw" fill preload={true} />,
-  tag: datePublished
-    ? makeDateTagProps("Published", datePublished)
-    : dateUpdated && makeDateTagProps("Updated", dateUpdated),
+  tag: datePublished && makeDateTagProps(datePublished),
   ...(title || theme
     ? {
         title: (
