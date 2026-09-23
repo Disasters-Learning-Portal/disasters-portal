@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { ContentPageLayout } from "@/app/components";
 import {
   makeCardMastHeadProps,
-  makeSimpleTagProps,
+  makeTextTagProps,
   toLongDate,
 } from "@/app/site-config/content.helpers";
 
@@ -22,7 +22,7 @@ export default async function TrainingItemPage(props: PageProps<"/training/[id]"
       masthead={{
         ...makeCardMastHeadProps({ mastheadImage, title }),
         tag: (({ children: label, ...rest }) => ({ label, ...rest }))(
-          makeSimpleTagProps(`Updated ${toLongDate(date)}`),
+          makeTextTagProps(`Updated ${toLongDate(date)}`),
         ),
       }}
       contentType={contentType}

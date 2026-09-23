@@ -54,6 +54,7 @@ const MOCK_FEATURE_CTACARDS_SECTION = (
 );
 
 export const MOCK_CARD_MASTHEAD: CardProps = {
+  className: "blocks-card--homepage",
   image: (
     <AppVideo
       src="/img/home/home-card-hero-video.mp4"
@@ -68,8 +69,7 @@ export const MOCK_CARD_MASTHEAD: CardProps = {
   ),
   title: <h1 className="font-heading-3xl text-bold text-white margin-0">NASA Disasters PORTAL</h1>,
   description: "Empowering disaster insights with actionable Earth science information",
-
-  colorMode: "brand",
+  colorMode: "dark",
   isMastHead: true,
   children: MOCK_FEATURE_CTACARDS_SECTION,
 };

@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 import { AppLinkStyled } from "@/app/components/AppLink";
 import {
   makeContentTypeTagProps,
-  makeSimpleTagProps,
+  makeOutlineTagProps,
   makeThemeTagProps,
 } from "@/app/site-config/content.helpers";
 import {
@@ -51,7 +51,7 @@ export function PageSidebar({
             >
               <MetaGroup label="Type">
                 <div className="margin-right-1 margin-bottom-1">
-                  <Tag {...makeContentTypeTagProps(contentType)} />
+                  <Tag {...makeOutlineTagProps(makeContentTypeTagProps(contentType))} />
                 </div>
               </MetaGroup>
 
@@ -59,7 +59,7 @@ export function PageSidebar({
                 <MetaGroup label="Theme">
                   {themes.map((theme) => (
                     <div key={theme} className="margin-right-1 margin-bottom-1">
-                      <Tag {...makeThemeTagProps(theme)} />
+                      <Tag {...makeOutlineTagProps(makeThemeTagProps(theme))} />
                     </div>
                   ))}
                 </MetaGroup>
@@ -69,7 +69,7 @@ export function PageSidebar({
                 <MetaGroup label="Hazard">
                   {categories.map((category) => (
                     <div key={category} className="margin-right-1 margin-bottom-1">
-                      <Tag {...makeSimpleTagProps(category)} />
+                      <Tag {...makeOutlineTagProps(category)} />
                     </div>
                   ))}
                 </MetaGroup>
@@ -121,12 +121,12 @@ function RelatedContentItem({ item }: { item: RelatedItem }) {
       <div className="display-flex flex-wrap">
         {item.themes.map((theme) => (
           <div key={theme} className="margin-right-1 margin-bottom-1">
-            <Tag {...makeThemeTagProps(theme)} />
+            <Tag {...makeOutlineTagProps(makeThemeTagProps(theme))} />
           </div>
         ))}
         {item.categories.map((category) => (
           <div key={category} className="margin-right-1 margin-bottom-1">
-            <Tag {...makeSimpleTagProps(category)} />
+            <Tag {...makeOutlineTagProps(category)} />
           </div>
         ))}
       </div>
