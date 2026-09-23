@@ -3,7 +3,7 @@ import type { AppLink } from "@/app/components/AppLink";
 import {
   makeCardMastHeadProps,
   makeCardSimpleProps,
-  makeSimpleTagProps,
+  makeTextTagProps,
   toLongDate,
   toTitleCase,
 } from "@/app/site-config/content.helpers";
@@ -31,7 +31,7 @@ export const transformEventToPageMastHeadProps = (event: EventContent): CardProp
     description,
     tag: lastUpdatedDate
       ? (({ children, ...rest }) => ({ label: children, ...rest }))(
-          makeSimpleTagProps(`Updated: ${toLongDate(lastUpdatedDate)}`),
+          makeTextTagProps(`Updated: ${toLongDate(lastUpdatedDate)}`),
         )
       : undefined,
   });

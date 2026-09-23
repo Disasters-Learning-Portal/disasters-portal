@@ -19,7 +19,7 @@ Use `AppLink` or `AppLinkStyled` instead of native anchors to ensure basepaths a
 
 Use `AppImage` and `AppVideo` instead of NextImage or native elements. These components apply the base path (external URLs pass through unchanged). 
 
-Use root css vars for image path references in app css, as css does not have direct access to env vars to resolve a base path. See `layout.tsx` as an example that exposes a background image as the css var `--image-logo-emblem-url`.
+Use root css vars for image path references in app css, as css does not have direct access to env vars to resolve a base path. See `layout.tsx` as an example that exposes a background image as the css var `--image-logo-url`.
 
 Note, portal specific image assets live in `public/`. 
 

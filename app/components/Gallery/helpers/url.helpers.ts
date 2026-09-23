@@ -1,21 +1,15 @@
-import { CONTENT_TYPES, type ContentType } from "@/app/site-config/types";
+import { FACET_PARAMS, parseFacets, setFacetParams } from "./facets.helpers";
 import type { FilterState } from "./filters.helpers";
 
 export const QUERY_PARAM = "q";
-export const CONTENT_TYPE_PARAM = "contenttype";
 export const PAGE_PARAM = "page";
-export const PRESERVED_PARAMS = [QUERY_PARAM, CONTENT_TYPE_PARAM, PAGE_PARAM] as const;
+export const PRESERVED_PARAMS: readonly string[] = [QUERY_PARAM, PAGE_PARAM, ...FACET_PARAMS];
 
 export function parseFilters(params: URLSearchParams): FilterState {
   return {
     query: params.get(QUERY_PARAM)?.trim() ?? "",
-    contentType: parseContentType(params.get(CONTENT_TYPE_PARAM)),
+    facets: parseFacets(params),
   };
-}
-
-/** Unknown values mean "no filter" so stale links fall back to the unfiltered gallery. */
-function parseContentType(value: string | null): ContentType | null {
-  return value !== null && value in CONTENT_TYPES ? (value as ContentType) : null;
 }
 
 export function parsePageParam(params: URLSearchParams): number {
@@ -32,19 +26,21 @@ function withParams(
 ): string {
   const params = new URLSearchParams();
   for (const key of PRESERVED_PARAMS) {
-    const value = currentParams.get(key);
-    if (value !== null) params.set(key, value);
+    // getAll/append instead of get/set: facet params repeat (?theme=a&theme=b)
+    for (const value of currentParams.getAll(key)) {
+      params.append(key, value);
+    }
   }
   adjust(params);
   const queryString = params.toString();
   return queryString ? `?${queryString}` : pathname;
 }
 
-/** Href with the search applied. */
-export function buildSearchUrl(
+/** Href with the query and facets written; a filter change always restarts on the first page. */
+export function buildFiltersUrl(
   currentParams: URLSearchParams,
   pathname: string,
-  query: string,
+  { query, facets }: FilterState,
 ): string {
   return withParams(currentParams, pathname, (params) => {
     // an empty query removes the param entirely instead of leaving a dangling ?q=
@@ -53,8 +49,8 @@ export function buildSearchUrl(
     } else {
       params.delete(QUERY_PARAM);
     }
-    // a new search always restarts on the first page
     params.delete(PAGE_PARAM);
+    setFacetParams(params, facets);
   });
 }
 
