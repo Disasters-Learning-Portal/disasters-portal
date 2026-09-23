@@ -180,7 +180,7 @@ export const ContentBlockRenderer = ({
             url: "url" in rest ? rest.url : undefined,
           }),
           // Card titles sit under the block's h2 section heading.
-          // This should enforce they sit at h3.
+          // This should enforce that they sit at h3.
           titleAs: "h3" as const,
         }),
       );
