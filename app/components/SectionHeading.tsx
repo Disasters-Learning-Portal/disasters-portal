@@ -14,7 +14,7 @@ export const SectionHeading = ({ href, children, className, ...props }: SectionH
         {children}
       </h2>
       {href && (
-        <AppLinkStyled href={href} variant="arrow" size="lg">
+        <AppLinkStyled href={href} variant="arrow" color="secondary">
           View All
         </AppLinkStyled>
       )}
