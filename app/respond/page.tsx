@@ -46,6 +46,12 @@ export default function RespondPage() {
   return (
     <>
       <PageMasthead {...makeCardMastHeadProps({ subtitle, theme, mastheadImage })} />
+      <SectionCardSimpleMini
+        sectionHeading={
+          <SectionHeading href="/news-events-stories?type=event">Latest Events</SectionHeading>
+        }
+        cards={typedMap(RESPOND_EVENTS, transformEventToCardSimpleProps)}
+      />
       <SectionCardSimple
         sectionHeading={
           <SectionHeading href="/news-events-stories?type=story">Stories of Impact</SectionHeading>
@@ -56,12 +62,6 @@ export default function RespondPage() {
         // biome-ignore lint/suspicious/noArrayIndexKey: static content, never reorders
         <ContentBlockRenderer key={index} block={block} />
       ))}
-      <SectionCardSimpleMini
-        sectionHeading={
-          <SectionHeading href="/news-events-stories?type=event">Latest Events</SectionHeading>
-        }
-        cards={typedMap(RESPOND_EVENTS, transformEventToCardSimpleProps)}
-      />
       <SectionCardSimple
         sectionHeading={
           <SectionHeading href="/news-events-stories?type=datastory">Data Stories</SectionHeading>
