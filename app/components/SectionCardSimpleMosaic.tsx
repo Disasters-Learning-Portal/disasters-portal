@@ -27,19 +27,19 @@ export const SectionCardSimpleMosaic = ({
       <div className="grid-row grid-gap-2 margin-bottom-neg-2">
         {/* Featured card: full-width → desktop: 2 of 4 cols */}
         <div className="grid-col-12 desktop:grid-col-6 margin-bottom-2 height-card-md">
-          <CardSimple {...cards[0]} />
+          <CardSimple {...cards[0]} colorMode="dark" />
         </div>
         {/* Regular card: full-width → tablet: half → desktop: 1 of 4 cols */}
         <div className="grid-col-12 tablet:grid-col-6 desktop:grid-col-3 margin-bottom-2 height-card-md">
-          <CardSimple {...cards[1]} />
+          <CardSimple {...cards[1]} colorMode="dark" />
         </div>
         {/* Stacked half-height cards: full-width → tablet: half → desktop: 1 of 4 cols */}
         <div className="grid-col-12 tablet:grid-col-6 desktop:grid-col-3 margin-bottom-2 display-flex flex-column height-card-md">
           <div className="flex-1 margin-bottom-2">
-            <CardSimple {...cards[2]} size="sm" />
+            <CardSimple {...cards[2]} size="sm" colorMode="dark" />
           </div>
           <div className="flex-1">
-            <CardSimple {...cards[3]} size="sm" />
+            <CardSimple {...cards[3]} size="sm" colorMode="dark" />
           </div>
         </div>
       </div>
