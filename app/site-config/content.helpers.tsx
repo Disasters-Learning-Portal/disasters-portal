@@ -1,4 +1,9 @@
-import type { CardDetailedProps, CardProps, CardSimpleProps } from "@teamimpact/veda-ui-blocks";
+import type {
+  CardDetailedProps,
+  CardProps,
+  CardSimpleProps,
+  TagProps,
+} from "@teamimpact/veda-ui-blocks";
 import { AppImage } from "@/app/components/AppImage";
 import { AppLink } from "@/app/components/AppLink";
 import {
@@ -15,11 +20,23 @@ import {
 } from "@/app/site-config/types";
 import { isInternalContent, pickKeys } from "./typed.helpers";
 
-export const makeSimpleTagProps = (tag: string) => ({
-  variant: "solid" as const,
-  color: tag === "active" ? "secondary" : "primary-lighter",
-  textColor: tag === "active" ? "white" : "primary-dark",
+export const makeOutlineTagProps = (
+  tag: string,
+  tagProps?: Omit<TagProps, "variant" | "size" | "onClose" | "children">,
+) => ({
+  variant: "outline" as const,
+  borderColor: "base-light" as const,
   children: tag,
+  ...tagProps,
+});
+
+export const makeTextTagProps = (
+  tag: string,
+  tagProps?: Omit<TagProps, "variant" | "size" | "onClose" | "children">,
+) => ({
+  variant: "text" as const,
+  children: tag,
+  ...tagProps,
 });
 
 // Tag takes its text as `children`, a Card wants it as `label`.
@@ -29,21 +46,16 @@ const childrenToLabel = <T extends { children: string }>({ children, ...rest }: 
 });
 
 const makeDateTagProps = (prefix: "Published" | "Updated", date: DateString) =>
-  childrenToLabel(makeSimpleTagProps(`${prefix}: ${toNASAStyleDate(date)}`));
+  childrenToLabel(makeTextTagProps(`${prefix}: ${toNASAStyleDate(date)}`));
 
 export const makeThemeTagProps = (tag: Theme) => {
-  const { label, color, textColor } = CONTENT_THEMES[tag];
-  return { variant: "solid" as const, color, textColor, children: label };
+  const { label } = CONTENT_THEMES[tag];
+  return label;
 };
 
 export const makeContentTypeTagProps = (tag: ContentType) => {
   const { label } = CONTENT_TYPES[tag];
-  return {
-    variant: "solid" as const,
-    color: "primary-lighter",
-    textColor: "primary-dark",
-    children: label,
-  };
+  return label;
 };
 
 export type CardMastheadPropsArgs = Omit<
@@ -67,6 +79,7 @@ export const makeCardMastHeadProps = ({
   dateUpdated,
   ...rest
 }: CardMastheadPropsArgs): CardProps => ({
+  className: "blocks-card--contentpage",
   image: <AppImage {...mastheadImage} sizes="100vw" fill preload={true} />,
   tag: datePublished
     ? makeDateTagProps("Published", datePublished)
@@ -82,7 +95,7 @@ export const makeCardMastHeadProps = ({
         ),
       }
     : {}),
-  colorMode: "brand",
+  colorMode: "dark",
   isMastHead: true,
   ...rest,
 });
@@ -136,22 +149,6 @@ export const makeCardFeaturedProps = (
   };
 };
 
-export type CardDetailedPropsArgs = Omit<
-  CardDetailedProps,
-  "image" | "imagePosition" | "tags" | "callToAction"
-> & {
-  id: string;
-  contentType: ContentType;
-  thumbnailImage: {
-    alt: string;
-    src: string;
-  };
-  themes?: Theme[];
-  categories?: Category[];
-  tags?: (Theme | ContentType | Category)[];
-  url?: string;
-};
-
 /**
  * Project a content entry down to the card fields the Gallery needs.
  * Gallery is a client component, so pages (server components) can only
@@ -171,6 +168,21 @@ export const makeGalleryCardContent = (content: Content): GalleryCardContent => 
   return isInternalContent(content) ? base : { ...base, url: content.url };
 };
 
+export type CardDetailedPropsArgs = Omit<
+  CardDetailedProps,
+  "image" | "imagePosition" | "tags" | "callToAction"
+> & {
+  id: string;
+  contentType: ContentType;
+  thumbnailImage: {
+    alt: string;
+    src: string;
+  };
+  themes?: Theme[];
+  categories?: Category[];
+  url?: string;
+};
+
 const makeCardCTAProps = ({
   id,
   contentType,
@@ -186,11 +198,17 @@ const makeCardCTAProps = ({
   as: AppLink,
 });
 
+const makeCardTagProps = (themes: Theme[] = [], categories: Category[] = [], type: ContentType) =>
+  [
+    ...themes.map((t) => makeOutlineTagProps(makeThemeTagProps(t))),
+    ...categories.map((c) => makeOutlineTagProps(c)),
+    makeOutlineTagProps(makeContentTypeTagProps(type)),
+  ].map(childrenToLabel);
+
 export const makeCardDetailedProps = ({
   id,
   contentType,
   thumbnailImage,
-  tags,
   themes,
   categories,
   url,
@@ -205,14 +223,7 @@ export const makeCardDetailedProps = ({
     />
   ),
   imagePosition: "top",
-  tags: (tags
-    ? tags.map((t) => makeSimpleTagProps(t))
-    : [
-        ...(themes ?? []).map((t) => makeThemeTagProps(t)),
-        ...(categories ?? []).map((c) => makeSimpleTagProps(c)),
-        makeContentTypeTagProps(contentType),
-      ]
-  ).map(childrenToLabel),
+  tags: makeCardTagProps(themes, categories, contentType),
   callToAction: makeCardCTAProps({ id, contentType, url }),
   ...rest,
 });
@@ -221,7 +232,6 @@ export const makeCardDetailedImageLeftProps = ({
   id,
   contentType,
   thumbnailImage,
-  tags,
   themes,
   categories,
   url,
@@ -230,14 +240,7 @@ export const makeCardDetailedImageLeftProps = ({
   id,
   image: <AppImage {...thumbnailImage} fill sizes="200px" />,
   imagePosition: "left",
-  tags: (tags
-    ? tags.map((t) => makeSimpleTagProps(t))
-    : [
-        ...(themes ?? []).map((t) => makeThemeTagProps(t)),
-        ...(categories ?? []).map((c) => makeSimpleTagProps(c)),
-        makeContentTypeTagProps(contentType),
-      ]
-  ).map(childrenToLabel),
+  tags: makeCardTagProps(themes, categories, contentType),
   callToAction: makeCardCTAProps({ id, contentType, url }),
   ...rest,
 });
@@ -268,12 +271,14 @@ export const makeCardSimpleProps = ({
 }: CardSimplePropsArgs): IterableItemWithId<CardSimpleProps<typeof AppLink>> => ({
   id,
   image: <AppImage {...thumbnailImage} fill sizes="(max-width: 1400px) 100vw, 1400px" />,
+  colorMode: "dark",
+  // tag is set on active event
   tag: childrenToLabel(
     tag
-      ? makeSimpleTagProps(tag)
+      ? makeTextTagProps(tag)
       : themes?.[0]
-        ? makeThemeTagProps(themes[0])
-        : makeContentTypeTagProps(contentType),
+        ? makeTextTagProps(makeThemeTagProps(themes[0]))
+        : makeTextTagProps(makeContentTypeTagProps(contentType)),
   ),
   href: url ? url : `${CONTENT_TYPES[contentType].route}/${id}`,
   isExternal: !!url,
@@ -309,7 +314,7 @@ export const makeCardCarouselProps = ({
       sizes="(max-width: 640px) 100vw, (max-width: 1400px) 50vw, 700px"
     />
   ),
-  tag: childrenToLabel(makeContentTypeTagProps(contentType)),
+  tag: childrenToLabel(makeOutlineTagProps(makeContentTypeTagProps(contentType))),
   callToAction: makeCardCTAProps({ id, contentType, url }),
   imagePosition: "cover",
   colorMode: "dark",

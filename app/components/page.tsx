@@ -12,6 +12,7 @@ import {
   makeCardCarouselProps,
   makeCardDetailedImageLeftProps,
   makeCardSimpleProps,
+  makeOutlineTagProps,
   makeThemeTagProps,
 } from "@/app/site-config/content.helpers";
 import { DATA } from "@/app/site-config/data";
@@ -106,7 +107,8 @@ export default function ComponentsPage() {
               title,
               description,
               thumbnailImage,
-              tags: [...categories, ...themes],
+              themes,
+              categories,
             }),
         )}
       >
@@ -178,7 +180,7 @@ export default function ComponentsPage() {
         </div>
         {getTypedEntries(CONTENT_THEMES).map(([theme, _]) => (
           <div key={theme} className="grid-row flex-align-center margin-bottom-2">
-            <Tag {...makeThemeTagProps(theme)} />
+            <Tag {...makeOutlineTagProps(makeThemeTagProps(theme))} />
           </div>
         ))}
       </Section>

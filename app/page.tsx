@@ -7,8 +7,6 @@ import {
   SectionHeading,
 } from "@/app/components";
 
-import "./styles/home.css";
-
 import { makeCardSimpleProps } from "./site-config/content.helpers";
 import { MOCK_CARD_LETSCONNECT } from "./site-config/home/home-card-lets_connect";
 import { MOCK_CARD_MASTHEAD } from "./site-config/home/home-card-masthead";
