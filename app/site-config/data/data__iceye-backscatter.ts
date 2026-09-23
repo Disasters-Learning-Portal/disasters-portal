@@ -48,7 +48,8 @@ export const DATA__ICEYE_BACKSCATTER: DataContent = {
       heading: "Suggested Use",
       headingLevel: "h3",
       paragraphs: [
-        "ICEYE backscatter imagery can be used to assess surface conditions and identify changes associated with natural hazards, including flooding, tropical cyclone damage, wildfire impacts, severe storms, earthquakes, and winter weather. Because SAR is an active microwave imaging system, scenes can be collected day or night and through clouds, smoke, and rain that obscure optical imagery, which is especially valuable in the first days after an event. Smooth open water returns very little energy and appears dark, so comparing a post-event scene against a pre-event scene can highlight inundated areas, while changes in bright returns can indicate damage to buildings, vegetation, or infrastructure. Radar backscatter is also influenced by viewing geometry, incidence angle, polarization, and surface orientation, so scenes should be compared with these differences in mind.",
+        "ICEYE backscatter imagery can be used to assess surface conditions and identify changes associated with natural hazards, including flooding, tropical cyclone damage, wildfire impacts, severe storms, earthquakes, and winter weather. Because SAR is an active microwave imaging system, scenes can be collected day or night and through clouds, smoke, and rain that obscure optical imagery, which is especially valuable in the first days after an event. Smooth open water returns very little energy and appears dark, so comparing a post-event scene against a pre-event scene can highlight inundated areas, while changes in bright returns can indicate damage to buildings, vegetation, or infrastructure.",
+        "Radar backscatter is also influenced by viewing geometry, incidence angle, polarization, and surface orientation, so scenes should be compared with these differences in mind.",
       ],
     },
 
