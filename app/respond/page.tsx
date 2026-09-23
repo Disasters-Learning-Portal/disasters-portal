@@ -1,7 +1,6 @@
 import {
   ContentBlockRenderer,
   PageMasthead,
-  SectionCardCarousel,
   SectionCardSimple,
   SectionHeading,
 } from "@/app/components/";
@@ -9,7 +8,6 @@ import { SectionCardSimpleMini } from "@/app/components/SectionCardSimpleMini";
 import {
   type CardMastheadPropsArgs,
   type CardSimplePropsArgs,
-  makeCardCarouselProps,
   makeCardMastHeadProps,
   makeCardSimpleProps,
 } from "@/app/site-config/content.helpers";
@@ -64,11 +62,11 @@ export default function RespondPage() {
         }
         cards={typedMap(RESPOND_EVENTS, transformEventToCardSimpleProps)}
       />
-      <SectionCardCarousel
+      <SectionCardSimple
         sectionHeading={
           <SectionHeading href="/news-events-stories?type=datastory">Data Stories</SectionHeading>
         }
-        cards={typedMap(RESPOND_DATASTORIES, makeCardCarouselProps)}
+        cards={typedMap(RESPOND_DATASTORIES, makeCardSimpleProps)}
       />
       <SectionCardSimple
         sectionHeading={<SectionHeading href="/training">Resources & Learning</SectionHeading>}
