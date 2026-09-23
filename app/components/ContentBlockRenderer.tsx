@@ -142,11 +142,6 @@ export const ContentBlockRenderer = ({
           )}
           <figure className="margin-0">
             <StacSingleLayerBlock block={block} />
-            {block.caption && (
-              <figcaption className="font-body-sm text-base margin-top-1">
-                {block.caption}
-              </figcaption>
-            )}
           </figure>
         </Section>
       );
@@ -159,11 +154,6 @@ export const ContentBlockRenderer = ({
           )}
           <figure className="margin-0">
             <StacCompareBlock block={block} />
-            {block.caption && (
-              <figcaption className="font-body-sm text-base margin-top-1">
-                {block.caption}
-              </figcaption>
-            )}
           </figure>
         </Section>
       );
