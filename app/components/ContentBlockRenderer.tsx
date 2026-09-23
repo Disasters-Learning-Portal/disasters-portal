@@ -209,15 +209,7 @@ export const ContentBlockRenderer = ({
             // The section heading is h2, so card titles must be h3.
             // CardDetailed has no titleAs option. This should be dropped if
             // it ever becomes available.
-            title: (
-              <h3
-                key="title"
-                className="blocks-card-detailed__title"
-                title={typeof title === "string" ? title : undefined}
-              >
-                {title}
-              </h3>
-            ),
+            title: <h3 className="blocks-card-detailed__title">{title}</h3>,
             description,
             thumbnailImage,
             themes,
@@ -250,11 +242,7 @@ export const ContentBlockRenderer = ({
             // The section heading is h2, so card titles must be h3.
             // Card has no titleAs option. This should be dropped if
             // it ever becomes available.
-            title: (
-              <h3 key="title" className="blocks-card__title">
-                {block.card.title}
-              </h3>
-            ),
+            title: <h3 className="blocks-card__title">{block.card.title}</h3>,
           })}
         />
       );
