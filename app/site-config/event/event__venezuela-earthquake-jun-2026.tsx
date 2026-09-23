@@ -42,21 +42,22 @@ export const EVENT__VENEZUELA_EQ_JUN_2026: EventContent = {
       type: "text",
       paragraphs: [
         <Fragment key="1">
-          On June 24, 2026, magnitude 7.2 and 7.5 earthquakes struck the northern coast of
-          Venezuela west of Caracas, collapsing buildings and disrupting transportation, power, and
-          communications, with coastal La Guaira and communities near Morón among the hardest hit.
-          In coordination with the U.S. Department of State, the NASA Disasters Program supported
-          the U.S. Geological Survey (USGS), Rescue International, and Colombia’s national
-          disaster-management agency. Imagery from NASA’s{" "}
-          <Link href="https://science.nasa.gov/earth-science/csda/">
-            Commercial Satellite Data Acquisition Program
-          </Link>{" "}
-          and Sentinel 1 SAR data were used to produce structure-level damage assessments and
-          change-detection products to support search-and-rescue operations. NISAR surface
-          displacement maps supported USGS efforts to characterize the hazard, and LHASA analyses
-          aided their landslide detection. NASA also hosted a capacity-building meeting with
-          stakeholders to share data and facilitate deeper conversations with subject matter experts.
-        </Fragment>,
+        On June 24, 2026, magnitude 7.2 and 7.5 earthquakes struck the northern coast of Venezuela
+        west of Caracas, collapsing buildings and disrupting transportation, power, and
+        communications, with coastal La Guaira and communities near Morón among the hardest hit.
+        In coordination with the U.S. Department of State, the NASA Disasters Program supported
+        the U.S. Geological Survey (USGS), Rescue International, and Colombia’s national
+        disaster-management agency. Imagery from NASA’s{" "}
+        <Link href="https://science.nasa.gov/earth-science/csda/">
+          Commercial Satellite Data Acquisition Program
+        </Link>{" "}
+        and Sentinel 1 SAR data were used to produce structure-level damage assessments and
+        change-detection products to support search-and-rescue operations. NISAR surface
+        displacement maps supported USGS efforts to characterize the hazard, and LHASA analyses
+        aided their landslide detection. NASA also hosted a capacity-building meeting with
+        stakeholders to share data and facilitate deeper conversations with subject matter
+        experts.
+      </Fragment>
       ],
     },
 
