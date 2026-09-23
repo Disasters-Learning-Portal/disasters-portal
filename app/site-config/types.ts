@@ -20,16 +20,14 @@ export const CONTENT_TYPES: Record<ContentType, { route: AppRoutes; label: strin
   training: { route: "/training", label: "training" },
 };
 
-export const CONTENT_THEMES: Record<Theme, { label: string; color: string; textColor?: string }> = {
+export const CONTENT_THEMES: Record<Theme, { label: string; color?: string }> = {
   respond: {
     label: "respond",
     color: "secondary",
-    textColor: "white",
   },
   build: {
     label: "build resilience",
     color: "success",
-    textColor: "white",
   },
   prepare: {
     label: "prepare",
@@ -38,7 +36,6 @@ export const CONTENT_THEMES: Record<Theme, { label: string; color: string; textC
   recover: {
     label: "recover",
     color: "accent-cool",
-    textColor: "white",
   },
 };
 
