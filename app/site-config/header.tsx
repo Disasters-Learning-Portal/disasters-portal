@@ -35,8 +35,14 @@ const MOCK_NAV_ITEM_WITH_DROPDOWN_3 = [
 
 export const MOCK_HEADER_PROPS: HeaderProps = {
   portalDetails: {
-    logo: <AppImage src="/img/logo-header.png" alt="Disasters.gov" width={148} height={52} />,
+    logo: <AppImage src="/img/nasa-logo.svg" alt="NASA Logo" width={55} height={55} />,
     url: "/",
+    title: (
+      <span className="display-flex flex-column font-family-serif text-uppercase">
+        <span className="text-bold">Disasters</span>
+        <span className="text-light">Program</span>
+      </span>
+    ),
   },
   navItems: [
     { label: "About Us", href: "/about" },
