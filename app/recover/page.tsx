@@ -1,19 +1,16 @@
 import {
   ContentBlockRenderer,
   PageMasthead,
-  SectionCardCarousel,
   SectionCardSimple,
   SectionHeading,
 } from "@/app/components/";
 import {
   type CardSimplePropsArgs,
-  makeCardCarouselProps,
   makeCardMastHeadProps,
   makeCardSimpleProps,
 } from "@/app/site-config/content.helpers";
 import {
   RECOVER_CONTENT,
-  RECOVER_DATASTORIES,
   RECOVER_STORIES,
   RECOVER_TRAININGS,
 } from "@/app/site-config/theme/theme__recover";
@@ -55,12 +52,6 @@ export default function RecoverPage() {
         // biome-ignore lint/suspicious/noArrayIndexKey: static content, never reorders
         <ContentBlockRenderer key={index} block={block} />
       ))}
-      <SectionCardCarousel
-        sectionHeading={
-          <SectionHeading href="/news-events-stories?type=datastory">Data Stories</SectionHeading>
-        }
-        cards={typedMap(RECOVER_DATASTORIES, makeCardCarouselProps)}
-      />
       <SectionCardSimple
         sectionHeading={<SectionHeading href="/training">Resources & Learning</SectionHeading>}
         cards={typedMap(trainings, makeCardSimpleProps)}
