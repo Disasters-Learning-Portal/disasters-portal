@@ -108,8 +108,18 @@ export const makeCardFeaturedProps = (
   } = props;
   return {
     id,
-    callToAction: callToAction && { ...callToAction, as: AppLink },
-    callToActionSecondary: callToActionSecondary && { ...callToActionSecondary, as: AppLink },
+    callToAction: callToAction && {
+      ...callToAction,
+      variant: "arrow",
+      color: "secondary",
+      as: AppLink,
+    },
+    callToActionSecondary: callToActionSecondary && {
+      ...callToActionSecondary,
+      variant: "arrow",
+      color: "secondary",
+      as: AppLink,
+    },
     image: (
       <AppImage
         alt={image.alt}
