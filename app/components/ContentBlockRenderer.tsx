@@ -123,7 +123,7 @@ export const ContentBlockRenderer = ({
               alt={block.alt}
               width={block.width}
               height={block.height}
-              style={{ width: block.maxWidth ?? "100%", height: "auto" }}
+              className={`width-full height-auto ${block.maxWidth ? `maxw-${block.maxWidth}` : ""}`}
             />
             {block.caption && (
               <figcaption className="font-body-sm text-base margin-top-1">
