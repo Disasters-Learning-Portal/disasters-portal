@@ -15,16 +15,8 @@ export default async function TrainingItemPage(props: PageProps<"/training/[id]"
 
   if (!contentItem) notFound();
 
-  const {
-    contentType,
-    date,
-    mastheadImage,
-    title,
-    subtitle,
-    themes,
-    categories,
-    body,
-  } = contentItem;
+  const { contentType, date, mastheadImage, title, subtitle, themes, categories, body } =
+    contentItem;
 
   return (
     <ContentPageLayout
