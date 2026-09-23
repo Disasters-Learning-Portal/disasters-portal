@@ -1,4 +1,9 @@
-import type { CardDetailedProps, CardProps, CardSimpleProps } from "@teamimpact/veda-ui-blocks";
+import type {
+  CardDetailedProps,
+  CardProps,
+  CardSimpleProps,
+  TagProps,
+} from "@teamimpact/veda-ui-blocks";
 import { AppImage } from "@/app/components/AppImage";
 import { AppLink } from "@/app/components/AppLink";
 import {
@@ -13,15 +18,23 @@ import {
 } from "@/app/site-config/types";
 import { isInternalContent, pickKeys } from "./typed.helpers";
 
-export const makeOutlineTagProps = (tag: string) => ({
+export const makeOutlineTagProps = (
+  tag: string,
+  tagProps?: Omit<TagProps, "variant" | "size" | "onClose" | "children">,
+) => ({
   variant: "outline" as const,
   borderColor: "base-light" as const,
   children: tag,
+  ...tagProps,
 });
 
-export const makeTextTagProps = (tag: string) => ({
+export const makeTextTagProps = (
+  tag: string,
+  tagProps?: Omit<TagProps, "variant" | "size" | "onClose" | "children">,
+) => ({
   variant: "text" as const,
   children: tag,
+  ...tagProps,
 });
 
 export const makeThemeTagProps = (tag: Theme) => {
