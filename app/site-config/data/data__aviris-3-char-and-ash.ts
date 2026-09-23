@@ -32,7 +32,7 @@ export const DATA__AVIRIS_3_CHAR_AND_ASH: DataContent = {
       heading: "Summary",
       headingLevel: "h3",
       paragraphs: [
-        "The AVIRIS-3 Relative Char and Ash product shows the char and ash fraction of each pixel, based on airborne imaging spectroscopy measurements from the Airborne Visible/Infrared Imaging Spectrometer 3rd-Generation (AVIRIS-3). Surface reflectance is first estimated using ISOFIT, after which a spectral unmixing algorithm following the Multiple Endmember Spectral Mixture Analysis (MESMA) approach determines the amount of char and ash within each pixel.",
+        "The AVIRIS-3 Relative Char and Ash product shows the char and ash fraction of each pixel, based on airborne imaging spectroscopy measurements from the Airborne Visible/Infrared Imaging Spectrometer 3rd-Generation (AVIRIS-3). Surface reflectance is first estimated using ISOFIT (Imaging Spectrometer Optimal FITting), which performs the atmospheric correction, after which a spectral unmixing algorithm following the Multiple Endmember Spectral Mixture Analysis (MESMA) approach determines the amount of char and ash within each pixel.",
         "The product describes the relative amount of char and ash, from 0 to 1, within each pixel. It is served in two renderings: a single-band pseudo-color grayscale image, with thresholds at the minimum detectable bounds of 50% and 80% char and ash fractional cover, and a pre-rendered color version in which the producer's color ramp is baked into the pixels.",
       ],
     },
@@ -77,6 +77,12 @@ export const DATA__AVIRIS_3_CHAR_AND_ASH: DataContent = {
       headingLevel: "h3",
       paragraphs: [
         "NASA Jet Propulsion Laboratory (JPL), AVIRIS Science Team, NASA Disasters Program",
+        "AVIRIS-3 radiance data: Eckert, R., D.R. Thompson, A.M. Chlus, J.W. Chapman, M. Eastwood, M. Bernas, S. Geier, M. Helmlinger, D. Keymeulen, E. Liggett, S. Nadgauda, L.M. Rios, L.A. Shaw, W. Olson-Duvall, P.G. Brodrick, and R.O. Green. 2024. AVIRIS-3 L1B Calibrated Radiance, Facility Instrument Collection. ORNL DAAC, Oak Ridge, Tennessee, USA. https://doi.org/10.3334/ORNLDAAC/2356",
+        "AVIRIS-3 reflectance data: Brodrick, P.G., A.M. Chlus, U.N. Bohn, E. Greenberg, J. Montgomery, J.W. Chapman, M. Eastwood, S.R. Lundeen, R. Eckert, W. Olson-Duvall, D.R. Thompson, and R.O. Green. 2025. AVIRIS-3 L2A Orthocorrected Surface Reflectance, Facility Instrument Collection. ORNL DAAC, Oak Ridge, Tennessee, USA. https://doi.org/10.3334/ORNLDAAC/2357",
+        "ISOFIT: Thompson, D.R., Natraj, V., Green, R.O., Helmlinger, M.C., Gao, B.C. and Eastwood, M.L., 2018. Optimal estimation for imaging spectrometer atmospheric correction. Remote Sensing of Environment, 216, pp.355-373.",
+        "Brodrick, P.G., D.R. Thompson, N. Bohn, N. Carmon, R. Eckert, J. Montgomery, K. Wurster, and N. Vaughn. 2024. isofit (v3.2.2). Zenodo. https://doi.org/10.5281/zenodo.14135462",
+        "Spectral unmixing: https://github.com/emit-sds/SpectralUnmixing",
+        "MESMA approach: Quintano, C., Fernandez-Manso, A. and Roberts, D.A., 2013. Multiple Endmember Spectral Mixture Analysis (MESMA) to map burn severity levels from Landsat images in Mediterranean countries. Remote Sensing of Environment, 136, pp.76-88.",
       ],
     },
 

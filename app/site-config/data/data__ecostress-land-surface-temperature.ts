@@ -12,12 +12,12 @@ export const DATA__ECOSTRESS_LAND_SURFACE_TEMPERATURE: DataContent = {
 
   thumbnailImage: {
     src: "/img/data/ecostress-land-surface-temperature.png",
-    alt: "ECOSTRESS nighttime land surface temperature over the Los Angeles, California area on January 8, 2025, shown on an inferno color ramp with two bright yellow hot spots marking actively burning wildfires",
+    alt: "ECOSTRESS nighttime land surface temperature over the Los Angeles, California area on January 8, 2025, with two bright yellow hot spots marking actively burning wildfires",
   },
 
   mastheadImage: {
     src: "/img/data/ecostress-land-surface-temperature.png",
-    alt: "ECOSTRESS nighttime land surface temperature over the Los Angeles, California area on January 8, 2025, shown on an inferno color ramp with two bright yellow hot spots marking actively burning wildfires",
+    alt: "ECOSTRESS nighttime land surface temperature over the Los Angeles, California area on January 8, 2025, with two bright yellow hot spots marking actively burning wildfires",
   },
 
   themes: ["respond", "prepare", "build"],
@@ -34,7 +34,7 @@ export const DATA__ECOSTRESS_LAND_SURFACE_TEMPERATURE: DataContent = {
       paragraphs: [
         "Land surface temperature is the heat you would feel as you touch the ground, a rooftop, or another surface. Certain materials retain more heat than others; for instance, beach sand is warmer than vegetated regions. Very recently burned areas maintain some residual heat, and active fires have very high heat signatures. Water holds onto heat for longer than land, so the ocean is warmer than the land at night and cooler than the land during the day.",
         "The ECOsystem Spaceborne Thermal Radiometer Experiment on Space Station (ECOSTRESS) mission measures the temperature of plants to better understand how much water plants need and how they respond to stress. ECOSTRESS is attached to the International Space Station (ISS) and collects data globally as well as over key biomes, agricultural zones, and selected FLUXNET validation sites.",
-        "This layer is drawn from the ECO2LSTE Version 2 data product, which provides atmospherically corrected land surface temperature and emissivity (LST&E) values derived from five thermal infrared (TIR) bands using a physics-based Temperature and Emissivity Separation (TES) algorithm. Values are stored as raw unsigned 16-bit digital numbers and are multiplied by the ECOSTRESS scale factor of 0.02 to obtain temperature in Kelvin. The default rendering stretches roughly 260 to 320 Kelvin (about -13 to 47 degrees Celsius) across an inferno color ramp, where dark purples are cooler and bright yellows are hotter.",
+        "This layer is drawn from the ECO2LSTE Version 2 data product, which provides atmospherically corrected land surface temperature and emissivity (LST&E) values derived from five thermal infrared (TIR) bands using a physics-based Temperature and Emissivity Separation (TES) algorithm. Values are stored as raw unsigned 16-bit digital numbers and are multiplied by the ECOSTRESS scale factor of 0.02 to obtain temperature in Kelvin. The default rendering stretches roughly 260 to 320 Kelvin (about -13 to 47 degrees Celsius), where dark purples are cooler and bright yellows are hotter.",
       ],
     },
 
