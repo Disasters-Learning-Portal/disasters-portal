@@ -15,12 +15,21 @@ export default async function TrainingItemPage(props: PageProps<"/training/[id]"
 
   if (!contentItem) notFound();
 
-  const { contentType, date, mastheadImage, title, themes, categories, body } = contentItem;
+  const {
+    contentType,
+    date,
+    mastheadImage,
+    title,
+    subtitle,
+    themes,
+    categories,
+    body,
+  } = contentItem;
 
   return (
     <ContentPageLayout
       masthead={{
-        ...makeCardMastHeadProps({ mastheadImage, title }),
+        ...makeCardMastHeadProps({ mastheadImage, title, subtitle }),
         tag: (({ children: label, ...rest }) => ({ label, ...rest }))(
           makeTextTagProps(`Updated ${toLongDate(date)}`),
         ),
