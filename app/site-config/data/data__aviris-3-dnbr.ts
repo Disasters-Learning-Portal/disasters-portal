@@ -34,7 +34,6 @@ export const DATA__AVIRIS_3_DNBR: DataContent = {
     {
       type: "text",
       heading: "Summary",
-      headingLevel: "h3",
       paragraphs: [
         "The AVIRIS-3 Differenced Normalized Burn Ratio (dNBR) product is derived from pre-event and post-event observations collected by the Airborne Visible/Infrared Imaging Spectrometer 3rd-Generation (AVIRIS-3). Normalized Burn Ratio (NBR) is calculated as (NIR - SWIR) / (NIR + SWIR), and dNBR is calculated as the difference between pre-fire and post-fire NBR. The product uses near-infrared and shortwave-infrared wavelengths that are sensitive to changes in vegetation associated with burning and charring.",
       ],
@@ -43,7 +42,6 @@ export const DATA__AVIRIS_3_DNBR: DataContent = {
     {
       type: "text",
       heading: "Suggested Use",
-      headingLevel: "h3",
       paragraphs: [
         "AVIRIS-3 dNBR can be used to identify burned vegetation, characterize spatial variations in fire-related surface change, and provide a proxy for relative burn severity. Higher positive dNBR values generally indicate greater reductions in healthy vegetation between the pre-fire and post-fire observations. dNBR primarily represents changes in vegetation spectral response and may not accurately characterize impacts to non-vegetated surfaces or built infrastructure. Results can also be influenced by the timing and environmental conditions of the pre-event and post-event observations.",
       ],
@@ -52,21 +50,18 @@ export const DATA__AVIRIS_3_DNBR: DataContent = {
     {
       type: "text",
       heading: "Satellite/Sensor",
-      headingLevel: "h3",
       paragraphs: ["Airborne Visible/Infrared Imaging Spectrometer 3rd-Generation (AVIRIS-3)"],
     },
 
     {
       type: "text",
       heading: "Resolution",
-      headingLevel: "h3",
       paragraphs: ["Variable, ranging from sub-meter to 13 meters, dependent on flight altitude."],
     },
 
     {
       type: "text",
       heading: "Credits",
-      headingLevel: "h3",
       paragraphs: [
         "NASA Jet Propulsion Laboratory (JPL), AVIRIS Science Team, NASA Disasters Program",
       ],
@@ -75,7 +70,6 @@ export const DATA__AVIRIS_3_DNBR: DataContent = {
     {
       type: "text",
       heading: "Tags",
-      headingLevel: "h3",
       paragraphs: [
         "NASA, JPL, AVIRIS-3, AVIRIS, dNBR, NBR, Imaging Spectroscopy, Hyperspectral, Burn Severity, Wildfire",
       ],

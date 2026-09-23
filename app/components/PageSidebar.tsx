@@ -26,7 +26,6 @@ export function PageSidebar({
   relatedContent?: RelatedItem[];
   exploreDataUrl?: string;
 }) {
-  // TODO: update to include inpage navigation
   return (
     <aside>
       {

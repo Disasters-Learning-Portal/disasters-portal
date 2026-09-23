@@ -40,7 +40,6 @@ export const DATA__UMBRA_SIGMA_NAUGHT: DataContent = {
     {
       type: "text",
       heading: "Summary",
-      headingLevel: "h3",
       paragraphs: [
         "This product provides calibrated Sigma Naught (σ⁰) radar backscatter derived from high-resolution Umbra synthetic aperture radar (SAR) imagery acquired through NASA's Commercial Satellite Data Acquisition (CSDA) Program. Source Geocoded Ellipsoid Corrected (GEC) imagery is processed to Sigma Naught backscatter and filtered to reduce SAR speckle while preserving spatial detail. Sigma Naught represents the strength of radar energy scattered back toward the sensor and can reveal differences in surface roughness, moisture, structure, and other physical characteristics.",
       ],
@@ -49,7 +48,6 @@ export const DATA__UMBRA_SIGMA_NAUGHT: DataContent = {
     {
       type: "text",
       heading: "Suggested Use",
-      headingLevel: "h3",
       paragraphs: [
         "Umbra backscatter imagery can be used to assess surface conditions and identify changes associated with natural hazards, including flooding, wildfire impacts, severe storm damage, tropical cyclones, earthquakes, and winter weather. Because SAR is an active microwave imaging system, observations can be collected during both day and night and through clouds, smoke, and many other atmospheric conditions that can obscure optical imagery. Differences in backscatter can help identify inundated areas, changes in surface roughness or moisture, and damage to vegetation or the built environment. Debris may manifest in images via nonuniform shapes or with significant backscatter.",
         "Radar backscatter is also influenced by viewing geometry, incidence angle, polarization, and surface orientation, which should be considered when comparing scenes.",
@@ -59,7 +57,6 @@ export const DATA__UMBRA_SIGMA_NAUGHT: DataContent = {
     {
       type: "text",
       heading: "Satellite/Sensor",
-      headingLevel: "h3",
       paragraphs: [
         "X-band Synthetic Aperture Radar (SAR) aboard the Umbra commercial satellite constellation",
       ],
@@ -68,7 +65,6 @@ export const DATA__UMBRA_SIGMA_NAUGHT: DataContent = {
     {
       type: "text",
       heading: "Resolution",
-      headingLevel: "h3",
       paragraphs: [
         "Acquisition-dependent; native Umbra source resolution is preserved, with imagery available at resolutions as fine as 25 centimeters",
       ],
@@ -77,7 +73,6 @@ export const DATA__UMBRA_SIGMA_NAUGHT: DataContent = {
     {
       type: "text",
       heading: "Credits",
-      headingLevel: "h3",
       paragraphs: [
         "NASA Disasters Program, processing by MSFC, Umbra. For derived products: “Includes copyrighted material of Umbra. All rights reserved.” This work utilized data made available through the NASA Commercial Satellite Data Acquisition (CSDA) program.",
       ],
@@ -86,7 +81,6 @@ export const DATA__UMBRA_SIGMA_NAUGHT: DataContent = {
     {
       type: "text",
       heading: "Tags",
-      headingLevel: "h3",
       paragraphs: [
         "NASA, CSDA, Umbra, SAR, Synthetic Aperture Radar, X-band, Sigma Naught, Sigma0, Backscatter, GEC, Radar",
       ],
