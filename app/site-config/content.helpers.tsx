@@ -318,8 +318,8 @@ export const makeCardCarouselProps = ({
 });
 
 /**
- * NASA Stylebook v14 / AP style. The stylebook is not public; the sitewide rules
- * are written up in
+ * NASA Stylebook and Communications Manual, 13th edition (February 2025) / AP style:
+ * abbreviate Jan., Feb., Aug., Sept., Oct., Nov. and Dec., spell the rest out.
  * https://github.com/Disasters-Learning-Portal/disasters-portal/issues/479
  *
  * Formatted in UTC so the day never shifts.
