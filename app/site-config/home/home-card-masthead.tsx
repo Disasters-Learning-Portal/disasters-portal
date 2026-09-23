@@ -54,6 +54,7 @@ const MOCK_FEATURE_CTACARDS_SECTION = (
 );
 
 export const MOCK_CARD_MASTHEAD: CardProps = {
+  className: "blocks-card--homepage",
   image: (
     <AppVideo
       src="/img/home/home-card-hero-video.mp4"
