@@ -1,7 +1,6 @@
 import { Footer } from "@teamimpact/veda-ui-blocks";
 import type { Metadata } from "next";
 import "@teamimpact/veda-ui-blocks/hds.css";
-import "./styles/overrides.css";
 
 import { HeaderWithCurrentPath } from "@/app/components";
 import { AppLink } from "@/app/components/AppLink";
