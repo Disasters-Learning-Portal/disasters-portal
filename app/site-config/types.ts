@@ -22,19 +22,19 @@ export const CONTENT_TYPES: Record<ContentType, { route: AppRoutes; label: strin
 
 export const CONTENT_THEMES: Record<Theme, { label: string; color?: string }> = {
   respond: {
-    label: "respond",
+    label: "Respond",
     color: "secondary",
   },
   build: {
-    label: "build resilience",
+    label: "Build resilience",
     color: "success",
   },
   prepare: {
-    label: "prepare",
+    label: "Prepare",
     color: "accent-warm",
   },
   recover: {
-    label: "recover",
+    label: "Recover",
     color: "accent-cool",
   },
 };

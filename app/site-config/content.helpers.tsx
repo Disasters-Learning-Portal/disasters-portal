@@ -62,22 +62,14 @@ export type CardMastheadPropsArgs = Omit<
 export const makeCardMastHeadProps = ({
   mastheadImage,
   title,
+  subtitle,
   theme,
   ...rest
 }: CardMastheadPropsArgs): CardProps => ({
   className: "blocks-card--contentpage",
   image: <AppImage {...mastheadImage} sizes="100vw" fill preload={true} />,
-  ...(title || theme
-    ? {
-        title: (
-          <h1
-            className={`font-mono-3xl text-normal text-white text-uppercase flex-align-self-start margin-0 ${theme ? `bg-${CONTENT_THEMES[theme].color} text-ls-3` : ""}`}
-          >
-            {title ?? theme}
-          </h1>
-        ),
-      }
-    : {}),
+  title: title ?? (theme ? CONTENT_THEMES[theme].label : undefined),
+  description: subtitle,
   colorMode: "dark",
   isMastHead: true,
   ...rest,

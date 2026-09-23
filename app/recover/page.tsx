@@ -20,7 +20,7 @@ import {
 import { typedMap } from "@/app/site-config/typed.helpers";
 
 export default function RecoverPage() {
-  const { title, theme, subtitle, mastheadImage } = RECOVER_CONTENT;
+  const { theme, subtitle, mastheadImage } = RECOVER_CONTENT;
 
   const stories: CardSimplePropsArgs[] = RECOVER_STORIES.slice(0, 2).map(
     ({ id, contentType, thumbnailImage, themes, title }) => ({
@@ -44,7 +44,7 @@ export default function RecoverPage() {
 
   return (
     <>
-      <PageMasthead {...makeCardMastHeadProps({ title, subtitle, theme, mastheadImage })} />
+      <PageMasthead {...makeCardMastHeadProps({ subtitle, theme, mastheadImage })} />
       <SectionCardSimple
         sectionHeading={
           <SectionHeading href="/news-events-stories?type=story">Stories of Impact</SectionHeading>
