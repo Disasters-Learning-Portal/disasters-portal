@@ -22,7 +22,15 @@ export const DATA__WB57_DYNAMITE: DataContent = {
 
   themes: ["respond"],
 
-  categories: ["flood"],
+  categories: [
+    "earthquake",
+    "fire",
+    "flood",
+    "landslide",
+    "severe weather",
+    "tropical cyclone",
+    "volcano",
+  ],
 
   relatedContent: [],
 
@@ -32,8 +40,8 @@ export const DATA__WB57_DYNAMITE: DataContent = {
       heading: "Summary",
       headingLevel: "h3",
       paragraphs: [
-        "The WB-57 high-altitude aircraft, operated by NASA's Johnson Space Center, carries a nose-mounted instrument called DyNAMITE that collects 10-centimeter resolution visible and infrared imagery.",
-        "Imagery is collected as individual scan frames from a pointable turret, so each frame covers a small footprint at very high detail rather than a wide swath.",
+        "NASA WB-57 aircraft, outfitted with the DyNAMITE camera, is a high altitude, rapid reconnaissance asset with the ability to collect 10cm imagery from 50,000 ft. Originally designed to monitor NASA Space Shuttle launches and reentry, DyNAMITE can collect small-footprint visible RGB or mid-wave infrared (MWIR) images over a wide area or livestream full motion video over the Internet through a web browser.",
+        "High resolution visible (RGB) and mid-wave infrared (MWIR) images acquired around point targets. Several photos are taken around each target; continuous monitoring can be achieved by maintaining an orbital track around the target of interest. Data may be delivered as individual oriented images or as orthomosaiced GeoTIFFs covering the area around the target. This tool is not optimized for wide area strip map/swath imaging. Resolution and image footprint vary with altitude and selected focal length. Can support multiple mission profiles, such as Full Motion Video (FMV) missions with near real-time tasking; and pre-planned target deck missions for point targets.",
       ],
     },
 
@@ -60,7 +68,9 @@ export const DATA__WB57_DYNAMITE: DataContent = {
       type: "text",
       heading: "Resolution",
       headingLevel: "h3",
-      paragraphs: ["10 centimeters"],
+      paragraphs: [
+        "10 cm. Spatial resolution and footprint size are dependent on focal length and altitude.",
+      ],
     },
 
     {
