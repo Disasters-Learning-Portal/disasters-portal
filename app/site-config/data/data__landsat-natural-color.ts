@@ -23,12 +23,18 @@ export const DATA__LANDSAT_NATURAL_COLOR: DataContent = {
   themes: ["respond", "build", "prepare", "recover"],
 
   categories: [
-    "severe weather",
-    "fire",
-    "heat",
-    "flood",
-    "tropical cyclone",
     "earthquake",
+    "fire",
+    "flood",
+    "heat",
+    "landslide",
+    "severe weather",
+    "tropical cyclone",
+    "hurricane",
+    "typhoon",
+    "cyclone",
+    "volcano",
+    "tsunami",
     "winter weather",
   ],
 
@@ -50,6 +56,7 @@ export const DATA__LANDSAT_NATURAL_COLOR: DataContent = {
       headingLevel: "h3",
       paragraphs: [
         "Landsat Natural Color imagery can be used to assess surface conditions and identify changes associated with natural hazards. The combination of shortwave infrared, near-infrared, and red wavelengths provides useful contrast for mapping water, vegetation condition, burned areas, exposed soils, and developed surfaces. It can support assessment of wildfire impacts, flooding, severe weather, and other events where changes in land-surface characteristics are important.",
+        "Clouds, shadows, smoke, and atmospheric conditions may obscure or alter surface features.",
       ],
     },
 

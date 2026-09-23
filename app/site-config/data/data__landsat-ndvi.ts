@@ -23,12 +23,18 @@ export const DATA__LANDSAT_NDVI: DataContent = {
   themes: ["respond", "build", "prepare", "recover"],
 
   categories: [
-    "severe weather",
-    "fire",
-    "heat",
-    "flood",
-    "tropical cyclone",
     "earthquake",
+    "fire",
+    "flood",
+    "heat",
+    "landslide",
+    "severe weather",
+    "tropical cyclone",
+    "hurricane",
+    "typhoon",
+    "cyclone",
+    "volcano",
+    "tsunami",
     "winter weather",
   ],
 
