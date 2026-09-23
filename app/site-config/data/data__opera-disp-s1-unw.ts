@@ -30,7 +30,6 @@ export const DATA__OPERA_DISP_S1_UNW: DataContent = {
     {
       type: "text",
       heading: "Summary",
-      headingLevel: "h3",
       paragraphs: [
         "The OPERA DISP-S1 Unwrapped Phase product provides a continuous representation of the interferometric phase difference between a reference Sentinel-1 acquisition and a secondary acquisition. Phase unwrapping resolves the repeating 2π cycles present in the wrapped interferogram so that continuous spatial variations in radar phase can be evaluated.",
         "Unwrapped interferometric phase is an intermediate measurement used to derive radar line-of-sight surface displacement. The phase difference is related to changes in the distance between the radar sensor and the Earth's surface and can reveal deformation associated with earthquakes, subsidence, landslides, volcanic activity, and other processes.",
@@ -40,7 +39,6 @@ export const DATA__OPERA_DISP_S1_UNW: DataContent = {
     {
       type: "text",
       heading: "Suggested Use",
-      headingLevel: "h3",
       paragraphs: [
         "Use Unwrapped Phase to examine continuous spatial patterns of interferometric change and to support interpretation of surface deformation following earthquakes and other geophysical events. Unlike wrapped phase, the unwrapped product removes the repeating phase-cycle ambiguity, making it possible to relate phase differences to continuous radar line-of-sight range change.",
         "Phase unwrapping is most reliable in areas with strong interferometric coherence. Low coherence, water, vegetation change, snow, large surface changes, or other sources of decorrelation can cause gaps or errors in the unwrapped solution. The product should therefore be evaluated together with coherence and other quality information before interpreting deformation patterns.",
@@ -50,7 +48,6 @@ export const DATA__OPERA_DISP_S1_UNW: DataContent = {
     {
       type: "text",
       heading: "Satellite/Sensor",
-      headingLevel: "h3",
       paragraphs: [
         "C-band Synthetic Aperture Radar (SAR) aboard the European Space Agency's Copernicus Sentinel-1A, Sentinel-1B, and Sentinel-1C satellites",
       ],
@@ -59,14 +56,12 @@ export const DATA__OPERA_DISP_S1_UNW: DataContent = {
     {
       type: "text",
       heading: "Resolution",
-      headingLevel: "h3",
       paragraphs: ["30 meters"],
     },
 
     {
       type: "text",
       heading: "Credits",
-      headingLevel: "h3",
       paragraphs: [
         "NASA Jet Propulsion Laboratory, California Institute of Technology; NASA OPERA; NASA JPL-Caltech ARIA Team; ESA Copernicus; NASA Disasters Program",
       ],
@@ -75,7 +70,6 @@ export const DATA__OPERA_DISP_S1_UNW: DataContent = {
     {
       type: "text",
       heading: "Tags",
-      headingLevel: "h3",
       paragraphs: [
         "NASA, OPERA, ARIA, DISP-S1, UNW, Sentinel-1, InSAR, SAR, Unwrapped Phase, Interferogram, Surface Displacement, Ground Deformation, Earthquake",
       ],

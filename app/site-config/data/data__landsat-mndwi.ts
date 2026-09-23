@@ -30,7 +30,6 @@ export const DATA__LANDSAT_MNDWI: DataContent = {
     {
       type: "text",
       heading: "Summary",
-      headingLevel: "h3",
       paragraphs: [
         "Modified Normalized Difference Water Index (MNDWI) is calculated as (Green - SWIR)/(Green + SWIR), where Green is visible green reflectance and SWIR is shortwave-infrared reflectance. For Landsat 8 and Landsat 9, MNDWI is commonly calculated using Operational Land Imager (OLI) Band 3 for green and Band 6 for shortwave infrared. The index is designed to enhance open water features while reducing the influence of vegetation, soil, and built-up surfaces.",
       ],
@@ -39,7 +38,6 @@ export const DATA__LANDSAT_MNDWI: DataContent = {
     {
       type: "text",
       heading: "Suggested Use",
-      headingLevel: "h3",
       paragraphs: [
         "Landsat MNDWI can be used to identify and map open water and changes in surface water extent associated with flooding, tropical cyclones, severe storms, and other hydrologic events. Positive MNDWI values are generally associated with water, while lower or negative values are more commonly associated with vegetation, bare ground, and developed surfaces. Thresholds may vary by location and environmental conditions, so MNDWI should be interpreted together with supporting imagery and local context.",
       ],
@@ -48,7 +46,6 @@ export const DATA__LANDSAT_MNDWI: DataContent = {
     {
       type: "text",
       heading: "Satellite/Sensor",
-      headingLevel: "h3",
       paragraphs: [
         "Operational Land Imager (OLI) and Operational Land Imager-2 (OLI-2) aboard the NASA/USGS Landsat 8 and Landsat 9 satellites",
       ],
@@ -57,21 +54,18 @@ export const DATA__LANDSAT_MNDWI: DataContent = {
     {
       type: "text",
       heading: "Resolution",
-      headingLevel: "h3",
       paragraphs: ["30 meters"],
     },
 
     {
       type: "text",
       heading: "Credits",
-      headingLevel: "h3",
       paragraphs: ["NASA, U.S. Geological Survey (USGS)"],
     },
 
     {
       type: "text",
       heading: "Tags",
-      headingLevel: "h3",
       paragraphs: [
         "NASA, USGS, Landsat, Landsat 8, Landsat 9, OLI, OLI-2, MNDWI, Modified Normalized Difference Water Index, Surface Water, Flooding",
       ],

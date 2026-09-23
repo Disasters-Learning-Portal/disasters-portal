@@ -44,7 +44,6 @@ export const DATA__LANDSAT_NATURAL_COLOR: DataContent = {
     {
       type: "text",
       heading: "Summary",
-      headingLevel: "h3",
       paragraphs: [
         "The Landsat Natural Color composite is a false-color visualization created using shortwave infrared, near-infrared, and red wavelength bands. This combination enhances differences among vegetation, water, developed areas, and exposed surfaces. Healthy vegetation generally appears bright green, water appears blue to dark blue, and urban or developed areas can appear in shades of magenta.",
       ],
@@ -53,7 +52,6 @@ export const DATA__LANDSAT_NATURAL_COLOR: DataContent = {
     {
       type: "text",
       heading: "Suggested Use",
-      headingLevel: "h3",
       paragraphs: [
         "Landsat Natural Color imagery can be used to assess surface conditions and identify changes associated with natural hazards. The combination of shortwave infrared, near-infrared, and red wavelengths provides useful contrast for mapping water, vegetation condition, burned areas, exposed soils, and developed surfaces. It can support assessment of wildfire impacts, flooding, severe weather, and other events where changes in land-surface characteristics are important.",
         "Clouds, shadows, smoke, and atmospheric conditions may obscure or alter surface features.",
@@ -63,7 +61,6 @@ export const DATA__LANDSAT_NATURAL_COLOR: DataContent = {
     {
       type: "text",
       heading: "Satellite/Sensor",
-      headingLevel: "h3",
       paragraphs: [
         "Operational Land Imager (OLI) and Operational Land Imager-2 (OLI-2) aboard the NASA/USGS Landsat 8 and Landsat 9 satellites",
       ],
@@ -72,21 +69,18 @@ export const DATA__LANDSAT_NATURAL_COLOR: DataContent = {
     {
       type: "text",
       heading: "Resolution",
-      headingLevel: "h3",
       paragraphs: ["30 meters"],
     },
 
     {
       type: "text",
       heading: "Credits",
-      headingLevel: "h3",
       paragraphs: ["NASA, U.S. Geological Survey (USGS)"],
     },
 
     {
       type: "text",
       heading: "Tags",
-      headingLevel: "h3",
       paragraphs: [
         "NASA, USGS, Landsat, Landsat 8, Landsat 9, OLI, OLI-2, Natural Color, SWIR, Near Infrared, Optical",
       ],

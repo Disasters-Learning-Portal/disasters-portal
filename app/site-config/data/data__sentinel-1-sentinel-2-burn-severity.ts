@@ -30,7 +30,6 @@ export const DATA__SENTINEL_1_SENTINEL_2_BURN_SEVERITY: DataContent = {
     {
       type: "text",
       heading: "Summary",
-      headingLevel: "h3",
       paragraphs: [
         "This burn severity product integrates Copernicus Sentinel-1 Synthetic Aperture Radar (SAR) and Sentinel-2 MultiSpectral Instrument (MSI) observations to identify burned vegetation and urban areas and characterize relative fire severity. Sentinel-2 observations are used to calculate the differenced Normalized Burn Ratio (dNBR), which captures changes in vegetation using near-infrared and shortwave-infrared reflectance. Sentinel-1 observations are used to calculate changes in VH-polarized radar backscatter, which are sensitive to changes in surface structure and can provide complementary information in burned urban environments.",
       ],
@@ -39,7 +38,6 @@ export const DATA__SENTINEL_1_SENTINEL_2_BURN_SEVERITY: DataContent = {
     {
       type: "text",
       heading: "Suggested Use",
-      headingLevel: "h3",
       paragraphs: [
         "The combined Sentinel-1 and Sentinel-2 product can be used for rapid assessment of burned areas and relative fire severity across both vegetated and developed environments. Sentinel-2 dNBR is used to distinguish severity levels in burned vegetation, while changes in Sentinel-1 radar backscatter provide additional information about fire-related changes to urban surfaces and built infrastructure. The product can support situational awareness, post-fire impact assessment, and recovery planning. Severity values are proxies derived from satellite-observed surface changes and should not be interpreted as ground-validated measurements of fire effects or structural damage.",
       ],
@@ -48,7 +46,6 @@ export const DATA__SENTINEL_1_SENTINEL_2_BURN_SEVERITY: DataContent = {
     {
       type: "text",
       heading: "Satellite/Sensor",
-      headingLevel: "h3",
       paragraphs: [
         "C-band Synthetic Aperture Radar (SAR) aboard the European Space Agency's Copernicus Sentinel-1 satellites and the MultiSpectral Instrument (MSI) aboard the Copernicus Sentinel-2 satellites",
       ],
@@ -57,14 +54,12 @@ export const DATA__SENTINEL_1_SENTINEL_2_BURN_SEVERITY: DataContent = {
     {
       type: "text",
       heading: "Resolution",
-      headingLevel: "h3",
       paragraphs: ["Approximately 10 meters"],
     },
 
     {
       type: "text",
       heading: "Credits",
-      headingLevel: "h3",
       paragraphs: [
         "Khuong Tran, Taejin Park, Aakash Chhabra, Weile Wang, and Kyle Kabasares; NASA Ames Research Center; ESA Copernicus; NASA Disasters Program",
       ],
@@ -73,7 +68,6 @@ export const DATA__SENTINEL_1_SENTINEL_2_BURN_SEVERITY: DataContent = {
     {
       type: "text",
       heading: "Tags",
-      headingLevel: "h3",
       paragraphs: [
         "NASA, Sentinel-1, Sentinel-2, SAR, MSI, Synthetic Aperture Radar, Burn Severity, Wildfire, dNBR, NBR, VH Backscatter, Surface Change",
       ],

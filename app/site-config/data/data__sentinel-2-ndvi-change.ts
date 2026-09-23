@@ -45,7 +45,6 @@ export const DATA__SENTINEL_2_NDVI_CHANGE: DataContent = {
     {
       type: "text",
       heading: "Summary",
-      headingLevel: "h3",
       paragraphs: [
         "Sentinel-2 NDVI Change is derived by comparing Normalized Difference Vegetation Index (NDVI) values from two observation dates. NDVI is calculated as (NIR - Red)/(NIR + Red), using near-infrared and visible red reflectance from the Sentinel-2 MultiSpectral Instrument (MSI). The change product highlights where vegetation conditions have increased or decreased between the two observations, with negative changes generally indicating vegetation loss, stress, or disturbance and positive changes generally indicating increased vegetation cover or recovery.",
       ],
@@ -54,7 +53,6 @@ export const DATA__SENTINEL_2_NDVI_CHANGE: DataContent = {
     {
       type: "text",
       heading: "Suggested Use",
-      headingLevel: "h3",
       paragraphs: [
         "Sentinel-2 NDVI Change can be used to identify vegetation impacts associated with wildfire, flooding, severe weather, tropical cyclones, heat or drought stress, and other disturbances, as well as to monitor vegetation recovery following an event. Comparing pre-event and post-event observations can help identify areas where vegetation condition has changed substantially. NDVI change should be interpreted together with other imagery and environmental information because differences in seasonality, phenology, soil moisture, atmospheric conditions, acquisition geometry, and cloud or smoke contamination can also influence observed changes.",
       ],
@@ -63,7 +61,6 @@ export const DATA__SENTINEL_2_NDVI_CHANGE: DataContent = {
     {
       type: "text",
       heading: "Satellite/Sensor",
-      headingLevel: "h3",
       paragraphs: [
         "MultiSpectral Instrument (MSI) aboard the European Space Agency's Copernicus Sentinel-2 satellites",
       ],
@@ -72,21 +69,18 @@ export const DATA__SENTINEL_2_NDVI_CHANGE: DataContent = {
     {
       type: "text",
       heading: "Resolution",
-      headingLevel: "h3",
       paragraphs: ["10 meters"],
     },
 
     {
       type: "text",
       heading: "Credits",
-      headingLevel: "h3",
       paragraphs: ["NASA/GSFC, USGS, ESA Copernicus, NASA Disasters Program"],
     },
 
     {
       type: "text",
       heading: "Tags",
-      headingLevel: "h3",
       paragraphs: [
         "NASA, ESA, Copernicus, Sentinel-2, MSI, NDVI, NDVI Change, Normalized Difference Vegetation Index, Vegetation Change, Vegetation Disturbance, Optical",
       ],

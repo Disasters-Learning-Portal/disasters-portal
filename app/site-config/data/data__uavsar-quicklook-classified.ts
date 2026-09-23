@@ -30,7 +30,6 @@ export const DATA__UAVSAR_QUICKLOOK_CLASSIFIED: DataContent = {
     {
       type: "text",
       heading: "Summary",
-      headingLevel: "h3",
       paragraphs: [
         "The quicklook classification is a rapid, preliminary flood product generated from UAVSAR polarimetric radar imagery shortly after a flight is collected. It identifies open water and inundated areas so that responders have a usable flood extent while the more thorough U-Net classification and the fully processed composites are still being produced.",
         "Because it is optimized for speed rather than for accuracy, the quicklook product is delivered per flight line on a subdaily cadence and is not mosaicked into event-wide composites. It is best understood as the first look at a scene rather than the authoritative flood map for it.",
@@ -40,7 +39,6 @@ export const DATA__UAVSAR_QUICKLOOK_CLASSIFIED: DataContent = {
     {
       type: "text",
       heading: "Suggested Use",
-      headingLevel: "h3",
       paragraphs: [
         "Use the quicklook classification in the first hours and days of a flood response, when timeliness matters more than precision and when the alternative is having no radar-derived flood extent at all. It is well suited to identifying which areas were affected and where to direct attention or further collection.",
         "Supersede it with the UAVSAR U-Net Flood Classification once that product is available for the same scene. Quicklook results should not be used for damage assessment, for official flood extent determinations, or for any purpose where a preliminary misclassification would be costly, and they should be corroborated against the source UAVSAR imagery before being acted on.",
@@ -50,7 +48,6 @@ export const DATA__UAVSAR_QUICKLOOK_CLASSIFIED: DataContent = {
     {
       type: "text",
       heading: "Satellite/Sensor",
-      headingLevel: "h3",
       paragraphs: [
         "Uninhabited Aerial Vehicle Synthetic Aperture Radar (UAVSAR), an L-band fully polarimetric synthetic aperture radar flown on a NASA Gulfstream III (C-20A) aircraft and operated by NASA's Jet Propulsion Laboratory",
       ],
@@ -59,7 +56,6 @@ export const DATA__UAVSAR_QUICKLOOK_CLASSIFIED: DataContent = {
     {
       type: "text",
       heading: "Resolution",
-      headingLevel: "h3",
       paragraphs: [
         "Airborne collection over an approximately 22 kilometer swath, delivered per flight line as geocoded classified imagery on a subdaily cadence",
       ],
@@ -68,7 +64,6 @@ export const DATA__UAVSAR_QUICKLOOK_CLASSIFIED: DataContent = {
     {
       type: "text",
       heading: "Credits",
-      headingLevel: "h3",
       paragraphs: [
         "NASA Jet Propulsion Laboratory (JPL) UAVSAR team and the NASA Disasters Program",
       ],
@@ -77,7 +72,6 @@ export const DATA__UAVSAR_QUICKLOOK_CLASSIFIED: DataContent = {
     {
       type: "text",
       heading: "Tags",
-      headingLevel: "h3",
       paragraphs: [
         "NASA, JPL, UAVSAR, SAR, Synthetic Aperture Radar, L-band, Quicklook, Preliminary, Classification, Flood, Inundation, Rapid Response, Airborne, Disaster Response",
       ],
