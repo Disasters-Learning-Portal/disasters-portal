@@ -29,7 +29,6 @@ export const DATA__SENTINEL_2_TRUE_COLOR: DataContent = {
     {
       type: "text",
       heading: "Summary",
-      headingLevel: "h3",
       paragraphs: [
         "The True Color RGB composite provides a product of how the surface would look to the naked eye from space. The RGB is created using the red, green, and blue channels of the respective instrument.",
       ],
@@ -37,7 +36,6 @@ export const DATA__SENTINEL_2_TRUE_COLOR: DataContent = {
     {
       type: "text",
       heading: "Suggested Use",
-      headingLevel: "h3",
       paragraphs: [
         "The True Color RGB provides a product of how the surface would look to the naked eye from space. The True Color RGB is produced using the 3 visible wavelength bands (red, green, and blue) from the respective sensor. Some minor atmospheric corrections have occurred.",
       ],
@@ -45,7 +43,6 @@ export const DATA__SENTINEL_2_TRUE_COLOR: DataContent = {
     {
       type: "text",
       heading: "Satellite/Sensor",
-      headingLevel: "h3",
       paragraphs: [
         "MultiSpectral Instrument (MSI) on European Space Agency's (ESA) Copernicus Sentinel-2A/2B satellites",
       ],
@@ -53,19 +50,16 @@ export const DATA__SENTINEL_2_TRUE_COLOR: DataContent = {
     {
       type: "text",
       heading: "Resolution",
-      headingLevel: "h3",
       paragraphs: ["10 meters"],
     },
     {
       type: "text",
       heading: "Credits",
-      headingLevel: "h3",
       paragraphs: ["NASA/GSFC, USGS, ESA Copernicus"],
     },
     {
       type: "text",
       heading: "Tags",
-      headingLevel: "h3",
       paragraphs: ["ESA, Copernicus, Sentinel-2, Optical"],
     },
   ],

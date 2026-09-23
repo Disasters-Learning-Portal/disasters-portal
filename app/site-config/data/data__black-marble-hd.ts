@@ -40,7 +40,6 @@ export const DATA__BLACK_MARBLE_HD: DataContent = {
     {
       type: "text",
       heading: "Summary",
-      headingLevel: "h3",
       paragraphs: [
         "Black Marble High-Definition (BMHD) images are created by the NASA Black Marble Science team, with directed funding from the NASA-Google Partnership program. Pre-event images will be depicted as a cloud-free monthly composite. There will be a layer to display where clouds are present in the post-event images. Comparing pre- and post-event images images is meant as a visual assessment of outage impacts from the disaster to aid various partners who are working to deliver emergency aids to local communities. Power outage maps like these help disaster response efforts in the short-term as well as long-term monitoring during the crucial stages of disaster recovery.",
       ],
@@ -49,7 +48,6 @@ export const DATA__BLACK_MARBLE_HD: DataContent = {
     {
       type: "text",
       heading: "Suggested Use",
-      headingLevel: "h3",
       paragraphs: [
         "NOTE: Black Marble HD images are downscaled from NASA’s Black Marble nighttime lights product (VNP46), and as such are a “modelled” or “best guess” estimate of how lights are distributed at a 30m resolution. These images should be used for visualization purposes, not for quantitative analysis.",
         "The image is in inferno color scale. Yellow represents the presence of more light; dark blue less lights.",
@@ -59,7 +57,6 @@ export const DATA__BLACK_MARBLE_HD: DataContent = {
     {
       type: "text",
       heading: "Satellite/Sensor",
-      headingLevel: "h3",
       paragraphs: [
         "The primary data source, NASA’s Black Marble nighttime lights product suite (VNP46), utilized to generate this product is derived from the Visible Infrared Imaging Radiometer Suite (VIIRS) Day/Night Band (DNB) onboard the Suomi National Polar-orbiting Platform (SNPP) along with high resolution base layers - Landsat derived normalized index products (NDVI and NDWI) and OpenStreetMap (OSM) derived road layer",
       ],
@@ -68,14 +65,12 @@ export const DATA__BLACK_MARBLE_HD: DataContent = {
     {
       type: "text",
       heading: "Resolution",
-      headingLevel: "h3",
       paragraphs: ["Scaled resolution of 30 meters"],
     },
 
     {
       type: "text",
       heading: "Credits",
-      headingLevel: "h3",
       paragraphs: [
         "NASA Black Marble Science team",
         "Please cite the following two references when using this data:",
@@ -87,7 +82,6 @@ export const DATA__BLACK_MARBLE_HD: DataContent = {
     {
       type: "text",
       heading: "Tags",
-      headingLevel: "h3",
       paragraphs: [
         "NASA, Black Marble, Black Marble HD, VIIRS, Nighttime Lights, Day/Night Band, DNB, VNP46A2, Landsat, OpenStreetMap, OSM, Power Outage, Disaster Response, Disaster Recovery",
       ],
