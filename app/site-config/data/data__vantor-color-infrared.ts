@@ -60,7 +60,7 @@ export const DATA__VANTOR_COLOR_INFRARED: DataContent = {
       heading: "Satellite/Sensor",
       headingLevel: "h3",
       paragraphs: [
-        "Eight-band (coastal, blue, green, yellow, red, red edge, near-infrared 1, near-infrared 2) multispectral imagers on the WorldView very high resolution optical satellites operated by Vantor, formerly Maxar",
+        "Eight-band (coastal, blue, green, yellow, red, red edge, near-infrared 1, near-infrared 2) multispectral imagers on the WorldView-2 and WorldView-3 very high resolution optical satellites operated by Vantor, formerly Maxar",
       ],
     },
 
@@ -77,7 +77,11 @@ export const DATA__VANTOR_COLOR_INFRARED: DataContent = {
       type: "text",
       heading: "Credits",
       headingLevel: "h3",
-      paragraphs: ["Vantor; NASA Disasters Program"],
+      paragraphs: [
+        "Vantor; NASA Disasters Program",
+        "©2026 Vantor. All rights reserved.",
+        "This work utilized data made available through the NASA Commercial Satellite Data Acquisition (CSDA) Program.",
+      ],
     },
 
     {

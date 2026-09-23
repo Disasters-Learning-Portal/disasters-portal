@@ -50,8 +50,8 @@ export const DATA__VANTOR_PANCHROMATIC: DataContent = {
       heading: "Suggested Use",
       headingLevel: "h3",
       paragraphs: [
-        "Panchromatic imagery is the layer to reach for when the question is structural. At this resolution a roof that has lost its covering, a wall that has fallen into the street, a bridge deck that has dropped, a landslide scarp cutting through a hillside neighborhood, or vehicles and debris blocking a route are all directly visible. Comparing a scene collected before an event with one collected afterward is the usual way it is used for damage assessment.",
-        "The absence of color is a real limitation: burned ground, wet ground, and fresh bare soil can look alike in grayscale, and vegetation condition cannot be judged from it at all. Those questions belong to the color infrared and true color layers. Like any optical product, it cannot see through cloud or smoke and cannot observe at night, and coverage is targeted rather than continuous.",
+        "Panchromatic imagery is the layer to reach for when the question is structural. Under clear conditions and at this resolution, features such as a roof that has lost its covering, a wall that has fallen into the street, a bridge deck that has dropped, a landslide scarp cutting through a hillside neighborhood, or vehicles and debris blocking a route may be visible, though what can be resolved in any given scene depends on cloud cover and viewing conditions. Comparing a scene collected before an event with one collected afterward is the usual way it is used for damage assessment.",
+        "The absence of color is a real limitation: burned ground, wet ground, and fresh bare soil can look alike in grayscale, and vegetation condition cannot be judged from it at all. Those questions belong to the color infrared and true color layers. Like any optical product, it cannot see through cloud or smoke and cannot observe at night, and coverage is targeted rather than continuous. That last point also limits before and after comparison: it depends on suitable pre-event imagery already existing for the area of interest, which is not guaranteed.",
       ],
     },
 
@@ -60,7 +60,7 @@ export const DATA__VANTOR_PANCHROMATIC: DataContent = {
       heading: "Satellite/Sensor",
       headingLevel: "h3",
       paragraphs: [
-        "Panchromatic imager on the WorldView very high resolution optical satellites operated by Vantor, formerly Maxar",
+        "Panchromatic imager on WorldView-3, a very high resolution optical satellite operated by Vantor, formerly Maxar",
       ],
     },
 
@@ -75,7 +75,11 @@ export const DATA__VANTOR_PANCHROMATIC: DataContent = {
       type: "text",
       heading: "Credits",
       headingLevel: "h3",
-      paragraphs: ["Vantor; NASA Disasters Program"],
+      paragraphs: [
+        "Vantor; NASA Disasters Program",
+        "©2026 Vantor. All rights reserved.",
+        "This work utilized data made available through the NASA Commercial Satellite Data Acquisition (CSDA) Program.",
+      ],
     },
 
     {

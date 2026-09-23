@@ -40,7 +40,7 @@ export const DATA__VANTOR_TRUE_COLOR: DataContent = {
       heading: "Summary",
       headingLevel: "h3",
       paragraphs: [
-        "Vantor True Color imagery presents the surface as the eye would see it, so vegetation appears green, bare ground appears brown or tan, water appears dark, and roofs and pavement keep their real colors. It needs no legend to read, which makes it the layer responders and the public usually look at first.",
+        "Vantor True Color imagery presents the surface as the eye would see it, so vegetation appears green, bare ground appears brown or tan, water appears dark, and roofs and pavement keep their real colors. It needs no legend to read.",
         "The scenes are delivered as eight-band multispectral tiles from the Vantor (formerly Maxar) WorldView satellites, in the order coastal, blue, green, yellow, red, red edge, near-infrared 1, and near-infrared 2. The true color view is assembled when the tile is displayed by drawing on the red, green, and blue bands of that set. Keeping the full eight bands rather than a pre-flattened color image means the same scenes also serve the color infrared view without a second copy of the data.",
       ],
     },
@@ -50,7 +50,7 @@ export const DATA__VANTOR_TRUE_COLOR: DataContent = {
       heading: "Suggested Use",
       headingLevel: "h3",
       paragraphs: [
-        "The very high spatial resolution supports damage assessment at the scale of individual structures: collapsed or unroofed buildings, blocked and buckled roads, debris fields, landslide scars, flood inundation, and changes to shorelines and river courses. It is also the layer most often used for public communication and briefings, because it needs no interpretation key.",
+        "The very high spatial resolution supports damage assessment at the scale of individual structures: collapsed or unroofed buildings, blocked and buckled roads, debris fields, landslide scars, flood inundation, and changes to shorelines and river courses. It also needs no interpretation key, so it can be presented in public communication and briefings as it is.",
         "Because the product uses only visible wavelengths, cloud, smoke, and haze obscure the surface, and no observation is possible at night. Coverage is targeted rather than wall-to-wall: scenes are collected over a specific area of interest during an activation, delivered as adjacent tiles, and there is no fixed revisit. Radar and nighttime lights products are the complement when the sky is closed or the sun is down.",
       ],
     },
@@ -60,7 +60,7 @@ export const DATA__VANTOR_TRUE_COLOR: DataContent = {
       heading: "Satellite/Sensor",
       headingLevel: "h3",
       paragraphs: [
-        "Eight-band (coastal, blue, green, yellow, red, red edge, near-infrared 1, near-infrared 2) multispectral imagers on the WorldView very high resolution optical satellites operated by Vantor, formerly Maxar",
+        "Eight-band (coastal, blue, green, yellow, red, red edge, near-infrared 1, near-infrared 2) multispectral imagers on the WorldView-2 and WorldView-3 very high resolution optical satellites operated by Vantor, formerly Maxar",
       ],
     },
 
@@ -77,7 +77,11 @@ export const DATA__VANTOR_TRUE_COLOR: DataContent = {
       type: "text",
       heading: "Credits",
       headingLevel: "h3",
-      paragraphs: ["Vantor; NASA Disasters Program"],
+      paragraphs: [
+        "Vantor; NASA Disasters Program",
+        "©2026 Vantor. All rights reserved.",
+        "This work utilized data made available through the NASA Commercial Satellite Data Acquisition (CSDA) Program.",
+      ],
     },
 
     {
