@@ -5,10 +5,10 @@ export const DATA__CAPELLA_BACKSCATTER: DataContent = {
 
   contentType: "data",
 
-  title: "Capella SAR Backscatter",
+  title: "Capella Backscatter",
 
   description:
-    "Calibrated radar backscatter in decibels derived from high-resolution Capella Space synthetic aperture radar (SAR) imagery acquired through NASA's Commercial Satellite Data Acquisition (CSDA) Program.",
+    "Sigma Naught backscatter derived from high-resolution Capella Space synthetic aperture radar (SAR) imagery acquired through NASA's Commercial Satellite Data Acquisition (CSDA) Program.",
 
   thumbnailImage: {
     src: "/img/data/capella-backscatter.webp",
@@ -37,25 +37,23 @@ export const DATA__CAPELLA_BACKSCATTER: DataContent = {
     {
       type: "text",
       heading: "Summary",
-      headingLevel: "h3",
       paragraphs: [
-        "This product provides calibrated radar backscatter derived from high-resolution Capella Space synthetic aperture radar (SAR) imagery acquired through NASA's Commercial Satellite Data Acquisition (CSDA) Program. Backscatter is computed from the scaling factors supplied with the Capella Geocoded Terrain Corrected (GEO) product, which is geocoded and terrain-height corrected using a high-resolution Digital Elevation Model (DEM). The SAR image is multi-looked, range compressed, and focused, and the resulting values are expressed in decibels (dB). Backscatter represents the strength of radar energy scattered back toward the sensor and reveals differences in surface roughness, moisture, structure, and other physical characteristics.",
+        "This product provides calibrated Sigma Naught (σ⁰) radar backscatter derived from high-resolution Capella Space synthetic aperture radar (SAR) imagery acquired through NASA's Commercial Satellite Data Acquisition (CSDA) Program. Source Geocoded Terrain Corrected (GEO) imagery, which is geocoded and terrain-height corrected using a high-resolution Digital Elevation Model (DEM), is multi-looked, range compressed, and focused to produce Sigma Naught backscatter in decibels (dB). Sigma Naught represents the strength of radar energy scattered back toward the sensor and can reveal differences in surface roughness, moisture, structure, and other physical characteristics.",
       ],
     },
 
     {
       type: "text",
       heading: "Suggested Use",
-      headingLevel: "h3",
       paragraphs: [
-        "Capella backscatter imagery can be used to assess surface conditions and identify changes associated with natural hazards, including flooding, tropical cyclone damage, wildfire impacts, severe storms, earthquakes, and winter weather. Because SAR is an active microwave imaging system, scenes can be collected day or night and through clouds, smoke, and rain that obscure optical imagery, which makes it especially valuable in the first days after a storm. Smooth open water returns very little energy and appears dark, so comparing a post-event scene against a pre-event scene can highlight inundated areas, while changes in bright returns can indicate damage to buildings, vegetation, or infrastructure. Radar backscatter is also influenced by viewing geometry, incidence angle, polarization, and surface orientation, so scenes should be compared with these differences in mind.",
+        "Capella backscatter imagery can be used to assess surface conditions and identify changes associated with natural hazards, including flooding, wildfire impacts, severe storm damage, tropical cyclones, earthquakes, and winter weather. Because SAR is an active microwave imaging system, observations can be collected during both day and night and through clouds, smoke, and many other atmospheric conditions that can obscure optical imagery. Differences in backscatter can help identify inundated areas, changes in surface roughness or moisture, and damage to vegetation or the built environment. Debris may manifest in images via nonuniform shapes or with significant backscatter.",
+        "Radar backscatter is also influenced by viewing geometry, incidence angle, polarization, and surface orientation, which should be considered when comparing scenes.",
       ],
     },
 
     {
       type: "text",
       heading: "Satellite/Sensor",
-      headingLevel: "h3",
       paragraphs: [
         "X-band Synthetic Aperture Radar (SAR) aboard the Capella Space commercial satellite constellation",
       ],
@@ -64,27 +62,24 @@ export const DATA__CAPELLA_BACKSCATTER: DataContent = {
     {
       type: "text",
       heading: "Resolution",
-      headingLevel: "h3",
       paragraphs: [
-        "Acquisition-dependent; native Capella source resolution is preserved, with imagery available at resolutions as fine as 25 centimeters (Spotlight) to 1.2 meters (Stripmap)",
+        "Acquisition-dependent; native Capella source resolution is preserved, with imagery available at resolutions as fine as 25 centimeters",
       ],
     },
 
     {
       type: "text",
       heading: "Credits",
-      headingLevel: "h3",
       paragraphs: [
-        "Capella Space, NASA Commercial Satellite Data Acquisition (CSDA) Program, NASA Disasters Program",
+        "NASA Disasters Program, processing by MSFC, Capella Space. For derived products: “Includes copyrighted material of Capella Space. All rights reserved.” This work utilized data made available through the NASA Commercial Satellite Data Acquisition (CSDA) program.",
       ],
     },
 
     {
       type: "text",
       heading: "Tags",
-      headingLevel: "h3",
       paragraphs: [
-        "NASA, CSDA, Capella, SAR, Synthetic Aperture Radar, X-band, Backscatter, Sigma Naught, Sigma0, GEO, Radar, Flood, Tropical Cyclone",
+        "NASA, CSDA, Capella, SAR, Synthetic Aperture Radar, X-band, Sigma Naught, Sigma0, Backscatter, GEO, Radar",
       ],
     },
   ],
