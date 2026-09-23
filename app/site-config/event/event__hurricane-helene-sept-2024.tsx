@@ -52,6 +52,8 @@ export const EVENT__HURRICANE_HELENE_SEPT_2024: EventContent = {
       type: "image",
       src: "/img/event/hurricane-helene-power-loss-oct-2-2024.webp",
       alt: "Experimental NASA Black Marble ZIP code power loss map for Hurricane Helene impacts across Tennessee, North Carolina, South Carolina, and Georgia.",
+      width: 710,
+      height: 564,
       caption:
         "The NASA Disasters Program created an experimental ZIP code power loss map showing the estimated percentage of luminosity loss within various ZIP codes throughout Tennessee, North Carolina, South Carolina, and Georgia, as of Oct. 2, 2024. The map was derived from a subset of NASA Black Marble Day/Night Band (BRDF-Corrected) data captured before (August 2024) and after (Oct. 2, 2024) the Helene struck. This dataset is experimental and should only be used for situational awareness and data corroboration. Credits: NASA Black Marble Science team",
     },
