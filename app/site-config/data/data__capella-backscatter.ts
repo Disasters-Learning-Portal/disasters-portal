@@ -38,7 +38,7 @@ export const DATA__CAPELLA_BACKSCATTER: DataContent = {
       type: "text",
       heading: "Summary",
       paragraphs: [
-        "This product provides calibrated Sigma Naught (σ⁰) radar backscatter derived from high-resolution Capella Space synthetic aperture radar (SAR) imagery acquired through NASA's Commercial Satellite Data Acquisition (CSDA) Program. Source Geocoded Terrain Corrected (GEO) imagery, which is geocoded and terrain-height corrected using a high-resolution Digital Elevation Model (DEM), is multi-looked, range compressed, and focused to produce Sigma Naught backscatter in decibels (dB). Sigma Naught represents the strength of radar energy scattered back toward the sensor and can reveal differences in surface roughness, moisture, structure, and other physical characteristics.",
+        "This product provides calibrated Sigma Naught (σ⁰) radar backscatter derived from high-resolution Capella Space synthetic aperture radar (SAR) imagery acquired through NASA's Commercial Satellite Data Acquisition (CSDA) Program. Source Geocoded Terrain Corrected (GEO) imagery is processed to Sigma Naught backscatter and filtered to reduce SAR speckle while preserving spatial detail. Sigma Naught represents the strength of radar energy scattered back toward the sensor and can reveal differences in surface roughness, moisture, structure, and other physical characteristics.",
       ],
     },
 
@@ -46,7 +46,7 @@ export const DATA__CAPELLA_BACKSCATTER: DataContent = {
       type: "text",
       heading: "Suggested Use",
       paragraphs: [
-        "Capella backscatter imagery can be used to assess surface conditions and identify changes associated with natural hazards, including flooding, wildfire impacts, severe storm damage, tropical cyclones, earthquakes, and winter weather. Because SAR is an active microwave imaging system, observations can be collected during both day and night and through clouds, smoke, and many other atmospheric conditions that can obscure optical imagery. Differences in backscatter can help identify inundated areas, changes in surface roughness or moisture, and damage to vegetation or the built environment. Debris may manifest in images via nonuniform shapes or with significant backscatter.",
+        "Capella Space backscatter imagery can be used to assess surface conditions and identify changes associated with natural hazards, including flooding, wildfire impacts, severe storm damage, tropical cyclones, earthquakes, and winter weather. Because SAR is an active microwave imaging system, observations can be collected during both day and night and through clouds, smoke, and many other atmospheric conditions that can obscure optical imagery. Differences in backscatter can help identify inundated areas, changes in surface roughness or moisture, and damage to vegetation or the built environment. Debris may manifest in images via nonuniform shapes or with significant backscatter.",
         "Radar backscatter is also influenced by viewing geometry, incidence angle, polarization, and surface orientation, which should be considered when comparing scenes.",
       ],
     },
@@ -63,7 +63,7 @@ export const DATA__CAPELLA_BACKSCATTER: DataContent = {
       type: "text",
       heading: "Resolution",
       paragraphs: [
-        "Acquisition-dependent; native Capella source resolution is preserved, with imagery available at resolutions as fine as 25 centimeters",
+        "Acquisition-dependent; native Capella Space source resolution is preserved, with imagery available at resolutions as fine as 25 centimeters",
       ],
     },
 
@@ -79,7 +79,7 @@ export const DATA__CAPELLA_BACKSCATTER: DataContent = {
       type: "text",
       heading: "Tags",
       paragraphs: [
-        "NASA, CSDA, Capella, SAR, Synthetic Aperture Radar, X-band, Sigma Naught, Sigma0, Backscatter, GEO, Radar",
+        "NASA, CSDA, Capella Space, SAR, Synthetic Aperture Radar, X-band, Sigma Naught, Sigma0, Backscatter, GEO, Radar",
       ],
     },
   ],
