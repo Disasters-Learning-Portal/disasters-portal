@@ -52,6 +52,7 @@ export const makeCardMastHeadProps = ({
   theme,
   ...rest
 }: CardMastheadPropsArgs): CardProps => ({
+  className: "blocks-card--contentpage",
   image: <AppImage {...mastheadImage} sizes="100vw" fill preload={true} />,
   ...(title || theme
     ? {
