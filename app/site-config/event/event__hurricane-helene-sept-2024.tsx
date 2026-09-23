@@ -7,7 +7,7 @@ export const EVENT__HURRICANE_HELENE_SEPT_2024: EventContent = {
 
   contentType: "event",
 
-  title: "Hurricane Helene Sept 2024",
+  title: "Hurricane Helene September 2024",
 
   lastUpdatedDate: "2024-09-26",
 

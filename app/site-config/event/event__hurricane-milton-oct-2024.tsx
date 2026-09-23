@@ -7,7 +7,7 @@ export const EVENT__HURRICANE_MILTON_OCT_2024: EventContent = {
 
   contentType: "event",
 
-  title: "Hurricane Milton Oct. 2024",
+  title: "Hurricane Milton October 2024",
 
   lastUpdatedDate: "2024-10-10",
 
