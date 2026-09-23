@@ -125,11 +125,11 @@ export type ContentBlock =
       type: "sectionCardGallery";
       heading?: string;
       href?: GalleryRoute;
-      cards: CardDetailedPropsArgs[];
+      cards: (Omit<CardDetailedPropsArgs, "title"> & { title: string })[];
     }
   | {
       type: "sectionCardFeatured";
-      card: CardFeaturedPropsArgs;
+      card: Omit<CardFeaturedPropsArgs, "title"> & { title: string };
     };
 
 export type InternalCardContent = {
