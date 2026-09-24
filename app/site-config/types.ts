@@ -100,7 +100,8 @@ export type ContentBlock =
       alt: string;
       width: number;
       height: number;
-      maxWidth?: string;
+      /** USWDS maxw-* token. The image fills the column unless capped here. */
+      maxWidth?: "card" | "card-lg" | "mobile" | "mobile-lg" | "tablet";
       caption?: string;
     }
   | (StacSingleLayerMapProps &
