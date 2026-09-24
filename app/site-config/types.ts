@@ -208,8 +208,10 @@ export type DataStoryContentExternal = Omit<ExternalCardContent, "contentType"> 
   contentType: "datastory";
 };
 
-export type EventContent = Omit<InternalCardContent, "contentType"> & {
+export type EventContent = Omit<InternalCardContent, "contentType" | "datePublished"> & {
   contentType: "event";
+  /** Events are revised as a response develops, so they show when they last changed. */
+  dateUpdated?: DateString;
   mastheadImage: MastheadImage;
   isLatest?: boolean;
   startDate: DateString;

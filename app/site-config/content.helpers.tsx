@@ -44,8 +44,8 @@ const childrenToLabel = <T extends { children: string }>({ children, ...rest }: 
   ...rest,
 });
 
-const makeDateTagProps = (date: DateString) =>
-  childrenToLabel(makeTextTagProps(`Published: ${toNASAStyleDate(date)}`));
+const makeDateTagProps = (date: DateString, label: "Published" | "Updated") =>
+  childrenToLabel(makeTextTagProps(`${label}: ${toNASAStyleDate(date)}`));
 
 export const makeThemeTagProps = (tag: Theme) => {
   const { label } = CONTENT_THEMES[tag];
@@ -68,6 +68,7 @@ export type CardMastheadPropsArgs = Omit<
   title?: string;
   theme?: Theme;
   datePublished?: DateString;
+  dateUpdated?: DateString;
 };
 
 export const makeCardMastHeadProps = ({
@@ -75,11 +76,16 @@ export const makeCardMastHeadProps = ({
   title,
   theme,
   datePublished,
+  dateUpdated,
   ...rest
 }: CardMastheadPropsArgs): CardProps => ({
   className: "blocks-card--contentpage",
   image: <AppImage {...mastheadImage} sizes="100vw" fill preload={true} />,
-  tag: datePublished && makeDateTagProps(datePublished),
+  // Events are maintained after the fact, so they carry an updated date; everything
+  // else that carries a date was published once. See #550.
+  tag: dateUpdated
+    ? makeDateTagProps(dateUpdated, "Updated")
+    : datePublished && makeDateTagProps(datePublished, "Published"),
   ...(title || theme
     ? {
         title: (
