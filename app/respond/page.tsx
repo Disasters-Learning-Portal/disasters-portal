@@ -1,7 +1,6 @@
 import {
   ContentBlockRenderer,
   PageMasthead,
-  SectionCardCarousel,
   SectionCardSimple,
   SectionHeading,
 } from "@/app/components/";
@@ -9,7 +8,6 @@ import { SectionCardSimpleMini } from "@/app/components/SectionCardSimpleMini";
 import {
   type CardMastheadPropsArgs,
   type CardSimplePropsArgs,
-  makeCardCarouselProps,
   makeCardMastHeadProps,
   makeCardSimpleProps,
 } from "@/app/site-config/content.helpers";
@@ -24,7 +22,7 @@ import {
 import { typedMap } from "@/app/site-config/typed.helpers";
 
 export default function RespondPage() {
-  const { title, theme, subtitle, mastheadImage }: CardMastheadPropsArgs = RESPOND_CONTENT;
+  const { theme, subtitle, mastheadImage }: CardMastheadPropsArgs = RESPOND_CONTENT;
   const stories: CardSimplePropsArgs[] = RESPOND_STORIES.slice(0, 2).map(
     ({ id, contentType, thumbnailImage, themes, title }) => ({
       id,
@@ -47,7 +45,13 @@ export default function RespondPage() {
 
   return (
     <>
-      <PageMasthead {...makeCardMastHeadProps({ title, subtitle, theme, mastheadImage })} />
+      <PageMasthead {...makeCardMastHeadProps({ subtitle, theme, mastheadImage })} />
+      <SectionCardSimpleMini
+        sectionHeading={
+          <SectionHeading href="/news-events-stories?type=event">Latest Events</SectionHeading>
+        }
+        cards={typedMap(RESPOND_EVENTS, transformEventToCardSimpleProps)}
+      />
       <SectionCardSimple
         sectionHeading={
           <SectionHeading href="/news-events-stories?type=story">Stories of Impact</SectionHeading>
@@ -58,17 +62,11 @@ export default function RespondPage() {
         // biome-ignore lint/suspicious/noArrayIndexKey: static content, never reorders
         <ContentBlockRenderer key={index} block={block} />
       ))}
-      <SectionCardSimpleMini
-        sectionHeading={
-          <SectionHeading href="/news-events-stories?type=event">Latest Events</SectionHeading>
-        }
-        cards={typedMap(RESPOND_EVENTS, transformEventToCardSimpleProps)}
-      />
-      <SectionCardCarousel
+      <SectionCardSimple
         sectionHeading={
           <SectionHeading href="/news-events-stories?type=datastory">Data Stories</SectionHeading>
         }
-        cards={typedMap(RESPOND_DATASTORIES, makeCardCarouselProps)}
+        cards={typedMap(RESPOND_DATASTORIES, makeCardSimpleProps)}
       />
       <SectionCardSimple
         sectionHeading={<SectionHeading href="/training">Resources & Learning</SectionHeading>}
