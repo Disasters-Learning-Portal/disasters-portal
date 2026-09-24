@@ -1,4 +1,5 @@
 import { type CardProps, InPageNavigation } from "@teamimpact/veda-ui-blocks";
+import type { ReactNode } from "react";
 import { ContentBlockRenderer } from "@/app/components/ContentBlockRenderer";
 import { PageMasthead } from "@/app/components/PageMasthead";
 import { PageSidebar, type RelatedItem, type SidebarDetail } from "@/app/components/PageSidebar";
@@ -18,6 +19,7 @@ export function ContentPageLayout({
   body,
   relatedContent,
   exploreDataUrl,
+  children,
 }: {
   masthead: CardProps;
   contentType: ContentType;
@@ -27,6 +29,8 @@ export function ContentPageLayout({
   body?: ContentBlock[];
   relatedContent?: RelatedItem[];
   exploreDataUrl?: string;
+  /** Rendered above the body blocks, e.g. the event Overview. */
+  children?: ReactNode;
 }) {
   return (
     <>
@@ -55,6 +59,7 @@ export function ContentPageLayout({
             </div>
 
             <div id={PAGE_CONTENT_ID} className="grid-col-12 desktop:grid-col-9">
+              {children}
               {/* Cancels the first block's own top margin, aligning the body with the sidebar. */}
               <div className="margin-top-neg-7">
                 {body.map((block, i) => (

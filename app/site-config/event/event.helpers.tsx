@@ -38,30 +38,45 @@ export const transformEventToPageMastHeadProps = (event: EventContent): CardProp
 };
 
 export const transformEventToPageSidebarDetails = (event: EventContent): SidebarDetail[] => {
-  const { region, startDate, linkDHSFEMA, linkUSGovernment } = event;
+  const { region, startDate } = event;
 
   return [
     { label: "Region", content: region },
     { label: "Start Date", content: toLongDate(startDate) },
-    linkDHSFEMA
-      ? {
-          label: "What DHS and FEMA are doing",
-          content: (
-            <Link variant="text" isExternal href={linkDHSFEMA.href}>
-              {linkDHSFEMA.label}
-            </Link>
-          ),
-        }
-      : null,
-    linkUSGovernment
-      ? {
-          label: "What the U.S. government is doing",
-          content: (
-            <Link variant="text" isExternal href={linkUSGovernment.href}>
-              {linkUSGovernment.label}
-            </Link>
-          ),
-        }
-      : null,
-  ].filter((detail): detail is NonNullable<typeof detail> => detail !== null);
+  ];
+};
+
+export type SectionOverviewItemProps = {
+  overviewItems: { title: string; content: React.ReactNode }[];
+};
+
+export const transformEventToSectionOverviewProps = (
+  event: EventContent,
+): SectionOverviewItemProps => {
+  const { linkDHSFEMA, linkUSGovernment } = event;
+
+  return {
+    overviewItems: [
+      linkDHSFEMA
+        ? {
+            title: "What DHS and FEMA are doing:",
+            content: (
+              <Link variant="text" isExternal href={linkDHSFEMA.href}>
+                {linkDHSFEMA.label}
+              </Link>
+            ),
+          }
+        : null,
+      linkUSGovernment
+        ? {
+            title: "What the U.S. government is doing:",
+            content: (
+              <Link variant="text" isExternal href={linkUSGovernment.href}>
+                {linkUSGovernment.label}
+              </Link>
+            ),
+          }
+        : null,
+    ].filter((item): item is NonNullable<typeof item> => item !== null),
+  };
 };

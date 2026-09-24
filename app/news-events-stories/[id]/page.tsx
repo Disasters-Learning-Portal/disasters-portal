@@ -1,11 +1,12 @@
 import { notFound } from "next/navigation";
-import { ContentPageLayout } from "@/app/components";
+import { ContentPageLayout, SectionOverview } from "@/app/components";
 import { makeCardMastHeadProps } from "@/app/site-config/content.helpers";
 import { DATASTORIES } from "@/app/site-config/datastory";
 import { EVENTS } from "@/app/site-config/event";
 import {
   transformEventToPageMastHeadProps,
   transformEventToPageSidebarDetails,
+  transformEventToSectionOverviewProps,
 } from "@/app/site-config/event/event.helpers";
 import { NEWS } from "@/app/site-config/news";
 import { STORIES } from "@/app/site-config/story";
@@ -37,6 +38,14 @@ export default async function NewsEventsStoriesItemPage(
       categories={categories}
       details={isEvent ? transformEventToPageSidebarDetails(contentItem) : undefined}
       body={body}
-    />
+    >
+      {isEvent && (
+        <SectionOverview
+          {...transformEventToSectionOverviewProps(contentItem)}
+          isMultiColumnLayout
+          className="margin-top-0 margin-bottom-0"
+        />
+      )}
+    </ContentPageLayout>
   );
 }

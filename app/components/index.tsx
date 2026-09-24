@@ -16,3 +16,4 @@ export { SectionCardSimple } from "./SectionCardSimple";
 export { SectionCardSimpleMini } from "./SectionCardSimpleMini";
 export { SectionCardSimpleMosaic } from "./SectionCardSimpleMosaic";
 export { SectionHeading } from "./SectionHeading";
+export { SectionOverview } from "./SectionOverview";
