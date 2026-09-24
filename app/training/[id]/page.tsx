@@ -29,6 +29,8 @@ export default async function TrainingItemPage(props: PageProps<"/training/[id]"
       themes={themes}
       categories={categories}
       body={body}
+      // Training modules carry a real numbered outline, not card titles.
+      inPageNavHeadings="h2 h3 h4"
     />
   );
 }

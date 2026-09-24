@@ -18,6 +18,7 @@ export function ContentPageLayout({
   body,
   relatedContent,
   exploreDataUrl,
+  inPageNavHeadings = "h2",
   children,
 }: {
   masthead: CardProps;
@@ -27,6 +28,16 @@ export function ContentPageLayout({
   body?: ContentBlock[];
   relatedContent?: RelatedItem[];
   exploreDataUrl?: string;
+  /**
+   * Headings the in-page nav collects, space separated.
+   *
+   * Defaults to `h2`, which is the section level on every content page. Card
+   * titles inside body blocks render as `h3` so the document outline nests
+   * correctly, and those are not places to navigate to, so the library default
+   * of `"h2 h3"` would list every card. Pages with a real sub-heading outline,
+   * such as the training modules, pass a deeper set.
+   */
+  inPageNavHeadings?: string;
   /** Rendered above the body blocks, e.g. the event Overview. */
   children?: ReactNode;
 }) {
@@ -52,7 +63,10 @@ export function ContentPageLayout({
                 relatedContent={relatedContent}
                 exploreDataUrl={exploreDataUrl}
               />
-              <InPageNavigation data-main-content-selector={`#${PAGE_CONTENT_ID}`} />
+              <InPageNavigation
+                data-main-content-selector={`#${PAGE_CONTENT_ID}`}
+                data-heading-elements={inPageNavHeadings}
+              />
             </div>
 
             <div id={PAGE_CONTENT_ID} className="grid-col-12 desktop:grid-col-9">
