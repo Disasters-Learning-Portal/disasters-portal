@@ -40,7 +40,6 @@ export const DATASTORY__TOOLS_YOU_CAN_USE_MAPPING_FLOOD_IMPACTS: DataStoryConten
       layerConfig: {
         type: "raster",
         collectionId: "sentinel1-hydrosar-wm-iw-dvr-subdaily",
-        collectionAssetId: "dvr",
         dateRange: { from: "2024-11-22", to: "2024-11-24" },
       },
       caption:
