@@ -1,11 +1,11 @@
 import { type CardProps, type CardSimpleProps, Link } from "@teamimpact/veda-ui-blocks";
 import type { AppLink } from "@/app/components/AppLink";
+import type { SidebarDetail } from "@/app/components/PageSidebar";
 import {
   makeCardMastHeadProps,
   makeCardSimpleProps,
   makeTextTagProps,
   toLongDate,
-  toTitleCase,
 } from "@/app/site-config/content.helpers";
 import type { EventContent, IterableItemWithId } from "@/app/site-config/types";
 
@@ -37,6 +37,15 @@ export const transformEventToPageMastHeadProps = (event: EventContent): CardProp
   });
 };
 
+export const transformEventToPageSidebarDetails = (event: EventContent): SidebarDetail[] => {
+  const { region, startDate } = event;
+
+  return [
+    { label: "Region", content: region },
+    { label: "Start Date", content: toLongDate(startDate) },
+  ];
+};
+
 export type SectionOverviewItemProps = {
   overviewItems: { title: string; content: React.ReactNode }[];
 };
@@ -44,13 +53,10 @@ export type SectionOverviewItemProps = {
 export const transformEventToSectionOverviewProps = (
   event: EventContent,
 ): SectionOverviewItemProps => {
-  const { region, startDate, categories, linkDHSFEMA, linkUSGovernment } = event;
+  const { linkDHSFEMA, linkUSGovernment } = event;
 
   return {
     overviewItems: [
-      { title: "Region", content: region },
-      { title: "Start Date", content: toLongDate(startDate) },
-      { title: "Hazard(s)", content: categories.map((c) => toTitleCase(c)).join(", ") },
       linkDHSFEMA
         ? {
             title: "What DHS and FEMA are doing:",

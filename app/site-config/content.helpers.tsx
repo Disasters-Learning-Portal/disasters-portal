@@ -62,22 +62,14 @@ export type CardMastheadPropsArgs = Omit<
 export const makeCardMastHeadProps = ({
   mastheadImage,
   title,
+  subtitle,
   theme,
   ...rest
 }: CardMastheadPropsArgs): CardProps => ({
   className: "blocks-card--contentpage",
   image: <AppImage {...mastheadImage} sizes="100vw" fill preload={true} />,
-  ...(title || theme
-    ? {
-        title: (
-          <h1
-            className={`font-mono-3xl text-normal text-white text-uppercase flex-align-self-start margin-0 ${theme ? `bg-${CONTENT_THEMES[theme].color} text-ls-3` : ""}`}
-          >
-            {title ?? theme}
-          </h1>
-        ),
-      }
-    : {}),
+  title: title ?? (theme ? CONTENT_THEMES[theme].label : undefined),
+  description: subtitle,
   colorMode: "dark",
   isMastHead: true,
   ...rest,
@@ -116,8 +108,18 @@ export const makeCardFeaturedProps = (
   } = props;
   return {
     id,
-    callToAction: callToAction && { ...callToAction, as: AppLink },
-    callToActionSecondary: callToActionSecondary && { ...callToActionSecondary, as: AppLink },
+    callToAction: callToAction && {
+      ...callToAction,
+      variant: "arrow",
+      color: "secondary",
+      as: AppLink,
+    },
+    callToActionSecondary: callToActionSecondary && {
+      ...callToActionSecondary,
+      variant: "arrow",
+      color: "secondary",
+      as: AppLink,
+    },
     image: (
       <AppImage
         alt={image.alt}
@@ -195,6 +197,8 @@ export const makeCardDetailedProps = ({
   callToAction: {
     href: url ? url : `${CONTENT_TYPES[contentType].route}/${id}`,
     label: `View ${toTitleCase(CONTENT_TYPES[contentType].label)}`,
+    variant: "arrow",
+    color: "secondary",
     isExternal: !!url,
     as: AppLink,
   },
@@ -224,6 +228,8 @@ export const makeCardDetailedImageLeftProps = ({
   callToAction: {
     href: url ? url : `${CONTENT_TYPES[contentType].route}/${id}`,
     label: `View ${toTitleCase(CONTENT_TYPES[contentType].label)}`,
+    variant: "arrow",
+    color: "secondary",
     isExternal: !!url,
     as: AppLink,
   },
@@ -308,6 +314,8 @@ export const makeCardCarouselProps = ({
   callToAction: {
     href: url ? url : `${CONTENT_TYPES[contentType].route}/${id}`,
     label: `View ${toTitleCase(CONTENT_TYPES[contentType].label)}`,
+    variant: "arrow",
+    color: "secondary",
     isExternal: !!url,
     as: AppLink,
   },
