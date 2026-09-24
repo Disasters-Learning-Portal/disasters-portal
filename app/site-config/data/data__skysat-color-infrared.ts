@@ -12,12 +12,12 @@ export const DATA__SKYSAT_COLOR_INFRARED: DataContent = {
 
   thumbnailImage: {
     src: "/img/data/skysat-color-infrared.webp",
-    alt: "Planet Labs satellite image of farmland, towns, and industrial sites along the Mississippi River in Louisiana, from NASA's Commercial Satellite Data Acquisition Program",
+    alt: "Planet SkySat color infrared image of southern Saipan following Typhoon Sinlaku in April 2026, with healthy vegetation in bright red, the island's international airport at center right, and the reef along the western coast",
   },
 
   mastheadImage: {
     src: "/img/data/skysat-color-infrared.webp",
-    alt: "Planet Labs satellite image of farmland, towns, and industrial sites along the Mississippi River in Louisiana, from NASA's Commercial Satellite Data Acquisition Program",
+    alt: "Planet SkySat color infrared image of southern Saipan following Typhoon Sinlaku in April 2026, with healthy vegetation in bright red, the island's international airport at center right, and the reef along the western coast",
   },
 
   themes: ["respond", "build", "prepare", "recover"],
