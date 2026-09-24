@@ -32,7 +32,7 @@ export const EVENT__US_WINTER_STORM_JAN_2026: EventContent = {
     label: "Learn more",
     href: "https://www.fema.gov/disaster/2026-winter-storm",
   },
-  
+
   body: [
     {
       type: "text",
