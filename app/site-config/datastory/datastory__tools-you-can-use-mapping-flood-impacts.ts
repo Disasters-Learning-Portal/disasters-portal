@@ -15,7 +15,7 @@ export const DATASTORY__TOOLS_YOU_CAN_USE_MAPPING_FLOOD_IMPACTS: DataStoryConten
     alt: "Satellite map of surface water extents in the central U.S., with water shown in blue and land in white",
   },
   themes: ["respond"],
-  categories: ["flood", "severewx"],
+  categories: ["flood", "severe weather"],
   body: [
     {
       type: "text",
@@ -37,7 +37,7 @@ export const DATASTORY__TOOLS_YOU_CAN_USE_MAPPING_FLOOD_IMPACTS: DataStoryConten
     {
       type: "stacSingleLayer",
       heading: "Black Marble Nighttime Blue/Yellow Composite",
-      initialViewState: { longitude: -90.82, latitude: 34.00, zoom: 6 },
+      initialViewState: { longitude: -90.82, latitude: 34.0, zoom: 6 },
       layerConfig: {
         type: "raster",
         collectionId: "sentinel1-hydrosar-wm-iw-dvr-subdaily",
