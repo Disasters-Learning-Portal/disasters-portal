@@ -11,12 +11,11 @@ export default async function TrainingItemPage(props: PageProps<"/training/[id]"
 
   if (!contentItem) notFound();
 
-  const { contentType, datePublished, mastheadImage, title, themes, categories, body } =
-    contentItem;
+  const { contentType, dateUpdated, mastheadImage, title, themes, categories, body } = contentItem;
 
   return (
     <ContentPageLayout
-      masthead={makeCardMastHeadProps({ mastheadImage, title, datePublished })}
+      masthead={makeCardMastHeadProps({ mastheadImage, title, dateUpdated })}
       contentType={contentType}
       themes={themes}
       categories={categories}

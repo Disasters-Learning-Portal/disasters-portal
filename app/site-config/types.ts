@@ -165,9 +165,10 @@ export type ExternalCardContent = InternalCardContent & { url: string };
 
 export type GalleryCardContent = InternalCardContent | ExternalCardContent;
 
-export type TrainingContent = Omit<InternalCardContent, "contentType"> & {
+export type TrainingContent = Omit<InternalCardContent, "contentType" | "datePublished"> & {
   contentType: "training";
-  datePublished: DateString;
+  /** Modules are revised as the material changes, so they show when they last changed. */
+  dateUpdated: DateString;
   mastheadImage: MastheadImage;
   body?: ContentBlock[]; // TODO: require body
   relatedContent?: string[];
