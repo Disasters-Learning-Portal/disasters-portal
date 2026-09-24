@@ -2,9 +2,11 @@ import { Section, type SectionProps } from "@/app/components/Section";
 import type { SectionOverviewItemProps } from "@/app/site-config/event/event.helpers";
 
 const ContainerItem = ({ title, content }: { title: string; content: React.ReactNode }) => (
-  <div className="grid-col-12 tablet:grid-col-4 margin-bottom-2">
-    <div className="font-body-md margin-bottom-1 text-semibold">{title}</div>
-    <span className="padding-top-1">{content}</span>
+  <div className="margin-right-8 margin-bottom-2">
+    <div className="font-ui-3xs line-height-ui-5 text-bold text-uppercase text-ls-1 text-base-dark margin-bottom-05">
+      {title}
+    </div>
+    {content}
   </div>
 );
 
@@ -20,7 +22,7 @@ export const SectionOverview = ({
 
   return (
     <Section className={`padding-bottom-3 ${className}`} {...rest}>
-      <div className={"grid-row border-top border-bottom border-base-light padding-top-2"}>
+      <div className="display-flex flex-wrap border-top border-bottom border-base-lighter padding-top-3 padding-bottom-1">
         {overviewItems.map((i) => (
           <ContainerItem key={i.title} {...i} />
         ))}

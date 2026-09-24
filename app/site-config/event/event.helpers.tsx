@@ -1,5 +1,4 @@
-import { type CardProps, type CardSimpleProps, Link } from "@teamimpact/veda-ui-blocks";
-import type { AppLink } from "@/app/components/AppLink";
+import { type CardProps, Link } from "@teamimpact/veda-ui-blocks";
 import type { SidebarDetail } from "@/app/components/PageSidebar";
 import {
   makeCardMastHeadProps,
@@ -7,11 +6,11 @@ import {
   makeTextTagProps,
   toLongDate,
 } from "@/app/site-config/content.helpers";
-import type { EventContent, IterableItemWithId } from "@/app/site-config/types";
+import type { EventContent } from "@/app/site-config/types";
 
 export const transformEventToCardSimpleProps = (
   event: EventContent,
-): IterableItemWithId<CardSimpleProps<typeof AppLink>> => {
+): ReturnType<typeof makeCardSimpleProps> => {
   const { isLatest, id, contentType, thumbnailImage, title } = event;
   return makeCardSimpleProps({
     id,
@@ -57,22 +56,32 @@ export const transformEventToSectionOverviewProps = (
 
   return {
     overviewItems: [
-      linkDHSFEMA
+      linkUSGovernment
         ? {
-            title: "What DHS and FEMA are doing:",
+            title: "What the U.S. government is doing",
             content: (
-              <Link variant="text" isExternal href={linkDHSFEMA.href}>
-                {linkDHSFEMA.label ?? "Read more."}
+              <Link
+                variant="text"
+                className="text-ink text-bold"
+                isExternal
+                href={linkUSGovernment.href}
+              >
+                {linkUSGovernment.label ?? "Read more"}
               </Link>
             ),
           }
         : null,
-      linkUSGovernment
+      linkDHSFEMA
         ? {
-            title: "What the U.S. government is doing:",
+            title: "What DHS and FEMA are doing",
             content: (
-              <Link variant="text" isExternal href={linkUSGovernment.href}>
-                {linkUSGovernment.label ?? "Read more"}
+              <Link
+                variant="text"
+                className="text-ink text-bold"
+                isExternal
+                href={linkDHSFEMA.href}
+              >
+                {linkDHSFEMA.label ?? "Read more"}
               </Link>
             ),
           }
