@@ -12,12 +12,12 @@ export const DATA__UAVSAR_UNET_CLASSIFIED: DataContent = {
 
   thumbnailImage: {
     src: "/img/data/uavsar-unet-classified.webp",
-    alt: "UAVSAR U-Net flood classification over central Texas from July 2025, showing flooded cropland in orange, flooded developed areas in red, and open water in blue",
+    alt: "UAVSAR U-Net flood classification over central Texas from July 2025, shown over aerial imagery of a river and reservoir system, with open water and inundation in blue, flooded developed areas in red, and flooded cropland in orange",
   },
 
   mastheadImage: {
     src: "/img/data/uavsar-unet-classified.webp",
-    alt: "UAVSAR U-Net flood classification over central Texas from July 2025, showing flooded cropland in orange, flooded developed areas in red, and open water in blue",
+    alt: "UAVSAR U-Net flood classification over central Texas from July 2025, shown over aerial imagery of a river and reservoir system, with open water and inundation in blue, flooded developed areas in red, and flooded cropland in orange",
   },
 
   themes: ["respond", "recover"],
