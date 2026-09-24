@@ -31,7 +31,7 @@ export function PageSidebar({
       {
         // Begin section on themes, categories, related content
         CONTENT_SIDEBAR_CONTENT_TYPES.includes(contentType) && (
-          <div className="bg-base-lightest padding-4 margin-bottom-4">
+          <div className="padding-4 margin-bottom-4">
             {exploreDataUrl && (
               <div className="margin-bottom-3">
                 <AppLinkStyled
