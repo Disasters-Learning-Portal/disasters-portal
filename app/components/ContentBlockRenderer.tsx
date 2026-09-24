@@ -236,11 +236,7 @@ export const ContentBlockRenderer = ({
             // The section heading is h2, so card titles must be h3.
             // Card has no titleAs option. This should be dropped if
             // it ever becomes available.
-            title: (
-              <h3 className="blocks-card__title" title={block.card.title}>
-                {block.card.title}
-              </h3>
-            ),
+            title: <h3 className="blocks-card__title">{block.card.title}</h3>,
           })}
         />
       );
