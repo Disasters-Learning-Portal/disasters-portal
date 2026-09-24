@@ -1,4 +1,5 @@
 import type { DataStoryContent } from "../types";
+import { CARTO_DARK_WITH_LABELS_BASEMAP_STYLE, Link } from "@teamimpact/veda-ui-blocks";
 
 export const DATASTORY__TOOLS_YOU_CAN_USE_MAPPING_FLOOD_IMPACTS: DataStoryContent = {
   id: "tools-you-can-use-mapping-flood-impacts",
@@ -36,12 +37,13 @@ export const DATASTORY__TOOLS_YOU_CAN_USE_MAPPING_FLOOD_IMPACTS: DataStoryConten
     },
     {
       type: "stacSingleLayer",
-      initialViewState: { longitude: -84.1, latitude: 10.5, zoom: 6 },
+      initialViewState: { longitude: -82.22, latitude: 27.42, zoom: 6 },
+      baseMapStyle: CARTO_DARK_WITH_LABELS_BASEMAP_STYLE,
       layerConfig: {
         type: "raster",
         collectionId: "sentinel1-hydrosar-wm-iw-dvr-subdaily",
         collectionAssetId: "dvr",
-        dateRange: { from: "2024-11-22", to: "2024-11-24" },
+        dateRange: { from: "2024-10-09", to: "2024-10-11" },
       },
       caption:
         "The Copernicus Sentinel-1 satellite collected synthetic aperture radar (SAR) imagery over the southeast and central U.S. from April 4-9, 2025, capturing flooding from severe storms. HydroSAR surface water extents are shown in blue. These are overlaid on VH cross-pol SAR imagery (grayscale), in which still water and other flat surfaces appear black, while diffuse scatterers like vegetation appear in lighter shades. Credits: NASA Disasters Program, Alaska Satellite Facility. Contains modified Copernicus Sentinel data (2025) processed by ESA.",
