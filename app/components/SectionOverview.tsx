@@ -16,16 +16,15 @@ export const SectionOverview = ({
   children,
   ...rest
 }: SectionOverviewProps) => {
+  if (overviewItems.length === 0) return null;
+
   return (
     <Section className={`padding-bottom-3 ${className}`} {...rest}>
-      <h2 className="font-sans-3xl margin-top-0">Overview</h2>
-      {overviewItems.length > 0 && (
-        <div className={"grid-row border-top border-bottom border-base-light padding-top-2"}>
-          {overviewItems.map((i) => (
-            <ContainerItem key={i.title} {...i} />
-          ))}
-        </div>
-      )}
+      <div className={"grid-row border-top border-bottom border-base-light padding-top-2"}>
+        {overviewItems.map((i) => (
+          <ContainerItem key={i.title} {...i} />
+        ))}
+      </div>
       {children}
     </Section>
   );
