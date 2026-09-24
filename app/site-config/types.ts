@@ -165,9 +165,10 @@ export type ExternalCardContent = InternalCardContent & { url: string };
 
 export type GalleryCardContent = InternalCardContent | ExternalCardContent;
 
-export type TrainingContent = Omit<InternalCardContent, "contentType"> & {
+export type TrainingContent = Omit<InternalCardContent, "contentType" | "datePublished"> & {
   contentType: "training";
-  datePublished: DateString;
+  /** Modules are revised as the material changes, so they show when they last changed. */
+  dateUpdated: DateString;
   mastheadImage: MastheadImage;
   body?: ContentBlock[]; // TODO: require body
   relatedContent?: string[];
@@ -208,8 +209,10 @@ export type DataStoryContentExternal = Omit<ExternalCardContent, "contentType"> 
   contentType: "datastory";
 };
 
-export type EventContent = Omit<InternalCardContent, "contentType"> & {
+export type EventContent = Omit<InternalCardContent, "contentType" | "datePublished"> & {
   contentType: "event";
+  /** Events are revised as a response develops, so they show when they last changed. */
+  dateUpdated?: DateString;
   mastheadImage: MastheadImage;
   isLatest?: boolean;
   startDate: DateString;

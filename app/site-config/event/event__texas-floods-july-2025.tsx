@@ -26,7 +26,7 @@ export const EVENT__TEXAS_FLOODS_JULY_2025: EventContent = {
   },
   themes: ["respond"],
   categories: ["flood"],
-  datePublished: "2025-07-09",
+  dateUpdated: "2025-07-09",
   startDate: "2025-07-04",
   region: "Texas, North America",
   body: [
