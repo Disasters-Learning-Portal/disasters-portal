@@ -43,6 +43,7 @@ export const CONTENT_SIDEBAR_CONTENT_TYPES: ContentType[] = [
   "data",
   "story",
   "datastory",
+  "event",
   "training",
 ];
 
