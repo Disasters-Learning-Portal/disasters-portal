@@ -5,7 +5,13 @@ import { PageMasthead } from "@/app/components/PageMasthead";
 import { PageSidebar, type RelatedItem } from "@/app/components/PageSidebar";
 import { PageStatus } from "@/app/components/PageStatus";
 import { Section } from "@/app/components/Section";
-import type { Category, ContentBlock, ContentType, Theme } from "@/app/site-config/types";
+import {
+  type Category,
+  type ContentBlock,
+  type ContentType,
+  SHOW_IN_PAGE_NAVIGATION_CONTENT_TYPES,
+  type Theme,
+} from "@/app/site-config/types";
 import styles from "./ContentPageLayout.module.css";
 
 const PAGE_CONTENT_ID = "page-content";
@@ -47,13 +53,15 @@ export function ContentPageLayout({
           <div className="grid-row grid-gap">
             <div className="grid-col-12 desktop:grid-col-3">
               <div className={styles.aside}>
-                <InPageNavigation
-                  // disable the default sticky behavior of the nav as it
-                  // would conflict with the scrolling column.
-                  className="position-static"
-                  data-main-content-selector={`#${PAGE_CONTENT_ID}`}
-                  data-heading-elements="h2"
-                />
+                {SHOW_IN_PAGE_NAVIGATION_CONTENT_TYPES.includes(contentType) && (
+                  <InPageNavigation
+                    // disable the default sticky behavior of the nav as it
+                    // would conflict with the scrolling column.
+                    className="position-static"
+                    data-main-content-selector={`#${PAGE_CONTENT_ID}`}
+                    data-heading-elements="h2"
+                  />
+                )}
                 <PageSidebar
                   contentType={contentType}
                   themes={themes}
