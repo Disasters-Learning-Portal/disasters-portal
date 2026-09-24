@@ -22,19 +22,19 @@ export const CONTENT_TYPES: Record<ContentType, { route: AppRoutes; label: strin
 
 export const CONTENT_THEMES: Record<Theme, { label: string; color?: string }> = {
   respond: {
-    label: "respond",
+    label: "Respond",
     color: "secondary",
   },
   build: {
-    label: "build resilience",
+    label: "Build resilience",
     color: "success",
   },
   prepare: {
-    label: "prepare",
+    label: "Prepare",
     color: "accent-warm",
   },
   recover: {
-    label: "recover",
+    label: "Recover",
     color: "accent-cool",
   },
 };
@@ -102,14 +102,12 @@ export type ContentBlock =
         type: "stacSingleLayer";
         heading?: string;
         headingLevel?: "h2" | "h3" | "h4";
-        caption?: string;
       })
   | (StacCompareMapProps &
       GeoConfig & {
         type: "stacCompare";
         heading?: string;
         headingLevel?: "h2" | "h3" | "h4";
-        caption?: string;
       })
   | {
       type: "sectionCardSimple";
@@ -121,11 +119,11 @@ export type ContentBlock =
       type: "sectionCardGallery";
       heading?: string;
       href?: GalleryRoute;
-      cards: CardDetailedPropsArgs[];
+      cards: (Omit<CardDetailedPropsArgs, "title"> & { title: string })[];
     }
   | {
       type: "sectionCardFeatured";
-      card: CardFeaturedPropsArgs;
+      card: Omit<CardFeaturedPropsArgs, "title"> & { title: string };
     };
 
 export type InternalCardContent = {
