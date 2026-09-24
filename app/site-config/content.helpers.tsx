@@ -197,6 +197,8 @@ export const makeCardDetailedProps = ({
   callToAction: {
     href: url ? url : `${CONTENT_TYPES[contentType].route}/${id}`,
     label: `View ${toTitleCase(CONTENT_TYPES[contentType].label)}`,
+    variant: "arrow",
+    color: "secondary",
     isExternal: !!url,
     as: AppLink,
   },
@@ -226,6 +228,8 @@ export const makeCardDetailedImageLeftProps = ({
   callToAction: {
     href: url ? url : `${CONTENT_TYPES[contentType].route}/${id}`,
     label: `View ${toTitleCase(CONTENT_TYPES[contentType].label)}`,
+    variant: "arrow",
+    color: "secondary",
     isExternal: !!url,
     as: AppLink,
   },
@@ -310,6 +314,8 @@ export const makeCardCarouselProps = ({
   callToAction: {
     href: url ? url : `${CONTENT_TYPES[contentType].route}/${id}`,
     label: `View ${toTitleCase(CONTENT_TYPES[contentType].label)}`,
+    variant: "arrow",
+    color: "secondary",
     isExternal: !!url,
     as: AppLink,
   },
