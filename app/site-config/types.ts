@@ -39,13 +39,6 @@ export const CONTENT_THEMES: Record<Theme, { label: string; color?: string }> = 
   },
 };
 
-export const CONTENT_SIDEBAR_CONTENT_TYPES: ContentType[] = [
-  "data",
-  "story",
-  "datastory",
-  "training",
-];
-
 export type IterableItemWithId<T> = T & { id: string };
 
 export type Theme = "respond" | "build" | "prepare" | "recover";

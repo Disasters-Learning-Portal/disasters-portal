@@ -6,12 +6,7 @@ import {
   makeOutlineTagProps,
   makeThemeTagProps,
 } from "@/app/site-config/content.helpers";
-import {
-  type Category,
-  CONTENT_SIDEBAR_CONTENT_TYPES,
-  type ContentType,
-  type Theme,
-} from "@/app/site-config/types";
+import type { Category, ContentType, Theme } from "@/app/site-config/types";
 
 export function PageSidebar({
   contentType,
@@ -28,66 +23,54 @@ export function PageSidebar({
 }) {
   return (
     <aside>
-      {
-        // Begin section on themes, categories, related content
-        CONTENT_SIDEBAR_CONTENT_TYPES.includes(contentType) && (
-          <div className="padding-4 margin-bottom-4">
-            {exploreDataUrl && (
-              <div className="margin-bottom-3">
-                <AppLinkStyled
-                  href={exploreDataUrl}
-                  variant="button"
-                  isExternal
-                  className="width-full"
-                >
-                  Explore Data
-                </AppLinkStyled>
-              </div>
-            )}
-
-            <div
-              className={`${exploreDataUrl ? "border-top border-base-lighter " : ""}padding-top-3 margin-bottom-3`}
-            >
-              <MetaGroup label="Type">
-                <div className="margin-right-1 margin-bottom-1">
-                  <Tag {...makeOutlineTagProps(makeContentTypeTagProps(contentType))} />
-                </div>
-              </MetaGroup>
-
-              {themes.length > 0 && (
-                <MetaGroup label="Theme">
-                  {themes.map((theme) => (
-                    <div key={theme} className="margin-right-1 margin-bottom-1">
-                      <Tag {...makeOutlineTagProps(makeThemeTagProps(theme))} />
-                    </div>
-                  ))}
-                </MetaGroup>
-              )}
-
-              {categories.length > 0 && (
-                <MetaGroup label="Hazard">
-                  {categories.map((category) => (
-                    <div key={category} className="margin-right-1 margin-bottom-1">
-                      <Tag {...makeOutlineTagProps(category)} />
-                    </div>
-                  ))}
-                </MetaGroup>
-              )}
-            </div>
-
-            {relatedContent.length > 0 && (
-              <div className="border-top border-base-lighter padding-top-3">
-                <p className="text-bold font-body-sm margin-top-0 margin-bottom-3">
-                  Related Content
-                </p>
-                {relatedContent.map((item) => (
-                  <RelatedContentItem key={item.id} item={item} />
-                ))}
-              </div>
-            )}
+      <div className="padding-4 margin-bottom-4">
+        {exploreDataUrl && (
+          <div className="margin-bottom-3">
+            <AppLinkStyled href={exploreDataUrl} variant="button" isExternal className="width-full">
+              Explore Data
+            </AppLinkStyled>
           </div>
-        )
-      }
+        )}
+
+        <div
+          className={`${exploreDataUrl ? "border-top border-base-lighter " : ""}padding-top-3 margin-bottom-3`}
+        >
+          <MetaGroup label="Type">
+            <div className="margin-right-1 margin-bottom-1">
+              <Tag {...makeOutlineTagProps(makeContentTypeTagProps(contentType))} />
+            </div>
+          </MetaGroup>
+
+          {themes.length > 0 && (
+            <MetaGroup label="Theme">
+              {themes.map((theme) => (
+                <div key={theme} className="margin-right-1 margin-bottom-1">
+                  <Tag {...makeOutlineTagProps(makeThemeTagProps(theme))} />
+                </div>
+              ))}
+            </MetaGroup>
+          )}
+
+          {categories.length > 0 && (
+            <MetaGroup label="Hazard">
+              {categories.map((category) => (
+                <div key={category} className="margin-right-1 margin-bottom-1">
+                  <Tag {...makeOutlineTagProps(category)} />
+                </div>
+              ))}
+            </MetaGroup>
+          )}
+        </div>
+
+        {relatedContent.length > 0 && (
+          <div className="border-top border-base-lighter padding-top-3">
+            <p className="text-bold font-body-sm margin-top-0 margin-bottom-3">Related Content</p>
+            {relatedContent.map((item) => (
+              <RelatedContentItem key={item.id} item={item} />
+            ))}
+          </div>
+        )}
+      </div>
     </aside>
   );
 }
