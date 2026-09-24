@@ -52,6 +52,7 @@ export function ContentPageLayout({
                   // would conflict with the scrolling column.
                   className="position-static"
                   data-main-content-selector={`#${PAGE_CONTENT_ID}`}
+                  data-heading-elements="h2"
                 />
                 <PageSidebar
                   contentType={contentType}
