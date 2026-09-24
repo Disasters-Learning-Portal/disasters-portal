@@ -17,12 +17,14 @@ export function PageSidebar({
   contentType,
   themes,
   categories,
+  details = [],
   relatedContent = [],
   exploreDataUrl,
 }: {
   contentType: ContentType;
   themes: Theme[];
   categories: Category[];
+  details?: SidebarDetail[];
   relatedContent?: RelatedItem[];
   exploreDataUrl?: string;
 }) {
@@ -73,6 +75,12 @@ export function PageSidebar({
                   ))}
                 </MetaGroup>
               )}
+
+              {details.map(({ label, content }) => (
+                <MetaGroup key={label} label={label}>
+                  <div className="text-semibold">{content}</div>
+                </MetaGroup>
+              ))}
             </div>
 
             {relatedContent.length > 0 && (
@@ -91,6 +99,8 @@ export function PageSidebar({
     </aside>
   );
 }
+
+export type SidebarDetail = { label: string; content: ReactNode };
 
 export type RelatedItem = {
   id: string;

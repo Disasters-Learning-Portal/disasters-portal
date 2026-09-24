@@ -73,6 +73,7 @@ export type CardMastheadPropsArgs = Omit<
 export const makeCardMastHeadProps = ({
   mastheadImage,
   title,
+  subtitle,
   theme,
   datePublished,
   ...rest
@@ -80,17 +81,8 @@ export const makeCardMastHeadProps = ({
   className: "blocks-card--contentpage",
   image: <AppImage {...mastheadImage} sizes="100vw" fill preload={true} />,
   tag: datePublished && makeDateTagProps(datePublished),
-  ...(title || theme
-    ? {
-        title: (
-          <h1
-            className={`font-mono-3xl text-normal text-white text-uppercase flex-align-self-start margin-0 ${theme ? `bg-${CONTENT_THEMES[theme].color} text-ls-3` : ""}`}
-          >
-            {title ?? theme}
-          </h1>
-        ),
-      }
-    : {}),
+  title: title ?? (theme ? CONTENT_THEMES[theme].label : undefined),
+  description: subtitle,
   colorMode: "dark",
   isMastHead: true,
   ...rest,
@@ -129,8 +121,18 @@ export const makeCardFeaturedProps = (
   } = props;
   return {
     id,
-    callToAction: callToAction && { ...callToAction, as: AppLink },
-    callToActionSecondary: callToActionSecondary && { ...callToActionSecondary, as: AppLink },
+    callToAction: callToAction && {
+      ...callToAction,
+      variant: "arrow",
+      color: "secondary",
+      as: AppLink,
+    },
+    callToActionSecondary: callToActionSecondary && {
+      ...callToActionSecondary,
+      variant: "arrow",
+      color: "secondary",
+      as: AppLink,
+    },
     image: (
       <AppImage
         alt={image.alt}
@@ -190,6 +192,8 @@ const makeCardCTAProps = ({
 }) => ({
   href: url ? url : `${CONTENT_TYPES[contentType].route}/${id}`,
   label: `View ${toTitleCase(CONTENT_TYPES[contentType].label)}`,
+  variant: "arrow" as const,
+  color: "secondary" as const,
   isExternal: !!url,
   as: AppLink,
 });

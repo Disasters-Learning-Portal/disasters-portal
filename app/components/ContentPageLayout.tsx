@@ -2,7 +2,7 @@ import { type CardProps, InPageNavigation } from "@teamimpact/veda-ui-blocks";
 import type { ReactNode } from "react";
 import { ContentBlockRenderer } from "@/app/components/ContentBlockRenderer";
 import { PageMasthead } from "@/app/components/PageMasthead";
-import { PageSidebar, type RelatedItem } from "@/app/components/PageSidebar";
+import { PageSidebar, type RelatedItem, type SidebarDetail } from "@/app/components/PageSidebar";
 import { PageStatus } from "@/app/components/PageStatus";
 import { Section } from "@/app/components/Section";
 import type { Category, ContentBlock, ContentType, Theme } from "@/app/site-config/types";
@@ -15,6 +15,7 @@ export function ContentPageLayout({
   contentType,
   themes,
   categories,
+  details,
   body,
   relatedContent,
   exploreDataUrl,
@@ -24,6 +25,7 @@ export function ContentPageLayout({
   contentType: ContentType;
   themes: Theme[];
   categories: Category[];
+  details?: SidebarDetail[];
   body?: ContentBlock[];
   relatedContent?: RelatedItem[];
   exploreDataUrl?: string;
@@ -49,6 +51,7 @@ export function ContentPageLayout({
                 contentType={contentType}
                 themes={themes}
                 categories={categories}
+                details={details}
                 relatedContent={relatedContent}
                 exploreDataUrl={exploreDataUrl}
               />

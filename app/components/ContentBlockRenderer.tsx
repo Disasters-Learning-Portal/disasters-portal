@@ -123,7 +123,7 @@ export const ContentBlockRenderer = ({
               alt={block.alt}
               width={block.width}
               height={block.height}
-              style={{ width: block.maxWidth ?? "100%", height: "auto" }}
+              className={`width-full height-auto ${block.maxWidth ? `maxw-${block.maxWidth}` : ""}`}
             />
             {block.caption && (
               <figcaption className="font-body-sm text-base margin-top-1">
@@ -142,11 +142,6 @@ export const ContentBlockRenderer = ({
           )}
           <figure className="margin-0">
             <StacSingleLayerBlock block={block} />
-            {block.caption && (
-              <figcaption className="font-body-sm text-base margin-top-1">
-                {block.caption}
-              </figcaption>
-            )}
           </figure>
         </Section>
       );
@@ -159,11 +154,6 @@ export const ContentBlockRenderer = ({
           )}
           <figure className="margin-0">
             <StacCompareBlock block={block} />
-            {block.caption && (
-              <figcaption className="font-body-sm text-base margin-top-1">
-                {block.caption}
-              </figcaption>
-            )}
           </figure>
         </Section>
       );
@@ -209,7 +199,11 @@ export const ContentBlockRenderer = ({
             // The section heading is h2, so card titles must be h3.
             // CardDetailed has no titleAs option. This should be dropped if
             // it ever becomes available.
-            title: <h3 className="blocks-card-detailed__title">{title}</h3>,
+            title: (
+              <h3 className="blocks-card-detailed__title" title={title}>
+                {title}
+              </h3>
+            ),
             description,
             thumbnailImage,
             themes,

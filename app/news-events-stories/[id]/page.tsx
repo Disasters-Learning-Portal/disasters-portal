@@ -5,6 +5,7 @@ import { DATASTORIES } from "@/app/site-config/datastory";
 import { EVENTS } from "@/app/site-config/event";
 import {
   transformEventToPageMastHeadProps,
+  transformEventToPageSidebarDetails,
   transformEventToSectionOverviewProps,
 } from "@/app/site-config/event/event.helpers";
 import { NEWS } from "@/app/site-config/news";
@@ -36,6 +37,7 @@ export default async function NewsEventsStoriesItemPage(
       contentType={contentType}
       themes={themes}
       categories={categories}
+      details={isEvent ? transformEventToPageSidebarDetails(contentItem) : undefined}
       body={body}
     >
       {isEvent && (
