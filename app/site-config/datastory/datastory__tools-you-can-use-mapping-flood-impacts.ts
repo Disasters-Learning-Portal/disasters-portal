@@ -37,6 +37,7 @@ export const DATASTORY__TOOLS_YOU_CAN_USE_MAPPING_FLOOD_IMPACTS: DataStoryConten
     {
       type: "stacSingleLayer",
       initialViewState: { longitude: -84.1, latitude: 10.5, zoom: 6 },
+      baseMapStyle: CARTO_DARK_WITH_LABELS_BASEMAP_STYLE,
       layerConfig: {
         type: "raster",
         collectionId: "sentinel1-hydrosar-wm-iw-dvr-subdaily",
