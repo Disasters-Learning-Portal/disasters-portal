@@ -19,10 +19,11 @@ import type { ContentBlock } from "@/app/site-config/types";
 
 /**
  * Cards per page in a card gallery block (e.g. an event page's Related Data).
- * These lists run to dozens of entries; the cap keeps a section to a readable
- * run and hands the rest to the pager.
+ * These lists run to dozens of entries. Two keeps the section short enough that
+ * the pager stays on screen with the cards, so paging through does not mean
+ * scrolling back up to reach it.
  */
-const CARD_GALLERY_PAGE_SIZE = 5;
+const CARD_GALLERY_PAGE_SIZE = 2;
 
 function ContentHeading({
   heading,
