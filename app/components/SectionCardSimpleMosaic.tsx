@@ -31,7 +31,7 @@ export const SectionCardSimpleMosaic = ({
         </div>
         {/* Regular card: full-width → tablet: half → desktop: 1 of 4 cols */}
         <div className="grid-col-12 tablet:grid-col-6 desktop:grid-col-3 margin-bottom-2 height-card-md">
-          <CardSimple {...cards[1]} colorMode="dark" />
+          <CardSimple {...cards[1]} size="sm" colorMode="dark" />
         </div>
         {/* Stacked half-height cards: full-width → tablet: half → desktop: 1 of 4 cols */}
         <div className="grid-col-12 tablet:grid-col-6 desktop:grid-col-3 margin-bottom-2 display-flex flex-column height-card-md">
