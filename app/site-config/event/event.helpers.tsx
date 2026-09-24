@@ -1,11 +1,11 @@
 import { type CardProps, type CardSimpleProps, Link } from "@teamimpact/veda-ui-blocks";
 import type { AppLink } from "@/app/components/AppLink";
+import type { SidebarDetail } from "@/app/components/PageSidebar";
 import {
   makeCardMastHeadProps,
   makeCardSimpleProps,
   makeTextTagProps,
   toLongDate,
-  toTitleCase,
 } from "@/app/site-config/content.helpers";
 import type { EventContent, IterableItemWithId } from "@/app/site-config/types";
 
@@ -37,40 +37,31 @@ export const transformEventToPageMastHeadProps = (event: EventContent): CardProp
   });
 };
 
-export type SectionOverviewItemProps = {
-  overviewItems: { title: string; content: React.ReactNode }[];
-};
+export const transformEventToPageSidebarDetails = (event: EventContent): SidebarDetail[] => {
+  const { region, startDate, linkDHSFEMA, linkUSGovernment } = event;
 
-export const transformEventToSectionOverviewProps = (
-  event: EventContent,
-): SectionOverviewItemProps => {
-  const { region, startDate, categories, linkDHSFEMA, linkUSGovernment } = event;
-
-  return {
-    overviewItems: [
-      { title: "Region", content: region },
-      { title: "Start Date", content: toLongDate(startDate) },
-      { title: "Hazard(s)", content: categories.map((c) => toTitleCase(c)).join(", ") },
-      linkDHSFEMA
-        ? {
-            title: "What DHS and FEMA are doing:",
-            content: (
-              <Link variant="text" isExternal href={linkDHSFEMA.href}>
-                {linkDHSFEMA.label ?? "Read more."}
-              </Link>
-            ),
-          }
-        : null,
-      linkUSGovernment
-        ? {
-            title: "What the U.S. government is doing:",
-            content: (
-              <Link variant="text" isExternal href={linkUSGovernment.href}>
-                {linkUSGovernment.label ?? "Read more"}
-              </Link>
-            ),
-          }
-        : null,
-    ].filter((item): item is NonNullable<typeof item> => item !== null),
-  };
+  return [
+    { label: "Region", content: region },
+    { label: "Start Date", content: toLongDate(startDate) },
+    linkDHSFEMA
+      ? {
+          label: "What DHS and FEMA are doing",
+          content: (
+            <Link variant="text" isExternal href={linkDHSFEMA.href}>
+              {linkDHSFEMA.label}
+            </Link>
+          ),
+        }
+      : null,
+    linkUSGovernment
+      ? {
+          label: "What the U.S. government is doing",
+          content: (
+            <Link variant="text" isExternal href={linkUSGovernment.href}>
+              {linkUSGovernment.label}
+            </Link>
+          ),
+        }
+      : null,
+  ].filter((detail): detail is NonNullable<typeof detail> => detail !== null);
 };
