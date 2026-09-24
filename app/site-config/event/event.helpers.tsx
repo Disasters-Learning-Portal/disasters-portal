@@ -62,7 +62,7 @@ export const transformEventToSectionOverviewProps = (
             title: "What DHS and FEMA are doing:",
             content: (
               <Link variant="text" isExternal href={linkDHSFEMA.href}>
-                {linkDHSFEMA.label}
+                {linkDHSFEMA.label ?? "Read more."}
               </Link>
             ),
           }
@@ -72,7 +72,7 @@ export const transformEventToSectionOverviewProps = (
             title: "What the U.S. government is doing:",
             content: (
               <Link variant="text" isExternal href={linkUSGovernment.href}>
-                {linkUSGovernment.label}
+                {linkUSGovernment.label ?? "Read more"}
               </Link>
             ),
           }
