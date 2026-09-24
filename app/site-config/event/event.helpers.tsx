@@ -1,4 +1,5 @@
 import { type CardProps, Link } from "@teamimpact/veda-ui-blocks";
+import type { AppLink } from "@/app/components/AppLink";
 import type { SidebarDetail } from "@/app/components/PageSidebar";
 import {
   makeCardMastHeadProps,
@@ -21,7 +22,9 @@ export const transformEventToCardSimpleProps = (
   });
 };
 
-export const transformEventToPageMastHeadProps = (event: EventContent): CardProps => {
+export const transformEventToPageMastHeadProps = (
+  event: EventContent,
+): CardProps<typeof AppLink> => {
   const { lastUpdatedDate, mastheadImage, title, description } = event;
 
   return makeCardMastHeadProps({

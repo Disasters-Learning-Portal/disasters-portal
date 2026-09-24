@@ -1,5 +1,6 @@
 import { type CardProps, InPageNavigation } from "@teamimpact/veda-ui-blocks";
 import type { ReactNode } from "react";
+import type { AppLink } from "@/app/components/AppLink";
 import { ContentBlockRenderer } from "@/app/components/ContentBlockRenderer";
 import { PageMasthead } from "@/app/components/PageMasthead";
 import { PageSidebar, type RelatedItem, type SidebarDetail } from "@/app/components/PageSidebar";
@@ -25,17 +26,15 @@ export function ContentPageLayout({
   details,
   body,
   relatedContent,
-  exploreDataUrl,
   children,
 }: {
-  masthead: CardProps;
+  masthead: CardProps<typeof AppLink>;
   contentType: ContentType;
   themes: Theme[];
   categories: Category[];
   details?: SidebarDetail[];
   body?: ContentBlock[];
   relatedContent?: RelatedItem[];
-  exploreDataUrl?: string;
   /** Rendered above the body blocks, e.g. the event Overview. */
   children?: ReactNode;
 }) {
@@ -70,7 +69,6 @@ export function ContentPageLayout({
                   categories={categories}
                   details={details}
                   relatedContent={relatedContent}
-                  exploreDataUrl={exploreDataUrl}
                 />
               </div>
             </div>

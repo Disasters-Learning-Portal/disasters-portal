@@ -49,7 +49,7 @@ export const makeContentTypeTagProps = (tag: ContentType) => {
 
 export type CardMastheadPropsArgs = Omit<
   CardProps,
-  "title" | "image" | "colorMode" | "isMasthead"
+  "title" | "image" | "colorMode" | "isMasthead" | "callToAction" | "callToActionSecondary"
 > & {
   mastheadImage: {
     alt: string;
@@ -57,6 +57,10 @@ export type CardMastheadPropsArgs = Omit<
   };
   title?: string;
   theme?: Theme;
+  callToAction?: {
+    label: string;
+    href: string;
+  };
 };
 
 export const makeCardMastHeadProps = ({
@@ -64,12 +68,19 @@ export const makeCardMastHeadProps = ({
   title,
   subtitle,
   theme,
+  callToAction,
   ...rest
-}: CardMastheadPropsArgs): CardProps => ({
+}: CardMastheadPropsArgs): CardProps<typeof AppLink> => ({
   className: "blocks-card--contentpage",
   image: <AppImage {...mastheadImage} sizes="100vw" fill preload={true} />,
   title: title ?? (theme ? CONTENT_THEMES[theme].label : undefined),
   description: subtitle,
+  callToAction: callToAction && {
+    ...callToAction,
+    variant: "button",
+    color: "secondary",
+    as: AppLink,
+  },
   colorMode: "dark",
   isMastHead: true,
   ...rest,
@@ -108,18 +119,8 @@ export const makeCardFeaturedProps = (
   } = props;
   return {
     id,
-    callToAction: callToAction && {
-      ...callToAction,
-      variant: "arrow",
-      color: "secondary",
-      as: AppLink,
-    },
-    callToActionSecondary: callToActionSecondary && {
-      ...callToActionSecondary,
-      variant: "arrow",
-      color: "secondary",
-      as: AppLink,
-    },
+    callToAction: callToAction && { ...callToAction, as: AppLink },
+    callToActionSecondary: callToActionSecondary && { ...callToActionSecondary, as: AppLink },
     image: (
       <AppImage
         alt={image.alt}
@@ -197,8 +198,6 @@ export const makeCardDetailedProps = ({
   callToAction: {
     href: url ? url : `${CONTENT_TYPES[contentType].route}/${id}`,
     label: `View ${toTitleCase(CONTENT_TYPES[contentType].label)}`,
-    variant: "arrow",
-    color: "secondary",
     isExternal: !!url,
     as: AppLink,
   },
@@ -228,8 +227,6 @@ export const makeCardDetailedImageLeftProps = ({
   callToAction: {
     href: url ? url : `${CONTENT_TYPES[contentType].route}/${id}`,
     label: `View ${toTitleCase(CONTENT_TYPES[contentType].label)}`,
-    variant: "arrow",
-    color: "secondary",
     isExternal: !!url,
     as: AppLink,
   },
@@ -314,8 +311,6 @@ export const makeCardCarouselProps = ({
   callToAction: {
     href: url ? url : `${CONTENT_TYPES[contentType].route}/${id}`,
     label: `View ${toTitleCase(CONTENT_TYPES[contentType].label)}`,
-    variant: "arrow",
-    color: "secondary",
     isExternal: !!url,
     as: AppLink,
   },

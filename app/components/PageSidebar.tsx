@@ -14,29 +14,17 @@ export function PageSidebar({
   categories,
   details = [],
   relatedContent = [],
-  exploreDataUrl,
 }: {
   contentType: ContentType;
   themes: Theme[];
   categories: Category[];
   details?: SidebarDetail[];
   relatedContent?: RelatedItem[];
-  exploreDataUrl?: string;
 }) {
   return (
     <aside>
-      <div className="padding-4 margin-bottom-4">
-        {exploreDataUrl && (
-          <div className="margin-bottom-3">
-            <AppLinkStyled href={exploreDataUrl} variant="button" isExternal className="width-full">
-              Explore Data
-            </AppLinkStyled>
-          </div>
-        )}
-
-        <div
-          className={`${exploreDataUrl ? "border-top border-base-lighter " : ""}padding-top-3 margin-bottom-3`}
-        >
+      <div className="padding-x-4 margin-bottom-4">
+        <div className="margin-bottom-3">
           <MetaGroup label="Type">
             <div className="margin-right-1 margin-bottom-1">
               <Tag {...makeOutlineTagProps(makeContentTypeTagProps(contentType))} />
