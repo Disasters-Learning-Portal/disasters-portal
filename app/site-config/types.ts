@@ -132,6 +132,19 @@ export type ContentBlock =
       card: Omit<CardFeaturedPropsArgs, "title"> & { title: string };
     };
 
+/**
+ * Content dates, authored as `YYYY-MM-DD` and formatted at render time.
+ *
+ * Checks shape, not the calendar: 2026-02-30 passes. Years stay at 20xx to keep
+ * the union small enough for TypeScript to represent (ts2590).
+ */
+type OneToNine = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
+type ZeroToNine = 0 | OneToNine;
+type YYYY = `20${ZeroToNine}${ZeroToNine}`;
+type MM = `0${OneToNine}` | `1${0 | 1 | 2}`;
+type DD = `0${OneToNine}` | `${1 | 2}${ZeroToNine}` | `3${0 | 1}`;
+export type DateString = `${YYYY}-${MM}-${DD}`;
+
 export type InternalCardContent = {
   id: string;
   contentType: ContentType;
@@ -144,6 +157,7 @@ export type InternalCardContent = {
   themes: Theme[];
   categories: Category[];
   description?: string;
+  datePublished?: DateString;
 };
 
 export type ExternalCardContent = InternalCardContent & { url: string };
@@ -152,7 +166,7 @@ export type GalleryCardContent = InternalCardContent | ExternalCardContent;
 
 export type TrainingContent = Omit<InternalCardContent, "contentType"> & {
   contentType: "training";
-  date: string;
+  datePublished: DateString;
   mastheadImage: MastheadImage;
   body?: ContentBlock[]; // TODO: require body
   relatedContent?: string[];
@@ -179,7 +193,6 @@ export type NewsContent = Omit<InternalCardContent, "contentType"> & {
 
 export type StoryContent = Omit<InternalCardContent, "contentType"> & {
   contentType: "story";
-  date?: string;
   mastheadImage: MastheadImage;
   body?: ContentBlock[]; // TODO: require body
 };
@@ -198,8 +211,7 @@ export type EventContent = Omit<InternalCardContent, "contentType"> & {
   contentType: "event";
   mastheadImage: MastheadImage;
   isLatest?: boolean;
-  lastUpdatedDate?: string;
-  startDate: string;
+  startDate: DateString;
   region: string;
   linkDHSFEMA?: { label: string; href: string };
   linkUSGovernment?: { label: string; href: string };
