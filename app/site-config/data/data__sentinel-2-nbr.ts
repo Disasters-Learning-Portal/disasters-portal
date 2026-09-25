@@ -29,7 +29,7 @@ export const DATA__SENTINEL_2_NBR: DataContent = {
       type: "text",
       heading: "Suggested Use",
       paragraphs: [
-        "Darker areas (more negative values) in the NBR image more strongly represent the presence of burned vegetation.",
+        "NBR can be used to identify burned vegetation and assess spatial patterns of wildfire impacts. Healthy vegetation generally produces higher positive NBR values, while recently burned or charred vegetation generally produces lower or negative values.",
       ],
     },
     {

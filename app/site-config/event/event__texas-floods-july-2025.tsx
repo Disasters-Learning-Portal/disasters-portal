@@ -1,7 +1,8 @@
 import { CARTO_DARK_WITH_LABELS_BASEMAP_STYLE } from "@teamimpact/veda-ui-blocks";
 import { Fragment } from "react";
+
 import { AppLinkStyled } from "@/app/components/AppLink";
-import { DATA } from "@/app/site-config/data";
+import { DATA__TEXAS_FLOODS_JULY_2025 } from "@/app/site-config/data";
 import { TRAINING__EO_BUILDING_EXPOSURE } from "@/app/site-config/training/training__eo-building-exposure";
 import { TRAINING__FUNDAMENTALS_REMOTE_SENSING } from "@/app/site-config/training/training__fundamentals-remote-sensing";
 import { TRAINING__INTRODUCTION_TO_SAR } from "@/app/site-config/training/training__introduction-to-sar";
@@ -28,6 +29,10 @@ export const EVENT__TEXAS_FLOODS_JULY_2025: EventContent = {
   categories: ["flood"],
   lastUpdatedDate: "2025-07-09",
   startDate: "July 4, 2025",
+  linkDHSFEMA: {
+    label: "Learn more",
+    href: "https://www.fema.gov/disaster/4879",
+  },
   region: "Texas, North America",
   body: [
     {
@@ -82,7 +87,7 @@ export const EVENT__TEXAS_FLOODS_JULY_2025: EventContent = {
     {
       type: "sectionCardGallery",
       heading: "Related Data",
-      cards: DATA,
+      cards: DATA__TEXAS_FLOODS_JULY_2025,
     },
     {
       type: "sectionCardSimple",
