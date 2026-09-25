@@ -17,6 +17,14 @@ import {
 } from "@/app/site-config/content.helpers";
 import type { ContentBlock } from "@/app/site-config/types";
 
+/**
+ * Cards per page in a card gallery block (e.g. an event page's Related Data).
+ * These lists run to dozens of entries. Two keeps the section short enough that
+ * the pager stays on screen with the cards, so paging through does not mean
+ * scrolling back up to reach it.
+ */
+const CARD_GALLERY_PAGE_SIZE = 2;
+
 function ContentHeading({
   heading,
   headingLevel,
@@ -215,6 +223,7 @@ export const ContentBlockRenderer = ({
       return (
         <SectionCardDetailed
           isMultiColumnLayout={isMultiColumnLayout}
+          pageSize={CARD_GALLERY_PAGE_SIZE}
           sectionHeading={
             block.heading && (
               <SectionHeading {...(block.href ? { href: block.href } : {})}>
