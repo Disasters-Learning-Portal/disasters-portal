@@ -11,13 +11,13 @@ export const DATA__GAIA: DataContent = {
     "The Global Assessment of Infrastructure Assets (GAIA) provides building-level infrastructure exposure data to support disaster risk assessment, response, and recovery.",
 
   thumbnailImage: {
-    src: "/img/training/eo-building-exposure.webp",
-    alt: "GAIA building and infrastructure exposure data",
+    src: "/img/data/gaia-building-exposure.webp",
+    alt: "GAIA gridded building exposure across the Los Angeles basin, where color shows modeled built-up area per 100-meter grid cell, from dark blue in the lowest range to orange and red in the densest urban core",
   },
 
   mastheadImage: {
-    src: "/img/training/eo-building-exposure.webp",
-    alt: "GAIA building and infrastructure exposure data",
+    src: "/img/data/gaia-building-exposure.webp",
+    alt: "GAIA gridded building exposure across the Los Angeles basin, where color shows modeled built-up area per 100-meter grid cell, from dark blue in the lowest range to orange and red in the densest urban core",
   },
 
   themes: ["respond", "prepare", "recover"],
