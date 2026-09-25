@@ -1,3 +1,5 @@
+import { Link } from "@teamimpact/veda-ui-blocks";
+import { Fragment } from "react";
 import type { DataContent } from "@/app/site-config/types";
 
 export const DATA__AVIRIS_3_CHAR_AND_ASH: DataContent = {
@@ -71,11 +73,38 @@ export const DATA__AVIRIS_3_CHAR_AND_ASH: DataContent = {
       heading: "Credits",
       paragraphs: [
         "NASA Jet Propulsion Laboratory (JPL), AVIRIS Science Team, NASA Disasters Program",
-        "AVIRIS-3 radiance data: Eckert, R., D.R. Thompson, A.M. Chlus, J.W. Chapman, M. Eastwood, M. Bernas, S. Geier, M. Helmlinger, D. Keymeulen, E. Liggett, S. Nadgauda, L.M. Rios, L.A. Shaw, W. Olson-Duvall, P.G. Brodrick, and R.O. Green. 2024. AVIRIS-3 L1B Calibrated Radiance, Facility Instrument Collection. ORNL DAAC, Oak Ridge, Tennessee, USA. https://doi.org/10.3334/ORNLDAAC/2356",
-        "AVIRIS-3 reflectance data: Brodrick, P.G., A.M. Chlus, U.N. Bohn, E. Greenberg, J. Montgomery, J.W. Chapman, M. Eastwood, S.R. Lundeen, R. Eckert, W. Olson-Duvall, D.R. Thompson, and R.O. Green. 2025. AVIRIS-3 L2A Orthocorrected Surface Reflectance, Facility Instrument Collection. ORNL DAAC, Oak Ridge, Tennessee, USA. https://doi.org/10.3334/ORNLDAAC/2357",
+        <Fragment key="credits radiance">
+          AVIRIS-3 radiance data: Eckert, R., D.R. Thompson, A.M. Chlus, J.W. Chapman, M. Eastwood,
+          M. Bernas, S. Geier, M. Helmlinger, D. Keymeulen, E. Liggett, S. Nadgauda, L.M. Rios, L.A.
+          Shaw, W. Olson-Duvall, P.G. Brodrick, and R.O. Green. 2024. AVIRIS-3 L1B Calibrated
+          Radiance, Facility Instrument Collection. ORNL DAAC, Oak Ridge, Tennessee, USA.{" "}
+          <Link href="https://doi.org/10.3334/ORNLDAAC/2356">
+            https://doi.org/10.3334/ORNLDAAC/2356
+          </Link>
+        </Fragment>,
+        <Fragment key="credits reflectance">
+          AVIRIS-3 reflectance data: Brodrick, P.G., A.M. Chlus, U.N. Bohn, E. Greenberg, J.
+          Montgomery, J.W. Chapman, M. Eastwood, S.R. Lundeen, R. Eckert, W. Olson-Duvall, D.R.
+          Thompson, and R.O. Green. 2025. AVIRIS-3 L2A Orthocorrected Surface Reflectance, Facility
+          Instrument Collection. ORNL DAAC, Oak Ridge, Tennessee, USA.{" "}
+          <Link href="https://doi.org/10.3334/ORNLDAAC/2357">
+            https://doi.org/10.3334/ORNLDAAC/2357
+          </Link>
+        </Fragment>,
         "ISOFIT: Thompson, D.R., Natraj, V., Green, R.O., Helmlinger, M.C., Gao, B.C. and Eastwood, M.L., 2018. Optimal estimation for imaging spectrometer atmospheric correction. Remote Sensing of Environment, 216, pp.355-373.",
-        "Brodrick, P.G., D.R. Thompson, N. Bohn, N. Carmon, R. Eckert, J. Montgomery, K. Wurster, and N. Vaughn. 2024. isofit (v3.2.2). Zenodo. https://doi.org/10.5281/zenodo.14135462",
-        "Spectral unmixing: https://github.com/emit-sds/SpectralUnmixing",
+        <Fragment key="credits isofit software">
+          Brodrick, P.G., D.R. Thompson, N. Bohn, N. Carmon, R. Eckert, J. Montgomery, K. Wurster,
+          and N. Vaughn. 2024. isofit (v3.2.2). Zenodo.{" "}
+          <Link href="https://doi.org/10.5281/zenodo.14135462">
+            https://doi.org/10.5281/zenodo.14135462
+          </Link>
+        </Fragment>,
+        <Fragment key="credits spectral unmixing">
+          Spectral unmixing:{" "}
+          <Link href="https://github.com/emit-sds/SpectralUnmixing">
+            https://github.com/emit-sds/SpectralUnmixing
+          </Link>
+        </Fragment>,
         "MESMA approach: Quintano, C., Fernandez-Manso, A. and Roberts, D.A., 2013. Multiple Endmember Spectral Mixture Analysis (MESMA) to map burn severity levels from Landsat images in Mediterranean countries. Remote Sensing of Environment, 136, pp.76-88.",
       ],
     },
