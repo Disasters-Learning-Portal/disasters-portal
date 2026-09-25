@@ -10,6 +10,7 @@ const MOCK_FEATURE_CARDCTAS_PROPS: CardCTAProps<typeof AppLink>[] = [
       label: "Anticipate risk and boost readiness",
       href: "/prepare",
       as: AppLink,
+      color: "secondary",
     },
     colorMode: "dark",
   },
@@ -19,6 +20,7 @@ const MOCK_FEATURE_CARDCTAS_PROPS: CardCTAProps<typeof AppLink>[] = [
       label: "Support real-time decisions with timely insights",
       href: "/respond",
       as: AppLink,
+      color: "secondary",
     },
     colorMode: "dark",
   },
@@ -28,6 +30,7 @@ const MOCK_FEATURE_CARDCTAS_PROPS: CardCTAProps<typeof AppLink>[] = [
       label: "Assess impacts and rebuild stronger",
       href: "/recover",
       as: AppLink,
+      color: "secondary",
     },
     colorMode: "dark",
   },
@@ -37,6 +40,7 @@ const MOCK_FEATURE_CARDCTAS_PROPS: CardCTAProps<typeof AppLink>[] = [
       label: "Safeguard communities for enduring impact",
       href: "/resilience",
       as: AppLink,
+      color: "secondary",
     },
     colorMode: "dark",
   },
@@ -54,6 +58,7 @@ const MOCK_FEATURE_CTACARDS_SECTION = (
 );
 
 export const MOCK_CARD_MASTHEAD: CardProps = {
+  className: "blocks-card--homepage",
   image: (
     <AppVideo
       src="/img/home/home-card-hero-video.mp4"
@@ -66,10 +71,14 @@ export const MOCK_CARD_MASTHEAD: CardProps = {
       playsInline
     />
   ),
-  title: <h1 className="font-heading-3xl text-bold text-white margin-0">NASA Disasters PORTAL</h1>,
+  title: "NASA Disasters PORTAL",
   description: "Empowering disaster insights with actionable Earth science information",
-
-  colorMode: "brand",
+  colorMode: "dark",
   isMastHead: true,
   children: MOCK_FEATURE_CTACARDS_SECTION,
+  callToAction: {
+    label: "Learn About Us",
+    href: "/about",
+    color: "secondary",
+  },
 };

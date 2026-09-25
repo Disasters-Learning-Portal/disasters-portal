@@ -15,7 +15,7 @@ export const DATA__SENTINEL_2_SWIR: DataContent = {
   },
   themes: ["respond", "build", "prepare", "recover"],
   categories: [
-    "severewx",
+    "severe weather",
     "fire",
     "heat",
     "flood",
@@ -28,7 +28,6 @@ export const DATA__SENTINEL_2_SWIR: DataContent = {
     {
       type: "text",
       heading: "Summary",
-      headingLevel: "h3",
       paragraphs: [
         "The Short Wave Infrared (SWIR) RGB is a product that is created using the SWIR, Near Infrared (NIR), and Red channels of the respective instrument.",
       ],
@@ -36,7 +35,6 @@ export const DATA__SENTINEL_2_SWIR: DataContent = {
     {
       type: "text",
       heading: "Suggested Use",
-      headingLevel: "h3",
       paragraphs: [
         "The Short Wave Infrared (SWIR) RGB is a product that can provide value in flood detection. Areas of water will appear blue, healthy green vegetation will appear as a bright green, urban areas in various shades of magenta, snow will appear as a bright blue/cyan, and bare soils being multicolor dependent on their makeup.",
       ],
@@ -44,7 +42,6 @@ export const DATA__SENTINEL_2_SWIR: DataContent = {
     {
       type: "text",
       heading: "Satellite/Sensor",
-      headingLevel: "h3",
       paragraphs: [
         "MultiSpectral Instrument (MSI) on European Space Agency's (ESA) Copernicus Sentinel-2A/2B satellites",
       ],
@@ -52,19 +49,16 @@ export const DATA__SENTINEL_2_SWIR: DataContent = {
     {
       type: "text",
       heading: "Resolution",
-      headingLevel: "h3",
       paragraphs: ["20 meters"],
     },
     {
       type: "text",
       heading: "Credits",
-      headingLevel: "h3",
       paragraphs: ["NASA/GSFC, USGS, ESA Copernicus"],
     },
     {
       type: "text",
       heading: "Tags",
-      headingLevel: "h3",
       paragraphs: ["ESA, Copernicus, Sentinel-2, Optical"],
     },
   ],

@@ -5,7 +5,7 @@ export const EVENT__US_WINTER_STORM_2026: EventContent = {
   id: "us-winter-storm-jan-2026",
   contentType: "event",
   title: "U.S. Winter Storm January 2026",
-  lastUpdatedDate: "2026-01-28",
+  datePublished: "2026-01-28",
   thumbnailImage: {
     src: "/img/event/us-winter-storm-jan-2026.webp",
     alt: "Hazard pattern swirls in shades of blue",
@@ -21,6 +21,7 @@ export const EVENT__US_WINTER_STORM_2026: EventContent = {
   body: [
     {
       type: "text",
+      heading: "Overview",
       paragraphs: [
         "A large winter storm impacted much of the continental U.S., bringing snow, ice, and subfreezing temperatures. NASA’s Disasters Program is sharing maps and data to support state and federal response agencies.",
       ],
