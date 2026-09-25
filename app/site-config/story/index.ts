@@ -1,4 +1,5 @@
 import type { StoryContent } from "@/app/site-config/types";
+import { STORY__BUILDING_RESILIENCE_COASTAL_COMMUNITIES } from "./story__building-resilience-coastal-communities-nasa-earth-science";
 import { STORY__CLEARING_THE_WAY_DEBRIS_MAPPING } from "./story__clearing-the-way-debris-mapping";
 import { STORY__ESTIMATING_LOSS_RECOVERY } from "./story__estimating-loss-recovery";
 import { STORY__FINDING_FLOODS } from "./story__finding-floods";
@@ -17,4 +18,5 @@ export const STORIES: StoryContent[] = [
   STORY__SEEING_BEYOND_FLAMES,
   STORY__SUPPORTING_COMMUNITIES_HURRICANE_HELENE,
   STORY__TRACKING_TORNADOES_FROM_SPACE,
+  STORY__BUILDING_RESILIENCE_COASTAL_COMMUNITIES,
 ];
