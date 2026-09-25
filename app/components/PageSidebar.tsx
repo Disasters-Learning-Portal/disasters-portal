@@ -101,15 +101,7 @@ function MetaTags({ label, children }: { label: string; children: ReactNode }) {
 function MetaRelatedContent({ item }: { item: RelatedItem }) {
   return (
     <div className="margin-bottom-3">
-      <AppLinkStyled
-        href={item.href}
-        className="text-ink"
-        style={{
-          textDecorationStyle: "dashed",
-          textDecorationThickness: "1px",
-          textUnderlineOffset: "3px",
-        }}
-      >
+      <AppLinkStyled href={item.href}>
         <p className="font-heading-sm line-height-heading-3 text-bold margin-top-0 margin-bottom-1">
           {item.title}
         </p>
