@@ -10,7 +10,6 @@
     --nav-top: var(--unit-10, 5rem);
     position: sticky;
     top: var(--nav-top);
-    max-height: calc(100vh - var(--nav-top));
     overflow-y: auto;
   }
 }
