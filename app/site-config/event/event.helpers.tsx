@@ -1,5 +1,3 @@
-import { type CardProps, type CardSimpleProps, Link } from "@teamimpact/veda-ui-blocks";
-import type { AppLink } from "@/app/components/AppLink";
 import type { SidebarDetail } from "@/app/components/PageSidebar";
 import {
   makeCardMastHeadProps,
@@ -7,11 +5,11 @@ import {
   makeTextTagProps,
   toLongDate,
 } from "@/app/site-config/content.helpers";
-import type { EventContent, IterableItemWithId } from "@/app/site-config/types";
+import type { EventContent } from "@/app/site-config/types";
 
 export const transformEventToCardSimpleProps = (
   event: EventContent,
-): IterableItemWithId<CardSimpleProps<typeof AppLink>> => {
+): ReturnType<typeof makeCardSimpleProps> => {
   const { isLatest, id, contentType, thumbnailImage, title } = event;
   return makeCardSimpleProps({
     id,
@@ -22,7 +20,9 @@ export const transformEventToCardSimpleProps = (
   });
 };
 
-export const transformEventToPageMastHeadProps = (event: EventContent): CardProps => {
+export const transformEventToPageMastHeadProps = (
+  event: EventContent,
+): ReturnType<typeof makeCardMastHeadProps> => {
   const { lastUpdatedDate, mastheadImage, title, description } = event;
 
   return makeCardMastHeadProps({
@@ -46,35 +46,31 @@ export const transformEventToPageSidebarDetails = (event: EventContent): Sidebar
   ];
 };
 
-export type SectionOverviewItemProps = {
-  overviewItems: { title: string; content: React.ReactNode }[];
-};
-
-export const transformEventToSectionOverviewProps = (
-  event: EventContent,
-): SectionOverviewItemProps => {
+export const transformEventToSectionOverviewProps = (event: EventContent) => {
   const { linkDHSFEMA, linkUSGovernment } = event;
 
   return {
-    overviewItems: [
-      linkDHSFEMA
-        ? {
-            title: "What DHS and FEMA are doing:",
-            content: (
-              <Link variant="text" isExternal href={linkDHSFEMA.href}>
-                {linkDHSFEMA.label ?? "Read more."}
-              </Link>
-            ),
-          }
-        : null,
+    items: [
       linkUSGovernment
         ? {
-            title: "What the U.S. government is doing:",
-            content: (
-              <Link variant="text" isExternal href={linkUSGovernment.href}>
-                {linkUSGovernment.label ?? "Read more"}
-              </Link>
-            ),
+            label: "What the U.S. government is doing",
+            link: {
+              className: "text-bold",
+              isExternal: true,
+              href: linkUSGovernment.href,
+              label: linkUSGovernment.label ?? "Read more",
+            },
+          }
+        : null,
+      linkDHSFEMA
+        ? {
+            label: "What DHS and FEMA are doing",
+            link: {
+              className: "text-bold",
+              isExternal: true,
+              href: linkDHSFEMA.href,
+              label: linkDHSFEMA.label ?? "Read more",
+            },
           }
         : null,
     ].filter((item): item is NonNullable<typeof item> => item !== null),

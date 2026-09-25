@@ -23,6 +23,7 @@ export const EVENT__TYPHOON_SINLAKU_2026: EventContent = {
   body: [
     {
       type: "text",
+      heading: "Overview",
       paragraphs: [
         "Typhoon Sinlaku brought high winds and heavy rainfall to the Northern Mariana Islands and Guam, causing widespread power blackouts, flooding, and extensive damage to homes and infrastructure.",
         <Fragment key="Typhoon Sinlaku paragraph 2">
