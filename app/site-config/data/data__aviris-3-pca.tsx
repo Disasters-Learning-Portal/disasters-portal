@@ -90,6 +90,13 @@ export const DATA__AVIRIS_3_PCA: DataContent = {
             https://doi.org/10.5281/zenodo.14135462
           </Link>
         </Fragment>,
+        <Fragment key="credits spectral unmixing">
+          Spectral unmixing:{" "}
+          <Link href="https://github.com/emit-sds/SpectralUnmixing">
+            https://github.com/emit-sds/SpectralUnmixing
+          </Link>
+        </Fragment>,
+        "MESMA approach: Quintano, C., Fernandez-Manso, A. and Roberts, D.A., 2013. Multiple Endmember Spectral Mixture Analysis (MESMA) to map burn severity levels from Landsat images in Mediterranean countries. Remote Sensing of Environment, 136, pp.76-88.",
       ],
     },
 
