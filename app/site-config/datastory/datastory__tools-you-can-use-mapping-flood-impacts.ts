@@ -1,6 +1,3 @@
-import { CARTO_DARK_WITH_LABELS_BASEMAP_STYLE } from "@teamimpact/veda-ui-blocks";
-import type { DataStoryContent } from "../types";
-
 export const DATASTORY__TOOLS_YOU_CAN_USE_MAPPING_FLOOD_IMPACTS: DataStoryContent = {
   id: "tools-you-can-use-mapping-flood-impacts",
   contentType: "datastory",
