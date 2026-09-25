@@ -23,7 +23,9 @@ export default function Home() {
       </div>
       <SectionCardSimpleMosaic
         sectionHeading={
-          <SectionHeading linkProps={{ href: "/news-events-stories" }}>
+          <SectionHeading
+            linkProps={{ label: "More News and Events", href: "/news-events-stories" }}
+          >
             News, Events & Stories
           </SectionHeading>
         }
@@ -35,7 +37,9 @@ export default function Home() {
       ))}
       <SectionCardSimple
         sectionHeading={
-          <SectionHeading linkProps={{ href: "/training" }}>Resources & Learning</SectionHeading>
+          <SectionHeading linkProps={{ label: "More Resources and Learning", href: "/training" }}>
+            Resources & Learning
+          </SectionHeading>
         }
         cards={typedMap(RESOURCES_LEARNING_CARDS, makeCardSimpleProps)}
         bgColor="base-lightest"
