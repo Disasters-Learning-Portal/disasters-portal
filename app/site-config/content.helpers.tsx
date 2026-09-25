@@ -169,6 +169,7 @@ export const makeGalleryCardContent = (content: Content): GalleryCardContent => 
     "id",
     "contentType",
     "title",
+    "subtitle",
     "description",
     "thumbnailImage",
     "themes",
@@ -190,6 +191,7 @@ export type CardDetailedPropsArgs = Omit<
   themes?: Theme[];
   categories?: Category[];
   url?: string;
+  subtitle?: string;
 };
 
 const makeCardCTAProps = ({
@@ -223,6 +225,7 @@ export const makeCardDetailedProps = ({
   themes,
   categories,
   url,
+  subtitle,
   ...rest
 }: CardDetailedPropsArgs): IterableItemWithId<CardDetailedProps<typeof AppLink>> => ({
   id,
@@ -246,6 +249,7 @@ export const makeCardDetailedImageLeftProps = ({
   themes,
   categories,
   url,
+  subtitle,
   ...rest
 }: CardDetailedPropsArgs): IterableItemWithId<CardDetailedProps<typeof AppLink>> => ({
   id,
@@ -269,6 +273,7 @@ export type CardSimplePropsArgs = Omit<
   tag?: Theme | ContentType | Category | "active";
   themes?: Theme[];
   url?: string;
+  subtitle?: string;
 };
 
 export const makeCardSimpleProps = ({
@@ -278,6 +283,7 @@ export const makeCardSimpleProps = ({
   tag,
   themes,
   url,
+  subtitle,
   ...rest
 }: CardSimplePropsArgs): IterableItemWithId<CardSimpleProps<typeof AppLink>> => ({
   id,
