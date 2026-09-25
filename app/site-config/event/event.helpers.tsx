@@ -1,4 +1,4 @@
-import { type CardProps, Link } from "@teamimpact/veda-ui-blocks";
+import type { CardProps } from "@teamimpact/veda-ui-blocks";
 import type { AppLink } from "@/app/components/AppLink";
 import type { SidebarDetail } from "@/app/components/PageSidebar";
 import {
@@ -48,35 +48,31 @@ export const transformEventToPageSidebarDetails = (event: EventContent): Sidebar
   ];
 };
 
-export type SectionOverviewItemProps = {
-  overviewItems: { title: string; content: React.ReactNode }[];
-};
-
-export const transformEventToSectionOverviewProps = (
-  event: EventContent,
-): SectionOverviewItemProps => {
+export const transformEventToSectionOverviewProps = (event: EventContent) => {
   const { linkDHSFEMA, linkUSGovernment } = event;
 
   return {
-    overviewItems: [
+    items: [
       linkUSGovernment
         ? {
-            title: "What the U.S. government is doing",
-            content: (
-              <Link variant="text" className="text-bold" isExternal href={linkUSGovernment.href}>
-                {linkUSGovernment.label ?? "Read more"}
-              </Link>
-            ),
+            label: "What the U.S. government is doing",
+            link: {
+              className: "text-bold",
+              isExternal: true,
+              href: linkUSGovernment.href,
+              label: linkUSGovernment.label ?? "Read more",
+            },
           }
         : null,
       linkDHSFEMA
         ? {
-            title: "What DHS and FEMA are doing",
-            content: (
-              <Link variant="text" className=" text-bold" isExternal href={linkDHSFEMA.href}>
-                {linkDHSFEMA.label ?? "Read more"}
-              </Link>
-            ),
+            label: "What DHS and FEMA are doing",
+            link: {
+              className: "text-bold",
+              isExternal: true,
+              href: linkDHSFEMA.href,
+              label: linkDHSFEMA.label ?? "Read more",
+            },
           }
         : null,
     ].filter((item): item is NonNullable<typeof item> => item !== null),
