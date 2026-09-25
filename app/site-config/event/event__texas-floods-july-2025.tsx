@@ -26,19 +26,21 @@ export const EVENT__TEXAS_FLOODS_JULY_2025: EventContent = {
   },
   themes: ["respond"],
   categories: ["flood"],
-  lastUpdatedDate: "2025-07-09",
-  startDate: "July 4, 2025",
+  datePublished: "2025-07-09",
+  startDate: "2025-07-04",
   region: "Texas, North America",
   body: [
     {
       type: "text",
-      heading: "",
+      heading: "Overview",
       paragraphs: [
         "Beginning July 4, 2025, torrential rainfall from the remnants of Tropical Storm Barry triggered catastrophic flooding across Texas Hill Country, particularly in Kerr County as the Guadalupe River rose rapidly. The floods caused significant loss of life, widespread property damage, power outages, and prompted hundreds of emergency rescues.",
         <Fragment key="texas-floods-july-2025-parargraph-1">
           The NASA Disasters Program activated to support the Texas Department of Emergency
           Management, FEMA Region 6, and the non-profit Save the Children. NASA{" "}
-          <AppLinkStyled href="/news-events/finding-floods">deployed two aircraft</AppLinkStyled>{" "}
+          <AppLinkStyled href="/news-events-stories/finding-floods">
+            deployed two aircraft
+          </AppLinkStyled>{" "}
           over the San Gabriel and Colorado river basins, collecting high-resolution optical imagery
           to support search and rescue operations, and UAVSAR radar imagery to identify flooded
           regions when clouds and trees obscured other sensors. NASA also shared satellite
@@ -56,7 +58,7 @@ export const EVENT__TEXAS_FLOODS_JULY_2025: EventContent = {
           "When flooding struck Texas Hill Country, NASA deployed two specialized aircraft to give responders a clearer picture.",
         callToAction: {
           label: "Learn More",
-          href: "/news-events/finding-floods",
+          href: "/news-events-stories/finding-floods",
         },
         image: {
           alt: "When flooding struck Texas Hill Country, NASA deployed two specialized aircraft to give responders a clearer picture.",

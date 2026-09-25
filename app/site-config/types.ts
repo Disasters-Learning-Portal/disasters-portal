@@ -13,57 +13,61 @@ import type {
 
 export const CONTENT_TYPES: Record<ContentType, { route: AppRoutes; label: string }> = {
   data: { route: "/data-gallery", label: "data" },
-  event: { route: "/news-events", label: "event" },
-  news: { route: "/news-events", label: "news" },
-  story: { route: "/news-events", label: "story" },
-  datastory: { route: "/news-events", label: "data story" },
+  event: { route: "/news-events-stories", label: "event" },
+  news: { route: "/news-events-stories", label: "news" },
+  story: { route: "/news-events-stories", label: "story" },
+  datastory: { route: "/news-events-stories", label: "data story" },
   training: { route: "/training", label: "training" },
 };
 
-export const CONTENT_THEMES: Record<Theme, { label: string; color: string; textColor?: string }> = {
-  respond: {
-    label: "respond",
-    color: "secondary",
-    textColor: "white",
-  },
-  build: {
-    label: "build resilience",
-    color: "success",
-    textColor: "white",
-  },
-  prepare: {
-    label: "prepare",
-    color: "accent-warm",
-  },
-  recover: {
-    label: "recover",
-    color: "accent-cool",
-    textColor: "white",
-  },
-};
-
-export const CONTENT_SIDEBAR_CONTENT_TYPES: ContentType[] = [
-  "data",
+export const SHOW_IN_PAGE_NAVIGATION_CONTENT_TYPES: ContentType[] = [
+  "event",
+  "news",
   "story",
   "datastory",
   "training",
 ];
 
-export type IterableItemWithId<T> = T & { id: string };
-
 export type Theme = "respond" | "build" | "prepare" | "recover";
 
-export type Category =
-  | "severewx"
-  | "fire"
-  | "heat"
-  | "flood"
-  | "tropical cyclone"
-  | "earthquake"
-  | "winter weather"
-  | "volcano";
+export const CONTENT_THEMES: Record<Theme, { label: string; color?: string }> = {
+  respond: {
+    label: "Respond",
+    color: "secondary",
+  },
+  build: {
+    label: "Build resilience",
+    color: "success",
+  },
+  prepare: {
+    label: "Prepare",
+    color: "accent-warm",
+  },
+  recover: {
+    label: "Recover",
+    color: "accent-cool",
+  },
+};
 
-export type GalleryRoute = "/data-gallery" | "/news-events" | "/training"; // TODO: update to be dynamic
+export const CONTENT_CATEGORIES = [
+  "earthquake",
+  "fire",
+  "flood",
+  "heat",
+  "landslide",
+  "severe weather",
+  "tropical cyclone",
+  "hurricane",
+  "typhoon",
+  "cyclone",
+  "volcano",
+  "tsunami",
+  "winter weather",
+] as const;
+
+export type Category = (typeof CONTENT_CATEGORIES)[number];
+
+export type GalleryRoute = "/data-gallery" | "/news-events-stories" | "/training"; // TODO: update to be dynamic
 
 type GeoConfig = Omit<GeoConfigProviderProps, "children">;
 
@@ -95,7 +99,8 @@ export type ContentBlock =
       alt: string;
       width: number;
       height: number;
-      maxWidth?: string;
+      /** USWDS maxw-* token. The image fills the column unless capped here. */
+      maxWidth?: "card" | "card-lg" | "mobile" | "mobile-lg" | "tablet";
       caption?: string;
     }
   | (StacSingleLayerMapProps &
@@ -103,14 +108,12 @@ export type ContentBlock =
         type: "stacSingleLayer";
         heading?: string;
         headingLevel?: "h2" | "h3" | "h4";
-        caption?: string;
       })
   | (StacCompareMapProps &
       GeoConfig & {
         type: "stacCompare";
         heading?: string;
         headingLevel?: "h2" | "h3" | "h4";
-        caption?: string;
       })
   | {
       type: "sectionCardSimple";
@@ -122,12 +125,25 @@ export type ContentBlock =
       type: "sectionCardGallery";
       heading?: string;
       href?: GalleryRoute;
-      cards: CardDetailedPropsArgs[];
+      cards: (Omit<CardDetailedPropsArgs, "title"> & { title: string })[];
     }
   | {
       type: "sectionCardFeatured";
-      card: CardFeaturedPropsArgs;
+      card: Omit<CardFeaturedPropsArgs, "title"> & { title: string };
     };
+
+/**
+ * Content dates, authored as `YYYY-MM-DD` and formatted at render time.
+ *
+ * Checks shape, not the calendar: 2026-02-30 passes. Years stay at 20xx to keep
+ * the union small enough for TypeScript to represent (ts2590).
+ */
+type OneToNine = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
+type ZeroToNine = 0 | OneToNine;
+type YYYY = `20${ZeroToNine}${ZeroToNine}`;
+type MM = `0${OneToNine}` | `1${0 | 1 | 2}`;
+type DD = `0${OneToNine}` | `${1 | 2}${ZeroToNine}` | `3${0 | 1}`;
+export type DateString = `${YYYY}-${MM}-${DD}`;
 
 export type InternalCardContent = {
   id: string;
@@ -140,6 +156,7 @@ export type InternalCardContent = {
   themes: Theme[];
   categories: Category[];
   description?: string;
+  datePublished?: DateString;
 };
 
 export type ExternalCardContent = InternalCardContent & { url: string };
@@ -148,7 +165,7 @@ export type GalleryCardContent = InternalCardContent | ExternalCardContent;
 
 export type TrainingContent = Omit<InternalCardContent, "contentType"> & {
   contentType: "training";
-  date: string;
+  datePublished: DateString;
   mastheadImage: MastheadImage;
   body?: ContentBlock[]; // TODO: require body
   relatedContent?: string[];
@@ -163,19 +180,18 @@ export type DataContent = Omit<InternalCardContent, "contentType"> & {
   mastheadImage: MastheadImage;
   body?: ContentBlock[]; // TODO: require body
   relatedContent?: string[];
+  /** The sidebar CTA renders only when this is set. */
+  exploreDataUrl?: string;
 };
 
 export type NewsContent = Omit<InternalCardContent, "contentType"> & {
   contentType: "news";
-  /** Publish date, ISO `YYYY-MM-DD`. Rendered as "Published: …" at the top of the page. */
-  date?: string;
   mastheadImage: MastheadImage;
   body?: ContentBlock[]; // TODO: require body
 };
 
 export type StoryContent = Omit<InternalCardContent, "contentType"> & {
   contentType: "story";
-  date?: string;
   mastheadImage: MastheadImage;
   body?: ContentBlock[]; // TODO: require body
 };
@@ -194,8 +210,7 @@ export type EventContent = Omit<InternalCardContent, "contentType"> & {
   contentType: "event";
   mastheadImage: MastheadImage;
   isLatest?: boolean;
-  lastUpdatedDate?: string;
-  startDate: string;
+  startDate: DateString;
   region: string;
   linkDHSFEMA?: { label: string; href: string };
   linkUSGovernment?: { label: string; href: string };
@@ -232,3 +247,5 @@ type MastheadImage = {
   caption?: string;
   attribution?: string;
 };
+
+export type IterableItemWithId<T> = T & { id: string };

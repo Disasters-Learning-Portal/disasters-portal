@@ -1,6 +1,4 @@
 import { CARTO_DARK_WITH_LABELS_BASEMAP_STYLE } from "@teamimpact/veda-ui-blocks";
-import { DATASTORY__LAHAINA_FIRE } from "@/app/site-config/datastory/datastory__lahaina-fire";
-import { DATASTORY__SO2_VOLCANOES } from "@/app/site-config/datastory/datastory__so2-volcanoes";
 import { STORY__CLEARING_THE_WAY_DEBRIS_MAPPING } from "@/app/site-config/story/story__clearing-the-way-debris-mapping";
 import { STORY__ESTIMATING_LOSS_RECOVERY } from "@/app/site-config/story/story__estimating-loss-recovery";
 import { STORY__IDENTIFYING_INFRASTRUCTURE_RISKS_HURRICANE } from "@/app/site-config/story/story__identifying-infrastructure-risks-hurricane";
@@ -10,8 +8,6 @@ import { TRAINING__EO_PRE_POST_FIRE_MONITORING } from "@/app/site-config/trainin
 import { TRAINING__FUNDAMENTALS_REMOTE_SENSING } from "@/app/site-config/training/training__fundamentals-remote-sensing";
 import { TRAINING__INTRODUCTION_TO_SAR } from "@/app/site-config/training/training__introduction-to-sar";
 import type {
-  DataStoryContent,
-  DataStoryContentExternal,
   EventContent,
   NewsContent,
   StoryContent,
@@ -64,12 +60,6 @@ export const RECOVER_STORIES: [
   STORY__CLEARING_THE_WAY_DEBRIS_MAPPING,
   STORY__MAPPING_OIL_SPILLS_FROM_SPACE,
   STORY__IDENTIFYING_INFRASTRUCTURE_RISKS_HURRICANE,
-];
-
-// TODO: these would be fetched based on content id
-export const RECOVER_DATASTORIES: (DataStoryContent | DataStoryContentExternal)[] = [
-  DATASTORY__SO2_VOLCANOES,
-  DATASTORY__LAHAINA_FIRE,
 ];
 
 // TODO: these would be fetched based on content id

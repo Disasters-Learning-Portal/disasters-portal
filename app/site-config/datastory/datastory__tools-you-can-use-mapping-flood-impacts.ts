@@ -15,7 +15,7 @@ export const DATASTORY__TOOLS_YOU_CAN_USE_MAPPING_FLOOD_IMPACTS: DataStoryConten
     alt: "Satellite map of surface water extents in the central U.S., with water shown in blue and land in white",
   },
   themes: ["respond"],
-  categories: ["flood", "severewx"],
+  categories: ["flood", "severe weather"],
   body: [
     {
       type: "text",

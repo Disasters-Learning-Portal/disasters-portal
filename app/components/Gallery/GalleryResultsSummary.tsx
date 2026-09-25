@@ -1,32 +1,61 @@
 "use client";
 
+import { Link, Tag } from "@teamimpact/veda-ui-blocks";
+import type { AppliedFilter } from "./helpers/filters.helpers";
+
 type GalleryResultsSummaryProps = {
-  query: string;
   resultCount: number;
+  appliedFilters: AppliedFilter[];
+  clearAllFilters: () => void;
 };
 
-export function GalleryResultsSummary({ query, resultCount }: GalleryResultsSummaryProps) {
-  const showStatus = Boolean(query) || resultCount === 0;
+/**
+ * The result count line and the applied-filter pills row, with their empty
+ * states ("N items" / "No filters applied"). Pure rendering; removing a
+ * pill or clearing all writes the URL through the useGallery callbacks.
+ */
+export function GalleryResultsSummary({
+  resultCount,
+  appliedFilters,
+  clearAllFilters,
+}: GalleryResultsSummaryProps) {
+  const statusText = () => {
+    if (appliedFilters.length === 0) {
+      return `${resultCount} ${resultCount === 1 ? "item" : "items"}`;
+    }
+    if (resultCount === 0) {
+      return "No results match your filters.";
+    }
+    return `${resultCount} search ${resultCount === 1 ? "result" : "results"}`;
+  };
 
   return (
-    // The <p> must always be in the DOM, even when empty: screen readers only
-    // announce text changes inside an already-rendered live region, so rendering
-    // it conditionally would make the announcements silently stop working.
-    // When empty, margin-0 cancels the base 16px <p> margin so it occupies no
-    // space (display-none would remove it from the accessibility tree).
-    <p
-      role="status"
-      className={showStatus ? "font-heading-lg text-bold margin-bottom-3" : "margin-0"}
-    >
-      {showStatus &&
-        (resultCount === 0 ? (
-          "No results match."
+    <>
+      {/* Always rendered: screen readers only announce text changes inside an
+          already-rendered live region, and the placeholder text keeps the
+          layout stable when no filters are applied. */}
+      <p role="status" className="font-heading-lg text-bold margin-bottom-3">
+        {statusText()}
+      </p>
+      <div className="display-flex flex-wrap flex-align-center margin-bottom-3">
+        {appliedFilters.length === 0 ? (
+          <span>No filters applied</span>
         ) : (
           <>
-            {resultCount} Search {resultCount === 1 ? "result" : "results"} for{" "}
-            <span className="text-primary">{query}</span>
+            <span className="text-bold margin-right-1">Filters applied:</span>
+            {appliedFilters.map((pill) => (
+              <Tag key={pill.id} onClose={pill.remove} className="margin-right-1">
+                {pill.label}
+              </Tag>
+            ))}
+            {appliedFilters.length > 1 && (
+              <Link as="button" variant="text" onClick={clearAllFilters}>
+                Clear all
+              </Link>
+            )}
           </>
-        ))}
-    </p>
+        )}
+      </div>
+    </>
   );
 }

@@ -123,7 +123,7 @@ export const ContentBlockRenderer = ({
               alt={block.alt}
               width={block.width}
               height={block.height}
-              style={{ width: block.maxWidth ?? "100%", height: "auto" }}
+              className={`width-full height-auto ${block.maxWidth ? `maxw-${block.maxWidth}` : ""}`}
             />
             {block.caption && (
               <figcaption className="font-body-sm text-base margin-top-1">
@@ -142,11 +142,6 @@ export const ContentBlockRenderer = ({
           )}
           <figure className="margin-0">
             <StacSingleLayerBlock block={block} />
-            {block.caption && (
-              <figcaption className="font-body-sm text-base margin-top-1">
-                {block.caption}
-              </figcaption>
-            )}
           </figure>
         </Section>
       );
@@ -159,18 +154,11 @@ export const ContentBlockRenderer = ({
           )}
           <figure className="margin-0">
             <StacCompareBlock block={block} />
-            {block.caption && (
-              <figcaption className="font-body-sm text-base margin-top-1">
-                {block.caption}
-              </figcaption>
-            )}
           </figure>
         </Section>
       );
 
     case "sectionCardSimple": {
-      // Card titles sit under the block's h2 section heading, so render them as h3.
-      // This also keeps them out of the page's in-page navigation, which lists h2s.
       const cards = block.cards.map(
         ({ id, contentType, themes, thumbnailImage, title, ...rest }) => ({
           ...makeCardSimpleProps({
@@ -181,6 +169,8 @@ export const ContentBlockRenderer = ({
             title,
             url: "url" in rest ? rest.url : undefined,
           }),
+          // Card titles sit under the block's h2 section heading.
+          // This should enforce that they sit at h3.
           titleAs: "h3" as const,
         }),
       );
@@ -206,7 +196,14 @@ export const ContentBlockRenderer = ({
           makeCardDetailedImageLeftProps({
             id,
             contentType,
-            title,
+            // The section heading is h2, so card titles must be h3.
+            // CardDetailed has no titleAs option. This should be dropped if
+            // it ever becomes available.
+            title: (
+              <h3 className="blocks-card-detailed__title" title={title}>
+                {title}
+              </h3>
+            ),
             description,
             thumbnailImage,
             themes,
@@ -234,7 +231,13 @@ export const ContentBlockRenderer = ({
       return (
         <SectionCardFeatured
           isMultiColumnLayout={isMultiColumnLayout}
-          card={makeCardFeaturedProps(block.card)}
+          card={makeCardFeaturedProps({
+            ...block.card,
+            // The section heading is h2, so card titles must be h3.
+            // Card has no titleAs option. This should be dropped if
+            // it ever becomes available.
+            title: <h3 className="blocks-card__title">{block.card.title}</h3>,
+          })}
         />
       );
   }
