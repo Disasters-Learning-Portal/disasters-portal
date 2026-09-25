@@ -1,7 +1,6 @@
 import { Footer } from "@teamimpact/veda-ui-blocks";
 import type { Metadata } from "next";
 import "@teamimpact/veda-ui-blocks/hds.css";
-import "./styles/overrides.css";
 
 import { HeaderWithCurrentPath } from "@/app/components";
 import { AppLink } from "@/app/components/AppLink";
@@ -19,9 +18,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      {/* CSS cannot resolve public/ URLs under a base path; expose them as vars */}
-      <style>{`:root { --image-logo-emblem-url: url("${withBasePath("/img/logo-emblem.svg")}"); }`}</style>
+    <html
+      lang="en"
+      // CSS cannot resolve public/ URLs under a base path; expose it as a var
+      style={
+        {
+          "--image-logo-url": `url("${withBasePath("/img/logo-emblem.svg")}")`,
+        } as React.CSSProperties
+      }
+    >
       <body
         className="minh-viewport"
         style={{

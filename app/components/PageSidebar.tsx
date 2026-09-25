@@ -3,88 +3,77 @@ import type { ReactNode } from "react";
 import { AppLinkStyled } from "@/app/components/AppLink";
 import {
   makeContentTypeTagProps,
-  makeSimpleTagProps,
+  makeOutlineTagProps,
   makeThemeTagProps,
 } from "@/app/site-config/content.helpers";
-import {
-  type Category,
-  CONTENT_SIDEBAR_CONTENT_TYPES,
-  type ContentType,
-  type Theme,
-} from "@/app/site-config/types";
+import type { Category, ContentType, Theme } from "@/app/site-config/types";
 
 export function PageSidebar({
   contentType,
   themes,
   categories,
+  details = [],
   relatedContent = [],
 }: {
   contentType: ContentType;
   themes: Theme[];
   categories: Category[];
+  details?: SidebarDetail[];
   relatedContent?: RelatedItem[];
 }) {
-  // TODO: update to include inpage navigation
   return (
     <aside>
-      {
-        // Begin section on themes, categories, related content
-        CONTENT_SIDEBAR_CONTENT_TYPES.includes(contentType) && (
-          <div className="bg-base-lightest padding-4 margin-bottom-4">
-            {contentType === "data" && (
-              <div className="margin-bottom-3">
-                <button type="button" className="usa-button width-full">
-                  View Data
-                </button>
-              </div>
-            )}
-
-            <div className="border-top border-base-lighter padding-top-3 margin-bottom-3">
-              <MetaGroup label="Type">
-                <div className="margin-right-1 margin-bottom-1">
-                  <Tag {...makeContentTypeTagProps(contentType)} />
-                </div>
-              </MetaGroup>
-
-              {themes.length > 0 && (
-                <MetaGroup label="Theme">
-                  {themes.map((theme) => (
-                    <div key={theme} className="margin-right-1 margin-bottom-1">
-                      <Tag {...makeThemeTagProps(theme)} />
-                    </div>
-                  ))}
-                </MetaGroup>
-              )}
-
-              {categories.length > 0 && (
-                <MetaGroup label="Hazard">
-                  {categories.map((category) => (
-                    <div key={category} className="margin-right-1 margin-bottom-1">
-                      <Tag {...makeSimpleTagProps(category)} />
-                    </div>
-                  ))}
-                </MetaGroup>
-              )}
+      <div className="padding-x-4 margin-bottom-4">
+        <div className="margin-bottom-3">
+          <MetaTags label="Type">
+            <div className="margin-right-1 margin-bottom-1">
+              <Tag {...makeOutlineTagProps(makeContentTypeTagProps(contentType))} />
             </div>
+          </MetaTags>
 
-            {relatedContent.length > 0 && (
-              <div className="border-top border-base-lighter padding-top-3">
-                <p className="text-bold font-body-sm margin-top-0 margin-bottom-3">
-                  Related Content
-                </p>
-                {relatedContent.map((item) => (
-                  <RelatedContentItem key={item.id} item={item} />
-                ))}
-              </div>
-            )}
+          {themes.length > 0 && (
+            <MetaTags label="Theme">
+              {themes.map((theme) => (
+                <div key={theme} className="margin-right-1 margin-bottom-1">
+                  <Tag {...makeOutlineTagProps(makeThemeTagProps(theme))} />
+                </div>
+              ))}
+            </MetaTags>
+          )}
+
+          {categories.length > 0 && (
+            <MetaTags label="Hazard">
+              {categories.map((category) => (
+                <div key={category} className="margin-right-1 margin-bottom-1">
+                  <Tag {...makeOutlineTagProps(category)} />
+                </div>
+              ))}
+            </MetaTags>
+          )}
+
+          {details.map(({ label, content }) => (
+            <MetaTags key={label} label={label}>
+              <div className="text-semibold">{content}</div>
+            </MetaTags>
+          ))}
+        </div>
+
+        {relatedContent.length > 0 && (
+          <div className="margin-top-3">
+            <MetaLabel>Related Content</MetaLabel>
+            {relatedContent.map((item) => (
+              <MetaRelatedContent key={item.id} item={item} />
+            ))}
           </div>
-        )
-      }
+        )}
+      </div>
     </aside>
   );
 }
 
-type RelatedItem = {
+export type SidebarDetail = { label: string; content: ReactNode };
+
+export type RelatedItem = {
   id: string;
   title: string;
   href: string;
@@ -92,32 +81,40 @@ type RelatedItem = {
   categories: Category[];
 };
 
-function MetaGroup({ label, children }: { label: string; children: ReactNode }) {
+function MetaLabel({ children }: { children: string }) {
   return (
-    <div className="margin-bottom-3">
-      <p className="text-bold font-body-sm margin-top-0 margin-bottom-1">{label}</p>
+    <p className="text-uppercase text-bold font-body-3xs text-base-dark margin-top-0 margin-bottom-1">
+      {children}
+    </p>
+  );
+}
+
+function MetaTags({ label, children }: { label: string; children: ReactNode }) {
+  return (
+    <div className="border-bottom border-base-lighter padding-bottom-3 margin-bottom-2">
+      <MetaLabel>{label}</MetaLabel>
       <div className="display-flex flex-wrap">{children}</div>
     </div>
   );
 }
 
-function RelatedContentItem({ item }: { item: RelatedItem }) {
+function MetaRelatedContent({ item }: { item: RelatedItem }) {
   return (
     <div className="margin-bottom-3">
-      <AppLinkStyled href={item.href} className="text-no-underline">
-        <p className="font-heading-md text-bold text-primary-dark margin-top-0 margin-bottom-1">
+      <AppLinkStyled href={item.href}>
+        <p className="font-heading-sm line-height-heading-3 text-bold margin-top-0 margin-bottom-1">
           {item.title}
         </p>
       </AppLinkStyled>
       <div className="display-flex flex-wrap">
         {item.themes.map((theme) => (
           <div key={theme} className="margin-right-1 margin-bottom-1">
-            <Tag {...makeThemeTagProps(theme)} />
+            <Tag {...makeOutlineTagProps(makeThemeTagProps(theme))} />
           </div>
         ))}
         {item.categories.map((category) => (
           <div key={category} className="margin-right-1 margin-bottom-1">
-            <Tag {...makeSimpleTagProps(category)} />
+            <Tag {...makeOutlineTagProps(category)} />
           </div>
         ))}
       </div>
