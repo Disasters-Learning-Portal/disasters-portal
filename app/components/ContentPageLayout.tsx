@@ -55,13 +55,15 @@ export function ContentPageLayout({
             <div className="grid-col-12 desktop:grid-col-3">
               <div className={styles.aside}>
                 {SHOW_IN_PAGE_NAVIGATION_CONTENT_TYPES.includes(contentType) && (
-                  <InPageNavigation
-                    // disable the default sticky behavior of the nav as it
-                    // would conflict with the scrolling column.
-                    className="position-static"
-                    data-main-content-selector={`#${PAGE_CONTENT_ID}`}
-                    data-heading-elements="h2"
-                  />
+                  <div className="margin-bottom-7">
+                    <InPageNavigation
+                      // disable the default sticky behavior of the nav as it
+                      // would conflict with the scrolling column.
+                      className="position-static"
+                      data-main-content-selector={`#${PAGE_CONTENT_ID}`}
+                      data-heading-elements="h2"
+                    />
+                  </div>
                 )}
                 <PageSidebar
                   contentType={contentType}
