@@ -4,7 +4,7 @@ export const NEWS__DRIVING_HUMANITARIAN_INNOVATION_EARTH_SCIENCE: NewsContent = 
   id: "driving-humanitarian-innovation-and-action-earth-science",
   contentType: "news",
   title: "Driving Humanitarian Innovation and Action with Earth Science",
-  date: "2024-09-05",
+  datePublished: "2024-09-05",
   description:
     "NASA Lifelines uses science, technology, and data to empower humanitarian response, building communities that unlock the power of Earth science to improve humanitarian outcomes around the world.",
   thumbnailImage: {
