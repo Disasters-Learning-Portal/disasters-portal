@@ -23,7 +23,7 @@ export default async function NewsEventsStoriesItemPage(
 
   if (!contentItem) notFound();
 
-  const { contentType, title, mastheadImage, themes, categories, body, datePublished } =
+  const { contentType, title, subtitle, mastheadImage, themes, categories, body, datePublished } =
     contentItem;
   const isEvent = contentItem.contentType === "event";
 
@@ -32,7 +32,7 @@ export default async function NewsEventsStoriesItemPage(
       masthead={
         isEvent
           ? transformEventToPageMastHeadProps(contentItem)
-          : makeCardMastHeadProps({ mastheadImage, title, datePublished })
+          : makeCardMastHeadProps({ mastheadImage, title, subtitle, datePublished })
       }
       contentType={contentType}
       themes={themes}
