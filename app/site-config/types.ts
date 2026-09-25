@@ -20,35 +20,34 @@ export const CONTENT_TYPES: Record<ContentType, { route: AppRoutes; label: strin
   training: { route: "/training", label: "training" },
 };
 
-export const CONTENT_THEMES: Record<Theme, { label: string; color?: string }> = {
-  respond: {
-    label: "respond",
-    color: "secondary",
-  },
-  build: {
-    label: "build resilience",
-    color: "success",
-  },
-  prepare: {
-    label: "prepare",
-    color: "accent-warm",
-  },
-  recover: {
-    label: "recover",
-    color: "accent-cool",
-  },
-};
-
-export const CONTENT_SIDEBAR_CONTENT_TYPES: ContentType[] = [
-  "data",
+export const SHOW_IN_PAGE_NAVIGATION_CONTENT_TYPES: ContentType[] = [
+  "event",
+  "news",
   "story",
   "datastory",
   "training",
 ];
 
-export type IterableItemWithId<T> = T & { id: string };
-
 export type Theme = "respond" | "build" | "prepare" | "recover";
+
+export const CONTENT_THEMES: Record<Theme, { label: string; color?: string }> = {
+  respond: {
+    label: "Respond",
+    color: "secondary",
+  },
+  build: {
+    label: "Build resilience",
+    color: "success",
+  },
+  prepare: {
+    label: "Prepare",
+    color: "accent-warm",
+  },
+  recover: {
+    label: "Recover",
+    color: "accent-cool",
+  },
+};
 
 export const CONTENT_CATEGORIES = [
   "earthquake",
@@ -100,7 +99,8 @@ export type ContentBlock =
       alt: string;
       width: number;
       height: number;
-      maxWidth?: string;
+      /** USWDS maxw-* token. The image fills the column unless capped here. */
+      maxWidth?: "card" | "card-lg" | "mobile" | "mobile-lg" | "tablet";
       caption?: string;
     }
   | (StacSingleLayerMapProps &
@@ -108,14 +108,12 @@ export type ContentBlock =
         type: "stacSingleLayer";
         heading?: string;
         headingLevel?: "h2" | "h3" | "h4";
-        caption?: string;
       })
   | (StacCompareMapProps &
       GeoConfig & {
         type: "stacCompare";
         heading?: string;
         headingLevel?: "h2" | "h3" | "h4";
-        caption?: string;
       })
   | {
       type: "sectionCardSimple";
@@ -127,11 +125,11 @@ export type ContentBlock =
       type: "sectionCardGallery";
       heading?: string;
       href?: GalleryRoute;
-      cards: CardDetailedPropsArgs[];
+      cards: (Omit<CardDetailedPropsArgs, "title"> & { title: string })[];
     }
   | {
       type: "sectionCardFeatured";
-      card: CardFeaturedPropsArgs;
+      card: Omit<CardFeaturedPropsArgs, "title"> & { title: string };
     };
 
 export type InternalCardContent = {
@@ -238,3 +236,5 @@ type MastheadImage = {
   caption?: string;
   attribution?: string;
 };
+
+export type IterableItemWithId<T> = T & { id: string };

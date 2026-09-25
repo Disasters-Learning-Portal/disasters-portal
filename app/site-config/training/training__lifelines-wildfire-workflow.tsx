@@ -76,7 +76,7 @@ export const TRAINING__LIFELINES_WILDFIRE_WORKFLOW: TrainingContent = {
       alt: "NASA Lifelines logo",
       width: 1495,
       height: 190,
-      maxWidth: "200px",
+      maxWidth: "card-lg",
     },
     {
       type: "text",
