@@ -59,7 +59,7 @@ export const makeContentTypeTagProps = (tag: ContentType) => {
 
 export type CardMastheadPropsArgs = Omit<
   CardProps,
-  "title" | "image" | "colorMode" | "isMastHead" | "tag"
+  "title" | "image" | "colorMode" | "isMastHead" | "tag" | "callToAction" | "callToActionSecondary"
 > & {
   mastheadImage: {
     alt: string;
@@ -68,6 +68,10 @@ export type CardMastheadPropsArgs = Omit<
   title?: string;
   theme?: Theme;
   datePublished?: DateString;
+  callToAction?: {
+    label: string;
+    href: string;
+  };
 };
 
 export const makeCardMastHeadProps = ({
@@ -76,13 +80,20 @@ export const makeCardMastHeadProps = ({
   subtitle,
   theme,
   datePublished,
+  callToAction,
   ...rest
-}: CardMastheadPropsArgs): CardProps => ({
+}: CardMastheadPropsArgs): CardProps<typeof AppLink> => ({
   className: "blocks-card--contentpage",
   image: <AppImage {...mastheadImage} sizes="100vw" fill preload={true} />,
   tag: datePublished && makeDateTagProps(datePublished),
   title: title ?? (theme ? CONTENT_THEMES[theme].label : undefined),
   description: subtitle,
+  callToAction: callToAction && {
+    ...callToAction,
+    variant: "button",
+    color: "secondary",
+    as: AppLink,
+  },
   colorMode: "dark",
   isMastHead: true,
   ...rest,

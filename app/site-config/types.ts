@@ -20,6 +20,16 @@ export const CONTENT_TYPES: Record<ContentType, { route: AppRoutes; label: strin
   training: { route: "/training", label: "training" },
 };
 
+export const SHOW_IN_PAGE_NAVIGATION_CONTENT_TYPES: ContentType[] = [
+  "event",
+  "news",
+  "story",
+  "datastory",
+  "training",
+];
+
+export type Theme = "respond" | "build" | "prepare" | "recover";
+
 export const CONTENT_THEMES: Record<Theme, { label: string; color?: string }> = {
   respond: {
     label: "Respond",
@@ -38,18 +48,6 @@ export const CONTENT_THEMES: Record<Theme, { label: string; color?: string }> = 
     color: "accent-cool",
   },
 };
-
-export const CONTENT_SIDEBAR_CONTENT_TYPES: ContentType[] = [
-  "data",
-  "story",
-  "datastory",
-  "event",
-  "training",
-];
-
-export type IterableItemWithId<T> = T & { id: string };
-
-export type Theme = "respond" | "build" | "prepare" | "recover";
 
 export const CONTENT_CATEGORIES = [
   "earthquake",
@@ -249,3 +247,5 @@ type MastheadImage = {
   caption?: string;
   attribution?: string;
 };
+
+export type IterableItemWithId<T> = T & { id: string };
