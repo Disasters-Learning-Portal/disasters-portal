@@ -36,17 +36,13 @@ export const DATASTORY__TOOLS_YOU_CAN_USE_MAPPING_FLOOD_IMPACTS: DataStoryConten
       ],
     },
     {
-      type: "stacSingleLayer",
-      initialViewState: { longitude: -82.22, latitude: 27.42, zoom: 6 },
-      baseMapStyle: CARTO_DARK_WITH_LABELS_BASEMAP_STYLE,
-      layerConfig: {
-        type: "raster",
-        collectionId: "sentinel1-hydrosar-wm-iw-dvr-subdaily",
-        collectionAssetId: "dvr",
-        dateRange: { from: "2024-10-10", to: "2024-10-11" },
-      },
+      type: "image",
+      src: "/img/datastory/mapping-flood-impacts__hydrosar.webp",
+      alt: "Example of HydroSAR data from April 2025 severe weather in the U.S.",
+      width: 850,
+      height: 707,
       caption:
-        "The Copernicus Sentinel-1 satellite collected synthetic aperture radar (SAR) imagery over the southeast and central U.S. from April 4-9, 2025, capturing flooding from severe storms. HydroSAR surface water extents are shown in blue. These are overlaid on VH cross-pol SAR imagery (grayscale), in which still water and other flat surfaces appear black, while diffuse scatterers like vegetation appear in lighter shades. Credits: NASA Disasters Program, Alaska Satellite Facility. Contains modified Copernicus Sentinel data (2025) processed by ESA.",
+        "The Copernicus Sentinel-1 satellite collected synthetic aperture radar (SAR) imagery over the southeast and central U.S. from April 4-9, 2025, capturing flooding from severe storms. On the left, HydroSAR surface water extents are shown in blue. These are overlaid on VH cross-pol SAR imagery (grayscale), in which still water and other flat surfaces appear black, while diffuse scatterers like vegetation appear in lighter shades. On the right, USGS National Land Cover Database data indicates whether affected areas may be developed, cropland, forest, or other classes of land use. Credits: (left) NASA Disasters Program, Alaska Satellite Facility. Contains modified Copernicus Sentinel data (2025) processed by ESA. (right) US Geologic Survey National Land Cover Database 2019 as published by U.S. Environmental Protection Agency, Office of Mission Support; Data Steward: Multi-resolution Land Characteristics Consortium.",
     },
     {
       type: "list",
