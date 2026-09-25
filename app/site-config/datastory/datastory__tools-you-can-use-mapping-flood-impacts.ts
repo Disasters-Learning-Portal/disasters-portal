@@ -90,14 +90,11 @@ export const DATASTORY__TOOLS_YOU_CAN_USE_MAPPING_FLOOD_IMPACTS: DataStoryConten
       ],
     },
     {
-      type: "stacSingleLayer",
-      initialViewState: { longitude: -89.46, latitude: 36.58, zoom: 6 },
-      layerConfig: {
-        type: "raster",
-        collectionId: "VIIRS_SNPP_DayNightBand_AtSensor_M15",
-        collectionAssetId: "VIIRS_SNPP_DayNightBand_AtSensor_M15",
-        dateRange: { from: "2025-03-29", to: "2025-04-10" },
-      },
+      type: "image",
+      src: "/img/datastory/mapping-flood-impacts__black-marble.webp",
+      alt: "Example Black Marble nighttime lights imagery over Missouri, Arkansas, Kentucky and Tennessee",
+      width: 850,
+      height: 707,
       caption:
         "This time-series map shows daily Black Marble Nighttime Blue/Yellow Composite imagery from March 29 – April 10, 2025 in parts of Missouri, Arkansas, Kentucky and Tennessee. The imagery reveals surface lights, indicative of human activity, and clouds. While power outages were minimal for this incident, Black Marble imagery allows users to view prolonged outages in rural communities and power restoration over time. Credits: NASA/GSFC/ESDIS",
     },
