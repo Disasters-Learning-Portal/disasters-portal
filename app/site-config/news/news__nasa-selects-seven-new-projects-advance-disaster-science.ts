@@ -4,7 +4,7 @@ export const NEWS__NASA_SELECTS_SEVEN_NEW_PROJECTS: NewsContent = {
   id: "nasa-selects-seven-new-projects-advance-disaster-science",
   contentType: "news",
   title: "NASA Selects Seven New Projects to Advance Disaster Science",
-  date: "2024-12-20",
+  datePublished: "2024-12-20",
   description:
     "The NASA Disasters Program has selected seven groundbreaking projects that will harness the power of Earth observations to help communities better understand, prepare for, and recover from disasters and extreme events.",
   thumbnailImage: {

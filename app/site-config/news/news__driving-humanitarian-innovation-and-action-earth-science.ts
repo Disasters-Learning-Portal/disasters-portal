@@ -30,7 +30,7 @@ export const NEWS__DRIVING_HUMANITARIAN_INNOVATION_EARTH_SCIENCE: NewsContent = 
       alt: "Shanna McClain speaks at a podium in front of the mural on a bright sunny day, with people involved in developing the mural on the left and a large crowd of onlookers and cameramen on the right who are listening to her speech with rapt attention",
       width: 850,
       height: 638,
-      maxWidth: "40rem",
+      maxWidth: "tablet",
       caption:
         "NASA Disasters Program Manager Shanna McClain spoke at the unveiling of the D.C. mural to an audience that included Washington Metropolitan Area Transit Authority board members, NASA staff, students from the Richard Wright Public Charter School, and the mural’s artist Joel Bergner. Credit: NASA / Jacob Reed",
     },
@@ -47,7 +47,7 @@ export const NEWS__DRIVING_HUMANITARIAN_INNOVATION_EARTH_SCIENCE: NewsContent = 
       alt: "A group of about 20 adults pose for a group photo, smiling. On the wall behind them is a decorative background of clouds, blue light, and imagery of satellites",
       width: 1200,
       height: 900,
-      maxWidth: "40rem",
+      maxWidth: "tablet",
       caption:
         "Finalists and Panelists stand together after a successful Ready for Impact pitch competition held at SatSummit 2024 in Washington, D.C. Credit: NASA Lifelines / NASA / Seph Allen",
     },
@@ -71,7 +71,7 @@ export const NEWS__DRIVING_HUMANITARIAN_INNOVATION_EARTH_SCIENCE: NewsContent = 
       alt: "A diagram titled “Humanitarians Guide to the Galaxy: 10 Programs for the Lifelines Community”, designed like the solar system, with each planet representing a different NASA Lifelines program: Ready for Impact, Supper Clubs, Humanitarian Simulation, Humanitarian Wayfinders, Advisory Board, a central sun with the Lifelines logo, Fellowships, Impact Embassy, Mural Contests, Scientist Speed Dating, and Earth Science Review Board",
       width: 1200,
       height: 672,
-      maxWidth: "40rem",
+      maxWidth: "tablet",
       caption:
         "A map of NASA Lifelines’ collection of activities and initiatives. Credit: NASA Lifelines",
     },
@@ -96,7 +96,7 @@ export const NEWS__DRIVING_HUMANITARIAN_INNOVATION_EARTH_SCIENCE: NewsContent = 
       alt: "Jeff Pituch stands at the front of a room giving a presentation at the Scientist Speed Dating event. Groups of people sit at tables, eager to participate in this networking event",
       width: 1200,
       height: 900,
-      maxWidth: "40rem",
+      maxWidth: "tablet",
       caption:
         "Jeff Pituch of NASA Lifelines leads a Scientist Speed Dating event at SatSummit 2024 in Washington, D.C. Credit: NASA Lifelines / NASA / Seph Allen",
     },
@@ -112,7 +112,7 @@ export const NEWS__DRIVING_HUMANITARIAN_INNOVATION_EARTH_SCIENCE: NewsContent = 
       alt: "A group of thirteen people eating together at a table while engaged in active discussion to share their knowledge and ideas about building effective partnerships",
       width: 850,
       height: 638,
-      maxWidth: "40rem",
+      maxWidth: "tablet",
       caption:
         "Participants share a meal together at a NASA Lifelines Supper Club while they discuss what it takes to build partnerships across satellite imagery providers, Earth scientists, and local communities. Credit: NASA Lifelines",
     },
@@ -132,7 +132,7 @@ export const NEWS__DRIVING_HUMANITARIAN_INNOVATION_EARTH_SCIENCE: NewsContent = 
       alt: "The NASA Lifelines mural painted in vibrant colors, containing imagery of a satellite, a D.C. city street and a metro bus, a bird in flight, two children and a hand pointing at a map of Washington, D.C., a woman staring into the distance, and a group of refugees working together under a satellite map",
       width: 1200,
       height: 623,
-      maxWidth: "40rem",
+      maxWidth: "tablet",
       caption:
         "A NASA Lifelines mural located at Washington Metropolitan Area Transit Authority headquarters in Washington, D.C. Credit: NASA / Jacob Reed",
     },
