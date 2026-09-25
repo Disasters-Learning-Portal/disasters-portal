@@ -1,23 +1,38 @@
-import { DATA } from "@/app/site-config/data";
+import { DATA__US_WINTER_STORM_JAN_2026 } from "@/app/site-config/data";
 import type { EventContent } from "@/app/site-config/types";
 
-export const EVENT__US_WINTER_STORM_2026: EventContent = {
+export const EVENT__US_WINTER_STORM_JAN_2026: EventContent = {
   id: "us-winter-storm-jan-2026",
+
   contentType: "event",
+
   title: "U.S. Winter Storm January 2026",
+
   datePublished: "2026-01-28",
+
   thumbnailImage: {
-    src: "/img/event/us-winter-storm-jan-2026.webp",
+    src: "/img/event/template-hero.webp",
     alt: "Hazard pattern swirls in shades of blue",
   },
+
   mastheadImage: {
-    src: "/img/event/us-winter-storm-jan-2026.webp",
+    src: "/img/event/template-hero.webp",
     alt: "Hazard pattern swirls in shades of blue",
   },
+
   themes: ["respond"],
+
   categories: ["winter weather"],
+
   region: "U.S., North America",
+
   startDate: "2026-01-23",
+
+  linkDHSFEMA: {
+    label: "Learn more",
+    href: "https://www.fema.gov/disaster/2026-winter-storm",
+  },
+
   body: [
     {
       type: "text",
@@ -29,7 +44,7 @@ export const EVENT__US_WINTER_STORM_2026: EventContent = {
     {
       type: "sectionCardGallery",
       heading: "Related Data",
-      cards: DATA,
+      cards: DATA__US_WINTER_STORM_JAN_2026,
     },
   ],
 };
