@@ -5,6 +5,7 @@ import { STORY__FINDING_FLOODS } from "./story__finding-floods";
 import { STORY__IDENTIFYING_INFRASTRUCTURE_RISKS_HURRICANE } from "./story__identifying-infrastructure-risks-hurricane";
 import { STORY__MAPPING_OIL_SPILLS_FROM_SPACE } from "./story__mapping_oil_spills_from_space";
 import { STORY__SEEING_BEYOND_FLAMES } from "./story__seeing-beyond-flames";
+import { STORY__STUDY_REVEALS_HEAT_RISK_ELDERLY_AUSTIN } from "./story__study-reveals-heat-risk-to-elderly-in-austin";
 import { STORY__SUPPORTING_COMMUNITIES_HURRICANE_HELENE } from "./story__supporting-communities-hurricane-helene";
 import { STORY__TRACKING_TORNADOES_FROM_SPACE } from "./story__tracking-tornadoes-from-space";
 
@@ -17,4 +18,5 @@ export const STORIES: StoryContent[] = [
   STORY__SEEING_BEYOND_FLAMES,
   STORY__SUPPORTING_COMMUNITIES_HURRICANE_HELENE,
   STORY__TRACKING_TORNADOES_FROM_SPACE,
+  STORY__STUDY_REVEALS_HEAT_RISK_ELDERLY_AUSTIN,
 ];
