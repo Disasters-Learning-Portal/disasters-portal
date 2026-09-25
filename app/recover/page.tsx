@@ -44,7 +44,9 @@ export default function RecoverPage() {
       <PageMasthead {...makeCardMastHeadProps({ subtitle, theme, mastheadImage })} />
       <SectionCardSimple
         sectionHeading={
-          <SectionHeading href="/news-events-stories?type=story">Stories of Impact</SectionHeading>
+          <SectionHeading linkProps={{ href: "/news-events-stories?type=story" }}>
+            Stories of Impact
+          </SectionHeading>
         }
         cards={typedMap(stories, makeCardSimpleProps)}
       />
@@ -53,7 +55,9 @@ export default function RecoverPage() {
         <ContentBlockRenderer key={index} block={block} />
       ))}
       <SectionCardSimple
-        sectionHeading={<SectionHeading href="/training">Resources & Learning</SectionHeading>}
+        sectionHeading={
+          <SectionHeading linkProps={{ href: "/training" }}>Resources & Learning</SectionHeading>
+        }
         cards={typedMap(trainings, makeCardSimpleProps)}
       />
     </>

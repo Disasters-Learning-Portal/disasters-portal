@@ -68,7 +68,9 @@ export default function ComponentsPage() {
         </code>
       </Section>
       <Section bgColor="base-lightest">
-        <SectionHeading href="/">Section with bgColor and SectionHeading Component</SectionHeading>
+        <SectionHeading linkProps={{ href: "/" }}>
+          Section with bgColor and SectionHeading Component
+        </SectionHeading>
         <p>Section content with grey background.</p>
         <code className="bg-base-lighter font-code-xs">
           {`<Section bgColor="base-lightest">
@@ -156,7 +158,9 @@ export default function ComponentsPage() {
 
       <SectionCardCarousel
         sectionHeading={
-          <SectionHeading href="/components">SectionCardCarousel Component</SectionHeading>
+          <SectionHeading linkProps={{ href: "/components" }}>
+            SectionCardCarousel Component
+          </SectionHeading>
         }
         cards={typedMap(DATASTORIES, makeCardCarouselProps)}
       >
