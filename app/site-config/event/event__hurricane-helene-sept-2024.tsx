@@ -9,7 +9,7 @@ export const EVENT__HURRICANE_HELENE_SEPT_2024: EventContent = {
 
   title: "Hurricane Helene September 2024",
 
-  lastUpdatedDate: "2024-09-26",
+  datePublished: "2024-09-26",
 
   thumbnailImage: {
     src: "/img/event/hurricane-helene-sept-2024.webp",
@@ -27,7 +27,7 @@ export const EVENT__HURRICANE_HELENE_SEPT_2024: EventContent = {
 
   region: "Southeastern U.S.",
 
-  startDate: "Sept. 25, 2024",
+  startDate: "2024-09-25",
 
   linkDHSFEMA: {
     label: "Learn more",

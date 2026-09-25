@@ -8,7 +8,7 @@ export const EVENT__US_WINTER_STORM_JAN_2026: EventContent = {
 
   title: "U.S. Winter Storm January 2026",
 
-  lastUpdatedDate: "2026-01-28",
+  datePublished: "2026-01-28",
 
   thumbnailImage: {
     src: "/img/event/template-hero.webp",

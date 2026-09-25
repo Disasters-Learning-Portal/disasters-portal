@@ -9,7 +9,7 @@ export const EVENT__HURRICANE_MILTON_OCT_2024: EventContent = {
 
   title: "Hurricane Milton October 2024",
 
-  lastUpdatedDate: "2024-10-10",
+  datePublished: "2024-10-10",
 
   thumbnailImage: {
     src: "/img/event/hurricane-milton-oct-2024.webp",
@@ -27,7 +27,7 @@ export const EVENT__HURRICANE_MILTON_OCT_2024: EventContent = {
 
   region: "Florida",
 
-  startDate: "Oct. 5, 2024",
+  startDate: "2024-10-05",
 
   linkUSGovernment: {
     label: "Learn more",

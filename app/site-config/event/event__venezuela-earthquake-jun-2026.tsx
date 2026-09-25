@@ -12,7 +12,7 @@ export const EVENT__VENEZUELA_EQ_JUN_2026: EventContent = {
 
   title: "Venezuela Earthquakes June 2026",
 
-  lastUpdatedDate: "2026-06-24",
+  datePublished: "2026-06-24",
 
   thumbnailImage: {
     src: "/img/event/template-hero.webp",
@@ -30,7 +30,7 @@ export const EVENT__VENEZUELA_EQ_JUN_2026: EventContent = {
 
   region: "Venezuela, South America",
 
-  startDate: "June 24, 2026",
+  startDate: "2026-06-24",
 
   linkUSGovernment: {
     label: "Learn more",

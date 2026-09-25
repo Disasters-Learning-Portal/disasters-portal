@@ -11,7 +11,7 @@ export const EVENT__SOUTHERN_CALIFORNIA_FIRE_JAN_2025: EventContent = {
   id: "southern-california-fire-jan-2025",
   contentType: "event",
   title: "Southern California Wildfires January 2025",
-  lastUpdatedDate: "2025-01-17",
+  datePublished: "2025-01-17",
   thumbnailImage: {
     src: "/img/event/southern-california-fire-jan-2025.webp",
     alt: "Infrared satellite imagery of the Palisades fire in Malibu, CA, from Jan. 12, 2025.",
@@ -23,7 +23,7 @@ export const EVENT__SOUTHERN_CALIFORNIA_FIRE_JAN_2025: EventContent = {
   themes: ["respond"],
   categories: ["fire"],
   region: " Los Angeles County, North America",
-  startDate: "Jan. 10, 2025",
+  startDate: "2025-01-10",
   linkUSGovernment: {
     label: "Learn more",
     href: "https://www.usa.gov/california-wildfires",

@@ -12,7 +12,7 @@ export const TRAINING__LIFELINES_WILDFIRE_WORKFLOW: TrainingContent = {
     src: "/img/training/lifelines-wildfire-workflow.webp",
     alt: "NASA Lifelines Data Studio cover image showing wildfire data workflow",
   },
-  date: "2026-01-15",
+  datePublished: "2026-01-15",
   themes: ["respond", "prepare"],
   categories: ["fire"],
   mastheadImage: {

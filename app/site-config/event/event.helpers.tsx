@@ -2,8 +2,7 @@ import type { SidebarDetail } from "@/app/components/PageSidebar";
 import {
   makeCardMastHeadProps,
   makeCardSimpleProps,
-  makeTextTagProps,
-  toLongDate,
+  toNASAStyleDate,
 } from "@/app/site-config/content.helpers";
 import type { EventContent } from "@/app/site-config/types";
 
@@ -23,18 +22,9 @@ export const transformEventToCardSimpleProps = (
 export const transformEventToPageMastHeadProps = (
   event: EventContent,
 ): ReturnType<typeof makeCardMastHeadProps> => {
-  const { lastUpdatedDate, mastheadImage, title, description } = event;
+  const { datePublished, mastheadImage, title, description } = event;
 
-  return makeCardMastHeadProps({
-    mastheadImage,
-    title,
-    description,
-    tag: lastUpdatedDate
-      ? (({ children, ...rest }) => ({ label: children, ...rest }))(
-          makeTextTagProps(`Updated: ${toLongDate(lastUpdatedDate)}`),
-        )
-      : undefined,
-  });
+  return makeCardMastHeadProps({ mastheadImage, title, description, datePublished });
 };
 
 export const transformEventToPageSidebarDetails = (event: EventContent): SidebarDetail[] => {
@@ -42,7 +32,7 @@ export const transformEventToPageSidebarDetails = (event: EventContent): Sidebar
 
   return [
     { label: "Region", content: region },
-    { label: "Start Date", content: toLongDate(startDate) },
+    { label: "Start Date", content: toNASAStyleDate(startDate) },
   ];
 };
 

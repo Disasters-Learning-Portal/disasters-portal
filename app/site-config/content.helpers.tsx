@@ -12,6 +12,7 @@ import {
   CONTENT_TYPES,
   type Content,
   type ContentType,
+  type DateString,
   type GalleryCardContent,
   type IterableItemWithId,
   type Theme,
@@ -37,6 +38,15 @@ export const makeTextTagProps = (
   ...tagProps,
 });
 
+// Tag takes its text as `children`, a Card wants it as `label`.
+const childrenToLabel = <T extends { children: string }>({ children, ...rest }: T) => ({
+  label: children,
+  ...rest,
+});
+
+const makeDateTagProps = (date: DateString) =>
+  childrenToLabel(makeTextTagProps(`Published: ${toNASAStyleDate(date)}`));
+
 export const makeThemeTagProps = (tag: Theme) => {
   const { label } = CONTENT_THEMES[tag];
   return label;
@@ -49,7 +59,7 @@ export const makeContentTypeTagProps = (tag: ContentType) => {
 
 export type CardMastheadPropsArgs = Omit<
   CardProps,
-  "title" | "image" | "colorMode" | "isMasthead" | "callToAction" | "callToActionSecondary"
+  "title" | "image" | "colorMode" | "isMastHead" | "tag" | "callToAction" | "callToActionSecondary"
 > & {
   mastheadImage: {
     alt: string;
@@ -57,6 +67,7 @@ export type CardMastheadPropsArgs = Omit<
   };
   title?: string;
   theme?: Theme;
+  datePublished?: DateString;
   callToAction?: {
     label: string;
     href: string;
@@ -68,11 +79,13 @@ export const makeCardMastHeadProps = ({
   title,
   subtitle,
   theme,
+  datePublished,
   callToAction,
   ...rest
 }: CardMastheadPropsArgs): CardProps<typeof AppLink> => ({
   className: "blocks-card--contentpage",
   image: <AppImage {...mastheadImage} sizes="100vw" fill preload={true} />,
+  tag: datePublished && makeDateTagProps(datePublished),
   title: title ?? (theme ? CONTENT_THEMES[theme].label : undefined),
   description: subtitle,
   callToAction: callToAction && {
@@ -179,6 +192,30 @@ export type CardDetailedPropsArgs = Omit<
   url?: string;
 };
 
+const makeCardCTAProps = ({
+  id,
+  contentType,
+  url,
+}: {
+  id: string;
+  contentType: ContentType;
+  url?: string;
+}) => ({
+  href: url ? url : `${CONTENT_TYPES[contentType].route}/${id}`,
+  label: `View ${toTitleCase(CONTENT_TYPES[contentType].label)}`,
+  variant: "arrow" as const,
+  color: "secondary" as const,
+  isExternal: !!url,
+  as: AppLink,
+});
+
+const makeCardTagProps = (themes: Theme[] = [], categories: Category[] = [], type: ContentType) =>
+  [
+    ...themes.map((t) => makeOutlineTagProps(makeThemeTagProps(t))),
+    ...categories.map((c) => makeOutlineTagProps(c)),
+    makeOutlineTagProps(makeContentTypeTagProps(type)),
+  ].map(childrenToLabel);
+
 export const makeCardDetailedProps = ({
   id,
   contentType,
@@ -197,22 +234,8 @@ export const makeCardDetailedProps = ({
     />
   ),
   imagePosition: "top",
-  tags: [
-    ...(themes ?? []).map((t) => makeOutlineTagProps(makeThemeTagProps(t))),
-    ...(categories ?? []).map((c) => makeOutlineTagProps(c)),
-    makeOutlineTagProps(makeContentTypeTagProps(contentType)),
-  ].map(({ children, ...rest }) => ({
-    label: children,
-    ...rest,
-  })),
-  callToAction: {
-    href: url ? url : `${CONTENT_TYPES[contentType].route}/${id}`,
-    label: `View ${toTitleCase(CONTENT_TYPES[contentType].label)}`,
-    variant: "arrow",
-    color: "secondary",
-    isExternal: !!url,
-    as: AppLink,
-  },
+  tags: makeCardTagProps(themes, categories, contentType),
+  callToAction: makeCardCTAProps({ id, contentType, url }),
   ...rest,
 });
 
@@ -228,22 +251,8 @@ export const makeCardDetailedImageLeftProps = ({
   id,
   image: <AppImage {...thumbnailImage} fill sizes="200px" />,
   imagePosition: "left",
-  tags: [
-    ...(themes ?? []).map((t) => makeOutlineTagProps(makeThemeTagProps(t))),
-    ...(categories ?? []).map((c) => makeOutlineTagProps(c)),
-    makeOutlineTagProps(makeContentTypeTagProps(contentType)),
-  ].map(({ children, ...rest }) => ({
-    label: children,
-    ...rest,
-  })),
-  callToAction: {
-    href: url ? url : `${CONTENT_TYPES[contentType].route}/${id}`,
-    label: `View ${toTitleCase(CONTENT_TYPES[contentType].label)}`,
-    variant: "arrow",
-    color: "secondary",
-    isExternal: !!url,
-    as: AppLink,
-  },
+  tags: makeCardTagProps(themes, categories, contentType),
+  callToAction: makeCardCTAProps({ id, contentType, url }),
   ...rest,
 });
 
@@ -275,10 +284,7 @@ export const makeCardSimpleProps = ({
   image: <AppImage {...thumbnailImage} fill sizes="(max-width: 1400px) 100vw, 1400px" />,
   colorMode: "dark",
   // tag is set on active event
-  tag: (({ children, ...rest }) => ({
-    label: children,
-    ...rest,
-  }))(
+  tag: childrenToLabel(
     tag
       ? makeTextTagProps(tag)
       : themes?.[0]
@@ -319,28 +325,38 @@ export const makeCardCarouselProps = ({
       sizes="(max-width: 640px) 100vw, (max-width: 1400px) 50vw, 700px"
     />
   ),
-  tag: (({ children, ...rest }) => ({ label: children, ...rest }))(
-    makeOutlineTagProps(makeContentTypeTagProps(contentType)),
-  ),
-  callToAction: {
-    href: url ? url : `${CONTENT_TYPES[contentType].route}/${id}`,
-    label: `View ${toTitleCase(CONTENT_TYPES[contentType].label)}`,
-    variant: "arrow",
-    color: "secondary",
-    isExternal: !!url,
-    as: AppLink,
-  },
+  tag: childrenToLabel(makeOutlineTagProps(makeContentTypeTagProps(contentType))),
+  callToAction: makeCardCTAProps({ id, contentType, url }),
   imagePosition: "cover",
   colorMode: "dark",
   ...rest,
 });
 
-export const toLongDate = (date: string) =>
-  new Date(date).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
+/**
+ * NASA Stylebook and Communications Manual, 13th edition (February 2025) / AP style:
+ * abbreviate Jan., Feb., Aug., Sept., Oct., Nov. and Dec., spell the rest out.
+ * https://github.com/Disasters-Learning-Portal/disasters-portal/issues/479
+ *
+ * Formatted in UTC so the day never shifts.
+ */
+export const toNASAStyleDate = (date: DateString) => {
+  const d = new Date(date);
+  const months = [
+    "Jan.",
+    "Feb.",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "Aug.",
+    "Sept.",
+    "Oct.",
+    "Nov.",
+    "Dec.",
+  ];
+  return `${months[d.getUTCMonth()]} ${d.getUTCDate()}, ${d.getUTCFullYear()}`;
+};
 
 export const toTitleCase = (str: string) =>
   str.toLowerCase().replace(/\b\w/g, (match) => match.toUpperCase());

@@ -27,8 +27,8 @@ export const EVENT__TEXAS_FLOODS_JULY_2025: EventContent = {
   },
   themes: ["respond"],
   categories: ["flood"],
-  lastUpdatedDate: "2025-07-09",
-  startDate: "July 4, 2025",
+  datePublished: "2025-07-09",
+  startDate: "2025-07-04",
   linkDHSFEMA: {
     label: "Learn more",
     href: "https://www.fema.gov/disaster/4879",

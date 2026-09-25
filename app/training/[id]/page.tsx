@@ -1,10 +1,6 @@
 import { notFound } from "next/navigation";
 import { ContentPageLayout } from "@/app/components";
-import {
-  makeCardMastHeadProps,
-  makeTextTagProps,
-  toLongDate,
-} from "@/app/site-config/content.helpers";
+import { makeCardMastHeadProps } from "@/app/site-config/content.helpers";
 
 import { TRAININGS } from "@/app/site-config/training";
 import { isInternalContent } from "@/app/site-config/typed.helpers";
@@ -15,16 +11,12 @@ export default async function TrainingItemPage(props: PageProps<"/training/[id]"
 
   if (!contentItem) notFound();
 
-  const { contentType, date, mastheadImage, title, themes, categories, body } = contentItem;
+  const { contentType, datePublished, mastheadImage, title, themes, categories, body } =
+    contentItem;
 
   return (
     <ContentPageLayout
-      masthead={{
-        ...makeCardMastHeadProps({ mastheadImage, title }),
-        tag: (({ children: label, ...rest }) => ({ label, ...rest }))(
-          makeTextTagProps(`Updated ${toLongDate(date)}`),
-        ),
-      }}
+      masthead={makeCardMastHeadProps({ mastheadImage, title, datePublished })}
       contentType={contentType}
       themes={themes}
       categories={categories}
