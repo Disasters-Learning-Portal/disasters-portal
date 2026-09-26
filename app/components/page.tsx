@@ -3,6 +3,7 @@ import {
   Section,
   SectionCardCarousel,
   SectionCardDetailed,
+  SectionCardFeatured,
   SectionCardSimple,
   SectionCardSimpleMini,
   SectionCardSimpleMosaic,
@@ -11,6 +12,7 @@ import {
 import {
   makeCardCarouselProps,
   makeCardDetailedImageLeftProps,
+  makeCardFeaturedProps,
   makeCardSimpleProps,
   makeOutlineTagProps,
   makeThemeTagProps,
@@ -101,7 +103,7 @@ export default function ComponentsPage() {
 
       <SectionCardDetailed
         sectionHeading={<SectionHeading>SectionCardDetailed Component</SectionHeading>}
-        cards={DATA.map(
+        cards={DATA.slice(0, 3).map(
           ({ id, contentType, title, description, thumbnailImage, categories, themes }) =>
             makeCardDetailedImageLeftProps({
               id,
@@ -176,6 +178,55 @@ export default function ComponentsPage() {
             </SectionCardCarousel>`}
         </code>
       </SectionCardCarousel>
+
+      <SectionCardFeatured
+        card={makeCardFeaturedProps({
+          id: "card-featured-id",
+          title: "Card Featured",
+          description:
+            "Featured Card which includes titles, description, call to action and image. The Earth is the only world known so far to harbor life. There is nowhere else, at least in the near future, to which our species could migrate. Visit, yes. Settle, not yet. Like it or not, for the moment the Earth is where we make our stand.",
+          callToAction: {
+            label: "Call to action",
+            href: "/",
+          },
+          image: {
+            alt: "Sample image",
+            src: "/img/story/finding-floods.webp",
+          },
+          imagePosition: "right",
+        })}
+      >
+        <p>Lorem ipsum dolor sit amet...</p>
+        <code className="bg-base-lighter font-code-xs">
+          {`<SectionCardFeatured
+              cards={makeCardFeaturedProps(card_content)}
+            >
+              <p>
+                Lorem ipsum dolor sit amet...
+              </p>
+            </SectionCardFeatured>`}
+        </code>
+      </SectionCardFeatured>
+
+      <SectionCardFeatured
+        card={makeCardFeaturedProps({
+          id: "card-featured-id",
+          title: "Card Featured (no image)",
+          description:
+            "A featured card that only showcases text content as a call out from standard body text. The Earth is the only world known so far to harbor life. There is nowhere else, at least in the near future, to which our species could migrate. Visit, yes. Settle, not yet. Like it or not, for the moment the Earth is where we make our stand.",
+        })}
+      >
+        <p>Lorem ipsum dolor sit amet...</p>
+        <code className="bg-base-lighter font-code-xs">
+          {`<SectionCardFeatured
+              cards={makeCardFeaturedProps(card_content)}
+            >
+              <p>
+                Lorem ipsum dolor sit amet...
+              </p>
+            </SectionCardFeatured>`}
+        </code>
+      </SectionCardFeatured>
 
       <Section>
         <SectionHeading>ThemeTag</SectionHeading>

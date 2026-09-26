@@ -112,7 +112,7 @@ export type CardFeaturedPropsArgs = Omit<
     label: string;
     href: string;
   };
-  image: {
+  image?: {
     alt: string;
     src: string;
   };
@@ -144,7 +144,7 @@ export const makeCardFeaturedProps = (
       color: "secondary",
       as: AppLink,
     },
-    image: (
+    image: image && (
       <AppImage
         alt={image.alt}
         src={image.src}
@@ -153,7 +153,7 @@ export const makeCardFeaturedProps = (
         style={{ objectFit: "cover" }}
       />
     ),
-    imagePosition,
+    imagePosition: image && imagePosition,
     ...rest,
   };
 };
