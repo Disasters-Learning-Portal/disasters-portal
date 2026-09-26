@@ -84,17 +84,25 @@ export type ContentBlock =
       headingLevel?: "h2" | "h3" | "h4";
       items: (string | { label: string; href: string })[];
     }
-  | { type: "note"; text: string }
-  | { type: "slider"; before: { src: string; alt: string }; after: { src: string; alt: string } }
+  | { type: "note"; heading?: string; headingLevel?: "h2" | "h3" | "h4"; text: string }
   | {
-      type: "video";
-      src: string;
+      type: "slider";
       heading?: string;
       headingLevel?: "h2" | "h3" | "h4";
+      before: { src: string; alt: string };
+      after: { src: string; alt: string };
+    }
+  | {
+      type: "video";
+      heading?: string;
+      headingLevel?: "h2" | "h3" | "h4";
+      src: string;
       caption?: string;
     }
   | {
       type: "image";
+      heading?: string;
+      headingLevel?: "h2" | "h3" | "h4";
       src: string;
       alt: string;
       width: number;
@@ -118,17 +126,21 @@ export type ContentBlock =
   | {
       type: "sectionCardSimple";
       heading?: string;
+      headingLevel?: "h2" | "h3" | "h4";
       href?: GalleryRoute;
       cards: CardSimplePropsArgs[];
     }
   | {
       type: "sectionCardGallery";
       heading?: string;
+      headingLevel?: "h2" | "h3" | "h4";
       href?: GalleryRoute;
       cards: (Omit<CardDetailedPropsArgs, "title"> & { title: string })[];
     }
   | {
       type: "sectionCardFeatured";
+      heading?: string;
+      headingLevel?: "h2" | "h3" | "h4";
       card: Omit<CardFeaturedPropsArgs, "title"> & { title: string };
     };
 
