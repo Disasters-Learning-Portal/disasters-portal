@@ -5,7 +5,7 @@ const primaryNavItems: FooterProps["primaryNavItems"] = [
   { label: "About Us", href: "/about" },
   { label: "Data Gallery", href: "/data-gallery" },
   { label: "News, Events & Stories", href: "/news-events-stories" },
-  { label: "Training", href: "/training" },
+  { label: "Resources & Learning", href: "/training" },
 ];
 
 const secondaryNavItems: FooterProps["secondaryNavItems"] = [

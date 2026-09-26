@@ -48,13 +48,21 @@ export default function RespondPage() {
       <PageMasthead {...makeCardMastHeadProps({ subtitle, theme, mastheadImage })} />
       <SectionCardSimpleMini
         sectionHeading={
-          <SectionHeading href="/news-events-stories?type=event">Latest Events</SectionHeading>
+          <SectionHeading
+            linkProps={{ label: "More Events", href: "/news-events-stories?type=event" }}
+          >
+            Latest Events
+          </SectionHeading>
         }
         cards={typedMap(RESPOND_EVENTS, transformEventToCardSimpleProps)}
       />
       <SectionCardSimple
         sectionHeading={
-          <SectionHeading href="/news-events-stories?type=story">Stories of Impact</SectionHeading>
+          <SectionHeading
+            linkProps={{ label: "More Stories of Impact", href: "/news-events-stories?type=story" }}
+          >
+            Stories of Impact
+          </SectionHeading>
         }
         cards={typedMap(stories, makeCardSimpleProps)}
       />
@@ -64,12 +72,20 @@ export default function RespondPage() {
       ))}
       <SectionCardSimple
         sectionHeading={
-          <SectionHeading href="/news-events-stories?type=datastory">Data Stories</SectionHeading>
+          <SectionHeading
+            linkProps={{ label: "More Data Stories", href: "/news-events-stories?type=datastory" }}
+          >
+            Data Stories
+          </SectionHeading>
         }
         cards={typedMap(RESPOND_DATASTORIES, makeCardSimpleProps)}
       />
       <SectionCardSimple
-        sectionHeading={<SectionHeading href="/training">Resources & Learning</SectionHeading>}
+        sectionHeading={
+          <SectionHeading linkProps={{ label: "More Resources and Learning", href: "/training" }}>
+            Resources & Learning
+          </SectionHeading>
+        }
         cards={typedMap(trainings, makeCardSimpleProps)}
       />
     </>
