@@ -74,9 +74,19 @@ export default function ComponentsPage() {
           Section with bgColor and SectionHeading Component
         </SectionHeading>
         <p>Section content with grey background.</p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eleifend nibh velit, a
+          eleifend nunc egestas ac. Duis laoreet maximus magna quis tempus. Integer placerat orci
+          quis arcu interdum, id consequat turpis consectetur. Vestibulum ullamcorper pulvinar nisl
+          sit amet facilisis. Fusce id auctor libero, at lacinia justo. Suspendisse venenatis nibh
+          id libero rutrum, et egestas eros ornare. In vel lacus in enim imperdiet ultrices. In
+          blandit leo et vestibulum condimentum. Sed sagittis neque nisi, non egestas eros venenatis
+          sed. Sed eget condimentum mi.
+        </p>
         <code className="bg-base-lighter font-code-xs">
           {`<Section bgColor="base-lightest">
               <SectionHeading href="/">Example Section Headline</SectionHeading>
+              <p>Section content with grey background.</p>
               <p>
                 Lorem ipsum dolor sit amet...
               </p>
