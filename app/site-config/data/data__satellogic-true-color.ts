@@ -83,7 +83,9 @@ export const DATA__SATELLOGIC_TRUE_COLOR: DataContent = {
       type: "text",
       heading: "Credits",
       paragraphs: [
-        "Satellogic; NASA Commercial Satellite Data Acquisition (CSDA) Program; NASA Disasters Program",
+        "Satellogic; NASA Commercial Satellite Data Aqcuisition (CSDA) Program; NASA Disasters Program",
+        "©2026 Satellogic. All rights reserved.",
+        "This work utilized data made available through the NASA Commercial Satellite Data Acquisition (CSDA) Program.",
       ],
     },
 

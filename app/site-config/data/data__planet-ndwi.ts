@@ -77,7 +77,9 @@ export const DATA__PLANET_NDWI: DataContent = {
       type: "text",
       heading: "Credits",
       paragraphs: [
-        "Planet Labs PBC; NASA Commercial Satellite Data Acquisition (CSDA) Program; NASA Disasters Program",
+        "Planet Labs PBC; NASA Commercial Satellite Data Aqcuisition (CSDA) Program; NASA Disasters Program",
+        "©2026 Planet Labs PBC. All rights reserved.",
+        "This work utilized data made available through the NASA Commercial Satellite Data Acquisition (CSDA) Program.",
       ],
     },
 
