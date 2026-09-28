@@ -84,7 +84,7 @@ export type ContentBlock =
       headingLevel?: "h2" | "h3" | "h4";
       items: (string | { label: string; href: string })[];
     }
-  | { type: "note"; heading?: string; headingLevel?: "h2" | "h3" | "h4"; text: string }
+  | { type: "note"; text: string }
   | {
       type: "slider";
       heading?: string;
