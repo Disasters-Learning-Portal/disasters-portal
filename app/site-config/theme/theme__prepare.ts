@@ -57,6 +57,16 @@ export const PREPARE_CONTENT: ThemeContent = {
           },
           url: "https://www.earthdata.nasa.gov/learn/trainings/monitoring-predicting-floods-using-earth-observations-planning-preparedness",
         },
+        {
+          id: "fundamentals-remote-sensing",
+          contentType: "training",
+          title: "Fundamentals of Remote Sensing",
+          thumbnailImage: {
+            src: "/img/training/fundamentals-remote-sensing.webp",
+            alt: "NISAR satellite orbiting Earth",
+          },
+          url: "https://www.earthdata.nasa.gov/learn/trainings/fundamentals-remote-sensing",
+        },
       ],
     },
   ],
