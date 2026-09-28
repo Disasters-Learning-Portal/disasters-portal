@@ -2,8 +2,8 @@ import type { DataContent } from "@/app/site-config/types";
 
 import { DATA__AVIRIS_3_CHAR_AND_ASH } from "./data__aviris-3-char-and-ash";
 import { DATA__AVIRIS_3_DNBR } from "./data__aviris-3-dnbr";
-import { DATA__AVIRIS_3_EARLY_COLOR_IMAGERY } from "./data__aviris-3-early-color-imagery";
 import { DATA__AVIRIS_3_PCA } from "./data__aviris-3-pca";
+import { DATA__AVIRIS_3_QUICKLOOK_COLOR_IMAGERY } from "./data__aviris-3-quicklook-color-imagery";
 import { DATA__BLACK_MARBLE_BLUE_YELLOW } from "./data__black-marble-blue-yellow";
 import { DATA__BLACK_MARBLE_BRDF } from "./data__black-marble-brdf";
 import { DATA__BLACK_MARBLE_HD } from "./data__black-marble-hd";
@@ -63,8 +63,8 @@ import { DATA__WB57_DYNAMITE } from "./data__wb57-dynamite";
 export const DATA: DataContent[] = [
   DATA__AVIRIS_3_CHAR_AND_ASH,
   DATA__AVIRIS_3_DNBR,
-  DATA__AVIRIS_3_EARLY_COLOR_IMAGERY,
   DATA__AVIRIS_3_PCA,
+  DATA__AVIRIS_3_QUICKLOOK_COLOR_IMAGERY,
   DATA__BLACK_MARBLE_BLUE_YELLOW,
   DATA__BLACK_MARBLE_BRDF,
   DATA__BLACK_MARBLE_HD,
@@ -191,8 +191,8 @@ export const DATA__SOUTHERN_CALIFORNIA_FIRE_JAN_2025: DataContent[] = [
   DATA__BLACK_MARBLE_BLUE_YELLOW,
   DATA__AVIRIS_3_CHAR_AND_ASH,
   DATA__AVIRIS_3_DNBR,
-  DATA__AVIRIS_3_EARLY_COLOR_IMAGERY,
   DATA__AVIRIS_3_PCA,
+  DATA__AVIRIS_3_QUICKLOOK_COLOR_IMAGERY,
   DATA__ECOSTRESS_LAND_SURFACE_TEMPERATURE,
   DATA__LANDSAT_COLOR_INFRARED,
   DATA__LANDSAT_NATURAL_COLOR,
