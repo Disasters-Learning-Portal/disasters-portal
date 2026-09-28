@@ -172,7 +172,9 @@ export const ContentBlockRenderer = ({
           isMultiColumnLayout={isMultiColumnLayout}
           sectionHeading={
             block.heading && (
-              <SectionHeading headingAs={block.headingLevel}>{block.heading}</SectionHeading>
+              <SectionHeading headingAs={block.headingLevel} linkProps={block.link}>
+                {block.heading}
+              </SectionHeading>
             )
           }
           cards={cards}
@@ -207,7 +209,9 @@ export const ContentBlockRenderer = ({
           isMultiColumnLayout={isMultiColumnLayout}
           sectionHeading={
             block.heading && (
-              <SectionHeading headingAs={block.headingLevel}>{block.heading}</SectionHeading>
+              <SectionHeading headingAs={block.headingLevel} linkProps={block.link}>
+                {block.heading}
+              </SectionHeading>
             )
           }
           cards={cards}

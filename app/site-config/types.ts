@@ -127,14 +127,14 @@ export type ContentBlock =
       type: "sectionCardSimple";
       heading?: string;
       headingLevel?: "h2" | "h3" | "h4";
-      href?: GalleryRoute;
+      link?: { href: GalleryRoute; label?: string };
       cards: CardSimplePropsArgs[];
     }
   | {
       type: "sectionCardGallery";
       heading?: string;
       headingLevel?: "h2" | "h3" | "h4";
-      href?: GalleryRoute;
+      link?: { href: GalleryRoute; label?: string };
       cards: (Omit<CardDetailedPropsArgs, "title"> & { title: string })[];
     }
   | {
