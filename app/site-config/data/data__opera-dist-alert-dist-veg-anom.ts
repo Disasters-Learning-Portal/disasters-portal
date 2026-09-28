@@ -64,6 +64,7 @@ export const DATA__OPERA_DIST_ALERT_DIST_VEG_ANOM: DataContent = {
       heading: "Credits",
       paragraphs: [
         "NASA Jet Propulsion Laboratory, California Institute of Technology; NASA OPERA; NASA JPL-Caltech ARIA Team; Global Land Analysis and Discovery (GLAD) Laboratory, University of Maryland; USGS; ESA Copernicus; NASA Disasters Program",
+        "Use of this product should include: “The product contains modified Copernicus Sentinel-2 and NASA Landsat 8/9 data, processed by the European Space Agency and NASA.”",
       ],
     },
 
