@@ -30,12 +30,8 @@ export const RECOVER_CONTENT: ThemeContent = {
     // Restore the map with:
     //   git show d048ad2 -- app/site-config/theme/theme__recover.ts
     {
-      type: "text",
-      heading: "Data Visualization",
-      paragraphs: [],
-    },
-    {
       type: "image",
+      heading: "Data Visualization",
       src: "/img/theme/recover-gaia-building-exposure.webp",
       alt: "Two side-by-side maps of the Los Angeles basin from the GAIA dataset. The left map shows total built-up area per 100-meter grid cell, densest through the urban core. The right map shows only low-rise, wood-framed structures, which are sparser and more evenly spread across the suburbs. A legend gives the eight built-up area classes, from under 25,000 to over 450,000 square meters.",
       width: 1640,
