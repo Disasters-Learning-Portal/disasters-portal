@@ -1,5 +1,4 @@
 import { CARTO_DARK_WITH_LABELS_BASEMAP_STYLE } from "@teamimpact/veda-ui-blocks";
-import { STORY__CLEARING_THE_WAY_DEBRIS_MAPPING } from "@/app/site-config/story/story__clearing-the-way-debris-mapping";
 import { STORY__ESTIMATING_LOSS_RECOVERY } from "@/app/site-config/story/story__estimating-loss-recovery";
 import { STORY__IDENTIFYING_INFRASTRUCTURE_RISKS_HURRICANE } from "@/app/site-config/story/story__identifying-infrastructure-risks-hurricane";
 import { STORY__MAPPING_OIL_SPILLS_FROM_SPACE } from "@/app/site-config/story/story__mapping_oil_spills_from_space";
@@ -44,7 +43,7 @@ export const RECOVER_CONTENT: ThemeContent = {
         dateRange: { from: "2025-01-01", to: "2025-01-01" },
       },
       caption:
-        "The Global Assessment of Infrastructure Assets (GAIA) is a worldwide gridded building exposure dataset suitable for natural hazard risk analysis. The dataset provides a gridded representation of built-up areas worldwide in square meters. At each pixel, the value is a modeled value that represents total built-up area for the grid cell. It does not represent actual buildings in the grid cell. The left image is the total built up area which aggregates all construction types, durability types, and height categories per grid cell. The right image shows the amount of low-rise (1-3 story), wood-framed structures per grid cell. Each 100x100 meter grid cell represents the total area in square meters.",
+        "The Global Assessment of Infrastructure Assets (GAIA) is a worldwide gridded building exposure dataset suitable for natural hazard risk analysis. The dataset provides a gridded representation of built-up areas worldwide in square meters. At each pixel, the value is a modeled value that represents total built-up area for the grid cell. It does not represent actual buildings in the grid cell. The left image is the total built-up area which aggregates all construction types, durability types, and height categories per grid cell. The right image shows the amount of low-rise (1-3 story), wood-framed structures per grid cell. Each 100x100 meter grid cell represents the total area in square meters.",
     },
   ],
 } as const;
@@ -54,10 +53,8 @@ export const RECOVER_STORIES: [
   NewsContent | StoryContent | EventContent,
   NewsContent | StoryContent | EventContent,
   NewsContent | StoryContent | EventContent,
-  NewsContent | StoryContent | EventContent,
 ] = [
   STORY__ESTIMATING_LOSS_RECOVERY,
-  STORY__CLEARING_THE_WAY_DEBRIS_MAPPING,
   STORY__MAPPING_OIL_SPILLS_FROM_SPACE,
   STORY__IDENTIFYING_INFRASTRUCTURE_RISKS_HURRICANE,
 ];

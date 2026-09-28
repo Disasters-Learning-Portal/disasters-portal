@@ -19,7 +19,7 @@ import { typedMap } from "@/app/site-config/typed.helpers";
 export default function RecoverPage() {
   const { theme, subtitle, mastheadImage } = RECOVER_CONTENT;
 
-  const stories: CardSimplePropsArgs[] = RECOVER_STORIES.slice(0, 2).map(
+  const stories: CardSimplePropsArgs[] = RECOVER_STORIES.slice(0, 1).map(
     ({ id, contentType, thumbnailImage, themes, title }) => ({
       id,
       contentType,
