@@ -20,8 +20,7 @@ export const NEWS__DRIVING_HUMANITARIAN_INNOVATION_EARTH_SCIENCE: NewsContent = 
   body: [
     {
       type: "text",
-      heading:
-        "NASA Lifelines Uses Science, Technology, and Data to Empower Humanitarian Response.",
+      heading: "NASA Lifelines Uses Science, Technology, and Data to Empower Humanitarian Response",
       headingLevel: "h2",
       paragraphs: [
         "On August 28, 2024, scientists, humanitarians, and city officials gathered at the Washington Metropolitan Area Transit Authority headquarters in Washington, D.C., to celebrate the unveiling of a new mural. The mural aims to raise awareness of how Earth science can empower humanitarian innovations. The D.C. mural, along with others recently unveiled in Nashville, Tennessee, New Orleans, Louisiana and St. Louis, Missouri, was created through NASA Lifelines — an initiative dedicated to building communities that unlock the power of Earth science and technology to improve humanitarian outcomes for communities around the world.",
