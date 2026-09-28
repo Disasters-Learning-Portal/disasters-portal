@@ -51,10 +51,20 @@ export const RESILIENCE_CONTENT: ThemeContent = {
           contentType: "training",
           title: "Sea Level Change Tools for Planning and Decision Support",
           thumbnailImage: {
-            src: "/img/placeholder/card-masthead.webp",
-            alt: "",
+            src: "https://earthdata.nasa.gov/s3fs-public/2025-06/arset-sealevelchange-th.png",
+            alt: "Map of sea surface height anomalies across the Americas and the Atlantic, with higher anomalies in orange and lower in blue.",
           },
           url: "https://www.earthdata.nasa.gov/learn/trainings/sea-level-change-tools-planning-decision-support",
+        },
+        {
+          id: "eo-building-exposure",
+          contentType: "training",
+          title:
+            "Understanding EO-based Building Exposure Data: Application to Disaster Mitigation, Preparedness, Response and Recovery",
+          thumbnailImage: {
+            src: "/img/training/eo-building-exposure.webp",
+            alt: "Los Angeles building exposure map showing building risk data across the city",
+          },
         },
       ],
     },
