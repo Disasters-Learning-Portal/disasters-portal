@@ -42,6 +42,13 @@ export const DATA__SENTINEL_2_TRUE_COLOR: DataContent = {
     },
     {
       type: "text",
+      heading: "Terms of Use",
+      paragraphs: [
+        "NASA data and products are freely available to federal, state, public, non-profit and commercial users. This information can be experimental- or research-grade data products and may not be appropriate for operational use. These NASA data products, services, and the Disasters Mapping Portal are intended to aid decision makers and enhance situational awareness, but these data are not guaranteed to be consistently available or routinely updated. Use of this product should include: 'Contains modified Copernicus Sentinel data (2026) processed by ESA.'",
+      ],
+    },
+    {
+      type: "text",
       heading: "Satellite/Sensor",
       paragraphs: [
         "MultiSpectral Instrument (MSI) on European Space Agency's (ESA) Copernicus Sentinel-2A/2B satellites",

@@ -46,6 +46,14 @@ export const DATA__WB57_DYNAMITE: DataContent = {
 
     {
       type: "text",
+      heading: "Terms of Use",
+      paragraphs: [
+        "NASA data and products are freely available to federal, state, public, non-profit and commercial users. This information can be experimental- or research-grade data products and may not be appropriate for operational use. These NASA data products, services, and the Disasters Mapping Portal are intended to aid decision makers and enhance situational awareness, but these data are not guaranteed to be consistently available or routinely updated.",
+      ],
+    },
+
+    {
+      type: "text",
       heading: "Suggested Use",
       paragraphs: [
         "The imagery can be used to identify individual structures, debris fields, and flood boundaries along river corridors, at a level of detail that satellite imagery cannot resolve. During the July 2025 Central Texas floods, NASA streamed live video feeds and imagery directly to responders while the flights were still in the air.",

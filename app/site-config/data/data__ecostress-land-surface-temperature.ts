@@ -48,6 +48,14 @@ export const DATA__ECOSTRESS_LAND_SURFACE_TEMPERATURE: DataContent = {
 
     {
       type: "text",
+      heading: "Terms of Use",
+      paragraphs: [
+        "NASA data and products are freely available to federal, state, public, non-profit and commercial users. This information can be experimental- or research-grade data products and may not be appropriate for operational use. These NASA data products, services, and the Disasters Mapping Portal are intended to aid decision makers and enhance situational awareness, but these data are not guaranteed to be consistently available or routinely updated.",
+      ],
+    },
+
+    {
+      type: "text",
       heading: "Limitations",
       paragraphs: [
         "Thermal infrared observations cannot see through clouds or thick smoke. Obscured scenes report the temperature of the cloud or plume top rather than the surface beneath it, which appears as anomalously cold areas in the imagery.",

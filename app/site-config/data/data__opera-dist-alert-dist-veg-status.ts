@@ -47,6 +47,14 @@ export const DATA__OPERA_DIST_ALERT_DIST_VEG_STATUS: DataContent = {
 
     {
       type: "text",
+      heading: "Terms of Use",
+      paragraphs: [
+        "NASA data and products are freely available to federal, state, public, non-profit and commercial users. This information can be experimental- or research-grade data products and may not be appropriate for operational use. These NASA data products, services, and the Disasters Mapping Portal are intended to aid decision makers and enhance situational awareness, but these data are not guaranteed to be consistently available or routinely updated. Use of this product should include: 'Contains modified Copernicus Sentinel data (2026) processed by ESA.'",
+      ],
+    },
+
+    {
+      type: "text",
       heading: "Satellite/Sensor",
       paragraphs: [
         "Harmonized Landsat Sentinel-2 (HLS) surface reflectance observations from Landsat 8 and 9 and the European Space Agency's Copernicus Sentinel-2 satellites",

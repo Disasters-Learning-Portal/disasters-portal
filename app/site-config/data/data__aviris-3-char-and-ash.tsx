@@ -46,6 +46,14 @@ export const DATA__AVIRIS_3_CHAR_AND_ASH: DataContent = {
         "The product indicates the char and ash fraction of the exposed surface only, not what lies beneath it. An area under a thin coating of ash will register a fraction even where the underlying surface is undamaged.",
       ],
     },
+    
+    {
+      type: "text",
+      heading: "Terms of Use",
+      paragraphs: [
+        "NASA data and products are freely available to federal, state, public, non-profit and commercial users. This information can be experimental- or research-grade data products and may not be appropriate for operational use. These NASA data products, services, and the Disasters Mapping Portal are intended to aid decision makers and enhance situational awareness, but these data are not guaranteed to be consistently available or routinely updated.",
+      ],
+    },
 
     {
       type: "text",

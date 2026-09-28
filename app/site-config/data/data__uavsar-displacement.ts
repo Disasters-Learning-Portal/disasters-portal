@@ -47,6 +47,14 @@ export const DATA__UAVSAR_DISPLACEMENT: DataContent = {
 
     {
       type: "text",
+      heading: "Terms of Use",
+      paragraphs: [
+        "NASA data and products are freely available to federal, state, public, non-profit and commercial users. This information can be experimental- or research-grade data products and may not be appropriate for operational use. These NASA data products, services, and the Disasters Mapping Portal are intended to aid decision makers and enhance situational awareness, but these data are not guaranteed to be consistently available or routinely updated.",
+      ],
+    },
+
+    {
+      type: "text",
       heading: "Processing",
       paragraphs: [
         "UAVSAR data are processed with the operational UAVSAR stack processor to produce a stack of radar images collected on each date. Interferograms are formed for each successive pair of images in the stack, using a Goldstein filter to smooth the interferometric phase. Each interferogram is masked to exclude water and areas where interferometric performance is expected to be poor due to layover and shadow effects. Interferograms are then unwrapped using the PHASS phase unwrapping algorithm, with an additional interpolation step to smooth over low coherence regions, and the unwrapped result is converted to distance change from radar to target, provided in meters.",
