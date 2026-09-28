@@ -123,7 +123,7 @@ export const EVENT__SOUTHERN_CALIFORNIA_FIRE_JAN_2025: EventContent = {
     {
       type: "list",
       heading: "NASA Earth Observatory",
-      headingLevel: "h4",
+      headingLevel: "h3",
       items: [
         {
           label: "The Palisades Fire's Footprint",
