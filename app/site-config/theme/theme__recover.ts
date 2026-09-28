@@ -1,4 +1,3 @@
-import { CARTO_DARK_WITH_LABELS_BASEMAP_STYLE } from "@teamimpact/veda-ui-blocks";
 import { STORY__ESTIMATING_LOSS_RECOVERY } from "@/app/site-config/story/story__estimating-loss-recovery";
 import { STORY__IDENTIFYING_INFRASTRUCTURE_RISKS_HURRICANE } from "@/app/site-config/story/story__identifying-infrastructure-risks-hurricane";
 import { STORY__MAPPING_OIL_SPILLS_FROM_SPACE } from "@/app/site-config/story/story__mapping_oil_spills_from_space";
@@ -24,24 +23,23 @@ export const RECOVER_CONTENT: ThemeContent = {
   subtitle: "Assess impacts and rebuild stronger",
   theme: "recover",
   body: [
+    // Interim. The interactive GAIA compare map renders no tiles: veda-ui-blocks
+    // flattens this collection's nested-array colormap into a query titiler rejects (#566).
+    // This is a static render of the same two layers, at the same viewport, through the
+    // collection's own colormap, so the section still shows the data during soft launch.
+    // Restore the map with:
+    //   git show d048ad2 -- app/site-config/theme/theme__recover.ts
     {
-      type: "stacCompare",
+      type: "text",
       heading: "Data Visualization",
-      initialViewState: { longitude: -118.24, latitude: 34.07, zoom: 10 },
-      baseMapStyle: CARTO_DARK_WITH_LABELS_BASEMAP_STYLE,
-      leftLayerConfig: {
-        type: "raster",
-        collectionId: "gaia-total-composite",
-        collectionAssetId: "total",
-        dateRange: { from: "2025-01-01", to: "2025-01-01" },
-        hideLegend: true,
-      },
-      rightLayerConfig: {
-        type: "raster",
-        collectionId: "gaia-wood-composite",
-        collectionAssetId: "wood",
-        dateRange: { from: "2025-01-01", to: "2025-01-01" },
-      },
+      paragraphs: [],
+    },
+    {
+      type: "image",
+      src: "/img/theme/recover-gaia-building-exposure.webp",
+      alt: "Two side-by-side maps of the Los Angeles basin from the GAIA dataset. The left map shows total built-up area per 100-meter grid cell, densest through the urban core. The right map shows only low-rise, wood-framed structures, which are sparser and more evenly spread across the suburbs. A legend gives the eight built-up area classes, from under 25,000 to over 450,000 square meters.",
+      width: 1640,
+      height: 894,
       caption:
         "The Global Assessment of Infrastructure Assets (GAIA) is a worldwide gridded building exposure dataset suitable for natural hazard risk analysis. The dataset provides a gridded representation of built-up areas worldwide in square meters. At each pixel, the value is a modeled value that represents total built-up area for the grid cell. It does not represent actual buildings in the grid cell. The left image is the total built-up area which aggregates all construction types, durability types, and height categories per grid cell. The right image shows the amount of low-rise (1-3 story), wood-framed structures per grid cell. Each 100x100 meter grid cell represents the total area in square meters.",
     },
