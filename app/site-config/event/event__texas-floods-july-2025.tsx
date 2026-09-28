@@ -82,11 +82,19 @@ export const EVENT__TEXAS_FLOODS_JULY_2025: EventContent = {
     {
       type: "sectionCardGallery",
       heading: "Related Data",
+      link: {
+        href: "/data-gallery",
+        label: "View all",
+      },
       cards: DATA,
     },
     {
       type: "sectionCardSimple",
       heading: "Resources & Learning",
+      link: {
+        href: "/training",
+        label: "More Resources and Learning",
+      },
       cards: [
         TRAINING__FUNDAMENTALS_REMOTE_SENSING,
         TRAINING__INTRODUCTION_TO_SAR,

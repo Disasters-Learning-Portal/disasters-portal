@@ -83,11 +83,19 @@ export const EVENT__SOUTHERN_CALIFORNIA_FIRE_JAN_2025: EventContent = {
     {
       type: "sectionCardGallery",
       heading: "Related Data",
+      link: {
+        href: "/data-gallery",
+        label: "View all",
+      },
       cards: DATA,
     },
     {
       type: "sectionCardSimple",
       heading: "Resources & Learning",
+      link: {
+        href: "/training",
+        label: "More Resources and Learning",
+      },
       cards: [
         TRAINING__LIFELINES_WILDFIRE_WORKFLOW,
         TRAINING__FUNDAMENTALS_REMOTE_SENSING,
@@ -123,7 +131,7 @@ export const EVENT__SOUTHERN_CALIFORNIA_FIRE_JAN_2025: EventContent = {
     {
       type: "list",
       heading: "NASA Earth Observatory",
-      headingLevel: "h4",
+      headingLevel: "h3",
       items: [
         {
           label: "The Palisades Fire's Footprint",
