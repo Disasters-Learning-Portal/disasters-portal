@@ -58,7 +58,7 @@ export function ContentPageLayout({
                   <InPageNavigation
                     // disable the default sticky behavior of the nav as it
                     // would conflict with the scrolling column.
-                    className="position-static"
+                    className="position-static margin-bottom-7"
                     data-main-content-selector={`#${PAGE_CONTENT_ID}`}
                     data-heading-elements="h2"
                   />
