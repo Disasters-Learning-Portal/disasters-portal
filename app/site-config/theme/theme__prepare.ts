@@ -10,6 +10,22 @@ export const PREPARE_CONTENT: ThemeContent = {
   theme: "prepare",
   body: [
     {
+      type: "sectionCardSimple",
+      heading: "Stories of Impact",
+      link: { href: "/news-events-stories", label: "More Stories of Impact" },
+      cards: [
+        {
+          id: "your-disaster-plan-may-have-a-blind-spot",
+          contentType: "story",
+          title: "Your Disaster Plan May Have a Blind Spot. Foresight is Built to Find It.",
+          thumbnailImage: {
+            src: "/img/placeholder/card-masthead.webp",
+            alt: "",
+          },
+        },
+      ],
+    },
+    {
       type: "image",
       heading: "Data Visualization",
       src: "/img/theme/prepare-unseen-rainfall.webp",
@@ -26,13 +42,20 @@ export const PREPARE_CONTENT: ThemeContent = {
       ],
     },
     {
-      type: "list",
+      type: "sectionCardSimple",
       heading: "Resources & Learning",
-      items: [
+      link: { href: "/training", label: "More Resources and Learning" },
+      cards: [
         {
-          label:
+          id: "monitoring-predicting-floods-using-earth-observations-planning-preparedness",
+          contentType: "training",
+          title:
             "Monitoring and Predicting Floods Using Earth Observations for Planning and Preparedness",
-          href: "https://www.earthdata.nasa.gov/learn/trainings/monitoring-predicting-floods-using-earth-observations-planning-preparedness",
+          thumbnailImage: {
+            src: "/img/placeholder/card-masthead.webp",
+            alt: "",
+          },
+          url: "https://www.earthdata.nasa.gov/learn/trainings/monitoring-predicting-floods-using-earth-observations-planning-preparedness",
         },
       ],
     },

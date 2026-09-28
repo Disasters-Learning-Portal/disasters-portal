@@ -26,12 +26,35 @@ export const RESILIENCE_CONTENT: ThemeContent = {
       ],
     },
     {
-      type: "list",
-      heading: "Resources & Learning",
-      items: [
+      type: "sectionCardSimple",
+      heading: "Stories of Impact",
+      link: { href: "/news-events-stories", label: "More Stories of Impact" },
+      cards: [
         {
-          label: "Sea Level Change Tools for Planning and Decision Support",
-          href: "https://www.earthdata.nasa.gov/learn/trainings/sea-level-change-tools-planning-decision-support",
+          id: "helping-hampton-roads-face-the-floods",
+          contentType: "story",
+          title: "Helping Hampton Roads Face the Floods",
+          thumbnailImage: {
+            src: "/img/placeholder/card-masthead.webp",
+            alt: "",
+          },
+        },
+      ],
+    },
+    {
+      type: "sectionCardSimple",
+      heading: "Resources & Learning",
+      link: { href: "/training", label: "More Resources and Learning" },
+      cards: [
+        {
+          id: "sea-level-change-tools-planning-decision-support",
+          contentType: "training",
+          title: "Sea Level Change Tools for Planning and Decision Support",
+          thumbnailImage: {
+            src: "/img/placeholder/card-masthead.webp",
+            alt: "",
+          },
+          url: "https://www.earthdata.nasa.gov/learn/trainings/sea-level-change-tools-planning-decision-support",
         },
       ],
     },
