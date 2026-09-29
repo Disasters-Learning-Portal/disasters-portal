@@ -120,6 +120,7 @@ export const STORY__YOUR_COMMUNITY_MAY_HAVE_A_DISASTER_BLIND_SPOT: StoryContent 
     },
     {
       type: "image",
+      heading: "Explore the Foresight Tool",
       src: "/img/story/your-community-may-have-a-disaster-blind-spot__scenario-library.webp",
       alt: "A mock-up of the Foresight in Disaster Management Scenario Library interface, showing a tabletop exercise scenario broken into timed injects.",
       width: 1000,
@@ -127,7 +128,6 @@ export const STORY__YOUR_COMMUNITY_MAY_HAVE_A_DISASTER_BLIND_SPOT: StoryContent 
     },
     {
       type: "text",
-      heading: "Explore the Foresight Tool",
       paragraphs: [
         "The Foresight Tool and Scenario Library are in active development. Get an early glimpse with these resources:",
       ],
@@ -154,10 +154,10 @@ export const STORY__YOUR_COMMUNITY_MAY_HAVE_A_DISASTER_BLIND_SPOT: StoryContent 
       type: "list",
       heading: "Training Resources",
       items: [
-        "[Watch] Introduction to the Foresight Tool",
-        "[Watch] How to Incorporate Science into Scenario Exercises",
-        "[Watch] Intensifying Extremes",
-        "[Watch] Community Capacities",
+        "[Watch] Introduction to the Foresight Tool [PLACEHOLDER]",
+        "[Watch] How to Incorporate Science into Scenario Exercises [PLACEHOLDER]",
+        "[Watch] Intensifying Extremes [PLACEHOLDER]",
+        "[Watch] Community Capacities [PLACEHOLDER]",
       ],
     },
     {
