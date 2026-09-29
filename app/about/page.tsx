@@ -15,8 +15,10 @@ export default function AboutPage() {
           className="display-block"
         />
         <h1 className="font-heading-2xl margin-bottom-2">About the NASA Disasters Program</h1>
-        <h2 className="font-heading-md margin-y-1">Advancing Science for Disaster Resilience</h2>
-        <p className="measure-6 line-height-sans-5 margin-top-0">
+        <h2 className="font-heading-md margin-bottom-1">
+          Advancing Science for Disaster Resilience
+        </h2>
+        <p className="measure-6 line-height-body-5 margin-top-0">
           The NASA Disasters Program puts Earth science to work for those who make critical
           decisions before, during, and after disasters. We translate NASA's unmatched view of Earth
           from space into actionable insights, helping emergency managers, government agencies, and
@@ -44,15 +46,17 @@ export default function AboutPage() {
                 // ponytail: USWDS has no aspect-ratio/object-fit utilities
                 style={{ height: "auto", aspectRatio: "5 / 4", objectFit: "cover" }}
               />
-              <h3 className="font-sans-sm text-semibold margin-top-1 margin-bottom-05">{name}</h3>
-              <p className="font-sans-2xs line-height-sans-4 margin-0">{role}</p>
+              <h3 className="font-heading-sm text-semibold margin-top-1 margin-bottom-05">
+                {name}
+              </h3>
+              <p className="font-body-2xs line-height-body-4 margin-0">{role}</p>
             </li>
           ))}
         </ul>
       </Section>
       <Section>
         <h2 className="font-heading-md margin-bottom-1">Connect with Us</h2>
-        <p className="measure-6 line-height-sans-5 margin-top-0">
+        <p className="measure-6 line-height-body-5 margin-top-0">
           Collaboration drives impact. We welcome partners across government, academia, and industry
           to connect with us, share perspectives, and help shape how Earth science is applied
           before, during, and after disasters. Together, we build a growing community committed to
@@ -64,14 +68,13 @@ export default function AboutPage() {
               variant="arrow"
               color="secondary"
               href="https://lp.constantcontactpages.com/sl/ICIOyJI"
-              rel="noopener noreferrer"
-              target="_blank"
+              isExternal
             >
               Get News & Updates with the NASA Disasters Community Newsletter
             </Link>
           </li>
           <li>
-            <Link variant="arrow" color="secondary" href="mailto:disasters@nasa.gov">
+            <Link variant="arrow" color="secondary" isExternal href="mailto:disasters@nasa.gov">
               Contact Our Team
             </Link>
           </li>
