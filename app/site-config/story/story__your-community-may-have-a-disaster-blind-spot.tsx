@@ -29,17 +29,36 @@ export const STORY__YOUR_COMMUNITY_MAY_HAVE_A_DISASTER_BLIND_SPOT: StoryContent 
     {
       type: "text",
       heading: "The Gap Between What Has Happened and What Could",
-      paragraphs: [],
+      paragraphs: [
+        "Are the communities you serve prepared for what could happen — or only for what has happened before?",
+      ],
     },
 
     {
-      type: "sectionCardFeatured",
-      card: {
-        id: "foresight-highlights",
-        title: "Highlights",
-        description: (
-          <ul>
-            <li>
+      type: "text",
+      paragraphs: [
+        <div
+          key="foresight-highlights-box"
+          style={{
+            border: "1px solid #222",
+            backgroundColor: "#f4f4f4",
+            padding: "1.5rem",
+          }}
+        >
+          <h3
+            style={{
+              margin: "0 0 1rem 0",
+              fontSize: "1.5rem",
+              lineHeight: 1.2,
+              fontWeight: 700,
+              color: "#006b8f",
+            }}
+          >
+            Highlights
+          </h3>
+
+          <ul style={{ margin: 0, paddingLeft: "1.5rem" }}>
+            <li style={{ marginBottom: "1rem" }}>
               <strong style={{ color: "#006b8f" }}>
                 Disaster preparedness systems built on historical records have a blind spot — and it
                 is growing.
@@ -49,7 +68,7 @@ export const STORY__YOUR_COMMUNITY_MAY_HAVE_A_DISASTER_BLIND_SPOT: StoryContent 
               now possible has been silently widening.
             </li>
 
-            <li>
+            <li style={{ marginBottom: "1rem" }}>
               <strong style={{ color: "#006b8f" }}>
                 Foresight in Disaster Management is a NASA Disasters Program project building a
                 science-based foundation for planning beyond the historical record.
@@ -59,7 +78,7 @@ export const STORY__YOUR_COMMUNITY_MAY_HAVE_A_DISASTER_BLIND_SPOT: StoryContent 
               credibly produce.
             </li>
 
-            <li>
+            <li style={{ marginBottom: 0 }}>
               <strong style={{ color: "#006b8f" }}>
                 The project is building a new dynamic scenario planning tool to put that science
                 foundation directly into the hands of disaster managers and planning teams.
@@ -70,15 +89,13 @@ export const STORY__YOUR_COMMUNITY_MAY_HAVE_A_DISASTER_BLIND_SPOT: StoryContent 
               obscure.
             </li>
           </ul>
-        ),
-      },
+        </div>,
+      ],
     },
 
     {
       type: "text",
       paragraphs: [
-        "Are the communities you serve prepared for what could happen — or only for what has happened before?",
-
         "For most disaster managers, contingency planning starts with history: the storms, floods, and heat events that shaped a region’s experience and informed its preparedness systems. That foundation has served the field for a long time, but in a changing Earth system environment, it is no longer enough. Extreme events are intensifying faster than communities can gain experience with them. In many places, the frequency and intensity of hazards have been climbing gradually — not through obvious landmark disasters that demand attention, but year by year, in ways that don’t register until something arrives that the plan wasn’t built for.",
 
         "“Disaster planning based on historical events is like driving forward while only looking in the rearview mirror,” says Erin Coughlan de Perez, Associate Professor at Tufts University Friedman School of Nutrition Science and Policy and principal investigator on the project. “Many communities are planning for what they have seen in the past, only slightly worse. They need to be preparing for things they haven’t seen at all.”",
@@ -126,55 +143,75 @@ export const STORY__YOUR_COMMUNITY_MAY_HAVE_A_DISASTER_BLIND_SPOT: StoryContent 
     {
       type: "text",
       paragraphs: [
-        <div
-          key="yazoo-city-images"
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
-            gap: "1.5rem",
-            alignItems: "start",
-            width: "100%",
-          }}
-        >
-          <figure style={{ margin: 0 }}>
-            <AppImage
-              src="/img/story/your-community-may-have-a-disaster-blind-spot__yazoo-city-scenario-exercise.webp"
-              alt="Community members seated around tables in a meeting room take part in a disaster scenario exercise."
-              width={975}
-              height={731}
-              style={{
-                width: "100%",
-                height: "420px",
-                objectFit: "cover",
-              }}
-            />
-            <figcaption style={{ marginTop: "0.5rem" }}>
+        <div key="yazoo-city-images-wrapper">
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
+              gap: "1.5rem",
+              alignItems: "start",
+              width: "100%",
+            }}
+          >
+            <div>
+              <AppImage
+                src="/img/story/your-community-may-have-a-disaster-blind-spot__yazoo-city-scenario-exercise.webp"
+                alt="Community members seated around tables in a meeting room take part in a disaster scenario exercise."
+                width={975}
+                height={731}
+                style={{
+                  width: "100%",
+                  height: "420px",
+                  objectFit: "cover",
+                }}
+              />
+            </div>
+
+            <div>
+              <AppImage
+                src="/img/story/your-community-may-have-a-disaster-blind-spot__yazoo-city-food-distribution.webp"
+                alt="A woman carries paper grocery bags toward a doorway while distributing food from a pantry."
+                width={649}
+                height={865}
+                style={{
+                  width: "100%",
+                  height: "420px",
+                  objectFit: "cover",
+                }}
+              />
+            </div>
+          </div>
+
+          <div
+            style={{
+              marginTop: "1rem",
+              fontStyle: "italic",
+              color: "#6f6f6f",
+            }}
+          >
+            <p style={{ margin: "0 0 1.5rem 0" }}>
+              <span
+                style={{
+                  fontWeight: 700,
+                  backgroundColor: "#f3e8c8",
+                  padding: "0 0.2rem",
+                }}
+              >
+                Left photo:
+              </span>{" "}
               Community members in Yazoo City, Mississippi participate in a disaster scenario
               exercise with the project team, led by Tufts University, Aug. 10, 2023. Photo provided
               by Erin Coughlan de Perez, Tufts University
-            </figcaption>
-          </figure>
+            </p>
 
-          <figure style={{ margin: 0 }}>
-            <AppImage
-              src="/img/story/your-community-may-have-a-disaster-blind-spot__yazoo-city-food-distribution.webp"
-              alt="A woman carries paper grocery bags toward a doorway while distributing food from a pantry."
-              width={649}
-              height={865}
-              style={{
-                width: "100%",
-                height: "420px",
-                objectFit: "cover",
-              }}
-            />
-            <figcaption style={{ marginTop: "0.5rem" }}>
-              Evangelist Catherine Cowans, Founder of True Light Ministry, distributes food to a
-              person in need in Yazoo City, Mississippi. Disaster scenario exercises that involve
-              the community enable better understanding of what actions to take, who to contact, and
-              where to go in the event of a disaster. Photo provided by Erin Coughlan de Perez,
-              Tufts University
-            </figcaption>
-          </figure>
+            <p style={{ margin: 0 }}>
+              <strong>Right photo:</strong> Evangelist Catherine Cowans, Founder of True Light
+              Ministry, distributes food to a person in need in Yazoo City, Mississippi. Disaster
+              scenario exercises that involve the community enable better understanding of what
+              actions to take, who to contact, and where to go in the event of a disaster. Photo
+              provided by Erin Coughlan de Perez, Tufts University
+            </p>
+          </div>
         </div>,
       ],
     },
@@ -192,13 +229,30 @@ export const STORY__YOUR_COMMUNITY_MAY_HAVE_A_DISASTER_BLIND_SPOT: StoryContent 
     },
 
     {
-      type: "sectionCardFeatured",
-      card: {
-        id: "foresight-cornerstones",
-        title: "Cornerstones",
-        description: (
-          <ul>
-            <li>
+      type: "text",
+      paragraphs: [
+        <div
+          key="foresight-cornerstones-box"
+          style={{
+            border: "1px solid #222",
+            backgroundColor: "#f4f4f4",
+            padding: "1.5rem",
+          }}
+        >
+          <h3
+            style={{
+              margin: "0 0 1rem 0",
+              fontSize: "1.5rem",
+              lineHeight: 1.2,
+              fontWeight: 700,
+              color: "#006b8f",
+            }}
+          >
+            Cornerstones
+          </h3>
+
+          <ul style={{ margin: 0, paddingLeft: "1.5rem" }}>
+            <li style={{ marginBottom: "1rem" }}>
               <strong style={{ color: "#006b8f" }}>
                 If your community hasn’t faced a severe event recently, that may be cause for
                 concern, not comfort.
@@ -207,7 +261,7 @@ export const STORY__YOUR_COMMUNITY_MAY_HAVE_A_DISASTER_BLIND_SPOT: StoryContent 
               their plans. The absence of a recent disaster does not mean that risk has disappeared.
             </li>
 
-            <li>
+            <li style={{ marginBottom: "1rem" }}>
               <strong style={{ color: "#006b8f" }}>
                 Scenarios are planning tools, not forecasts — use them accordingly.
               </strong>{" "}
@@ -216,7 +270,7 @@ export const STORY__YOUR_COMMUNITY_MAY_HAVE_A_DISASTER_BLIND_SPOT: StoryContent 
               question to bring to them is not “will this happen?” but “are we ready if it does?”
             </li>
 
-            <li>
+            <li style={{ marginBottom: "1rem" }}>
               <strong style={{ color: "#006b8f" }}>
                 Policies addressing extreme heat and flooding remain limited in many parts of the
                 United States.
@@ -226,7 +280,7 @@ export const STORY__YOUR_COMMUNITY_MAY_HAVE_A_DISASTER_BLIND_SPOT: StoryContent 
               extreme heat across the country.
             </li>
 
-            <li>
+            <li style={{ marginBottom: 0 }}>
               <strong style={{ color: "#006b8f" }}>
                 Early awareness of tools in development is an advantage worth acting on.
               </strong>{" "}
@@ -235,8 +289,8 @@ export const STORY__YOUR_COMMUNITY_MAY_HAVE_A_DISASTER_BLIND_SPOT: StoryContent 
               be better positioned to use it effectively when it becomes available.
             </li>
           </ul>
-        ),
-      },
+        </div>,
+      ],
     },
 
     {
