@@ -44,12 +44,17 @@ export function GalleryResultsSummary({
           <>
             <span className="text-bold margin-right-1">Filters applied:</span>
             {appliedFilters.map((pill) => (
-              <Tag key={pill.id} onClose={pill.remove} className="margin-right-1">
+              <Tag key={pill.id} onClose={pill.remove} className="margin-right-1" variant="outline">
                 {pill.label}
               </Tag>
             ))}
             {appliedFilters.length > 1 && (
-              <Link as="button" variant="text" onClick={clearAllFilters}>
+              <Link
+                as="button"
+                variant="text"
+                className="text-ink margin-left-1"
+                onClick={clearAllFilters}
+              >
                 Clear all
               </Link>
             )}

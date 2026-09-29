@@ -49,7 +49,7 @@ export function FilterDrawer({
           <Link
             as="button"
             variant="button"
-            className="display-flex flex-justify-center flex-1 margin-right-2"
+            className="display-flex flex-justify-center flex-3 margin-right-2 bg-secondary"
             onClick={() => {
               onApply(draft);
               onClose();
@@ -57,7 +57,11 @@ export function FilterDrawer({
           >
             Apply Filters
           </Link>
-          <Link as="button" variant="button-outline" onClick={() => setDraft(EMPTY_FACETS)}>
+          <Link
+            className="display-flex flex-justify-center flex-1 margin-right-2 text-underline text-ink"
+            variant="text"
+            onClick={() => setDraft(EMPTY_FACETS)}
+          >
             Clear
           </Link>
         </div>

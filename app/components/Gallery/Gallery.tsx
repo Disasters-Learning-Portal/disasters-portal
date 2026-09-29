@@ -52,7 +52,7 @@ function GalleryInner({ items }: GalleryProps) {
         <Link
           as="button"
           variant="text"
-          className="text-bold text-no-underline text-uppercase"
+          className="text-bold text-no-underline text-uppercase text-black"
           onClick={() => setIsFilterOpen(true)}
         >
           Filters{" "}
