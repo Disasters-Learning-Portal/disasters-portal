@@ -137,12 +137,58 @@ export const STORY__YOUR_COMMUNITY_MAY_HAVE_A_DISASTER_BLIND_SPOT: StoryContent 
       heading: "Go Deeper",
       items: [
         {
-          label: "Disasters Scenario Library Sample Mock-up",
+          label: "[Explore] Disasters Scenario Library Sample Mock-up",
           href: "https://ecn620.github.io/ScenarioLibrary/scenario_generator_version0.2map.html",
         },
         {
-          label: "Storylines of Unprecedented Extremes in the Southeast United States",
+          label: "[Read] Storylines of Unprecedented Extremes in the Southeast United States",
           href: "https://journals.ametsoc.org/view/journals/bams/106/3/BAMS-D-23-0297.1.xml",
+        },
+        {
+          label: "[Read] Sample UNSEEN Outputs: Atlantic County, NJ Heatwave",
+          href: "https://nasa.sharepoint.com/:w:/s/disasterscomms/IQDn4YHQFuyeT6ufGe0mAWLUAQSe620mmUc4UNfPWvsKBkA?e=yzb4g8",
+        },
+      ],
+    },
+    {
+      type: "sectionCardSimple",
+      heading: "Training Resources",
+      cards: [
+        {
+          id: "introduction-to-the-foresight-tool",
+          contentType: "training",
+          title: "Introduction to the Foresight Tool",
+          thumbnailImage: {
+            src: "/img/placeholder/card-masthead.webp",
+            alt: "",
+          },
+        },
+        {
+          id: "how-to-incorporate-science-into-scenario-exercises",
+          contentType: "training",
+          title: "How to Incorporate Science into Scenario Exercises",
+          thumbnailImage: {
+            src: "/img/placeholder/card-masthead.webp",
+            alt: "",
+          },
+        },
+        {
+          id: "intensifying-extremes",
+          contentType: "training",
+          title: "Intensifying Extremes",
+          thumbnailImage: {
+            src: "/img/placeholder/card-masthead.webp",
+            alt: "",
+          },
+        },
+        {
+          id: "community-capacities",
+          contentType: "training",
+          title: "Community Capacities",
+          thumbnailImage: {
+            src: "/img/placeholder/card-masthead.webp",
+            alt: "",
+          },
         },
       ],
     },
@@ -152,11 +198,12 @@ export const STORY__YOUR_COMMUNITY_MAY_HAVE_A_DISASTER_BLIND_SPOT: StoryContent 
       items: [
         {
           label:
-            "Help test or give feedback on the Foresight scenario planning tool — email the developers",
+            "Would you like to help test or provide feedback on the new Foresight dynamic scenario planning tool or Scenario Library as they are still being developed? Email the developers.",
           href: "mailto:Erin.Coughlan@tufts.edu",
         },
         {
-          label: "About the PI: Erin Coughlan de Perez, Tufts University",
+          label:
+            "About the PI: The Foresight project is led by Erin Coughlan de Perez at Tufts University.",
           href: "https://nutrition.tufts.edu/academics/faculty/erin-coughlan-de-perez",
         },
       ],
