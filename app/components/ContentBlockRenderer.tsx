@@ -33,7 +33,9 @@ export const ContentBlockRenderer = ({
           )}
           {block.paragraphs.map((p, i) => (
             // biome-ignore lint/suspicious/noArrayIndexKey: static content, never reorders
-            <p key={i}>{p}</p>
+            <p key={i} className="font-body-sm line-height-body-5">
+              {p}
+            </p>
           ))}
         </Section>
       );
