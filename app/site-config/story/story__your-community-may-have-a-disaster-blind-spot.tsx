@@ -44,7 +44,7 @@ export const STORY__YOUR_COMMUNITY_MAY_HAVE_A_DISASTER_BLIND_SPOT: StoryContent 
     {
       type: "image",
       src: "/img/story/your-community-may-have-a-disaster-blind-spot__storm-on-the-horizon.webp",
-      alt: "A supercell thunderstorm builds over an empty highway stretching toward the horizon at dusk.",
+      alt: "A powerful thunderstorm with lightning approaches on the horizon at sunset over a desert highway near Belen, New Mexico, Jul 27, 2019. Credit: Raychel Sanner/Pexels",
       caption:
         "The storm is already on the horizon. The question is whether the plan was built for it. Credit: Raychel Sanner/Pexels",
       width: 1280,
