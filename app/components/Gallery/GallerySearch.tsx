@@ -35,6 +35,8 @@ export function GallerySearch({ query, onSearch }: GallerySearchProps) {
       <SearchInput
         label="Search"
         name={QUERY_PARAM}
+        variant="arrow"
+        buttonProps={{ className: "blocks-link--color-secondary" }}
         inputProps={{
           defaultValue: query,
           // covers the native clear button, which fires input but never submit
