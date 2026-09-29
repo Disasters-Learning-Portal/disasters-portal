@@ -5,6 +5,7 @@ export const RESILIENCE_CONTENT: ThemeContent = {
   mastheadImage: {
     alt: "A tower crane rises over high-rise buildings under construction, silhouetted against a city skyline at sunset.",
     src: "/img/theme/resilience-masthead.webp",
+    objectPosition: "bottom",
   },
   subtitle: "Safeguard communities for enduring impact",
   theme: "build",
