@@ -18,13 +18,7 @@ import { typedMap } from "./site-config/typed.helpers";
 export default function Home() {
   const newsEventsStories = typedMap(
     NEWS_EVENTS_STORIES_CARDS,
-    ({
-      id,
-      contentType,
-      thumbnailImage,
-      themes,
-      title,
-    }: (typeof NEWS_EVENTS_STORIES_CARDS)[number]) => ({
+    ({ id, contentType, thumbnailImage, themes, title }) => ({
       id,
       contentType,
       thumbnailImage,
