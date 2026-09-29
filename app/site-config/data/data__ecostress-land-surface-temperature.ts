@@ -73,9 +73,7 @@ export const DATA__ECOSTRESS_LAND_SURFACE_TEMPERATURE: DataContent = {
     {
       type: "text",
       heading: "Credits",
-      paragraphs: [
-        "NASA Jet Propulsion Laboratory (JPL) ECOSTRESS, NASA Disasters Program",
-      ],
+      paragraphs: ["NASA Jet Propulsion Laboratory (JPL) ECOSTRESS, NASA Disasters Program"],
     },
 
     {
