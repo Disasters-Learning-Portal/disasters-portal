@@ -19,11 +19,7 @@ export const SectionCardDetailed = ({
     {sectionHeading && sectionHeading}
     <div className="grid-row grid-gap">
       {cards.map(({ id, ...props }) => (
-        // <div key={id} className="grid-col-12 margin-y-1 desktop:margin-y-2">
-        <div
-          key={id}
-          className="grid-col-12 margin-y-1 desktop:margin-y-2 desktop:grid-col-4 tablet:grid-col-6"
-        >
+        <div key={id} className="grid-col-12 margin-y-1 desktop:margin-y-2">
           <CardDetailed {...props} className="height-card-sm" />
         </div>
       ))}

@@ -1,6 +1,3 @@
-import { Link } from "@teamimpact/veda-ui-blocks";
-import type { ContentBlock } from "@/app/site-config/types";
-
 export const ABOUT_TEAM = [
   {
     name: "Shanna N. McClain, PhD",
@@ -26,31 +23,5 @@ export const ABOUT_TEAM = [
     name: "Robert Emberson",
     role: "Deputy Program Manager, Disasters Science to Action",
     image: "/img/about/robert-emberson.png",
-  },
-];
-
-export const ABOUT_PAGE_BODY: ContentBlock[] = [
-  {
-    type: "text",
-    heading: "Connect with Us",
-    paragraphs: [
-      `Collaboration drives impact. We welcome partners across government, academia, and industry
-        to connect with us, share perspectives, and help shape how Earth science is applied before,
-        during, and after disasters. Together, we build a growing community committed to improving
-        decision-making and outcomes for communities at risk.`,
-      <Link
-        key="newsletter"
-        variant="arrow"
-        color="secondary"
-        href="https://lp.constantcontactpages.com/sl/ICIOyJI"
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        Get News & Updates with the NASA Disasters Community Newsletter
-      </Link>,
-      <Link key="contact" variant="arrow" color="secondary" href="mailto:disasters@nasa.gov">
-        Contact Our Team
-      </Link>,
-    ],
   },
 ];
