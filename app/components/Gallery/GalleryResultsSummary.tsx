@@ -1,6 +1,7 @@
 "use client";
 
 import { Link, Tag } from "@teamimpact/veda-ui-blocks";
+import { makeOutlineTagProps } from "@/app/site-config/content.helpers";
 import type { AppliedFilter } from "./helpers/filters.helpers";
 
 type GalleryResultsSummaryProps = {
@@ -43,10 +44,11 @@ export function GalleryResultsSummary({
         ) : (
           <>
             <span className="text-bold margin-right-1">Filters applied:</span>
-            {appliedFilters.map((pill) => (
-              <Tag key={pill.id} onClose={pill.remove} className="margin-right-1" variant="outline">
-                {pill.label}
-              </Tag>
+            {appliedFilters.map(({ id, label, remove }) => (
+              <Tag
+                key={id}
+                {...makeOutlineTagProps(label, { className: "margin-right-1", onClose: remove })}
+              />
             ))}
             {appliedFilters.length > 1 && (
               <Link
