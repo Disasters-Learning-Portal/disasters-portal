@@ -84,6 +84,9 @@ export const ContentBlockRenderer = ({
         </Section>
       );
 
+    case "custom":
+      return <Section isMultiColumnLayout={isMultiColumnLayout}>{block.content}</Section>;
+
     case "slider":
       return (
         <Section isMultiColumnLayout={isMultiColumnLayout}>

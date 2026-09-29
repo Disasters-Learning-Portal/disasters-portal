@@ -86,6 +86,8 @@ export type ContentBlock =
       items: (string | { label: string; href: string })[];
     }
   | { type: "note"; text: string }
+  // ponytail: escape hatch for one-off layouts; promote to a typed block if reused
+  | { type: "custom"; content: ReactNode }
   | { type: "slider"; before: { src: string; alt: string }; after: { src: string; alt: string } }
   | {
       type: "video";
