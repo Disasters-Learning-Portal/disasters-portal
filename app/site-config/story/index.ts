@@ -7,6 +7,7 @@ import { STORY__MAPPING_OIL_SPILLS_FROM_SPACE } from "./story__mapping_oil_spill
 import { STORY__SEEING_BEYOND_FLAMES } from "./story__seeing-beyond-flames";
 import { STORY__SUPPORTING_COMMUNITIES_HURRICANE_HELENE } from "./story__supporting-communities-hurricane-helene";
 import { STORY__TRACKING_TORNADOES_FROM_SPACE } from "./story__tracking-tornadoes-from-space";
+import { STORY__YOUR_COMMUNITY_MAY_HAVE_A_DISASTER_BLIND_SPOT } from "./story__your-community-may-have-a-disaster-blind-spot";
 
 export const STORIES: StoryContent[] = [
   STORY__ESTIMATING_LOSS_RECOVERY,
@@ -17,4 +18,5 @@ export const STORIES: StoryContent[] = [
   STORY__SEEING_BEYOND_FLAMES,
   STORY__SUPPORTING_COMMUNITIES_HURRICANE_HELENE,
   STORY__TRACKING_TORNADOES_FROM_SPACE,
+  STORY__YOUR_COMMUNITY_MAY_HAVE_A_DISASTER_BLIND_SPOT,
 ];

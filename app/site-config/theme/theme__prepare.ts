@@ -16,11 +16,11 @@ export const PREPARE_CONTENT: ThemeContent = {
       link: { href: "/news-events-stories", label: "More Stories of Impact" },
       cards: [
         {
-          id: "your-disaster-plan-may-have-a-blind-spot",
+          id: "your-community-may-have-a-disaster-blind-spot",
           contentType: "story",
-          title: "Your Disaster Plan May Have a Blind Spot. Foresight is Built to Find It.",
+          title: "Your Community May Have a Disaster Blind Spot. Foresight is Built to Find It.",
           thumbnailImage: {
-            src: "/img/story/your-disaster-plan-may-have-a-blind-spot.webp",
+            src: "/img/story/your-community-may-have-a-disaster-blind-spot.webp",
             alt: "A deep fissure splits a cobblestone street after an earthquake, with an overturned cart tipped into the crack and damaged buildings beyond.",
           },
         },
