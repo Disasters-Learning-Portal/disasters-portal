@@ -193,8 +193,6 @@ export const STORY__YOUR_COMMUNITY_MAY_HAVE_A_DISASTER_BLIND_SPOT: StoryContent 
               <span
                 style={{
                   fontWeight: 700,
-                  backgroundColor: "#f3e8c8",
-                  padding: "0 0.2rem",
                 }}
               >
                 Left photo:
