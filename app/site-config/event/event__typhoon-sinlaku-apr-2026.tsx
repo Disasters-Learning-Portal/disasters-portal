@@ -58,6 +58,10 @@ export const EVENT__TYPHOON_SINLAKU_APR_2026: EventContent = {
     {
       type: "sectionCardGallery",
       heading: "Related Data",
+      link: {
+        href: "/data-gallery",
+        label: "View all",
+      },
       cards: DATA__TYPHOON_SINLAKU_APR_2026,
     },
   ],
