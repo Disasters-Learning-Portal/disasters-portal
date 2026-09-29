@@ -121,6 +121,10 @@ export const STORY__FINDING_FLOODS: StoryContent = {
     {
       type: "sectionCardSimple",
       heading: "Resources & Learning",
+      link: {
+        href: "/training",
+        label: "More Resources and Learning",
+      },
       cards: [EVENT__TEXAS_FLOODS_JULY_2025, EVENT__US_WINTER_STORM_2026],
     },
   ],
