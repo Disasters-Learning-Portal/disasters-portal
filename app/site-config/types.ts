@@ -100,6 +100,16 @@ export type ContentBlock =
       caption?: string;
     }
   | {
+      type: "pdf";
+      heading?: string;
+      headingLevel?: "h2" | "h3" | "h4";
+      /** App-internal path under public/, e.g. "/docs/training/portal-101.pdf". */
+      src: string;
+      /** Accessible name for the embedded viewer frame. */
+      title: string;
+      caption?: string;
+    }
+  | {
       type: "image";
       heading?: string;
       headingLevel?: "h2" | "h3" | "h4";
@@ -182,6 +192,8 @@ export type TrainingContent = Omit<InternalCardContent, "contentType"> & {
   mastheadImage: MastheadImage;
   body?: ContentBlock[]; // TODO: require body
   relatedContent?: string[];
+  /** The masthead CTA renders only when this is set. */
+  downloadPdfUrl?: string;
 };
 
 export type TrainingContentExternal = Omit<ExternalCardContent, "contentType"> & {

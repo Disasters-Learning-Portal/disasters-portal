@@ -1,4 +1,5 @@
 export { AppImage } from "./AppImage";
+export { AppPdf } from "./AppPdf";
 export * from "./blocks";
 export { ContentBlockRenderer } from "./ContentBlockRenderer";
 export { ContentPageLayout } from "./ContentPageLayout";

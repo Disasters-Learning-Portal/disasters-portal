@@ -8,6 +8,7 @@ import {
 } from "@/app/components";
 import { AppImage } from "@/app/components/AppImage";
 import { AppLinkStyled } from "@/app/components/AppLink";
+import { AppPdf } from "@/app/components/AppPdf";
 import { AppVideo } from "@/app/components/AppVideo";
 import { StacCompareBlock, StacSingleLayerBlock } from "@/app/components/blocks";
 import {
@@ -100,6 +101,48 @@ export const ContentBlockRenderer = ({
             </div>
           )}
           {block.caption && <p className="font-body-sm text-base margin-top-1">{block.caption}</p>}
+        </Section>
+      );
+
+    case "pdf":
+      return (
+        <Section isMultiColumnLayout={isMultiColumnLayout}>
+          {block.heading && (
+            <SectionHeading headingAs={block.headingLevel}>{block.heading}</SectionHeading>
+          )}
+          <figure className="margin-0">
+            {/*
+              Full column width at a letter aspect ratio, capped so a whole
+              page stays on screen. Past the cap the frame goes wider than
+              letter, which the browser's viewer fills with its own chrome
+              (toolbar, thumbnail rail) rather than shrinking the page.
+            */}
+            <div
+              className="width-full bg-base-lightest border-1px border-base-lighter"
+              style={{ aspectRatio: "612 / 792", maxHeight: "80vh" }}
+            >
+              <AppPdf
+                src={block.src}
+                title={block.title}
+                className="width-full height-full display-block border-0"
+              />
+            </div>
+            {block.caption && (
+              <figcaption className="font-body-sm text-base margin-top-1">
+                {block.caption}
+              </figcaption>
+            )}
+            {/*
+              Always visible: mobile browsers (iOS and most Android) refuse to
+              render a PDF in a frame, and give no fallback signal we could
+              branch on, so the download link is the guaranteed path in.
+            */}
+            <p className="font-body-sm text-base margin-top-2">
+              Not seeing the document?{" "}
+              <AppLinkStyled href={block.src}>Download the PDF</AppLinkStyled> to open it in your
+              device’s PDF reader.
+            </p>
+          </figure>
         </Section>
       );
 
