@@ -5,7 +5,7 @@ import { ABOUT_TEAM } from "@/app/site-config/about";
 
 export default function AboutPage() {
   return (
-    <>
+    <div className="margin-y-10">
       <Section>
         <AppImage
           src="/img/logo-emblem-primary.svg"
@@ -14,7 +14,7 @@ export default function AboutPage() {
           height={138}
           className="display-block"
         />
-        <h1 className="font-heading-2xl margin-bottom-1">About the NASA Disasters Program</h1>
+        <h1 className="font-heading-2xl margin-bottom-2">About the NASA Disasters Program</h1>
         <h2 className="font-heading-md margin-y-1">Advancing Science for Disaster Resilience</h2>
         <p className="measure-6 line-height-sans-5 margin-top-0">
           The NASA Disasters Program puts Earth science to work for those who make critical
@@ -27,7 +27,7 @@ export default function AboutPage() {
         </p>
       </Section>
       <Section>
-        <h2 className="font-heading-md margin-bottom-2">Our Team</h2>
+        <h2 className="font-heading-md margin-y-4">Our Team</h2>
         <ul className="usa-list--unstyled grid-row grid-gap-2">
           {ABOUT_TEAM.map(({ name, role, image }) => (
             <li
@@ -45,7 +45,7 @@ export default function AboutPage() {
                 style={{ height: "auto", aspectRatio: "5 / 4", objectFit: "cover" }}
               />
               <h3 className="font-sans-sm text-semibold margin-top-1 margin-bottom-05">{name}</h3>
-              <p className="font-sans-2xs margin-0">{role}</p>
+              <p className="font-sans-2xs line-height-sans-4 margin-0">{role}</p>
             </li>
           ))}
         </ul>
@@ -77,6 +77,6 @@ export default function AboutPage() {
           </li>
         </ul>
       </Section>
-    </>
+    </div>
   );
 }
