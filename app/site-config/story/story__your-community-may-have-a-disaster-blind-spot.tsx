@@ -1,9 +1,7 @@
-import Image from "next/image";
-
 import { Link } from "@teamimpact/veda-ui-blocks";
-
 import { Fragment } from "react";
 
+import { AppImage } from "@/app/components/AppImage";
 import type { StoryContent } from "@/app/site-config/types";
 
 export const STORY__YOUR_COMMUNITY_MAY_HAVE_A_DISASTER_BLIND_SPOT: StoryContent = {
@@ -45,36 +43,32 @@ export const STORY__YOUR_COMMUNITY_MAY_HAVE_A_DISASTER_BLIND_SPOT: StoryContent 
           <ul>
             <li>
               <strong style={{ color: "#006b8f" }}>
-                Disaster preparedness systems built on historical records have a
-                blind spot — and it is growing.
+                Disaster preparedness systems built on historical records have a blind spot — and it
+                is growing.
               </strong>{" "}
-              Extreme events are intensifying faster than communities can
-              accumulate experience with them, which means the gap between what
-              disaster managers have planned for and what is now possible has
-              been silently widening.
+              Extreme events are intensifying faster than communities can accumulate experience with
+              them, which means the gap between what disaster managers have planned for and what is
+              now possible has been silently widening.
             </li>
 
             <li>
               <strong style={{ color: "#006b8f" }}>
-                Foresight in Disaster Management is a NASA Disasters Program
-                project building a science-based foundation for planning beyond
-                the historical record.
+                Foresight in Disaster Management is a NASA Disasters Program project building a
+                science-based foundation for planning beyond the historical record.
               </strong>{" "}
-              Led by Tufts University, Foresight identifies plausible extreme
-              events that communities haven&apos;t experienced yet — but that
-              today&apos;s conditions can credibly produce.
+              Led by Tufts University, Foresight identifies plausible extreme events that
+              communities haven&apos;t experienced yet — but that today&apos;s conditions can
+              credibly produce.
             </li>
 
             <li>
               <strong style={{ color: "#006b8f" }}>
-                The project is building a new dynamic scenario planning tool to
-                put that science foundation directly into the hands of disaster
-                managers and planning teams.
+                The project is building a new dynamic scenario planning tool to put that science
+                foundation directly into the hands of disaster managers and planning teams.
               </strong>{" "}
-              This Scenario Library will give practitioners the ability to use
-              NASA and other trusted data to simulate extreme events and
-              stress-test their preparedness strategies against realistic
-              potential future scenarios that historical records alone may
+              This Scenario Library will give practitioners the ability to use NASA and other
+              trusted data to simulate extreme events and stress-test their preparedness strategies
+              against realistic potential future scenarios that historical records alone may
               obscure.
             </li>
           </ul>
@@ -110,23 +104,17 @@ export const STORY__YOUR_COMMUNITY_MAY_HAVE_A_DISASTER_BLIND_SPOT: StoryContent 
         "Foresight pursues that goal through three interconnected aims.",
 
         <Fragment key="seeing-past-the-historical-horizon-unseen">
-          The first is to map the space of what is actually possible. Using NASA
-          Earth observation data alongside large ensemble climate and weather
-          models, the team applies the{" "}
-          <Link href="https://unseen-open.readthedocs.io/en/latest/Whats-unseen.html">
-            UNSEEN
-          </Link>{" "}
-          (UNprecedented Simulated Extremes using Ensemble) approach to generate
-          distributions of extreme events that are consistent with today’s
-          climate conditions but absent from the historical record. The outputs
-          are not forecasts. They are plausible scenarios: events that are
-          physically consistent with what the science says the climate of a
-          specific location can actually produce. Plausible, here, is a precise
-          term: a scenario developed for a community reflects what the hazard
-          environment of that region genuinely supports, such as an
-          unprecedented heatwave in Florida. Scenarios that would defy the
-          physical realities of the models, such as a hurricane in Idaho, are
-          not generated.
+          The first is to map the space of what is actually possible. Using NASA Earth observation
+          data alongside large ensemble climate and weather models, the team applies the{" "}
+          <Link href="https://unseen-open.readthedocs.io/en/latest/Whats-unseen.html">UNSEEN</Link>{" "}
+          (UNprecedented Simulated Extremes using Ensemble) approach to generate distributions of
+          extreme events that are consistent with today’s climate conditions but absent from the
+          historical record. The outputs are not forecasts. They are plausible scenarios: events
+          that are physically consistent with what the science says the climate of a specific
+          location can actually produce. Plausible, here, is a precise term: a scenario developed
+          for a community reflects what the hazard environment of that region genuinely supports,
+          such as an unprecedented heatwave in Florida. Scenarios that would defy the physical
+          realities of the models, such as a hurricane in Idaho, are not generated.
         </Fragment>,
 
         "The second aim is harder to quantify but just as important: how prepared are communities actually? Through interviews, focus groups, and document analysis, the Foresight team assesses community capacities, and documents what could go wrong. Some communities carry recent experience with severe events and maintain active preparedness. Others have seen disaster risk rise but have not recently experienced the kind of dramatic event that prompts updated planning. These communities face what the team calls a “high potential for surprise,” that is, places where the most extreme event in living memory may no longer reflect how risky conditions have become. As Coughlan de Perez describes it, for communities across the southeastern United States: “It’s a roll of the die whether they have experienced a really extreme event or not.”",
@@ -149,7 +137,7 @@ export const STORY__YOUR_COMMUNITY_MAY_HAVE_A_DISASTER_BLIND_SPOT: StoryContent 
           }}
         >
           <figure style={{ margin: 0 }}>
-            <Image
+            <AppImage
               src="/img/story/your-community-may-have-a-disaster-blind-spot__yazoo-city-scenario-exercise.webp"
               alt="Community members seated around tables in a meeting room take part in a disaster scenario exercise."
               width={975}
@@ -168,7 +156,7 @@ export const STORY__YOUR_COMMUNITY_MAY_HAVE_A_DISASTER_BLIND_SPOT: StoryContent 
           </figure>
 
           <figure style={{ margin: 0 }}>
-            <Image
+            <AppImage
               src="/img/story/your-community-may-have-a-disaster-blind-spot__yazoo-city-food-distribution.webp"
               alt="A woman carries paper grocery bags toward a doorway while distributing food from a pantry."
               width={649}
@@ -212,44 +200,39 @@ export const STORY__YOUR_COMMUNITY_MAY_HAVE_A_DISASTER_BLIND_SPOT: StoryContent 
           <ul>
             <li>
               <strong style={{ color: "#006b8f" }}>
-                If your community hasn’t faced a severe event recently, that may
-                be cause for concern, not comfort.
+                If your community hasn’t faced a severe event recently, that may be cause for
+                concern, not comfort.
               </strong>{" "}
-              Communities where recent history has been quiet are often the ones
-              who haven’t updated their plans. The absence of a recent disaster
-              does not mean that risk has disappeared.
+              Communities where recent history has been quiet are often the ones who haven’t updated
+              their plans. The absence of a recent disaster does not mean that risk has disappeared.
             </li>
 
             <li>
               <strong style={{ color: "#006b8f" }}>
-                Scenarios are planning tools, not forecasts — use them
-                accordingly.
+                Scenarios are planning tools, not forecasts — use them accordingly.
               </strong>{" "}
-              Foresight’s outputs describe what is plausible given current
-              conditions in a specific location, not what is predicted to happen
-              in the coming days or months. The right question to bring to them
-              is not “will this happen?” but “are we ready if it does?”
+              Foresight’s outputs describe what is plausible given current conditions in a specific
+              location, not what is predicted to happen in the coming days or months. The right
+              question to bring to them is not “will this happen?” but “are we ready if it does?”
             </li>
 
             <li>
               <strong style={{ color: "#006b8f" }}>
-                Policies addressing extreme heat and flooding remain limited in
-                many parts of the United States.
+                Policies addressing extreme heat and flooding remain limited in many parts of the
+                United States.
               </strong>{" "}
-              The science for anticipating these events is advancing faster than
-              the policy frameworks designed to act on it, and there are major
-              policy gaps for preparedness for extreme heat across the country.
+              The science for anticipating these events is advancing faster than the policy
+              frameworks designed to act on it, and there are major policy gaps for preparedness for
+              extreme heat across the country.
             </li>
 
             <li>
               <strong style={{ color: "#006b8f" }}>
-                Early awareness of tools in development is an advantage worth
-                acting on.
+                Early awareness of tools in development is an advantage worth acting on.
               </strong>{" "}
-              The Foresight Tool is still being built. Practitioners who engage
-              now — understanding what it is designed to do and how it fits into
-              existing preparedness workflows — will be better positioned to use
-              it effectively when it becomes available.
+              The Foresight Tool is still being built. Practitioners who engage now — understanding
+              what it is designed to do and how it fits into existing preparedness workflows — will
+              be better positioned to use it effectively when it becomes available.
             </li>
           </ul>
         ),
@@ -290,12 +273,9 @@ export const STORY__YOUR_COMMUNITY_MAY_HAVE_A_DISASTER_BLIND_SPOT: StoryContent 
       heading: "Connect and Learn More",
       paragraphs: [
         <Fragment key="connect-email-the-developers">
-          Would you like to help test or provide feedback on the new Foresight
-          dynamic scenario planning tool or Scenario Library as they are still
-          being developed?{" "}
-          <Link href="mailto:Erin.Coughlan@tufts.edu">
-            Email the developers.
-          </Link>
+          Would you like to help test or provide feedback on the new Foresight dynamic scenario
+          planning tool or Scenario Library as they are still being developed?{" "}
+          <Link href="mailto:Erin.Coughlan@tufts.edu">Email the developers.</Link>
         </Fragment>,
 
         <Fragment key="connect-about-the-pi">
