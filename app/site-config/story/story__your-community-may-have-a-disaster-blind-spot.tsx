@@ -12,9 +12,7 @@ export const STORY__YOUR_COMMUNITY_MAY_HAVE_A_DISASTER_BLIND_SPOT: StoryContent 
   },
   mastheadImage: {
     src: "/img/story/your-community-may-have-a-disaster-blind-spot.webp",
-    alt: "A deep fissure splits a cobblestone street after an earthquake, with an overturned cart tipped into the crack and damaged buildings beyond.",
-    caption:
-      "The earthquake that caused damage to this San Francisco street was an unprecedented event before April 18, 1906. Now it is part of the historical record. Credit: Sonoma County Library Photograph Collection",
+    alt: "A deep fissure splits a cobblestone street after an earthquake, with an overturned cart tipped into the crack and damaged buildings beyond. The earthquake that caused damage to this San Francisco street was an unprecedented event before April 18, 1906. Now it is part of the historical record. Credit: Sonoma County Library Photograph Collection",
   },
   themes: ["prepare"],
   categories: ["heat", "flood", "severe weather"],
