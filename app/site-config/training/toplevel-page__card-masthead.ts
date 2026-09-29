@@ -1,7 +1,7 @@
 export const TRAINING_CARD_MASTHEAD = {
   mastheadImage: {
-    alt: "",
-    src: "/img/placeholder/card-masthead.webp",
+    alt: "Participants seated around a large conference table during a training session.",
+    src: "/img/training/training-masthead.webp",
   },
   title: "Training",
   description:

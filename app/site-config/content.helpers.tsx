@@ -21,7 +21,7 @@ import { isInternalContent, pickKeys } from "./typed.helpers";
 
 export const makeOutlineTagProps = (
   tag: string,
-  tagProps?: Omit<TagProps, "variant" | "size" | "onClose" | "children">,
+  tagProps?: Omit<TagProps, "variant" | "size" | "children">,
 ) => ({
   variant: "outline" as const,
   borderColor: "base-light" as const,
@@ -31,7 +31,7 @@ export const makeOutlineTagProps = (
 
 export const makeTextTagProps = (
   tag: string,
-  tagProps?: Omit<TagProps, "variant" | "size" | "onClose" | "children">,
+  tagProps?: Omit<TagProps, "variant" | "size" | "children">,
 ) => ({
   variant: "text" as const,
   children: tag,
@@ -64,6 +64,7 @@ export type CardMastheadPropsArgs = Omit<
   mastheadImage: {
     alt: string;
     src: string;
+    objectPosition?: string;
   };
   title?: string;
   theme?: Theme;
@@ -75,7 +76,7 @@ export type CardMastheadPropsArgs = Omit<
 };
 
 export const makeCardMastHeadProps = ({
-  mastheadImage,
+  mastheadImage: { objectPosition, ...mastheadImage },
   title,
   subtitle,
   theme,
@@ -84,7 +85,15 @@ export const makeCardMastHeadProps = ({
   ...rest
 }: CardMastheadPropsArgs): CardProps<typeof AppLink> => ({
   className: "blocks-card--contentpage",
-  image: <AppImage {...mastheadImage} sizes="100vw" fill preload={true} />,
+  image: (
+    <AppImage
+      {...mastheadImage}
+      sizes="100vw"
+      fill
+      preload={true}
+      style={objectPosition ? { objectPosition } : undefined}
+    />
+  ),
   tag: datePublished && makeDateTagProps(datePublished),
   title: title ?? (theme ? CONTENT_THEMES[theme].label : undefined),
   description: subtitle,
@@ -169,6 +178,7 @@ export const makeGalleryCardContent = (content: Content): GalleryCardContent => 
     "id",
     "contentType",
     "title",
+    "subtitle",
     "description",
     "thumbnailImage",
     "themes",
