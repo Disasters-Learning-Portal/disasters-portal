@@ -20,8 +20,8 @@ export const PREPARE_CONTENT: ThemeContent = {
           contentType: "story",
           title: "Your Community May Have a Disaster Blind Spot. Foresight is Built to Find It.",
           thumbnailImage: {
-            src: "/img/story/your-community-may-have-a-disaster-blind-spot.webp",
-            alt: "A deep fissure splits a cobblestone street after an earthquake, with an overturned cart tipped into the crack and damaged buildings beyond.",
+            src: "/img/placeholder/card-masthead.webp",
+            alt: "",
           },
         },
       ],
