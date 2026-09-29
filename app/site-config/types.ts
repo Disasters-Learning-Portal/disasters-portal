@@ -161,6 +161,7 @@ export type InternalCardContent = {
   id: string;
   contentType: ContentType;
   title: string;
+  subtitle?: string;
   thumbnailImage: {
     src: string;
     alt: string;
