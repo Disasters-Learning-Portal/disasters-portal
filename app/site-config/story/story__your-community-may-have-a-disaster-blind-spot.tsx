@@ -35,45 +35,13 @@ export const STORY__YOUR_COMMUNITY_MAY_HAVE_A_DISASTER_BLIND_SPOT: StoryContent 
     },
 
     {
-      type: "sectionCardFeatured",
-      card: {
-        id: "foresight-highlights",
-        title: "Highlights",
-        description: (
-          <ul>
-            <li>
-              <strong style={{ color: "#006b8f" }}>
-                Disaster preparedness systems built on historical records have a blind spot — and it
-                is growing.
-              </strong>{" "}
-              Extreme events are intensifying faster than communities can accumulate experience with
-              them, which means the gap between what disaster managers have planned for and what is
-              now possible has been silently widening.
-            </li>
-
-            <li>
-              <strong style={{ color: "#006b8f" }}>
-                Foresight in Disaster Management is a NASA Disasters Program project building a
-                science-based foundation for planning beyond the historical record.
-              </strong>{" "}
-              Led by Tufts University, Foresight identifies plausible extreme events that
-              communities haven&apos;t experienced yet — but that today&apos;s conditions can
-              credibly produce.
-            </li>
-
-            <li>
-              <strong style={{ color: "#006b8f" }}>
-                The project is building a new dynamic scenario planning tool to put that science
-                foundation directly into the hands of disaster managers and planning teams.
-              </strong>{" "}
-              This Scenario Library will give practitioners the ability to use NASA and other
-              trusted data to simulate extreme events and stress-test their preparedness strategies
-              against realistic potential future scenarios that historical records alone may
-              obscure.
-            </li>
-          </ul>
-        ),
-      },
+      type: "list",
+      heading: "Highlights",
+      items: [
+        "Disaster preparedness systems built on historical records have a blind spot — and it is growing. Extreme events are intensifying faster than communities can accumulate experience with them, which means the gap between what disaster managers have planned for and what is now possible has been silently widening.",
+        "Foresight in Disaster Management is a NASA Disasters Program project building a science-based foundation for planning beyond the historical record. Led by Tufts University, Foresight identifies plausible extreme events that communities haven’t experienced yet — but that today’s conditions can credibly produce.",
+        "The project is building a new dynamic scenario planning tool to put that science foundation directly into the hands of disaster managers and planning teams. This Scenario Library will give practitioners the ability to use NASA and other trusted data to simulate extreme events and stress-test their preparedness strategies against realistic potential future scenarios that historical records alone may obscure.",
+      ],
     },
 
     {
@@ -192,51 +160,14 @@ export const STORY__YOUR_COMMUNITY_MAY_HAVE_A_DISASTER_BLIND_SPOT: StoryContent 
     },
 
     {
-      type: "sectionCardFeatured",
-      card: {
-        id: "foresight-cornerstones",
-        title: "Cornerstones",
-        description: (
-          <ul>
-            <li>
-              <strong style={{ color: "#006b8f" }}>
-                If your community hasn’t faced a severe event recently, that may be cause for
-                concern, not comfort.
-              </strong>{" "}
-              Communities where recent history has been quiet are often the ones who haven’t updated
-              their plans. The absence of a recent disaster does not mean that risk has disappeared.
-            </li>
-
-            <li>
-              <strong style={{ color: "#006b8f" }}>
-                Scenarios are planning tools, not forecasts — use them accordingly.
-              </strong>{" "}
-              Foresight’s outputs describe what is plausible given current conditions in a specific
-              location, not what is predicted to happen in the coming days or months. The right
-              question to bring to them is not “will this happen?” but “are we ready if it does?”
-            </li>
-
-            <li>
-              <strong style={{ color: "#006b8f" }}>
-                Policies addressing extreme heat and flooding remain limited in many parts of the
-                United States.
-              </strong>{" "}
-              The science for anticipating these events is advancing faster than the policy
-              frameworks designed to act on it, and there are major policy gaps for preparedness for
-              extreme heat across the country.
-            </li>
-
-            <li>
-              <strong style={{ color: "#006b8f" }}>
-                Early awareness of tools in development is an advantage worth acting on.
-              </strong>{" "}
-              The Foresight Tool is still being built. Practitioners who engage now — understanding
-              what it is designed to do and how it fits into existing preparedness workflows — will
-              be better positioned to use it effectively when it becomes available.
-            </li>
-          </ul>
-        ),
-      },
+      type: "list",
+      heading: "Cornerstones",
+      items: [
+        "If your community hasn’t faced a severe event recently, that may be cause for concern, not comfort. Communities where recent history has been quiet are often the ones who haven’t updated their plans. The absence of a recent disaster does not mean that risk has disappeared.",
+        "Scenarios are planning tools, not forecasts — use them accordingly. Foresight’s outputs describe what is plausible given current conditions in a specific location, not what is predicted to happen in the coming days or months. The right question to bring to them is not “will this happen?” but “are we ready if it does?”",
+        "Policies addressing extreme heat and flooding remain limited in many parts of the United States. The science for anticipating these events is advancing faster than the policy frameworks designed to act on it, and there are major policy gaps for preparedness for extreme heat across the country.",
+        "Early awareness of tools in development is an advantage worth acting on. The Foresight Tool is still being built. Practitioners who engage now — understanding what it is designed to do and how it fits into existing preparedness workflows — will be better positioned to use it effectively when it becomes available.",
+      ],
     },
 
     {
