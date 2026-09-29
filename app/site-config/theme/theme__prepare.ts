@@ -5,6 +5,7 @@ export const PREPARE_CONTENT: ThemeContent = {
   mastheadImage: {
     alt: "A shelf cloud at the leading edge of an advancing thunderstorm sweeps over a city skyline at dusk.",
     src: "/img/theme/prepare-masthead.webp",
+    objectPosition: "bottom",
   },
   subtitle: "Anticipate risk and boost readiness",
   theme: "prepare",
