@@ -21,7 +21,7 @@ import { isInternalContent, pickKeys } from "./typed.helpers";
 
 export const makeOutlineTagProps = (
   tag: string,
-  tagProps?: Omit<TagProps, "variant" | "size" | "onClose" | "children">,
+  tagProps?: Omit<TagProps, "variant" | "size" | "children">,
 ) => ({
   variant: "outline" as const,
   borderColor: "base-light" as const,
@@ -31,7 +31,7 @@ export const makeOutlineTagProps = (
 
 export const makeTextTagProps = (
   tag: string,
-  tagProps?: Omit<TagProps, "variant" | "size" | "onClose" | "children">,
+  tagProps?: Omit<TagProps, "variant" | "size" | "children">,
 ) => ({
   variant: "text" as const,
   children: tag,
