@@ -51,7 +51,7 @@ export const RESILIENCE_CONTENT: ThemeContent = {
           contentType: "training",
           title: "Sea Level Change Tools for Planning and Decision Support",
           thumbnailImage: {
-            src: "https://earthdata.nasa.gov/s3fs-public/2025-06/arset-sealevelchange-th.png",
+            src: "/img/training/sea-level-change-tools.webp",
             alt: "Map of sea surface height anomalies across the Americas and the Atlantic, with higher anomalies in orange and lower in blue.",
           },
           url: "https://www.earthdata.nasa.gov/learn/trainings/sea-level-change-tools-planning-decision-support",

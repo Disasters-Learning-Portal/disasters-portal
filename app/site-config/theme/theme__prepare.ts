@@ -52,7 +52,7 @@ export const PREPARE_CONTENT: ThemeContent = {
           title:
             "Monitoring and Predicting Floods Using Earth Observations for Planning and Preparedness",
           thumbnailImage: {
-            src: "https://earthdata.nasa.gov/s3fs-public/2026-04/ARSET-Floods2026-th.jpg",
+            src: "/img/training/monitoring-predicting-floods.webp",
             alt: "False-color satellite view of a flooded river system, with standing water in dark blue against tan terrain and green vegetation.",
           },
           url: "https://www.earthdata.nasa.gov/learn/trainings/monitoring-predicting-floods-using-earth-observations-planning-preparedness",
