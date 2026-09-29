@@ -72,7 +72,7 @@ export const DATA__OPERA_RTC_RGB_MOSAIC: DataContent = {
       heading: "Credits",
       paragraphs: [
         "NASA Jet Propulsion Laboratory, California Institute of Technology; NASA OPERA; ESA Copernicus; NASA Disasters Program",
-        "Use of this product should include: “The product contains modified Copernicus Sentinel-2 and NASA Landsat 8/9 data, processed by the European Space Agency and NASA.”",
+        "Use of this product should include: “The product contains modified Copernicus Sentinel-1 data, processed by the European Space Agency and NASA.”",
       ],
     },
 

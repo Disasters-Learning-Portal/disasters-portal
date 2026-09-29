@@ -72,7 +72,7 @@ export const DATA__OPERA_DIST_ALERT_GEN_DIST_STATUS: DataContent = {
       heading: "Credits",
       paragraphs: [
         "NASA Jet Propulsion Laboratory, California Institute of Technology; NASA OPERA; ESA Copernicus; USGS; NASA Disasters Program",
-        "Use of this product should include: “The product contains modified Copernicus Sentinel-2 and NASA Landsat 8/9 data, processed by the European Space Agency and NASA.”",
+        "Use of this product should include: “The product contains modified Copernicus Sentinel-1, Sentinel-2, and NASA Landsat 8/9 data, processed by the European Space Agency and NASA.”",
       ],
     },
 
