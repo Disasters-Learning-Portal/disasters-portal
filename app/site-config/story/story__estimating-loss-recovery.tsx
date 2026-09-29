@@ -1,3 +1,9 @@
+import { Link } from "@teamimpact/veda-ui-blocks";
+import { Fragment } from "react";
+import { DATA__GAIA } from "@/app/site-config/data/data__gaia";
+import { TRAINING__BUILDING_CLIMATE_RISK_ASSESSMENTS } from "@/app/site-config/training/training__building-climate-risk-assessments";
+import { TRAINING__EO_BUILDING_EXPOSURE } from "@/app/site-config/training/training__eo-building-exposure";
+import { TRAINING__EO_INSURANCE_FINANCE_DECISION_MAKING } from "@/app/site-config/training/training__eo-insurance-finance-decision-making";
 import type { StoryContent } from "@/app/site-config/types";
 
 export const STORY__ESTIMATING_LOSS_RECOVERY: StoryContent = {
@@ -99,6 +105,42 @@ export const STORY__ESTIMATING_LOSS_RECOVERY: StoryContent = {
         "Not all damage data is recovery-ready. The datasets most commonly available after a disaster were built for administrative purposes, not risk assessment. When used to estimate losses or allocate resources, they can introduce compounding bias that distorts every decision that follows. Decision-makers should expect purpose-built tools, not data repurposed for objectives it was never designed to meet.",
 
         "The third question is the most consequential. Where did it happen? What did the physical damage cost? These two questions are typically answered quickly. How long economic disruption will last has historically gone unanswered until well into the recovery process – a gap that carries real consequences for decision-makers allocating resources in the immediate aftermath. These tools are designed to narrow that gap before critical decisions are made.",
+      ],
+    },
+    {
+      type: "sectionCardSimple",
+      heading: "Resources & Learning",
+      link: {
+        href: "/training",
+        label: "More Resources and Learning",
+      },
+      cards: [
+        TRAINING__EO_BUILDING_EXPOSURE,
+        DATA__GAIA,
+        TRAINING__BUILDING_CLIMATE_RISK_ASSESSMENTS,
+        TRAINING__EO_INSURANCE_FINANCE_DECISION_MAKING,
+      ],
+    },
+    {
+      type: "text",
+      heading: "Connect With Us",
+      headingLevel: "h2",
+      paragraphs: [
+        <Fragment key="connect">
+          <Link href="mailto:disasters@nasa.gov" variant="text">
+            Contact Our Team
+          </Link>
+          <br />
+          <br />
+          <Link
+            href="https://lp.constantcontactpages.com/sl/ICIOyJI"
+            rel="noopener noreferrer"
+            target="_blank"
+            variant="text"
+          >
+            Sign up for the NASA Disasters Community Newsletter
+          </Link>
+        </Fragment>,
       ],
     },
   ],
