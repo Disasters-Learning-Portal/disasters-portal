@@ -126,73 +126,55 @@ export const STORY__YOUR_COMMUNITY_MAY_HAVE_A_DISASTER_BLIND_SPOT: StoryContent 
     {
       type: "text",
       paragraphs: [
-        <div key="yazoo-city-images-wrapper">
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
-              gap: "1.5rem",
-              alignItems: "start",
-              width: "100%",
-            }}
-          >
-            <div>
-              <AppImage
-                src="/img/story/your-community-may-have-a-disaster-blind-spot__yazoo-city-scenario-exercise.webp"
-                alt="Community members seated around tables in a meeting room take part in a disaster scenario exercise."
-                width={975}
-                height={731}
-                style={{
-                  width: "100%",
-                  height: "420px",
-                  objectFit: "cover",
-                }}
-              />
-            </div>
-
-            <div>
-              <AppImage
-                src="/img/story/your-community-may-have-a-disaster-blind-spot__yazoo-city-food-distribution.webp"
-                alt="A woman carries paper grocery bags toward a doorway while distributing food from a pantry."
-                width={649}
-                height={865}
-                style={{
-                  width: "100%",
-                  height: "420px",
-                  objectFit: "cover",
-                }}
-              />
-            </div>
-          </div>
-
-          <div
-            style={{
-              marginTop: "1rem",
-              fontStyle: "italic",
-              color: "#6f6f6f",
-            }}
-          >
-            <p style={{ margin: "0 0 1.5rem 0" }}>
-              <span
-                style={{
-                  fontWeight: 700,
-                }}
-              >
-                Left photo:
-              </span>{" "}
+        <div
+          key="yazoo-city-images"
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
+            gap: "1.5rem",
+            alignItems: "start",
+            width: "100%",
+          }}
+        >
+          <figure style={{ margin: 0 }}>
+            <AppImage
+              src="/img/story/your-community-may-have-a-disaster-blind-spot__yazoo-city-scenario-exercise.webp"
+              alt="Community members seated around tables in a meeting room take part in a disaster scenario exercise."
+              width={975}
+              height={731}
+              style={{
+                width: "100%",
+                height: "420px",
+                objectFit: "cover",
+              }}
+            />
+            <figcaption style={{ marginTop: "0.5rem" }}>
               Community members in Yazoo City, Mississippi participate in a disaster scenario
               exercise with the project team, led by Tufts University, Aug. 10, 2023. Photo provided
               by Erin Coughlan de Perez, Tufts University
-            </p>
+            </figcaption>
+          </figure>
 
-            <p style={{ margin: 0 }}>
-              <strong>Right photo:</strong> Evangelist Catherine Cowans, Founder of True Light
-              Ministry, distributes food to a person in need in Yazoo City, Mississippi. Disaster
-              scenario exercises that involve the community enable better understanding of what
-              actions to take, who to contact, and where to go in the event of a disaster. Photo
-              provided by Erin Coughlan de Perez, Tufts University
-            </p>
-          </div>
+          <figure style={{ margin: 0 }}>
+            <AppImage
+              src="/img/story/your-community-may-have-a-disaster-blind-spot__yazoo-city-food-distribution.webp"
+              alt="A woman carries paper grocery bags toward a doorway while distributing food from a pantry."
+              width={649}
+              height={865}
+              style={{
+                width: "100%",
+                height: "420px",
+                objectFit: "cover",
+              }}
+            />
+            <figcaption style={{ marginTop: "0.5rem" }}>
+              Evangelist Catherine Cowans, Founder of True Light Ministry, distributes food to a
+              person in need in Yazoo City, Mississippi. Disaster scenario exercises that involve
+              the community enable better understanding of what actions to take, who to contact, and
+              where to go in the event of a disaster. Photo provided by Erin Coughlan de Perez,
+              Tufts University
+            </figcaption>
+          </figure>
         </div>,
       ],
     },
