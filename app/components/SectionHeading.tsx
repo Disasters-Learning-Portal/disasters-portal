@@ -31,7 +31,7 @@ export const SectionHeading = ({
   })();
 
   return (
-    <div className="display-flex flex-justify flex-align-end margin-bottom-105">
+    <div className="display-flex flex-justify flex-align-end margin-bottom-3">
       <HeadingAs className={`${headingSize} margin-0 ${className ?? ""}`} {...props}>
         {children}
       </HeadingAs>
