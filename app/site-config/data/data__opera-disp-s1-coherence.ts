@@ -55,7 +55,7 @@ export const DATA__OPERA_DISP_S1_COHERENCE: DataContent = {
       type: "text",
       heading: "Satellite/Sensor",
       paragraphs: [
-        "C-band Synthetic Aperture Radar (SAR) aboard the European Space Agency's Copernicus Sentinel-1A, Sentinel-1B, and Sentinel-1C satellites",
+        "C-band Synthetic Aperture Radar (SAR) aboard the European Space Agency's Copernicus Sentinel-1 mission, including historical observations from Sentinel-1A and Sentinel-1B and current observations from Sentinel-1C and Sentinel-1D",
       ],
     },
 
