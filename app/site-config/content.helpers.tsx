@@ -64,6 +64,7 @@ export type CardMastheadPropsArgs = Omit<
   mastheadImage: {
     alt: string;
     src: string;
+    objectPosition?: string;
   };
   title?: string;
   theme?: Theme;
@@ -75,7 +76,7 @@ export type CardMastheadPropsArgs = Omit<
 };
 
 export const makeCardMastHeadProps = ({
-  mastheadImage,
+  mastheadImage: { objectPosition, ...mastheadImage },
   title,
   subtitle,
   theme,
@@ -84,7 +85,15 @@ export const makeCardMastHeadProps = ({
   ...rest
 }: CardMastheadPropsArgs): CardProps<typeof AppLink> => ({
   className: "blocks-card--contentpage",
-  image: <AppImage {...mastheadImage} sizes="100vw" fill preload={true} />,
+  image: (
+    <AppImage
+      {...mastheadImage}
+      sizes="100vw"
+      fill
+      preload={true}
+      style={objectPosition ? { objectPosition } : undefined}
+    />
+  ),
   tag: datePublished && makeDateTagProps(datePublished),
   title: title ?? (theme ? CONTENT_THEMES[theme].label : undefined),
   description: subtitle,
@@ -169,6 +178,7 @@ export const makeGalleryCardContent = (content: Content): GalleryCardContent => 
     "id",
     "contentType",
     "title",
+    "subtitle",
     "description",
     "thumbnailImage",
     "themes",
