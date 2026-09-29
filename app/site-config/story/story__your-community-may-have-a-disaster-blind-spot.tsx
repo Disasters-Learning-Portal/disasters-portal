@@ -35,30 +35,13 @@ export const STORY__YOUR_COMMUNITY_MAY_HAVE_A_DISASTER_BLIND_SPOT: StoryContent 
     },
 
     {
-      type: "text",
-      paragraphs: [
-        <div
-          key="foresight-highlights-box"
-          style={{
-            border: "1px solid #222",
-            backgroundColor: "#f4f4f4",
-            padding: "1.5rem",
-          }}
-        >
-          <h3
-            style={{
-              margin: "0 0 1rem 0",
-              fontSize: "1.5rem",
-              lineHeight: 1.2,
-              fontWeight: 700,
-              color: "#006b8f",
-            }}
-          >
-            Highlights
-          </h3>
-
-          <ul style={{ margin: 0, paddingLeft: "1.5rem" }}>
-            <li style={{ marginBottom: "1rem" }}>
+      type: "sectionCardFeatured",
+      card: {
+        id: "foresight-highlights",
+        title: "Highlights",
+        description: (
+          <ul>
+            <li>
               <strong style={{ color: "#006b8f" }}>
                 Disaster preparedness systems built on historical records have a blind spot — and it
                 is growing.
@@ -68,7 +51,7 @@ export const STORY__YOUR_COMMUNITY_MAY_HAVE_A_DISASTER_BLIND_SPOT: StoryContent 
               now possible has been silently widening.
             </li>
 
-            <li style={{ marginBottom: "1rem" }}>
+            <li>
               <strong style={{ color: "#006b8f" }}>
                 Foresight in Disaster Management is a NASA Disasters Program project building a
                 science-based foundation for planning beyond the historical record.
@@ -78,7 +61,7 @@ export const STORY__YOUR_COMMUNITY_MAY_HAVE_A_DISASTER_BLIND_SPOT: StoryContent 
               credibly produce.
             </li>
 
-            <li style={{ marginBottom: 0 }}>
+            <li>
               <strong style={{ color: "#006b8f" }}>
                 The project is building a new dynamic scenario planning tool to put that science
                 foundation directly into the hands of disaster managers and planning teams.
@@ -89,8 +72,8 @@ export const STORY__YOUR_COMMUNITY_MAY_HAVE_A_DISASTER_BLIND_SPOT: StoryContent 
               obscure.
             </li>
           </ul>
-        </div>,
-      ],
+        ),
+      },
     },
 
     {
@@ -227,30 +210,13 @@ export const STORY__YOUR_COMMUNITY_MAY_HAVE_A_DISASTER_BLIND_SPOT: StoryContent 
     },
 
     {
-      type: "text",
-      paragraphs: [
-        <div
-          key="foresight-cornerstones-box"
-          style={{
-            border: "1px solid #222",
-            backgroundColor: "#f4f4f4",
-            padding: "1.5rem",
-          }}
-        >
-          <h3
-            style={{
-              margin: "0 0 1rem 0",
-              fontSize: "1.5rem",
-              lineHeight: 1.2,
-              fontWeight: 700,
-              color: "#006b8f",
-            }}
-          >
-            Cornerstones
-          </h3>
-
-          <ul style={{ margin: 0, paddingLeft: "1.5rem" }}>
-            <li style={{ marginBottom: "1rem" }}>
+      type: "sectionCardFeatured",
+      card: {
+        id: "foresight-cornerstones",
+        title: "Cornerstones",
+        description: (
+          <ul>
+            <li>
               <strong style={{ color: "#006b8f" }}>
                 If your community hasn’t faced a severe event recently, that may be cause for
                 concern, not comfort.
@@ -259,7 +225,7 @@ export const STORY__YOUR_COMMUNITY_MAY_HAVE_A_DISASTER_BLIND_SPOT: StoryContent 
               their plans. The absence of a recent disaster does not mean that risk has disappeared.
             </li>
 
-            <li style={{ marginBottom: "1rem" }}>
+            <li>
               <strong style={{ color: "#006b8f" }}>
                 Scenarios are planning tools, not forecasts — use them accordingly.
               </strong>{" "}
@@ -268,7 +234,7 @@ export const STORY__YOUR_COMMUNITY_MAY_HAVE_A_DISASTER_BLIND_SPOT: StoryContent 
               question to bring to them is not “will this happen?” but “are we ready if it does?”
             </li>
 
-            <li style={{ marginBottom: "1rem" }}>
+            <li>
               <strong style={{ color: "#006b8f" }}>
                 Policies addressing extreme heat and flooding remain limited in many parts of the
                 United States.
@@ -278,7 +244,7 @@ export const STORY__YOUR_COMMUNITY_MAY_HAVE_A_DISASTER_BLIND_SPOT: StoryContent 
               extreme heat across the country.
             </li>
 
-            <li style={{ marginBottom: 0 }}>
+            <li>
               <strong style={{ color: "#006b8f" }}>
                 Early awareness of tools in development is an advantage worth acting on.
               </strong>{" "}
@@ -287,8 +253,8 @@ export const STORY__YOUR_COMMUNITY_MAY_HAVE_A_DISASTER_BLIND_SPOT: StoryContent 
               be better positioned to use it effectively when it becomes available.
             </li>
           </ul>
-        </div>,
-      ],
+        ),
+      },
     },
 
     {
