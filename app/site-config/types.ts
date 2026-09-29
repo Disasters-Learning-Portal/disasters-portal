@@ -182,6 +182,8 @@ export type TrainingContent = Omit<InternalCardContent, "contentType"> & {
   mastheadImage: MastheadImage;
   body?: ContentBlock[]; // TODO: require body
   relatedContent?: string[];
+  /** The masthead CTA renders only when this is set, e.g. a downloadable handout. */
+  callToAction?: { label: string; href: string; target?: string; rel?: string; prefetch?: false };
 };
 
 export type TrainingContentExternal = Omit<ExternalCardContent, "contentType"> & {

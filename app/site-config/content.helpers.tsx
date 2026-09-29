@@ -72,6 +72,14 @@ export type CardMastheadPropsArgs = Omit<
   callToAction?: {
     label: string;
     href: string;
+    /**
+     * Passed through to next/link. A link to a file under public/ wants
+     * `target: "_blank"` and `prefetch: false` so the router neither
+     * intercepts the click nor prefetches the file itself.
+     */
+    target?: string;
+    rel?: string;
+    prefetch?: false;
   };
 };
 
