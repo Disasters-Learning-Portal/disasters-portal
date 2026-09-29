@@ -39,7 +39,8 @@ export const DATA__SENTINEL_1_SENTINEL_2_BURN_SEVERITY: DataContent = {
       type: "text",
       heading: "Suggested Use",
       paragraphs: [
-        "The combined Sentinel-1 and Sentinel-2 product can be used for rapid assessment of burned areas and relative fire severity across both vegetated and developed environments. Sentinel-2 dNBR is used to distinguish severity levels in burned vegetation, while changes in Sentinel-1 radar backscatter provide additional information about fire-related changes to urban surfaces and built infrastructure. The product can support situational awareness, post-fire impact assessment, and recovery planning. Severity values are proxies derived from satellite-observed surface changes and should not be interpreted as ground-validated measurements of fire effects or structural damage.",
+        "The combined Sentinel-1 and Sentinel-2 product can be used for rapid assessment of burned areas and relative fire severity across both vegetated and developed environments. Sentinel-2 dNBR is used to distinguish severity levels in burned vegetation, while changes in Sentinel-1 radar backscatter provide additional information about fire-related changes to urban surfaces and built infrastructure. The product can support situational awareness, post-fire impact assessment, and recovery planning.",
+        "These maps are preliminary results and had not been ground validated at the time of posting. Empirical thresholds applied to Sentinel-2 dNBR and Sentinel-1 dVH are used to separate vegetation and urban burned areas and assign relative severity classes, but those thresholds may not perform consistently across all locations at large spatial scales. Sentinel-1 SAR observations can also contain signal noise related to terrain effects and speckle, which may lead to incorrect severity classifications in some urban burned areas. Results should therefore be interpreted as relative indicators of satellite-observed surface change rather than definitive measurements of fire effects or structural damage, and may be refined as the analysis is improved.",
       ],
     },
 
@@ -47,7 +48,7 @@ export const DATA__SENTINEL_1_SENTINEL_2_BURN_SEVERITY: DataContent = {
       type: "text",
       heading: "Terms of Use",
       paragraphs: [
-        "NASA data and products are freely available to federal, state, public, non-profit and commercial users. This information can be experimental- or research-grade data products and may not be appropriate for operational use. These NASA data products, services, and the Disasters Mapping Portal are intended to aid decision makers and enhance situational awareness, but these data are not guaranteed to be consistently available or routinely updated. Use of this product should include: 'Contains modified Copernicus Sentinel data (2026) processed by ESA.'",
+        "NASA data and products are freely available to federal, state, public, non-profit and commercial users. This information can be experimental- or research-grade data products and may not be appropriate for operational use. These NASA data products, services, and the Disasters Mapping Portal are intended to aid decision makers and enhance situational awareness, but these data are not guaranteed to be consistently available or routinely updated. Use of this product should include: 'The product contains modified Copernicus Sentinel-1 and Sentinel-2 data, processed by the European Space Agency and NASA.'",
       ],
     },
 
@@ -70,6 +71,7 @@ export const DATA__SENTINEL_1_SENTINEL_2_BURN_SEVERITY: DataContent = {
       heading: "Credits",
       paragraphs: [
         "Khuong Tran, Taejin Park, Aakash Chhabra, Weile Wang, and Kyle Kabasares; NASA Ames Research Center; ESA Copernicus; NASA Disasters Program",
+        "The product contains modified Copernicus Sentinel-1 and Sentinel-2 data, processed by the European Space Agency and NASA.",
       ],
     },
 
@@ -77,7 +79,7 @@ export const DATA__SENTINEL_1_SENTINEL_2_BURN_SEVERITY: DataContent = {
       type: "text",
       heading: "Tags",
       paragraphs: [
-        "NASA, Sentinel-1, Sentinel-2, SAR, MSI, Synthetic Aperture Radar, Burn Severity, Wildfire, dNBR, NBR, VH Backscatter, Surface Change",
+        "NASA, Sentinel-1, Sentinel-2, SAR, MSI, Synthetic Aperture Radar, Burn Severity, Wildfire, dNBR, dVH, NBR, VH Backscatter, Surface Change",
       ],
     },
   ],

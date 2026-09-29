@@ -31,7 +31,7 @@ export const DATA__SENTINEL_1_DAMAGE_ASSESSMENT: DataContent = {
       type: "text",
       heading: "Summary",
       paragraphs: [
-        "The Sentinel-1 Likely Damaged Areas product identifies areas of potential fire-related damage in urban and built-up regions using coherent change detection analysis of interferometric Sentinel-1 synthetic aperture radar (SAR) imagery. Post-event Sentinel-1 observations are compared with a multi-year pre-disaster reference dataset to identify locations where radar coherence changed substantially. The analysis is constrained using FIRIS fire perimeter information to focus the resulting damage assessment on areas affected by the January 2025 Southern California wildfires.",
+        "The Sentinel-1 Likely Damaged Areas product identifies areas of potential fire-related damage in urban and built-up regions using coherent change detection analysis of interferometric Sentinel-1 synthetic aperture radar (SAR) imagery. Post-event Sentinel-1 observations are compared with a multi-year pre-disaster reference dataset to identify locations where radar coherence changed substantially. The analysis is constrained using fire perimeter information from the Fire Integrated Real-Time Intelligence System (FIRIS), which provides event-specific wildfire mapping used here to focus the resulting damage assessment on areas affected by the January 2025 Southern California wildfires.",
       ],
     },
 
@@ -47,7 +47,7 @@ export const DATA__SENTINEL_1_DAMAGE_ASSESSMENT: DataContent = {
       type: "text",
       heading: "Terms of Use",
       paragraphs: [
-        "NASA data and products are freely available to federal, state, public, non-profit and commercial users. This information can be experimental- or research-grade data products and may not be appropriate for operational use. These NASA data products, services, and the Disasters Mapping Portal are intended to aid decision makers and enhance situational awareness, but these data are not guaranteed to be consistently available or routinely updated. Use of this product should include: 'Contains modified Copernicus Sentinel data (2026) processed by ESA.'",
+        "NASA data and products are freely available to federal, state, public, non-profit and commercial users. This information can be experimental- or research-grade data products and may not be appropriate for operational use. These NASA data products, services, and the Disasters Mapping Portal are intended to aid decision makers and enhance situational awareness, but these data are not guaranteed to be consistently available or routinely updated. Use of this product should include: 'The product contains modified Copernicus Sentinel-1 data, processed by the European Space Agency and NASA.'",
       ],
     },
 
@@ -62,14 +62,17 @@ export const DATA__SENTINEL_1_DAMAGE_ASSESSMENT: DataContent = {
     {
       type: "text",
       heading: "Resolution",
-      paragraphs: ["40 meters"],
+      paragraphs: [
+        "40 meters. Copernicus Sentinel-1 observations have a native spatial resolution of approximately 10 meters for this application and were processed to 40 meters for interferometric coherence change analysis.",
+      ],
     },
 
     {
       type: "text",
       heading: "Credits",
       paragraphs: [
-        "Damage analysis of Copernicus Sentinel-1 satellite data by Corey Scher, CUNY Graduate Center, and Jamon Van Den Hoek, Oregon State University; NASA Disasters Program; ESA Copernicus",
+        "Damage analysis of Copernicus Sentinel-1 satellite data by Corey Scher, CUNY Graduate Center, and Jamon Van Den Hoek, Oregon State University; FIRIS fire perimeter data; NASA Disasters Program; ESA Copernicus",
+        "The product contains modified Copernicus Sentinel-1 data, processed by the European Space Agency and NASA.",
       ],
     },
 
@@ -77,7 +80,7 @@ export const DATA__SENTINEL_1_DAMAGE_ASSESSMENT: DataContent = {
       type: "text",
       heading: "Tags",
       paragraphs: [
-        "NASA, NASA Disasters Program, Sentinel-1, ESA, Copernicus, SAR, InSAR, Coherent Change Detection, Damage Assessment, Wildfire, Built Environment, Southern California Wildfires",
+        "NASA, NASA Disasters Program, Sentinel-1, ESA, Copernicus, SAR, InSAR, Coherent Change Detection, Damage Assessment, Wildfire, FIRIS, Fire Perimeter, Built Environment, Southern California Wildfires",
       ],
     },
   ],
