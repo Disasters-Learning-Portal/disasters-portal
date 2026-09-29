@@ -33,6 +33,23 @@ const MOCK_EVENT_CARDS: [EventContent, EventContent, EventContent, EventContent]
 ];
 
 export default function ComponentsPage() {
+  const newsEventsStories = typedMap(
+    NEWS_EVENTS_STORIES_CARDS,
+    ({
+      id,
+      contentType,
+      thumbnailImage,
+      themes,
+      title,
+    }: (typeof NEWS_EVENTS_STORIES_CARDS)[number]) => ({
+      id,
+      contentType,
+      thumbnailImage,
+      themes,
+      title,
+    }),
+  );
+
   return (
     <>
       <Section>
@@ -96,13 +113,13 @@ export default function ComponentsPage() {
 
       <SectionCardSimpleMosaic
         sectionHeading={<SectionHeading>SectionCardSimpleMosaic Component</SectionHeading>}
-        cards={typedMap(NEWS_EVENTS_STORIES_CARDS, makeCardSimpleProps)}
+        cards={typedMap(newsEventsStories, makeCardSimpleProps)}
       >
         <p>Lorem ipsum dolor sit amet...</p>
         <code className="bg-base-lighter font-code-xs">
           {`<SectionCardSimpleMosaic
               sectionHeading="SectionCardSimpleMosaic Component"
-              cards={typedMap(NEWS_EVENTS_STORIES_CARDS, makeCardSimpleProps)}
+              cards={typedMap(newsEventsStories, makeCardSimpleProps)}
             >
               <p>
                 Lorem ipsum dolor sit amet...
@@ -136,13 +153,13 @@ export default function ComponentsPage() {
 
       <SectionCardSimple
         sectionHeading={<SectionHeading>SectionCardSimple Component</SectionHeading>}
-        cards={typedMap(NEWS_EVENTS_STORIES_CARDS, makeCardSimpleProps)}
+        cards={typedMap(newsEventsStories, makeCardSimpleProps)}
       >
         <p>Lorem ipsum dolor sit amet...</p>
         <code className="bg-base-lighter font-code-xs">
           {`<SectionCardSimple
               sectionHeading={<SectionHeading>SectionCardSimple Component</SectionHeading>}
-              cards={typedMap(NEWS_EVENTS_STORIES_CARDS, makeCardSimpleProps)}
+              cards={typedMap(newsEventsStories, makeCardSimpleProps)}
             >
               <p>
                 Lorem ipsum dolor sit amet...

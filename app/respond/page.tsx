@@ -33,6 +33,17 @@ export default function RespondPage() {
     }),
   );
 
+  const dataStories = RESPOND_DATASTORIES.map(
+    ({ id, contentType, thumbnailImage, themes, title, ...rest }) => ({
+      id,
+      contentType,
+      thumbnailImage,
+      themes,
+      title,
+      url: "url" in rest ? rest.url : undefined,
+    }),
+  );
+
   const trainings = RESPOND_TRAININGS.map(
     ({ id, contentType, thumbnailImage, title, ...rest }) => ({
       id,
@@ -78,7 +89,7 @@ export default function RespondPage() {
             Data Stories
           </SectionHeading>
         }
-        cards={typedMap(RESPOND_DATASTORIES, makeCardSimpleProps)}
+        cards={typedMap(dataStories, makeCardSimpleProps)}
       />
       <SectionCardSimple
         sectionHeading={

@@ -16,6 +16,34 @@ import { RESOURCES_LEARNING_CARDS } from "./site-config/home/home-sectioncardsim
 import { typedMap } from "./site-config/typed.helpers";
 
 export default function Home() {
+  const newsEventsStories = typedMap(
+    NEWS_EVENTS_STORIES_CARDS,
+    ({
+      id,
+      contentType,
+      thumbnailImage,
+      themes,
+      title,
+    }: (typeof NEWS_EVENTS_STORIES_CARDS)[number]) => ({
+      id,
+      contentType,
+      thumbnailImage,
+      themes,
+      title,
+    }),
+  );
+
+  const trainings = RESOURCES_LEARNING_CARDS.map(
+    ({ id, contentType, thumbnailImage, themes, title, ...rest }) => ({
+      id,
+      contentType,
+      thumbnailImage,
+      themes,
+      title,
+      url: "url" in rest ? rest.url : undefined,
+    }),
+  );
+
   return (
     <>
       <div className="home-card-masthead display-flex minh-card-xl">
@@ -29,7 +57,7 @@ export default function Home() {
             News, Events & Stories
           </SectionHeading>
         }
-        cards={typedMap(NEWS_EVENTS_STORIES_CARDS, makeCardSimpleProps)}
+        cards={typedMap(newsEventsStories, makeCardSimpleProps)}
       />
       {HOME_CONTENT.map((block, index) => (
         // biome-ignore lint/suspicious/noArrayIndexKey: static content, never reorders
@@ -41,7 +69,7 @@ export default function Home() {
             Resources & Learning
           </SectionHeading>
         }
-        cards={typedMap(RESOURCES_LEARNING_CARDS, makeCardSimpleProps)}
+        cards={typedMap(trainings, makeCardSimpleProps)}
         bgColor="base-lightest"
         className="margin-bottom-0"
       >
