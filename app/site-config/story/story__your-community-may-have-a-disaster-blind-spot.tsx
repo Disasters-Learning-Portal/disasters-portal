@@ -12,7 +12,7 @@ export const STORY__YOUR_COMMUNITY_MAY_HAVE_A_DISASTER_BLIND_SPOT: StoryContent 
   },
   mastheadImage: {
     src: "/img/story/your-community-may-have-a-disaster-blind-spot.webp",
-    alt: "A deep fissure splits a cobblestone street after an earthquake, with an overturned cart tipped into the crack and damaged buildings beyond. The earthquake that caused damage to this San Francisco street was an unprecedented event before April 18, 1906. Now it is part of the historical record. Credit: Sonoma County Library Photograph Collection",
+    alt: "A black and white photo shows a wagon falling into a fissure in one of San Francisco's streets that was caused by a historic earthquake, April 18, 1906. Credit: Sonoma County Library Photograph Collection",
   },
   themes: ["prepare"],
   categories: ["heat", "flood", "severe weather"],
@@ -123,30 +123,6 @@ export const STORY__YOUR_COMMUNITY_MAY_HAVE_A_DISASTER_BLIND_SPOT: StoryContent 
       alt: "A mock-up of the Foresight in Disaster Management Scenario Library interface, showing a tabletop exercise scenario broken into timed injects.",
       width: 1000,
       height: 2152,
-    },
-    {
-      type: "text",
-      paragraphs: [
-        "The Foresight Tool and Scenario Library are in active development. Get an early glimpse with these resources:",
-      ],
-    },
-    {
-      type: "list",
-      heading: "Go Deeper",
-      items: [
-        {
-          label: "[Explore] Disasters Scenario Library Sample Mock-up",
-          href: "https://ecn620.github.io/ScenarioLibrary/scenario_generator_version0.2map.html",
-        },
-        {
-          label: "[Read] Storylines of Unprecedented Extremes in the Southeast United States",
-          href: "https://journals.ametsoc.org/view/journals/bams/106/3/BAMS-D-23-0297.1.xml",
-        },
-        {
-          label: "[Read] Sample UNSEEN Outputs: Atlantic County, NJ Heatwave",
-          href: "https://nasa.sharepoint.com/:w:/s/disasterscomms/IQDn4YHQFuyeT6ufGe0mAWLUAQSe620mmUc4UNfPWvsKBkA?e=yzb4g8",
-        },
-      ],
     },
     {
       type: "list",
