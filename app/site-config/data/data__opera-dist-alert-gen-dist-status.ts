@@ -57,7 +57,7 @@ export const DATA__OPERA_DIST_ALERT_GEN_DIST_STATUS: DataContent = {
       type: "text",
       heading: "Satellite/Sensor",
       paragraphs: [
-        "C-band Synthetic Aperture Radar (SAR) on the European Space Agency's Copernicus Sentinel-1 satellites (DIST-ALERT-S1), or the Harmonized Landsat Sentinel-2 (HLS) surface reflectance product from Landsat 8 and 9 and Sentinel-2A, 2B, and 2C (DIST-ALERT-HLS)",
+        "C-band Synthetic Aperture Radar (SAR) on the European Space Agency's Copernicus Sentinel-1 satellites (DIST-ALERT-S1), or the Harmonized Landsat Sentinel-2 (HLS) surface reflectance product derived from Landsat 8 and 9 and Sentinel-2A, 2B, and 2C observations (DIST-ALERT-HLS)",
       ],
     },
 
@@ -72,6 +72,7 @@ export const DATA__OPERA_DIST_ALERT_GEN_DIST_STATUS: DataContent = {
       heading: "Credits",
       paragraphs: [
         "NASA Jet Propulsion Laboratory, California Institute of Technology; NASA OPERA; ESA Copernicus; USGS; NASA Disasters Program",
+        "Use of this product should include: “The product contains modified Copernicus Sentinel-2 and NASA Landsat 8/9 data, processed by the European Space Agency and NASA.”",
       ],
     },
 

@@ -72,6 +72,7 @@ export const DATA__HYDROSAR_S1_CLASSIFICATIONS: DataContent = {
       heading: "Credits",
       paragraphs: [
         "Alaska Satellite Facility Distributed Active Archive Center (ASF DAAC); University of Alaska Fairbanks; NASA HydroSAR; ESA Copernicus; NASA Disasters Program",
+        "Use of this product should include: “The product contains modified Copernicus Sentinel-2 and NASA Landsat 8/9 data, processed by the European Space Agency and NASA.”",
       ],
     },
 
