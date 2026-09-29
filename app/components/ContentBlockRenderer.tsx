@@ -17,20 +17,6 @@ import {
 } from "@/app/site-config/content.helpers";
 import type { ContentBlock } from "@/app/site-config/types";
 
-function ContentHeading({
-  heading,
-  headingLevel,
-}: {
-  heading: string;
-  headingLevel?: "h2" | "h3" | "h4";
-}) {
-  if (headingLevel === "h4") return <h4 className="font-heading-lg margin-bottom-1">{heading}</h4>;
-
-  if (headingLevel === "h3") return <h3 className="font-heading-lg margin-bottom-1">{heading}</h3>;
-
-  return <SectionHeading>{heading}</SectionHeading>;
-}
-
 export const ContentBlockRenderer = ({
   block,
   isMultiColumnLayout,
@@ -43,7 +29,7 @@ export const ContentBlockRenderer = ({
       return (
         <Section isMultiColumnLayout={isMultiColumnLayout}>
           {block.heading && (
-            <ContentHeading heading={block.heading} headingLevel={block.headingLevel} />
+            <SectionHeading headingAs={block.headingLevel}>{block.heading}</SectionHeading>
           )}
           {block.paragraphs.map((p, i) => (
             // biome-ignore lint/suspicious/noArrayIndexKey: static content, never reorders
@@ -56,7 +42,7 @@ export const ContentBlockRenderer = ({
       return (
         <Section isMultiColumnLayout={isMultiColumnLayout}>
           {block.heading && (
-            <ContentHeading heading={block.heading} headingLevel={block.headingLevel} />
+            <SectionHeading headingAs={block.headingLevel}>{block.heading}</SectionHeading>
           )}
           <ul className="usa-list">
             {block.items.map((item, i) =>
@@ -87,6 +73,9 @@ export const ContentBlockRenderer = ({
     case "slider":
       return (
         <Section isMultiColumnLayout={isMultiColumnLayout}>
+          {block.heading && (
+            <SectionHeading headingAs={block.headingLevel}>{block.heading}</SectionHeading>
+          )}
           <ImageComparison
             before={block.before}
             after={block.after}
@@ -99,7 +88,7 @@ export const ContentBlockRenderer = ({
       return (
         <Section isMultiColumnLayout={isMultiColumnLayout}>
           {block.heading && (
-            <ContentHeading heading={block.heading} headingLevel={block.headingLevel} />
+            <SectionHeading headingAs={block.headingLevel}>{block.heading}</SectionHeading>
           )}
           {block.src ? (
             <AppVideo src={block.src} controls className="width-full display-block">
@@ -117,13 +106,16 @@ export const ContentBlockRenderer = ({
     case "image":
       return (
         <Section isMultiColumnLayout={isMultiColumnLayout}>
+          {block.heading && (
+            <SectionHeading headingAs={block.headingLevel}>{block.heading}</SectionHeading>
+          )}
           <figure className="margin-0">
             <AppImage
               src={block.src}
               alt={block.alt}
               width={block.width}
               height={block.height}
-              style={{ width: block.maxWidth ?? "100%", height: "auto" }}
+              className={`width-full height-auto ${block.maxWidth ? `maxw-${block.maxWidth}` : ""}`}
             />
             {block.caption && (
               <figcaption className="font-body-sm text-base margin-top-1">
@@ -138,15 +130,10 @@ export const ContentBlockRenderer = ({
       return (
         <Section isMultiColumnLayout={isMultiColumnLayout}>
           {block.heading && (
-            <ContentHeading heading={block.heading} headingLevel={block.headingLevel} />
+            <SectionHeading headingAs={block.headingLevel}>{block.heading}</SectionHeading>
           )}
           <figure className="margin-0">
             <StacSingleLayerBlock block={block} />
-            {block.caption && (
-              <figcaption className="font-body-sm text-base margin-top-1">
-                {block.caption}
-              </figcaption>
-            )}
           </figure>
         </Section>
       );
@@ -155,15 +142,10 @@ export const ContentBlockRenderer = ({
       return (
         <Section isMultiColumnLayout={isMultiColumnLayout}>
           {block.heading && (
-            <ContentHeading heading={block.heading} headingLevel={block.headingLevel} />
+            <SectionHeading headingAs={block.headingLevel}>{block.heading}</SectionHeading>
           )}
           <figure className="margin-0">
             <StacCompareBlock block={block} />
-            {block.caption && (
-              <figcaption className="font-body-sm text-base margin-top-1">
-                {block.caption}
-              </figcaption>
-            )}
           </figure>
         </Section>
       );
@@ -190,7 +172,7 @@ export const ContentBlockRenderer = ({
           isMultiColumnLayout={isMultiColumnLayout}
           sectionHeading={
             block.heading && (
-              <SectionHeading {...(block.href ? { href: block.href } : {})}>
+              <SectionHeading headingAs={block.headingLevel} linkProps={block.link}>
                 {block.heading}
               </SectionHeading>
             )
@@ -209,7 +191,11 @@ export const ContentBlockRenderer = ({
             // The section heading is h2, so card titles must be h3.
             // CardDetailed has no titleAs option. This should be dropped if
             // it ever becomes available.
-            title: <h3 className="blocks-card-detailed__title">{title}</h3>,
+            title: (
+              <h3 className="blocks-card-detailed__title" title={title}>
+                {title}
+              </h3>
+            ),
             description,
             thumbnailImage,
             themes,
@@ -223,7 +209,7 @@ export const ContentBlockRenderer = ({
           isMultiColumnLayout={isMultiColumnLayout}
           sectionHeading={
             block.heading && (
-              <SectionHeading {...(block.href ? { href: block.href } : {})}>
+              <SectionHeading headingAs={block.headingLevel} linkProps={block.link}>
                 {block.heading}
               </SectionHeading>
             )

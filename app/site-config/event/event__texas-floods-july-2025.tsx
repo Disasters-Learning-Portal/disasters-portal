@@ -26,13 +26,13 @@ export const EVENT__TEXAS_FLOODS_JULY_2025: EventContent = {
   },
   themes: ["respond"],
   categories: ["flood"],
-  lastUpdatedDate: "2025-07-09",
-  startDate: "July 4, 2025",
+  datePublished: "2025-07-09",
+  startDate: "2025-07-04",
   region: "Texas, North America",
   body: [
     {
       type: "text",
-      heading: "",
+      heading: "Overview",
       paragraphs: [
         "Beginning July 4, 2025, torrential rainfall from the remnants of Tropical Storm Barry triggered catastrophic flooding across Texas Hill Country, particularly in Kerr County as the Guadalupe River rose rapidly. The floods caused significant loss of life, widespread property damage, power outages, and prompted hundreds of emergency rescues.",
         <Fragment key="texas-floods-july-2025-parargraph-1">
@@ -82,11 +82,19 @@ export const EVENT__TEXAS_FLOODS_JULY_2025: EventContent = {
     {
       type: "sectionCardGallery",
       heading: "Related Data",
+      link: {
+        href: "/data-gallery",
+        label: "View all",
+      },
       cards: DATA,
     },
     {
       type: "sectionCardSimple",
       heading: "Resources & Learning",
+      link: {
+        href: "/training",
+        label: "More Resources and Learning",
+      },
       cards: [
         TRAINING__FUNDAMENTALS_REMOTE_SENSING,
         TRAINING__INTRODUCTION_TO_SAR,
