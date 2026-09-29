@@ -1,2 +1,1 @@
-export type { AboutPageBody } from "./about__page";
-export { ABOUT_PAGE_BODY } from "./about__page";
+export { ABOUT_PAGE_BODY, ABOUT_TEAM } from "./about__page";
