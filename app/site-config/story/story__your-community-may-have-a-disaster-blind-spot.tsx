@@ -161,19 +161,21 @@ export const STORY__YOUR_COMMUNITY_MAY_HAVE_A_DISASTER_BLIND_SPOT: StoryContent 
       ],
     },
     {
-      type: "list",
+      type: "text",
       heading: "Connect and Learn More",
-      items: [
-        {
-          label:
-            "Would you like to help test or provide feedback on the new Foresight dynamic scenario planning tool or Scenario Library as they are still being developed? Email the developers.",
-          href: "mailto:Erin.Coughlan@tufts.edu",
-        },
-        {
-          label:
-            "About the PI: The Foresight project is led by Erin Coughlan de Perez at Tufts University.",
-          href: "https://nutrition.tufts.edu/academics/faculty/erin-coughlan-de-perez",
-        },
+      paragraphs: [
+        <Fragment key="connect-email-the-developers">
+          Would you like to help test or provide feedback on the new Foresight dynamic scenario
+          planning tool or Scenario Library as they are still being developed?{" "}
+          <Link href="mailto:Erin.Coughlan@tufts.edu">Email the developers.</Link>
+        </Fragment>,
+        <Fragment key="connect-about-the-pi">
+          About the PI: The Foresight project is led by{" "}
+          <Link href="https://nutrition.tufts.edu/academics/faculty/erin-coughlan-de-perez">
+            Erin Coughlan de Perez
+          </Link>{" "}
+          at Tufts University.
+        </Fragment>,
       ],
     },
   ],
