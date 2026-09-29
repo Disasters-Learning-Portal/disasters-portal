@@ -5,19 +5,19 @@ export const DATA__GPM_IMERG_PRECIPITATION: DataContent = {
 
   contentType: "data",
 
-  title: "GPM IMERG Precipitation",
+  title: "GPM IMERG Accumulated Precipitation",
 
   description:
-    "Daily total precipitation from NASA's Integrated Multi-satellitE Retrievals for GPM (IMERG), a near-real-time global rainfall estimate that blends passive microwave, radar, and infrared satellite observations onto a 0.1 degree grid.",
+    "Daily accumulated precipitation from NASA's Integrated Multi-satellitE Retrievals for GPM (IMERG), a near-real-time global rainfall estimate that blends passive microwave, radar, and infrared satellite observations onto a 0.1 degree grid.",
 
   thumbnailImage: {
     src: "/img/data/gpm-imerg-precipitation.webp",
-    alt: "GPM IMERG storm-total precipitation accumulation from Typhoon Sinlaku over Guam and Saipan, April 2026",
+    alt: "GPM IMERG accumulated precipitation from Typhoon Sinlaku over Guam and Saipan, April 2026",
   },
 
   mastheadImage: {
     src: "/img/data/gpm-imerg-precipitation.webp",
-    alt: "GPM IMERG storm-total precipitation accumulation from Typhoon Sinlaku over Guam and Saipan, April 2026",
+    alt: "GPM IMERG accumulated precipitation from Typhoon Sinlaku over Guam and Saipan, April 2026",
   },
 
   themes: ["respond", "prepare", "recover"],
@@ -31,8 +31,8 @@ export const DATA__GPM_IMERG_PRECIPITATION: DataContent = {
       type: "text",
       heading: "Summary",
       paragraphs: [
-        "The Integrated Multi-satellitE Retrievals for GPM (IMERG) algorithm combines precipitation estimates from the Global Precipitation Measurement (GPM) satellite constellation to produce a near-global rainfall record. Passive microwave observations from partner satellites are intercalibrated to the GPM Core Observatory's dual-frequency precipitation radar and radiometer, then morphed forward in time using geostationary infrared imagery to fill the gaps between microwave overpasses. The result is a half-hourly precipitation rate on a 0.1 degree by 0.1 degree grid covering the latitude band from 60 degrees north to 60 degrees south, with microwave-only coverage extending to the poles.",
-        "For disaster activations the half-hourly Early Run product (Version 07) is accumulated into daily precipitation totals in millimetres using NASA's Giovanni analysis tool. The Early Run is available about four hours after observation, which makes it the lowest-latency IMERG product and the one best suited to tracking rainfall while an event is unfolding. A Late Run with about 14 hours of latency adds backward morphing and a climatological gauge adjustment for higher quality, and a research-grade Final Run follows roughly three months later.",
+        "The Integrated Multi-satellitE Retrievals for GPM (IMERG) algorithm combines precipitation estimates from the Global Precipitation Measurement (GPM) satellite constellation to produce a near-global rainfall record. Passive microwave observations from partner satellites are intercalibrated to the GPM Core Observatory's dual-frequency precipitation radar and radiometer, then morphed forward in time using geostationary infrared imagery to fill the gaps between microwave overpasses. The underlying IMERG product provides half-hourly precipitation rates on a 0.1 degree by 0.1 degree grid covering the latitude band from 60 degrees north to 60 degrees south, with microwave-only coverage extending to the poles.",
+        "The layer shown here is an accumulated precipitation product rather than an instantaneous precipitation-rate product. For disaster activations, the half-hourly IMERG Early Run product (Version 07) is accumulated into daily precipitation totals in millimetres using NASA's Giovanni analysis tool. The Early Run is available about four hours after observation, which makes it the lowest-latency IMERG product and the one best suited to tracking rainfall while an event is unfolding. A Late Run with about 14 hours of latency adds backward morphing and a climatological gauge adjustment for higher quality, and a research-grade Final Run follows roughly three months later.",
       ],
     },
 
@@ -40,8 +40,8 @@ export const DATA__GPM_IMERG_PRECIPITATION: DataContent = {
       type: "text",
       heading: "Suggested Use",
       paragraphs: [
-        "Daily IMERG totals show where and how much rain fell during a storm, which helps identify areas at risk of flash flooding, riverine flooding, and landslides, and provides context for interpreting flood extent and damage products from other sensors. Because IMERG is satellite-derived it is especially valuable over oceans, islands, and remote regions with few rain gauges, such as the Western Pacific islands affected by tropical cyclones. Accumulating consecutive days gives storm-total rainfall for comparison against historical events.",
-        "IMERG is an estimate, not a measurement. Values can be biased in mountainous terrain, along coastlines, and in intense convective cores, and the Early Run has not yet been adjusted against gauge data. Use it to characterise the pattern and relative magnitude of rainfall rather than as a substitute for local gauge or radar observations.",
+        "Daily IMERG accumulations show where precipitation fell and how much accumulated over the analysis period, which helps identify areas at risk of flash flooding, riverine flooding, and landslides and provides context for interpreting flood extent and damage products from other sensors. Because IMERG is satellite-derived, it is especially valuable over oceans, islands, and remote regions with few rain gauges, such as the Western Pacific islands affected by tropical cyclones. Consecutive daily accumulations can also be combined to estimate storm-total precipitation over multi-day events.",
+        "IMERG precipitation is an estimate, not a direct surface measurement. Values can be biased in mountainous terrain, along coastlines, and in intense convective cores, and the Early Run has not yet been adjusted against gauge data. Use it to characterise the spatial pattern and relative magnitude of accumulated precipitation rather than as a substitute for local gauge or radar observations.",
       ],
     },
 
@@ -65,7 +65,7 @@ export const DATA__GPM_IMERG_PRECIPITATION: DataContent = {
       type: "text",
       heading: "Resolution",
       paragraphs: [
-        "0.1 degree by 0.1 degree (approximately 10 kilometers at the equator); half-hourly source data accumulated to daily totals",
+        "0.1 degree by 0.1 degree (approximately 10 kilometers at the equator); half-hourly source data accumulated to daily precipitation totals",
       ],
     },
 
@@ -81,7 +81,7 @@ export const DATA__GPM_IMERG_PRECIPITATION: DataContent = {
       type: "text",
       heading: "Tags",
       paragraphs: [
-        "NASA, GPM, IMERG, Precipitation, Rainfall, Flood, Tropical Cyclone, Typhoon, GES DISC, Giovanni, Near Real-Time, Satellite Data",
+        "NASA, GPM, IMERG, Accumulated Precipitation, Precipitation, Rainfall, Daily Accumulation, Flood, Tropical Cyclone, Typhoon, GES DISC, Giovanni, Near Real-Time, Satellite Data",
       ],
     },
   ],

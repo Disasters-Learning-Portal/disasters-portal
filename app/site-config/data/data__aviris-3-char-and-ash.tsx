@@ -46,7 +46,7 @@ export const DATA__AVIRIS_3_CHAR_AND_ASH: DataContent = {
         "The product indicates the char and ash fraction of the exposed surface only, not what lies beneath it. An area under a thin coating of ash will register a fraction even where the underlying surface is undamaged.",
       ],
     },
-    
+
     {
       type: "text",
       heading: "Terms of Use",

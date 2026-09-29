@@ -12,12 +12,12 @@ export const DATA__ECOSTRESS_LAND_SURFACE_TEMPERATURE: DataContent = {
 
   thumbnailImage: {
     src: "/img/data/ecostress-land-surface-temperature.webp",
-    alt: "ECOSTRESS nighttime land surface temperature over the Los Angeles, California area on January 8, 2025, with two bright yellow hot spots marking actively burning wildfires",
+    alt: "ECOSTRESS nighttime land surface temperature over the Los Angeles, California area on January 8, 2025, showing elevated surface temperatures associated with actively burning wildfires",
   },
 
   mastheadImage: {
     src: "/img/data/ecostress-land-surface-temperature.webp",
-    alt: "ECOSTRESS nighttime land surface temperature over the Los Angeles, California area on January 8, 2025, with two bright yellow hot spots marking actively burning wildfires",
+    alt: "ECOSTRESS nighttime land surface temperature over the Los Angeles, California area on January 8, 2025, showing elevated surface temperatures associated with actively burning wildfires",
   },
 
   themes: ["respond", "prepare", "build"],
@@ -43,6 +43,8 @@ export const DATA__ECOSTRESS_LAND_SURFACE_TEMPERATURE: DataContent = {
       paragraphs: [
         "Land surface temperature can be used to locate active fire fronts and the residual heat left in recently burned areas, to map where urban surfaces stay hottest during heat events, and to interpret thermal contrasts between water, vegetation, bare ground, and the built environment. Because ECOSTRESS flies aboard the International Space Station rather than in a sun-synchronous orbit, it observes a given location at varying times of day, which makes it possible to compare daytime and nighttime surface conditions over the course of an event.",
         "Land surface temperature is not air temperature. It describes the skin temperature of the surface itself, which on a sunny day can be considerably hotter than the air above it, so values should be interpreted alongside surface type, land cover, and time of acquisition rather than read as a weather observation.",
+        "Thermal infrared observations cannot see through clouds or thick smoke. Obscured scenes report the temperature of the cloud or plume top rather than the surface beneath it, which appears as anomalously cold areas in the imagery.",
+        "ECOSTRESS acquisitions follow the International Space Station's orbit and the mission's targeting priorities, so coverage over any given area is opportunistic rather than a fixed repeat cycle, and consecutive observations of the same location are not collected at the same local time of day.",
       ],
     },
 
@@ -51,15 +53,6 @@ export const DATA__ECOSTRESS_LAND_SURFACE_TEMPERATURE: DataContent = {
       heading: "Terms of Use",
       paragraphs: [
         "NASA data and products are freely available to federal, state, public, non-profit and commercial users. This information can be experimental- or research-grade data products and may not be appropriate for operational use. These NASA data products, services, and the Disasters Mapping Portal are intended to aid decision makers and enhance situational awareness, but these data are not guaranteed to be consistently available or routinely updated.",
-      ],
-    },
-
-    {
-      type: "text",
-      heading: "Limitations",
-      paragraphs: [
-        "Thermal infrared observations cannot see through clouds or thick smoke. Obscured scenes report the temperature of the cloud or plume top rather than the surface beneath it, which appears as anomalously cold areas in the imagery.",
-        "ECOSTRESS acquisitions follow the International Space Station's orbit and the mission's targeting priorities, so coverage over any given area is opportunistic rather than a fixed repeat cycle, and consecutive observations of the same location are not collected at the same local time of day.",
       ],
     },
 
@@ -80,7 +73,9 @@ export const DATA__ECOSTRESS_LAND_SURFACE_TEMPERATURE: DataContent = {
     {
       type: "text",
       heading: "Credits",
-      paragraphs: ["NASA Jet Propulsion Laboratory (JPL) ECOSTRESS, NASA Disasters Program"],
+      paragraphs: [
+        "NASA Jet Propulsion Laboratory (JPL) ECOSTRESS, NASA Disasters Program",
+      ],
     },
 
     {

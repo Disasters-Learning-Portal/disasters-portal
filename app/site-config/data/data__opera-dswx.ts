@@ -32,7 +32,7 @@ export const DATA__OPERA_DSWX: DataContent = {
       heading: "Summary",
       paragraphs: [
         "The OPERA Dynamic Surface Water Extent (DSWx) product suite maps where water is present at the land surface. It is produced in two forms that complement one another. DSWx-HLS is derived from Harmonized Landsat Sentinel-2 (HLS) optical observations and offers frequent coverage wherever skies are clear. DSWx-S1 is derived from Sentinel-1 C-band synthetic aperture radar, which penetrates cloud and operates day or night, so it can map water during the overcast conditions that typically accompany a flood.",
-        "Products are distributed both as a classified water extent layer (WTR), which distinguishes open water from partial surface water and flags cloud, cloud shadow and snow or ice, and as a binary water layer (BWTR), which reduces the classification to water and not-water for quick interpretation. Change maps differencing two acquisition dates are also produced for some events.",
+        "Products are distributed both as a classified water extent layer (WTR), which distinguishes open water from partial surface water and flags cloud, cloud shadow and snow or ice, and as a binary water layer (BWTR), which reduces the classification to water and not-water for quick interpretation. For some disaster events, DSWx observations are also used to produce change maps comparing water extent between acquisition dates; these are represented here as part of the broader DSWx product suite rather than as a separate data product.",
       ],
     },
 
