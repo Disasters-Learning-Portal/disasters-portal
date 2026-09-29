@@ -29,9 +29,7 @@ export const STORY__YOUR_COMMUNITY_MAY_HAVE_A_DISASTER_BLIND_SPOT: StoryContent 
     {
       type: "text",
       heading: "The Gap Between What Has Happened and What Could",
-      paragraphs: [
-        "Are the communities you serve prepared for what could happen — or only for what has happened before?",
-      ],
+      paragraphs: [],
     },
 
     {
@@ -79,6 +77,8 @@ export const STORY__YOUR_COMMUNITY_MAY_HAVE_A_DISASTER_BLIND_SPOT: StoryContent 
     {
       type: "text",
       paragraphs: [
+        "Are the communities you serve prepared for what could happen — or only for what has happened before?",
+
         "For most disaster managers, contingency planning starts with history: the storms, floods, and heat events that shaped a region’s experience and informed its preparedness systems. That foundation has served the field for a long time, but in a changing Earth system environment, it is no longer enough. Extreme events are intensifying faster than communities can gain experience with them. In many places, the frequency and intensity of hazards have been climbing gradually — not through obvious landmark disasters that demand attention, but year by year, in ways that don’t register until something arrives that the plan wasn’t built for.",
 
         "“Disaster planning based on historical events is like driving forward while only looking in the rearview mirror,” says Erin Coughlan de Perez, Associate Professor at Tufts University Friedman School of Nutrition Science and Policy and principal investigator on the project. “Many communities are planning for what they have seen in the past, only slightly worse. They need to be preparing for things they haven’t seen at all.”",
