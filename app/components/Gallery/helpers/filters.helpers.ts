@@ -24,8 +24,8 @@ export function applyFilters(
 function matchesQuery(item: GalleryCardContent, query: string): boolean {
   if (!query) return true;
   const q = query.toLowerCase();
-  return (
-    item.title.toLowerCase().includes(q) || (item.description?.toLowerCase().includes(q) ?? false)
+  return [item.title, item.subtitle, item.description].some((text) =>
+    text?.toLowerCase().includes(q),
   );
 }
 
