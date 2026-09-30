@@ -23,7 +23,7 @@ export const SectionCardSimpleMini = ({
       <div className="grid-row grid-gap-2 margin-bottom-neg-2">
         {cards.map((props) => (
           <div key={props.id} className={`${gridColumnClass} margin-bottom-2 height-card`}>
-            <CardSimple size="sm" {...props} />
+            <CardSimple {...props} size="sm" colorMode="dark" />
           </div>
         ))}
       </div>

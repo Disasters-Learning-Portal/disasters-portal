@@ -5,14 +5,15 @@ import type { TrainingContent } from "@/app/site-config/types";
 export const TRAINING__LIFELINES_WILDFIRE_WORKFLOW: TrainingContent = {
   id: "lifelines-wildfire-workflow",
   contentType: "training",
-  title: "NASA Lifelines Data Studio: Wildfire Early Warning Workflow",
+  title: "NASA Lifelines Data Studio",
+  subtitle: "Wildfire Early Warning Workflow",
   description:
     "This module offers a guided, browser-based approach to wildfire early warning using free NASA satellite data.",
   thumbnailImage: {
     src: "/img/training/lifelines-wildfire-workflow.webp",
     alt: "NASA Lifelines Data Studio cover image showing wildfire data workflow",
   },
-  date: "2026-01-15",
+  datePublished: "2026-01-15",
   themes: ["respond", "prepare"],
   categories: ["fire"],
   mastheadImage: {
@@ -75,7 +76,7 @@ export const TRAINING__LIFELINES_WILDFIRE_WORKFLOW: TrainingContent = {
       alt: "NASA Lifelines logo",
       width: 1495,
       height: 190,
-      maxWidth: "200px",
+      maxWidth: "card-lg",
     },
     {
       type: "text",

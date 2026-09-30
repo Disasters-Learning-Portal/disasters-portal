@@ -3,15 +3,15 @@ import type { TrainingContent } from "@/app/site-config/types";
 export const TRAINING__EO_BUILDING_EXPOSURE: TrainingContent = {
   id: "eo-building-exposure",
   contentType: "training",
-  title:
-    "Understanding EO-based Building Exposure Data: Application to Disaster Mitigation, Preparedness, Response and Recovery",
+  title: "Understanding EO-based Building Exposure Data",
+  subtitle: "Application to Disaster Mitigation, Preparedness, Response and Recovery",
   description:
     "This module outlines the process of developing high-quality building exposure data and demonstrates how these datasets are strategically integrated into loss estimation to guide decision-making for emergency managers and planners.",
   thumbnailImage: {
     src: "/img/training/eo-building-exposure.webp",
     alt: "Los Angeles building exposure map showing building risk data across the city",
   },
-  date: "2026-01-15",
+  datePublished: "2026-01-15",
   themes: ["recover", "prepare", "respond", "build"],
   categories: ["earthquake", "tropical cyclone"],
   mastheadImage: {

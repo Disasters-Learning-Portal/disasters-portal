@@ -5,6 +5,7 @@ import { DATASTORIES } from "@/app/site-config/datastory";
 import { EVENTS } from "@/app/site-config/event";
 import {
   transformEventToPageMastHeadProps,
+  transformEventToPageSidebarDetails,
   transformEventToSectionOverviewProps,
 } from "@/app/site-config/event/event.helpers";
 import { NEWS } from "@/app/site-config/news";
@@ -22,7 +23,8 @@ export default async function NewsEventsStoriesItemPage(
 
   if (!contentItem) notFound();
 
-  const { contentType, title, mastheadImage, themes, categories, body } = contentItem;
+  const { contentType, title, subtitle, mastheadImage, themes, categories, body, datePublished } =
+    contentItem;
   const isEvent = contentItem.contentType === "event";
 
   return (
@@ -30,11 +32,12 @@ export default async function NewsEventsStoriesItemPage(
       masthead={
         isEvent
           ? transformEventToPageMastHeadProps(contentItem)
-          : makeCardMastHeadProps({ mastheadImage, title })
+          : makeCardMastHeadProps({ mastheadImage, title, subtitle, datePublished })
       }
       contentType={contentType}
       themes={themes}
       categories={categories}
+      details={isEvent ? transformEventToPageSidebarDetails(contentItem) : undefined}
       body={body}
     >
       {isEvent && (

@@ -52,7 +52,7 @@ function GalleryInner({ items }: GalleryProps) {
         <Link
           as="button"
           variant="text"
-          className="text-bold text-no-underline text-uppercase"
+          className="text-bold text-no-underline text-uppercase text-ink"
           onClick={() => setIsFilterOpen(true)}
         >
           Filters{" "}
@@ -74,8 +74,12 @@ function GalleryInner({ items }: GalleryProps) {
         onApply={setFacets}
       />
       <div className="grid-row grid-gap">
-        {pageItems.map((item) => {
-          const { id, ...cardProps } = makeCardDetailedProps(item);
+        {/* remove subtitle from rendering on card but keep it available to search */}
+        {pageItems.map(({ subtitle, description, ...item }) => {
+          const { id, ...cardProps } = makeCardDetailedProps({
+            ...item,
+            description: subtitle ?? description,
+          });
           return (
             <div
               key={id}

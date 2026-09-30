@@ -1,10 +1,17 @@
-import { PageStatus } from "@/app/components/";
+import { ContentBlockRenderer, PageMasthead } from "@/app/components/";
+import { makeCardMastHeadProps } from "@/app/site-config/content.helpers";
+import { PREPARE_CONTENT } from "@/app/site-config/theme/theme__prepare";
 
 export default function PreparePage() {
+  const { theme, subtitle, mastheadImage } = PREPARE_CONTENT;
+
   return (
-    <PageStatus
-      heading="Under Development"
-      description="The page you're looking for is under development."
-    />
+    <>
+      <PageMasthead {...makeCardMastHeadProps({ subtitle, theme, mastheadImage })} />
+      {PREPARE_CONTENT.body.map((block, index) => (
+        // biome-ignore lint/suspicious/noArrayIndexKey: static content, never reorders
+        <ContentBlockRenderer key={index} block={block} />
+      ))}
+    </>
   );
 }

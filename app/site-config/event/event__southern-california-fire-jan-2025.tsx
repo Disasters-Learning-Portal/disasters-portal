@@ -21,7 +21,7 @@ export const EVENT__SOUTHERN_CALIFORNIA_FIRE_JAN_2025: EventContent = {
   themes: ["respond"],
   categories: ["fire"],
   region: " Los Angeles County, North America",
-  startDate: "Jan. 10, 2025",
+  startDate: "2025-01-10",
   linkUSGovernment: {
     label: "Learn more",
     href: "https://www.usa.gov/california-wildfires",
@@ -33,6 +33,7 @@ export const EVENT__SOUTHERN_CALIFORNIA_FIRE_JAN_2025: EventContent = {
   body: [
     {
       type: "text",
+      heading: "Overview",
       paragraphs: [
         "Beginning Jan. 7, 2025, several major wildfires swept through Los Angeles County, driven by powerful Santa Ana winds. The Palisades Fire, Eaton Fire, and Hurst Fire caused widespread destruction across communities from Pacific Palisades to Pasadena and San Fernando, resulting in significant loss of life, property damage, and power outages. The California Governor's Office of Emergency Services (CalOES), the Los Angeles County Office of Emergency Management, and FEMA Region 9 requested NASA's support to address several critical situational awareness needs – including identifying burned structures and damaged critical infrastructure, assessing fire extent, monitoring air quality and methane emissions, and tracking power outages across affected communities.",
         <Fragment key="2">
@@ -82,11 +83,19 @@ export const EVENT__SOUTHERN_CALIFORNIA_FIRE_JAN_2025: EventContent = {
     {
       type: "sectionCardGallery",
       heading: "Related Data",
+      link: {
+        href: "/data-gallery",
+        label: "View all",
+      },
       cards: DATA,
     },
     {
       type: "sectionCardSimple",
       heading: "Resources & Learning",
+      link: {
+        href: "/training",
+        label: "More Resources and Learning",
+      },
       cards: [
         TRAINING__LIFELINES_WILDFIRE_WORKFLOW,
         TRAINING__FUNDAMENTALS_REMOTE_SENSING,
@@ -122,7 +131,7 @@ export const EVENT__SOUTHERN_CALIFORNIA_FIRE_JAN_2025: EventContent = {
     {
       type: "list",
       heading: "NASA Earth Observatory",
-      headingLevel: "h4",
+      headingLevel: "h3",
       items: [
         {
           label: "The Palisades Fire's Footprint",
