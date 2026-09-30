@@ -13,24 +13,13 @@ import { MOCK_CARD_MASTHEAD } from "./site-config/home/home-card-masthead";
 import { HOME_CONTENT } from "./site-config/home/home-content";
 import { NEWS_EVENTS_STORIES_CARDS } from "./site-config/home/home-sectioncardmosaic-news-events-stories";
 import { RESOURCES_LEARNING_CARDS } from "./site-config/home/home-sectioncardsimple-resources-learning";
-import { typedMap } from "./site-config/typed.helpers";
+import { pickKeys, typedMap } from "./site-config/typed.helpers";
 
 export default function Home() {
   const newsEventsStories = typedMap(
     NEWS_EVENTS_STORIES_CARDS,
-    ({
-      id,
-      contentType,
-      thumbnailImage,
-      themes,
-      title,
-    }: (typeof NEWS_EVENTS_STORIES_CARDS)[number]) => ({
-      id,
-      contentType,
-      thumbnailImage,
-      themes,
-      title,
-    }),
+    (item: (typeof NEWS_EVENTS_STORIES_CARDS)[number]) =>
+      pickKeys(item, ["id", "contentType", "thumbnailImage", "themes", "title"]),
   );
 
   const trainings = RESOURCES_LEARNING_CARDS.map(

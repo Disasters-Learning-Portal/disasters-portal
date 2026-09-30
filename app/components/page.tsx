@@ -22,7 +22,7 @@ import { DATASTORIES } from "@/app/site-config/datastory";
 import { EVENTS } from "@/app/site-config/event";
 import { transformEventToCardSimpleProps } from "@/app/site-config/event/event.helpers";
 import { NEWS_EVENTS_STORIES_CARDS } from "@/app/site-config/home/home-sectioncardmosaic-news-events-stories";
-import { getTypedEntries, typedMap } from "@/app/site-config/typed.helpers";
+import { getTypedEntries, pickKeys, typedMap } from "@/app/site-config/typed.helpers";
 import { CONTENT_THEMES, type EventContent } from "@/app/site-config/types";
 
 const MOCK_EVENT_CARDS: [EventContent, EventContent, EventContent, EventContent] = [
@@ -35,19 +35,8 @@ const MOCK_EVENT_CARDS: [EventContent, EventContent, EventContent, EventContent]
 export default function ComponentsPage() {
   const newsEventsStories = typedMap(
     NEWS_EVENTS_STORIES_CARDS,
-    ({
-      id,
-      contentType,
-      thumbnailImage,
-      themes,
-      title,
-    }: (typeof NEWS_EVENTS_STORIES_CARDS)[number]) => ({
-      id,
-      contentType,
-      thumbnailImage,
-      themes,
-      title,
-    }),
+    (item: (typeof NEWS_EVENTS_STORIES_CARDS)[number]) =>
+      pickKeys(item, ["id", "contentType", "thumbnailImage", "themes", "title"]),
   );
 
   return (
