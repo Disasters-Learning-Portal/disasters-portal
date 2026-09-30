@@ -31,7 +31,7 @@ Three env vars are **required** at build time. A missing one fails `pnpm build` 
 | --- | --- | --- |
 | `NEXT_PUBLIC_VIZ_TOOL_URL` | `https://science-dev.data.nasa.gov/disasters/data-visualization` | `https://science.data.nasa.gov/disasters/data-visualization` |
 | `NEXT_PUBLIC_STAC_API_URL` | `https://dev.disasters.openveda.cloud/api/stac` | `https://disasters.openveda.cloud/api/stac` |
-| `NEXT_PUBLIC_TITILER_BASE_URL` | `https://dev.disasters.openveda.cloud/api/raster` | `https://disasters.openveda.cloud/api/raster` |
+| `NEXT_PUBLIC_RASTER_API_URL` | `https://dev.disasters.openveda.cloud/api/raster` | `https://disasters.openveda.cloud/api/raster` |
 
 - **Local:** copy `.env.example` to `.env.local`. Next.js reads `.env.local` automatically and it is gitignored.
 - **Amplify:** values are set per branch in the Amplify console (`main` = prod, `develop` = dev). Pull request previews inherit the app-level values.

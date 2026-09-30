@@ -1,6 +1,6 @@
 import type { StyleSpecification } from "maplibre-gl";
 
-import { STAC_API_URL, TITILER_BASE_URL } from "@/app/site-config/env.helpers";
+import { RASTER_API_URL, STAC_API_URL } from "@/app/site-config/env.helpers";
 
 export const BASEMAP_STYLES = {
   nasaBlueMarble: {
@@ -79,7 +79,7 @@ export const BASEMAP_STYLES = {
 
 const STAC_ENDPOINTS = {
   stacApiUrl: STAC_API_URL,
-  titilerBaseUrl: TITILER_BASE_URL,
+  titilerBaseUrl: RASTER_API_URL,
 };
 
 export const US_VIEW_STATE = { longitude: -98.0, latitude: 38.5, zoom: 4 };

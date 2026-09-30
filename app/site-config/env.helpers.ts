@@ -27,8 +27,8 @@ export const STAC_API_URL = requireUrl(
   process.env.NEXT_PUBLIC_STAC_API_URL,
 );
 
-/** TiTiler (raster API) root used by the map blocks. */
-export const TITILER_BASE_URL = requireUrl(
-  "NEXT_PUBLIC_TITILER_BASE_URL",
-  process.env.NEXT_PUBLIC_TITILER_BASE_URL,
+/** Raster API (TiTiler) root used by the map blocks. */
+export const RASTER_API_URL = requireUrl(
+  "NEXT_PUBLIC_RASTER_API_URL",
+  process.env.NEXT_PUBLIC_RASTER_API_URL,
 );
