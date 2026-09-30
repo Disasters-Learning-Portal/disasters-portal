@@ -202,7 +202,7 @@ export type CardDetailedPropsArgs = Omit<
   url?: string;
 };
 
-const makeCardCTAProps = ({
+const makeCardCallToActionProps = ({
   id,
   contentType,
   url,
@@ -245,7 +245,7 @@ export const makeCardDetailedProps = ({
   ),
   imagePosition: "top",
   tags: makeCardTagProps(themes, categories, contentType),
-  callToAction: makeCardCTAProps({ id, contentType, url }),
+  callToAction: makeCardCallToActionProps({ id, contentType, url }),
   ...rest,
 });
 
@@ -262,7 +262,7 @@ export const makeCardDetailedImageLeftProps = ({
   image: <AppImage {...thumbnailImage} fill sizes="200px" />,
   imagePosition: "left",
   tags: makeCardTagProps(themes, categories, contentType),
-  callToAction: makeCardCTAProps({ id, contentType, url }),
+  callToAction: makeCardCallToActionProps({ id, contentType, url }),
   ...rest,
 });
 
@@ -336,7 +336,7 @@ export const makeCardCarouselProps = ({
     />
   ),
   tag: childrenToLabel(makeOutlineTagProps(makeContentTypeTagProps(contentType))),
-  callToAction: makeCardCTAProps({ id, contentType, url }),
+  callToAction: makeCardCallToActionProps({ id, contentType, url }),
   imagePosition: "cover",
   colorMode: "dark",
   ...rest,
