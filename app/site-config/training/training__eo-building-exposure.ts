@@ -8,8 +8,8 @@ export const TRAINING__EO_BUILDING_EXPOSURE: TrainingContent = {
   description:
     "This module outlines the process of developing high-quality building exposure data and demonstrates how these datasets are strategically integrated into loss estimation to guide decision-making for emergency managers and planners.",
   thumbnailImage: {
-    src: "/img/training/eo-building-exposure.webp",
-    alt: "Los Angeles building exposure map showing building risk data across the city",
+    src: "/img/data/gaia-building-exposure.webp",
+    alt: "GAIA gridded building exposure across the Los Angeles basin, where color shows modeled built-up area per 100-meter grid cell, from dark blue in the lowest range to orange and red in the densest urban core",
   },
   datePublished: "2026-01-15",
   themes: ["recover", "prepare", "respond", "build"],
