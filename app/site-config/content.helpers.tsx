@@ -268,7 +268,7 @@ export const makeCardDetailedImageLeftProps = ({
 
 export type CardSimplePropsArgs = Omit<
   CardSimpleProps,
-  "image" | "tag" | "isExternal" | "href" | "as"
+  "colorMode" | "image" | "tag" | "isExternal" | "href" | "as"
 > & {
   id: string;
   contentType: ContentType;
