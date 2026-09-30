@@ -23,9 +23,9 @@ export function isInternalContent<T extends Content>(c: T): c is Exclude<T, Exte
  * const result = typedMap([a, b, c] as [A, A, A], transform);
  * // inferred as [B, B, B], not B[]
  */
-export function typedMap<U, const Arr extends unknown[]>(
+export function typedMap<T, U, const Arr extends T[]>(
   arr: [...Arr],
-  fn: (item: Arr[number]) => U,
+  fn: (item: T) => U,
 ): { [K in keyof Arr]: U } {
   return arr.map(fn) as { [K in keyof Arr]: U };
 }

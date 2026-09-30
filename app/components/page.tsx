@@ -35,7 +35,13 @@ const MOCK_EVENT_CARDS: [EventContent, EventContent, EventContent, EventContent]
 export default function ComponentsPage() {
   const newsEventsStories = typedMap(
     NEWS_EVENTS_STORIES_CARDS,
-    ({ id, contentType, thumbnailImage, themes, title }) => ({
+    ({
+      id,
+      contentType,
+      thumbnailImage,
+      themes,
+      title,
+    }: (typeof NEWS_EVENTS_STORIES_CARDS)[number]) => ({
       id,
       contentType,
       thumbnailImage,
