@@ -15,6 +15,20 @@ Open <http://localhost:3000>
 
 Set `NEXT_PUBLIC_BASE_PATH` (env var) at build time to serve the app under a subpath (e.g. `/disasters`). An unset env var serves from the root. See `.env.example` and `app/site-config/base-path.helpers.ts`.
 
+## Environment URLs
+
+Three env vars are **required** at build time. A missing one fails `pnpm build` on purpose so a deployment can never silently point at the wrong environment. See `app/site-config/env.helpers.ts`.
+
+| Variable | develop / local | main (prod) |
+| --- | --- | --- |
+| `NEXT_PUBLIC_VIZ_TOOL_URL` | `https://science-dev.data.nasa.gov/disasters/data-visualization` | `https://science.data.nasa.gov/disasters/data-visualization` |
+| `NEXT_PUBLIC_STAC_API_URL` | `https://dev.disasters.openveda.cloud/api/stac` | `https://disasters.openveda.cloud/api/stac` |
+| `NEXT_PUBLIC_TITILER_BASE_URL` | `https://dev.disasters.openveda.cloud/api/raster` | `https://disasters.openveda.cloud/api/raster` |
+
+- **Local:** copy `.env.example` to `.env.local`. Next.js reads `.env.local` automatically and it is gitignored.
+- **Amplify:** values are set per branch in the Amplify console (`main` = prod, `develop` = dev). Pull request previews inherit the app-level values.
+- **CI:** the `build` job in `.github/workflows/pr-checks.yml` sets the dev values inline.
+
 Use `AppLink` or `AppLinkStyled` instead of native anchors to ensure basepaths are handled within links. These components utilize NextLink to automatically manage basepath using next.config.
 
 Use `AppImage` and `AppVideo` instead of NextImage or native elements. These components apply the base path (external URLs pass through unchanged). 
