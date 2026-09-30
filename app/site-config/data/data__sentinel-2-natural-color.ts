@@ -23,12 +23,18 @@ export const DATA__SENTINEL_2_NATURAL_COLOR: DataContent = {
   themes: ["respond", "build", "prepare", "recover"],
 
   categories: [
-    "severe weather",
-    "fire",
-    "heat",
-    "flood",
-    "tropical cyclone",
     "earthquake",
+    "fire",
+    "flood",
+    "heat",
+    "landslide",
+    "severe weather",
+    "tropical cyclone",
+    "hurricane",
+    "typhoon",
+    "cyclone",
+    "volcano",
+    "tsunami",
     "winter weather",
   ],
 
@@ -78,7 +84,7 @@ export const DATA__SENTINEL_2_NATURAL_COLOR: DataContent = {
       heading: "Credits",
       paragraphs: [
         "ESA Copernicus; NASA Disasters Program",
-        "Use of this product should include: “Contains modified Copernicus Sentinel data (2022-2026) processed by ESA”",
+        "The product contains modified Copernicus Sentinel-2, processed by the European Space Agency.",
       ],
     },
 

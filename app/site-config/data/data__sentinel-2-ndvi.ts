@@ -23,12 +23,18 @@ export const DATA__SENTINEL_2_NDVI: DataContent = {
   themes: ["respond", "build", "prepare", "recover"],
 
   categories: [
-    "severe weather",
-    "fire",
-    "heat",
-    "flood",
-    "tropical cyclone",
     "earthquake",
+    "fire",
+    "flood",
+    "heat",
+    "landslide",
+    "severe weather",
+    "tropical cyclone",
+    "hurricane",
+    "typhoon",
+    "cyclone",
+    "volcano",
+    "tsunami",
     "winter weather",
   ],
 
@@ -76,7 +82,10 @@ export const DATA__SENTINEL_2_NDVI: DataContent = {
     {
       type: "text",
       heading: "Credits",
-      paragraphs: ["NASA/GSFC, USGS, ESA Copernicus"],
+      paragraphs: [
+        "NASA/GSFC, USGS, ESA Copernicus",
+        "The product contains modified Copernicus Sentinel-2, processed by the European Space Agency."
+      ],
     },
 
     {
