@@ -9,6 +9,7 @@ import { STORY__STRENGTHENING_SEVERE_WEATHER_READINESS } from "./story__strength
 import { STORY__STUDY_REVEALS_HEAT_RISK_ELDERLY_AUSTIN } from "./story__study-reveals-heat-risk-to-elderly-in-austin";
 import { STORY__SUPPORTING_COMMUNITIES_HURRICANE_HELENE } from "./story__supporting-communities-hurricane-helene";
 import { STORY__TRACKING_TORNADOES_FROM_SPACE } from "./story__tracking-tornadoes-from-space";
+import { STORY__YOUR_COMMUNITY_MAY_HAVE_A_DISASTER_BLIND_SPOT } from "./story__your-community-may-have-a-disaster-blind-spot";
 
 export const STORIES: StoryContent[] = [
   STORY__ESTIMATING_LOSS_RECOVERY,
@@ -21,4 +22,5 @@ export const STORIES: StoryContent[] = [
   STORY__TRACKING_TORNADOES_FROM_SPACE,
   STORY__STUDY_REVEALS_HEAT_RISK_ELDERLY_AUSTIN,
   STORY__STRENGTHENING_SEVERE_WEATHER_READINESS,
+  STORY__YOUR_COMMUNITY_MAY_HAVE_A_DISASTER_BLIND_SPOT,
 ];
