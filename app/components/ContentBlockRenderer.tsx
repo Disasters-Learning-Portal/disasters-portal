@@ -1,3 +1,4 @@
+import { Carousel } from "@teamimpact/veda-ui-blocks";
 import {
   ImageComparison,
   Section,
@@ -220,6 +221,25 @@ export const ContentBlockRenderer = ({
         />
       );
     }
+
+    case "carousel":
+      return (
+        <Section isMultiColumnLayout={isMultiColumnLayout}>
+          {block.heading && (
+            <SectionHeading headingAs={block.headingLevel}>{block.heading}</SectionHeading>
+          )}
+          <Carousel
+            maxVisibleItems={block.maxVisibleItems ?? 2}
+            items={block.items.map(({ title, description, thumbnailImage, tag }) => ({
+              // The section heading is h2, so card titles must be h3.
+              title: <h3 className="blocks-card__title">{title}</h3>,
+              description,
+              image: <AppImage {...thumbnailImage} fill sizes="(max-width: 640px) 100vw, 50vw" />,
+              ...(tag ? { tag: { label: tag } } : {}),
+            }))}
+          />
+        </Section>
+      );
 
     case "sectionCardFeatured":
       return (

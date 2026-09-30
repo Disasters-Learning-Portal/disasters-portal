@@ -125,13 +125,48 @@ export const STORY__YOUR_COMMUNITY_MAY_HAVE_A_DISASTER_BLIND_SPOT: StoryContent 
       height: 2152,
     },
     {
-      type: "list",
-      heading: "Training Resources",
+      // The four training videos are not published yet, so these carry the
+      // placeholder image and no call to action. Give each one a thumbnail and
+      // a link once it is available.
+      type: "carousel",
+      heading: "Resources & Learning",
       items: [
-        "[Watch] Introduction to the Foresight Tool [PLACEHOLDER]",
-        "[Watch] How to Incorporate Science into Scenario Exercises [PLACEHOLDER]",
-        "[Watch] Intensifying Extremes [PLACEHOLDER]",
-        "[Watch] Community Capacities [PLACEHOLDER]",
+        {
+          id: "introduction-to-the-foresight-tool",
+          title: "Introduction to the Foresight Tool",
+          tag: "Training",
+          thumbnailImage: {
+            src: "/img/placeholder/card-masthead.webp",
+            alt: "Placeholder image for the Introduction to the Foresight Tool training video",
+          },
+        },
+        {
+          id: "how-to-incorporate-science-into-scenario-exercises",
+          title: "How to Incorporate Science into Scenario Exercises",
+          tag: "Training",
+          thumbnailImage: {
+            src: "/img/placeholder/card-masthead.webp",
+            alt: "Placeholder image for the How to Incorporate Science into Scenario Exercises training video",
+          },
+        },
+        {
+          id: "intensifying-extremes",
+          title: "Intensifying Extremes",
+          tag: "Training",
+          thumbnailImage: {
+            src: "/img/placeholder/card-masthead.webp",
+            alt: "Placeholder image for the Intensifying Extremes training video",
+          },
+        },
+        {
+          id: "community-capacities",
+          title: "Community Capacities",
+          tag: "Training",
+          thumbnailImage: {
+            src: "/img/placeholder/card-masthead.webp",
+            alt: "Placeholder image for the Community Capacities training video",
+          },
+        },
       ],
     },
     {
