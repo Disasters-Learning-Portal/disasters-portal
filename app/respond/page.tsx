@@ -19,40 +19,24 @@ import {
   RESPOND_STORIES,
   RESPOND_TRAININGS,
 } from "@/app/site-config/theme/theme__respond";
-import { typedMap } from "@/app/site-config/typed.helpers";
+import { pickKeys, typedMap } from "@/app/site-config/typed.helpers";
 
 export default function RespondPage() {
   const { theme, subtitle, mastheadImage }: CardMastheadPropsArgs = RESPOND_CONTENT;
-  const stories: CardSimplePropsArgs[] = RESPOND_STORIES.slice(0, 2).map(
-    ({ id, contentType, thumbnailImage, themes, title }) => ({
-      id,
-      contentType,
-      thumbnailImage,
-      themes,
-      title,
-    }),
+
+  const stories: CardSimplePropsArgs[] = RESPOND_STORIES.slice(0, 2).map((i) =>
+    pickKeys(i, ["id", "contentType", "thumbnailImage", "themes", "title"]),
   );
 
-  const dataStories = RESPOND_DATASTORIES.map(
-    ({ id, contentType, thumbnailImage, themes, title, ...rest }) => ({
-      id,
-      contentType,
-      thumbnailImage,
-      themes,
-      title,
-      url: "url" in rest ? rest.url : undefined,
-    }),
-  );
+  const dataStories: CardSimplePropsArgs[] = RESPOND_DATASTORIES.map((i) => ({
+    ...pickKeys(i, ["id", "contentType", "thumbnailImage", "themes", "title"]),
+    ...("url" in i ? { url: i.url } : {}),
+  }));
 
-  const trainings = RESPOND_TRAININGS.map(
-    ({ id, contentType, thumbnailImage, title, ...rest }) => ({
-      id,
-      contentType,
-      thumbnailImage,
-      title,
-      url: "url" in rest ? rest.url : undefined,
-    }),
-  );
+  const trainings: CardSimplePropsArgs[] = RESPOND_TRAININGS.map((i) => ({
+    ...pickKeys(i, ["id", "contentType", "thumbnailImage", "title"]),
+    ...("url" in i ? { url: i.url } : {}),
+  }));
 
   return (
     <>

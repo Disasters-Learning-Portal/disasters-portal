@@ -7,7 +7,7 @@ import {
   SectionHeading,
 } from "@/app/components";
 
-import { makeCardSimpleProps } from "./site-config/content.helpers";
+import { type CardSimplePropsArgs, makeCardSimpleProps } from "./site-config/content.helpers";
 import { MOCK_CARD_LETSCONNECT } from "./site-config/home/home-card-lets_connect";
 import { MOCK_CARD_MASTHEAD } from "./site-config/home/home-card-masthead";
 import { HOME_CONTENT } from "./site-config/home/home-content";
@@ -16,22 +16,19 @@ import { RESOURCES_LEARNING_CARDS } from "./site-config/home/home-sectioncardsim
 import { pickKeys, typedMap } from "./site-config/typed.helpers";
 
 export default function Home() {
-  const newsEventsStories = typedMap(
-    NEWS_EVENTS_STORIES_CARDS,
-    (item: (typeof NEWS_EVENTS_STORIES_CARDS)[number]) =>
-      pickKeys(item, ["id", "contentType", "thumbnailImage", "themes", "title"]),
+  const newsEventsStories: [
+    CardSimplePropsArgs,
+    CardSimplePropsArgs,
+    CardSimplePropsArgs,
+    CardSimplePropsArgs,
+  ] = typedMap(NEWS_EVENTS_STORIES_CARDS, (item: (typeof NEWS_EVENTS_STORIES_CARDS)[number]) =>
+    pickKeys(item, ["id", "contentType", "thumbnailImage", "themes", "title"]),
   );
 
-  const trainings = RESOURCES_LEARNING_CARDS.map(
-    ({ id, contentType, thumbnailImage, themes, title, ...rest }) => ({
-      id,
-      contentType,
-      thumbnailImage,
-      themes,
-      title,
-      url: "url" in rest ? rest.url : undefined,
-    }),
-  );
+  const trainings: CardSimplePropsArgs[] = RESOURCES_LEARNING_CARDS.map((i) => ({
+    ...pickKeys(i, ["id", "contentType", "thumbnailImage", "themes", "title"]),
+    ...("url" in i ? { url: i.url } : {}),
+  }));
 
   return (
     <>
