@@ -1,5 +1,7 @@
 import type { StyleSpecification } from "maplibre-gl";
 
+import { STAC_API_URL, TITILER_BASE_URL } from "@/app/site-config/env.helpers";
+
 export const BASEMAP_STYLES = {
   nasaBlueMarble: {
     version: 8,
@@ -76,8 +78,8 @@ export const BASEMAP_STYLES = {
 };
 
 const STAC_ENDPOINTS = {
-  stacApiUrl: "https://dev.disasters.openveda.cloud/api/stac",
-  titilerBaseUrl: "https://dev.disasters.openveda.cloud/api/raster",
+  stacApiUrl: STAC_API_URL,
+  titilerBaseUrl: TITILER_BASE_URL,
 };
 
 export const US_VIEW_STATE = { longitude: -98.0, latitude: 38.5, zoom: 4 };
