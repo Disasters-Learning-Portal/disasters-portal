@@ -60,11 +60,7 @@ export function FilterDrawer({
             </Link>
           </div>
           <div className="mobile:grid-col-6 grid-col-12 text-center">
-            <Link
-              variant="text"
-              className="text-underline text-ink"
-              onClick={() => setDraft(EMPTY_FACETS)}
-            >
+            <Link variant="text" onClick={() => setDraft(EMPTY_FACETS)}>
               Clear all
             </Link>
           </div>
