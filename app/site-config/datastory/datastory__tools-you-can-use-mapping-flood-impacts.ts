@@ -37,11 +37,11 @@ export const DATASTORY__TOOLS_YOU_CAN_USE_MAPPING_FLOOD_IMPACTS: DataStoryConten
     {
       type: "image",
       src: "/img/datastory/mapping-flood-impacts__hydrosar.webp",
-      alt: "Example of HydroSAR data from April 2025 severe weather in the U.S.",
+      alt: "Side-by-side maps of the Mississippi Delta: HydroSAR surface water extents in blue on the left, USGS National Land Cover Database classifications on the right",
       width: 850,
-      height: 707,
+      height: 567,
       caption:
-        "The Copernicus Sentinel-1 satellite collected synthetic aperture radar (SAR) imagery over the southeast and central U.S. from April 4-9, 2025, capturing flooding from severe storms. On the left, HydroSAR surface water extents are shown in blue. These are overlaid on VH cross-pol SAR imagery (grayscale), in which still water and other flat surfaces appear black, while diffuse scatterers like vegetation appear in lighter shades. On the right, USGS National Land Cover Database data indicates whether affected areas may be developed, cropland, forest, or other classes of land use. Credits: (left) NASA Disasters Program, Alaska Satellite Facility. Contains modified Copernicus Sentinel data (2025) processed by ESA. (right) US Geologic Survey National Land Cover Database 2019 as published by U.S. Environmental Protection Agency, Office of Mission Support; Data Steward: Multi-resolution Land Characteristics Consortium.",
+        "Sentinel-1 HydroSAR surface water extents (left, blue) over the Mississippi Delta on Sept. 6, 2024, shown against USGS National Land Cover Database classifications for the same area (right), where brown indicates cropland, green forest, red developed land, and blue open water. Pairing observed water extent with land cover indicates whether flooding is reaching croplands, communities, or infrastructure. Credits: NASA Disasters Program, Alaska Satellite Facility; USGS National Land Cover Database 2021.",
     },
     {
       type: "list",
