@@ -34,7 +34,9 @@ export const ContentBlockRenderer = ({
           )}
           {block.paragraphs.map((p, i) => (
             // biome-ignore lint/suspicious/noArrayIndexKey: static content, never reorders
-            <p key={i}>{p}</p>
+            <p key={i} className="font-body-sm line-height-body-5">
+              {p}
+            </p>
           ))}
         </Section>
       );
@@ -91,16 +93,16 @@ export const ContentBlockRenderer = ({
           {block.heading && (
             <SectionHeading headingAs={block.headingLevel}>{block.heading}</SectionHeading>
           )}
-          {block.src ? (
+          <figure className="margin-0">
             <AppVideo src={block.src} controls className="width-full display-block">
               <track kind="captions" />
             </AppVideo>
-          ) : (
-            <div className="width-full bg-base-lightest display-flex flex-align-center flex-justify-center height-card padding-x-4">
-              <p className="text-base margin-0">Video coming soon</p>
-            </div>
-          )}
-          {block.caption && <p className="font-body-sm text-base margin-top-1">{block.caption}</p>}
+            {block.caption && (
+              <figcaption className="font-body-3xs line-height-body-3 measure-6 text-base-dark margin-top-1">
+                {block.caption}
+              </figcaption>
+            )}
+          </figure>
         </Section>
       );
 
@@ -161,7 +163,7 @@ export const ContentBlockRenderer = ({
               className={`width-full height-auto ${block.maxWidth ? `maxw-${block.maxWidth}` : ""}`}
             />
             {block.caption && (
-              <figcaption className="font-body-sm text-base margin-top-1">
+              <figcaption className="font-body-3xs line-height-body-3 measure-6 text-base-dark margin-top-1">
                 {block.caption}
               </figcaption>
             )}
