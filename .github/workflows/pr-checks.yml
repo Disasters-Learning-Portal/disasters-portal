@@ -53,7 +53,7 @@ jobs:
     # Required build-time URLs (see README "Environment URLs"). Public, so dev
     # values live here rather than in repo secrets or variables.
     env:
-      NEXT_PUBLIC_VIZ_TOOL_URL: https://dev.disasters.openveda.cloud/disasters/data-visualization
+      NEXT_PUBLIC_DATA_VISUALIZATION_URL: https://dev.disasters.openveda.cloud/disasters/data-visualization
       NEXT_PUBLIC_STAC_API_URL: https://dev.disasters.openveda.cloud/api/stac
       NEXT_PUBLIC_RASTER_API_URL: https://dev.disasters.openveda.cloud/api/raster
     steps:

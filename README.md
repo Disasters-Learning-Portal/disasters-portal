@@ -29,7 +29,7 @@ Three env vars are **required** at build time. A missing one fails `pnpm build` 
 
 | Variable | develop / local | main (prod) |
 | --- | --- | --- |
-| `NEXT_PUBLIC_VIZ_TOOL_URL` | `https://dev.disasters.openveda.cloud/disasters/data-visualization` | `https://science.data.nasa.gov/disasters/data-visualization` |
+| `NEXT_PUBLIC_DATA_VISUALIZATION_URL` | `https://dev.disasters.openveda.cloud/disasters/data-visualization` | `https://science.data.nasa.gov/disasters/data-visualization` |
 | `NEXT_PUBLIC_STAC_API_URL` | `https://dev.disasters.openveda.cloud/api/stac` | `https://disasters.openveda.cloud/api/stac` |
 | `NEXT_PUBLIC_RASTER_API_URL` | `https://dev.disasters.openveda.cloud/api/raster` | `https://disasters.openveda.cloud/api/raster` |
 

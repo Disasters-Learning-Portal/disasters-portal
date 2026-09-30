@@ -16,9 +16,9 @@ function requireUrl(name: string, value: string | undefined): string {
 }
 
 /** Base URL of the MMGIS data visualization tool. */
-export const VIZ_TOOL_URL = requireUrl(
-  "NEXT_PUBLIC_VIZ_TOOL_URL",
-  process.env.NEXT_PUBLIC_VIZ_TOOL_URL,
+export const DATA_VISUALIZATION_URL = requireUrl(
+  "NEXT_PUBLIC_DATA_VISUALIZATION_URL",
+  process.env.NEXT_PUBLIC_DATA_VISUALIZATION_URL,
 );
 
 /** STAC API root used by the map blocks. */
