@@ -40,8 +40,8 @@ export const STORY__YOUR_COMMUNITY_MAY_HAVE_A_DISASTER_BLIND_SPOT: StoryContent 
         <div
           key="foresight-highlights-box"
           style={{
-            border: "1px solid #222",
-            backgroundColor: "#f4f4f4",
+            border: "1px solid #ffffff",
+            backgroundColor: "#c7c7c7",
             padding: "1.5rem",
           }}
         >
@@ -232,8 +232,8 @@ export const STORY__YOUR_COMMUNITY_MAY_HAVE_A_DISASTER_BLIND_SPOT: StoryContent 
         <div
           key="foresight-cornerstones-box"
           style={{
-            border: "1px solid #222",
-            backgroundColor: "#f4f4f4",
+            border: "1px solid #ffffff",
+            backgroundColor: "#c7c7c7",
             padding: "1.5rem",
           }}
         >
@@ -251,7 +251,7 @@ export const STORY__YOUR_COMMUNITY_MAY_HAVE_A_DISASTER_BLIND_SPOT: StoryContent 
 
           <ul style={{ margin: 0, paddingLeft: "1.5rem" }}>
             <li style={{ marginBottom: "1rem" }}>
-              <strong style={{ color: "#006b8f" }}>
+              <strong style={{ color: "#000000" }}>
                 If your community hasn’t faced a severe event recently, that may be cause for
                 concern, not comfort.
               </strong>{" "}
