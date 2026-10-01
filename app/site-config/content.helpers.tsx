@@ -273,6 +273,7 @@ export type CardSimplePropsArgs = Omit<
     alt: string;
     src: string;
   };
+  subtitle?: string;
   tag?: Theme | ContentType | Category | "active";
   themes?: Theme[];
   url?: string;
@@ -281,6 +282,8 @@ export type CardSimplePropsArgs = Omit<
 export const makeCardSimpleProps = ({
   id,
   contentType,
+  description,
+  subtitle,
   thumbnailImage,
   tag,
   themes,
@@ -301,6 +304,7 @@ export const makeCardSimpleProps = ({
   href: url ? url : `${CONTENT_TYPES[contentType].route}/${id}`,
   isExternal: !!url,
   as: AppLink,
+  description: subtitle ?? description,
   ...rest,
 });
 
