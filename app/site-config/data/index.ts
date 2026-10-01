@@ -44,7 +44,7 @@ import { DATA__SENTINEL_2_MNDWI } from "./data__sentinel-2-mndwi";
 import { DATA__SENTINEL_2_NATURAL_COLOR } from "./data__sentinel-2-natural-color";
 import { DATA__SENTINEL_2_NBR } from "./data__sentinel-2-nbr";
 import { DATA__SENTINEL_2_NDVI } from "./data__sentinel-2-ndvi";
-import { DATA__SENTINEL_2_NDVI_CHANGE } from "./data__sentinel-2-ndvi-change";
+import { DATA__SENTINEL_2_NDVI_CHANGE_BINARY } from "./data__sentinel-2-ndvi-change-binary";
 import { DATA__SENTINEL_2_SWIR } from "./data__sentinel-2-swir";
 import { DATA__SENTINEL_2_TRUE_COLOR } from "./data__sentinel-2-true-color";
 import { DATA__SKYSAT_COLOR_INFRARED } from "./data__skysat-color-infrared";
@@ -105,7 +105,7 @@ export const DATA: DataContent[] = [
   DATA__SENTINEL_2_NATURAL_COLOR,
   DATA__SENTINEL_2_NBR,
   DATA__SENTINEL_2_NDVI,
-  DATA__SENTINEL_2_NDVI_CHANGE,
+  DATA__SENTINEL_2_NDVI_CHANGE_BINARY,
   DATA__SENTINEL_2_SWIR,
   DATA__SENTINEL_2_TRUE_COLOR,
   DATA__SKYSAT_COLOR_INFRARED,
@@ -234,7 +234,7 @@ export const DATA__HURRICANE_HELENE_SEPT_2024: DataContent[] = [
   DATA__OPERA_DSWX,
   DATA__OPERA_RTC_RGB_MOSAIC,
   DATA__SENTINEL_2_COLOR_INFRARED,
-  DATA__SENTINEL_2_NDVI_CHANGE,
+  DATA__SENTINEL_2_NDVI_CHANGE_BINARY,
   DATA__SENTINEL_2_SWIR,
   DATA__SENTINEL_2_TRUE_COLOR,
 ];

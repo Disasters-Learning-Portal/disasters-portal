@@ -73,7 +73,7 @@ export const DATA__UAVSAR_DISPLACEMENT: DataContent = {
       type: "text",
       heading: "Resolution",
       paragraphs: [
-        "Airborne repeat-pass interferometry delivered as geocoded unwrapped interferograms, with displacement values in meters",
+        "Spatial resolution is product-dependent for the multilooked UAVSAR repeat-pass interferometric products used to derive displacement. Exact pixel spacing is provided in the metadata for each acquisition.",
       ],
     },
 

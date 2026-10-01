@@ -60,12 +60,12 @@ export const DATA__UAVSAR_UNET_CLASSIFIED_GRAYSCALE: DataContent = {
         "Uninhabited Aerial Vehicle Synthetic Aperture Radar (UAVSAR), an L-band fully polarimetric synthetic aperture radar flown on a NASA Gulfstream III (C-20A) aircraft and operated by NASA's Jet Propulsion Laboratory",
       ],
     },
-
+    
     {
       type: "text",
       heading: "Resolution",
       paragraphs: [
-        "Airborne collection over an approximately 22 kilometer swath, delivered as a geocoded single-band composite",
+        "Spatial resolution depends on the underlying UAVSAR source product and processing applied to the classification. UAVSAR L-band observations typically cover an approximately 22-kilometer-wide swath.",
       ],
     },
 

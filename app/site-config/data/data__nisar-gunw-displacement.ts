@@ -39,7 +39,7 @@ export const DATA__NISAR_GUNW_DISPLACEMENT: DataContent = {
       type: "text",
       heading: "Suggested Use",
       paragraphs: [
-        "NISAR GUNW displacement can be used to identify and characterize ground deformation associated with earthquakes and other processes that produce measurable surface motion. The product can support rapid assessment of the location, spatial extent, and relative magnitude of deformation following an event. Interferometric measurements may be less reliable in areas affected by vegetation, water, snow, large surface changes, or other sources of radar decorrelation, and the measured displacement represents motion projected along the radar line of sight rather than complete three-dimensional ground motion.",
+        "NISAR GUNW displacement can be used to identify and characterize surface deformation associated with natural hazards and other processes that produce measurable ground motion. Potential applications include assessing deformation associated with earthquakes, volcanic activity, landslides, subsidence, and other geologic or hydrologic processes. The product can support assessment of the location, spatial extent, and relative magnitude of surface deformation before, during, or following an event. Interferometric measurements may be less reliable in areas affected by vegetation, water, snow, large surface changes, or other sources of radar decorrelation. Displacement is measured along the radar line of sight and therefore does not represent the full three-dimensional motion of the Earth's surface.",
       ],
     },
 

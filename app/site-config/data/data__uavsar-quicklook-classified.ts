@@ -41,6 +41,7 @@ export const DATA__UAVSAR_QUICKLOOK_CLASSIFIED: DataContent = {
       heading: "Suggested Use",
       paragraphs: [
         "Use the quicklook classification in the first hours and days of a flood response, when timeliness matters more than precision and when the alternative is having no radar-derived flood extent at all. It is well suited to identifying which areas were affected and where to direct attention or further collection.",
+        "For interpretation, blue areas indicate open water, although some roads and other smooth surfaces may also be misclassified as blue. Light blue or cyan areas indicate likely flooding beneath vegetation and tree canopy. Pink areas indicate potentially flooded locations with lower confidence, often in more developed areas where radar scattering can be more complex.",
         "Supersede it with the UAVSAR U-Net Flood Classification once that product is available for the same scene. Quicklook results should not be used for damage assessment, for official flood extent determinations, or for any purpose where a preliminary misclassification would be costly, and they should be corroborated against the source UAVSAR imagery before being acted on.",
       ],
     },
@@ -65,7 +66,7 @@ export const DATA__UAVSAR_QUICKLOOK_CLASSIFIED: DataContent = {
       type: "text",
       heading: "Resolution",
       paragraphs: [
-        "Airborne collection over an approximately 22 kilometer swath, delivered per flight line as geocoded classified imagery on a subdaily cadence",
+        "6 meter spatial resolution. UAVSAR observations are collected in approximately 22-kilometer-wide airborne swaths and delivered per flight line as geocoded classified imagery on a subdaily cadence.",
       ],
     },
 

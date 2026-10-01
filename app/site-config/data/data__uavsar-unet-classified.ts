@@ -65,7 +65,7 @@ export const DATA__UAVSAR_UNET_CLASSIFIED: DataContent = {
       type: "text",
       heading: "Resolution",
       paragraphs: [
-        "Airborne collection over an approximately 22 kilometer swath, delivered as geocoded classified imagery; available as individual flight lines and as multi-flight monthly composites",
+        "6 meter spatial resolution. UAVSAR observations are collected in approximately 22-kilometer-wide airborne swaths and delivered here as geocoded classified imagery, including individual flight lines and multi-flight monthly composites.",
       ],
     },
 

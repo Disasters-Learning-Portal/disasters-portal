@@ -65,7 +65,7 @@ export const DATA__UAVSAR_RGB: DataContent = {
       type: "text",
       heading: "Resolution",
       paragraphs: [
-        "Airborne collection over an approximately 22 kilometer swath, delivered as geocoded imagery; available as individual flight lines and as multi-flight composites",
+        "6 meter spatial resolution. UAVSAR observations are collected in approximately 22-kilometer-wide airborne swaths and delivered as geocoded imagery, including individual flight lines and multi-flight composites.",
       ],
     },
 
