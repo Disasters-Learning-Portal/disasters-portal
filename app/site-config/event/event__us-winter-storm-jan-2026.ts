@@ -8,15 +8,18 @@ export const EVENT__US_WINTER_STORM_JAN_2026: EventContent = {
 
   title: "U.S. Winter Storm January 2026",
 
+  description:
+    "As a major winter storm struck the U.S., NASA supported federal and state response agencies with satellite data and mapping to identify power outages, monitor restoration, and guide response resources during prolonged extreme cold.",
+  
   datePublished: "2026-01-28",
 
   thumbnailImage: {
-    src: "/img/event/template-hero.webp",
+    src: "/img/event/us-winter-storm-jan-2026-hero.webp",
     alt: "Hazard pattern swirls in shades of blue",
   },
 
   mastheadImage: {
-    src: "/img/event/template-hero.webp",
+    src: "/img/event/us-winter-storm-jan-2026-hero.webp",
     alt: "Hazard pattern swirls in shades of blue",
   },
 
