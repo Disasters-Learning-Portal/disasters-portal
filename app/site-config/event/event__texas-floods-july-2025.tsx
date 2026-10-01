@@ -20,9 +20,6 @@ export const EVENT__TEXAS_FLOODS_JULY_2025: EventContent = {
   mastheadImage: {
     src: "/img/event/texas-floods-july-2025.webp",
     alt: "Flooded river and neighborhoods in Kerrville, Texas after July 2025 flooding",
-    caption:
-      "UAVSAR data collected from July 9 NASA flights was used to classify the likely areas of flooded developed areas (red), flooded croplands (orange), and areas of open water (blue) around Lake Travis, Texas.",
-    attribution: "NASA",
   },
   themes: ["respond"],
   categories: ["flood"],
