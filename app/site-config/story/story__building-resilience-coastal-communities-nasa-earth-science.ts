@@ -43,6 +43,15 @@ export const STORY__BUILDING_RESILIENCE_COASTAL_COMMUNITIES: StoryContent = {
       ],
     },
     {
+      type: "list",
+      items: [
+        {
+          label: "Learn More: Helping Hampton Roads Face the Floods",
+          href: "/news-events-stories/helping-hampton-roads-face-the-floods",
+        },
+      ],
+    },
+    {
       type: "image",
       src: "/img/story/coastal-resilience__dominican-republic.webp",
       alt: "Emergency responders participating in a simulated rescue amid rubble during a disaster-relief exercise",

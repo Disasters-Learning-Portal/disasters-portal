@@ -48,12 +48,7 @@ export function GalleryResultsSummary({
               />
             ))}
             {appliedFilters.length > 1 && (
-              <Link
-                as="button"
-                variant="text"
-                className="text-ink margin-left-1"
-                onClick={clearAllFilters}
-              >
+              <Link as="button" variant="text" className="margin-left-1" onClick={clearAllFilters}>
                 Clear all
               </Link>
             )}
