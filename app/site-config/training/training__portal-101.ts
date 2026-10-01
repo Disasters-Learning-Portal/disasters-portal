@@ -14,7 +14,10 @@ export const TRAINING__PORTAL_101: TrainingContent = {
     alt: "Placeholder image for the PORTAL 101 introductory training",
   },
   datePublished: "2026-10-01",
-  themes: ["prepare", "respond", "recover", "build"],
+  // Single theme while this is a placeholder: the card shows only the first one,
+  // and it keeps this file clear of the "build" -> "resilience" rename in #611.
+  // Widen it when the real content lands and the scope is known.
+  themes: ["prepare"],
   categories: [],
   mastheadImage: {
     src: "/img/placeholder/card-masthead.webp",
