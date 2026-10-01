@@ -1,5 +1,3 @@
-import { Link } from "@teamimpact/veda-ui-blocks";
-import { Fragment } from "react";
 import { DATA__GAIA } from "@/app/site-config/data/data__gaia";
 import { TRAINING__BUILDING_CLIMATE_RISK_ASSESSMENTS } from "@/app/site-config/training/training__building-climate-risk-assessments";
 import { TRAINING__EO_BUILDING_EXPOSURE } from "@/app/site-config/training/training__eo-building-exposure";
@@ -122,25 +120,15 @@ export const STORY__ESTIMATING_LOSS_RECOVERY: StoryContent = {
       ],
     },
     {
-      type: "text",
+      type: "list",
       heading: "Connect With Us",
       headingLevel: "h2",
-      paragraphs: [
-        <Fragment key="connect">
-          <Link href="mailto:disasters@nasa.gov" variant="text">
-            Contact Our Team
-          </Link>
-          <br />
-          <br />
-          <Link
-            href="https://lp.constantcontactpages.com/sl/ICIOyJI"
-            rel="noopener noreferrer"
-            target="_blank"
-            variant="text"
-          >
-            Sign up for the NASA Disasters Community Newsletter
-          </Link>
-        </Fragment>,
+      items: [
+        { label: "Contact Our Team", href: "mailto:disasters@nasa.gov" },
+        {
+          label: "Sign up for the NASA Disasters Community Newsletter",
+          href: "https://lp.constantcontactpages.com/sl/ICIOyJI",
+        },
       ],
     },
   ],
