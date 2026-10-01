@@ -2,19 +2,26 @@ import type { DataContent } from "@/app/site-config/types";
 
 export const DATA__SENTINEL_2_TRUE_COLOR: DataContent = {
   id: "sentinel-2-true-color",
+
   contentType: "data",
+
   title: "Sentinel-2 True Color Imagery",
+
   description:
-    "The True Color RGB composite provides a product of how the surface would look to the naked eye from space.",
+    "A visible-light composite created from Sentinel-2 red, green, and blue observations to show the Earth's surface approximately as it would appear to the human eye from space.",
+
   thumbnailImage: {
     src: "/img/data/sentinel-2-true-color.webp",
     alt: "Sentinel-2 True Color imagery example",
   },
+
   mastheadImage: {
     src: "/img/data/sentinel-2-true-color.webp",
     alt: "Sentinel-2 True Color imagery example",
   },
+
   themes: ["respond", "build", "prepare", "recover"],
+
   categories: [
     "severe weather",
     "fire",
@@ -24,43 +31,64 @@ export const DATA__SENTINEL_2_TRUE_COLOR: DataContent = {
     "earthquake",
     "winter weather",
   ],
+
   relatedContent: ["sentinel-2-color-infrared", "sentinel-2-swir"],
+
   body: [
     {
       type: "text",
       heading: "Summary",
       paragraphs: [
-        "The True Color RGB composite provides a product of how the surface would look to the naked eye from space. The RGB is created using the red, green, and blue channels of the respective instrument.",
+        "Sentinel-2 True Color imagery is created from the red, green, and blue visible wavelength bands measured by the MultiSpectral Instrument (MSI). The composite provides an intuitive view of surface conditions approximately as they would appear to the human eye from space, making it useful for visually comparing landscapes before, during, and after natural hazards.",
       ],
     },
+
     {
       type: "text",
       heading: "Suggested Use",
       paragraphs: [
-        "The True Color RGB provides a product of how the surface would look to the naked eye from space. The True Color RGB is produced using the 3 visible wavelength bands (red, green, and blue) from the respective sensor. Some minor atmospheric corrections have occurred.",
+        "Sentinel-2 True Color imagery can be used for visual interpretation of surface conditions before, during, and after natural hazards. The imagery can support assessment of wildfire impacts, flooding, storm damage, changes to vegetation and land cover, and other visible surface changes. Comparing imagery from different dates can help identify areas affected by an event and provide context for interpreting more specialized spectral or radar products.",
+        "Because the composite uses visible wavelengths, clouds, smoke, haze, and other atmospheric conditions may obscure or alter the appearance of the land surface. True Color imagery is therefore best used alongside acquisition information and complementary products when surface conditions are partially obscured.",
       ],
     },
+
+    {
+      type: "text",
+      heading: "Terms of Use",
+      paragraphs: [
+        "NASA data and products are freely available to federal, state, public, non-profit and commercial users. This information can be experimental- or research-grade data products and may not be appropriate for operational use. These NASA data products, services, and the Disasters Mapping Portal are intended to aid decision makers and enhance situational awareness, but these data are not guaranteed to be consistently available or routinely updated. Use of this product should include: 'The product contains modified Copernicus Sentinel-2, processed by the European Space Agency.'",
+      ],
+    },
+
     {
       type: "text",
       heading: "Satellite/Sensor",
       paragraphs: [
-        "MultiSpectral Instrument (MSI) on European Space Agency's (ESA) Copernicus Sentinel-2A/2B satellites",
+        "MultiSpectral Instrument (MSI) aboard the European Space Agency's Copernicus Sentinel-2A, Sentinel-2B, and Sentinel-2C satellites",
       ],
     },
+
     {
       type: "text",
       heading: "Resolution",
       paragraphs: ["10 meters"],
     },
+
     {
       type: "text",
       heading: "Credits",
-      paragraphs: ["NASA/GSFC, USGS, ESA Copernicus"],
+      paragraphs: [
+        "NASA/GSFC, USGS, ESA Copernicus",
+        "The product contains modified Copernicus Sentinel-2, processed by the European Space Agency.",
+      ],
     },
+
     {
       type: "text",
       heading: "Tags",
-      paragraphs: ["ESA, Copernicus, Sentinel-2, Optical"],
+      paragraphs: [
+        "ESA, Copernicus, Sentinel-2, MSI, Optical, True Color, RGB, Visible Imagery, Wildfire, Flood, Severe Weather",
+      ],
     },
   ],
 };
