@@ -1,3 +1,5 @@
+import { toTitleCase } from "@/app/site-config/content.helpers";
+import { isContentType, isTheme } from "@/app/site-config/typed.helpers";
 import {
   type Category,
   CONTENT_CATEGORIES,
@@ -53,6 +55,12 @@ const FACETS: Record<keyof FacetSelection, FacetConfig> = {
     hideWhenSingleOption: true,
   },
 };
+
+export function getFacetLabel(value: string): string {
+  if (isTheme(value)) return CONTENT_THEMES[value].label;
+  if (isContentType(value)) return CONTENT_TYPES[value].label;
+  return toTitleCase(value);
+}
 
 const FACET_KEYS = Object.keys(FACETS) as (keyof FacetSelection)[];
 
