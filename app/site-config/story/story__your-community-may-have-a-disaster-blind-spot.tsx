@@ -310,13 +310,50 @@ export const STORY__YOUR_COMMUNITY_MAY_HAVE_A_DISASTER_BLIND_SPOT: StoryContent 
     },
 
     {
-      type: "list",
-      heading: "Training Resources",
-      items: [
-        "[Watch] Introduction to the Foresight Tool [PLACEHOLDER]",
-        "[Watch] How to Incorporate Science into Scenario Exercises [PLACEHOLDER]",
-        "[Watch] Intensifying Extremes [PLACEHOLDER]",
-        "[Watch] Community Capacities [PLACEHOLDER]",
+      // Same section the home page uses for Resources & Learning: SectionCardSimple
+      // via the sectionCardSimple block. The four training videos are not published
+      // yet, so each carries the placeholder image; swap in real thumbnails, and
+      // register the trainings, once they are available.
+      type: "sectionCardSimple",
+      heading: "Resources & Learning",
+      link: { href: "/training", label: "More Resources and Learning" },
+      cards: [
+        {
+          id: "introduction-to-the-foresight-tool",
+          contentType: "training",
+          title: "Introduction to the Foresight Tool",
+          thumbnailImage: {
+            src: "/img/placeholder/card-masthead.webp",
+            alt: "Placeholder image for the Introduction to the Foresight Tool training video",
+          },
+        },
+        {
+          id: "how-to-incorporate-science-into-scenario-exercises",
+          contentType: "training",
+          title: "How to Incorporate Science into Scenario Exercises",
+          thumbnailImage: {
+            src: "/img/placeholder/card-masthead.webp",
+            alt: "Placeholder image for the How to Incorporate Science into Scenario Exercises training video",
+          },
+        },
+        {
+          id: "intensifying-extremes",
+          contentType: "training",
+          title: "Intensifying Extremes",
+          thumbnailImage: {
+            src: "/img/placeholder/card-masthead.webp",
+            alt: "Placeholder image for the Intensifying Extremes training video",
+          },
+        },
+        {
+          id: "community-capacities",
+          contentType: "training",
+          title: "Community Capacities",
+          thumbnailImage: {
+            src: "/img/placeholder/card-masthead.webp",
+            alt: "Placeholder image for the Community Capacities training video",
+          },
+        },
       ],
     },
 
