@@ -5,6 +5,7 @@ import {
   SectionHeading,
 } from "@/app/components/";
 import {
+  type CardMastheadPropsArgs,
   type CardSimplePropsArgs,
   makeCardMastHeadProps,
   makeCardSimpleProps,
@@ -17,7 +18,7 @@ import {
 import { typedMap } from "@/app/site-config/typed.helpers";
 
 export default function RecoverPage() {
-  const { theme, subtitle, mastheadImage } = RECOVER_CONTENT;
+  const { theme, subtitle, mastheadImage }: CardMastheadPropsArgs = RECOVER_CONTENT;
 
   const stories: CardSimplePropsArgs[] = RECOVER_STORIES.slice(0, 1).map(
     ({ id, contentType, thumbnailImage, themes, title }) => ({
