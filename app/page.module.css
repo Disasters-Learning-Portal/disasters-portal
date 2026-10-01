@@ -1,0 +1,12 @@
+/*
+ * CardSimple clamps `sm` card titles to 2 lines. Between the 1024px desktop
+ * breakpoint and 1280px the four-column cards narrow to ~196px, which cuts off
+ * the longest titles on this page ("NASA Lifelines Data Studio: Wildfire Early
+ * Warning Workflow" and "Driving Humanitarian Innovation and Action with Earth
+ * Science"). A third line shows them in full and still fits the card at every
+ * width, including the half-height mosaic cards.
+ */
+.fullCardTitles :global(.blocks-card-simple--sm .blocks-card-simple__title) {
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+}

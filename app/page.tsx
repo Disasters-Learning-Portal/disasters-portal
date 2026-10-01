@@ -7,6 +7,8 @@ import {
   SectionHeading,
 } from "@/app/components";
 
+import styles from "./page.module.css";
+
 import {
   type CardSimplePropsArgs,
   makeCardMastHeadProps,
@@ -40,6 +42,7 @@ export default function Home() {
         <Card {...makeCardMastHeadProps(MOCK_CARD_MASTHEAD)} />
       </div>
       <SectionCardSimpleMosaic
+        className={styles.fullCardTitles}
         sectionHeading={
           <SectionHeading
             linkProps={{ label: "More News and Events", href: "/news-events-stories" }}
@@ -61,7 +64,7 @@ export default function Home() {
         }
         cards={typedMap(trainings, makeCardSimpleProps)}
         bgColor="base-lightest"
-        className="margin-bottom-0"
+        className={`margin-bottom-0 ${styles.fullCardTitles}`}
       >
         <div className="grid-row margin-top-7">
           <Card {...MOCK_CARD_LETSCONNECT} />

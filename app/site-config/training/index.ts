@@ -6,9 +6,11 @@ import { TRAINING__EO_PRE_POST_FIRE_MONITORING } from "./training__eo-pre-post-f
 import { TRAINING__FUNDAMENTALS_REMOTE_SENSING } from "./training__fundamentals-remote-sensing";
 import { TRAINING__INTRODUCTION_TO_SAR } from "./training__introduction-to-sar";
 import { TRAINING__LIFELINES_WILDFIRE_WORKFLOW } from "./training__lifelines-wildfire-workflow";
+import { TRAINING__PORTAL_101 } from "./training__portal-101";
 import { TRAINING__SATELLITE_REMOTE_SENSING_URBAN_HEAT_ISLANDS } from "./training__satellite-remote-sensing-urban-heat-islands";
 
 export const TRAININGS: TrainingContent[] = [
+  TRAINING__PORTAL_101,
   TRAINING__LIFELINES_WILDFIRE_WORKFLOW,
   TRAINING__EO_BUILDING_EXPOSURE,
 ];
