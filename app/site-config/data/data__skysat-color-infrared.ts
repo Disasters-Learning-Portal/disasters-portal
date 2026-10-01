@@ -20,7 +20,7 @@ export const DATA__SKYSAT_COLOR_INFRARED: DataContent = {
     alt: "Planet SkySat color infrared image of southern Saipan following Typhoon Sinlaku in April 2026, with healthy vegetation in bright red, the island's international airport at center right, and the reef along the western coast",
   },
 
-  themes: ["respond", "build", "prepare", "recover"],
+  themes: ["respond", "resilience", "prepare", "recover"],
 
   categories: [
     "severe weather",
