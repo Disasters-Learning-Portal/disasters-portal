@@ -12,23 +12,16 @@ import type {
 } from "@/app/site-config/content.helpers";
 
 export const CONTENT_TYPES: Record<ContentType, { route: AppRoutes; label: string }> = {
-  data: { route: "/data-gallery", label: "data" },
-  event: { route: "/news-events-stories", label: "event" },
-  news: { route: "/news-events-stories", label: "news" },
-  story: { route: "/news-events-stories", label: "story" },
-  datastory: { route: "/news-events-stories", label: "data story" },
-  training: { route: "/training", label: "training" },
+  data: { route: "/data-gallery", label: "Data" },
+  event: { route: "/news-events-stories", label: "Event" },
+  news: { route: "/news-events-stories", label: "News" },
+  story: { route: "/news-events-stories", label: "Story" },
+  datastory: { route: "/news-events-stories", label: "Data Story" },
+  training: { route: "/training", label: "Training" },
 };
 
-export const SHOW_IN_PAGE_NAVIGATION_CONTENT_TYPES: ContentType[] = [
-  "event",
-  "news",
-  "story",
-  "datastory",
-  "training",
-];
-
-export type Theme = "respond" | "resilience" | "prepare" | "recover";
+/** Themes ordered by theme chronology */
+export type Theme = "prepare" | "respond" | "recover" | "resilience";
 
 /** Object is ordered by theme chronology */
 export const CONTENT_THEMES: Record<Theme, { label: string; color?: string; description: string }> =
@@ -53,7 +46,7 @@ export const CONTENT_THEMES: Record<Theme, { label: string; color?: string; desc
       color: "success",
       description: "Safeguard communities for enduring impact",
     },
-  };
+  } as const;
 
 export const CONTENT_CATEGORIES = [
   "earthquake",
@@ -73,8 +66,16 @@ export const CONTENT_CATEGORIES = [
 
 export type Category = (typeof CONTENT_CATEGORIES)[number];
 
-type GalleryRouteBase = "/data-gallery" | "/news-events-stories" | "/training"; // TODO: update to be dynamic
+type GalleryRouteBase = (typeof CONTENT_TYPES)[ContentType]["route"];
 export type GalleryRoute = GalleryRouteBase | `${GalleryRouteBase}?${string}`;
+
+export const SHOW_IN_PAGE_NAVIGATION_CONTENT_TYPES: ContentType[] = [
+  "event",
+  "news",
+  "story",
+  "datastory",
+  "training",
+];
 
 type GeoConfig = Omit<GeoConfigProviderProps, "children">;
 
