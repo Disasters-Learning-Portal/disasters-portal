@@ -49,7 +49,7 @@ export const CONTENT_THEMES: Record<Theme, { label: string; color?: string; desc
       description: "Assess impacts and rebuild stronger",
     },
     resilience: {
-      label: "Build resilience",
+      label: "Build Resilience",
       color: "success",
       description: "Safeguard communities for enduring impact",
     },
