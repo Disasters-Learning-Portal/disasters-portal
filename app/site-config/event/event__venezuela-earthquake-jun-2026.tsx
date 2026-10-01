@@ -18,13 +18,13 @@ export const EVENT__VENEZUELA_EQ_JUN_2026: EventContent = {
   datePublished: "2026-06-24",
 
   thumbnailImage: {
-    src: "/img/event/template-hero.webp",
-    alt: "Damage and hazard impacts from the June 2026 Venezuela earthquakes",
+    src: "/img/event/venezuela-earthquake-jun-2026.webp",
+    alt: "NISAR surface displacement map of the northern coast of Venezuela following the June 2026 earthquakes",
   },
 
   mastheadImage: {
-    src: "/img/event/template-hero.webp",
-    alt: "Damage and hazard impacts from the June 2026 Venezuela earthquakes",
+    src: "/img/event/venezuela-earthquake-jun-2026.webp",
+    alt: "NISAR surface displacement map of the northern coast of Venezuela following the June 2026 earthquakes",
   },
 
   themes: ["respond"],
