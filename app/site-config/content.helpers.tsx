@@ -25,7 +25,7 @@ export const makeOutlineTagProps = (
 ) => ({
   variant: "outline" as const,
   borderColor: "base-light" as const,
-  children: tag,
+  children: toTitleCase(tag),
   ...tagProps,
 });
 
@@ -34,7 +34,7 @@ export const makeTextTagProps = (
   tagProps?: Omit<TagProps, "variant" | "size" | "children">,
 ) => ({
   variant: "text" as const,
-  children: tag,
+  children: toTitleCase(tag),
   ...tagProps,
 });
 
