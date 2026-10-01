@@ -83,8 +83,8 @@ export const DATA__SENTINEL_2_NDVI: DataContent = {
       type: "text",
       heading: "Credits",
       paragraphs: [
-        "NASA/GSFC, USGS, ESA Copernicus",
-        "The product contains modified Copernicus Sentinel-2, processed by the European Space Agency."
+        "NASA/GSFC, USGS, ESA Copernicus, NASA Disasters Program",
+        "The product contains modified Copernicus Sentinel-2, processed by the European Space Agency.",
       ],
     },
 
