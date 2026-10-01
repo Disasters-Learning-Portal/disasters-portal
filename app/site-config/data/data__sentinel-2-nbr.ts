@@ -29,7 +29,14 @@ export const DATA__SENTINEL_2_NBR: DataContent = {
       type: "text",
       heading: "Suggested Use",
       paragraphs: [
-        "Darker areas (more negative values) in the NBR image more strongly represent the presence of burned vegetation.",
+        "NBR can be used to identify burned vegetation and assess spatial patterns of wildfire impacts. Healthy vegetation generally produces higher positive NBR values, while recently burned or charred vegetation generally produces lower or negative values.",
+      ],
+    },
+    {
+      type: "text",
+      heading: "Terms of Use",
+      paragraphs: [
+        "NASA data and products are freely available to federal, state, public, non-profit and commercial users. This information can be experimental- or research-grade data products and may not be appropriate for operational use. These NASA data products, services, and the Disasters Mapping Portal are intended to aid decision makers and enhance situational awareness, but these data are not guaranteed to be consistently available or routinely updated. Use of this product should include: 'Contains modified Copernicus Sentinel data (2026) processed by ESA.'",
       ],
     },
     {

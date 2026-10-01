@@ -45,9 +45,17 @@ export const DATA__OPERA_DISP_S1_COHERENCE: DataContent = {
 
     {
       type: "text",
+      heading: "Terms of Use",
+      paragraphs: [
+        "NASA data and products are freely available to federal, state, public, non-profit and commercial users. This information can be experimental- or research-grade data products and may not be appropriate for operational use. These NASA data products, services, and the Disasters Mapping Portal are intended to aid decision makers and enhance situational awareness, but these data are not guaranteed to be consistently available or routinely updated. Use of this product should include: 'Contains modified Copernicus Sentinel data (2026) processed by ESA.'",
+      ],
+    },
+
+    {
+      type: "text",
       heading: "Satellite/Sensor",
       paragraphs: [
-        "C-band Synthetic Aperture Radar (SAR) aboard the European Space Agency's Copernicus Sentinel-1A, Sentinel-1B, and Sentinel-1C satellites",
+        "C-band Synthetic Aperture Radar (SAR) aboard the European Space Agency's Copernicus Sentinel-1 mission, including historical observations from Sentinel-1A and Sentinel-1B and current observations from Sentinel-1C and Sentinel-1D",
       ],
     },
 

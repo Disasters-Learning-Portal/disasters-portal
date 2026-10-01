@@ -272,8 +272,6 @@ export type ThemeContent = {
 type MastheadImage = {
   src: string;
   alt: string;
-  caption?: string;
-  attribution?: string;
 };
 
 export type IterableItemWithId<T> = T & { id: string };

@@ -17,7 +17,7 @@ import {
   type IterableItemWithId,
   type Theme,
 } from "@/app/site-config/types";
-import { isInternalContent, pickKeys } from "./typed.helpers";
+import { isInternalContent, isMastHeadImage, pickKeys } from "./typed.helpers";
 
 export const makeOutlineTagProps = (
   tag: string,
@@ -61,10 +61,12 @@ export type CardMastheadPropsArgs = Omit<
   CardProps,
   "title" | "image" | "colorMode" | "isMastHead" | "tag" | "callToAction" | "callToActionSecondary"
 > & {
-  mastheadImage: {
-    alt: string;
-    src: string;
-  };
+  mastheadImage:
+    | {
+        alt: string;
+        src: string;
+      }
+    | CardProps["image"];
   title?: string;
   theme?: Theme;
   datePublished?: DateString;
@@ -84,7 +86,11 @@ export const makeCardMastHeadProps = ({
   ...rest
 }: CardMastheadPropsArgs): CardProps<typeof AppLink> => ({
   className: "blocks-card--contentpage",
-  image: <AppImage {...mastheadImage} sizes="100vw" fill preload={true} />,
+  image: isMastHeadImage(mastheadImage) ? (
+    <AppImage {...mastheadImage} sizes="100vw" fill preload={true} />
+  ) : (
+    mastheadImage
+  ),
   tag: datePublished && makeDateTagProps(datePublished),
   title: title ?? (theme ? CONTENT_THEMES[theme].label : undefined),
   description: subtitle,

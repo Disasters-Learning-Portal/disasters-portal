@@ -1,7 +1,8 @@
 import { CARTO_DARK_WITH_LABELS_BASEMAP_STYLE } from "@teamimpact/veda-ui-blocks";
 import { Fragment } from "react";
+
 import { AppLinkStyled } from "@/app/components/AppLink";
-import { DATA } from "@/app/site-config/data";
+import { DATA__TEXAS_FLOODS_JULY_2025 } from "@/app/site-config/data";
 import { TRAINING__EO_BUILDING_EXPOSURE } from "@/app/site-config/training/training__eo-building-exposure";
 import { TRAINING__FUNDAMENTALS_REMOTE_SENSING } from "@/app/site-config/training/training__fundamentals-remote-sensing";
 import { TRAINING__INTRODUCTION_TO_SAR } from "@/app/site-config/training/training__introduction-to-sar";
@@ -20,14 +21,15 @@ export const EVENT__TEXAS_FLOODS_JULY_2025: EventContent = {
   mastheadImage: {
     src: "/img/event/texas-floods-july-2025.webp",
     alt: "Flooded river and neighborhoods in Kerrville, Texas after July 2025 flooding",
-    caption:
-      "UAVSAR data collected from July 9 NASA flights was used to classify the likely areas of flooded developed areas (red), flooded croplands (orange), and areas of open water (blue) around Lake Travis, Texas.",
-    attribution: "NASA",
   },
   themes: ["respond"],
   categories: ["flood"],
   datePublished: "2025-07-09",
   startDate: "2025-07-04",
+  linkDHSFEMA: {
+    label: "Learn more",
+    href: "https://www.fema.gov/disaster/4879",
+  },
   region: "Texas, North America",
   body: [
     {
@@ -86,7 +88,7 @@ export const EVENT__TEXAS_FLOODS_JULY_2025: EventContent = {
         href: "/data-gallery",
         label: "View all",
       },
-      cards: DATA,
+      cards: DATA__TEXAS_FLOODS_JULY_2025,
     },
     {
       type: "sectionCardSimple",
