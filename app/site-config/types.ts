@@ -138,6 +138,21 @@ export type ContentBlock =
       cards: (Omit<CardDetailedPropsArgs, "title"> & { title: string })[];
     }
   | {
+      type: "carousel";
+      heading?: string;
+      headingLevel?: "h2" | "h3" | "h4";
+      /** Cards visible at once on desktop. Collapses to 1 on mobile. */
+      maxVisibleItems?: 1 | 2 | 3;
+      items: {
+        id: string;
+        title: string;
+        description?: string;
+        thumbnailImage: { src: string; alt: string };
+        /** Rendered as a Tag above the title. */
+        tag?: string;
+      }[];
+    }
+  | {
       type: "sectionCardFeatured";
       heading?: string;
       headingLevel?: "h2" | "h3" | "h4";
@@ -259,13 +274,6 @@ export type ThemeContent = {
 type MastheadImage = {
   src: string;
   alt: string;
-  caption?: string;
-  attribution?: string;
-  /**
-   * CSS object-position for the masthead's cover crop, e.g. "bottom" or "50% 80%".
-   * Defaults to centered, which crops equally off the top and bottom.
-   */
-  objectPosition?: string;
 };
 
 export type IterableItemWithId<T> = T & { id: string };
