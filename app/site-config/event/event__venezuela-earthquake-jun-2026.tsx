@@ -12,6 +12,9 @@ export const EVENT__VENEZUELA_EQ_JUN_2026: EventContent = {
 
   title: "Venezuela Earthquakes June 2026",
 
+  description:
+    "Following two major earthquakes in northern Venezuela, NASA supported response agencies with satellite data and analysis to assess damage, characterize hazards, and aid search-and-rescue efforts.",
+
   datePublished: "2026-06-24",
 
   thumbnailImage: {

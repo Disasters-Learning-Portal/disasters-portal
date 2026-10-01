@@ -9,6 +9,9 @@ export const EVENT__HURRICANE_MILTON_OCT_2024: EventContent = {
 
   title: "Hurricane Milton October 2024",
 
+  description:
+    "Following Hurricane Milton’s landfall in Florida, NASA supported FEMA and state emergency managers with satellite and airborne data to assess flooding, damage, and power outages.",
+
   datePublished: "2024-10-10",
 
   thumbnailImage: {

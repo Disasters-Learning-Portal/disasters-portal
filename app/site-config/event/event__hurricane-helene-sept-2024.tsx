@@ -9,6 +9,9 @@ export const EVENT__HURRICANE_HELENE_SEPT_2024: EventContent = {
 
   title: "Hurricane Helene September 2024",
 
+  description:
+    "Following Hurricane Helene, NASA supported federal, state, and humanitarian response partners with satellite data and analysis to identify flooding, landslides, vegetation damage, and power outages across the southeastern U.S.",
+
   datePublished: "2024-09-26",
 
   thumbnailImage: {
