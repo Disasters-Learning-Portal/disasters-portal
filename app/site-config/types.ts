@@ -30,24 +30,30 @@ export const SHOW_IN_PAGE_NAVIGATION_CONTENT_TYPES: ContentType[] = [
 
 export type Theme = "respond" | "resilience" | "prepare" | "recover";
 
-export const CONTENT_THEMES: Record<Theme, { label: string; color?: string }> = {
-  respond: {
-    label: "Respond",
-    color: "secondary",
-  },
-  resilience: {
-    label: "Build resilience",
-    color: "success",
-  },
-  prepare: {
-    label: "Prepare",
-    color: "accent-warm",
-  },
-  recover: {
-    label: "Recover",
-    color: "accent-cool",
-  },
-};
+/** Object is ordered by theme chronology */
+export const CONTENT_THEMES: Record<Theme, { label: string; color?: string; description: string }> =
+  {
+    prepare: {
+      label: "Prepare",
+      color: "accent-warm",
+      description: "Anticipate risk and boost readiness",
+    },
+    respond: {
+      label: "Respond",
+      color: "secondary",
+      description: "Support real-time decisions with timely insights",
+    },
+    recover: {
+      label: "Recover",
+      color: "accent-cool",
+      description: "Assess impacts and rebuild stronger",
+    },
+    resilience: {
+      label: "Build resilience",
+      color: "success",
+      description: "Safeguard communities for enduring impact",
+    },
+  };
 
 export const CONTENT_CATEGORIES = [
   "earthquake",
