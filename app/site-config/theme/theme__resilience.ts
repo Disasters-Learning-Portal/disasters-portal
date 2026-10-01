@@ -8,7 +8,7 @@ export const RESILIENCE_CONTENT: ThemeContent = {
     objectPosition: "bottom",
   },
   subtitle: "Safeguard communities for enduring impact",
-  theme: "build",
+  theme: "resilience",
   body: [
     {
       type: "image",

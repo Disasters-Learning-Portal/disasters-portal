@@ -28,14 +28,14 @@ export const SHOW_IN_PAGE_NAVIGATION_CONTENT_TYPES: ContentType[] = [
   "training",
 ];
 
-export type Theme = "respond" | "build" | "prepare" | "recover";
+export type Theme = "respond" | "resilience" | "prepare" | "recover";
 
 export const CONTENT_THEMES: Record<Theme, { label: string; color?: string }> = {
   respond: {
     label: "Respond",
     color: "secondary",
   },
-  build: {
+  resilience: {
     label: "Build resilience",
     color: "success",
   },
