@@ -1,7 +1,8 @@
-import { CardCTA, type CardCTAProps, type CardProps } from "@teamimpact/veda-ui-blocks";
+import { CardCTA, type CardCTAProps } from "@teamimpact/veda-ui-blocks";
 
 import { AppLink } from "@/app/components/AppLink";
 import { AppVideo } from "@/app/components/AppVideo";
+import type { CardMastheadPropsArgs } from "@/app/site-config/content.helpers";
 
 const MOCK_FEATURE_CARDCTAS_PROPS: CardCTAProps<typeof AppLink>[] = [
   {
@@ -57,9 +58,9 @@ const MOCK_FEATURE_CTACARDS_SECTION = (
   </div>
 );
 
-export const MOCK_CARD_MASTHEAD: CardProps = {
+export const MOCK_CARD_MASTHEAD: CardMastheadPropsArgs = {
   className: "blocks-card--homepage",
-  image: (
+  mastheadImage: (
     <AppVideo
       src="/img/home/home-card-hero-video.mp4"
       aria-hidden="true"
@@ -73,12 +74,9 @@ export const MOCK_CARD_MASTHEAD: CardProps = {
   ),
   title: "NASA Disasters PORTAL",
   description: "Empowering disaster insights with actionable Earth science information",
-  colorMode: "dark",
-  isMastHead: true,
   children: MOCK_FEATURE_CTACARDS_SECTION,
   callToAction: {
     label: "Learn About Us",
     href: "/about",
-    color: "secondary",
   },
 };
