@@ -7,7 +7,7 @@ export const RESILIENCE_CONTENT: ThemeContent = {
     src: "/img/theme/resilience-masthead.webp",
   },
   subtitle: "Safeguard communities for enduring impact",
-  theme: "build",
+  theme: "resilience",
   body: [
     {
       type: "image",
