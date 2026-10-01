@@ -7,7 +7,11 @@ import {
   SectionHeading,
 } from "@/app/components";
 
-import { type CardSimplePropsArgs, makeCardSimpleProps } from "./site-config/content.helpers";
+import {
+  type CardSimplePropsArgs,
+  makeCardMastHeadProps,
+  makeCardSimpleProps,
+} from "./site-config/content.helpers";
 import { MOCK_CARD_LETSCONNECT } from "./site-config/home/home-card-lets_connect";
 import { MOCK_CARD_MASTHEAD } from "./site-config/home/home-card-masthead";
 import { HOME_CONTENT } from "./site-config/home/home-content";
@@ -33,7 +37,7 @@ export default function Home() {
   return (
     <>
       <div className="home-card-masthead display-flex minh-card-xl">
-        <Card {...MOCK_CARD_MASTHEAD} />
+        <Card {...makeCardMastHeadProps(MOCK_CARD_MASTHEAD)} />
       </div>
       <SectionCardSimpleMosaic
         sectionHeading={

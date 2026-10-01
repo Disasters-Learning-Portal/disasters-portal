@@ -11,13 +11,13 @@ export const DATA__GAIA: DataContent = {
     "The Global Assessment of Infrastructure Assets (GAIA) provides building-level infrastructure exposure data to support disaster risk assessment, response, and recovery.",
 
   thumbnailImage: {
-    src: "/img/training/eo-building-exposure.webp",
-    alt: "GAIA building and infrastructure exposure data",
+    src: "/img/data/gaia-building-exposure.webp",
+    alt: "GAIA gridded building exposure across the Los Angeles basin, where color shows modeled built-up area per 100-meter grid cell, from dark blue in the lowest range to orange and red in the densest urban core",
   },
 
   mastheadImage: {
-    src: "/img/training/eo-building-exposure.webp",
-    alt: "GAIA building and infrastructure exposure data",
+    src: "/img/data/gaia-building-exposure.webp",
+    alt: "GAIA gridded building exposure across the Los Angeles basin, where color shows modeled built-up area per 100-meter grid cell, from dark blue in the lowest range to orange and red in the densest urban core",
   },
 
   themes: ["respond", "prepare", "recover"],
@@ -55,6 +55,14 @@ export const DATA__GAIA: DataContent = {
       heading: "Suggested Use",
       paragraphs: [
         "GAIA can be used to identify buildings and infrastructure located within areas affected or potentially affected by natural hazards. When combined with hazard extent, intensity, or damage products, the dataset provides context for evaluating exposed assets, prioritizing areas for assessment, and supporting disaster preparedness, response, and recovery activities. GAIA can also support risk modeling by providing a consistent representation of building exposure in locations where detailed infrastructure inventories may be incomplete or unavailable.",
+      ],
+    },
+
+    {
+      type: "text",
+      heading: "Terms of Use",
+      paragraphs: [
+        "NASA data and products are freely available to federal, state, public, non-profit and commercial users. This information can be experimental- or research-grade data products and may not be appropriate for operational use. These NASA data products, services, and the Disasters Mapping Portal are intended to aid decision makers and enhance situational awareness, but these data are not guaranteed to be consistently available or routinely updated.",
       ],
     },
 

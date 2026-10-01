@@ -280,13 +280,6 @@ export type ThemeContent = {
 type MastheadImage = {
   src: string;
   alt: string;
-  caption?: string;
-  attribution?: string;
-  /**
-   * CSS object-position for the masthead's cover crop, e.g. "bottom" or "50% 80%".
-   * Defaults to centered, which crops equally off the top and bottom.
-   */
-  objectPosition?: string;
 };
 
 export type IterableItemWithId<T> = T & { id: string };

@@ -26,6 +26,22 @@ export function isInternalContent<T extends Content>(c: T): c is Exclude<T, Exte
 }
 
 /**
+ * Narrows an unknown value to a `MastheadImage`-shaped object.
+ * Checks for the two required fields (`src` and `alt`) so that callers can
+ * safely access them after the guard.
+ */
+export function isMastHeadImage(
+  mastheadImage: unknown,
+): mastheadImage is { src: string; alt: string } {
+  return (
+    typeof mastheadImage === "object" &&
+    mastheadImage !== null &&
+    "src" in mastheadImage &&
+    "alt" in mastheadImage
+  );
+}
+
+/**
  * Tuple-preserving map. Unlike `Array.prototype.map`, this retains the length
  * and positional structure of the input tuple in the return type.
  *
