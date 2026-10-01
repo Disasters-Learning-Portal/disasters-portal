@@ -13,7 +13,7 @@ export const PREPARE_CONTENT: ThemeContent = {
     {
       type: "sectionCardSimple",
       heading: "Stories of Impact",
-      link: { href: "/news-events-stories", label: "More Stories of Impact" },
+      link: { href: "/news-events-stories?type=story", label: "More Stories of Impact" },
       cards: [
         {
           id: "your-community-may-have-a-disaster-blind-spot",

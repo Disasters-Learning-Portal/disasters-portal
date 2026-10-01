@@ -67,7 +67,8 @@ export const CONTENT_CATEGORIES = [
 
 export type Category = (typeof CONTENT_CATEGORIES)[number];
 
-export type GalleryRoute = "/data-gallery" | "/news-events-stories" | "/training"; // TODO: update to be dynamic
+type GalleryRouteBase = "/data-gallery" | "/news-events-stories" | "/training"; // TODO: update to be dynamic
+export type GalleryRoute = GalleryRouteBase | `${GalleryRouteBase}?${string}`;
 
 type GeoConfig = Omit<GeoConfigProviderProps, "children">;
 
