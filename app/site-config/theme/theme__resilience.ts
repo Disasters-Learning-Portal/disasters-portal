@@ -33,10 +33,10 @@ export const RESILIENCE_CONTENT: ThemeContent = {
         {
           id: "helping-hampton-roads-face-the-floods",
           contentType: "story",
-          title: "Helping Hampton Roads Face the Floods",
+          title: "When the Next Flood Hits, Will Your City Be Ready?",
           thumbnailImage: {
-            src: "/img/placeholder/card-masthead.webp",
-            alt: "",
+            src: "/img/story/helping-hampton-roads-face-the-floods.webp",
+            alt: "Floodwater covers a road intersection up to the curbside traffic signals during a storm.",
           },
         },
       ],
