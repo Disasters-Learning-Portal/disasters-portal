@@ -2,6 +2,7 @@
 
 import { type ComponentProps, forwardRef, type MouseEvent } from "react";
 import { AppLink } from "@/app/components/AppLink";
+import { withBasePath } from "@/app/site-config/base-path.helpers";
 
 /**
  * How long to keep a frame around when `afterprint` never arrives. Chrome
@@ -20,7 +21,10 @@ const FRAME_LIFETIME_MS = 60_000;
 function printInBackground(href: string) {
   const frame = document.createElement("iframe");
 
-  frame.src = href;
+  // next/link prefixes the base path for us, but an iframe src is a raw DOM
+  // assignment and gets no such help: under a base path the frame would ask
+  // for /training/<id>/print instead of /disasters/training/<id>/print.
+  frame.src = withBasePath(href);
   frame.setAttribute("aria-hidden", "true");
   frame.setAttribute("tabindex", "-1");
   frame.style.cssText =
