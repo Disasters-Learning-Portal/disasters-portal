@@ -38,12 +38,6 @@ export const makeTextTagProps = (
   ...tagProps,
 });
 
-// Tag takes its text as `children`, a Card wants it as `label`.
-const childrenToLabel = <T extends { children: string }>({ children, ...rest }: T) => ({
-  label: children,
-  ...rest,
-});
-
 const makeDateTagProps = (date: DateString) =>
   childrenToLabel(makeTextTagProps(`Published: ${toNASAStyleDate(date)}`));
 
@@ -56,6 +50,12 @@ export const makeContentTypeTagProps = (tag: ContentType) => {
   const { label } = CONTENT_TYPES[tag];
   return label;
 };
+
+// Takes in prop object with `children`, and rekeys as `label` for components with nested component props.
+const childrenToLabel = <T extends { children: string }>({ children, ...rest }: T) => ({
+  label: children,
+  ...rest,
+});
 
 export type CardMastheadPropsArgs = Omit<
   CardProps,
