@@ -20,7 +20,7 @@ export const DATA__LANDSAT_MNDWI: DataContent = {
     alt: "Landsat Modified Normalized Difference Water Index (MNDWI)",
   },
 
-  themes: ["respond", "build", "prepare", "recover"],
+  themes: ["respond", "resilience", "prepare", "recover"],
 
   categories: ["severe weather", "flood", "tropical cyclone", "winter weather"],
 
