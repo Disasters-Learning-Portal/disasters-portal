@@ -8,6 +8,7 @@ export const STORY__ESTIMATING_LOSS_RECOVERY: StoryContent = {
   id: "estimating-loss-recovery",
   contentType: "story",
   title: "When Every Dollar Counts",
+  datePublished: "2026-09-30",
   subtitle: "Estimating Loss to Speed Recovery",
   thumbnailImage: {
     src: "/img/story/estimating-loss-recovery.webp",
@@ -117,18 +118,6 @@ export const STORY__ESTIMATING_LOSS_RECOVERY: StoryContent = {
         DATA__GAIA,
         TRAINING__BUILDING_CLIMATE_RISK_ASSESSMENTS,
         TRAINING__EO_INSURANCE_FINANCE_DECISION_MAKING,
-      ],
-    },
-    {
-      type: "list",
-      heading: "Connect With Us",
-      headingLevel: "h2",
-      items: [
-        { label: "Contact Our Team", href: "mailto:disasters@nasa.gov" },
-        {
-          label: "Sign up for the NASA Disasters Community Newsletter",
-          href: "https://lp.constantcontactpages.com/sl/ICIOyJI",
-        },
       ],
     },
   ],
