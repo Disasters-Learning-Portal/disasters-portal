@@ -25,16 +25,16 @@ export default function RespondPage() {
   const { theme, subtitle, mastheadImage }: CardMastheadPropsArgs = RESPOND_CONTENT;
 
   const stories: CardSimplePropsArgs[] = RESPOND_STORIES.slice(0, 2).map((i) =>
-    pickKeys(i, ["id", "contentType", "thumbnailImage", "themes", "title"]),
+    pickKeys(i, ["id", "contentType", "thumbnailImage", "themes", "title", "subtitle"]),
   );
 
   const dataStories: CardSimplePropsArgs[] = RESPOND_DATASTORIES.map((i) => ({
-    ...pickKeys(i, ["id", "contentType", "thumbnailImage", "themes", "title"]),
+    ...pickKeys(i, ["id", "contentType", "thumbnailImage", "themes", "title", "subtitle"]),
     ...("url" in i ? { url: i.url } : {}),
   }));
 
   const trainings: CardSimplePropsArgs[] = RESPOND_TRAININGS.map((i) => ({
-    ...pickKeys(i, ["id", "contentType", "thumbnailImage", "title"]),
+    ...pickKeys(i, ["id", "contentType", "thumbnailImage", "title", "subtitle"]),
     ...("url" in i ? { url: i.url } : {}),
   }));
 

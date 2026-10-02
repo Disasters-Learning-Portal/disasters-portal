@@ -26,11 +26,11 @@ export default function Home() {
     CardSimplePropsArgs,
     CardSimplePropsArgs,
   ] = typedMap(NEWS_EVENTS_STORIES_CARDS, (item: (typeof NEWS_EVENTS_STORIES_CARDS)[number]) =>
-    pickKeys(item, ["id", "contentType", "thumbnailImage", "themes", "title"]),
+    pickKeys(item, ["id", "contentType", "thumbnailImage", "themes", "title", "subtitle"]),
   );
 
   const trainings: CardSimplePropsArgs[] = RESOURCES_LEARNING_CARDS.map((i) => ({
-    ...pickKeys(i, ["id", "contentType", "thumbnailImage", "themes", "title"]),
+    ...pickKeys(i, ["id", "contentType", "thumbnailImage", "themes", "title", "subtitle"]),
     ...("url" in i ? { url: i.url } : {}),
   }));
 

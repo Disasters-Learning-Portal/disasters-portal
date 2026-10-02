@@ -8,6 +8,8 @@ export const EVENT__TYPHOON_SINLAKU_APR_2026: EventContent = {
   id: "typhoon-sinlaku-2026",
   contentType: "event",
   title: "Typhoon Sinlaku April 2026",
+  description:
+    "Typhoon Sinlaku impacted Guam and the Northern Mariana Islands, prompting NASA to support federal response partners with satellite data and mapping to assess power outages, flooding, landslide hazards, and storm impacts where ground-based observations were limited.",
   datePublished: "2026-04-24",
   thumbnailImage: {
     src: "/img/event/typhoon-sinlaku-2026.webp",

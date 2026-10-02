@@ -37,7 +37,7 @@ type FacetConfig = {
 const FACETS: Record<keyof FacetSelection, FacetConfig> = {
   themes: {
     param: "theme",
-    title: "Theme",
+    title: "Need",
     options: Object.keys(CONTENT_THEMES),
     getItemValues: (item) => item.themes,
   },
