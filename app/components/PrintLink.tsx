@@ -12,7 +12,22 @@ import { withBasePath } from "@/app/site-config/base-path.helpers";
 const FRAME_LIFETIME_MS = 60_000;
 
 /**
- *
+ * next/image renders `loading="lazy"`, and a frame parked offscreen never
+ * scrolls, so a figure below the first viewport is never asked for: Firefox
+ * fetched them anyway, Chrome stopped after the first and Safari fetched none.
+ */
+async function settleFrame(frameWindow: Window) {
+  const images = Array.from(frameWindow.document.images);
+
+  for (const image of images) {
+    if (image.loading === "lazy") image.loading = "eager";
+  }
+
+  // allSettled: a figure that 404s should not hold the dialog back.
+  await Promise.allSettled(images.map((image) => image.decode()));
+}
+
+/**
  * The frame is given a page's worth of room rather than being collapsed to
  * nothing: a zero-width frame lays its document out in a zero-width viewport,
  * and the figures and line breaks that come back are not the ones the document
@@ -44,11 +59,13 @@ function printInBackground(href: string) {
       return;
     }
 
-    // Lazy images below the fold are never in view here, but the browser loads
-    // them before printing, so they still reach the dialog.
     frameWindow.addEventListener("afterprint", remove, { once: true });
     window.setTimeout(remove, FRAME_LIFETIME_MS);
-    frameWindow.print();
+
+    void settleFrame(frameWindow).then(() => {
+      if (settled) return;
+      frameWindow.print();
+    });
   });
 
   document.body.appendChild(frame);
