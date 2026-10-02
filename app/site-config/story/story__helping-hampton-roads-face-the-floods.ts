@@ -100,12 +100,13 @@ export const STORY__HELPING_HAMPTON_ROADS_FACE_THE_FLOODS: StoryContent = {
       ],
     },
     {
+      // Reuses the Build Resilience theme page asset: the same VIMS max-depth map.
       // TODO: the document marks this figure as a placeholder — "We plan to replace this static
       // screenshot with an interactive flood-model timelapse, once the ODSI team has had a chance
       // to integrate the data." The approved caption below describes that timelapse, not the
       // static map standing in for it, so caption and figure should land together.
       type: "image",
-      src: "/img/story/helping-hampton-roads-face-the-floods__matthew-max-depth.webp",
+      src: "/img/theme/resilience-matthew-inundation.webp",
       alt:
         "Map of central Virginia Beach shading modeled maximum flood depth during Hurricane " +
         "Matthew, with floodwater following storm drainage channels through neighborhoods and a " +
