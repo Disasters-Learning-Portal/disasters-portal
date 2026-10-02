@@ -65,16 +65,21 @@ export default function RespondPage() {
         // biome-ignore lint/suspicious/noArrayIndexKey: static content, never reorders
         <ContentBlockRenderer key={index} block={block} />
       ))}
-      <SectionCardSimple
-        sectionHeading={
-          <SectionHeading
-            linkProps={{ label: "More Data Stories", href: "/news-events-stories?type=datastory" }}
-          >
-            Data Stories
-          </SectionHeading>
-        }
-        cards={typedMap(dataStories, makeCardSimpleProps)}
-      />
+      {dataStories.length > 0 && (
+        <SectionCardSimple
+          sectionHeading={
+            <SectionHeading
+              linkProps={{
+                label: "More Data Stories",
+                href: "/news-events-stories?type=datastory",
+              }}
+            >
+              Data Stories
+            </SectionHeading>
+          }
+          cards={typedMap(dataStories, makeCardSimpleProps)}
+        />
+      )}
       <SectionCardSimple
         sectionHeading={
           <SectionHeading linkProps={{ label: "More Resources and Learning", href: "/training" }}>
