@@ -49,7 +49,9 @@ export const RESPOND_CONTENT: ThemeContent = {
 } as const;
 
 // TODO: these would be fetched based on content id
-export const RESPOND_STORIES: (NewsContent | StoryContent | EventContent)[] = [STORY__FINDING_FLOODS];
+export const RESPOND_STORIES: (NewsContent | StoryContent | EventContent)[] = [
+  STORY__FINDING_FLOODS,
+];
 
 // TODO: these would be fetched based on content id
 export const RESPOND_EVENTS: EventContent[] = [
