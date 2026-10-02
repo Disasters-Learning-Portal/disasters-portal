@@ -155,13 +155,15 @@ export const ContentBlockRenderer = ({
 
     case "sectionCardSimple": {
       const cards = block.cards.map(
-        ({ id, contentType, themes, thumbnailImage, title, ...rest }) => ({
+        ({ id, contentType, themes, thumbnailImage, title, subtitle, description, ...rest }) => ({
           ...makeCardSimpleProps({
             id,
             contentType,
             themes,
             thumbnailImage,
             title,
+            subtitle,
+            description,
             url: "url" in rest ? rest.url : undefined,
           }),
           // Card titles sit under the block's h2 section heading.

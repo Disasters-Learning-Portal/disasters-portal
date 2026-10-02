@@ -1,3 +1,5 @@
+import { TRAINING__SEA_LEVEL_CHANGE_TOOLS } from "@/app/site-config/training/training__sea-level-change-tools";
+import { pickKeys } from "@/app/site-config/typed.helpers";
 import type { StoryContent } from "@/app/site-config/types";
 
 export const STORY__HELPING_HAMPTON_ROADS_FACE_THE_FLOODS: StoryContent = {
@@ -199,20 +201,9 @@ export const STORY__HELPING_HAMPTON_ROADS_FACE_THE_FLOODS: StoryContent = {
       type: "sectionCardSimple",
       heading: "Resources & Learning",
       link: { href: "/training", label: "More Resources and Learning" },
-      cards: [
-        {
-          id: "sea-level-change-tools-planning-decision-support",
-          contentType: "training",
-          title: "Sea Level Change Tools for Planning and Decision Support",
-          thumbnailImage: {
-            src: "/img/training/sea-level-change-tools.webp",
-            alt:
-              "Map of sea surface height anomalies across the Americas and the Atlantic, with higher " +
-              "anomalies in orange and lower in blue.",
-          },
-          url: "https://www.earthdata.nasa.gov/learn/trainings/sea-level-change-tools-planning-decision-support",
-        },
-      ],
+      cards: [TRAINING__SEA_LEVEL_CHANGE_TOOLS].map((i) =>
+        pickKeys(i, ["id", "contentType", "thumbnailImage", "themes", "title", "subtitle"]),
+      ),
     },
   ],
 };

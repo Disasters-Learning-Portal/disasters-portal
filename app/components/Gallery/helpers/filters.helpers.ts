@@ -32,7 +32,7 @@ function matchesQuery(item: GalleryCardContent, query: string): boolean {
 /** A removable-pill descriptor for one applied filter. */
 export type AppliedFilter = {
   id: string;
-  label: string;
+  value: string;
   remove: () => void;
 };
 
@@ -47,7 +47,7 @@ export function buildAppliedFilters(
     // search besides submitting an empty one.
     pills.push({
       id: "query",
-      label: `Text: “${filters.query}”`,
+      value: `Text: “${filters.query}”`,
       remove: () => setFilters({ ...filters, query: "" }),
     });
   }
@@ -55,7 +55,7 @@ export function buildAppliedFilters(
     // Toggling a selected value deselects it.
     pills.push({
       id: `${key}-${value}`,
-      label: value,
+      value: value,
       remove: () =>
         setFilters({ ...filters, facets: toggleFacetValue(filters.facets, key, value) }),
     });

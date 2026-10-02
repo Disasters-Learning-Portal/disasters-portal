@@ -13,10 +13,10 @@ import type {
 
 export const CONTENT_TYPES: Record<ContentType, { route: AppRoutes; label: string }> = {
   data: { route: "/data-gallery", label: "Data" },
+  datastory: { route: "/news-events-stories", label: "Data Story" },
   event: { route: "/news-events-stories", label: "Event" },
   news: { route: "/news-events-stories", label: "News" },
   story: { route: "/news-events-stories", label: "Story" },
-  datastory: { route: "/news-events-stories", label: "Data Story" },
   training: { route: "/training", label: "Training" },
 };
 
@@ -49,18 +49,18 @@ export const CONTENT_THEMES: Record<Theme, { label: string; color?: string; desc
   } as const;
 
 export const CONTENT_CATEGORIES = [
+  "cyclone",
   "earthquake",
   "fire",
   "flood",
   "heat",
+  "hurricane",
   "landslide",
   "severe weather",
   "tropical cyclone",
-  "hurricane",
-  "typhoon",
-  "cyclone",
-  "volcano",
   "tsunami",
+  "typhoon",
+  "volcano",
   "winter weather",
 ] as const;
 

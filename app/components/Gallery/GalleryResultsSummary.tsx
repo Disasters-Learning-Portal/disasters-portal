@@ -2,6 +2,7 @@
 
 import { Link, Tag } from "@teamimpact/veda-ui-blocks";
 import { makeOutlineTagProps } from "@/app/site-config/content.helpers";
+import { getFacetLabel } from "./helpers/facets.helpers";
 import type { AppliedFilter } from "./helpers/filters.helpers";
 
 type GalleryResultsSummaryProps = {
@@ -41,10 +42,13 @@ export function GalleryResultsSummary({
         ) : (
           <>
             <span className="text-bold margin-right-1">Filters applied:</span>
-            {appliedFilters.map(({ id, label, remove }) => (
+            {appliedFilters.map(({ id, value, remove }) => (
               <Tag
                 key={id}
-                {...makeOutlineTagProps(label, { className: "margin-right-1", onClose: remove })}
+                {...makeOutlineTagProps(getFacetLabel(value), {
+                  className: "margin-right-1",
+                  onClose: remove,
+                })}
               />
             ))}
             {appliedFilters.length > 1 && (
