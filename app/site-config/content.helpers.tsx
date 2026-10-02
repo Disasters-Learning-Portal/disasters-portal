@@ -25,7 +25,7 @@ export const makeOutlineTagProps = (
 ) => ({
   variant: "outline" as const,
   borderColor: "base-light" as const,
-  children: tag,
+  children: toTitleCase(tag),
   ...tagProps,
 });
 
@@ -34,14 +34,8 @@ export const makeTextTagProps = (
   tagProps?: Omit<TagProps, "variant" | "size" | "children">,
 ) => ({
   variant: "text" as const,
-  children: tag,
+  children: toTitleCase(tag),
   ...tagProps,
-});
-
-// Tag takes its text as `children`, a Card wants it as `label`.
-const childrenToLabel = <T extends { children: string }>({ children, ...rest }: T) => ({
-  label: children,
-  ...rest,
 });
 
 const makeDateTagProps = (date: DateString) =>
@@ -56,6 +50,12 @@ export const makeContentTypeTagProps = (tag: ContentType) => {
   const { label } = CONTENT_TYPES[tag];
   return label;
 };
+
+// Takes in prop object with `children`, and rekeys as `label` for components with nested component props.
+const childrenToLabel = <T extends { children: string }>({ children, ...rest }: T) => ({
+  label: children,
+  ...rest,
+});
 
 export type CardMastheadPropsArgs = Omit<
   CardProps,
@@ -279,6 +279,7 @@ export type CardSimplePropsArgs = Omit<
     alt: string;
     src: string;
   };
+  subtitle?: string;
   tag?: Theme | ContentType | Category | "active";
   themes?: Theme[];
   url?: string;
@@ -287,6 +288,8 @@ export type CardSimplePropsArgs = Omit<
 export const makeCardSimpleProps = ({
   id,
   contentType,
+  description,
+  subtitle,
   thumbnailImage,
   tag,
   themes,
@@ -307,6 +310,7 @@ export const makeCardSimpleProps = ({
   href: url ? url : `${CONTENT_TYPES[contentType].route}/${id}`,
   isExternal: !!url,
   as: AppLink,
+  description: subtitle ?? description,
   ...rest,
 });
 

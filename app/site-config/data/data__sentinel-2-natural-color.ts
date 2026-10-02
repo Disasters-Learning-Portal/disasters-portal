@@ -20,7 +20,7 @@ export const DATA__SENTINEL_2_NATURAL_COLOR: DataContent = {
     alt: "Sentinel-2 natural color imagery",
   },
 
-  themes: ["respond", "build", "prepare", "recover"],
+  themes: ["respond", "resilience", "prepare", "recover"],
 
   categories: [
     "earthquake",

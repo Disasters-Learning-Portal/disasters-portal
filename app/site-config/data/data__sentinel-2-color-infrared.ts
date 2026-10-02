@@ -19,9 +19,7 @@ export const DATA__SENTINEL_2_COLOR_INFRARED: DataContent = {
     src: "/img/data/sentinel-2-color-infrared.webp",
     alt: "Sentinel-2 Color Infrared imagery example",
   },
-
-  themes: ["respond", "build", "prepare", "recover"],
-
+  themes: ["prepare", "respond", "recover", "resilience"],
   categories: [
     "severe weather",
     "fire",

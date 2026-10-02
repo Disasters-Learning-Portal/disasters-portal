@@ -20,7 +20,7 @@ export const DATA__LANDSAT_NDVI: DataContent = {
     alt: "Landsat Normalized Difference Vegetation Index (NDVI)",
   },
 
-  themes: ["respond", "build", "prepare", "recover"],
+  themes: ["respond", "resilience", "prepare", "recover"],
 
   categories: [
     "earthquake",

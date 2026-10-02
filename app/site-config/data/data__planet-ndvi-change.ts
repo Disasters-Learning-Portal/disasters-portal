@@ -20,7 +20,7 @@ export const DATA__PLANET_NDVI_CHANGE: DataContent = {
     alt: "Planet NDVI Change",
   },
 
-  themes: ["respond", "build", "prepare", "recover"],
+  themes: ["respond", "resilience", "prepare", "recover"],
 
   categories: [
     "severe weather",

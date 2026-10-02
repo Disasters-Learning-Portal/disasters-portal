@@ -20,7 +20,7 @@ export const DATA__VANTOR_TRUE_COLOR: DataContent = {
     alt: "Vantor true color satellite image of a dense residential city edge meeting farmland, crossed by a highway and dotted with cumulus clouds",
   },
 
-  themes: ["respond", "build", "prepare", "recover"],
+  themes: ["respond", "resilience", "prepare", "recover"],
 
   categories: [
     "severe weather",

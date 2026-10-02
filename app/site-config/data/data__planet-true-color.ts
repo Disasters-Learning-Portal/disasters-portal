@@ -20,7 +20,7 @@ export const DATA__PLANET_TRUE_COLOR: DataContent = {
     alt: "Planet True Color imagery example",
   },
 
-  themes: ["respond", "build", "prepare", "recover"],
+  themes: ["respond", "resilience", "prepare", "recover"],
 
   categories: [
     "severe weather",

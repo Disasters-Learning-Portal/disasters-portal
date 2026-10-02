@@ -20,7 +20,7 @@ export const DATA__PLANET_NDWI: DataContent = {
     alt: "Planet Normalized Difference Water Index (NDWI)",
   },
 
-  themes: ["respond", "build", "prepare", "recover"],
+  themes: ["respond", "resilience", "prepare", "recover"],
 
   categories: [
     "severe weather",
