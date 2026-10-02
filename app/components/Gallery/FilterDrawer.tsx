@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import {
   EMPTY_FACETS,
   type FacetSelection,
+  getFacetLabel,
   listFacetOptions,
   toggleFacetValue,
 } from "./helpers/facets.helpers";
@@ -80,7 +81,7 @@ export function FilterDrawer({
               <Checkbox
                 key={option.value}
                 name={sectionId}
-                label={option.value}
+                label={getFacetLabel(option.value)}
                 value={option.value}
                 inputProps={{
                   checked: option.selected,

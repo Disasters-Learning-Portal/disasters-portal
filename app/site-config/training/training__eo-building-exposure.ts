@@ -11,7 +11,7 @@ export const TRAINING__EO_BUILDING_EXPOSURE: TrainingContent = {
     alt: "GAIA gridded building exposure across the Los Angeles basin, where color shows modeled built-up area per 100-meter grid cell, from dark blue in the lowest range to orange and red in the densest urban core",
   },
   datePublished: "2026-01-15",
-  themes: ["recover", "prepare", "respond", "build"],
+  themes: ["recover", "prepare", "respond", "resilience"],
   categories: ["earthquake", "tropical cyclone"],
   mastheadImage: {
     src: "/img/training/eo-building-exposure.webp",
