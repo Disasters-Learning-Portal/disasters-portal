@@ -36,7 +36,7 @@ export const CONTENT_THEMES: Record<Theme, { label: string; color?: string }> = 
     color: "secondary",
   },
   build: {
-    label: "Build resilience",
+    label: "Build Resilience",
     color: "success",
   },
   prepare: {
