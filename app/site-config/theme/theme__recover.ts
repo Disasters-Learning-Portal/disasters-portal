@@ -1,6 +1,4 @@
 import { STORY__ESTIMATING_LOSS_RECOVERY } from "@/app/site-config/story/story__estimating-loss-recovery";
-import { STORY__IDENTIFYING_INFRASTRUCTURE_RISKS_HURRICANE } from "@/app/site-config/story/story__identifying-infrastructure-risks-hurricane";
-import { STORY__MAPPING_OIL_SPILLS_FROM_SPACE } from "@/app/site-config/story/story__mapping_oil_spills_from_space";
 import { TRAINING__EO_BUILDING_EXPOSURE } from "@/app/site-config/training/training__eo-building-exposure";
 import { TRAINING__EO_PRE_POST_FIRE_MONITORING } from "@/app/site-config/training/training__eo-pre-post-fire-monitoring";
 import { TRAINING__FUNDAMENTALS_REMOTE_SENSING } from "@/app/site-config/training/training__fundamentals-remote-sensing";
@@ -43,14 +41,8 @@ export const RECOVER_CONTENT: ThemeContent = {
 } as const;
 
 // TODO: these would be fetched based on content id
-export const RECOVER_STORIES: [
-  NewsContent | StoryContent | EventContent,
-  NewsContent | StoryContent | EventContent,
-  NewsContent | StoryContent | EventContent,
-] = [
+export const RECOVER_STORIES: [NewsContent | StoryContent | EventContent] = [
   STORY__ESTIMATING_LOSS_RECOVERY,
-  STORY__MAPPING_OIL_SPILLS_FROM_SPACE,
-  STORY__IDENTIFYING_INFRASTRUCTURE_RISKS_HURRICANE,
 ];
 
 // TODO: these would be fetched based on content id
