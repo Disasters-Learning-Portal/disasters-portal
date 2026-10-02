@@ -25,17 +25,11 @@ export const RESILIENCE_CONTENT: ThemeContent = {
       type: "image",
       heading: "Data Visualization",
       src: "/img/theme/resilience-matthew-inundation.webp",
-      alt: "Map of central Virginia Beach shading modeled maximum flood extent and water depth during Hurricane Matthew, with a legend grading water depth from under half a foot to more than nine feet.",
+      alt: "Map of central Virginia Beach shading modeled maximum flood depth during Hurricane Matthew, with floodwater following storm drainage channels through neighborhoods and a legend grading water depth from half a foot to ten feet.",
       width: 1280,
-      height: 898,
+      height: 654,
       caption:
         "This map shows the modeled maximum flood extent and water depth in central Virginia Beach during Hurricane Matthew in October 2016. Using a Virginia Institute of Marine Science (VIMS) street-level inundation model, researchers can examine how a real storm affected individual streets and neighborhoods, then use that event as a baseline for scenarios exploring how similar storms could produce different flooding as sea levels rise. Those scenarios can help communities stress-test infrastructure and emergency plans before the next major flood. Credit: NASA; J. Derek Loftis, Ph.D., Virginia Institute of Marine Science, William & Mary.",
-    },
-    {
-      type: "text",
-      paragraphs: [
-        "Learn how NASA researchers are using historic storms like Hurricane Matthew to help Hampton Roads plan for the floods of the future.",
-      ],
     },
     {
       type: "sectionCardSimple",
