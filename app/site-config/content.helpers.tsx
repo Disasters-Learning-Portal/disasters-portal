@@ -74,13 +74,11 @@ export type CardMastheadPropsArgs = Omit<
     label: string;
     href: string;
     /**
-     * Passed through to next/link. A link to a file under public/ wants
-     * `target: "_blank"` and `prefetch: false` so the router neither
-     * intercepts the click nor prefetches the file itself.
+     * Renders the call to action as something other than a plain next/link,
+     * for a destination that is acted on rather than navigated to. Must be a
+     * client component, the same as {@link AppLink}.
      */
-    target?: string;
-    rel?: string;
-    prefetch?: false;
+    as?: typeof AppLink;
   };
 };
 
@@ -103,10 +101,10 @@ export const makeCardMastHeadProps = ({
   title: title ?? (theme ? CONTENT_THEMES[theme].label : undefined),
   description: subtitle,
   callToAction: callToAction && {
+    as: AppLink,
     ...callToAction,
     variant: "button",
     color: "secondary",
-    as: AppLink,
   },
   colorMode: "dark",
   isMastHead: true,
