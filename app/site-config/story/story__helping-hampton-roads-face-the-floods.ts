@@ -1,3 +1,5 @@
+import { TRAINING__SEA_LEVEL_CHANGE_TOOLS } from "@/app/site-config/training/training__sea-level-change-tools";
+import { pickKeys } from "@/app/site-config/typed.helpers";
 import type { StoryContent } from "@/app/site-config/types";
 
 export const STORY__HELPING_HAMPTON_ROADS_FACE_THE_FLOODS: StoryContent = {
@@ -18,7 +20,7 @@ export const STORY__HELPING_HAMPTON_ROADS_FACE_THE_FLOODS: StoryContent = {
       "Floodwater submerges a road intersection during a storm, rising past the base of the " +
       "traffic signals and surrounding buildings and trees.",
   },
-  themes: ["build"],
+  themes: ["resilience"],
   categories: ["flood", "hurricane"],
   body: [
     {
@@ -108,15 +110,15 @@ export const STORY__HELPING_HAMPTON_ROADS_FACE_THE_FLOODS: StoryContent = {
       type: "image",
       src: "/img/theme/resilience-matthew-inundation.webp",
       alt:
-        "Map of central Virginia Beach shading modeled maximum flood extent and water depth during " +
-        "Hurricane Matthew, with a legend grading water depth from under half a foot to more than " +
-        "nine feet.",
+        "Map of central Virginia Beach shading modeled maximum flood depth during Hurricane " +
+        "Matthew, with floodwater following storm drainage channels through neighborhoods and a " +
+        "legend grading water depth from half a foot to ten feet.",
       caption:
         "A day-by-day timelapse of modeled flood extent across the same event, viewed from above. " +
         "Credits: NASA, J. Derek Loftis, Ph.D., Virginia Institute of Marine Science, William & " +
         "Mary.",
       width: 1280,
-      height: 898,
+      height: 654,
     },
     {
       type: "text",
@@ -199,20 +201,9 @@ export const STORY__HELPING_HAMPTON_ROADS_FACE_THE_FLOODS: StoryContent = {
       type: "sectionCardSimple",
       heading: "Resources & Learning",
       link: { href: "/training", label: "More Resources and Learning" },
-      cards: [
-        {
-          id: "sea-level-change-tools-planning-decision-support",
-          contentType: "training",
-          title: "Sea Level Change Tools for Planning and Decision Support",
-          thumbnailImage: {
-            src: "/img/training/sea-level-change-tools.webp",
-            alt:
-              "Map of sea surface height anomalies across the Americas and the Atlantic, with higher " +
-              "anomalies in orange and lower in blue.",
-          },
-          url: "https://www.earthdata.nasa.gov/learn/trainings/sea-level-change-tools-planning-decision-support",
-        },
-      ],
+      cards: [TRAINING__SEA_LEVEL_CHANGE_TOOLS].map((i) =>
+        pickKeys(i, ["id", "contentType", "thumbnailImage", "themes", "title", "subtitle"]),
+      ),
     },
   ],
 };
