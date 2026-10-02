@@ -11,6 +11,8 @@ export const EVENT__SOUTHERN_CALIFORNIA_FIRE_JAN_2025: EventContent = {
   id: "southern-california-fire-jan-2025",
   contentType: "event",
   title: "Southern California Wildfires January 2025",
+  description:
+    "Following major wildfires in Los Angeles County, NASA supported local, state, and federal response agencies with satellite and airborne data to assess fire damage, infrastructure impacts, power outages, air quality, and potential hazardous emissions.",
   datePublished: "2025-01-17",
   thumbnailImage: {
     src: "/img/event/southern-california-fire-jan-2025.webp",
