@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { ContentPageLayout } from "@/app/components";
+import { PrintLink } from "@/app/components/PrintLink";
 import { makeCardMastHeadProps } from "@/app/site-config/content.helpers";
 
 import { TRAININGS } from "@/app/site-config/training";
@@ -11,12 +12,27 @@ export default async function TrainingItemPage(props: PageProps<"/training/[id]"
 
   if (!contentItem) notFound();
 
-  const { contentType, datePublished, mastheadImage, title, subtitle, themes, categories, body } =
-    contentItem;
+  const {
+    contentType,
+    datePublished,
+    mastheadImage,
+    title,
+    subtitle,
+    themes,
+    categories,
+    body,
+    pdfLink,
+  } = contentItem;
 
   return (
     <ContentPageLayout
-      masthead={makeCardMastHeadProps({ mastheadImage, title, subtitle, datePublished })}
+      masthead={makeCardMastHeadProps({
+        mastheadImage,
+        title,
+        subtitle,
+        datePublished,
+        callToAction: pdfLink && { ...pdfLink, as: PrintLink },
+      })}
       contentType={contentType}
       themes={themes}
       categories={categories}

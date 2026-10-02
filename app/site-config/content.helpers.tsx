@@ -73,6 +73,12 @@ export type CardMastheadPropsArgs = Omit<
   callToAction?: {
     label: string;
     href: string;
+    /**
+     * Renders the call to action as something other than a plain next/link,
+     * for a destination that is acted on rather than navigated to. Must be a
+     * client component, the same as {@link AppLink}.
+     */
+    as?: typeof AppLink;
   };
 };
 
@@ -95,10 +101,10 @@ export const makeCardMastHeadProps = ({
   title: title ?? (theme ? CONTENT_THEMES[theme].label : undefined),
   description: subtitle,
   callToAction: callToAction && {
+    as: AppLink,
     ...callToAction,
     variant: "button",
     color: "secondary",
-    as: AppLink,
   },
   colorMode: "dark",
   isMastHead: true,
