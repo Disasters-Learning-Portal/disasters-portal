@@ -7,8 +7,24 @@ export const RESILIENCE_CONTENT: ThemeContent = {
     src: "/img/theme/resilience-masthead.webp",
   },
   subtitle: "Safeguard communities for enduring impact",
-  theme: "build",
+  theme: "resilience",
   body: [
+    {
+      type: "sectionCardSimple",
+      heading: "Stories of Impact",
+      link: { href: "/news-events-stories?type=story", label: "More Stories of Impact" },
+      cards: [
+        {
+          id: "helping-hampton-roads-face-the-floods",
+          contentType: "story",
+          title: "Helping Hampton Roads Face the Floods",
+          thumbnailImage: {
+            src: "/img/placeholder/card-masthead.webp",
+            alt: "",
+          },
+        },
+      ],
+    },
     {
       type: "image",
       heading: "Data Visualization",
@@ -23,22 +39,6 @@ export const RESILIENCE_CONTENT: ThemeContent = {
       type: "text",
       paragraphs: [
         "Learn how NASA researchers are using historic storms like Hurricane Matthew to help Hampton Roads plan for the floods of the future.",
-      ],
-    },
-    {
-      type: "sectionCardSimple",
-      heading: "Stories of Impact",
-      link: { href: "/news-events-stories", label: "More Stories of Impact" },
-      cards: [
-        {
-          id: "helping-hampton-roads-face-the-floods",
-          contentType: "story",
-          title: "When the Next Flood Hits, Will Your City Be Ready?",
-          thumbnailImage: {
-            src: "/img/story/helping-hampton-roads-face-the-floods.webp",
-            alt: "Floodwater covers a road intersection up to the curbside traffic signals during a storm.",
-          },
-        },
       ],
     },
     {

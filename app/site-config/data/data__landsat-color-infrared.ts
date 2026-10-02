@@ -20,7 +20,7 @@ export const DATA__LANDSAT_COLOR_INFRARED: DataContent = {
     alt: "Landsat Color Infrared imagery example",
   },
 
-  themes: ["respond", "build", "prepare", "recover"],
+  themes: ["respond", "resilience", "prepare", "recover"],
 
   categories: [
     "severe weather",

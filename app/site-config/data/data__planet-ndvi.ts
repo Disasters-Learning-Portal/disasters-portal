@@ -20,7 +20,7 @@ export const DATA__PLANET_NDVI: DataContent = {
     alt: "Planet Normalized Difference Vegetation Index (NDVI)",
   },
 
-  themes: ["respond", "build", "prepare", "recover"],
+  themes: ["respond", "resilience", "prepare", "recover"],
 
   categories: [
     "severe weather",
