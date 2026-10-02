@@ -110,15 +110,15 @@ export const STORY__HELPING_HAMPTON_ROADS_FACE_THE_FLOODS: StoryContent = {
       type: "image",
       src: "/img/theme/resilience-matthew-inundation.webp",
       alt:
-        "Map of central Virginia Beach shading modeled maximum flood extent and water depth during " +
-        "Hurricane Matthew, with a legend grading water depth from under half a foot to more than " +
-        "nine feet.",
+        "Map of central Virginia Beach shading modeled maximum flood depth during Hurricane " +
+        "Matthew, with floodwater following storm drainage channels through neighborhoods and a " +
+        "legend grading water depth from half a foot to ten feet.",
       caption:
         "A day-by-day timelapse of modeled flood extent across the same event, viewed from above. " +
         "Credits: NASA, J. Derek Loftis, Ph.D., Virginia Institute of Marine Science, William & " +
         "Mary.",
       width: 1280,
-      height: 898,
+      height: 654,
     },
     {
       type: "text",
