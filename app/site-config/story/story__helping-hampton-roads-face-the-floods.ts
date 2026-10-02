@@ -20,7 +20,7 @@ export const STORY__HELPING_HAMPTON_ROADS_FACE_THE_FLOODS: StoryContent = {
       "Floodwater submerges a road intersection during a storm, rising past the base of the " +
       "traffic signals and surrounding buildings and trees.",
   },
-  themes: ["build"],
+  themes: ["resilience"],
   categories: ["flood", "hurricane"],
   body: [
     {

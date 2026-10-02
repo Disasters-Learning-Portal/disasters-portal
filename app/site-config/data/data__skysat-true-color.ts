@@ -20,7 +20,7 @@ export const DATA__SKYSAT_TRUE_COLOR: DataContent = {
     alt: "Planet Labs satellite image of farmland, towns, and industrial sites along the Mississippi River in Louisiana, from NASA's Commercial Satellite Data Acquisition Program",
   },
 
-  themes: ["respond", "build", "prepare", "recover"],
+  themes: ["respond", "resilience", "prepare", "recover"],
 
   categories: [
     "severe weather",

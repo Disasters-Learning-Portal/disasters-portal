@@ -20,7 +20,7 @@ export const DATA__VANTOR_PANCHROMATIC: DataContent = {
     alt: "Vantor panchromatic grayscale satellite image of a dense hillside city, with individual buildings, streets, and steep forested ridges visible in fine detail",
   },
 
-  themes: ["respond", "build", "prepare", "recover"],
+  themes: ["respond", "resilience", "prepare", "recover"],
 
   categories: [
     "severe weather",

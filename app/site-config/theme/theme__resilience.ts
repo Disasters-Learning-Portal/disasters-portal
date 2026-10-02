@@ -11,8 +11,16 @@ export const RESILIENCE_CONTENT: ThemeContent = {
     src: "/img/theme/resilience-masthead.webp",
   },
   subtitle: "Safeguard communities for enduring impact",
-  theme: "build",
+  theme: "resilience",
   body: [
+    {
+      type: "sectionCardSimple",
+      heading: "Stories of Impact",
+      link: { href: "/news-events-stories?type=story", label: "More Stories of Impact" },
+      cards: [STORY__HELPING_HAMPTON_ROADS_FACE_THE_FLOODS].map((i) =>
+        pickKeys(i, ["id", "contentType", "thumbnailImage", "themes", "title", "subtitle"]),
+      ),
+    },
     {
       type: "image",
       heading: "Data Visualization",
@@ -28,14 +36,6 @@ export const RESILIENCE_CONTENT: ThemeContent = {
       paragraphs: [
         "Learn how NASA researchers are using historic storms like Hurricane Matthew to help Hampton Roads plan for the floods of the future.",
       ],
-    },
-    {
-      type: "sectionCardSimple",
-      heading: "Stories of Impact",
-      link: { href: "/news-events-stories", label: "More Stories of Impact" },
-      cards: [STORY__HELPING_HAMPTON_ROADS_FACE_THE_FLOODS].map((i) =>
-        pickKeys(i, ["id", "contentType", "thumbnailImage", "themes", "title", "subtitle"]),
-      ),
     },
     {
       type: "sectionCardSimple",

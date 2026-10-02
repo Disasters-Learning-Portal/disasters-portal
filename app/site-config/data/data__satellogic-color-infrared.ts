@@ -20,7 +20,7 @@ export const DATA__SATELLOGIC_COLOR_INFRARED: DataContent = {
     alt: "Satellogic satellite image of a dam and reservoir with surrounding roads, buildings, and vegetation",
   },
 
-  themes: ["respond", "build", "prepare", "recover"],
+  themes: ["respond", "resilience", "prepare", "recover"],
 
   categories: [
     "severe weather",
