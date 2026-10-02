@@ -41,7 +41,7 @@ export const RECOVER_CONTENT: ThemeContent = {
 } as const;
 
 // TODO: these would be fetched based on content id
-export const RECOVER_STORIES: [NewsContent | StoryContent | EventContent] = [
+export const RECOVER_STORIES: (NewsContent | StoryContent | EventContent)[] = [
   STORY__ESTIMATING_LOSS_RECOVERY,
 ];
 
