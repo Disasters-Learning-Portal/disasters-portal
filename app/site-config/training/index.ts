@@ -9,6 +9,7 @@ import { TRAINING__LIFELINES_WILDFIRE_WORKFLOW } from "./training__lifelines-wil
 import { TRAINING__MONITORING_PREDICTING_FLOODS } from "./training__monitoring-predicting-floods";
 import { TRAINING__PORTAL_101 } from "./training__portal-101";
 import { TRAINING__SATELLITE_REMOTE_SENSING_URBAN_HEAT_ISLANDS } from "./training__satellite-remote-sensing-urban-heat-islands";
+import { TRAINING__SEA_LEVEL_CHANGE_TOOLS } from "./training__sea-level-change-tools";
 
 export const TRAININGS: TrainingContent[] = [
   TRAINING__PORTAL_101,
@@ -24,4 +25,5 @@ export const TRAININGS_EXTERNAL: TrainingContentExternal[] = [
   TRAINING__BUILDING_CLIMATE_RISK_ASSESSMENTS,
   TRAINING__EO_INSURANCE_FINANCE_DECISION_MAKING,
   TRAINING__MONITORING_PREDICTING_FLOODS,
+  TRAINING__SEA_LEVEL_CHANGE_TOOLS,
 ];
