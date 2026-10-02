@@ -1,12 +1,15 @@
 import { Link } from "@teamimpact/veda-ui-blocks";
 import { Fragment } from "react/jsx-runtime";
-import { DATA } from "@/app/site-config/data";
+
+import { DATA__TYPHOON_SINLAKU_APR_2026 } from "@/app/site-config/data";
 import type { EventContent } from "@/app/site-config/types";
 
-export const EVENT__TYPHOON_SINLAKU_2026: EventContent = {
+export const EVENT__TYPHOON_SINLAKU_APR_2026: EventContent = {
   id: "typhoon-sinlaku-2026",
   contentType: "event",
   title: "Typhoon Sinlaku April 2026",
+  description:
+    "Typhoon Sinlaku impacted Guam and the Northern Mariana Islands, prompting NASA to support federal response partners with satellite data and mapping to assess power outages, flooding, landslide hazards, and storm impacts where ground-based observations were limited.",
   datePublished: "2026-04-24",
   thumbnailImage: {
     src: "/img/event/typhoon-sinlaku-2026.webp",
@@ -20,6 +23,10 @@ export const EVENT__TYPHOON_SINLAKU_2026: EventContent = {
   categories: ["tropical cyclone"],
   region: "Northern Mariana Islands, Oceania",
   startDate: "2026-04-14",
+  linkDHSFEMA: {
+    label: "Learn more",
+    href: "https://www.fema.gov/disaster/3644",
+  },
   body: [
     {
       type: "text",
@@ -57,7 +64,7 @@ export const EVENT__TYPHOON_SINLAKU_2026: EventContent = {
         href: "/data-gallery",
         label: "View all",
       },
-      cards: DATA,
+      cards: DATA__TYPHOON_SINLAKU_APR_2026,
     },
   ],
 };

@@ -1,5 +1,5 @@
-import { EVENT__TYPHOON_SINLAKU_2026 } from "@/app/site-config/event/event__typhoon-sinlaku-2026";
-import { NEWS__NEW_DISASTERS_PORTAL_TEST_HELP } from "@/app/site-config/news/news__new-disasters-portal-test-help";
+import { EVENT__VENEZUELA_EQ_JUN_2026 } from "@/app/site-config/event/event__venezuela-earthquake-jun-2026";
+import { NEWS__DRIVING_HUMANITARIAN_INNOVATION_EARTH_SCIENCE } from "@/app/site-config/news/news__driving-humanitarian-innovation-and-action-earth-science";
 import { STORY__ESTIMATING_LOSS_RECOVERY } from "@/app/site-config/story/story__estimating-loss-recovery";
 import { STORY__FINDING_FLOODS } from "@/app/site-config/story/story__finding-floods";
 import type { EventContent, NewsContent, StoryContent } from "@/app/site-config/types";
@@ -13,6 +13,6 @@ export const NEWS_EVENTS_STORIES_CARDS: [
 ] = [
   STORY__ESTIMATING_LOSS_RECOVERY,
   STORY__FINDING_FLOODS,
-  EVENT__TYPHOON_SINLAKU_2026,
-  NEWS__NEW_DISASTERS_PORTAL_TEST_HELP,
+  EVENT__VENEZUELA_EQ_JUN_2026,
+  NEWS__DRIVING_HUMANITARIAN_INNOVATION_EARTH_SCIENCE,
 ];

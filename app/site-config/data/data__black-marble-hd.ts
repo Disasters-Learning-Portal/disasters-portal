@@ -56,6 +56,14 @@ export const DATA__BLACK_MARBLE_HD: DataContent = {
 
     {
       type: "text",
+      heading: "Terms of Use",
+      paragraphs: [
+        "NASA data and products are freely available to federal, state, public, non-profit and commercial users. This information can be experimental- or research-grade data products and may not be appropriate for operational use. These NASA data products, services, and the Disasters Mapping Portal are intended to aid decision makers and enhance situational awareness, but these data are not guaranteed to be consistently available or routinely updated.",
+      ],
+    },
+
+    {
+      type: "text",
       heading: "Satellite/Sensor",
       paragraphs: [
         "The primary data source, NASA’s Black Marble nighttime lights product suite (VNP46), utilized to generate this product is derived from the Visible Infrared Imaging Radiometer Suite (VIIRS) Day/Night Band (DNB) onboard the Suomi National Polar-orbiting Platform (SNPP) along with high resolution base layers - Landsat derived normalized index products (NDVI and NDWI) and OpenStreetMap (OSM) derived road layer",
