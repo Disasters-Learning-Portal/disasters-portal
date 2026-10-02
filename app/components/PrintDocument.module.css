@@ -166,12 +166,8 @@
     page-break-inside: avoid;
   }
 
-  /* A link is only text on paper, so spell the target out. Internal hrefs are
-   * left alone -- "(/training/portal-101)" helps nobody. */
-  .body :global(a[href^="http"])::after,
-  .body :global(a[href^="mailto"])::after {
-    content: " (" attr(href) ")";
-    font-size: var(--unit-105, 0.75rem);
-    word-break: break-all;
+  /* The launch icon means "opens in a new tab", which is nothing on paper. */
+  .body :global(.usa-link--external)::after {
+    display: none !important;
   }
 }
