@@ -20,7 +20,7 @@ export const DATA__LANDSAT_NATURAL_COLOR: DataContent = {
     alt: "Landsat Natural Color imagery example",
   },
 
-  themes: ["respond", "build", "prepare", "recover"],
+  themes: ["respond", "resilience", "prepare", "recover"],
 
   categories: [
     "earthquake",

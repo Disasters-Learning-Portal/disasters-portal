@@ -19,7 +19,7 @@ export const STORY__STUDY_REVEALS_HEAT_RISK_ELDERLY_AUSTIN: StoryContent = {
     src: "/img/story/austin-heat-risk.webp",
     alt: "Photo of the Austin, Texas skyline",
   },
-  themes: ["build"],
+  themes: ["resilience"],
   categories: ["heat"],
   body: [
     {

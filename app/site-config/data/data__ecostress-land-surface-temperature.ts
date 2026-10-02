@@ -20,7 +20,7 @@ export const DATA__ECOSTRESS_LAND_SURFACE_TEMPERATURE: DataContent = {
     alt: "ECOSTRESS nighttime land surface temperature over the Los Angeles, California area on January 8, 2025, showing elevated surface temperatures associated with actively burning wildfires",
   },
 
-  themes: ["respond", "prepare", "build"],
+  themes: ["respond", "prepare", "resilience"],
 
   categories: ["fire", "heat"],
 

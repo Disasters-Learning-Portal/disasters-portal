@@ -1,4 +1,8 @@
+import { STORY__YOUR_COMMUNITY_MAY_HAVE_A_DISASTER_BLIND_SPOT } from "@/app/site-config/story/story__your-community-may-have-a-disaster-blind-spot";
+import { pickKeys } from "@/app/site-config/typed.helpers";
 import type { ThemeContent } from "@/app/site-config/types";
+import { TRAINING__FUNDAMENTALS_REMOTE_SENSING } from "../training/training__fundamentals-remote-sensing";
+import { TRAINING__MONITORING_PREDICTING_FLOODS } from "../training/training__monitoring-predicting-floods";
 
 export const PREPARE_CONTENT: ThemeContent = {
   id: "prepare",
@@ -12,18 +16,10 @@ export const PREPARE_CONTENT: ThemeContent = {
     {
       type: "sectionCardSimple",
       heading: "Stories of Impact",
-      link: { href: "/news-events-stories", label: "More Stories of Impact" },
-      cards: [
-        {
-          id: "your-community-may-have-a-disaster-blind-spot",
-          contentType: "story",
-          title: "Your Community May Have a Disaster Blind Spot. Foresight is Built to Find It.",
-          thumbnailImage: {
-            src: "/img/placeholder/card-masthead.webp",
-            alt: "",
-          },
-        },
-      ],
+      link: { href: "/news-events-stories?type=story", label: "More Stories of Impact" },
+      cards: [STORY__YOUR_COMMUNITY_MAY_HAVE_A_DISASTER_BLIND_SPOT].map((i) =>
+        pickKeys(i, ["id", "contentType", "thumbnailImage", "themes", "title", "subtitle"]),
+      ),
     },
     {
       type: "image",
@@ -45,29 +41,9 @@ export const PREPARE_CONTENT: ThemeContent = {
       type: "sectionCardSimple",
       heading: "Resources & Learning",
       link: { href: "/training", label: "More Resources and Learning" },
-      cards: [
-        {
-          id: "monitoring-predicting-floods-using-earth-observations-planning-preparedness",
-          contentType: "training",
-          title:
-            "Monitoring and Predicting Floods Using Earth Observations for Planning and Preparedness",
-          thumbnailImage: {
-            src: "/img/training/monitoring-predicting-floods.webp",
-            alt: "False-color satellite view of a flooded river system, with standing water in dark blue against tan terrain and green vegetation.",
-          },
-          url: "https://www.earthdata.nasa.gov/learn/trainings/monitoring-predicting-floods-using-earth-observations-planning-preparedness",
-        },
-        {
-          id: "fundamentals-remote-sensing",
-          contentType: "training",
-          title: "Fundamentals of Remote Sensing",
-          thumbnailImage: {
-            src: "/img/training/fundamentals-remote-sensing.webp",
-            alt: "NISAR satellite orbiting Earth",
-          },
-          url: "https://www.earthdata.nasa.gov/learn/trainings/fundamentals-remote-sensing",
-        },
-      ],
+      cards: [TRAINING__MONITORING_PREDICTING_FLOODS, TRAINING__FUNDAMENTALS_REMOTE_SENSING].map(
+        (i) => pickKeys(i, ["id", "contentType", "thumbnailImage", "themes", "title", "subtitle"]),
+      ),
     },
   ],
 } as const;
