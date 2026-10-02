@@ -15,9 +15,9 @@ export const ABOUT_TEAM = [
     image: "/img/about/eleanor-pierel.webp",
   },
   {
-    name: "Joshua Barners",
+    name: "Josh Barnes",
     role: "Associate Program Manager, Disasters Response Coordination System",
-    image: "/img/about/joshua-barners.webp",
+    image: "/img/about/josh-barnes.webp",
   },
   {
     name: "Robert Emberson",
