@@ -18,6 +18,11 @@ import {
 } from "@/app/site-config/content.helpers";
 import type { ContentBlock } from "@/app/site-config/types";
 
+type ListLink = { label: string; href: string };
+
+const isListLink = (item: unknown): item is ListLink =>
+  typeof item === "object" && item !== null && "href" in item;
+
 export const ContentBlockRenderer = ({
   block,
   isMultiColumnLayout,
@@ -49,13 +54,13 @@ export const ContentBlockRenderer = ({
           )}
           <ul className="usa-list">
             {block.items.map((item, i) =>
-              typeof item === "string" ? (
-                // biome-ignore lint/suspicious/noArrayIndexKey: static content, never reorders
-                <li key={i}>{item}</li>
-              ) : (
+              isListLink(item) ? (
                 <li key={item.href}>
                   <AppLinkStyled href={item.href}>{item.label}</AppLinkStyled>
                 </li>
+              ) : (
+                // biome-ignore lint/suspicious/noArrayIndexKey: static content, never reorders
+                <li key={i}>{item}</li>
               ),
             )}
           </ul>
