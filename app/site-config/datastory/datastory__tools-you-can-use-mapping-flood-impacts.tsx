@@ -5,9 +5,8 @@ import type { DataStoryContent } from "../types";
 export const DATASTORY__TOOLS_YOU_CAN_USE_MAPPING_FLOOD_IMPACTS: DataStoryContent = {
   id: "tools-you-can-use-mapping-flood-impacts",
   contentType: "datastory",
-  title: "Tools You Can Use: Mapping Flood Impacts",
-  description:
-    "NASA has developed a broad suite of tools that harness Earth observation data to assess flood impacts, helping emergency managers understand flood hazards and their potential impacts to communities, homes, and infrastructure.",
+  title: "Tools You Can Use",
+  subtitle: "Mapping Flood Impacts",
   thumbnailImage: {
     src: "/img/datastory/mapping-flood-impacts.webp",
     alt: "Satellite map of surface water extents in the central U.S., with water shown in blue and land in white",
