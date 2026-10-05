@@ -7,8 +7,6 @@ export const DATASTORY__TOOLS_YOU_CAN_USE_MAPPING_FLOOD_IMPACTS: DataStoryConten
   contentType: "datastory",
   title: "Tools You Can Use",
   subtitle: "Mapping Flood Impacts",
-  description:
-    "NASA has developed a broad suite of tools that harness Earth observation data to assess flood impacts, helping emergency managers understand flood hazards and their potential impacts to communities, homes, and infrastructure.",
   thumbnailImage: {
     src: "/img/datastory/mapping-flood-impacts.webp",
     alt: "Satellite map of surface water extents in the central U.S., with water shown in blue and land in white",
