@@ -36,7 +36,10 @@ export const TRAINING__PORTAL_101: TrainingContent = {
           Here in Disasters PORTAL 101, you will find page-by-page user guidance, an FAQ section,
           and Example User Pathways to help you navigate the platform. If you cannot find the answer
           to your question within this module, please do not hesitate to reach out to us at{" "}
-          <Link href="mailto:disasters@nasa.gov">disasters@nasa.gov</Link>.
+          <Link href="mailto:disasters@nasa.gov" isExternal>
+            disasters@nasa.gov
+          </Link>
+          .
         </Fragment>,
       ],
     },
@@ -159,7 +162,11 @@ export const TRAINING__PORTAL_101: TrainingContent = {
           From the Homepage, you can subscribe for updates or contact the NASA Disasters Program
           directly. Clicking “<strong>Subscribe for Updates</strong>” links you to the Disasters
           Program Newsletter sign-up page. Selecting “Contact our Team” will prompt you to email the
-          program directly at <Link href="mailto:disasters@nasa.gov">disasters@nasa.gov</Link>.
+          program directly at{" "}
+          <Link href="mailto:disasters@nasa.gov" isExternal>
+            disasters@nasa.gov
+          </Link>
+          .
         </Fragment>,
       ],
     },
@@ -189,7 +196,10 @@ export const TRAINING__PORTAL_101: TrainingContent = {
           updates or contact the program directly. Clicking “<strong>Subscribe for Updates</strong>”
           directs users to the Disasters Program Newsletter sign-up page. Selecting “
           <strong>Contact our Team</strong>” will prompt users to email the program directly at{" "}
-          <Link href="mailto:disasters@nasa.gov">disasters@nasa.gov</Link>.
+          <Link href="mailto:disasters@nasa.gov" isExternal>
+            disasters@nasa.gov
+          </Link>
+          .
         </Fragment>,
       ],
     },
