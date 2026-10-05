@@ -6,7 +6,6 @@ import type {
 } from "@teamimpact/veda-ui-blocks";
 import { AppImage } from "@/app/components/AppImage";
 import { AppLink } from "@/app/components/AppLink";
-import { PrintLink } from "@/app/components/PrintLink";
 import {
   type Category,
   CONTENT_THEMES,
@@ -60,7 +59,7 @@ const childrenToLabel = <T extends { children: string }>({ children, ...rest }: 
 
 export type CardMastheadPropsArgs = Omit<
   CardProps<typeof AppLink>,
-  "title" | "image" | "colorMode" | "isMastHead" | "tag" | "callToAction" | "callToActionSecondary"
+  "title" | "image" | "colorMode" | "isMastHead" | "tag" | "callToActionSecondary"
 > & {
   mastheadImage:
     | {
@@ -71,14 +70,6 @@ export type CardMastheadPropsArgs = Omit<
   title?: string;
   theme?: Theme;
   datePublished?: DateString;
-  callToAction?: {
-    label: string;
-    href: string;
-  };
-  pdf?: {
-    label: string;
-    href: string;
-  };
 };
 
 export const makeCardMastHeadProps = ({
@@ -88,7 +79,6 @@ export const makeCardMastHeadProps = ({
   theme,
   datePublished,
   callToAction,
-  pdf,
   ...rest
 }: CardMastheadPropsArgs): CardProps<typeof AppLink> => ({
   className: "blocks-card--contentpage",
@@ -100,9 +90,12 @@ export const makeCardMastHeadProps = ({
   tag: datePublished && makeDateTagProps(datePublished),
   title: title ?? (theme ? CONTENT_THEMES[theme].label : undefined),
   description: subtitle,
-  callToAction: pdf
-    ? { ...pdf, variant: "button", color: "secondary", as: PrintLink }
-    : callToAction && { ...callToAction, variant: "button", color: "secondary", as: AppLink },
+  callToAction: callToAction && {
+    ...callToAction,
+    variant: "button",
+    color: "secondary",
+    as: callToAction.as ?? AppLink,
+  },
   colorMode: "dark",
   isMastHead: true,
   ...rest,
