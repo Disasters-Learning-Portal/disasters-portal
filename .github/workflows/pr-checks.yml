@@ -50,12 +50,6 @@ jobs:
     if: github.event.pull_request.draft == false
     needs: [lint, typecheck]
     runs-on: ubuntu-latest
-    # Required build-time URLs (see README "Environment URLs"). Public, so dev
-    # values live here rather than in repo secrets or variables.
-    env:
-      NEXT_PUBLIC_DATA_VISUALIZATION_URL: https://dev.disasters.openveda.cloud/disasters/data-visualization
-      NEXT_PUBLIC_STAC_API_URL: https://dev.disasters.openveda.cloud/api/stac
-      NEXT_PUBLIC_RASTER_API_URL: https://dev.disasters.openveda.cloud/api/raster
     steps:
       - uses: actions/checkout@v6
       - uses: pnpm/action-setup@v6
@@ -64,4 +58,6 @@ jobs:
           node-version: ${{ env.NODE }}
           cache: pnpm
       - run: pnpm install --frozen-lockfile
+      # Dev URLs come from .env.example so CI and local builds share one source (see README "Environment URLs").
+      - run: cp .env.example .env.local
       - run: pnpm build

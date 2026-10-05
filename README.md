@@ -35,7 +35,7 @@ Three env vars are **required** at build time. A missing one fails `pnpm build` 
 
 - **Local:** copy `.env.example` to `.env.local`. Next.js reads `.env.local` automatically and it is gitignored.
 - **Amplify:** values are set per branch in the Amplify console (`main` = prod, `develop` = dev). Pull request previews inherit the app-level values.
-- **CI:** the `build` job in `.github/workflows/pr-checks.yml` sets the dev values inline.
+- **CI:** the `build` job in `.github/workflows/pr-checks.yml` copies `.env.example` to `.env.local`, so the dev values live in one place.
 
 ## How It Works
 
