@@ -1,7 +1,6 @@
 import { CARTO_DARK_WITH_LABELS_BASEMAP_STYLE, Link } from "@teamimpact/veda-ui-blocks";
 import { Fragment } from "react";
 import { DATASTORY__TOOLS_YOU_CAN_USE_MAPPING_FLOOD_IMPACTS } from "@/app/site-config/datastory/datastory__tools-you-can-use-mapping-flood-impacts";
-import { EVENT__TEXAS_FLOODS_JULY_2025 } from "@/app/site-config/event/event__texas-floods-july-2025";
 import type { StoryContent } from "@/app/site-config/types";
 
 export const STORY__FINDING_FLOODS: StoryContent = {
@@ -134,7 +133,7 @@ export const STORY__FINDING_FLOODS: StoryContent = {
         href: "/training",
         label: "More Resources and Learning",
       },
-      cards: [EVENT__TEXAS_FLOODS_JULY_2025, DATASTORY__TOOLS_YOU_CAN_USE_MAPPING_FLOOD_IMPACTS],
+      cards: [DATASTORY__TOOLS_YOU_CAN_USE_MAPPING_FLOOD_IMPACTS],
     },
   ],
 };
