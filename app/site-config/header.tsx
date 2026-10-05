@@ -22,7 +22,7 @@ const MOCK_NAV_ITEM_WITH_DROPDOWN_2 = [
       {
         label: "Data Visualization",
         href: DATA_VISUALIZATION_URL,
-        isExternal: /^(https?:)?\/\//.test(DATA_VISUALIZATION_URL),
+        isExternal: true,
       },
     ],
   },
