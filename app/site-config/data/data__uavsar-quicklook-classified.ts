@@ -8,7 +8,7 @@ export const DATA__UAVSAR_QUICKLOOK_CLASSIFIED: DataContent = {
   title: "UAVSAR Quicklook Flood Classification",
 
   description:
-    "Rapid preliminary flood classification generated from UAVSAR radar imagery within hours of a flight, providing an early view of open water and inundated areas while the fully processed classification is still being produced.",
+    "Preliminary flood classification generated from UAVSAR radar imagery within hours of a flight, providing an early view of open water and inundated areas while the fully processed classification is still being produced.",
 
   thumbnailImage: {
     src: "/img/data/uavsar-quicklook-classified.webp",
@@ -82,7 +82,7 @@ export const DATA__UAVSAR_QUICKLOOK_CLASSIFIED: DataContent = {
       type: "text",
       heading: "Tags",
       paragraphs: [
-        "NASA, JPL, UAVSAR, SAR, Synthetic Aperture Radar, L-band, Quicklook, Preliminary, Classification, Flood, Inundation, Rapid Response, Airborne, Disaster Response",
+        "NASA, JPL, UAVSAR, SAR, Synthetic Aperture Radar, L-band, Quicklook, Preliminary, Classification, Flood, Inundation, Airborne, Disaster Response",
       ],
     },
   ],

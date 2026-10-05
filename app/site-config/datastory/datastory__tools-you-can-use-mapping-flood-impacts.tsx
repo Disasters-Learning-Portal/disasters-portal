@@ -41,7 +41,7 @@ export const DATASTORY__TOOLS_YOU_CAN_USE_MAPPING_FLOOD_IMPACTS: DataStoryConten
       heading: "HydroSAR Surface Water Extent",
       headingLevel: "h2",
       paragraphs: [
-        "When floods strike, tracking the location of floodwaters is critical to assessing damage and planning resource deployment for response and recovery. With their spaceborne vantage, satellites can rapidly provide awareness of flooding over large areas. Water extent products can be derived from a variety of satellite instruments, including active radar sensors and passive optical sensors.",
+        "When floods strike, tracking the location of floodwaters is critical to assessing damage and planning resource deployment for response and recovery. With their spaceborne vantage, satellites can provide awareness of flooding over large areas. Water extent products can be derived from a variety of satellite instruments, including active radar sensors and passive optical sensors.",
       ],
     },
     {
@@ -76,7 +76,7 @@ export const DATASTORY__TOOLS_YOU_CAN_USE_MAPPING_FLOOD_IMPACTS: DataStoryConten
           </Link>{" "}
           that identifies existing waterways, urban areas, croplands, and forests, GIS specialists
           can flag where identified waters may be impacting urban and agricultural areas. NASA also
-          produces daily near real-time flood hazard and surface water products using the MODIS
+          produces daily flood hazard and surface water products using the MODIS
           instrument aboard NASA’s Aqua and Terra satellites, available as{" "}
           <Link href="https://maps.disasters.nasa.gov/arcgis/home/item.html?id=1f874c2210064c05a904fd46f1bf5dc2">
             1-day

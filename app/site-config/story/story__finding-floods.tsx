@@ -25,7 +25,7 @@ export const STORY__FINDING_FLOODS: StoryContent = {
       paragraphs: [
         "When catastrophic flash flooding struck Texas Hill Country on July 4, 2025, emergency managers faced an urgent challenge: a fast-moving disaster, and a near-total lack of imagery to identify the people and places most impacted. Persistent cloud cover blocked optical satellites. Commercial radar assets struggled to see through the region's dense tree canopy. In the critical early days of search and rescue, the people making life-and-death decisions had almost no imagery of the hardest-hit areas.",
 
-        "The NASA Disasters Program moved quickly to fill that gap. Working directly with FEMA and the Texas Division of Emergency Management, the program coordinated specialized aircraft deployments to rapidly deliver flood maps and high-resolution imagery that helped guide search and rescue efforts and resource deployment.",
+        "The NASA Disasters Program moved quickly to fill that gap. Working directly with FEMA and the Texas Division of Emergency Management, the program coordinated specialized aircraft deployments to deliver flood maps and high-resolution imagery that helped guide search and rescue efforts and resource deployment.",
       ],
     },
     {
@@ -111,7 +111,7 @@ export const STORY__FINDING_FLOODS: StoryContent = {
           <Link href="https://science.nasa.gov/earth-science/csda/">
             Commercial Satellite Data Acquisition Program
           </Link>
-          , the NASA Disasters Program can rapidly task commercial satellites to gather detailed
+          , the NASA Disasters Program can task commercial satellites to gather detailed
           imagery of active disasters. These data support a range of efforts – from building damage
           assessment and road disruption mapping to search and rescue operations – offering broad
           coverage across a variety of advanced sensors.
