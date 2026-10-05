@@ -1,138 +1,16 @@
-:global(body):has(.document) > *:not(main) {
-  display: none;
-}
-
-.document {
-  --doc-text: 1rem;
-  --doc-leading: 1.65;
-  --doc-heading-indent: var(--unit-3, 1.5rem);
-  --doc-list-indent: var(--unit-9, 4.5rem);
-  --doc-list-hang: var(--unit-3, 1.5rem);
-
-  /* A letter page less its 1in margins, so screen matches the printed column. */
-  max-width: 6.5in;
-  margin: 0 auto;
-  padding: var(--unit-4, 2rem) var(--unit-3, 1.5rem) var(--unit-8, 4rem);
-  font-size: var(--doc-text);
-  line-height: var(--doc-leading);
-}
-
-/* This component's own markup, so plain rules rather than utility classes. */
-.title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  line-height: 1.3;
-  margin: 0;
-}
-
-.subtitle {
-  font-size: var(--doc-text);
-  line-height: var(--doc-leading);
-  color: var(--color-base-dark, #565c65);
-  margin: var(--unit-05, 0.25rem) 0 0;
-}
-
-.contents {
-  margin-bottom: var(--unit-4, 2rem);
-}
-
-.tocTitle {
-  font-size: var(--doc-text);
-  font-weight: 700;
-  line-height: var(--doc-leading);
-  margin: 0 0 var(--unit-1, 0.5rem);
-}
-
-.toc {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  font-size: var(--doc-text);
-}
-
-.toc li {
-  margin-bottom: var(--unit-05, 0.25rem);
-}
-
 /*
- * Everything below retypesets ContentBlockRenderer's output, and needs
- * `!important` to do it: USWDS emits its utility classes as `!important`
- * throughout, beyond the reach of specificity. Confined to `.body` for that
- * reason.
- *
- * Margins are longhands: the shorthand also resets `margin-left`, which a slim
- * alert needs to clear its icon.
+ * The printed training document.
  */
-.body :global(h2),
-.body :global(h3) {
-  font-size: var(--doc-text) !important;
-  font-weight: 700;
-  line-height: var(--doc-leading) !important;
-  margin-top: 0 !important;
-  margin-bottom: var(--unit-05, 0.25rem) !important;
-}
-
-.body :global(h3) {
-  margin-left: var(--doc-heading-indent) !important;
-}
-
-.body :global(p),
-.body :global(li) {
-  font-size: var(--doc-text) !important;
-  line-height: var(--doc-leading) !important;
-}
-
-.body :global(p) {
-  margin-top: 0 !important;
-  margin-bottom: var(--unit-105, 0.75rem) !important;
-}
-
-/* A note is a callout on the page, but in a document it is ordinary body
- * text. The tint, the status bar and the icon are all web furniture, and the
- * indent exists only to clear that icon. */
-.body :global(.usa-alert),
-.body :global(.usa-alert__body) {
-  background-color: transparent !important;
-  border-left: 0 !important;
-  padding-top: 0 !important;
-  padding-right: 0 !important;
-  padding-bottom: 0 !important;
-  padding-left: 0 !important;
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-  min-height: 0 !important;
-}
-
-.body :global(.usa-alert__body) > * {
-  margin-left: 0 !important;
-}
-
-.body :global(.usa-alert__body)::before {
-  display: none !important;
-}
-
-/* Section spacing is tuned for a scrolling page; too airy for a document. */
-.body :global(section) {
-  margin-top: 0 !important;
-  margin-bottom: var(--unit-205, 1.25rem) !important;
-}
-
-/* Bullets at 54pt with an 18pt hang, replacing `.usa-list`'s `padding-left:
- * 3ch`, which is tied to the font's digit width and so lands off the scale. */
-.body :global(ul) {
-  margin-left: var(--doc-list-indent);
-  padding-left: var(--doc-list-hang);
-}
-
 @media print {
   /* 1in, matching the source. */
-
   @page {
     size: letter;
-    margin-top: 1in;
-    margin-right: 1in;
-    margin-bottom: 1in;
-    margin-left: 1in;
+    margin: 1in;
+  }
+
+  /* The site chrome is furniture; the document is all that goes on the paper. */
+  :global(body):has(.document) > *:not(main) {
+    display: none;
   }
 
   /* The theme's `body { overflow-x: hidden }` makes <body> a scroll container,
@@ -141,15 +19,103 @@
    * paginates as block flow; `!important` because the layout sets `display`
    * inline and `minh-viewport` is itself `!important`. */
   :global(body):has(.document) {
-    overflow: visible;
+    overflow-x: visible;
     display: block !important;
     min-height: 0 !important;
   }
 
+  /* The type scale every rule below refers back to. */
   .document {
-    max-width: none;
-    margin: 0;
-    padding: 0;
+    --doc-text: 1rem;
+    --doc-leading: 1.65;
+
+    line-height: var(--doc-leading);
+  }
+
+  /* This component's own markup, so plain rules rather than utility classes.
+   * These fight the UA defaults for <h1>, <h2>, <p> and <ol>. */
+  .title {
+    font-size: 1.5rem;
+    line-height: 1.3;
+    margin-block: 0;
+  }
+
+  .subtitle {
+    color: var(--color-base-dark);
+    margin-block: var(--unit-05) 0;
+  }
+
+  .contents {
+    margin-bottom: var(--unit-4);
+  }
+
+  .tocTitle {
+    font-size: var(--doc-text);
+    margin-block: 0 var(--unit-1);
+  }
+
+  .toc {
+    list-style-type: none;
+    margin-block: 0;
+    padding-left: 0;
+  }
+
+  .toc li {
+    margin-bottom: var(--unit-05);
+  }
+
+  .body :global(h2),
+  .body :global(h3) {
+    font-size: var(--doc-text) !important;
+    margin-bottom: var(--unit-05) !important;
+  }
+
+  .body :global(h3) {
+    margin-left: var(--unit-3) !important;
+  }
+
+  .body :global(p),
+  .body :global(li) {
+    font-size: var(--doc-text) !important;
+    line-height: var(--doc-leading) !important;
+  }
+
+  .body :global(p) {
+    margin-top: 0 !important;
+    margin-bottom: var(--unit-105) !important;
+  }
+
+  /* Remove the styles of note */
+  .body :global(.usa-alert) {
+    background-color: transparent !important;
+    border-left: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  .body :global(.usa-alert__body) {
+    background-color: transparent !important;
+    padding: 0 !important;
+  }
+
+  .body :global(.usa-alert__body) > * {
+    margin-left: 0 !important;
+  }
+
+  .body :global(.usa-alert__body)::before {
+    display: none !important;
+  }
+
+  /* Section spacing is tuned for a scrolling page; too airy for a document. */
+  .body :global(section) {
+    margin-top: 0 !important;
+    margin-bottom: var(--unit-205) !important;
+  }
+
+  /* Bullets at 54pt with an 18pt hang, replacing `.usa-list`'s `padding-left:
+   * 3ch`, which is tied to the font's digit width and so lands off the scale. */
+  .body :global(ul) {
+    margin-left: var(--unit-9);
+    padding-left: var(--unit-3);
   }
 
   /* Never strand a heading at the foot of a page, or split a figure. */
@@ -158,12 +124,10 @@
   .body :global(h2),
   .body :global(h3) {
     break-after: avoid;
-    page-break-after: avoid;
   }
 
   .body :global(figure) {
     break-inside: avoid;
-    page-break-inside: avoid;
   }
 
   /* The launch icon means "opens in a new tab", which is nothing on paper. */
