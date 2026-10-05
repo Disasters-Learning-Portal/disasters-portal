@@ -32,7 +32,7 @@ export function PageSidebar({
           </MetaTags>
 
           {themes.length > 0 && (
-            <MetaTags label="Theme">
+            <MetaTags label="Need">
               {themes.map((theme) => (
                 <div key={theme} className="margin-right-1 margin-bottom-1">
                   <Tag {...makeOutlineTagProps(makeThemeTagProps(theme))} />

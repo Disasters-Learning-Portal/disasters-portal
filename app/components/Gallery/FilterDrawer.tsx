@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import {
   EMPTY_FACETS,
   type FacetSelection,
+  getFacetLabel,
   listFacetOptions,
   toggleFacetValue,
 } from "./helpers/facets.helpers";
@@ -45,21 +46,25 @@ export function FilterDrawer({
       isOpen={isOpen}
       onClose={onClose}
       footer={
-        <div className="display-flex">
-          <Link
-            as="button"
-            variant="button"
-            className="display-flex flex-justify-center flex-1 margin-right-2"
-            onClick={() => {
-              onApply(draft);
-              onClose();
-            }}
-          >
-            Apply Filters
-          </Link>
-          <Link as="button" variant="button-outline" onClick={() => setDraft(EMPTY_FACETS)}>
-            Clear
-          </Link>
+        <div className="grid-row grid-gap flex-align-center">
+          <div className="mobile:grid-col-6 grid-col-12 mobile:margin-bottom-0 margin-bottom-2">
+            <Link
+              as="button"
+              variant="button"
+              className="width-full bg-secondary"
+              onClick={() => {
+                onApply(draft);
+                onClose();
+              }}
+            >
+              Apply Filters
+            </Link>
+          </div>
+          <div className="mobile:grid-col-6 grid-col-12 text-center">
+            <Link variant="text" onClick={() => setDraft(EMPTY_FACETS)}>
+              Clear all
+            </Link>
+          </div>
         </div>
       }
     >
@@ -76,7 +81,7 @@ export function FilterDrawer({
               <Checkbox
                 key={option.value}
                 name={sectionId}
-                label={option.value}
+                label={getFacetLabel(option.value)}
                 value={option.value}
                 inputProps={{
                   checked: option.selected,

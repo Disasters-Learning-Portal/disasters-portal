@@ -1,6 +1,8 @@
 "use client";
 
 import { Link, Tag } from "@teamimpact/veda-ui-blocks";
+import { makeOutlineTagProps } from "@/app/site-config/content.helpers";
+import { getFacetLabel } from "./helpers/facets.helpers";
 import type { AppliedFilter } from "./helpers/filters.helpers";
 
 type GalleryResultsSummaryProps = {
@@ -20,13 +22,10 @@ export function GalleryResultsSummary({
   clearAllFilters,
 }: GalleryResultsSummaryProps) {
   const statusText = () => {
-    if (appliedFilters.length === 0) {
-      return `${resultCount} ${resultCount === 1 ? "item" : "items"}`;
-    }
     if (resultCount === 0) {
       return "No results match your filters.";
     }
-    return `${resultCount} search ${resultCount === 1 ? "result" : "results"}`;
+    return `${resultCount} Search ${resultCount === 1 ? "result" : "results"}`;
   };
 
   return (
@@ -34,7 +33,7 @@ export function GalleryResultsSummary({
       {/* Always rendered: screen readers only announce text changes inside an
           already-rendered live region, and the placeholder text keeps the
           layout stable when no filters are applied. */}
-      <p role="status" className="font-heading-lg text-bold margin-bottom-3">
+      <p role="status" className="font-heading-lg text-bold margin-top-0 margin-bottom-3">
         {statusText()}
       </p>
       <div className="display-flex flex-wrap flex-align-center margin-bottom-3">
@@ -43,13 +42,17 @@ export function GalleryResultsSummary({
         ) : (
           <>
             <span className="text-bold margin-right-1">Filters applied:</span>
-            {appliedFilters.map((pill) => (
-              <Tag key={pill.id} onClose={pill.remove} className="margin-right-1">
-                {pill.label}
-              </Tag>
+            {appliedFilters.map(({ id, value, remove }) => (
+              <Tag
+                key={id}
+                {...makeOutlineTagProps(getFacetLabel(value), {
+                  className: "margin-right-1",
+                  onClose: remove,
+                })}
+              />
             ))}
             {appliedFilters.length > 1 && (
-              <Link as="button" variant="text" onClick={clearAllFilters}>
+              <Link as="button" variant="text" className="margin-left-1" onClick={clearAllFilters}>
                 Clear all
               </Link>
             )}

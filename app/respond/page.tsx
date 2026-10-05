@@ -19,42 +19,45 @@ import {
   RESPOND_STORIES,
   RESPOND_TRAININGS,
 } from "@/app/site-config/theme/theme__respond";
-import { typedMap } from "@/app/site-config/typed.helpers";
+import { pickKeys, typedMap } from "@/app/site-config/typed.helpers";
 
 export default function RespondPage() {
   const { theme, subtitle, mastheadImage }: CardMastheadPropsArgs = RESPOND_CONTENT;
-  const stories: CardSimplePropsArgs[] = RESPOND_STORIES.slice(0, 2).map(
-    ({ id, contentType, thumbnailImage, themes, title }) => ({
-      id,
-      contentType,
-      thumbnailImage,
-      themes,
-      title,
-    }),
+
+  const stories: CardSimplePropsArgs[] = RESPOND_STORIES.slice(0, 2).map((i) =>
+    pickKeys(i, ["id", "contentType", "thumbnailImage", "themes", "title", "subtitle"]),
   );
 
-  const trainings = RESPOND_TRAININGS.map(
-    ({ id, contentType, thumbnailImage, title, ...rest }) => ({
-      id,
-      contentType,
-      thumbnailImage,
-      title,
-      url: "url" in rest ? rest.url : undefined,
-    }),
-  );
+  const dataStories: CardSimplePropsArgs[] = RESPOND_DATASTORIES.map((i) => ({
+    ...pickKeys(i, ["id", "contentType", "thumbnailImage", "themes", "title", "subtitle"]),
+    ...("url" in i ? { url: i.url } : {}),
+  }));
+
+  const trainings: CardSimplePropsArgs[] = RESPOND_TRAININGS.map((i) => ({
+    ...pickKeys(i, ["id", "contentType", "thumbnailImage", "title", "subtitle"]),
+    ...("url" in i ? { url: i.url } : {}),
+  }));
 
   return (
     <>
       <PageMasthead {...makeCardMastHeadProps({ subtitle, theme, mastheadImage })} />
       <SectionCardSimpleMini
         sectionHeading={
-          <SectionHeading href="/news-events-stories?type=event">Latest Events</SectionHeading>
+          <SectionHeading
+            linkProps={{ label: "More Events", href: "/news-events-stories?type=event" }}
+          >
+            Latest Events
+          </SectionHeading>
         }
         cards={typedMap(RESPOND_EVENTS, transformEventToCardSimpleProps)}
       />
       <SectionCardSimple
         sectionHeading={
-          <SectionHeading href="/news-events-stories?type=story">Stories of Impact</SectionHeading>
+          <SectionHeading
+            linkProps={{ label: "More Stories of Impact", href: "/news-events-stories?type=story" }}
+          >
+            Stories of Impact
+          </SectionHeading>
         }
         cards={typedMap(stories, makeCardSimpleProps)}
       />
@@ -62,14 +65,27 @@ export default function RespondPage() {
         // biome-ignore lint/suspicious/noArrayIndexKey: static content, never reorders
         <ContentBlockRenderer key={index} block={block} />
       ))}
+      {dataStories.length > 0 && (
+        <SectionCardSimple
+          sectionHeading={
+            <SectionHeading
+              linkProps={{
+                label: "More Data Stories",
+                href: "/news-events-stories?type=datastory",
+              }}
+            >
+              Data Stories
+            </SectionHeading>
+          }
+          cards={typedMap(dataStories, makeCardSimpleProps)}
+        />
+      )}
       <SectionCardSimple
         sectionHeading={
-          <SectionHeading href="/news-events-stories?type=datastory">Data Stories</SectionHeading>
+          <SectionHeading linkProps={{ label: "More Resources and Learning", href: "/training" }}>
+            Resources & Learning
+          </SectionHeading>
         }
-        cards={typedMap(RESPOND_DATASTORIES, makeCardSimpleProps)}
-      />
-      <SectionCardSimple
-        sectionHeading={<SectionHeading href="/training">Resources & Learning</SectionHeading>}
         cards={typedMap(trainings, makeCardSimpleProps)}
       />
     </>

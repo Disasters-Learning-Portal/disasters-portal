@@ -17,31 +17,25 @@ import {
   type IterableItemWithId,
   type Theme,
 } from "@/app/site-config/types";
-import { isInternalContent, pickKeys } from "./typed.helpers";
+import { isInternalContent, isMastHeadImage, pickKeys } from "./typed.helpers";
 
 export const makeOutlineTagProps = (
   tag: string,
-  tagProps?: Omit<TagProps, "variant" | "size" | "onClose" | "children">,
+  tagProps?: Omit<TagProps, "variant" | "size" | "children">,
 ) => ({
   variant: "outline" as const,
   borderColor: "base-light" as const,
-  children: tag,
+  children: toTitleCase(tag),
   ...tagProps,
 });
 
 export const makeTextTagProps = (
   tag: string,
-  tagProps?: Omit<TagProps, "variant" | "size" | "onClose" | "children">,
+  tagProps?: Omit<TagProps, "variant" | "size" | "children">,
 ) => ({
   variant: "text" as const,
-  children: tag,
+  children: toTitleCase(tag),
   ...tagProps,
-});
-
-// Tag takes its text as `children`, a Card wants it as `label`.
-const childrenToLabel = <T extends { children: string }>({ children, ...rest }: T) => ({
-  label: children,
-  ...rest,
 });
 
 const makeDateTagProps = (date: DateString) =>
@@ -57,14 +51,22 @@ export const makeContentTypeTagProps = (tag: ContentType) => {
   return label;
 };
 
+// Takes in prop object with `children`, and rekeys as `label` for components with nested component props.
+const childrenToLabel = <T extends { children: string }>({ children, ...rest }: T) => ({
+  label: children,
+  ...rest,
+});
+
 export type CardMastheadPropsArgs = Omit<
   CardProps,
   "title" | "image" | "colorMode" | "isMastHead" | "tag" | "callToAction" | "callToActionSecondary"
 > & {
-  mastheadImage: {
-    alt: string;
-    src: string;
-  };
+  mastheadImage:
+    | {
+        alt: string;
+        src: string;
+      }
+    | CardProps["image"];
   title?: string;
   theme?: Theme;
   datePublished?: DateString;
@@ -84,7 +86,11 @@ export const makeCardMastHeadProps = ({
   ...rest
 }: CardMastheadPropsArgs): CardProps<typeof AppLink> => ({
   className: "blocks-card--contentpage",
-  image: <AppImage {...mastheadImage} sizes="100vw" fill preload={true} />,
+  image: isMastHeadImage(mastheadImage) ? (
+    <AppImage {...mastheadImage} sizes="100vw" fill preload={true} />
+  ) : (
+    mastheadImage
+  ),
   tag: datePublished && makeDateTagProps(datePublished),
   title: title ?? (theme ? CONTENT_THEMES[theme].label : undefined),
   description: subtitle,
@@ -112,7 +118,7 @@ export type CardFeaturedPropsArgs = Omit<
     label: string;
     href: string;
   };
-  image: {
+  image?: {
     alt: string;
     src: string;
   };
@@ -144,7 +150,7 @@ export const makeCardFeaturedProps = (
       color: "secondary",
       as: AppLink,
     },
-    image: (
+    image: image && (
       <AppImage
         alt={image.alt}
         src={image.src}
@@ -153,7 +159,7 @@ export const makeCardFeaturedProps = (
         style={{ objectFit: "cover" }}
       />
     ),
-    imagePosition,
+    imagePosition: image && imagePosition,
     ...rest,
   };
 };
@@ -169,6 +175,7 @@ export const makeGalleryCardContent = (content: Content): GalleryCardContent => 
     "id",
     "contentType",
     "title",
+    "subtitle",
     "description",
     "thumbnailImage",
     "themes",
@@ -266,6 +273,7 @@ export type CardSimplePropsArgs = Omit<
     alt: string;
     src: string;
   };
+  subtitle?: string;
   tag?: Theme | ContentType | Category | "active";
   themes?: Theme[];
   url?: string;
@@ -274,6 +282,8 @@ export type CardSimplePropsArgs = Omit<
 export const makeCardSimpleProps = ({
   id,
   contentType,
+  description,
+  subtitle,
   thumbnailImage,
   tag,
   themes,
@@ -294,6 +304,7 @@ export const makeCardSimpleProps = ({
   href: url ? url : `${CONTENT_TYPES[contentType].route}/${id}`,
   isExternal: !!url,
   as: AppLink,
+  description: subtitle ?? description,
   ...rest,
 });
 

@@ -12,13 +12,62 @@ import type {
 } from "@/app/site-config/content.helpers";
 
 export const CONTENT_TYPES: Record<ContentType, { route: AppRoutes; label: string }> = {
-  data: { route: "/data-gallery", label: "data" },
-  event: { route: "/news-events-stories", label: "event" },
-  news: { route: "/news-events-stories", label: "news" },
-  story: { route: "/news-events-stories", label: "story" },
-  datastory: { route: "/news-events-stories", label: "data story" },
-  training: { route: "/training", label: "training" },
+  data: { route: "/data-gallery", label: "Data" },
+  datastory: { route: "/news-events-stories", label: "Data Story" },
+  event: { route: "/news-events-stories", label: "Event" },
+  news: { route: "/news-events-stories", label: "News" },
+  story: { route: "/news-events-stories", label: "Story" },
+  training: { route: "/training", label: "Training" },
 };
+
+/** Themes ordered by theme chronology */
+export type Theme = "prepare" | "respond" | "recover" | "resilience";
+
+/** Object is ordered by theme chronology */
+export const CONTENT_THEMES: Record<Theme, { label: string; color?: string; description: string }> =
+  {
+    prepare: {
+      label: "Prepare",
+      color: "accent-warm",
+      description: "Anticipate risk and boost readiness",
+    },
+    respond: {
+      label: "Respond",
+      color: "secondary",
+      description: "Support real-time decisions with timely insights",
+    },
+    recover: {
+      label: "Recover",
+      color: "accent-cool",
+      description: "Assess impacts and rebuild stronger",
+    },
+    resilience: {
+      label: "Build Resilience",
+      color: "success",
+      description: "Safeguard communities for enduring impact",
+    },
+  } as const;
+
+export const CONTENT_CATEGORIES = [
+  "cyclone",
+  "earthquake",
+  "fire",
+  "flood",
+  "heat",
+  "hurricane",
+  "landslide",
+  "severe weather",
+  "tropical cyclone",
+  "tsunami",
+  "typhoon",
+  "volcano",
+  "winter weather",
+] as const;
+
+export type Category = (typeof CONTENT_CATEGORIES)[number];
+
+type GalleryRouteBase = (typeof CONTENT_TYPES)[ContentType]["route"];
+export type GalleryRoute = GalleryRouteBase | `${GalleryRouteBase}?${string}`;
 
 export const SHOW_IN_PAGE_NAVIGATION_CONTENT_TYPES: ContentType[] = [
   "event",
@@ -27,47 +76,6 @@ export const SHOW_IN_PAGE_NAVIGATION_CONTENT_TYPES: ContentType[] = [
   "datastory",
   "training",
 ];
-
-export type Theme = "respond" | "build" | "prepare" | "recover";
-
-export const CONTENT_THEMES: Record<Theme, { label: string; color?: string }> = {
-  respond: {
-    label: "Respond",
-    color: "secondary",
-  },
-  build: {
-    label: "Build resilience",
-    color: "success",
-  },
-  prepare: {
-    label: "Prepare",
-    color: "accent-warm",
-  },
-  recover: {
-    label: "Recover",
-    color: "accent-cool",
-  },
-};
-
-export const CONTENT_CATEGORIES = [
-  "earthquake",
-  "fire",
-  "flood",
-  "heat",
-  "landslide",
-  "severe weather",
-  "tropical cyclone",
-  "hurricane",
-  "typhoon",
-  "cyclone",
-  "volcano",
-  "tsunami",
-  "winter weather",
-] as const;
-
-export type Category = (typeof CONTENT_CATEGORIES)[number];
-
-export type GalleryRoute = "/data-gallery" | "/news-events-stories" | "/training"; // TODO: update to be dynamic
 
 type GeoConfig = Omit<GeoConfigProviderProps, "children">;
 
@@ -85,16 +93,24 @@ export type ContentBlock =
       items: (string | { label: string; href: string })[];
     }
   | { type: "note"; text: string }
-  | { type: "slider"; before: { src: string; alt: string }; after: { src: string; alt: string } }
   | {
-      type: "video";
-      src: string;
+      type: "slider";
       heading?: string;
       headingLevel?: "h2" | "h3" | "h4";
+      before: { src: string; alt: string };
+      after: { src: string; alt: string };
+    }
+  | {
+      type: "video";
+      heading?: string;
+      headingLevel?: "h2" | "h3" | "h4";
+      src: string;
       caption?: string;
     }
   | {
       type: "image";
+      heading?: string;
+      headingLevel?: "h2" | "h3" | "h4";
       src: string;
       alt: string;
       width: number;
@@ -118,17 +134,36 @@ export type ContentBlock =
   | {
       type: "sectionCardSimple";
       heading?: string;
-      href?: GalleryRoute;
+      headingLevel?: "h2" | "h3" | "h4";
+      link?: { href: GalleryRoute; label?: string };
       cards: CardSimplePropsArgs[];
     }
   | {
       type: "sectionCardGallery";
       heading?: string;
-      href?: GalleryRoute;
+      headingLevel?: "h2" | "h3" | "h4";
+      link?: { href: GalleryRoute; label?: string };
       cards: (Omit<CardDetailedPropsArgs, "title"> & { title: string })[];
     }
   | {
+      type: "carousel";
+      heading?: string;
+      headingLevel?: "h2" | "h3" | "h4";
+      /** Cards visible at once on desktop. Collapses to 1 on mobile. */
+      maxVisibleItems?: 1 | 2 | 3;
+      items: {
+        id: string;
+        title: string;
+        description?: string;
+        thumbnailImage: { src: string; alt: string };
+        /** Rendered as a Tag above the title. */
+        tag?: string;
+      }[];
+    }
+  | {
       type: "sectionCardFeatured";
+      heading?: string;
+      headingLevel?: "h2" | "h3" | "h4";
       card: Omit<CardFeaturedPropsArgs, "title"> & { title: string };
     };
 
@@ -149,6 +184,7 @@ export type InternalCardContent = {
   id: string;
   contentType: ContentType;
   title: string;
+  subtitle?: string;
   thumbnailImage: {
     src: string;
     alt: string;
@@ -244,8 +280,6 @@ export type ThemeContent = {
 type MastheadImage = {
   src: string;
   alt: string;
-  caption?: string;
-  attribution?: string;
 };
 
 export type IterableItemWithId<T> = T & { id: string };

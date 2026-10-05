@@ -1,9 +1,15 @@
+import { DATA__GAIA } from "@/app/site-config/data/data__gaia";
+import { TRAINING__BUILDING_CLIMATE_RISK_ASSESSMENTS } from "@/app/site-config/training/training__building-climate-risk-assessments";
+import { TRAINING__EO_BUILDING_EXPOSURE } from "@/app/site-config/training/training__eo-building-exposure";
+import { TRAINING__EO_INSURANCE_FINANCE_DECISION_MAKING } from "@/app/site-config/training/training__eo-insurance-finance-decision-making";
 import type { StoryContent } from "@/app/site-config/types";
 
 export const STORY__ESTIMATING_LOSS_RECOVERY: StoryContent = {
   id: "estimating-loss-recovery",
   contentType: "story",
-  title: "When Every Dollar Counts: Estimating Loss to Speed Recovery",
+  title: "When Every Dollar Counts",
+  datePublished: "2026-09-30",
+  subtitle: "Estimating Loss to Speed Recovery",
   thumbnailImage: {
     src: "/img/story/estimating-loss-recovery.webp",
     alt: "Community recovery efforts in Mayfield after disaster, showing rebuilding in progress",
@@ -16,9 +22,9 @@ export const STORY__ESTIMATING_LOSS_RECOVERY: StoryContent = {
   categories: ["severe weather"],
   body: [
     {
-      type: "text",
+      type: "list",
       heading: "Highlights",
-      paragraphs: [
+      items: [
         "The gap between damage maps and recovery decisions is finally being addressed. Traditional loss estimation tools have reliably characterized physical damage and rebuilding costs but quantifying how long economic disruption will last has remained largely out of reach. Two NASA-supported tools now give recovery decision-makers a more complete basis for initial loss assessment.",
         "A globally consistent building exposure baseline is available for the first time. GAIA, the Global Assessment of Infrastructure Assets, gives emergency managers a purpose-built foundation that can be used alongside other tools and data for disaster loss estimation. GAIA is now available through the NASA Disasters PORTAL and through the EU Joint Research Centre's Human Planet initiative.",
         "A new framework for estimating economic recovery time is already in use. The Global Economic Disruption Index (GEDI) predicts how long economic activity will take to return following a disaster, from hours to years, addressing what rebuilding cost estimates alone cannot: how long the disruption will last.",
@@ -91,13 +97,27 @@ export const STORY__ESTIMATING_LOSS_RECOVERY: StoryContent = {
       ],
     },
     {
-      type: "text",
+      type: "list",
       heading: "Cornerstones",
-      paragraphs: [
+      items: [
         "Recovery decisions shape future risk. How a community rebuilds determines how much risk it will absorb the next time a hazard strikes. Acting on incomplete damage and loss information may inadvertently restore the same conditions that made a community's situation worse in the first place. Better tools don't just speed up recovery. They improve it.",
         "Not all damage data is recovery-ready. The datasets most commonly available after a disaster were built for administrative purposes, not risk assessment. When used to estimate losses or allocate resources, they can introduce compounding bias that distorts every decision that follows. Decision-makers should expect purpose-built tools, not data repurposed for objectives it was never designed to meet.",
 
         "The third question is the most consequential. Where did it happen? What did the physical damage cost? These two questions are typically answered quickly. How long economic disruption will last has historically gone unanswered until well into the recovery process – a gap that carries real consequences for decision-makers allocating resources in the immediate aftermath. These tools are designed to narrow that gap before critical decisions are made.",
+      ],
+    },
+    {
+      type: "sectionCardSimple",
+      heading: "Resources & Learning",
+      link: {
+        href: "/training",
+        label: "More Resources and Learning",
+      },
+      cards: [
+        TRAINING__EO_BUILDING_EXPOSURE,
+        DATA__GAIA,
+        TRAINING__BUILDING_CLIMATE_RISK_ASSESSMENTS,
+        TRAINING__EO_INSURANCE_FINANCE_DECISION_MAKING,
       ],
     },
   ],

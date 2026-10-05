@@ -3,19 +3,41 @@
 import type { ComponentProps } from "react";
 import { type AppLink, AppLinkStyled } from "@/app/components/AppLink";
 
-type SectionHeadingProps = ComponentProps<"h2"> & {
-  href?: ComponentProps<typeof AppLink>["href"];
+type SectionTitle = React.HTMLAttributes<HTMLHeadingElement> & {
+  headingAs?: "h2" | "h3" | "h4";
+  linkProps?: { label?: string; href?: ComponentProps<typeof AppLink>["href"] };
 };
 
-export const SectionHeading = ({ href, children, className, ...props }: SectionHeadingProps) => {
+export const SectionHeading = ({
+  linkProps: { href, label = "View All" } = {},
+  headingAs = "h2",
+  children,
+  className,
+  ...props
+}: SectionTitle) => {
+  const HeadingAs = headingAs;
+
+  const headingSize = (() => {
+    switch (headingAs) {
+      case "h4":
+        return "font-heading-md";
+      case "h3":
+        return "font-heading-lg";
+      case "h2":
+        return "font-heading-2xl";
+      default:
+        return "font-heading-2xl";
+    }
+  })();
+
   return (
-    <div className="display-flex flex-justify flex-align-end margin-bottom-105">
-      <h2 className={`${className ?? ""} font-sans-2xl margin-0`} {...props}>
+    <div className="display-flex flex-justify flex-align-end margin-bottom-3">
+      <HeadingAs className={`${headingSize} margin-0 ${className ?? ""}`} {...props}>
         {children}
-      </h2>
+      </HeadingAs>
       {href && (
         <AppLinkStyled href={href} variant="arrow" color="secondary">
-          View All
+          {label}
         </AppLinkStyled>
       )}
     </div>

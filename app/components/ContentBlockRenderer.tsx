@@ -1,3 +1,4 @@
+import { Carousel } from "@teamimpact/veda-ui-blocks";
 import {
   ImageComparison,
   Section,
@@ -17,20 +18,6 @@ import {
 } from "@/app/site-config/content.helpers";
 import type { ContentBlock } from "@/app/site-config/types";
 
-function ContentHeading({
-  heading,
-  headingLevel,
-}: {
-  heading: string;
-  headingLevel?: "h2" | "h3" | "h4";
-}) {
-  if (headingLevel === "h4") return <h4 className="font-heading-lg margin-bottom-1">{heading}</h4>;
-
-  if (headingLevel === "h3") return <h3 className="font-heading-lg margin-bottom-1">{heading}</h3>;
-
-  return <SectionHeading>{heading}</SectionHeading>;
-}
-
 export const ContentBlockRenderer = ({
   block,
   isMultiColumnLayout,
@@ -43,11 +30,13 @@ export const ContentBlockRenderer = ({
       return (
         <Section isMultiColumnLayout={isMultiColumnLayout}>
           {block.heading && (
-            <ContentHeading heading={block.heading} headingLevel={block.headingLevel} />
+            <SectionHeading headingAs={block.headingLevel}>{block.heading}</SectionHeading>
           )}
           {block.paragraphs.map((p, i) => (
             // biome-ignore lint/suspicious/noArrayIndexKey: static content, never reorders
-            <p key={i}>{p}</p>
+            <p key={i} className="font-body-sm line-height-body-5">
+              {p}
+            </p>
           ))}
         </Section>
       );
@@ -56,7 +45,7 @@ export const ContentBlockRenderer = ({
       return (
         <Section isMultiColumnLayout={isMultiColumnLayout}>
           {block.heading && (
-            <ContentHeading heading={block.heading} headingLevel={block.headingLevel} />
+            <SectionHeading headingAs={block.headingLevel}>{block.heading}</SectionHeading>
           )}
           <ul className="usa-list">
             {block.items.map((item, i) =>
@@ -87,6 +76,9 @@ export const ContentBlockRenderer = ({
     case "slider":
       return (
         <Section isMultiColumnLayout={isMultiColumnLayout}>
+          {block.heading && (
+            <SectionHeading headingAs={block.headingLevel}>{block.heading}</SectionHeading>
+          )}
           <ImageComparison
             before={block.before}
             after={block.after}
@@ -99,24 +91,27 @@ export const ContentBlockRenderer = ({
       return (
         <Section isMultiColumnLayout={isMultiColumnLayout}>
           {block.heading && (
-            <ContentHeading heading={block.heading} headingLevel={block.headingLevel} />
+            <SectionHeading headingAs={block.headingLevel}>{block.heading}</SectionHeading>
           )}
-          {block.src ? (
+          <figure className="margin-0">
             <AppVideo src={block.src} controls className="width-full display-block">
               <track kind="captions" />
             </AppVideo>
-          ) : (
-            <div className="width-full bg-base-lightest display-flex flex-align-center flex-justify-center height-card padding-x-4">
-              <p className="text-base margin-0">Video coming soon</p>
-            </div>
-          )}
-          {block.caption && <p className="font-body-sm text-base margin-top-1">{block.caption}</p>}
+            {block.caption && (
+              <figcaption className="font-body-3xs line-height-body-3 measure-6 text-base-dark margin-top-1">
+                {block.caption}
+              </figcaption>
+            )}
+          </figure>
         </Section>
       );
 
     case "image":
       return (
         <Section isMultiColumnLayout={isMultiColumnLayout}>
+          {block.heading && (
+            <SectionHeading headingAs={block.headingLevel}>{block.heading}</SectionHeading>
+          )}
           <figure className="margin-0">
             <AppImage
               src={block.src}
@@ -126,7 +121,7 @@ export const ContentBlockRenderer = ({
               className={`width-full height-auto ${block.maxWidth ? `maxw-${block.maxWidth}` : ""}`}
             />
             {block.caption && (
-              <figcaption className="font-body-sm text-base margin-top-1">
+              <figcaption className="font-body-3xs line-height-body-3 measure-6 text-base-dark margin-top-1">
                 {block.caption}
               </figcaption>
             )}
@@ -138,7 +133,7 @@ export const ContentBlockRenderer = ({
       return (
         <Section isMultiColumnLayout={isMultiColumnLayout}>
           {block.heading && (
-            <ContentHeading heading={block.heading} headingLevel={block.headingLevel} />
+            <SectionHeading headingAs={block.headingLevel}>{block.heading}</SectionHeading>
           )}
           <figure className="margin-0">
             <StacSingleLayerBlock block={block} />
@@ -150,7 +145,7 @@ export const ContentBlockRenderer = ({
       return (
         <Section isMultiColumnLayout={isMultiColumnLayout}>
           {block.heading && (
-            <ContentHeading heading={block.heading} headingLevel={block.headingLevel} />
+            <SectionHeading headingAs={block.headingLevel}>{block.heading}</SectionHeading>
           )}
           <figure className="margin-0">
             <StacCompareBlock block={block} />
@@ -160,13 +155,15 @@ export const ContentBlockRenderer = ({
 
     case "sectionCardSimple": {
       const cards = block.cards.map(
-        ({ id, contentType, themes, thumbnailImage, title, ...rest }) => ({
+        ({ id, contentType, themes, thumbnailImage, title, subtitle, description, ...rest }) => ({
           ...makeCardSimpleProps({
             id,
             contentType,
             themes,
             thumbnailImage,
             title,
+            subtitle,
+            description,
             url: "url" in rest ? rest.url : undefined,
           }),
           // Card titles sit under the block's h2 section heading.
@@ -180,7 +177,7 @@ export const ContentBlockRenderer = ({
           isMultiColumnLayout={isMultiColumnLayout}
           sectionHeading={
             block.heading && (
-              <SectionHeading {...(block.href ? { href: block.href } : {})}>
+              <SectionHeading headingAs={block.headingLevel} linkProps={block.link}>
                 {block.heading}
               </SectionHeading>
             )
@@ -217,7 +214,7 @@ export const ContentBlockRenderer = ({
           isMultiColumnLayout={isMultiColumnLayout}
           sectionHeading={
             block.heading && (
-              <SectionHeading {...(block.href ? { href: block.href } : {})}>
+              <SectionHeading headingAs={block.headingLevel} linkProps={block.link}>
                 {block.heading}
               </SectionHeading>
             )
@@ -226,6 +223,25 @@ export const ContentBlockRenderer = ({
         />
       );
     }
+
+    case "carousel":
+      return (
+        <Section isMultiColumnLayout={isMultiColumnLayout}>
+          {block.heading && (
+            <SectionHeading headingAs={block.headingLevel}>{block.heading}</SectionHeading>
+          )}
+          <Carousel
+            maxVisibleItems={block.maxVisibleItems ?? 2}
+            items={block.items.map(({ title, description, thumbnailImage, tag }) => ({
+              // The section heading is h2, so card titles must be h3.
+              title: <h3 className="blocks-card__title">{title}</h3>,
+              description,
+              image: <AppImage {...thumbnailImage} fill sizes="(max-width: 640px) 100vw, 50vw" />,
+              ...(tag ? { tag: { label: tag } } : {}),
+            }))}
+          />
+        </Section>
+      );
 
     case "sectionCardFeatured":
       return (
