@@ -26,6 +26,9 @@ export const DATA__LANDSAT_NBR: DataContent = {
 
   relatedContent: ["sentinel-2-nbr", "sentinel-2-dnbr"],
 
+  exploreDataUrl:
+    "https://science-dev.data.nasa.gov/disasters/data-visualization/?mission=disasters_learning_portal&mapLon=-118.34472656250001&mapLat=34.62563566457229&mapZoom=8.24&globeLon=undefined&globeLat=undefined&panePercents=0,100,0&on=c1bfb99d-dc3c-4a27-9361-caaf4e55b7d5$1.00&startTime=2012-01-19T00:00:00.000Z&endTime=2025-01-14T23:59:59.000Z&live=0",
+
   body: [
     {
       type: "text",

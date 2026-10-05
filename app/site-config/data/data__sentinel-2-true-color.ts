@@ -32,6 +32,9 @@ export const DATA__SENTINEL_2_TRUE_COLOR: DataContent = {
 
   relatedContent: ["sentinel-2-color-infrared", "sentinel-2-swir"],
 
+  exploreDataUrl:
+    "https://science-dev.data.nasa.gov/disasters/data-visualization/?mission=disasters_learning_portal&mapLon=-89.945068359375&mapLat=33.8370909521543&mapZoom=6.73&globeLon=undefined&globeLat=undefined&panePercents=0,100,0&on=f8b7885c-2048-4957-9c44-04132b5126f5$1.00&startTime=2012-01-19T00:00:00.000Z&endTime=2026-01-29T23:59:59.000Z&live=0",
+
   body: [
     {
       type: "text",

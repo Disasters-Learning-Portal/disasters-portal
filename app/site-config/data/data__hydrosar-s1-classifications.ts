@@ -26,6 +26,9 @@ export const DATA__HYDROSAR_S1_CLASSIFICATIONS: DataContent = {
 
   relatedContent: [],
 
+  exploreDataUrl:
+    "https://science-dev.data.nasa.gov/disasters/data-visualization/?mission=disasters_learning_portal&mapLon=-83.7158203125&mapLat=9.69829813302702&mapZoom=7.24&globeLon=undefined&globeLat=undefined&panePercents=0,100,0&on=7c2e40b8-93d1-4f6a-a05e-2b814c7d6e39$1.00&startTime=2012-01-19T00:00:00.000Z&endTime=2024-11-23T23:59:59.000Z&live=0",
+
   body: [
     {
       type: "text",

@@ -34,6 +34,9 @@ export const DATA__VANTOR_TRUE_COLOR: DataContent = {
 
   relatedContent: ["vantor-color-infrared", "vantor-panchromatic", "satellogic-true-color"],
 
+  exploreDataUrl:
+    "https://science-dev.data.nasa.gov/disasters/data-visualization/?mission=disasters_learning_portal&mapLon=-66.99327127139392&mapLat=10.583224224534344&mapZoom=12.77&globeLon=undefined&globeLat=undefined&panePercents=0,100,0&on=0dedc899-8009-40ad-8fe4-12d4ad5ee89a$1.00&startTime=2012-01-19T00:00:00.000Z&endTime=2026-06-27T23:59:59.000Z&live=0",
+
   body: [
     {
       type: "text",

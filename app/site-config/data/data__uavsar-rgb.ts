@@ -26,6 +26,9 @@ export const DATA__UAVSAR_RGB: DataContent = {
 
   relatedContent: ["uavsar-unet-classified", "uavsar-quicklook-classified", "uavsar-displacement"],
 
+  exploreDataUrl:
+    "https://science-dev.data.nasa.gov/disasters/data-visualization/?mission=disasters_learning_portal&mapLon=-81.749267578125&mapLat=28.415290272427438&mapZoom=7.68&globeLon=undefined&globeLat=undefined&panePercents=0,100,0&on=cedd8705-7de2-4efb-a638-83a9a232b97d$1.00&startTime=2012-01-19T00:00:00.000Z&endTime=2024-10-14T23:59:59.000Z&live=0",
+
   body: [
     {
       type: "text",

@@ -28,6 +28,9 @@ export const DATA__AVIRIS_3_CHAR_AND_ASH: DataContent = {
 
   relatedContent: ["aviris-3-pca", "aviris-3-dnbr", "aviris-3-early-color-imagery"],
 
+  exploreDataUrl:
+    "https://science-dev.data.nasa.gov/disasters/data-visualization/?mission=disasters_learning_portal&mapLon=-118.36412725658528&mapLat=34.121597356330895&mapZoom=10.93&globeLon=undefined&globeLat=undefined&panePercents=0,100,0&on=91701ee1-949f-4c9e-b16e-b38f01f3f6f7$1.00&startTime=2012-01-19T00:00:00.000Z&endTime=2025-01-11T23:59:59.000Z&live=0",
+
   body: [
     {
       type: "text",

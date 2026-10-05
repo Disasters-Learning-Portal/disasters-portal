@@ -26,6 +26,9 @@ export const DATA__OPERA_DISP_S1_RNG: DataContent = {
 
   relatedContent: ["opera-disp-s1-coherence", "opera-disp-s1-wrp", "opera-disp-s1-unw"],
 
+  exploreDataUrl:
+    "https://science-dev.data.nasa.gov/disasters/data-visualization/?mission=disasters_learning_portal&mapLon=-68.21051443500001&mapLat=10.803431576000001&mapZoom=8.13&globeLon=undefined&globeLat=undefined&panePercents=0,100,0&on=bb673dcf-ce6c-4bf6-84ed-fd8fcb1044a3$1.00&startTime=2012-01-19T00:00:00.000Z&endTime=2026-06-24T23:59:59.000Z&live=0",
+
   body: [
     {
       type: "text",

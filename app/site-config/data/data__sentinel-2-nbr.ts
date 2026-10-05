@@ -17,6 +17,8 @@ export const DATA__SENTINEL_2_NBR: DataContent = {
   themes: ["respond", "recover"],
   categories: ["fire"],
   relatedContent: ["sentinel-2-dnbr"],
+  exploreDataUrl:
+    "https://science-dev.data.nasa.gov/disasters/data-visualization/?mission=disasters_learning_portal&mapLon=-118.037109375&mapLat=34.28348381045282&mapZoom=8.46&globeLon=undefined&globeLat=undefined&panePercents=0,100,0&on=884c019e-dd17-451e-8e55-8d3c96730dbe$1.00&startTime=2012-01-19T00:00:00.000Z&endTime=2025-01-12T23:59:59.000Z&live=0",
   body: [
     {
       type: "text",

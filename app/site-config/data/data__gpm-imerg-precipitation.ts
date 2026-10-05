@@ -26,6 +26,9 @@ export const DATA__GPM_IMERG_PRECIPITATION: DataContent = {
 
   relatedContent: [],
 
+  exploreDataUrl:
+    "https://science-dev.data.nasa.gov/disasters/data-visualization/?mission=disasters_learning_portal&mapLon=146.59999596866186&mapLat=11.749996556025831&mapZoom=4.71&globeLon=undefined&globeLat=undefined&panePercents=0,100,0&on=742af199-222d-4d0d-94cf-d9191c0d2369$1.00&startTime=2012-01-19T00:00:00.000Z&endTime=2026-04-18T23:59:59.000Z&live=0",
+
   body: [
     {
       type: "text",

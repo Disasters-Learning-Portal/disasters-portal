@@ -26,6 +26,9 @@ export const DATA__ECOSTRESS_LAND_SURFACE_TEMPERATURE: DataContent = {
 
   relatedContent: ["aviris-3-char-and-ash", "aviris-3-dnbr", "landsat-ndvi"],
 
+  exploreDataUrl:
+    "https://science-dev.data.nasa.gov/disasters/data-visualization/?mission=disasters_learning_portal&mapLon=-118.3139636995516&mapLat=34.16437504568994&mapZoom=10.46&globeLon=undefined&globeLat=undefined&panePercents=0,100,0&on=fb08f8c7-1c01-4339-85b0-b1f61c201da7$1.00&startTime=2012-01-19T00:00:00.000Z&endTime=2025-01-11T23:59:59.000Z&live=0",
+
   body: [
     {
       type: "text",

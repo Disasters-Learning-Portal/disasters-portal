@@ -34,6 +34,9 @@ export const DATA__LANDSAT_TRUE_COLOR: DataContent = {
 
   relatedContent: ["landsat-natural-color", "landsat-color-infrared", "sentinel-2-true-color"],
 
+  exploreDataUrl:
+    "https://science-dev.data.nasa.gov/disasters/data-visualization/?mission=disasters_learning_portal&mapLon=-88.9013671875&mapLat=34.574129648298324&mapZoom=6.41&globeLon=undefined&globeLat=undefined&panePercents=0,100,0&on=432bcfed-b567-4cae-ac73-e4d5a680eadc$1.00&startTime=2012-01-19T00:00:00.000Z&endTime=2026-01-28T23:59:59.000Z&live=0",
+
   body: [
     {
       type: "text",
