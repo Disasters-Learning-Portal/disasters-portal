@@ -94,13 +94,6 @@ export const STORY__FINDING_FLOODS: StoryContent = {
         "This interactive map shows classifications that help identify flooded urban areas, croplands, vegetation, and open water using UAVSAR data collected during flights on July 9, 2025. Click the “i” button to learn more. Credit: NASA Jet Propulsion Laboratory",
     },
     {
-      type: "image",
-      src: "/img/story/finding-floods__uavsar-legend.webp",
-      alt: "Map legend: blue is open water, red is flooded developed areas, orange is flooded cropland, green is flooded vegetation",
-      width: 1865,
-      height: 140,
-    },
-    {
       type: "text",
       heading: "From the Hill Country to Orbit",
       paragraphs: [
