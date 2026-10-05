@@ -1,4 +1,18 @@
-import type { Content, ExternalContent } from "./types";
+import {
+  type Category,
+  CONTENT_CATEGORIES,
+  CONTENT_THEMES,
+  CONTENT_TYPES,
+  type Content,
+  type ContentType,
+  type ExternalContent,
+  type Theme,
+} from "./types";
+
+export const isTheme = (value: string): value is Theme => value in CONTENT_THEMES;
+export const isContentType = (value: string): value is ContentType => value in CONTENT_TYPES;
+export const isCategory = (value: string): value is Category =>
+  (CONTENT_CATEGORIES as readonly string[]).includes(value);
 
 /**
  * Narrows content items to their internal variants, excluding any external (URL-only) types.
@@ -9,6 +23,22 @@ import type { Content, ExternalContent } from "./types";
  */
 export function isInternalContent<T extends Content>(c: T): c is Exclude<T, ExternalContent> {
   return !("url" in c); // TODO require body
+}
+
+/**
+ * Narrows an unknown value to a `MastheadImage`-shaped object.
+ * Checks for the two required fields (`src` and `alt`) so that callers can
+ * safely access them after the guard.
+ */
+export function isMastHeadImage(
+  mastheadImage: unknown,
+): mastheadImage is { src: string; alt: string } {
+  return (
+    typeof mastheadImage === "object" &&
+    mastheadImage !== null &&
+    "src" in mastheadImage &&
+    "alt" in mastheadImage
+  );
 }
 
 /**

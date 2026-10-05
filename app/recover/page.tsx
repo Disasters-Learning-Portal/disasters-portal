@@ -5,6 +5,7 @@ import {
   SectionHeading,
 } from "@/app/components/";
 import {
+  type CardMastheadPropsArgs,
   type CardSimplePropsArgs,
   makeCardMastHeadProps,
   makeCardSimpleProps,
@@ -14,30 +15,19 @@ import {
   RECOVER_STORIES,
   RECOVER_TRAININGS,
 } from "@/app/site-config/theme/theme__recover";
-import { typedMap } from "@/app/site-config/typed.helpers";
+import { pickKeys, typedMap } from "@/app/site-config/typed.helpers";
 
 export default function RecoverPage() {
-  const { theme, subtitle, mastheadImage } = RECOVER_CONTENT;
+  const { theme, subtitle, mastheadImage }: CardMastheadPropsArgs = RECOVER_CONTENT;
 
-  const stories: CardSimplePropsArgs[] = RECOVER_STORIES.slice(0, 1).map(
-    ({ id, contentType, thumbnailImage, themes, title }) => ({
-      id,
-      contentType,
-      thumbnailImage,
-      themes,
-      title,
-    }),
+  const stories: CardSimplePropsArgs[] = RECOVER_STORIES.slice(0, 1).map((i) =>
+    pickKeys(i, ["id", "contentType", "thumbnailImage", "themes", "title", "subtitle"]),
   );
 
-  const trainings = RECOVER_TRAININGS.map(
-    ({ id, contentType, thumbnailImage, title, ...rest }) => ({
-      id,
-      contentType,
-      thumbnailImage,
-      title,
-      url: "url" in rest ? rest.url : undefined,
-    }),
-  );
+  const trainings: CardSimplePropsArgs[] = RECOVER_TRAININGS.map((i) => ({
+    ...pickKeys(i, ["id", "contentType", "thumbnailImage", "title", "subtitle"]),
+    ...("url" in i ? { url: i.url } : {}),
+  }));
 
   return (
     <>

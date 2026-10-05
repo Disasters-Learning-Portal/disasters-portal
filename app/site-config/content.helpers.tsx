@@ -17,7 +17,7 @@ import {
   type IterableItemWithId,
   type Theme,
 } from "@/app/site-config/types";
-import { isInternalContent, pickKeys } from "./typed.helpers";
+import { isInternalContent, isMastHeadImage, pickKeys } from "./typed.helpers";
 
 export const makeOutlineTagProps = (
   tag: string,
@@ -25,7 +25,7 @@ export const makeOutlineTagProps = (
 ) => ({
   variant: "outline" as const,
   borderColor: "base-light" as const,
-  children: tag,
+  children: toTitleCase(tag),
   ...tagProps,
 });
 
@@ -34,14 +34,8 @@ export const makeTextTagProps = (
   tagProps?: Omit<TagProps, "variant" | "size" | "children">,
 ) => ({
   variant: "text" as const,
-  children: tag,
+  children: toTitleCase(tag),
   ...tagProps,
-});
-
-// Tag takes its text as `children`, a Card wants it as `label`.
-const childrenToLabel = <T extends { children: string }>({ children, ...rest }: T) => ({
-  label: children,
-  ...rest,
 });
 
 const makeDateTagProps = (date: DateString) =>
@@ -57,15 +51,22 @@ export const makeContentTypeTagProps = (tag: ContentType) => {
   return label;
 };
 
+// Takes in prop object with `children`, and rekeys as `label` for components with nested component props.
+const childrenToLabel = <T extends { children: string }>({ children, ...rest }: T) => ({
+  label: children,
+  ...rest,
+});
+
 export type CardMastheadPropsArgs = Omit<
   CardProps,
   "title" | "image" | "colorMode" | "isMastHead" | "tag" | "callToAction" | "callToActionSecondary"
 > & {
-  mastheadImage: {
-    alt: string;
-    src: string;
-    objectPosition?: string;
-  };
+  mastheadImage:
+    | {
+        alt: string;
+        src: string;
+      }
+    | CardProps["image"];
   title?: string;
   theme?: Theme;
   datePublished?: DateString;
@@ -76,7 +77,7 @@ export type CardMastheadPropsArgs = Omit<
 };
 
 export const makeCardMastHeadProps = ({
-  mastheadImage: { objectPosition, ...mastheadImage },
+  mastheadImage,
   title,
   subtitle,
   theme,
@@ -85,14 +86,10 @@ export const makeCardMastHeadProps = ({
   ...rest
 }: CardMastheadPropsArgs): CardProps<typeof AppLink> => ({
   className: "blocks-card--contentpage",
-  image: (
-    <AppImage
-      {...mastheadImage}
-      sizes="100vw"
-      fill
-      preload={true}
-      style={objectPosition ? { objectPosition } : undefined}
-    />
+  image: isMastHeadImage(mastheadImage) ? (
+    <AppImage {...mastheadImage} sizes="100vw" fill preload={true} />
+  ) : (
+    mastheadImage
   ),
   tag: datePublished && makeDateTagProps(datePublished),
   title: title ?? (theme ? CONTENT_THEMES[theme].label : undefined),
@@ -276,6 +273,7 @@ export type CardSimplePropsArgs = Omit<
     alt: string;
     src: string;
   };
+  subtitle?: string;
   tag?: Theme | ContentType | Category | "active";
   themes?: Theme[];
   url?: string;
@@ -284,6 +282,8 @@ export type CardSimplePropsArgs = Omit<
 export const makeCardSimpleProps = ({
   id,
   contentType,
+  description,
+  subtitle,
   thumbnailImage,
   tag,
   themes,
@@ -304,6 +304,7 @@ export const makeCardSimpleProps = ({
   href: url ? url : `${CONTENT_TYPES[contentType].route}/${id}`,
   isExternal: !!url,
   as: AppLink,
+  description: subtitle ?? description,
   ...rest,
 });
 

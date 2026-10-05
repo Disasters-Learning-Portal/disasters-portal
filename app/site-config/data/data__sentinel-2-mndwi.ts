@@ -20,7 +20,7 @@ export const DATA__SENTINEL_2_MNDWI: DataContent = {
     alt: "Sentinel-2 Modified Normalized Difference Water Index (MNDWI)",
   },
 
-  themes: ["respond", "build", "prepare", "recover"],
+  themes: ["respond", "resilience", "prepare", "recover"],
 
   categories: ["severe weather", "flood", "tropical cyclone", "winter weather"],
 
@@ -41,6 +41,14 @@ export const DATA__SENTINEL_2_MNDWI: DataContent = {
       paragraphs: [
         "Sentinel-2 MNDWI can be used to identify and map open water and changes in surface water extent associated with flooding, tropical cyclones, severe storms, and other hydrologic events. Positive MNDWI values are generally associated with water, while lower or negative values are more commonly associated with vegetation, bare ground, and developed surfaces. Thresholds may vary by location and environmental conditions, so MNDWI should be interpreted together with supporting imagery and local context.",
         "Note: Areas of cloud cover will show up in varying shades of green/blue similar to water.",
+      ],
+    },
+
+    {
+      type: "text",
+      heading: "Terms of Use",
+      paragraphs: [
+        "NASA data and products are freely available to federal, state, public, non-profit and commercial users. This information can be experimental- or research-grade data products and may not be appropriate for operational use. These NASA data products, services, and the Disasters Mapping Portal are intended to aid decision makers and enhance situational awareness, but these data are not guaranteed to be consistently available or routinely updated. Use of this product should include: 'Contains modified Copernicus Sentinel data (2026) processed by ESA.'",
       ],
     },
 
