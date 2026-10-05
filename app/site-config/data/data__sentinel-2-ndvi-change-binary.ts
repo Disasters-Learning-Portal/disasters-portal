@@ -1,3 +1,4 @@
+import { DATA_VISUALIZATION_URL } from "@/app/site-config/env.helpers";
 import type { DataContent } from "@/app/site-config/types";
 
 export const DATA__SENTINEL_2_NDVI_CHANGE_BINARY: DataContent = {
@@ -41,8 +42,7 @@ export const DATA__SENTINEL_2_NDVI_CHANGE_BINARY: DataContent = {
     "planet-true-color",
   ],
 
-  exploreDataUrl:
-    "https://science-dev.data.nasa.gov/disasters/data-visualization/?mission=disasters_learning_portal&mapLon=-83.47412109375&mapLat=29.778347928476194&mapZoom=8.46&globeLon=undefined&globeLat=undefined&panePercents=0,100,0&on=b6b67076-1527-4335-b22a-8e4d084dba01$1.00&startTime=2012-01-19T00:00:00.000Z&endTime=2024-10-12T23:59:59.000Z&live=0",
+  exploreDataUrl: `${DATA_VISUALIZATION_URL}/?mapLon=-83.47412109375&mapLat=29.778347928476194&mapZoom=8.46&globeLon=undefined&globeLat=undefined&panePercents=0,100,0&on=b6b67076-1527-4335-b22a-8e4d084dba01$1.00&startTime=2012-01-19T00:00:00.000Z&endTime=2024-10-12T23:59:59.000Z&live=0`,
 
   body: [
     {

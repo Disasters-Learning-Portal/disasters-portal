@@ -1,3 +1,4 @@
+import { DATA_VISUALIZATION_URL } from "@/app/site-config/env.helpers";
 import type { DataContent } from "@/app/site-config/types";
 
 export const DATA__OPERA_DIST_ALERT_GEN_DIST_STATUS: DataContent = {
@@ -26,8 +27,7 @@ export const DATA__OPERA_DIST_ALERT_GEN_DIST_STATUS: DataContent = {
 
   relatedContent: ["opera-dist-s1"],
 
-  exploreDataUrl:
-    "https://science-dev.data.nasa.gov/disasters/data-visualization/?mission=disasters_learning_portal&mapLon=-98.94865559548789&mapLat=30.684261983757306&mapZoom=8.54&globeLon=undefined&globeLat=undefined&panePercents=0,100,0&on=f930d340-fc9a-4d3b-a49c-b043837dc0cc$1.00&startTime=2012-01-19T00:00:00.000Z&endTime=2025-07-11T23:59:59.000Z&live=0",
+  exploreDataUrl: `${DATA_VISUALIZATION_URL}/?mapLon=-98.94865559548789&mapLat=30.684261983757306&mapZoom=8.54&globeLon=undefined&globeLat=undefined&panePercents=0,100,0&on=f930d340-fc9a-4d3b-a49c-b043837dc0cc$1.00&startTime=2012-01-19T00:00:00.000Z&endTime=2025-07-11T23:59:59.000Z&live=0`,
 
   body: [
     {

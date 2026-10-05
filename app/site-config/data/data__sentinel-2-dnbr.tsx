@@ -1,4 +1,5 @@
 import { AppLinkStyled } from "@/app/components/AppLink";
+import { DATA_VISUALIZATION_URL } from "@/app/site-config/env.helpers";
 import type { DataContent } from "@/app/site-config/types";
 
 export const DATA__SENTINEL_2_DNBR: DataContent = {
@@ -27,8 +28,7 @@ export const DATA__SENTINEL_2_DNBR: DataContent = {
 
   relatedContent: ["sentinel-2-nbr"],
 
-  exploreDataUrl:
-    "https://science-dev.data.nasa.gov/disasters/data-visualization/?mission=disasters_learning_portal&mapLon=-118.56445312499999&mapLat=33.83239229759087&mapZoom=9.38&globeLon=undefined&globeLat=undefined&panePercents=0,100,0&on=0c3dbebb-46b7-4e98-aa36-d8c8fa70ccbb$1.00&startTime=2012-01-19T00:00:00.000Z&endTime=2025-01-12T23:59:59.000Z&live=0",
+  exploreDataUrl: `${DATA_VISUALIZATION_URL}/?mapLon=-118.56445312499999&mapLat=33.83239229759087&mapZoom=9.38&globeLon=undefined&globeLat=undefined&panePercents=0,100,0&on=0c3dbebb-46b7-4e98-aa36-d8c8fa70ccbb$1.00&startTime=2012-01-19T00:00:00.000Z&endTime=2025-01-12T23:59:59.000Z&live=0`,
 
   body: [
     {

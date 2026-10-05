@@ -1,3 +1,4 @@
+import { DATA_VISUALIZATION_URL } from "@/app/site-config/env.helpers";
 import type { DataContent } from "@/app/site-config/types";
 
 export const DATA__SENTINEL_2_NATURAL_COLOR: DataContent = {
@@ -40,8 +41,7 @@ export const DATA__SENTINEL_2_NATURAL_COLOR: DataContent = {
 
   relatedContent: ["sentinel-2-true-color", "sentinel-2-color-infrared", "landsat-natural-color"],
 
-  exploreDataUrl:
-    "https://science-dev.data.nasa.gov/disasters/data-visualization/?mission=disasters_learning_portal&mapLon=-86.94580078125&mapLat=37.44407595553774&mapZoom=7.85&globeLon=undefined&globeLat=undefined&panePercents=0,100,0&on=e1a9b338-8dcb-481b-9b50-17541413bc88$1.00&startTime=2012-01-19T00:00:00.000Z&endTime=2025-02-25T23:59:59.000Z&live=0",
+  exploreDataUrl: `${DATA_VISUALIZATION_URL}/?mapLon=-86.94580078125&mapLat=37.44407595553774&mapZoom=7.85&globeLon=undefined&globeLat=undefined&panePercents=0,100,0&on=e1a9b338-8dcb-481b-9b50-17541413bc88$1.00&startTime=2012-01-19T00:00:00.000Z&endTime=2025-02-25T23:59:59.000Z&live=0`,
 
   body: [
     {

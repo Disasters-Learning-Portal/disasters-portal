@@ -1,3 +1,4 @@
+import { DATA_VISUALIZATION_URL } from "@/app/site-config/env.helpers";
 import type { DataContent } from "@/app/site-config/types";
 
 export const DATA__OPERA_DSWX: DataContent = {
@@ -26,8 +27,7 @@ export const DATA__OPERA_DSWX: DataContent = {
 
   relatedContent: ["opera-dist-s1", "sentinel-2-mndwi", "landsat-mndwi"],
 
-  exploreDataUrl:
-    "https://science-dev.data.nasa.gov/disasters/data-visualization/?mission=disasters_learning_portal&mapLon=-98.96484375&mapLat=30.21052025267761&mapZoom=7.94&globeLon=undefined&globeLat=undefined&panePercents=0,100,0&on=e50104a7-c37d-491e-98b7-de58ccf5036c$1.00&startTime=2012-01-19T00:00:00.000Z&endTime=2025-07-12T23:59:59.000Z&live=0",
+  exploreDataUrl: `${DATA_VISUALIZATION_URL}/?mapLon=-98.96484375&mapLat=30.21052025267761&mapZoom=7.94&globeLon=undefined&globeLat=undefined&panePercents=0,100,0&on=e50104a7-c37d-491e-98b7-de58ccf5036c$1.00&startTime=2012-01-19T00:00:00.000Z&endTime=2025-07-12T23:59:59.000Z&live=0`,
 
   body: [
     {

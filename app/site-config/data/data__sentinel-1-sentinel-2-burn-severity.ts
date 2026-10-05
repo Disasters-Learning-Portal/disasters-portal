@@ -1,3 +1,4 @@
+import { DATA_VISUALIZATION_URL } from "@/app/site-config/env.helpers";
 import type { DataContent } from "@/app/site-config/types";
 
 export const DATA__SENTINEL_1_SENTINEL_2_BURN_SEVERITY: DataContent = {
@@ -26,8 +27,7 @@ export const DATA__SENTINEL_1_SENTINEL_2_BURN_SEVERITY: DataContent = {
 
   relatedContent: ["sentinel-2-nbr", "aviris-3-dnbr"],
 
-  exploreDataUrl:
-    "https://science-dev.data.nasa.gov/disasters/data-visualization/?mission=disasters_learning_portal&mapLon=-118.35023038461514&mapLat=34.13308530831017&mapZoom=11.08&globeLon=undefined&globeLat=undefined&panePercents=0,100,0&on=ff0ab6e9-831b-497f-8197-b541ef500470$1.00&startTime=2012-01-19T00:00:00.000Z&endTime=2025-01-12T23:59:59.000Z&live=0",
+  exploreDataUrl: `${DATA_VISUALIZATION_URL}/?mapLon=-118.35023038461514&mapLat=34.13308530831017&mapZoom=11.08&globeLon=undefined&globeLat=undefined&panePercents=0,100,0&on=ff0ab6e9-831b-497f-8197-b541ef500470$1.00&startTime=2012-01-19T00:00:00.000Z&endTime=2025-01-12T23:59:59.000Z&live=0`,
 
   body: [
     {

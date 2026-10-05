@@ -1,3 +1,4 @@
+import { DATA_VISUALIZATION_URL } from "@/app/site-config/env.helpers";
 import type { DataContent } from "@/app/site-config/types";
 
 export const DATA__LANDSAT_NDVI: DataContent = {
@@ -40,8 +41,7 @@ export const DATA__LANDSAT_NDVI: DataContent = {
 
   relatedContent: ["landsat-color-infrared", "landsat-natural-color", "landsat-nbr"],
 
-  exploreDataUrl:
-    "https://science-dev.data.nasa.gov/disasters/data-visualization/?mission=disasters_learning_portal&mapLon=-88.681640625&mapLat=36.00191319588787&mapZoom=6.38&globeLon=undefined&globeLat=undefined&panePercents=0,100,0&on=77a83a49-1f47-4e86-baba-3e062b7b010d$1.00&startTime=2012-01-19T00:00:00.000Z&endTime=2025-04-15T23:59:59.000Z&live=0",
+  exploreDataUrl: `${DATA_VISUALIZATION_URL}/?mapLon=-88.681640625&mapLat=36.00191319588787&mapZoom=6.38&globeLon=undefined&globeLat=undefined&panePercents=0,100,0&on=77a83a49-1f47-4e86-baba-3e062b7b010d$1.00&startTime=2012-01-19T00:00:00.000Z&endTime=2025-04-15T23:59:59.000Z&live=0`,
 
   body: [
     {

@@ -58,4 +58,6 @@ jobs:
           node-version: ${{ env.NODE }}
           cache: pnpm
       - run: pnpm install --frozen-lockfile
+      # Dev URLs come from .env.example so CI and local builds share one source (see README "Environment URLs").
+      - run: cp .env.example .env.local
       - run: pnpm build

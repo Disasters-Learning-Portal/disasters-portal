@@ -1,3 +1,4 @@
+import { DATA_VISUALIZATION_URL } from "@/app/site-config/env.helpers";
 import type { DataContent } from "@/app/site-config/types";
 
 export const DATA__BLACK_MARBLE_BRDF: DataContent = {
@@ -41,8 +42,7 @@ export const DATA__BLACK_MARBLE_BRDF: DataContent = {
 
   relatedContent: ["black-marble-hd", "black-marble-blue-yellow"],
 
-  exploreDataUrl:
-    "https://science-dev.data.nasa.gov/disasters/data-visualization/?mission=disasters_learning_portal&mapLon=145.24791666666667&mapLat=14.314583333333333&mapZoom=8.46&globeLon=undefined&globeLat=undefined&panePercents=0,100,0&on=4e715b74-a77a-403b-9e8f-20fd77e24530$1.00&startTime=2012-01-19T00:00:00.000Z&endTime=2026-04-26T23:59:59.000Z&live=0",
+  exploreDataUrl: `${DATA_VISUALIZATION_URL}/?mapLon=145.24791666666667&mapLat=14.314583333333333&mapZoom=8.46&globeLon=undefined&globeLat=undefined&panePercents=0,100,0&on=4e715b74-a77a-403b-9e8f-20fd77e24530$1.00&startTime=2012-01-19T00:00:00.000Z&endTime=2026-04-26T23:59:59.000Z&live=0`,
 
   body: [
     {
