@@ -7,7 +7,7 @@
  * how Amplify and CI supply them.
  */
 
-function requireUrl(name: string, value: string | undefined): string {
+function requireEnvVariable(name: string, value: string | undefined): string {
   if (!value) {
     throw new Error(`Missing required environment variable ${name}. See .env.example.`);
   }
@@ -16,19 +16,19 @@ function requireUrl(name: string, value: string | undefined): string {
 }
 
 /** Base URL of the MMGIS data visualization tool. */
-export const DATA_VISUALIZATION_URL = requireUrl(
+export const DATA_VISUALIZATION_URL = requireEnvVariable(
   "NEXT_PUBLIC_DATA_VISUALIZATION_URL",
   process.env.NEXT_PUBLIC_DATA_VISUALIZATION_URL,
 );
 
 /** STAC API root used by the map blocks. */
-export const STAC_API_URL = requireUrl(
+export const STAC_API_URL = requireEnvVariable(
   "NEXT_PUBLIC_STAC_API_URL",
   process.env.NEXT_PUBLIC_STAC_API_URL,
 );
 
 /** Raster API (TiTiler) root used by the map blocks. */
-export const RASTER_API_URL = requireUrl(
+export const RASTER_API_URL = requireEnvVariable(
   "NEXT_PUBLIC_RASTER_API_URL",
   process.env.NEXT_PUBLIC_RASTER_API_URL,
 );
