@@ -1,4 +1,5 @@
 import { CARTO_DARK_WITH_LABELS_BASEMAP_STYLE } from "@teamimpact/veda-ui-blocks";
+import { DATASTORY__TOOLS_YOU_CAN_USE_MAPPING_FLOOD_IMPACTS } from "@/app/site-config/datastory/datastory__tools-you-can-use-mapping-flood-impacts";
 import { EVENT__SOUTHERN_CALIFORNIA_FIRE_JAN_2025 } from "@/app/site-config/event/event__southern-california-fire-jan-2025";
 import { EVENT__TEXAS_FLOODS_JULY_2025 } from "@/app/site-config/event/event__texas-floods-july-2025";
 import { EVENT__TYPHOON_SINLAKU_APR_2026 } from "@/app/site-config/event/event__typhoon-sinlaku-apr-2026";
@@ -62,7 +63,9 @@ export const RESPOND_EVENTS: EventContent[] = [
 ];
 
 // TODO: these would be fetched based on content id
-export const RESPOND_DATASTORIES: (DataStoryContent | DataStoryContentExternal)[] = [];
+export const RESPOND_DATASTORIES: (DataStoryContent | DataStoryContentExternal)[] = [
+  DATASTORY__TOOLS_YOU_CAN_USE_MAPPING_FLOOD_IMPACTS,
+];
 
 // TODO: these would be fetched based on content id
 export const RESPOND_TRAININGS: (TrainingContent | TrainingContentExternal)[] = [
