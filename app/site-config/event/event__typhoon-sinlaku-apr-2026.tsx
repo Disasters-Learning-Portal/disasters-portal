@@ -23,7 +23,7 @@ export const EVENT__TYPHOON_SINLAKU_APR_2026: EventContent = {
   categories: ["tropical cyclone"],
   region: "Northern Mariana Islands, Oceania",
   startDate: "2026-04-14",
-  linkDHSFEMA: {
+  linkUSGovernment: {
     label: "Learn more",
     href: "https://www.fema.gov/disaster/3644",
   },
