@@ -18,6 +18,10 @@ concurrency:
 
 env:
   NODE: 22
+  NEXT_PUBLIC_DATA_VISUALIZATION_URL: ${{ vars.NEXT_PUBLIC_DATA_VISUALIZATION_URL }}
+  NEXT_PUBLIC_STAC_API_URL: ${{ vars.NEXT_PUBLIC_STAC_API_URL }}
+  NEXT_PUBLIC_RASTER_API_URL: ${{ vars.NEXT_PUBLIC_RASTER_API_URL }}
+
 
 jobs:
   lint:
@@ -58,6 +62,4 @@ jobs:
           node-version: ${{ env.NODE }}
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      # Dev URLs come from .env.example so CI and local builds share one source (see README "Environment URLs").
-      - run: cp .env.example .env.local
       - run: pnpm build
