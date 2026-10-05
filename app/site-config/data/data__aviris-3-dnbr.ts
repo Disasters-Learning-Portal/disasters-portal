@@ -31,7 +31,7 @@ export const DATA__AVIRIS_3_DNBR: DataContent = {
     "sentinel-1-sentinel-2-burn-severity",
   ],
 
-  exploreDataUrl: `${DATA_VISUALIZATION_URL}/?mapLon=-118.27758720581927&mapLat=34.13060932894287&mapZoom=11.43&globeLon=undefined&globeLat=undefined&panePercents=0,100,0&on=4c2e2199-49f5-4a24-892c-572f0290e737$1.00&startTime=2012-01-19T00:00:00.000Z&endTime=2025-01-16T23:59:59.000Z&live=0`,
+  exploreDataUrl: `${DATA_VISUALIZATION_URL}/?mapLon=-118.27758720581927&mapLat=34.13060932894287&mapZoom=11.43&globeLon=undefined&globeLat=undefined&panePercents=0,100,0&on=4c2e2199-49f5-4a24-892c-572f0290e737$1.00&startTime=2012-01-19T00:00:00.000Z&endTime=2024-09-05T23:59:59.000Z&live=0`,
 
   body: [
     {
