@@ -46,7 +46,7 @@ export const EVENT__US_WINTER_STORM_JAN_2026: EventContent = {
     },
     {
       type: "sectionCardGallery",
-      heading: "Related Data",
+      heading: "Event Data Gallery",
       link: {
         href: "/data-gallery",
         label: "View all",

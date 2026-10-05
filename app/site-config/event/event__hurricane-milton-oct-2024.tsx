@@ -58,7 +58,7 @@ export const EVENT__HURRICANE_MILTON_OCT_2024: EventContent = {
 
     {
       type: "sectionCardGallery",
-      heading: "Related Data",
+      heading: "Event Data Gallery",
       cards: DATA__HURRICANE_MILTON_OCT_2024,
     },
   ],
