@@ -76,8 +76,8 @@ export const DATASTORY__TOOLS_YOU_CAN_USE_MAPPING_FLOOD_IMPACTS: DataStoryConten
           </Link>{" "}
           that identifies existing waterways, urban areas, croplands, and forests, GIS specialists
           can flag where identified waters may be impacting urban and agricultural areas. NASA also
-          produces daily flood hazard and surface water products using the MODIS
-          instrument aboard NASA’s Aqua and Terra satellites, available as{" "}
+          produces daily flood hazard and surface water products using the MODIS instrument aboard
+          NASA’s Aqua and Terra satellites, available as{" "}
           <Link href="https://maps.disasters.nasa.gov/arcgis/home/item.html?id=1f874c2210064c05a904fd46f1bf5dc2">
             1-day
           </Link>

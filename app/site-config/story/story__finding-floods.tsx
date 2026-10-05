@@ -111,10 +111,10 @@ export const STORY__FINDING_FLOODS: StoryContent = {
           <Link href="https://science.nasa.gov/earth-science/csda/">
             Commercial Satellite Data Acquisition Program
           </Link>
-          , the NASA Disasters Program can task commercial satellites to gather detailed
-          imagery of active disasters. These data support a range of efforts – from building damage
-          assessment and road disruption mapping to search and rescue operations – offering broad
-          coverage across a variety of advanced sensors.
+          , the NASA Disasters Program can task commercial satellites to gather detailed imagery of
+          active disasters. These data support a range of efforts – from building damage assessment
+          and road disruption mapping to search and rescue operations – offering broad coverage
+          across a variety of advanced sensors.
         </Fragment>,
         "Flash floods remain among the most difficult disasters to observe in real time. When cloud cover, dense vegetation, and fast-moving water converge, the gap between what responders can see and what they need to know can be life-threatening. The NASA Disasters Program works to close that gap with the right sensors, the right science, and the right partnerships.",
       ],
