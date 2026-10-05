@@ -6,6 +6,7 @@ import type {
 } from "@teamimpact/veda-ui-blocks";
 import { AppImage } from "@/app/components/AppImage";
 import { AppLink } from "@/app/components/AppLink";
+import { PrintLink } from "@/app/components/PrintLink";
 import {
   type Category,
   CONTENT_THEMES,
@@ -58,7 +59,7 @@ const childrenToLabel = <T extends { children: string }>({ children, ...rest }: 
 });
 
 export type CardMastheadPropsArgs = Omit<
-  CardProps,
+  CardProps<typeof AppLink>,
   "title" | "image" | "colorMode" | "isMastHead" | "tag" | "callToAction" | "callToActionSecondary"
 > & {
   mastheadImage:
@@ -73,12 +74,10 @@ export type CardMastheadPropsArgs = Omit<
   callToAction?: {
     label: string;
     href: string;
-    /**
-     * Renders the call to action as something other than a plain next/link,
-     * for a destination that is acted on rather than navigated to. Must be a
-     * client component, the same as {@link AppLink}.
-     */
-    as?: typeof AppLink;
+  };
+  pdf?: {
+    label: string;
+    href: string;
   };
 };
 
@@ -89,6 +88,7 @@ export const makeCardMastHeadProps = ({
   theme,
   datePublished,
   callToAction,
+  pdf,
   ...rest
 }: CardMastheadPropsArgs): CardProps<typeof AppLink> => ({
   className: "blocks-card--contentpage",
@@ -100,12 +100,9 @@ export const makeCardMastHeadProps = ({
   tag: datePublished && makeDateTagProps(datePublished),
   title: title ?? (theme ? CONTENT_THEMES[theme].label : undefined),
   description: subtitle,
-  callToAction: callToAction && {
-    as: AppLink,
-    ...callToAction,
-    variant: "button",
-    color: "secondary",
-  },
+  callToAction: pdf
+    ? { ...pdf, variant: "button", color: "secondary", as: PrintLink }
+    : callToAction && { ...callToAction, variant: "button", color: "secondary", as: AppLink },
   colorMode: "dark",
   isMastHead: true,
   ...rest,

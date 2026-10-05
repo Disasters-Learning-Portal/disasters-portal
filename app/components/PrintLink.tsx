@@ -80,9 +80,8 @@ function printInBackground(href: string) {
  * to go -- the print view is a render target, not a page to read.
  */
 export const PrintLink = forwardRef<HTMLAnchorElement, ComponentProps<typeof AppLink>>(
-  function PrintLink({ href, onClick, children, ...rest }, ref) {
+  function PrintLink({ href, children, ...rest }, ref) {
     const handleClick = (event: MouseEvent<HTMLAnchorElement>) => {
-      onClick?.(event);
       event.preventDefault();
       printInBackground(typeof href === "string" ? href : href.toString());
     };

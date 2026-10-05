@@ -1,6 +1,5 @@
 import { notFound } from "next/navigation";
 import { ContentPageLayout } from "@/app/components";
-import { PrintLink } from "@/app/components/PrintLink";
 import { makeCardMastHeadProps } from "@/app/site-config/content.helpers";
 
 import { TRAININGS } from "@/app/site-config/training";
@@ -31,7 +30,7 @@ export default async function TrainingItemPage(props: PageProps<"/training/[id]"
         title,
         subtitle,
         datePublished,
-        callToAction: pdfLink && { ...pdfLink, as: PrintLink },
+        pdf: pdfLink,
       })}
       contentType={contentType}
       themes={themes}
