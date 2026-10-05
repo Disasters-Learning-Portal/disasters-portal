@@ -8,7 +8,7 @@ export const DATA__GAIA: DataContent = {
   title: "Global Assessment of Infrastructure Assets (GAIA)",
 
   description:
-    "The Global Assessment of Infrastructure Assets (GAIA) provides building-level infrastructure exposure data to support disaster risk assessment, response, and recovery.",
+    "The Global Assessment of Infrastructure Assets (GAIA) provides gridded building exposure data to support disaster risk assessment, response, and recovery.",
 
   thumbnailImage: {
     src: "/img/data/gaia-building-exposure.webp",
@@ -46,7 +46,7 @@ export const DATA__GAIA: DataContent = {
       type: "text",
       heading: "Summary",
       paragraphs: [
-        "The Global Assessment of Infrastructure Assets (GAIA) is an open building exposure dataset developed by ImageCat with funding from the NASA Disasters Program. GAIA provides spatial information on buildings and infrastructure to support consistent assessment of assets exposed to natural hazards. The dataset is designed to address gaps in existing infrastructure information and provide actionable exposure data for disaster risk modeling and decision-making.",
+        "The Global Assessment of Infrastructure Assets (GAIA) is an open, global gridded building exposure dataset developed by ImageCat, Inc. with funding from the NASA Disasters Program. GAIA provides consistent spatial information on buildings and infrastructure to support assessment of assets exposed to natural hazards. It is designed to fill gaps in existing infrastructure information and to deliver actionable exposure data for disaster risk modeling and decision-making. Each grid cell contains a modeled estimate of the total built-up area within that cell.",
       ],
     },
 
@@ -55,6 +55,7 @@ export const DATA__GAIA: DataContent = {
       heading: "Suggested Use",
       paragraphs: [
         "GAIA can be used to identify buildings and infrastructure located within areas affected or potentially affected by natural hazards. When combined with hazard extent, intensity, or damage products, the dataset provides context for evaluating exposed assets, prioritizing areas for assessment, and supporting disaster preparedness, response, and recovery activities. GAIA can also support risk modeling by providing a consistent representation of building exposure in locations where detailed infrastructure inventories may be incomplete or unavailable.",
+        "GAIA is a modeled dataset, not an aggregation of ground-up building inventories. It represents the underlying building stock for risk modeling purposes, so grid cell values are estimates rather than exact measurements of built-up area. Values may therefore differ from what is visible in satellite imagery of the same location.",
       ],
     },
 
@@ -69,26 +70,28 @@ export const DATA__GAIA: DataContent = {
     {
       type: "text",
       heading: "Source",
-      paragraphs: ["ImageCat, with funding from the NASA Disasters Program"],
+      paragraphs: ["ImageCat, Inc., with funding from the NASA Disasters Program"],
     },
 
     {
       type: "text",
       heading: "Resolution",
-      paragraphs: ["Building-level vector data; no fixed spatial resolution"],
+      paragraphs: [
+        "100 meters by 100 meters per grid cell. The dataset is distributed as a GeoTIFF raster in the World Mollweide projection (EPSG:54009). Pixel values represent the modeled built-up area, in square meters, contained within each 100-meter grid cell. A value of 0 indicates no modeled exposure in that grid cell.",
+      ],
     },
 
     {
       type: "text",
       heading: "Credits",
-      paragraphs: ["ImageCat, NASA Disasters Program"],
+      paragraphs: ["ImageCat, Inc., NASA Disasters Program"],
     },
 
     {
       type: "text",
       heading: "Tags",
       paragraphs: [
-        "NASA, NASA Disasters Program, ImageCat, GAIA, Global Assessment of Infrastructure Assets, Infrastructure, Buildings, Exposure, Risk Assessment, Disaster Risk",
+        "NASA, NASA Disasters Program, ImageCat, GAIA, Global Assessment of Infrastructure Assets, Infrastructure, Buildings, Exposure, Built-Up Area, Raster, Risk Assessment, Disaster Risk",
       ],
     },
   ],
