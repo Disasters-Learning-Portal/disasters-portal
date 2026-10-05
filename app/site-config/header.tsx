@@ -1,5 +1,6 @@
 import type { HeaderProps } from "@teamimpact/veda-ui-blocks";
 import { AppImage } from "@/app/components/AppImage";
+import { DATA_VISUALIZATION_URL } from "./env.helpers";
 
 const MOCK_NAV_ITEM_WITH_DROPDOWN_1 = [
   {
@@ -18,8 +19,11 @@ const MOCK_NAV_ITEM_WITH_DROPDOWN_2 = [
     label: "Explore Data",
     subItems: [
       { label: "Data Gallery", href: "/data-gallery" },
-      { label: "Data Visualization", href: "/data-visualization" },
-      { label: "Data Processing", href: "/data-processing" },
+      {
+        label: "Data Visualization",
+        href: DATA_VISUALIZATION_URL,
+        isExternal: true,
+      },
     ],
   },
 ];
