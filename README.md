@@ -23,6 +23,20 @@ Use root css vars for image path references in app css, as css does not have dir
 
 Note, portal specific image assets live in `public/`. 
 
+## Environment URLs
+
+Three env vars are **required** at build time. A missing one fails `pnpm build` on purpose so a deployment can never silently point at the wrong environment. See `app/site-config/env.helpers.ts`.
+
+| Variable | develop / local | main (prod) |
+| --- | --- | --- |
+| `NEXT_PUBLIC_DATA_VISUALIZATION_URL` | `https://dev.disasters.openveda.cloud/disasters/data-visualization` | `https://disasters.openveda.cloud/disasters/data-visualization` |
+| `NEXT_PUBLIC_STAC_API_URL` | `https://dev.disasters.openveda.cloud/api/stac` | `https://disasters.openveda.cloud/api/stac` |
+| `NEXT_PUBLIC_RASTER_API_URL` | `https://dev.disasters.openveda.cloud/api/raster` | `https://disasters.openveda.cloud/api/raster` |
+
+- **Local:** copy `.env.example` to `.env.local`. Next.js reads `.env.local` automatically and it is gitignored.
+- **Amplify:** values are set per branch in the Amplify console (`main` = prod, `develop` = dev). Pull request previews inherit the app-level values.
+- **CI:** the `build` job in `.github/workflows/pr-checks.yml` copies `.env.example` to `.env.local`, so the dev values live in one place.
+
 ## How It Works
 
 Consumes `@teamimpact/veda-ui-blocks` from npm. Imports `disasters.css` for theming — package img and font assets ship with the package in `dist/img/` and `dist/fonts/` and are bundled automatically by Next.js; no separate setup needed.
