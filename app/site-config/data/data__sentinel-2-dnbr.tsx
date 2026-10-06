@@ -49,7 +49,7 @@ export const DATA__SENTINEL_2_DNBR: DataContent = {
           </AppLinkStyled>
           .
         </>,
-        "These Sentinel-2 dNBR products provide higher spatial resolution but generally higher latency than active-fire products such as FIRMS and FEDS and are best suited to post-fire assessment after suitable pre- and post-event imagery becomes available. In some disaster response situations, dNBR may also be generated while a fire is still active to prioritize rapid data availability. In those cases, the mapped values may change as the fire progresses and newer post-fire imagery becomes available.",
+        "These Sentinel-2 dNBR products provide higher spatial resolution but generally higher latency than active-fire products such as FIRMS and FEDS and are best suited to post-fire assessment after suitable pre- and post-event imagery becomes available. In some disaster response situations, dNBR may also be generated while a fire is still active to prioritize data availability. In those cases, the mapped values may change as the fire progresses and newer post-fire imagery becomes available.",
       ],
     },
 

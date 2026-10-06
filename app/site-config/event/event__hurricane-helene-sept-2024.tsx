@@ -32,14 +32,9 @@ export const EVENT__HURRICANE_HELENE_SEPT_2024: EventContent = {
 
   startDate: "2024-09-25",
 
-  linkDHSFEMA: {
-    label: "Learn more",
-    href: "https://www.fema.gov/hurricane-helene",
-  },
-
   linkUSGovernment: {
     label: "Learn more",
-    href: "https://usa.gov/hurricane-helene",
+    href: "https://www.fema.gov/hurricane-helene",
   },
 
   body: [
@@ -63,7 +58,7 @@ export const EVENT__HURRICANE_HELENE_SEPT_2024: EventContent = {
 
     {
       type: "sectionCardGallery",
-      heading: "Related Data",
+      heading: "Event Data Gallery",
       cards: DATA__HURRICANE_HELENE_SEPT_2024,
     },
   ],

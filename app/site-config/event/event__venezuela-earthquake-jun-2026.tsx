@@ -76,7 +76,7 @@ export const EVENT__VENEZUELA_EQ_JUN_2026: EventContent = {
 
     {
       type: "sectionCardGallery",
-      heading: "Related Data",
+      heading: "Event Data Gallery",
       cards: DATA__VENEZUELA_EQ_JUN_2026,
     },
   ],

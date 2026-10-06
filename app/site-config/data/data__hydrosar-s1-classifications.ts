@@ -31,7 +31,7 @@ export const DATA__HYDROSAR_S1_CLASSIFICATIONS: DataContent = {
       type: "text",
       heading: "Summary",
       paragraphs: [
-        "The HydroSAR Sentinel-1 Water Extent Classification product provides post-event maps of inundation derived from Copernicus Sentinel-1 synthetic aperture radar (SAR) observations. The product distinguishes water and flooding across multiple surface types, including open water, flooded developed areas, flooded vegetation, and flooded cropland. HydroSAR surface-water products are generated from dual-polarization Sentinel-1 radiometrically terrain-corrected observations and are designed to support rapid mapping of inundation during flood events.",
+        "The HydroSAR Sentinel-1 Water Extent Classification product provides post-event maps of inundation derived from Copernicus Sentinel-1 synthetic aperture radar (SAR) observations. The product distinguishes water and flooding across multiple surface types, including open water, flooded developed areas, flooded vegetation, and flooded cropland. HydroSAR surface-water products are generated from dual-polarization Sentinel-1 radiometrically terrain-corrected observations and are designed to support mapping of inundation during flood events.",
         "Because Sentinel-1 is an active microwave radar sensor, observations can be acquired during both day and night and through cloud cover and many weather conditions that limit optical satellite imagery. The collection contains subdaily observations when suitable Sentinel-1 acquisitions are available.",
       ],
     },
@@ -41,7 +41,7 @@ export const DATA__HYDROSAR_S1_CLASSIFICATIONS: DataContent = {
       heading: "Suggested Use",
       paragraphs: [
         "Use HydroSAR classifications to identify the spatial extent and type of inundation following floods, tropical cyclones, and severe weather events. Separating open water from flooded vegetation, cropland, and developed areas can provide additional context for evaluating impacts to communities, agriculture, ecosystems, and infrastructure.",
-        "SAR-based flood classifications should be interpreted with supporting imagery and event information. Radar water detection can be challenging in dense vegetation, developed areas, steep terrain, and along water boundaries, and surface roughness or other changes can influence radar backscatter. The classifications are intended to support rapid situational awareness rather than provide a definitive assessment of impacts at individual properties.",
+        "SAR-based flood classifications should be interpreted with supporting imagery and event information. Radar water detection can be challenging in dense vegetation, developed areas, steep terrain, and along water boundaries, and surface roughness or other changes can influence radar backscatter. The classifications are intended to support situational awareness rather than provide a definitive assessment of impacts at individual properties.",
       ],
     },
 
