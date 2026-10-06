@@ -27,7 +27,7 @@ Deploys are managed through Amplify and CloudFront (contacts: @amarouane-ABDELHA
 Three env vars are **required** (see .env.example). A missing one fails `typecheck` and `pnpm build` on purpose. See `app/site-config/env.helpers.ts`.
 
 - **Local:** copy `.env.example` to `.env.local`. Next.js reads `.env.local` automatically. All .env files but .env.example are gitignored.
-- **Pull request checks:** `.github/workflows/pr-checks.yml` values are set in GitHub repository variables within repo Settings
+- **Pull request checks:** `.github/workflows/pr-checks.yml` values are set in GitHub repository variables within repo Settings and should be synced with those provided in .env.example
 - **Amplify:** Default values are provided for Pull Request deploy previews. Primary branch (`main`, `develop`) values are also set per branch in the Amplify console (`main` = prod, `develop` = dev).
 
 
