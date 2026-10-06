@@ -6,7 +6,6 @@
  * wrong environment. See `.env.example` for local values and the README for
  * how Amplify and CI supply them.
  */
-
 function requireEnvVariable(name: string, value: string | undefined): string {
   if (!value) {
     throw new Error(`Missing required environment variable ${name}. See .env.example.`);
@@ -32,18 +31,16 @@ export const RASTER_API_URL = requireEnvVariable(
   "NEXT_PUBLIC_RASTER_API_URL",
   process.env.NEXT_PUBLIC_RASTER_API_URL,
 );
-/**
- * Helpers for working with the base path.
- */
 
+/** Defines an optional site base path when deployed to a subpath */
 export const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 /**
  * Prefix an app-internal absolute path with {@link BASE_PATH}.
  * Applies only to internal paths, other paths are returned unchanged.
  * @param path - The path to prefix.
  * @returns The prefixed path.
  */
-
 export function withBasePath(path: string): string {
   // no base path provided
   if (!BASE_PATH) return path;
