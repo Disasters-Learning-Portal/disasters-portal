@@ -18,7 +18,7 @@ Deploys are managed through Amplify and CloudFront (contacts: @amarouane-ABDELHA
 
 | | develop | production |
 | --- | --- | --- |
-| hosted | [https://science-dev.data.nasa.gov/disasters](https://science-dev.data.nasa.gov/disasters) |[https://science.data.nasa.gov/disasters](https://science.data.nasa.gov/disasters) | 
+| hosted | [https://science-dev.data.nasa.gov/disasters](https://science-dev.data.nasa.gov/disasters) (note, this is behind NASA vpn) |[https://science.data.nasa.gov/disasters](https://science.data.nasa.gov/disasters) | 
 | cloudfront | [https://d3q5eprbh17kj7.cloudfront.net/disasters](https://d3q5eprbh17kj7.cloudfront.net/disasters) | [https://d1l9nqtl8c2o5d.cloudfront.net/disasters](https://d1l9nqtl8c2o5d.cloudfront.net/disasters) |
 
 
