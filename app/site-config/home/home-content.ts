@@ -1,4 +1,5 @@
 import { CARTO_DARK_WITH_LABELS_BASEMAP_STYLE } from "@teamimpact/veda-ui-blocks";
+import { withBasePath } from "@/app/site-config/base-path";
 import type { ContentBlock } from "@/app/site-config/types";
 
 export const HOME_CONTENT: ContentBlock[] = [
@@ -19,6 +20,10 @@ export const HOME_CONTENT: ContentBlock[] = [
       collectionId: "blackmarble-hd-daily",
       collectionAssetId: "blackmarble_hd",
       dateRange: { from: "2024-09-28", to: "2024-09-28" },
+      link: {
+        label: "Learn more",
+        href: withBasePath("/data-gallery/black-marble-hd"),
+      },
     },
     caption:
       "NASA Black Marble Day-Night Band (BRDF-Corrected) HD Pre- and Post-Hurricane Helene Images for the Augusta, Georgia area. The image is in an inferno color scale. Yellow represents more light; dark blue represents less light. Observations may be obscured by total or partial cloud cover. Other factors such as snow reflectance, moon phase, wildfires, and wildfire smoke may distort light radiance and require further analysis when assessing power outages.",
