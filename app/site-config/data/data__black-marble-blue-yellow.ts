@@ -1,3 +1,4 @@
+import { DATA_VISUALIZATION_URL } from "@/app/site-config/env.helpers";
 import type { DataContent } from "@/app/site-config/types";
 
 export const DATA__BLACK_MARBLE_BLUE_YELLOW: DataContent = {
@@ -39,7 +40,9 @@ export const DATA__BLACK_MARBLE_BLUE_YELLOW: DataContent = {
     "winter weather",
   ],
 
-  relatedContent: [],
+  relatedContent: ["black-marble-hd", "black-marble-brdf"],
+
+  exploreDataUrl: `${DATA_VISUALIZATION_URL}/?mapLon=-98&mapLat=39&mapZoom=4&globeLon=undefined&globeLat=undefined&panePercents=0,100,0&on=e83b1d47-06fa-4c25-9d8b-51a7f2c04b96$1.00&startTime=2012-01-19T00:00:00.000Z&endTime=2026-10-06T19:25:48.000Z&live=0`,
 
   body: [
     {
