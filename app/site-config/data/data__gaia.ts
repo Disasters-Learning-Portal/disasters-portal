@@ -1,3 +1,4 @@
+import { DATA_VISUALIZATION_URL } from "@/app/site-config/env.helpers";
 import type { DataContent } from "@/app/site-config/types";
 
 export const DATA__GAIA: DataContent = {
@@ -40,6 +41,8 @@ export const DATA__GAIA: DataContent = {
   ],
 
   relatedContent: [],
+
+  exploreDataUrl: `${DATA_VISUALIZATION_URL}/?mapLon=0.0&mapLat=0.0&mapZoom=2&globeLon=undefined&globeLat=undefined&panePercents=0,100,0&on=30f57de9-d010-4e76-b87c-097420646fc4$1.00&startTime=2012-01-19T00:00:00.000Z&endTime=2025-01-01T23:59:59.000Z&live=0`,
 
   body: [
     {

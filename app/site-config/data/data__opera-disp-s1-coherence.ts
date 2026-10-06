@@ -1,3 +1,4 @@
+import { DATA_VISUALIZATION_URL } from "@/app/site-config/env.helpers";
 import type { DataContent } from "@/app/site-config/types";
 
 export const DATA__OPERA_DISP_S1_COHERENCE: DataContent = {
@@ -25,6 +26,8 @@ export const DATA__OPERA_DISP_S1_COHERENCE: DataContent = {
   categories: ["earthquake"],
 
   relatedContent: ["opera-dist-s1"],
+
+  exploreDataUrl: `${DATA_VISUALIZATION_URL}/?mapLon=-68.21051443500001&mapLat=10.803431576000001&mapZoom=8.13&globeLon=undefined&globeLat=undefined&panePercents=0,100,0&on=9c9a7244-0a1a-4a16-ba24-00a24fa07721$1.00&startTime=2012-01-19T00:00:00.000Z&endTime=2026-06-23T23:59:59.000Z&live=0`,
 
   body: [
     {

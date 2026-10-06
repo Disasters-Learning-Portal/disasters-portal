@@ -1,3 +1,4 @@
+import { DATA_VISUALIZATION_URL } from "@/app/site-config/env.helpers";
 import type { DataContent } from "@/app/site-config/types";
 
 export const DATA__AVIRIS_3_QUICKLOOK_COLOR_IMAGERY: DataContent = {
@@ -17,6 +18,7 @@ export const DATA__AVIRIS_3_QUICKLOOK_COLOR_IMAGERY: DataContent = {
   themes: ["respond"],
   categories: ["fire"],
   relatedContent: ["aviris-3-dnbr"],
+  exploreDataUrl: `${DATA_VISUALIZATION_URL}/?mapLon=-118.37493896484375&mapLat=34.24102410867776&mapZoom=10.56&globeLon=undefined&globeLat=undefined&panePercents=0,100,0&on=dc6c2184-9816-462d-b6fe-7a132b353132$1.00&startTime=2012-01-19T00:00:00.000Z&endTime=2025-01-16T23:59:59.000Z&live=0`,
   body: [
     {
       type: "text",

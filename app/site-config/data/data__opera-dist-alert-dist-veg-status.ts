@@ -1,3 +1,4 @@
+import { DATA_VISUALIZATION_URL } from "@/app/site-config/env.helpers";
 import type { DataContent } from "@/app/site-config/types";
 
 export const DATA__OPERA_DIST_ALERT_DIST_VEG_STATUS: DataContent = {
@@ -25,6 +26,8 @@ export const DATA__OPERA_DIST_ALERT_DIST_VEG_STATUS: DataContent = {
   categories: ["flood", "fire", "severe weather"],
 
   relatedContent: ["aria-dist-veg-anom", "opera-dist-alert-gen-dist-status"],
+
+  exploreDataUrl: `${DATA_VISUALIZATION_URL}/?mapLon=-105.5126953125&mapLat=32.9416709431176&mapZoom=7.91&globeLon=undefined&globeLat=undefined&panePercents=0,100,0&on=aaf9ced1-134e-483d-9f1e-7d638bcec18a$1.00&startTime=2012-01-19T00:00:00.000Z&endTime=2025-06-26T23:59:59.000Z&live=0`,
 
   body: [
     {

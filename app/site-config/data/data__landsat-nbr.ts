@@ -1,3 +1,4 @@
+import { DATA_VISUALIZATION_URL } from "@/app/site-config/env.helpers";
 import type { DataContent } from "@/app/site-config/types";
 
 export const DATA__LANDSAT_NBR: DataContent = {
@@ -25,6 +26,8 @@ export const DATA__LANDSAT_NBR: DataContent = {
   categories: ["fire"],
 
   relatedContent: ["sentinel-2-nbr", "sentinel-2-dnbr"],
+
+  exploreDataUrl: `${DATA_VISUALIZATION_URL}/?mapLon=-118.34472656250001&mapLat=34.62563566457229&mapZoom=8.24&globeLon=undefined&globeLat=undefined&panePercents=0,100,0&on=c1bfb99d-dc3c-4a27-9361-caaf4e55b7d5$1.00&startTime=2012-01-19T00:00:00.000Z&endTime=2025-01-14T23:59:59.000Z&live=0`,
 
   body: [
     {
