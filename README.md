@@ -5,6 +5,7 @@ Built with Next.js, USWDS, and `@teamimpact/veda-ui-blocks`.
 ## Setup
 
 ```bash
+cp .env.example .env.local
 pnpm install
 pnpm dev
 ```
@@ -21,9 +22,9 @@ Three env vars are **required** (see .env.example). A missing one fails `typeche
 | `NEXT_PUBLIC_STAC_API_URL` | `https://dev.disasters.openveda.cloud/api/stac` | `https://disasters.openveda.cloud/api/stac` |
 | `NEXT_PUBLIC_RASTER_API_URL` | `https://dev.disasters.openveda.cloud/api/raster` | `https://disasters.openveda.cloud/api/raster` |
 
-- **Local:** copy `.env.example` to `.env.local`. Next.js reads `.env.local` automatically and it is gitignored.
-- **Amplify:** values are set per branch in the Amplify console (`main` = prod, `develop` = dev). Pull request previews inherit the app-level values.
-- **CI:** `.github/workflows/pr-checks.yml` references github repository variables
+- **Local:** copy `.env.example` to `.env.local`. Next.js reads `.env.local` automatically. All .env files but .env.example are gitignored.
+- **Amplify:** values are set per branch in the Amplify console (`main` = prod, `develop` = dev). 
+- **Pull request checks:** `.github/workflows/pr-checks.yml` values are set in GitHub repository variables within repo Settings
 
 
 ## Base path
