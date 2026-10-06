@@ -79,7 +79,8 @@
   }
 
   /* `.grid-gap`'s negative gutters have nothing left to cancel once the
-   * container's padding is gone. */
+   * container's padding is gone, and the columns' widths have no row to
+   * divide: stacked, each one is the page. */
   .contentPage {
     display: block !important;
     margin-left: 0 !important;
@@ -87,6 +88,7 @@
 
     > * {
       padding: 0 !important;
+      width: 100% !important;
     }
   }
 
@@ -97,8 +99,15 @@
       display: none;
     }
 
+    /* The nav is shaped as a 15rem card indented in the sidebar. As the
+     * contents it runs the full measure, flush with the body below it. */
     :global(.usa-in-page-nav) {
-      margin-bottom: var(--unit-4) !important;
+      margin: 0 0 var(--unit-4) !important;
+      max-width: none !important;
+    }
+
+    :global(.usa-in-page-nav__nav) {
+      padding: 0 !important;
     }
 
     /* USWDS writes "On this page". CSS cannot set text, so the original is
