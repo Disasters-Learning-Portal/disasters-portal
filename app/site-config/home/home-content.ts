@@ -1,5 +1,5 @@
 import { CARTO_DARK_WITH_LABELS_BASEMAP_STYLE } from "@teamimpact/veda-ui-blocks";
-import { withBasePath } from "@/app/site-config/base-path";
+import { withBasePath } from "@/app/site-config/env.helpers";
 import type { ContentBlock } from "@/app/site-config/types";
 
 export const HOME_CONTENT: ContentBlock[] = [
