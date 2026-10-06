@@ -33,9 +33,17 @@ Three env vars are **required** (see .env.example). A missing one fails `typeche
 
 | Amplify Env Variables | default (pr previews and develop deploy) | main (production) |
 | --- | --- | --- |
-| `NEXT_PUBLIC_DATA_VISUALIZATION_URL` | `https://dev.disasters.openveda.cloud/disasters/data-visualization` | `https://disasters.openveda.cloud/disasters/data-visualization` |
+| `NEXT_PUBLIC_DATA_VISUALIZATION_URL` | `https://dev.disasters.openveda.cloud/disasters/data-visualization` | `https://science.data.nasa.gov/disasters/data-visualization` |
 | `NEXT_PUBLIC_STAC_API_URL` | `https://dev.disasters.openveda.cloud/api/stac` | `https://disasters.openveda.cloud/api/stac` |
 | `NEXT_PUBLIC_RASTER_API_URL` | `https://dev.disasters.openveda.cloud/api/raster` | `https://disasters.openveda.cloud/api/raster` |
+
+### Why the visualization URL uses a different host in dev and prod
+
+The Data Visualization link is the one URL a visitor navigates to, so the host is chosen deliberately:
+
+- **Production uses the nasa.gov host** so visitors who arrive at `science.data.nasa.gov/disasters` stay on nasa.gov when they open the map. GSFC proxies `/disasters*` on that host to our production CloudFront.
+- **Development uses the openveda host** because `science-dev.data.nasa.gov` is reachable only on the NASA VPN. Pointing dev at it would break the link for PR preview reviewers and anyone developing off-VPN.
+- **The STAC and raster URLs stay on openveda in both environments.** They are background fetches, not navigation, and the nasa.gov hosts do not proxy `/api/*`.
 
 
 ## Base path
