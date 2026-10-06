@@ -2,9 +2,9 @@
  * Environment-specific URLs.
  *
  * All three are required at build time. There is no fallback: an unset
- * variable fails the build so a deployment can never silently point at the
- * wrong environment. See `.env.example` for local values and the README for
- * how Amplify and CI supply them.
+ * variable fails the build so a deployment can never silently have a missing required url.
+ * See `.env.example` for local values and the README for
+ * how Amplify and Github supply them.
  */
 function requireEnvVariable(name: string, value: string | undefined): string {
   if (!value) {
