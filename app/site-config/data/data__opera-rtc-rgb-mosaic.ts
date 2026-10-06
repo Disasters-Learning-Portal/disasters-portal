@@ -1,3 +1,4 @@
+import { DATA_VISUALIZATION_URL } from "@/app/site-config/env.helpers";
 import type { DataContent } from "@/app/site-config/types";
 
 export const DATA__OPERA_RTC_RGB_MOSAIC: DataContent = {
@@ -25,6 +26,8 @@ export const DATA__OPERA_RTC_RGB_MOSAIC: DataContent = {
   categories: ["flood", "fire", "severe weather", "tropical cyclone"],
 
   relatedContent: ["opera-dist-s1", "opera-dist-alert-gen-dist-status"],
+
+  exploreDataUrl: `${DATA_VISUALIZATION_URL}/?mapLon=-83.46002289639685&mapLat=28.563786266748693&mapZoom=6.79&globeLon=undefined&globeLat=undefined&panePercents=0,100,0&on=a2a2990b-8d26-4c06-b891-506f910fb5ec$1.00&startTime=2012-01-19T00:00:00.000Z&endTime=2024-09-26T23:59:59.000Z&live=0`,
 
   body: [
     {

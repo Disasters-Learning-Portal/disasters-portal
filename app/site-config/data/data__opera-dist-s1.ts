@@ -1,3 +1,4 @@
+import { DATA_VISUALIZATION_URL } from "@/app/site-config/env.helpers";
 import type { DataContent } from "@/app/site-config/types";
 
 export const DATA__OPERA_DIST_S1: DataContent = {
@@ -25,6 +26,8 @@ export const DATA__OPERA_DIST_S1: DataContent = {
   categories: ["fire"],
 
   relatedContent: [],
+
+  exploreDataUrl: `${DATA_VISUALIZATION_URL}/?mapLon=-118.388671875&mapLat=34.161536263520496&mapZoom=10.61&globeLon=undefined&globeLat=undefined&panePercents=0,100,0&on=f154c768-c8e7-4b23-a783-1ec458bdbb20$1.00&startTime=2012-01-19T00:00:00.000Z&endTime=2025-01-09T23:59:59.000Z&live=0`,
 
   body: [
     {
