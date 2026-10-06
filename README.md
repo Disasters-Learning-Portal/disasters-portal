@@ -12,19 +12,30 @@ pnpm dev
 
 Open <http://localhost:3000>
 
+## Deploy Platforms and Hosts
+
+Deploys are managed through Amplify and CloudFront (contacts: @amarouane-ABDELHAK, @CarsonDavis)
+
+| | develop | production |
+| --- | --- | --- |
+| hosted | [https://science-dev.data.nasa.gov/disasters](https://science-dev.data.nasa.gov/disasters) |[https://science.data.nasa.gov/disasters](https://science.data.nasa.gov/disasters) | 
+| cloudfront | [https://d3q5eprbh17kj7.cloudfront.net/disasters](https://d3q5eprbh17kj7.cloudfront.net/disasters) | [https://d1l9nqtl8c2o5d.cloudfront.net/disasters](https://d1l9nqtl8c2o5d.cloudfront.net/disasters) |
+
+
 ## Environment URLs
 
 Three env vars are **required** (see .env.example). A missing one fails `typecheck` and `pnpm build` on purpose. See `app/site-config/env.helpers.ts`.
 
-| Variable | develop / local | main (prod) |
-| --- | --- | --- |
-| `NEXT_PUBLIC_DATA_VISUALIZATION_URL` | `https://dev.disasters.openveda.cloud/disasters/data-visualization` | `https://disasters.openveda.cloud/disasters/data-visualization` |
-| `NEXT_PUBLIC_STAC_API_URL` | `https://dev.disasters.openveda.cloud/api/stac` | `https://disasters.openveda.cloud/api/stac` |
-| `NEXT_PUBLIC_RASTER_API_URL` | `https://dev.disasters.openveda.cloud/api/raster` | `https://disasters.openveda.cloud/api/raster` |
-
 - **Local:** copy `.env.example` to `.env.local`. Next.js reads `.env.local` automatically. All .env files but .env.example are gitignored.
-- **Amplify:** values are set per branch in the Amplify console (`main` = prod, `develop` = dev). 
 - **Pull request checks:** `.github/workflows/pr-checks.yml` values are set in GitHub repository variables within repo Settings
+- **Amplify:** Default values are provided for Pull Request deploy previews. Primary branch (`main`, `develop`) values are also set per branch in the Amplify console (`main` = prod, `develop` = dev).
+
+
+| Amplify Env Variables | default / pr previews | develop (dev) | main (prod) |
+| --- | --- | --- | --- |
+| `NEXT_PUBLIC_DATA_VISUALIZATION_URL` | `https://dev.disasters.openveda.cloud/disasters/data-visualization` | `https://dev.disasters.openveda.cloud/disasters/data-visualization` | `https://disasters.openveda.cloud/disasters/data-visualization` |
+| `NEXT_PUBLIC_STAC_API_URL` | `https://dev.disasters.openveda.cloud/api/stac` | `https://dev.disasters.openveda.cloud/api/stac` | `https://disasters.openveda.cloud/api/stac` |
+| `NEXT_PUBLIC_RASTER_API_URL` | `https://dev.disasters.openveda.cloud/api/raster` | `https://dev.disasters.openveda.cloud/api/raster` | `https://disasters.openveda.cloud/api/raster` |
 
 
 ## Base path
