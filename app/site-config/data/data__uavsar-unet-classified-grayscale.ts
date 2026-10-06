@@ -1,3 +1,4 @@
+import { DATA_VISUALIZATION_URL } from "@/app/site-config/env.helpers";
 import type { DataContent } from "@/app/site-config/types";
 
 export const DATA__UAVSAR_UNET_CLASSIFIED_GRAYSCALE: DataContent = {
@@ -25,6 +26,8 @@ export const DATA__UAVSAR_UNET_CLASSIFIED_GRAYSCALE: DataContent = {
   categories: ["flood", "tropical cyclone", "severe weather"],
 
   relatedContent: ["uavsar-unet-classified", "uavsar-rgb", "uavsar-quicklook-classified"],
+
+  exploreDataUrl: `${DATA_VISUALIZATION_URL}/?mapLon=-98.3935546875&mapLat=30.217554530425204&mapZoom=8.73&globeLon=undefined&globeLat=undefined&panePercents=0,100,0&on=7db3f57b-485d-4f84-b08c-caf25b38574d$1.00&startTime=2012-01-19T00:00:00.000Z&endTime=2025-07-01T23:59:59.000Z&live=0`,
 
   body: [
     {

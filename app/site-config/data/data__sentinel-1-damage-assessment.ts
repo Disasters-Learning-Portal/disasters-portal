@@ -1,3 +1,4 @@
+import { DATA_VISUALIZATION_URL } from "@/app/site-config/env.helpers";
 import type { DataContent } from "@/app/site-config/types";
 
 export const DATA__SENTINEL_1_DAMAGE_ASSESSMENT: DataContent = {
@@ -25,6 +26,8 @@ export const DATA__SENTINEL_1_DAMAGE_ASSESSMENT: DataContent = {
   categories: ["fire"],
 
   relatedContent: ["sentinel-1-sentinel-2-burn-severity", "opera-disp-s1-coherence"],
+
+  exploreDataUrl: `${DATA_VISUALIZATION_URL}/?mapLon=-118.42041232905592&mapLat=34.16275059200858&mapZoom=9.13&globeLon=undefined&globeLat=undefined&panePercents=0,100,0&on=2db3fe61-f031-4a6e-89a2-33bfe1ca4389$1.00&startTime=2012-01-19T00:00:00.000Z&endTime=2025-01-21T23:59:59.000Z&live=0`,
 
   body: [
     {
