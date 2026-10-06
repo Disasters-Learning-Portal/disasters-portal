@@ -9,7 +9,7 @@ export const DATA__OPERA_RTC_RGB_MOSAIC: DataContent = {
   title: "OPERA RTC RGB Mosaic",
 
   description:
-    "The OPERA RTC RGB Mosaic is a false-color mosaic derived from radiometrically terrain-corrected Sentinel-1 radar backscatter and designed to support rapid visual interpretation of land and water surface conditions during disasters.",
+    "The OPERA RTC RGB Mosaic is a false-color mosaic derived from radiometrically terrain-corrected Sentinel-1 radar backscatter and designed to support visual interpretation of land and water surface conditions during disasters.",
 
   thumbnailImage: {
     src: "/img/data/opera-rtc-rgb-mosaic.webp",
@@ -43,7 +43,7 @@ export const DATA__OPERA_RTC_RGB_MOSAIC: DataContent = {
       type: "text",
       heading: "Suggested Use",
       paragraphs: [
-        "Use the RTC RGB Mosaic for rapid visual situational awareness and interpretation of land and water surface conditions during floods, tropical cyclones, severe weather, wildfires, and other disasters. The false-color composite can help distinguish broad surface types and reveal spatial patterns in inundation, roughness, vegetation, and built environments.",
+        "Use the RTC RGB Mosaic for visual situational awareness and interpretation of land and water surface conditions during floods, tropical cyclones, severe weather, wildfires, and other disasters. The false-color composite can help distinguish broad surface types and reveal spatial patterns in inundation, roughness, vegetation, and built environments.",
         "The RTC RGB Mosaic is primarily a visualization product and should be interpreted qualitatively. Color differences reflect variations in radar backscatter and are influenced by surface roughness, moisture, vegetation structure, viewing geometry, and other physical factors. The product is best used alongside other OPERA products, such as DIST-S1 or water extent products, when making hazard-specific assessments.",
       ],
     },

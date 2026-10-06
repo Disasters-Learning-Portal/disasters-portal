@@ -44,7 +44,7 @@ export const DATA__OPERA_DIST_ALERT_DIST_VEG_STATUS: DataContent = {
       heading: "Suggested Use",
       paragraphs: [
         "Use VEG-DIST-STATUS to identify areas of vegetation disturbance and determine how strongly the available observation history supports each detection. A first detection indicates that an anomaly has been observed but no subsequent observation is yet available. A provisional disturbance has been detected in two consecutive observations but has not yet reached the confidence required for confirmation. Confirmed pixels represent vegetation disturbance detected with high confidence.",
-        "The less-than-50% and at-least-50% classes refer to the magnitude of maximum vegetation loss, not to detection confidence. Finished classes identify previously confirmed disturbances for which subsequent observations no longer show an anomaly. The product is intended to support rapid situational awareness and should be interpreted together with other event information before attributing the detected vegetation change to a specific hazard or impact.",
+        "The less-than-50% and at-least-50% classes refer to the magnitude of maximum vegetation loss, not to detection confidence. Finished classes identify previously confirmed disturbances for which subsequent observations no longer show an anomaly. The product is intended to support situational awareness and should be interpreted together with other event information before attributing the detected vegetation change to a specific hazard or impact.",
       ],
     },
 

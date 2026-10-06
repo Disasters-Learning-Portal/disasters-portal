@@ -1,6 +1,6 @@
 import type { NextConfig } from "next";
 
-import { BASE_PATH } from "./app/site-config/base-path.helpers";
+import { BASE_PATH } from "./app/site-config/env.helpers";
 
 /*
  * Silences the "Next.js inferred your workspace root" warning.

@@ -32,7 +32,7 @@ export const DATA__AVIRIS_3_QUICKLOOK_COLOR_IMAGERY: DataContent = {
       type: "text",
       heading: "Suggested Use",
       paragraphs: [
-        "The quicklook false color imagery can be used for a rapid visual assessment of wildfire impacts, including burned areas, ash distribution, and smoke emissions. Because it shows at-sensor radiance rather than surface reflectance, it is best suited to visual interpretation rather than quantitative analysis.",
+        "The quicklook false color imagery can be used for a visual assessment of wildfire impacts, including burned areas, ash distribution, and smoke emissions. Because it shows at-sensor radiance rather than surface reflectance, it is best suited to visual interpretation rather than quantitative analysis.",
       ],
     },
     {

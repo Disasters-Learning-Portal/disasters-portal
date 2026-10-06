@@ -26,7 +26,7 @@ export const EVENT__TEXAS_FLOODS_JULY_2025: EventContent = {
   categories: ["flood"],
   datePublished: "2025-07-09",
   startDate: "2025-07-04",
-  linkDHSFEMA: {
+  linkUSGovernment: {
     label: "Learn more",
     href: "https://www.fema.gov/disaster/4879",
   },
@@ -83,7 +83,7 @@ export const EVENT__TEXAS_FLOODS_JULY_2025: EventContent = {
     },
     {
       type: "sectionCardGallery",
-      heading: "Related Data",
+      heading: "Event Data Gallery",
       link: {
         href: "/data-gallery",
         label: "View all",

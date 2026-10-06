@@ -57,7 +57,7 @@ export const DATA__SENTINEL_2_NDVI_CHANGE_BINARY: DataContent = {
       type: "text",
       heading: "Suggested Use",
       paragraphs: [
-        "Sentinel-2 Binary NDVI Change can be used to rapidly identify areas with substantial decreases in vegetation condition following wildfire, flooding, severe weather, tropical cyclones, heat or drought stress, and other disturbances. The binary classification simplifies interpretation by highlighting only locations that meet the NDVI decrease threshold of -0.25 or lower.",
+        "Sentinel-2 Binary NDVI Change can be used to identify areas with substantial decreases in vegetation condition following wildfire, flooding, severe weather, tropical cyclones, heat or drought stress, and other disturbances. The binary classification simplifies interpretation by highlighting only locations that meet the NDVI decrease threshold of -0.25 or lower.",
         "Because this product records only whether the decrease threshold is met, it does not show the magnitude of NDVI change beyond that threshold and does not identify vegetation increases or recovery. It should therefore be used for disturbance detection rather than vegetation recovery monitoring. Differences in seasonality, phenology, soil moisture, atmospheric conditions, acquisition geometry, clouds, smoke, and the choice of pre- and post-event imagery can also affect whether a pixel crosses the threshold, so results should be interpreted alongside other imagery and environmental information.",
       ],
     },

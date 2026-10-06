@@ -38,7 +38,7 @@ export const DATA__ICEYE_BACKSCATTER: DataContent = {
       type: "text",
       heading: "Summary",
       paragraphs: [
-        "This product provides calibrated sigma naught radar backscatter derived from high-resolution ICEYE synthetic aperture radar (SAR) imagery acquired through NASA's Commercial Satellite Data Acquisition (CSDA) Program. Source Ground Range Detected (GRD) imagery is converted to backscatter using the calibration factor supplied with each scene and expressed in decibels (dB). Backscatter represents the strength of radar energy scattered back toward the sensor and reveals differences in surface roughness, moisture, structure, and other physical characteristics. ICEYE operates a constellation of small X-band SAR satellites designed for frequent revisit and rapid delivery, which makes repeat imaging of an affected area over consecutive days practical during a response.",
+        "This product provides calibrated sigma naught radar backscatter derived from high-resolution ICEYE synthetic aperture radar (SAR) imagery acquired through NASA's Commercial Satellite Data Acquisition (CSDA) Program. Source Ground Range Detected (GRD) imagery is converted to backscatter using the calibration factor supplied with each scene and expressed in decibels (dB). Backscatter represents the strength of radar energy scattered back toward the sensor and reveals differences in surface roughness, moisture, structure, and other physical characteristics. ICEYE operates a constellation of small X-band SAR satellites designed for frequent revisit and delivery, which makes repeat imaging of an affected area over consecutive days practical during a response.",
       ],
     },
 

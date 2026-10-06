@@ -42,7 +42,7 @@ export const DATA__OPERA_DIST_S1: DataContent = {
       type: "text",
       heading: "Suggested Use",
       paragraphs: [
-        "DIST-S1 can be used to rapidly identify and map areas of potential surface disturbance following wildfires. Because the product is derived from synthetic aperture radar observations, it can provide information during both day and night and in conditions where clouds or smoke may limit optical satellite observations. The disturbance classifications can support rapid assessment of potentially affected areas and help guide disaster response and recovery activities. These prototype data are preliminary and should be used as a first-look assessment rather than a definitive characterization of surface impacts.",
+        "DIST-S1 can be used to identify and map areas of potential surface disturbance following wildfires. Because the product is derived from synthetic aperture radar observations, it can provide information during both day and night and in conditions where clouds or smoke may limit optical satellite observations. The disturbance classifications can support assessment of potentially affected areas and help guide disaster response and recovery activities. These prototype data are preliminary and should be used as a first-look assessment rather than a definitive characterization of surface impacts.",
       ],
     },
 
