@@ -36,6 +36,7 @@ export default async function TrainingItemPage(props: PageProps<"/training/[id]"
       themes={themes}
       categories={categories}
       body={body}
+      isPrintable={Boolean(pdfLink)}
     />
   );
 }

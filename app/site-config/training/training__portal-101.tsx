@@ -23,7 +23,9 @@ export const TRAINING__PORTAL_101: TrainingContent = {
     src: "/img/training/portal-101.webp",
     alt: "False-color satellite imagery of a city and surrounding terrain, as displayed in the Custom Visualization Tool",
   },
-  pdfLink: { label: "Download PDF", href: "/training/portal-101/print" },
+  // PrintLink prints this page rather than following the href; the href is the
+  // page itself so the control degrades to a no-op without JS.
+  pdfLink: { label: "Download PDF", href: "/training/portal-101" },
   body: [
     {
       type: "text",
