@@ -21,7 +21,7 @@ export const HOME_CONTENT: ContentBlock[] = [
       collectionAssetId: "blackmarble_hd",
       dateRange: { from: "2024-09-28", to: "2024-09-28" },
       link: {
-        label: "Learn more",
+        label: "Learn More",
         href: withBasePath("/data-gallery/black-marble-hd"),
       },
     },

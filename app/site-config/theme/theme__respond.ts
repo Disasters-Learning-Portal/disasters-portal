@@ -36,12 +36,19 @@ export const RESPOND_CONTENT: ThemeContent = {
         collectionId: "sentinel2-truecolor-subdaily",
         collectionAssetId: "truecolor",
         dateRange: { from: "2019-03-16", to: "2019-03-16" },
+        link: {
+          label: "Learn More",
+          href: withBasePath("/data-gallery/sentinel-2-true-color"),
+      },
       },
       rightLayerConfig: {
         type: "raster",
         collectionId: "sentinel2-mndwi-subdaily",
         collectionAssetId: "mndwi",
         dateRange: { from: "2019-03-16", to: "2019-03-16" },
+        link: {
+          label: "Learn More",
+          href: withBasePath("/data-gallery/sentinel-2-mndwi"),
       },
       caption:
         "The midwestern United States was greatly impacted by flooding during Spring 2019. This visualization shows how flooding can be detected using moderate resolution Copernicus Sentinel-2 imagery, comparing a True Color composite from Sentinel-2 imagery on the left with a Modified Normalized Difference Water Index (mNDWI) product derived from Sentinel-2 imagery on the right. In the mNDWI product, likely water appears as blue.",
