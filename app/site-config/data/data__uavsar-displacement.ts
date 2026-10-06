@@ -1,3 +1,4 @@
+import { DATA_VISUALIZATION_URL } from "@/app/site-config/env.helpers";
 import type { DataContent } from "@/app/site-config/types";
 
 export const DATA__UAVSAR_DISPLACEMENT: DataContent = {
@@ -25,6 +26,8 @@ export const DATA__UAVSAR_DISPLACEMENT: DataContent = {
   categories: ["earthquake", "volcano", "severe weather"],
 
   relatedContent: ["uavsar-rgb", "nisar-gunw-displacement", "opera-disp-s1-coherence"],
+
+  exploreDataUrl: `${DATA_VISUALIZATION_URL}/?mapLon=-118.3721923828125&mapLat=33.74717740726386&mapZoom=13.87&globeLon=undefined&globeLat=undefined&panePercents=0,100,0&on=b9b414b5-5d55-4a67-a823-cc2b90d5d99d$1.00&startTime=2012-01-19T00:00:00.000Z&endTime=2024-10-17T23:59:59.000Z&live=0`,
 
   body: [
     {

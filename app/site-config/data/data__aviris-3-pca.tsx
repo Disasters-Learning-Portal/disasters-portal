@@ -1,5 +1,6 @@
 import { Link } from "@teamimpact/veda-ui-blocks";
 import { Fragment } from "react";
+import { DATA_VISUALIZATION_URL } from "@/app/site-config/env.helpers";
 import type { DataContent } from "@/app/site-config/types";
 
 export const DATA__AVIRIS_3_PCA: DataContent = {
@@ -27,6 +28,8 @@ export const DATA__AVIRIS_3_PCA: DataContent = {
   categories: ["fire"],
 
   relatedContent: ["aviris-3-char-and-ash", "aviris-3-dnbr", "aviris-3-early-color-imagery"],
+
+  exploreDataUrl: `${DATA_VISUALIZATION_URL}/?mapLon=-118.3645366482885&mapLat=34.12153149272273&mapZoom=10.93&globeLon=undefined&globeLat=undefined&panePercents=0,100,0&on=dfc0535b-2ba0-46c4-90b6-c68e4140939c$1.00&startTime=2012-01-19T00:00:00.000Z&endTime=2025-01-11T23:59:59.000Z&live=0`,
 
   body: [
     {

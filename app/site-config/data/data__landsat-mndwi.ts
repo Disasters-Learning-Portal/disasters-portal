@@ -1,3 +1,4 @@
+import { DATA_VISUALIZATION_URL } from "@/app/site-config/env.helpers";
 import type { DataContent } from "@/app/site-config/types";
 
 export const DATA__LANDSAT_MNDWI: DataContent = {
@@ -25,6 +26,8 @@ export const DATA__LANDSAT_MNDWI: DataContent = {
   categories: ["severe weather", "flood", "tropical cyclone", "winter weather"],
 
   relatedContent: ["landsat-true-color", "landsat-color-infrared", "landsat-natural-color"],
+
+  exploreDataUrl: `${DATA_VISUALIZATION_URL}/?mapLon=-88.681640625&mapLat=36.00191319588787&mapZoom=6.38&globeLon=undefined&globeLat=undefined&panePercents=0,100,0&on=f4c2cd12-f1b7-465a-8edf-c88e24be59ea$1.00&startTime=2012-01-19T00:00:00.000Z&endTime=2025-04-15T23:59:59.000Z&live=0`,
 
   body: [
     {
