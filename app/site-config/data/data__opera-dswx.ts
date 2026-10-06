@@ -40,7 +40,7 @@ export const DATA__OPERA_DSWX: DataContent = {
       type: "text",
       heading: "Suggested Use",
       paragraphs: [
-        "DSWx supports rapid flood extent mapping and the monitoring of open water before, during and after an event. Comparing an observation against a pre-event baseline identifies inundated areas and helps estimate the footprint of flooding for response planning and damage assessment. The two sensors are best used together: the radar-derived product provides observations through cloud cover during the event itself, while the optical product contributes higher-frequency context and recovery monitoring once skies clear.",
+        "DSWx supports flood extent mapping and the monitoring of open water before, during and after an event. Comparing an observation against a pre-event baseline identifies inundated areas and helps estimate the footprint of flooding for response planning and damage assessment. The two sensors are best used together: the radar-derived product provides observations through cloud cover during the event itself, while the optical product contributes higher-frequency context and recovery monitoring once skies clear.",
         "Some caution is warranted in interpretation. Optical products cannot see the surface beneath cloud, and those pixels are flagged rather than classified. Radar-derived water detection can be confounded by terrain shadow, very smooth dry surfaces such as bare sand or paved areas, and dense vegetation canopy overlying standing water. Results should be read alongside true colour imagery and other observations rather than on their own.",
       ],
     },

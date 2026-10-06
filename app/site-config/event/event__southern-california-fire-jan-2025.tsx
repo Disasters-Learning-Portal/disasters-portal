@@ -30,10 +30,6 @@ export const EVENT__SOUTHERN_CALIFORNIA_FIRE_JAN_2025: EventContent = {
     label: "Learn more",
     href: "https://www.usa.gov/california-wildfires",
   },
-  linkDHSFEMA: {
-    label: "Learn more",
-    href: "https://www.fema.gov/california-wildfires",
-  },
   body: [
     {
       type: "text",
@@ -86,7 +82,7 @@ export const EVENT__SOUTHERN_CALIFORNIA_FIRE_JAN_2025: EventContent = {
     },
     {
       type: "sectionCardGallery",
-      heading: "Related Data",
+      heading: "Event Data Gallery",
       link: {
         href: "/data-gallery",
         label: "View all",
