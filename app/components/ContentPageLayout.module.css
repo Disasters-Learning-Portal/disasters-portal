@@ -72,6 +72,7 @@
     /* On paper the @page margin is the gutter, so the container needs none. */
     :global(section) {
       margin-top: var(--unit-4) !important;
+      margin-bottom: var(--unit-205) !important;
     }
 
     :global(.grid-container) {
@@ -204,10 +205,6 @@
       &::before {
         display: none !important;
       }
-    }
-
-    :global(section) {
-      margin-bottom: var(--unit-205) !important;
     }
 
     /* Replaces `.usa-list`'s `padding-left: 3ch`, tied to the font's digit width. */
