@@ -2,7 +2,6 @@ import { STORY__YOUR_COMMUNITY_MAY_HAVE_A_DISASTER_BLIND_SPOT } from "@/app/site
 import { TRAINING__PORTAL_101 } from "@/app/site-config/training/training__portal-101";
 import { pickKeys } from "@/app/site-config/typed.helpers";
 import type { ThemeContent } from "@/app/site-config/types";
-import { TRAINING__FUNDAMENTALS_REMOTE_SENSING } from "../training/training__fundamentals-remote-sensing";
 import { TRAINING__MONITORING_PREDICTING_FLOODS } from "../training/training__monitoring-predicting-floods";
 
 export const PREPARE_CONTENT: ThemeContent = {
@@ -36,7 +35,7 @@ export const PREPARE_CONTENT: ThemeContent = {
       type: "sectionCardSimple",
       heading: "Resources & Learning",
       link: { href: "/training", label: "More Resources and Learning" },
-      cards: [TRAINING__PORTAL_101, TRAINING__MONITORING_PREDICTING_FLOODS, TRAINING__FUNDAMENTALS_REMOTE_SENSING].map(
+      cards: [TRAINING__PORTAL_101, TRAINING__MONITORING_PREDICTING_FLOODS].map(
         (i) => pickKeys(i, ["id", "contentType", "thumbnailImage", "themes", "title", "subtitle"]),
       ),
     },
