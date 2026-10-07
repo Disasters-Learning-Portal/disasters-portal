@@ -22,7 +22,6 @@ env:
   NEXT_PUBLIC_STAC_API_URL: ${{ vars.NEXT_PUBLIC_STAC_API_URL }}
   NEXT_PUBLIC_RASTER_API_URL: ${{ vars.NEXT_PUBLIC_RASTER_API_URL }}
 
-
 jobs:
   lint:
     if: github.event.pull_request.draft == false

@@ -3,7 +3,7 @@ import type {
   StacCompareMapProps,
   StacSingleLayerMapProps,
 } from "@teamimpact/veda-ui-blocks";
-import type { ReactNode } from "react";
+import type { ReactElement, ReactNode } from "react";
 import type { AppRoutes } from "@/.next/types/routes";
 import type {
   CardDetailedPropsArgs,
@@ -90,7 +90,7 @@ export type ContentBlock =
       type: "list";
       heading?: string;
       headingLevel?: "h2" | "h3" | "h4";
-      items: (string | { label: string; href: string })[];
+      items: (string | ReactElement | { label: string; href: string })[];
     }
   | { type: "note"; text: string }
   | {
@@ -205,6 +205,7 @@ export type TrainingContent = Omit<InternalCardContent, "contentType"> & {
   mastheadImage: MastheadImage;
   body?: ContentBlock[]; // TODO: require body
   relatedContent?: string[];
+  pdfLink?: { label: string; href: string };
 };
 
 export type TrainingContentExternal = Omit<ExternalCardContent, "contentType"> & {

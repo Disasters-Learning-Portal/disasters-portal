@@ -8,6 +8,7 @@ export { ImageComparison } from "./ImageComparison";
 export { PageMasthead } from "./PageMasthead";
 export { PageSidebar } from "./PageSidebar";
 export { PageStatus } from "./PageStatus";
+export { PrintLink } from "./PrintLink";
 export { Section, type SectionProps } from "./Section";
 export { SectionCardCarousel } from "./SectionCardCarousel";
 export { SectionCardDetailed } from "./SectionCardDetailed";
