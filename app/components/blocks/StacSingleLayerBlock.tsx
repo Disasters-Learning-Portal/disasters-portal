@@ -10,7 +10,7 @@ type StacSingleLayerBlockProps = {
 };
 
 export function StacSingleLayerBlock({ block }: StacSingleLayerBlockProps) {
-  const { stacApiUrl, titilerBaseUrl, baseMapStyle, initialViewState, layerConfig } = {
+  const { stacApiUrl, titilerBaseUrl, baseMapStyle, initialViewState, layerConfig, caption } = {
     ...DEFAULT_STAC_CONFIG,
     ...block,
   };
@@ -22,7 +22,8 @@ export function StacSingleLayerBlock({ block }: StacSingleLayerBlockProps) {
           baseMapStyle={baseMapStyle}
           initialViewState={initialViewState}
           layerConfig={layerConfig}
-          showScrollGuard
+          caption={caption}
+          cooperativeGestures
         />
       </div>
     </GeoConfigProvider>

@@ -1,6 +1,7 @@
 import { CARTO_DARK_WITH_LABELS_BASEMAP_STYLE, Link } from "@teamimpact/veda-ui-blocks";
 import { Fragment } from "react";
-import { DATA } from "@/app/site-config/data";
+
+import { DATA__SOUTHERN_CALIFORNIA_FIRE_JAN_2025 } from "@/app/site-config/data";
 import { TRAINING__EO_PRE_POST_FIRE_MONITORING } from "@/app/site-config/training/training__eo-pre-post-fire-monitoring";
 import { TRAINING__FUNDAMENTALS_REMOTE_SENSING } from "@/app/site-config/training/training__fundamentals-remote-sensing";
 import { TRAINING__LIFELINES_WILDFIRE_WORKFLOW } from "@/app/site-config/training/training__lifelines-wildfire-workflow";
@@ -10,6 +11,9 @@ export const EVENT__SOUTHERN_CALIFORNIA_FIRE_JAN_2025: EventContent = {
   id: "southern-california-fire-jan-2025",
   contentType: "event",
   title: "Southern California Wildfires January 2025",
+  description:
+    "Following major wildfires in Los Angeles County, NASA supported local, state, and federal response agencies with satellite and airborne data to assess fire damage, infrastructure impacts, power outages, air quality, and potential hazardous emissions.",
+  datePublished: "2025-01-17",
   thumbnailImage: {
     src: "/img/event/southern-california-fire-jan-2025.webp",
     alt: "Infrared satellite imagery of the Palisades fire in Malibu, CA, from Jan. 12, 2025.",
@@ -21,18 +25,15 @@ export const EVENT__SOUTHERN_CALIFORNIA_FIRE_JAN_2025: EventContent = {
   themes: ["respond"],
   categories: ["fire"],
   region: " Los Angeles County, North America",
-  startDate: "Jan. 10, 2025",
+  startDate: "2025-01-10",
   linkUSGovernment: {
     label: "Learn more",
     href: "https://www.usa.gov/california-wildfires",
   },
-  linkDHSFEMA: {
-    label: "Learn more",
-    href: "https://www.fema.gov/california-wildfires",
-  },
   body: [
     {
       type: "text",
+      heading: "Overview",
       paragraphs: [
         "Beginning Jan. 7, 2025, several major wildfires swept through Los Angeles County, driven by powerful Santa Ana winds. The Palisades Fire, Eaton Fire, and Hurst Fire caused widespread destruction across communities from Pacific Palisades to Pasadena and San Fernando, resulting in significant loss of life, property damage, and power outages. The California Governor's Office of Emergency Services (CalOES), the Los Angeles County Office of Emergency Management, and FEMA Region 9 requested NASA's support to address several critical situational awareness needs – including identifying burned structures and damaged critical infrastructure, assessing fire extent, monitoring air quality and methane emissions, and tracking power outages across affected communities.",
         <Fragment key="2">
@@ -81,12 +82,20 @@ export const EVENT__SOUTHERN_CALIFORNIA_FIRE_JAN_2025: EventContent = {
     },
     {
       type: "sectionCardGallery",
-      heading: "Related Data",
-      cards: DATA,
+      heading: "Event Data Gallery",
+      link: {
+        href: "/data-gallery",
+        label: "View all",
+      },
+      cards: DATA__SOUTHERN_CALIFORNIA_FIRE_JAN_2025,
     },
     {
       type: "sectionCardSimple",
       heading: "Resources & Learning",
+      link: {
+        href: "/training",
+        label: "More Resources and Learning",
+      },
       cards: [
         TRAINING__LIFELINES_WILDFIRE_WORKFLOW,
         TRAINING__FUNDAMENTALS_REMOTE_SENSING,
@@ -122,7 +131,7 @@ export const EVENT__SOUTHERN_CALIFORNIA_FIRE_JAN_2025: EventContent = {
     {
       type: "list",
       heading: "NASA Earth Observatory",
-      headingLevel: "h4",
+      headingLevel: "h3",
       items: [
         {
           label: "The Palisades Fire's Footprint",

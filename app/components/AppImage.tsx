@@ -1,6 +1,6 @@
 import NextImage, { type ImageProps } from "next/image";
 
-import { withBasePath } from "@/app/site-config/base-path.helpers";
+import { withBasePath } from "@/app/site-config/env.helpers";
 
 /**
  * next/image does not apply basePath to `src`, this is a wrapper that does.

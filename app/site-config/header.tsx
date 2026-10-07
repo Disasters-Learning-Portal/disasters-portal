@@ -1,5 +1,6 @@
 import type { HeaderProps } from "@teamimpact/veda-ui-blocks";
 import { AppImage } from "@/app/components/AppImage";
+import { DATA_VISUALIZATION_URL } from "./env.helpers";
 
 const MOCK_NAV_ITEM_WITH_DROPDOWN_1 = [
   {
@@ -18,8 +19,11 @@ const MOCK_NAV_ITEM_WITH_DROPDOWN_2 = [
     label: "Explore Data",
     subItems: [
       { label: "Data Gallery", href: "/data-gallery" },
-      { label: "Data Visualization", href: "/data-visualization" },
-      { label: "Data Processing", href: "/data-processing" },
+      {
+        label: "Data Visualization",
+        href: DATA_VISUALIZATION_URL,
+        isExternal: true,
+      },
     ],
   },
 ];
@@ -28,15 +32,21 @@ const MOCK_NAV_ITEM_WITH_DROPDOWN_3 = [
     label: "Resources & Learning",
     subItems: [
       { label: "Training", href: "/training" },
-      { label: "News, Events & Stories", href: "/news-events" },
+      { label: "News, Events & Stories", href: "/news-events-stories" },
     ],
   },
 ];
 
 export const MOCK_HEADER_PROPS: HeaderProps = {
   portalDetails: {
-    logo: <AppImage src="/img/logo-header.png" alt="Disasters.gov" width={148} height={52} />,
+    logo: <AppImage src="/img/disasters-logo.svg" alt="NASA Logo" width={55} height={55} />,
     url: "/",
+    title: (
+      <span className="margin-left-neg-2 display-flex flex-column font-family-serif text-uppercase">
+        <span className="text-bold">Disasters</span>
+        <span className="text-light">Program</span>
+      </span>
+    ),
   },
   navItems: [
     { label: "About Us", href: "/about" },

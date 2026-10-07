@@ -4,8 +4,8 @@ import { AppImage } from "@/app/components/AppImage";
 const primaryNavItems: FooterProps["primaryNavItems"] = [
   { label: "About Us", href: "/about" },
   { label: "Data Gallery", href: "/data-gallery" },
-  { label: "News & Events", href: "/news-events" },
-  { label: "Training", href: "/training" },
+  { label: "News, Events & Stories", href: "/news-events-stories" },
+  { label: "Resources & Learning", href: "/training" },
 ];
 
 const secondaryNavItems: FooterProps["secondaryNavItems"] = [
@@ -43,7 +43,7 @@ const portalDetails: FooterProps["portalDetails"] = {
   ),
   title: "NASA Disasters PORTAL",
   tagline: "Partnership-Oriented Resource for Training, Analysis, and Learning",
-  updatedDate: "June 1, 2026",
+  updatedDate: "October 8, 2026",
 };
 
 export const MOCK_FOOTER_PROPS: FooterProps = {

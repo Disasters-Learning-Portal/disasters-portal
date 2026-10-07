@@ -1,8 +1,8 @@
 import type {
   CardDetailedProps,
-  CardMiniProps,
   CardProps,
   CardSimpleProps,
+  TagProps,
 } from "@teamimpact/veda-ui-blocks";
 import { AppImage } from "@/app/components/AppImage";
 import { AppLink } from "@/app/components/AppLink";
@@ -10,64 +10,93 @@ import {
   type Category,
   CONTENT_THEMES,
   CONTENT_TYPES,
+  type Content,
   type ContentType,
+  type DateString,
+  type GalleryCardContent,
   type IterableItemWithId,
   type Theme,
 } from "@/app/site-config/types";
+import { isInternalContent, isMastHeadImage, pickKeys } from "./typed.helpers";
 
-export const makeSimpleTagProps = (tag: string) => ({
-  variant: "solid" as const,
-  color: "primary-lighter",
-  textColor: "primary-dark",
-  children: tag,
+export const makeOutlineTagProps = (
+  tag: string,
+  tagProps?: Omit<TagProps, "variant" | "size" | "children">,
+) => ({
+  variant: "outline" as const,
+  borderColor: "base-light" as const,
+  children: toTitleCase(tag),
+  ...tagProps,
 });
 
+export const makeTextTagProps = (
+  tag: string,
+  tagProps?: Omit<TagProps, "variant" | "size" | "children">,
+) => ({
+  variant: "text" as const,
+  children: toTitleCase(tag),
+  ...tagProps,
+});
+
+const makeDateTagProps = (date: DateString) =>
+  childrenToLabel(makeTextTagProps(`Published: ${toNASAStyleDate(date)}`));
+
 export const makeThemeTagProps = (tag: Theme) => {
-  const { label, color, textColor } = CONTENT_THEMES[tag];
-  return { variant: "solid" as const, color, textColor, children: label };
+  const { label } = CONTENT_THEMES[tag];
+  return label;
 };
 
 export const makeContentTypeTagProps = (tag: ContentType) => {
   const { label } = CONTENT_TYPES[tag];
-  return {
-    variant: "solid" as const,
-    color: "primary-lighter",
-    textColor: "primary-dark",
-    children: label,
-  };
+  return label;
 };
 
+// Takes in prop object with `children`, and rekeys as `label` for components with nested component props.
+const childrenToLabel = <T extends { children: string }>({ children, ...rest }: T) => ({
+  label: children,
+  ...rest,
+});
+
 export type CardMastheadPropsArgs = Omit<
-  CardProps,
-  "title" | "image" | "colorMode" | "isMasthead"
+  CardProps<typeof AppLink>,
+  "title" | "image" | "colorMode" | "isMastHead" | "tag" | "callToActionSecondary"
 > & {
-  mastheadImage: {
-    alt: string;
-    src: string;
-  };
+  mastheadImage:
+    | {
+        alt: string;
+        src: string;
+      }
+    | CardProps["image"];
   title?: string;
   theme?: Theme;
+  datePublished?: DateString;
 };
 
 export const makeCardMastHeadProps = ({
   mastheadImage,
   title,
+  subtitle,
   theme,
+  datePublished,
+  callToAction,
   ...rest
-}: CardMastheadPropsArgs): CardProps => ({
-  image: <AppImage {...mastheadImage} sizes="100vw" fill preload={true} />,
-  ...(title || theme
-    ? {
-        title: (
-          <h1
-            className={`font-mono-3xl text-normal text-white text-uppercase flex-align-self-start margin-0 ${theme ? `bg-${CONTENT_THEMES[theme].color} text-ls-3` : ""}`}
-          >
-            {title ?? theme}
-          </h1>
-        ),
-      }
-    : {}),
-  colorMode: "brand",
+}: CardMastheadPropsArgs): CardProps<typeof AppLink> => ({
+  className: "blocks-card--contentpage",
+  image: isMastHeadImage(mastheadImage) ? (
+    <AppImage {...mastheadImage} sizes="100vw" fill preload={true} />
+  ) : (
+    mastheadImage
+  ),
+  tag: datePublished && makeDateTagProps(datePublished),
+  title: title ?? (theme ? CONTENT_THEMES[theme].label : undefined),
+  description: subtitle,
+  callToAction: callToAction && {
+    ...callToAction,
+    variant: "button",
+    color: "secondary",
+    as: callToAction.as ?? AppLink,
+  },
+  colorMode: "dark",
   isMastHead: true,
   ...rest,
 });
@@ -85,7 +114,7 @@ export type CardFeaturedPropsArgs = Omit<
     label: string;
     href: string;
   };
-  image: {
+  image?: {
     alt: string;
     src: string;
   };
@@ -105,9 +134,19 @@ export const makeCardFeaturedProps = (
   } = props;
   return {
     id,
-    callToAction: callToAction && { ...callToAction, as: AppLink },
-    callToActionSecondary: callToActionSecondary && { ...callToActionSecondary, as: AppLink },
-    image: (
+    callToAction: callToAction && {
+      ...callToAction,
+      variant: "arrow",
+      color: "secondary",
+      as: AppLink,
+    },
+    callToActionSecondary: callToActionSecondary && {
+      ...callToActionSecondary,
+      variant: "arrow",
+      color: "secondary",
+      as: AppLink,
+    },
+    image: image && (
       <AppImage
         alt={image.alt}
         src={image.src}
@@ -116,9 +155,29 @@ export const makeCardFeaturedProps = (
         style={{ objectFit: "cover" }}
       />
     ),
-    imagePosition,
+    imagePosition: image && imagePosition,
     ...rest,
   };
+};
+
+/**
+ * Project a content entry down to the card fields the Gallery needs.
+ * Gallery is a client component, so pages (server components) can only
+ * pass it serializable props: Content extras like ContentBlock bodies
+ * carry JSX and cannot cross the server -> client boundary.
+ */
+export const makeGalleryCardContent = (content: Content): GalleryCardContent => {
+  const base = pickKeys(content, [
+    "id",
+    "contentType",
+    "title",
+    "subtitle",
+    "description",
+    "thumbnailImage",
+    "themes",
+    "categories",
+  ]);
+  return isInternalContent(content) ? base : { ...base, url: content.url };
 };
 
 export type CardDetailedPropsArgs = Omit<
@@ -133,15 +192,37 @@ export type CardDetailedPropsArgs = Omit<
   };
   themes?: Theme[];
   categories?: Category[];
-  tags?: (Theme | ContentType | Category)[];
   url?: string;
 };
+
+const makeCardCTAProps = ({
+  id,
+  contentType,
+  url,
+}: {
+  id: string;
+  contentType: ContentType;
+  url?: string;
+}) => ({
+  href: url ? url : `${CONTENT_TYPES[contentType].route}/${id}`,
+  label: `View ${toTitleCase(CONTENT_TYPES[contentType].label)}`,
+  variant: "arrow" as const,
+  color: "secondary" as const,
+  isExternal: !!url,
+  as: AppLink,
+});
+
+const makeCardTagProps = (themes: Theme[] = [], categories: Category[] = [], type: ContentType) =>
+  [
+    ...themes.map((t) => makeOutlineTagProps(makeThemeTagProps(t))),
+    ...categories.map((c) => makeOutlineTagProps(c)),
+    makeOutlineTagProps(makeContentTypeTagProps(type)),
+  ].map(childrenToLabel);
 
 export const makeCardDetailedProps = ({
   id,
   contentType,
   thumbnailImage,
-  tags,
   themes,
   categories,
   url,
@@ -156,20 +237,8 @@ export const makeCardDetailedProps = ({
     />
   ),
   imagePosition: "top",
-  tags: (tags
-    ? tags.map((t) => makeSimpleTagProps(t))
-    : [
-        ...(themes ?? []).map((t) => makeThemeTagProps(t)),
-        ...(categories ?? []).map((c) => makeSimpleTagProps(c)),
-        makeContentTypeTagProps(contentType),
-      ]
-  ).map(({ children, ...rest }) => ({ label: children, ...rest })),
-  callToAction: {
-    href: url ? url : `${CONTENT_TYPES[contentType].route}/${id}`,
-    label: `View ${toTitleCase(CONTENT_TYPES[contentType].label)}`,
-    isExternal: !!url,
-    as: AppLink,
-  },
+  tags: makeCardTagProps(themes, categories, contentType),
+  callToAction: makeCardCTAProps({ id, contentType, url }),
   ...rest,
 });
 
@@ -177,7 +246,6 @@ export const makeCardDetailedImageLeftProps = ({
   id,
   contentType,
   thumbnailImage,
-  tags,
   themes,
   categories,
   url,
@@ -186,20 +254,8 @@ export const makeCardDetailedImageLeftProps = ({
   id,
   image: <AppImage {...thumbnailImage} fill sizes="200px" />,
   imagePosition: "left",
-  tags: (tags
-    ? tags.map((t) => makeSimpleTagProps(t))
-    : [
-        ...(themes ?? []).map((t) => makeThemeTagProps(t)),
-        ...(categories ?? []).map((c) => makeSimpleTagProps(c)),
-        makeContentTypeTagProps(contentType),
-      ]
-  ).map(({ children, ...rest }) => ({ label: children, ...rest })),
-  callToAction: {
-    href: url ? url : `${CONTENT_TYPES[contentType].route}/${id}`,
-    label: `View ${toTitleCase(CONTENT_TYPES[contentType].label)}`,
-    isExternal: !!url,
-    as: AppLink,
-  },
+  tags: makeCardTagProps(themes, categories, contentType),
+  callToAction: makeCardCTAProps({ id, contentType, url }),
   ...rest,
 });
 
@@ -213,7 +269,8 @@ export type CardSimplePropsArgs = Omit<
     alt: string;
     src: string;
   };
-  tag?: Theme | ContentType | Category;
+  subtitle?: string;
+  tag?: Theme | ContentType | Category | "active";
   themes?: Theme[];
   url?: string;
 };
@@ -221,6 +278,8 @@ export type CardSimplePropsArgs = Omit<
 export const makeCardSimpleProps = ({
   id,
   contentType,
+  description,
+  subtitle,
   thumbnailImage,
   tag,
   themes,
@@ -229,38 +288,19 @@ export const makeCardSimpleProps = ({
 }: CardSimplePropsArgs): IterableItemWithId<CardSimpleProps<typeof AppLink>> => ({
   id,
   image: <AppImage {...thumbnailImage} fill sizes="(max-width: 1400px) 100vw, 1400px" />,
-  tag: (({ children, ...rest }) => ({ label: children, ...rest }))(
+  colorMode: "dark",
+  // tag is set on active event
+  tag: childrenToLabel(
     tag
-      ? makeSimpleTagProps(tag)
+      ? makeTextTagProps(tag)
       : themes?.[0]
-        ? makeThemeTagProps(themes[0])
-        : makeContentTypeTagProps(contentType),
+        ? makeTextTagProps(makeThemeTagProps(themes[0]))
+        : makeTextTagProps(makeContentTypeTagProps(contentType)),
   ),
   href: url ? url : `${CONTENT_TYPES[contentType].route}/${id}`,
   isExternal: !!url,
   as: AppLink,
-  ...rest,
-});
-
-type CardSimpleMiniArgs = Omit<CardMiniProps, "image" | "tag" | "href" | "as"> & {
-  id: string;
-  contentType: ContentType;
-  thumbnailImage: {
-    alt: string;
-    src: string;
-  };
-};
-
-export const makeCardMiniProps = ({
-  id,
-  contentType,
-  thumbnailImage,
-  ...rest
-}: CardSimpleMiniArgs): IterableItemWithId<CardMiniProps<typeof AppLink>> => ({
-  id,
-  image: <AppImage {...thumbnailImage} fill sizes="200px" />,
-  as: AppLink,
-  href: `${CONTENT_TYPES[contentType].route}/${id}`,
+  description: subtitle ?? description,
   ...rest,
 });
 
@@ -292,26 +332,38 @@ export const makeCardCarouselProps = ({
       sizes="(max-width: 640px) 100vw, (max-width: 1400px) 50vw, 700px"
     />
   ),
-  tag: (({ children, ...rest }) => ({ label: children, ...rest }))(
-    makeContentTypeTagProps(contentType),
-  ),
-  callToAction: {
-    href: url ? url : `${CONTENT_TYPES[contentType].route}/${id}`,
-    label: `View ${toTitleCase(CONTENT_TYPES[contentType].label)}`,
-    isExternal: !!url,
-    as: AppLink,
-  },
+  tag: childrenToLabel(makeOutlineTagProps(makeContentTypeTagProps(contentType))),
+  callToAction: makeCardCTAProps({ id, contentType, url }),
   imagePosition: "cover",
   colorMode: "dark",
   ...rest,
 });
 
-export const toLongDate = (date: string) =>
-  new Date(date).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
+/**
+ * NASA Stylebook and Communications Manual, 13th edition (February 2025) / AP style:
+ * abbreviate Jan., Feb., Aug., Sept., Oct., Nov. and Dec., spell the rest out.
+ * https://github.com/Disasters-Learning-Portal/disasters-portal/issues/479
+ *
+ * Formatted in UTC so the day never shifts.
+ */
+export const toNASAStyleDate = (date: DateString) => {
+  const d = new Date(date);
+  const months = [
+    "Jan.",
+    "Feb.",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "Aug.",
+    "Sept.",
+    "Oct.",
+    "Nov.",
+    "Dec.",
+  ];
+  return `${months[d.getUTCMonth()]} ${d.getUTCDate()}, ${d.getUTCFullYear()}`;
+};
 
 export const toTitleCase = (str: string) =>
   str.toLowerCase().replace(/\b\w/g, (match) => match.toUpperCase());

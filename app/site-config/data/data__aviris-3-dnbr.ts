@@ -1,0 +1,89 @@
+import { DATA_VISUALIZATION_URL } from "@/app/site-config/env.helpers";
+import type { DataContent } from "@/app/site-config/types";
+
+export const DATA__AVIRIS_3_DNBR: DataContent = {
+  id: "aviris-3-dnbr",
+
+  contentType: "data",
+
+  title: "AVIRIS-3 Differenced Normalized Burn Ratio (dNBR)",
+
+  description:
+    "The AVIRIS-3 Differenced Normalized Burn Ratio (dNBR) product uses high-resolution imaging spectroscopy to identify vegetation change associated with wildfire and provide a proxy for burn severity.",
+
+  thumbnailImage: {
+    src: "/img/data/aviris-3-dnbr.webp",
+    alt: "AVIRIS-3 differenced Normalized Burn Ratio imagery example",
+  },
+
+  mastheadImage: {
+    src: "/img/data/aviris-3-dnbr.webp",
+    alt: "AVIRIS-3 differenced Normalized Burn Ratio imagery example",
+  },
+
+  themes: ["respond", "recover"],
+
+  categories: ["fire"],
+
+  relatedContent: [
+    "aviris-3-early-color-imagery",
+    "sentinel-2-nbr",
+    "sentinel-1-sentinel-2-burn-severity",
+  ],
+
+  exploreDataUrl: `${DATA_VISUALIZATION_URL}/?mapLon=-118.27758720581927&mapLat=34.13060932894287&mapZoom=11.43&globeLon=undefined&globeLat=undefined&panePercents=0,100,0&on=4c2e2199-49f5-4a24-892c-572f0290e737$1.00&startTime=2012-01-19T00:00:00.000Z&endTime=2024-09-05T23:59:59.000Z&live=0`,
+
+  body: [
+    {
+      type: "text",
+      heading: "Summary",
+      paragraphs: [
+        "The AVIRIS-3 Differenced Normalized Burn Ratio (dNBR) product is derived from pre-event and post-event observations collected by the Airborne Visible/Infrared Imaging Spectrometer 3rd-Generation (AVIRIS-3). Normalized Burn Ratio (NBR) is calculated as (NIR - SWIR) / (NIR + SWIR), and dNBR is calculated as the difference between pre-fire and post-fire NBR. The product uses near-infrared and shortwave-infrared wavelengths that are sensitive to changes in vegetation associated with burning and charring.",
+      ],
+    },
+
+    {
+      type: "text",
+      heading: "Suggested Use",
+      paragraphs: [
+        "AVIRIS-3 dNBR can be used to identify burned vegetation, characterize spatial variations in fire-related surface change, and provide a proxy for relative burn severity. Higher positive dNBR values generally indicate greater reductions in healthy vegetation between the pre-fire and post-fire observations. dNBR primarily represents changes in vegetation spectral response and may not accurately characterize impacts to non-vegetated surfaces or built infrastructure. Results can also be influenced by the timing and environmental conditions of the pre-event and post-event observations.",
+      ],
+    },
+
+    {
+      type: "text",
+      heading: "Terms of Use",
+      paragraphs: [
+        "NASA data and products are freely available to federal, state, public, non-profit and commercial users. This information can be experimental- or research-grade data products and may not be appropriate for operational use. These NASA data products, services, and the Disasters Mapping Portal are intended to aid decision makers and enhance situational awareness, but these data are not guaranteed to be consistently available or routinely updated.",
+      ],
+    },
+
+    {
+      type: "text",
+      heading: "Satellite/Sensor",
+      paragraphs: ["Airborne Visible/Infrared Imaging Spectrometer 3rd-Generation (AVIRIS-3)"],
+    },
+
+    {
+      type: "text",
+      heading: "Resolution",
+      paragraphs: ["Variable, ranging from sub-meter to 13 meters, dependent on flight altitude."],
+    },
+
+    {
+      type: "text",
+      heading: "Credits",
+      paragraphs: [
+        "NASA Jet Propulsion Laboratory (JPL), AVIRIS Science Team, NASA Disasters Program",
+      ],
+    },
+
+    {
+      type: "text",
+      heading: "Tags",
+      paragraphs: [
+        "NASA, JPL, AVIRIS-3, AVIRIS, dNBR, NBR, Imaging Spectroscopy, Hyperspectral, Burn Severity, Wildfire",
+      ],
+    },
+  ],
+};

@@ -1,76 +1,71 @@
-import { type CardMiniProps, type CardProps, Link } from "@teamimpact/veda-ui-blocks";
-import type { AppLink } from "@/app/components/AppLink";
+import type { SidebarDetail } from "@/app/components/PageSidebar";
 import {
   makeCardMastHeadProps,
-  makeCardMiniProps,
-  makeSimpleTagProps,
-  toLongDate,
-  toTitleCase,
+  makeCardSimpleProps,
+  toNASAStyleDate,
 } from "@/app/site-config/content.helpers";
-import type { EventContent, IterableItemWithId } from "@/app/site-config/types";
+import type { EventContent } from "@/app/site-config/types";
 
-export const transformEventToCardMiniProps = (
+export const transformEventToCardSimpleProps = (
   event: EventContent,
-): IterableItemWithId<CardMiniProps<typeof AppLink>> => {
+): ReturnType<typeof makeCardSimpleProps> => {
   const { isLatest, id, contentType, thumbnailImage, title } = event;
-  return makeCardMiniProps({
+  return makeCardSimpleProps({
     id,
     contentType,
     thumbnailImage,
     title,
-    ...(isLatest
-      ? { tag: { variant: "text" as const, color: "secondary", label: "Latest Activation" } }
-      : {}),
+    ...(isLatest ? { tag: "active" } : {}),
   });
 };
 
-export const transformEventToPageMastHeadProps = (event: EventContent): CardProps => {
-  const { lastUpdatedDate, mastheadImage, title, description } = event;
+export const transformEventToPageMastHeadProps = (
+  event: EventContent,
+): ReturnType<typeof makeCardMastHeadProps> => {
+  const { datePublished, mastheadImage, title, subtitle, description } = event;
 
   return makeCardMastHeadProps({
     mastheadImage,
     title,
-    description,
-    tag: lastUpdatedDate
-      ? (({ children, ...rest }) => ({ label: children, ...rest }))(
-          makeSimpleTagProps(`Updated: ${toLongDate(lastUpdatedDate)}`),
-        )
-      : undefined,
+    subtitle: subtitle ?? description,
+    datePublished,
   });
 };
 
-export type SectionOverviewItemProps = {
-  overviewItems: { title: string; content: React.ReactNode }[];
+export const transformEventToPageSidebarDetails = (event: EventContent): SidebarDetail[] => {
+  const { region, startDate } = event;
+
+  return [
+    { label: "Region", content: region },
+    { label: "Start Date", content: toNASAStyleDate(startDate) },
+  ];
 };
 
-export const transformEventToSectionOverviewProps = (
-  event: EventContent,
-): SectionOverviewItemProps => {
-  const { region, startDate, categories, linkDHSFEMA, linkUSGovernment } = event;
+export const transformEventToSectionOverviewProps = (event: EventContent) => {
+  const { linkDHSFEMA, linkUSGovernment } = event;
 
   return {
-    overviewItems: [
-      { title: "Region", content: region },
-      { title: "Start Date", content: toLongDate(startDate) },
-      { title: "Hazard(s)", content: categories.map((c) => toTitleCase(c)).join(", ") },
-      linkDHSFEMA
-        ? {
-            title: "What DHS and FEMA are doing:",
-            content: (
-              <Link variant="text" isExternal href={linkDHSFEMA.href}>
-                {linkDHSFEMA.label ?? "Read more."}
-              </Link>
-            ),
-          }
-        : null,
+    items: [
       linkUSGovernment
         ? {
-            title: "What the U.S. government is doing:",
-            content: (
-              <Link variant="text" isExternal href={linkUSGovernment.href}>
-                {linkUSGovernment.label ?? "Read more"}
-              </Link>
-            ),
+            label: "What the U.S. government is doing",
+            link: {
+              className: "text-bold",
+              isExternal: true,
+              href: linkUSGovernment.href,
+              label: linkUSGovernment.label ?? "Read more",
+            },
+          }
+        : null,
+      linkDHSFEMA
+        ? {
+            label: "What DHS and FEMA are doing",
+            link: {
+              className: "text-bold",
+              isExternal: true,
+              href: linkDHSFEMA.href,
+              label: linkDHSFEMA.label ?? "Read more",
+            },
           }
         : null,
     ].filter((item): item is NonNullable<typeof item> => item !== null),

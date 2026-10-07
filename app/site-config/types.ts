@@ -3,7 +3,7 @@ import type {
   StacCompareMapProps,
   StacSingleLayerMapProps,
 } from "@teamimpact/veda-ui-blocks";
-import type { ReactNode } from "react";
+import type { ReactElement, ReactNode } from "react";
 import type { AppRoutes } from "@/.next/types/routes";
 import type {
   CardDetailedPropsArgs,
@@ -12,58 +12,70 @@ import type {
 } from "@/app/site-config/content.helpers";
 
 export const CONTENT_TYPES: Record<ContentType, { route: AppRoutes; label: string }> = {
-  data: { route: "/data-gallery", label: "data" },
-  event: { route: "/news-events", label: "event" },
-  news: { route: "/news-events", label: "news" },
-  story: { route: "/news-events", label: "story" },
-  datastory: { route: "/news-events", label: "data story" },
-  training: { route: "/training", label: "training" },
+  data: { route: "/data-gallery", label: "Data" },
+  datastory: { route: "/news-events-stories", label: "Data Story" },
+  event: { route: "/news-events-stories", label: "Event" },
+  news: { route: "/news-events-stories", label: "News" },
+  story: { route: "/news-events-stories", label: "Story" },
+  training: { route: "/training", label: "Training" },
 };
 
-export const CONTENT_THEMES: Record<Theme, { label: string; color: string; textColor?: string }> = {
-  respond: {
-    label: "respond",
-    color: "secondary",
-    textColor: "white",
-  },
-  build: {
-    label: "build resilience",
-    color: "success",
-    textColor: "white",
-  },
-  prepare: {
-    label: "prepare",
-    color: "accent-warm",
-  },
-  recover: {
-    label: "recover",
-    color: "accent-cool",
-    textColor: "white",
-  },
-};
+/** Themes ordered by theme chronology */
+export type Theme = "prepare" | "respond" | "recover" | "resilience";
 
-export const CONTENT_SIDEBAR_CONTENT_TYPES: ContentType[] = [
-  "data",
+/** Object is ordered by theme chronology */
+export const CONTENT_THEMES: Record<Theme, { label: string; color?: string; description: string }> =
+  {
+    prepare: {
+      label: "Prepare",
+      color: "accent-warm",
+      description: "Anticipate risk and boost readiness",
+    },
+    respond: {
+      label: "Respond",
+      color: "secondary",
+      description: "Support real-time decisions with timely insights",
+    },
+    recover: {
+      label: "Recover",
+      color: "accent-cool",
+      description: "Assess impacts and rebuild stronger",
+    },
+    resilience: {
+      label: "Build Resilience",
+      color: "success",
+      description: "Safeguard communities for enduring impact",
+    },
+  } as const;
+
+export const CONTENT_CATEGORIES = [
+  "cyclone",
+  "earthquake",
+  "fire",
+  "flood",
+  "heat",
+  "hurricane",
+  "landslide",
+  "severe weather",
+  "tropical cyclone",
+  "tsunami",
+  "typhoon",
+  "volcano",
+  "winter weather",
+] as const;
+
+export type Category = (typeof CONTENT_CATEGORIES)[number];
+
+type GalleryRouteBase = (typeof CONTENT_TYPES)[ContentType]["route"];
+export type GalleryRoute = GalleryRouteBase | `${GalleryRouteBase}?${string}`;
+
+export const SHOW_IN_PAGE_NAVIGATION_CONTENT_TYPES: ContentType[] = [
+  "event",
+  "news",
   "story",
   "datastory",
   "training",
 ];
-
-export type IterableItemWithId<T> = T & { id: string };
-
-export type Theme = "respond" | "build" | "prepare" | "recover";
-
-export type Category =
-  | "severewx"
-  | "fire"
-  | "heat"
-  | "flood"
-  | "tropical cyclone"
-  | "earthquake"
-  | "winter weather"
-  | "volcano";
-
-export type GalleryRoute = "/data-gallery" | "/news-events" | "/training"; // TODO: update to be dynamic
 
 type GeoConfig = Omit<GeoConfigProviderProps, "children">;
 
@@ -78,24 +90,33 @@ export type ContentBlock =
       type: "list";
       heading?: string;
       headingLevel?: "h2" | "h3" | "h4";
-      items: (string | { label: string; href: string })[];
+      items: (string | ReactElement | { label: string; href: string })[];
     }
   | { type: "note"; text: string }
-  | { type: "slider"; before: { src: string; alt: string }; after: { src: string; alt: string } }
   | {
-      type: "video";
-      src: string;
+      type: "slider";
       heading?: string;
       headingLevel?: "h2" | "h3" | "h4";
+      before: { src: string; alt: string };
+      after: { src: string; alt: string };
+    }
+  | {
+      type: "video";
+      heading?: string;
+      headingLevel?: "h2" | "h3" | "h4";
+      src: string;
       caption?: string;
     }
   | {
       type: "image";
+      heading?: string;
+      headingLevel?: "h2" | "h3" | "h4";
       src: string;
       alt: string;
       width: number;
       height: number;
-      maxWidth?: string;
+      /** USWDS maxw-* token. The image fills the column unless capped here. */
+      maxWidth?: "card" | "card-lg" | "mobile" | "mobile-lg" | "tablet";
       caption?: string;
     }
   | (StacSingleLayerMapProps &
@@ -103,50 +124,67 @@ export type ContentBlock =
         type: "stacSingleLayer";
         heading?: string;
         headingLevel?: "h2" | "h3" | "h4";
-        caption?: string;
       })
   | (StacCompareMapProps &
       GeoConfig & {
         type: "stacCompare";
         heading?: string;
         headingLevel?: "h2" | "h3" | "h4";
-        caption?: string;
       })
   | {
       type: "sectionCardSimple";
       heading?: string;
-      href?: GalleryRoute;
+      headingLevel?: "h2" | "h3" | "h4";
+      link?: { href: GalleryRoute; label?: string };
       cards: CardSimplePropsArgs[];
     }
   | {
       type: "sectionCardGallery";
       heading?: string;
-      href?: GalleryRoute;
-      cards: CardDetailedPropsArgs[];
+      headingLevel?: "h2" | "h3" | "h4";
+      link?: { href: GalleryRoute; label?: string };
+      cards: (Omit<CardDetailedPropsArgs, "title"> & { title: string })[];
+    }
+  | {
+      type: "carousel";
+      heading?: string;
+      headingLevel?: "h2" | "h3" | "h4";
+      /** Cards visible at once on desktop. Collapses to 1 on mobile. */
+      maxVisibleItems?: 1 | 2 | 3;
+      items: {
+        id: string;
+        title: string;
+        description?: string;
+        thumbnailImage: { src: string; alt: string };
+        /** Rendered as a Tag above the title. */
+        tag?: string;
+      }[];
     }
   | {
       type: "sectionCardFeatured";
-      card: CardFeaturedPropsArgs;
+      heading?: string;
+      headingLevel?: "h2" | "h3" | "h4";
+      card: Omit<CardFeaturedPropsArgs, "title"> & { title: string };
     };
 
-type Content =
-  | TrainingContent
-  | TrainingContentExternal
-  | DataContent
-  | DataStoryContent
-  | DataStoryContentExternal
-  | StoryContent
-  | NewsContent
-  | EventContent;
+/**
+ * Content dates, authored as `YYYY-MM-DD` and formatted at render time.
+ *
+ * Checks shape, not the calendar: 2026-02-30 passes. Years stay at 20xx to keep
+ * the union small enough for TypeScript to represent (ts2590).
+ */
+type OneToNine = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
+type ZeroToNine = 0 | OneToNine;
+type YYYY = `20${ZeroToNine}${ZeroToNine}`;
+type MM = `0${OneToNine}` | `1${0 | 1 | 2}`;
+type DD = `0${OneToNine}` | `${1 | 2}${ZeroToNine}` | `3${0 | 1}`;
+export type DateString = `${YYYY}-${MM}-${DD}`;
 
-export type ContentType = Content["contentType"];
-
-export type InternalContent = StoryContent | DataStoryContent | NewsContent | EventContent;
-
-export type MinimumCardContent = {
+export type InternalCardContent = {
   id: string;
   contentType: ContentType;
   title: string;
+  subtitle?: string;
   thumbnailImage: {
     src: string;
     alt: string;
@@ -154,64 +192,82 @@ export type MinimumCardContent = {
   themes: Theme[];
   categories: Category[];
   description?: string;
+  datePublished?: DateString;
 };
 
-export type TrainingContentExternal = Omit<MinimumCardContent, "contentType"> & {
-  contentType: "training";
-  url: string;
-};
+export type ExternalCardContent = InternalCardContent & { url: string };
 
-export type TrainingContent = Omit<MinimumCardContent, "contentType"> & {
+export type GalleryCardContent = InternalCardContent | ExternalCardContent;
+
+export type TrainingContent = Omit<InternalCardContent, "contentType"> & {
   contentType: "training";
-  date: string;
+  datePublished: DateString;
   mastheadImage: MastheadImage;
-  body?: ContentBlock[];
+  body?: ContentBlock[]; // TODO: require body
   relatedContent?: string[];
+  pdfLink?: { label: string; href: string };
 };
 
-export type DataContent = Omit<MinimumCardContent, "contentType"> & {
+export type TrainingContentExternal = Omit<ExternalCardContent, "contentType"> & {
+  contentType: "training";
+};
+
+export type DataContent = Omit<InternalCardContent, "contentType"> & {
   contentType: "data";
   mastheadImage: MastheadImage;
-  body?: ContentBlock[];
+  body?: ContentBlock[]; // TODO: require body
   relatedContent?: string[];
+  /** The sidebar CTA renders only when this is set. */
+  exploreDataUrl?: string;
 };
 
-export type NewsContent = Omit<MinimumCardContent, "contentType"> & {
+export type NewsContent = Omit<InternalCardContent, "contentType"> & {
   contentType: "news";
   mastheadImage: MastheadImage;
-  body?: ContentBlock[];
+  body?: ContentBlock[]; // TODO: require body
 };
 
-export type StoryContent = Omit<MinimumCardContent, "contentType"> & {
+export type StoryContent = Omit<InternalCardContent, "contentType"> & {
   contentType: "story";
-  date?: string;
   mastheadImage: MastheadImage;
-  body?: ContentBlock[];
+  body?: ContentBlock[]; // TODO: require body
 };
 
-export type DataStoryContent = Omit<MinimumCardContent, "contentType"> & {
+export type DataStoryContent = Omit<InternalCardContent, "contentType"> & {
   contentType: "datastory";
   mastheadImage: MastheadImage;
-  body?: ContentBlock[];
+  body?: ContentBlock[]; // TODO: require body
 };
 
-export type DataStoryContentExternal = Omit<MinimumCardContent, "contentType"> & {
+export type DataStoryContentExternal = Omit<ExternalCardContent, "contentType"> & {
   contentType: "datastory";
-  url: string;
 };
 
-export type EventContent = Omit<MinimumCardContent, "contentType"> & {
+export type EventContent = Omit<InternalCardContent, "contentType"> & {
   contentType: "event";
   mastheadImage: MastheadImage;
   isLatest?: boolean;
-  lastUpdatedDate?: string;
-  startDate: string;
+  startDate: DateString;
   region: string;
   linkDHSFEMA?: { label: string; href: string };
   linkUSGovernment?: { label: string; href: string };
-  body?: ContentBlock[];
+  body?: ContentBlock[]; // TODO: require body
   relatedContent?: string[];
 };
+
+export type InternalContent =
+  | DataContent
+  | StoryContent
+  | DataStoryContent
+  | NewsContent
+  | EventContent
+  | TrainingContent;
+
+export type ExternalContent = DataStoryContentExternal | TrainingContentExternal;
+
+export type Content = InternalContent | ExternalContent;
+
+export type ContentType = Content["contentType"];
 
 export type ThemeContent = {
   id: string;
@@ -225,6 +281,6 @@ export type ThemeContent = {
 type MastheadImage = {
   src: string;
   alt: string;
-  caption?: string;
-  attribution?: string;
 };
+
+export type IterableItemWithId<T> = T & { id: string };

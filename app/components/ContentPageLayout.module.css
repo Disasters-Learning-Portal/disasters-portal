@@ -1,0 +1,222 @@
+/*
+ * Keeps the nav and the sidebar pinned together below the sticky header on
+ * desktop. The offset is the same one the hds theme gives the in-page nav
+ * ($theme-in-page-nav-top: 10, also html scroll-padding-top). The library does
+ * not expose it as a custom property yet, so we bind to the same unit token.
+ * 64em is the USWDS desktop breakpoint, where the column sits beside the body.
+ */
+@media (min-width: 64em) {
+  .aside {
+    --nav-top: var(--unit-10, 5rem);
+    position: sticky;
+    top: var(--nav-top);
+    overflow-y: auto;
+  }
+}
+
+/*
+ * Printing a content page. The page prints itself: the chrome drops away, the
+ * two-column grid becomes block flow -- which puts the in-page navigation above
+ * the body, where a table of contents belongs -- and the column is set for paper.
+ */
+@media print {
+  /* Arial 12pt on a 1in margin, measured off the source document. */
+  :root {
+    --doc-font: Arial, Helvetica, sans-serif;
+    --doc-size: 12pt;
+  }
+
+  @page {
+    margin: 1in;
+  }
+
+  :global(body):has(.contentPage) {
+    overflow-x: visible;
+    display: block !important;
+    min-height: 0 !important;
+
+    > *:not(main) {
+      display: none;
+    }
+
+    /* `--dark::after` is the card's scrim: a grey band once the image is gone. */
+    :global(.blocks-card__media),
+    :global(.blocks-card__tag),
+    :global(.blocks-card__actions),
+    :global(.blocks-card--dark)::after {
+      display: none !important;
+    }
+
+    :global(.minh-masthead) {
+      min-height: 0 !important;
+    }
+
+    :global(.blocks-card__content-container),
+    :global(.blocks-card__content) {
+      padding: 0 !important;
+    }
+
+    :global(.blocks-card__title) {
+      color: var(--color-base-darkest, #1b1b1b) !important;
+      font-size: 1.5rem !important;
+      line-height: 1.3 !important;
+    }
+
+    :global(.blocks-card__description) {
+      color: var(--color-base-dark) !important;
+      margin-block: var(--unit-05) 0 !important;
+    }
+
+    /* On paper the @page margin is the gutter, so the container needs none. */
+    :global(section) {
+      margin-top: var(--unit-4) !important;
+    }
+
+    :global(.grid-container) {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+  }
+
+  /* `.grid-gap`'s negative gutters have nothing left to cancel once the
+   * container's padding is gone, and the columns' widths have no row to
+   * divide: stacked, each one is the page. */
+  .contentPage {
+    display: block !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+
+    > * {
+      padding: 0 !important;
+      width: 100% !important;
+    }
+  }
+
+  .contentPage .aside {
+    /* Themes, categories and related content are navigation, not document.
+     * The in-page nav is the exception: it prints as the contents. */
+    > :global(aside:not(.usa-in-page-nav)) {
+      display: none;
+    }
+
+    /* The nav is shaped as a 15rem card indented in the sidebar. As the
+     * contents it runs the full measure, flush with the body below it. */
+    :global(.usa-in-page-nav) {
+      margin: 0 0 var(--unit-4) !important;
+      max-width: none !important;
+    }
+
+    :global(.usa-in-page-nav__nav) {
+      padding: 0 !important;
+    }
+
+    /* USWDS writes "On this page". CSS cannot set text, so the original is
+     * collapsed to nothing and the document's own wording replaces it. */
+    :global(.usa-in-page-nav__heading) {
+      font-size: 0;
+      margin-block: 0 11pt;
+    }
+
+    :global(.usa-in-page-nav__heading)::after {
+      content: "Table of Contents";
+      font-family: var(--doc-font);
+      font-size: var(--doc-size);
+      font-weight: normal;
+      letter-spacing: normal;
+      text-transform: none;
+    }
+
+    /* The "you are here" bar sits in the gutter the list border makes. With
+     * the border gone it lands on the current entry's first character. */
+    :global(.usa-in-page-nav__link.usa-current)::after {
+      display: none !important;
+    }
+
+    :global(.usa-in-page-nav__list) {
+      border-left: 0 !important;
+      padding-left: 18pt !important;
+    }
+
+    :global(.usa-in-page-nav__item),
+    :global(.usa-in-page-nav__link) {
+      font-family: var(--doc-font) !important;
+      font-size: var(--doc-size) !important;
+      /* 16.7pt baseline to baseline, so the entries carry their own leading. */
+      line-height: 1.39 !important;
+      margin: 0 !important;
+    }
+
+    :global(.usa-in-page-nav__link) {
+      letter-spacing: normal !important;
+      padding: 0 !important;
+    }
+  }
+
+  .content {
+    --doc-text: 1rem;
+    --doc-leading: 1.65;
+
+    line-height: var(--doc-leading);
+
+    /* A screen-only nudge aligning body with sidebar; stacked, it drags the
+     * body up over the contents. */
+    :global(.margin-top-neg-7) {
+      margin-top: 0 !important;
+    }
+
+    :global(h2),
+    :global(h3) {
+      font-size: var(--doc-text) !important;
+      margin-bottom: var(--unit-05) !important;
+      break-after: avoid;
+    }
+
+    :global(h3) {
+      margin-left: var(--unit-3) !important;
+    }
+
+    :global(p),
+    :global(li) {
+      font-size: var(--doc-text) !important;
+      line-height: var(--doc-leading) !important;
+    }
+
+    :global(p) {
+      margin-top: 0 !important;
+      margin-bottom: var(--unit-105) !important;
+    }
+
+    :global(.usa-alert) {
+      background-color: transparent !important;
+      border-left: 0 !important;
+    }
+
+    :global(.usa-alert__body) {
+      background-color: transparent !important;
+      padding: 0 !important;
+
+      > * {
+        margin-left: 0 !important;
+      }
+
+      &::before {
+        display: none !important;
+      }
+    }
+
+    :global(section) {
+      margin-bottom: var(--unit-205) !important;
+    }
+
+    /* Replaces `.usa-list`'s `padding-left: 3ch`, tied to the font's digit width. */
+    :global(ul) {
+      margin-left: var(--unit-9);
+      padding-left: var(--unit-3);
+    }
+
+    /* The launch icon means "opens in a new tab". */
+    :global(.usa-link--external)::after {
+      display: none !important;
+    }
+  }
+}

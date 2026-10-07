@@ -1,13 +1,13 @@
 import { CARTO_DARK_WITH_LABELS_BASEMAP_STYLE, Link } from "@teamimpact/veda-ui-blocks";
 import { Fragment } from "react";
-import { EVENT__TEXAS_FLOODS_JULY_2025 } from "@/app/site-config/event/event__texas-floods-july-2025";
-import { EVENT__US_WINTER_STORM_2026 } from "@/app/site-config/event/event__us-winter-storm-jan-2026";
+import { DATASTORY__TOOLS_YOU_CAN_USE_MAPPING_FLOOD_IMPACTS } from "@/app/site-config/datastory/datastory__tools-you-can-use-mapping-flood-impacts";
 import type { StoryContent } from "@/app/site-config/types";
 
 export const STORY__FINDING_FLOODS: StoryContent = {
   id: "finding-floods",
   contentType: "story",
   title: "Finding the Floods",
+  datePublished: "2026-09-30",
   thumbnailImage: {
     src: "/img/story/finding-floods.webp",
     alt: "Flooded river in Kerrville, Texas showing significant flood waters",
@@ -25,7 +25,7 @@ export const STORY__FINDING_FLOODS: StoryContent = {
       paragraphs: [
         "When catastrophic flash flooding struck Texas Hill Country on July 4, 2025, emergency managers faced an urgent challenge: a fast-moving disaster, and a near-total lack of imagery to identify the people and places most impacted. Persistent cloud cover blocked optical satellites. Commercial radar assets struggled to see through the region's dense tree canopy. In the critical early days of search and rescue, the people making life-and-death decisions had almost no imagery of the hardest-hit areas.",
 
-        "The NASA Disasters Program moved quickly to fill that gap. Working directly with FEMA and the Texas Division of Emergency Management, the program coordinated specialized aircraft deployments to rapidly deliver flood maps and high-resolution imagery that helped guide search and rescue efforts and resource deployment.",
+        "The NASA Disasters Program moved quickly to fill that gap. Working directly with FEMA and the Texas Division of Emergency Management, the program coordinated specialized aircraft deployments to deliver flood maps and high-resolution imagery that helped guide search and rescue efforts and resource deployment.",
       ],
     },
     {
@@ -90,6 +90,8 @@ export const STORY__FINDING_FLOODS: StoryContent = {
         collectionAssetId: "unetclassified",
         dateRange: { from: "2025-07-09", to: "2025-07-09" },
       },
+      caption:
+        "This interactive map shows classifications that help identify flooded urban areas, croplands, vegetation, and open water using UAVSAR data collected during flights on July 9, 2025. Click the “i” button to learn more. Credit: NASA Jet Propulsion Laboratory",
     },
     {
       type: "text",
@@ -109,10 +111,10 @@ export const STORY__FINDING_FLOODS: StoryContent = {
           <Link href="https://science.nasa.gov/earth-science/csda/">
             Commercial Satellite Data Acquisition Program
           </Link>
-          , the NASA Disasters Program can rapidly task commercial satellites to gather detailed
-          imagery of active disasters. These data support a range of efforts – from building damage
-          assessment and road disruption mapping to search and rescue operations – offering broad
-          coverage across a variety of advanced sensors.
+          , the NASA Disasters Program can task commercial satellites to gather detailed imagery of
+          active disasters. These data support a range of efforts – from building damage assessment
+          and road disruption mapping to search and rescue operations – offering broad coverage
+          across a variety of advanced sensors.
         </Fragment>,
         "Flash floods remain among the most difficult disasters to observe in real time. When cloud cover, dense vegetation, and fast-moving water converge, the gap between what responders can see and what they need to know can be life-threatening. The NASA Disasters Program works to close that gap with the right sensors, the right science, and the right partnerships.",
       ],
@@ -120,7 +122,11 @@ export const STORY__FINDING_FLOODS: StoryContent = {
     {
       type: "sectionCardSimple",
       heading: "Resources & Learning",
-      cards: [EVENT__TEXAS_FLOODS_JULY_2025, EVENT__US_WINTER_STORM_2026],
+      link: {
+        href: "/training",
+        label: "More Resources and Learning",
+      },
+      cards: [DATASTORY__TOOLS_YOU_CAN_USE_MAPPING_FLOOD_IMPACTS],
     },
   ],
 };

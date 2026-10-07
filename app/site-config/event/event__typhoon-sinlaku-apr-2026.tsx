@@ -1,0 +1,70 @@
+import { Link } from "@teamimpact/veda-ui-blocks";
+import { Fragment } from "react/jsx-runtime";
+
+import { DATA__TYPHOON_SINLAKU_APR_2026 } from "@/app/site-config/data";
+import type { EventContent } from "@/app/site-config/types";
+
+export const EVENT__TYPHOON_SINLAKU_APR_2026: EventContent = {
+  id: "typhoon-sinlaku-2026",
+  contentType: "event",
+  title: "Typhoon Sinlaku April 2026",
+  description:
+    "Typhoon Sinlaku impacted Guam and the Northern Mariana Islands, prompting NASA to support federal response partners with satellite data and mapping to assess power outages, flooding, landslide hazards, and storm impacts where ground-based observations were limited.",
+  datePublished: "2026-04-24",
+  thumbnailImage: {
+    src: "/img/event/typhoon-sinlaku-2026.webp",
+    alt: "Banner Image: Suomi-NPP VIIRS Image of Typhoon Sinlaku with boundary overlay of the Mariana Islands, collected on April 13, 2026. Credit: NASA",
+  },
+  mastheadImage: {
+    src: "/img/event/typhoon-sinlaku-2026.webp",
+    alt: "Banner Image: Suomi-NPP VIIRS Image of Typhoon Sinlaku with boundary overlay of the Mariana Islands, collected on April 13, 2026. Credit: NASA",
+  },
+  themes: ["respond"],
+  categories: ["tropical cyclone"],
+  region: "Northern Mariana Islands, Oceania",
+  startDate: "2026-04-14",
+  linkUSGovernment: {
+    label: "Learn more",
+    href: "https://www.fema.gov/disaster/3644",
+  },
+  body: [
+    {
+      type: "text",
+      heading: "Overview",
+      paragraphs: [
+        "Typhoon Sinlaku brought high winds and heavy rainfall to the Northern Mariana Islands and Guam, causing widespread power blackouts, flooding, and extensive damage to homes and infrastructure.",
+        <Fragment key="Typhoon Sinlaku paragraph 2">
+          In coordination with FEMA and other federal partners, the NASA Disasters Program worked
+          with FEMA, USGS, the American Red Cross and the Centers for Medicare and Medicaid Services
+          to support the U.S. response to the storm. The program shared satellite-based maps and
+          data with partners, including NASA Black Marble data to assess power outages, landslide
+          hazard assessment maps, and imagery from commercial partners – enabled by NASA&apos;s{" "}
+          <Link href="https://science.nasa.gov/earth-science/csda/">
+            Commercial Satellite Data Acquisition Program
+          </Link>{" "}
+          – that provided context and situational awareness. NASA also shared IMERG satellite
+          precipitation data to assess rainfall impacts when ground-based weather radars on the
+          islands were disabled by the storm.
+        </Fragment>,
+      ],
+    },
+    {
+      type: "image",
+      src: "/img/event/typhoon-sinlaku-2026__umbra-guam.webp",
+      alt: "Radar backscatter image of Antonio B Won Pat International Airport in Guam, captured by satellites on April 14, 2026",
+      caption:
+        'Radar backscatter image of Antonio B Won Pat International Airport in Guam, captured by satellites on April 14, 2026. Synthetic aperture radar (SAR) sensors have the ability to "see through" clouds to capture images of homes and infrastructure even in the midst of a hurricane. This image includes copyrighted material of Umbra. All rights reserved. This work utilized data made available through the NASA Commercial Satellite Data Acquisition (CSDA) program.',
+      width: 1920,
+      height: 1080,
+    },
+    {
+      type: "sectionCardGallery",
+      heading: "Event Data Gallery",
+      link: {
+        href: "/data-gallery",
+        label: "View all",
+      },
+      cards: DATA__TYPHOON_SINLAKU_APR_2026,
+    },
+  ],
+};

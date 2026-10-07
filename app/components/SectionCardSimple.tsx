@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 import { Section, type SectionProps } from "@/app/components";
 import type { AppLink } from "@/app/components/AppLink";
 import type { IterableItemWithId } from "@/app/site-config/types";
-import { getGridColumnClass } from "./component.helpers";
+import { getCardSimpleSize, getGridColumnClass } from "./component.helpers";
 
 type SectionCardSimpleProps = SectionProps & {
   sectionHeading?: ReactNode;
@@ -18,13 +18,14 @@ export const SectionCardSimple = ({
   ...sectionProps
 }: SectionCardSimpleProps) => {
   const gridColumnClass = getGridColumnClass(cards.length);
+  const cardSimpleSize = getCardSimpleSize(cards.length);
   return (
     <Section {...sectionProps}>
       {sectionHeading && sectionHeading}
       <div className="grid-row grid-gap-2 margin-bottom-neg-2">
         {cards.map((props) => (
           <div key={props.id} className={`${gridColumnClass} margin-bottom-2 height-card-md`}>
-            <CardSimple {...props} />
+            <CardSimple {...props} size={cardSimpleSize} colorMode="dark" />
           </div>
         ))}
       </div>

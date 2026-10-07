@@ -1,7 +1,8 @@
 import { CARTO_DARK_WITH_LABELS_BASEMAP_STYLE } from "@teamimpact/veda-ui-blocks";
 import { Fragment } from "react";
+
 import { AppLinkStyled } from "@/app/components/AppLink";
-import { DATA } from "@/app/site-config/data";
+import { DATA__TEXAS_FLOODS_JULY_2025 } from "@/app/site-config/data";
 import { TRAINING__EO_BUILDING_EXPOSURE } from "@/app/site-config/training/training__eo-building-exposure";
 import { TRAINING__FUNDAMENTALS_REMOTE_SENSING } from "@/app/site-config/training/training__fundamentals-remote-sensing";
 import { TRAINING__INTRODUCTION_TO_SAR } from "@/app/site-config/training/training__introduction-to-sar";
@@ -20,25 +21,28 @@ export const EVENT__TEXAS_FLOODS_JULY_2025: EventContent = {
   mastheadImage: {
     src: "/img/event/texas-floods-july-2025.webp",
     alt: "Flooded river and neighborhoods in Kerrville, Texas after July 2025 flooding",
-    caption:
-      "UAVSAR data collected from July 9 NASA flights was used to classify the likely areas of flooded developed areas (red), flooded croplands (orange), and areas of open water (blue) around Lake Travis, Texas.",
-    attribution: "NASA",
   },
   themes: ["respond"],
   categories: ["flood"],
-  lastUpdatedDate: "2025-07-09",
-  startDate: "July 4, 2025",
+  datePublished: "2025-07-09",
+  startDate: "2025-07-04",
+  linkUSGovernment: {
+    label: "Learn more",
+    href: "https://www.fema.gov/disaster/4879",
+  },
   region: "Texas, North America",
   body: [
     {
       type: "text",
-      heading: "",
+      heading: "Overview",
       paragraphs: [
         "Beginning July 4, 2025, torrential rainfall from the remnants of Tropical Storm Barry triggered catastrophic flooding across Texas Hill Country, particularly in Kerr County as the Guadalupe River rose rapidly. The floods caused significant loss of life, widespread property damage, power outages, and prompted hundreds of emergency rescues.",
         <Fragment key="texas-floods-july-2025-parargraph-1">
           The NASA Disasters Program activated to support the Texas Department of Emergency
           Management, FEMA Region 6, and the non-profit Save the Children. NASA{" "}
-          <AppLinkStyled href="/news-events/finding-floods">deployed two aircraft</AppLinkStyled>{" "}
+          <AppLinkStyled href="/news-events-stories/finding-floods">
+            deployed two aircraft
+          </AppLinkStyled>{" "}
           over the San Gabriel and Colorado river basins, collecting high-resolution optical imagery
           to support search and rescue operations, and UAVSAR radar imagery to identify flooded
           regions when clouds and trees obscured other sensors. NASA also shared satellite
@@ -56,7 +60,7 @@ export const EVENT__TEXAS_FLOODS_JULY_2025: EventContent = {
           "When flooding struck Texas Hill Country, NASA deployed two specialized aircraft to give responders a clearer picture.",
         callToAction: {
           label: "Learn More",
-          href: "/news-events/finding-floods",
+          href: "/news-events-stories/finding-floods",
         },
         image: {
           alt: "When flooding struck Texas Hill Country, NASA deployed two specialized aircraft to give responders a clearer picture.",
@@ -79,12 +83,20 @@ export const EVENT__TEXAS_FLOODS_JULY_2025: EventContent = {
     },
     {
       type: "sectionCardGallery",
-      heading: "Related Data",
-      cards: DATA,
+      heading: "Event Data Gallery",
+      link: {
+        href: "/data-gallery",
+        label: "View all",
+      },
+      cards: DATA__TEXAS_FLOODS_JULY_2025,
     },
     {
       type: "sectionCardSimple",
       heading: "Resources & Learning",
+      link: {
+        href: "/training",
+        label: "More Resources and Learning",
+      },
       cards: [
         TRAINING__FUNDAMENTALS_REMOTE_SENSING,
         TRAINING__INTRODUCTION_TO_SAR,

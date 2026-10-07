@@ -1,15 +1,43 @@
-import type { InternalContent } from "./types";
+import {
+  type Category,
+  CONTENT_CATEGORIES,
+  CONTENT_THEMES,
+  CONTENT_TYPES,
+  type Content,
+  type ContentType,
+  type ExternalContent,
+  type Theme,
+} from "./types";
 
-export function isInternalContent(c: unknown): c is InternalContent {
+export const isTheme = (value: string): value is Theme => value in CONTENT_THEMES;
+export const isContentType = (value: string): value is ContentType => value in CONTENT_TYPES;
+export const isCategory = (value: string): value is Category =>
+  (CONTENT_CATEGORIES as readonly string[]).includes(value);
+
+/**
+ * Narrows content items to their internal variants, excluding any external (URL-only) types.
+ *
+ * Generic over `T` so that `.filter(isInternalContent)` on a narrower array (e.g.
+ * `(DataStoryContent | DataStoryContentExternal)[]`) returns that same slice minus
+ * the external members.
+ */
+export function isInternalContent<T extends Content>(c: T): c is Exclude<T, ExternalContent> {
+  return !("url" in c); // TODO require body
+}
+
+/**
+ * Narrows an unknown value to a `MastheadImage`-shaped object.
+ * Checks for the two required fields (`src` and `alt`) so that callers can
+ * safely access them after the guard.
+ */
+export function isMastHeadImage(
+  mastheadImage: unknown,
+): mastheadImage is { src: string; alt: string } {
   return (
-    typeof c === "object" &&
-    c !== null &&
-    "id" in c &&
-    "mastheadImage" in c &&
-    "title" in c &&
-    "themes" in c &&
-    "categories" in c &&
-    (!("url" in c) || "body" in c)
+    typeof mastheadImage === "object" &&
+    mastheadImage !== null &&
+    "src" in mastheadImage &&
+    "alt" in mastheadImage
   );
 }
 
@@ -48,3 +76,13 @@ export const getTypedEntries = Object.entries as <T extends object>(
  * Converts object keys to their string literal types.
  */
 type ToStringKey<T> = `${Extract<keyof T, string | number>}`;
+
+/**
+ * Returns a new object containing only the specified keys, preserving their types.
+ *
+ * @example
+ * pickKeys(content, ["id", "title", "url"]);
+ * // => Pick<typeof content, "id" | "title" | "url">
+ */
+export const pickKeys = <T extends object, K extends keyof T>(obj: T, keys: K[]): Pick<T, K> =>
+  Object.fromEntries(keys.map((k) => [k, obj[k]])) as Pick<T, K>;

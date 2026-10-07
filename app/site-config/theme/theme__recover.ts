@@ -1,17 +1,9 @@
-import { CARTO_DARK_WITH_LABELS_BASEMAP_STYLE } from "@teamimpact/veda-ui-blocks";
-import { DATASTORY__LAHAINA_FIRE } from "@/app/site-config/datastory/datastory__lahaina-fire";
-import { DATASTORY__SO2_VOLCANOES } from "@/app/site-config/datastory/datastory__so2-volcanoes";
-import { STORY__CLEARING_THE_WAY_DEBRIS_MAPPING } from "@/app/site-config/story/story__clearing-the-way-debris-mapping";
 import { STORY__ESTIMATING_LOSS_RECOVERY } from "@/app/site-config/story/story__estimating-loss-recovery";
-import { STORY__IDENTIFYING_INFRASTRUCTURE_RISKS_HURRICANE } from "@/app/site-config/story/story__identifying-infrastructure-risks-hurricane";
-import { STORY__MAPPING_OIL_SPILLS_FROM_SPACE } from "@/app/site-config/story/story__mapping_oil_spills_from_space";
 import { TRAINING__EO_BUILDING_EXPOSURE } from "@/app/site-config/training/training__eo-building-exposure";
-import { TRAINING__EO_PRE_POST_FIRE_MONITORING } from "@/app/site-config/training/training__eo-pre-post-fire-monitoring";
 import { TRAINING__FUNDAMENTALS_REMOTE_SENSING } from "@/app/site-config/training/training__fundamentals-remote-sensing";
 import { TRAINING__INTRODUCTION_TO_SAR } from "@/app/site-config/training/training__introduction-to-sar";
+import { TRAINING__PORTAL_101 } from "@/app/site-config/training/training__portal-101";
 import type {
-  DataStoryContent,
-  DataStoryContentExternal,
   EventContent,
   NewsContent,
   StoryContent,
@@ -29,53 +21,34 @@ export const RECOVER_CONTENT: ThemeContent = {
   subtitle: "Assess impacts and rebuild stronger",
   theme: "recover",
   body: [
+    // Interim. The interactive GAIA compare map renders no tiles: veda-ui-blocks
+    // flattens this collection's nested-array colormap into a query titiler rejects (#566).
+    // This is a static render of the same two layers, at the same viewport, through the
+    // collection's own colormap, so the section still shows the data during soft launch.
+    // Restore the map with:
+    //   git show d048ad2 -- app/site-config/theme/theme__recover.ts
     {
-      type: "stacCompare",
+      type: "image",
       heading: "Data Visualization",
-      initialViewState: { longitude: -118.24, latitude: 34.07, zoom: 10 },
-      baseMapStyle: CARTO_DARK_WITH_LABELS_BASEMAP_STYLE,
-      leftLayerConfig: {
-        type: "raster",
-        collectionId: "gaia-january2025-total-composite-tmp",
-        collectionAssetId: "total",
-        dateRange: { from: "2025-01-01", to: "2025-01-01" },
-        hideLegend: true,
-      },
-      rightLayerConfig: {
-        type: "raster",
-        collectionId: "gaia-january2025-wood-composite-tmp",
-        collectionAssetId: "wood",
-        dateRange: { from: "2025-01-01", to: "2025-01-01" },
-      },
+      src: "/img/theme/recover-gaia-building-exposure.webp",
+      alt: "Two side-by-side maps of the Los Angeles basin from the GAIA dataset. The left map shows total built-up area per 100-meter grid cell, densest through the urban core. The right map shows only low-rise, wood-framed structures, which are sparser and more evenly spread across the suburbs. A legend gives the eight built-up area classes, from under 25,000 to over 450,000 square meters.",
+      width: 1640,
+      height: 894,
       caption:
-        "The Global Assessment of Infrastructure Assets (GAIA) is a worldwide gridded building exposure dataset suitable for natural hazard risk analysis. The dataset provides a gridded representation of built-up areas worldwide in square meters. At each pixel, the value is a modeled value that represents total built-up area for the grid cell. It does not represent actual buildings in the grid cell. The left image is the total built up area which aggregates all construction types, durability types, and height categories per grid cell. The right image shows the amount of low-rise (1-3 story), wood-framed structures per grid cell. Each 100x100 meter grid cell represents the total area in square meters.",
+        "The Global Assessment of Infrastructure Assets (GAIA) is a worldwide gridded building exposure dataset suitable for natural hazard risk analysis. The dataset provides a gridded representation of built-up areas worldwide in square meters. At each pixel, the value is a modeled value that represents total built-up area for the grid cell. It does not represent actual buildings in the grid cell. The left image is the total built-up area which aggregates all construction types, durability types, and height categories per grid cell. The right image shows the amount of low-rise (1-3 story), wood-framed structures per grid cell. Each 100x100 meter grid cell represents the total area in square meters.",
     },
   ],
 } as const;
 
 // TODO: these would be fetched based on content id
-export const RECOVER_STORIES: [
-  NewsContent | StoryContent | EventContent,
-  NewsContent | StoryContent | EventContent,
-  NewsContent | StoryContent | EventContent,
-  NewsContent | StoryContent | EventContent,
-] = [
+export const RECOVER_STORIES: (NewsContent | StoryContent | EventContent)[] = [
   STORY__ESTIMATING_LOSS_RECOVERY,
-  STORY__CLEARING_THE_WAY_DEBRIS_MAPPING,
-  STORY__MAPPING_OIL_SPILLS_FROM_SPACE,
-  STORY__IDENTIFYING_INFRASTRUCTURE_RISKS_HURRICANE,
-];
-
-// TODO: these would be fetched based on content id
-export const RECOVER_DATASTORIES: (DataStoryContent | DataStoryContentExternal)[] = [
-  DATASTORY__SO2_VOLCANOES,
-  DATASTORY__LAHAINA_FIRE,
 ];
 
 // TODO: these would be fetched based on content id
 export const RECOVER_TRAININGS: (TrainingContent | TrainingContentExternal)[] = [
+  TRAINING__PORTAL_101,
   TRAINING__EO_BUILDING_EXPOSURE,
   TRAINING__FUNDAMENTALS_REMOTE_SENSING,
   TRAINING__INTRODUCTION_TO_SAR,
-  TRAINING__EO_PRE_POST_FIRE_MONITORING,
 ];

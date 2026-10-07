@@ -8,10 +8,16 @@ export const MOCK_CARD_LETSCONNECT: CardProps = {
   callToAction: {
     label: "Subscribe for Updates",
     href: "https://lp.constantcontactpages.com/sl/ICIOyJI",
+    variant: "arrow",
+    color: "secondary",
+    isExternal: true,
   },
   callToActionSecondary: {
     label: "Contact Our Team",
-    href: "mailto:nasa-disasters-portal-owner@lists.nasa.gov",
+    href: "mailto:disasters@nasa.gov",
+    variant: "arrow",
+    color: "secondary",
+    isExternal: true,
   },
   image: (
     <AppImage
