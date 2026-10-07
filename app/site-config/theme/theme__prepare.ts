@@ -35,8 +35,8 @@ export const PREPARE_CONTENT: ThemeContent = {
       type: "sectionCardSimple",
       heading: "Resources & Learning",
       link: { href: "/training", label: "More Resources and Learning" },
-      cards: [TRAINING__PORTAL_101, TRAINING__MONITORING_PREDICTING_FLOODS].map(
-        (i) => pickKeys(i, ["id", "contentType", "thumbnailImage", "themes", "title", "subtitle"]),
+      cards: [TRAINING__PORTAL_101, TRAINING__MONITORING_PREDICTING_FLOODS].map((i) =>
+        pickKeys(i, ["id", "contentType", "thumbnailImage", "themes", "title", "subtitle"]),
       ),
     },
   ],
