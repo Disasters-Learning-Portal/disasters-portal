@@ -115,6 +115,9 @@ export const STORY__YOUR_COMMUNITY_MAY_HAVE_A_DISASTER_BLIND_SPOT: StoryContent 
       width: 1000,
       height: 2152,
     },
+    // A "Resources & Learning" block belongs here once the four Foresight training videos
+    // (Introduction to the Foresight Tool, How to Incorporate Science into Scenario Exercises,
+    // Intensifying Extremes, Community Capacities) are published and registered under training/.
     {
       type: "text",
       heading: "Connect and Learn More",
