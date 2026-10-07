@@ -58,8 +58,8 @@ const childrenToLabel = <T extends { children: string }>({ children, ...rest }: 
 });
 
 export type CardMastheadPropsArgs = Omit<
-  CardProps,
-  "title" | "image" | "colorMode" | "isMastHead" | "tag" | "callToAction" | "callToActionSecondary"
+  CardProps<typeof AppLink>,
+  "title" | "image" | "colorMode" | "isMastHead" | "tag" | "callToActionSecondary"
 > & {
   mastheadImage:
     | {
@@ -70,10 +70,6 @@ export type CardMastheadPropsArgs = Omit<
   title?: string;
   theme?: Theme;
   datePublished?: DateString;
-  callToAction?: {
-    label: string;
-    href: string;
-  };
 };
 
 export const makeCardMastHeadProps = ({
@@ -98,7 +94,7 @@ export const makeCardMastHeadProps = ({
     ...callToAction,
     variant: "button",
     color: "secondary",
-    as: AppLink,
+    as: callToAction.as ?? AppLink,
   },
   colorMode: "dark",
   isMastHead: true,

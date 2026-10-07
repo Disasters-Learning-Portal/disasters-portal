@@ -27,6 +27,7 @@ export function ContentPageLayout({
   body,
   relatedContent,
   children,
+  isPrintable = false,
 }: {
   masthead: CardProps<typeof AppLink>;
   contentType: ContentType;
@@ -37,6 +38,8 @@ export function ContentPageLayout({
   relatedContent?: RelatedItem[];
   /** Rendered above the body blocks, e.g. the event Overview. */
   children?: ReactNode;
+  /** Opts this page into the print stylesheet; set where a print CTA exists. */
+  isPrintable?: boolean;
 }) {
   return (
     <>
@@ -51,7 +54,7 @@ export function ContentPageLayout({
 
       {body && (
         <Section>
-          <div className="grid-row grid-gap">
+          <div className={`grid-row grid-gap ${isPrintable ? styles.contentPage : ""}`}>
             <div className="grid-col-12 desktop:grid-col-3">
               <div className={styles.aside}>
                 {SHOW_IN_PAGE_NAVIGATION_CONTENT_TYPES.includes(contentType) && (
@@ -73,7 +76,10 @@ export function ContentPageLayout({
               </div>
             </div>
 
-            <div id={PAGE_CONTENT_ID} className="grid-col-12 desktop:grid-col-9">
+            <div
+              id={PAGE_CONTENT_ID}
+              className={`grid-col-12 desktop:grid-col-9 ${isPrintable ? styles.content : ""}`}
+            >
               {children}
               {/* Cancels the first block's own top margin, aligning the body with the sidebar. */}
               <div className="margin-top-neg-7">
