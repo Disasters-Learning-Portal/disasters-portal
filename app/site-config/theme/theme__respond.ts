@@ -6,10 +6,10 @@ import { EVENT__TYPHOON_SINLAKU_APR_2026 } from "@/app/site-config/event/event__
 import { EVENT__US_WINTER_STORM_JAN_2026 } from "@/app/site-config/event/event__us-winter-storm-jan-2026";
 import { EVENT__VENEZUELA_EQ_JUN_2026 } from "@/app/site-config/event/event__venezuela-earthquake-jun-2026";
 import { STORY__FINDING_FLOODS } from "@/app/site-config/story/story__finding-floods";
-import { TRAINING__EO_PRE_POST_FIRE_MONITORING } from "@/app/site-config/training/training__eo-pre-post-fire-monitoring";
 import { TRAINING__FUNDAMENTALS_REMOTE_SENSING } from "@/app/site-config/training/training__fundamentals-remote-sensing";
 import { TRAINING__INTRODUCTION_TO_SAR } from "@/app/site-config/training/training__introduction-to-sar";
 import { TRAINING__LIFELINES_WILDFIRE_WORKFLOW } from "@/app/site-config/training/training__lifelines-wildfire-workflow";
+import { TRAINING__PORTAL_101 } from "@/app/site-config/training/training__portal-101";
 import type {
   DataStoryContent,
   DataStoryContentExternal,
@@ -78,8 +78,8 @@ export const RESPOND_DATASTORIES: (DataStoryContent | DataStoryContentExternal)[
 
 // TODO: these would be fetched based on content id
 export const RESPOND_TRAININGS: (TrainingContent | TrainingContentExternal)[] = [
+  TRAINING__PORTAL_101,
   TRAINING__LIFELINES_WILDFIRE_WORKFLOW,
   TRAINING__FUNDAMENTALS_REMOTE_SENSING,
   TRAINING__INTRODUCTION_TO_SAR,
-  TRAINING__EO_PRE_POST_FIRE_MONITORING,
 ];
