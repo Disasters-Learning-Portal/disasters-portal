@@ -45,7 +45,9 @@ export default async function DataItemPage(props: PageProps<"/data-gallery/[id]"
       masthead={makeCardMastHeadProps({
         mastheadImage,
         title,
-        callToAction: exploreDataUrl ? { label: "Explore Data", href: exploreDataUrl } : undefined,
+        callToAction: exploreDataUrl
+          ? { label: "Explore Data", href: exploreDataUrl, isExternal: true }
+          : undefined,
       })}
       contentType={contentType}
       themes={themes}
