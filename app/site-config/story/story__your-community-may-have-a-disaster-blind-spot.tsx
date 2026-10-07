@@ -1,5 +1,6 @@
 import { Link } from "@teamimpact/veda-ui-blocks";
 import { Fragment } from "react";
+
 import type { StoryContent } from "@/app/site-config/types";
 
 export const STORY__YOUR_COMMUNITY_MAY_HAVE_A_DISASTER_BLIND_SPOT: StoryContent = {
