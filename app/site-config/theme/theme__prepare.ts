@@ -1,9 +1,9 @@
 import { STORY__YOUR_COMMUNITY_MAY_HAVE_A_DISASTER_BLIND_SPOT } from "@/app/site-config/story/story__your-community-may-have-a-disaster-blind-spot";
+import { TRAINING__PORTAL_101 } from "@/app/site-config/training/training__portal-101";
 import { pickKeys } from "@/app/site-config/typed.helpers";
 import type { ThemeContent } from "@/app/site-config/types";
 import { TRAINING__FUNDAMENTALS_REMOTE_SENSING } from "../training/training__fundamentals-remote-sensing";
 import { TRAINING__MONITORING_PREDICTING_FLOODS } from "../training/training__monitoring-predicting-floods";
-import { TRAINING__PORTAL_101 } from "@/app/site-config/training/training__portal-101";
 
 export const PREPARE_CONTENT: ThemeContent = {
   id: "prepare",
