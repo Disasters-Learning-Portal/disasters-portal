@@ -14,6 +14,7 @@
   }
 }
 
+/* biome-ignore-start lint/complexity/noImportantStyles: use important for print styles only */
 /*
  * Printing a content page. The page prints itself: the chrome drops away, the
  * two-column grid becomes block flow -- which puts the in-page navigation above
@@ -70,6 +71,7 @@
     /* On paper the @page margin is the gutter, so the container needs none. */
     :global(section) {
       margin-top: var(--unit-4) !important;
+      margin-bottom: var(--unit-205) !important;
     }
 
     :global(.grid-container) {
@@ -204,10 +206,6 @@
       }
     }
 
-    :global(section) {
-      margin-bottom: var(--unit-205) !important;
-    }
-
     /* Replaces `.usa-list`'s `padding-left: 3ch`, tied to the font's digit width. */
     :global(ul) {
       margin-left: var(--unit-9);
@@ -220,3 +218,4 @@
     }
   }
 }
+/* biome-ignore-end lint/complexity/noImportantStyles: use important for print styles only */
