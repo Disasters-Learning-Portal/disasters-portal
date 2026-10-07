@@ -1,8 +1,8 @@
 import { STORY__ESTIMATING_LOSS_RECOVERY } from "@/app/site-config/story/story__estimating-loss-recovery";
 import { TRAINING__EO_BUILDING_EXPOSURE } from "@/app/site-config/training/training__eo-building-exposure";
-import { TRAINING__EO_PRE_POST_FIRE_MONITORING } from "@/app/site-config/training/training__eo-pre-post-fire-monitoring";
 import { TRAINING__FUNDAMENTALS_REMOTE_SENSING } from "@/app/site-config/training/training__fundamentals-remote-sensing";
 import { TRAINING__INTRODUCTION_TO_SAR } from "@/app/site-config/training/training__introduction-to-sar";
+import { TRAINING__PORTAL_101 } from "@/app/site-config/training/training__portal-101";
 import type {
   EventContent,
   NewsContent,
@@ -47,8 +47,8 @@ export const RECOVER_STORIES: (NewsContent | StoryContent | EventContent)[] = [
 
 // TODO: these would be fetched based on content id
 export const RECOVER_TRAININGS: (TrainingContent | TrainingContentExternal)[] = [
+  TRAINING__PORTAL_101,
   TRAINING__EO_BUILDING_EXPOSURE,
   TRAINING__FUNDAMENTALS_REMOTE_SENSING,
   TRAINING__INTRODUCTION_TO_SAR,
-  TRAINING__EO_PRE_POST_FIRE_MONITORING,
 ];

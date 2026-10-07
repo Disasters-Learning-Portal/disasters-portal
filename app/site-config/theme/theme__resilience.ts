@@ -2,6 +2,7 @@ import { STORY__HELPING_HAMPTON_ROADS_FACE_THE_FLOODS } from "@/app/site-config/
 import { pickKeys } from "@/app/site-config/typed.helpers";
 import type { ThemeContent } from "@/app/site-config/types";
 import { TRAINING__EO_BUILDING_EXPOSURE } from "../training/training__eo-building-exposure";
+import { TRAINING__PORTAL_101 } from "@/app/site-config/training/training__portal-101";
 import { TRAINING__SEA_LEVEL_CHANGE_TOOLS } from "../training/training__sea-level-change-tools";
 
 export const RESILIENCE_CONTENT: ThemeContent = {
@@ -35,7 +36,7 @@ export const RESILIENCE_CONTENT: ThemeContent = {
       type: "sectionCardSimple",
       heading: "Resources & Learning",
       link: { href: "/training", label: "More Resources and Learning" },
-      cards: [TRAINING__SEA_LEVEL_CHANGE_TOOLS, TRAINING__EO_BUILDING_EXPOSURE].map((i) =>
+      cards: [TRAINING__PORTAL_101, TRAINING__SEA_LEVEL_CHANGE_TOOLS, TRAINING__EO_BUILDING_EXPOSURE].map((i) =>
         pickKeys(i, ["id", "contentType", "thumbnailImage", "themes", "title", "subtitle"]),
       ),
     },
