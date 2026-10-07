@@ -35,9 +35,7 @@ export const RESILIENCE_CONTENT: ThemeContent = {
       type: "sectionCardSimple",
       heading: "Resources & Learning",
       link: { href: "/training", label: "More Resources and Learning" },
-      cards: [TRAINING__PORTAL_101, TRAINING__SEA_LEVEL_CHANGE_TOOLS].map((i) =>
-        pickKeys(i, ["id", "contentType", "thumbnailImage", "themes", "title", "subtitle"]),
-      ),
+      cards: [TRAINING__PORTAL_101, TRAINING__SEA_LEVEL_CHANGE_TOOLS],
     },
   ],
 } as const;
