@@ -1,5 +1,4 @@
 import { TRAINING__SEA_LEVEL_CHANGE_TOOLS } from "@/app/site-config/training/training__sea-level-change-tools";
-import { pickKeys } from "@/app/site-config/typed.helpers";
 import type { StoryContent } from "@/app/site-config/types";
 
 export const STORY__HELPING_HAMPTON_ROADS_FACE_THE_FLOODS: StoryContent = {
@@ -201,9 +200,7 @@ export const STORY__HELPING_HAMPTON_ROADS_FACE_THE_FLOODS: StoryContent = {
       type: "sectionCardSimple",
       heading: "Resources & Learning",
       link: { href: "/training", label: "More Resources and Learning" },
-      cards: [TRAINING__SEA_LEVEL_CHANGE_TOOLS].map((i) =>
-        pickKeys(i, ["id", "contentType", "thumbnailImage", "themes", "title", "subtitle"]),
-      ),
+      cards: [TRAINING__SEA_LEVEL_CHANGE_TOOLS],
     },
   ],
 };
