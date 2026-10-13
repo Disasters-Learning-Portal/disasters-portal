@@ -1,5 +1,6 @@
 import type { EventContent } from "@/app/site-config/types";
 import { EVENT__HURRICANE_HELENE_SEPT_2024 } from "./event__hurricane-helene-sept-2024";
+import { EVENT__HURRICANE_ISAIAS_OCT_2026 } from "./event__hurricane-isaias-oct-2026";
 import { EVENT__HURRICANE_MILTON_OCT_2024 } from "./event__hurricane-milton-oct-2024";
 import { EVENT__SOUTHERN_CALIFORNIA_FIRE_JAN_2025 } from "./event__southern-california-fire-jan-2025";
 import { EVENT__TEXAS_FLOODS_JULY_2025 } from "./event__texas-floods-july-2025";
@@ -8,6 +9,7 @@ import { EVENT__US_WINTER_STORM_JAN_2026 } from "./event__us-winter-storm-jan-20
 import { EVENT__VENEZUELA_EQ_JUN_2026 } from "./event__venezuela-earthquake-jun-2026";
 
 export const EVENTS: EventContent[] = [
+  EVENT__HURRICANE_ISAIAS_OCT_2026,
   EVENT__VENEZUELA_EQ_JUN_2026,
   EVENT__TYPHOON_SINLAKU_APR_2026,
   EVENT__US_WINTER_STORM_JAN_2026,
