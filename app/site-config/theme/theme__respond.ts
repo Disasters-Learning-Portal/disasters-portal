@@ -2,9 +2,9 @@ import { CARTO_DARK_WITH_LABELS_BASEMAP_STYLE } from "@teamimpact/veda-ui-blocks
 import { DATASTORY__TOOLS_YOU_CAN_USE_MAPPING_FLOOD_IMPACTS } from "@/app/site-config/datastory/datastory__tools-you-can-use-mapping-flood-impacts";
 import { withBasePath } from "@/app/site-config/env.helpers";
 import { EVENT__HURRICANE_ISAIAS_OCT_2026 } from "@/app/site-config/event/event__hurricane-isaias-oct-2026";
-import { EVENT__TEXAS_FLOODS_JULY_2025 } from "@/app/site-config/event/event__texas-floods-july-2025";
 import { EVENT__TYPHOON_SINLAKU_APR_2026 } from "@/app/site-config/event/event__typhoon-sinlaku-apr-2026";
 import { EVENT__US_WINTER_STORM_JAN_2026 } from "@/app/site-config/event/event__us-winter-storm-jan-2026";
+import { EVENT__VENEZUELA_EQ_JUN_2026 } from "@/app/site-config/event/event__venezuela-earthquake-jun-2026";
 import { STORY__FINDING_FLOODS } from "@/app/site-config/story/story__finding-floods";
 import { TRAINING__FUNDAMENTALS_REMOTE_SENSING } from "@/app/site-config/training/training__fundamentals-remote-sensing";
 import { TRAINING__INTRODUCTION_TO_SAR } from "@/app/site-config/training/training__introduction-to-sar";
@@ -66,9 +66,9 @@ export const RESPOND_STORIES: (NewsContent | StoryContent | EventContent)[] = [
 // TODO: these would be fetched based on content id
 export const RESPOND_EVENTS: EventContent[] = [
   EVENT__HURRICANE_ISAIAS_OCT_2026,
+  EVENT__VENEZUELA_EQ_JUN_2026,
   EVENT__TYPHOON_SINLAKU_APR_2026,
   EVENT__US_WINTER_STORM_JAN_2026,
-  EVENT__TEXAS_FLOODS_JULY_2025,
 ];
 
 // TODO: these would be fetched based on content id
