@@ -5,7 +5,7 @@ export const EVENT__HURRICANE_ISAIAS_OCT_2026: EventContent = {
   id: "hurricane-isaias-oct-2026",
   contentType: "event",
   title: "Hurricane Isaias October 2026",
-    description:
+  description:
     "Hurricane Isaias made landfall in the Southeastern United States, prompting NASA to support federal response partners to assess flooding, power outages, and other storm impacts in the region.",
   datePublished: "2026-10-26",
   thumbnailImage: {
