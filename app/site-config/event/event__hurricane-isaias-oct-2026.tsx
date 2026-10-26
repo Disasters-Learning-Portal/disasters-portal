@@ -18,7 +18,7 @@ export const EVENT__HURRICANE_ISAIAS_OCT_2026: EventContent = {
   },
   themes: ["respond"],
   categories: ["tropical cyclone", "flood"],
-  region: "Florida, Alabama", "Georgia", "South Carolina",
+  region: "Florida, Alabama, Georgia, South Carolina",
   startDate: "2026-10-09",
   linkUSGovernment: {
     label: "Learn more",
