@@ -24,7 +24,7 @@ Let's use this issue to coordinate work across teams, track handoffs, and monito
 - Static Image:
 - Static Image caption:
 - EGIS Data Gallery Page URL: <!-- Example: https://gis.earthdata.nasa.gov/portal/home/group.html?sortField=added&sortOrder=desc&id=15f22eae89184fb38eaa2118b957bfe9#content -->
-- Data Gallery layers needed (list):
+- Data Gallery layers needed (list): <!-- See available `DATA` layers for reference: https://github.com/Disasters-Learning-Portal/disasters-portal/blob/e09e42f48164e4c1dfc42eb3d8e186f8a682523b/app/site-config/data/index.ts#L63-->
 - Hazards (list): <!-- Options: cyclone, earthquake, fire, flood, heat, hurricane, landslide, severe weather, tropical cyclone, tsunami, typhoon, volcano, winter weather -->
 - Locations impacted (list):
 

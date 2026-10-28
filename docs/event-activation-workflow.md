@@ -32,7 +32,19 @@ sequenceDiagram
         loop Data Products Ingestion
             Disasters->>Leads: Alert when new data product is ready
             Leads->>Data: Dispatch data ingestion
-            Data-->>Data: Ingest data into STAC & populate Data Gallery
+            Data-->>Data: Checkpoint: Does the data layer exist?
+                alt YES
+                    Data-->>Data: Ingest data into STAC
+                    Data->>Plugins: Alert when new data is ready
+                    Plugins-->>Plugins: Update dynamic visualization layers
+                else NO
+                    note over Data: Automatic ingestion is not possible
+                    Data->>Leads: Flag new data layer for scoping
+                    Leads->>Disasters: Request new data layer requirements
+                    Disasters->>Leads: Provide requirements
+                    Leads->>Data: Hand off scoped requirements
+                    Data-->>Data: Configure new layer, then ingest
+                end
             Data->>Plugins: Alert when new data product is ready
             Plugins-->>Plugins: Update dynamic visualization layers
         end
