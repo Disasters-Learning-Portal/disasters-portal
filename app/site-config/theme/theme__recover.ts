@@ -29,7 +29,7 @@ export const RECOVER_CONTENT: ThemeContent = {
       initialViewState: {
         longitude: -118.24,
         latitude: 34.07,
-        zoom: 10,
+        zoom: 8,
       },
       baseMapStyle: CARTO_DARK_WITH_LABELS_BASEMAP_STYLE,
       leftLayerConfig: {
@@ -52,7 +52,7 @@ export const RECOVER_CONTENT: ThemeContent = {
         },
         link: {
           label: "Learn More",
-          href: withBasePath("/data-gallery/gaia"),
+          href: withBasePath("/data-gallery/gaia-infrastructure-assets"),
         },
       },
       caption:
