@@ -17,4 +17,4 @@ type: bug
 
 1.
 
-## Evidennce <!-- screenshots or video recording -->
+## Evidence <!-- screenshots or video recording -->
