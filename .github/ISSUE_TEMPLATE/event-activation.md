@@ -17,32 +17,32 @@ Let's use this issue to coordinate work across teams, track handoffs, and monito
 
 \*\* Not yet in the schema
 
-### **Minimum Required** (by the code or the program)
+### **Minimum Required** (by the code or [the program])
 
-| Item                    | `EventContent` field       | formatting                           | value   |
-| ----------------------- | -------------------------- | ------------------------------------ | ------- |
-| Name                    | `title`                    | ---                                  |         |
-| Description             | `description`              | ---                                  |         |
-| Activation Date         | `startDate`                | YYYY-MM-DD                           |         |
-| Overview summary        | Overview `paragraphs`      | ---                                  |         |
-| Locations impacted      | `region`                   | comma-delimited                      |         |
-| EGIS Gallery Page URL   | `egisDataGalleryUrl` \*\*  | ---                                  |         |
-| Theme                   | `themes`                   | ---                                  | respond |
-| Hazards                 | `categories`               | comma-delimited, see Hazards options |         |
-| Data                    | Event Data Gallery `cards` | comma-delimited                      |         |
-| Thumbnail Image URL     | `thumbnailImage.src`       | ---                                  |         |
-| Thumbnail Image caption | `thumbnailImage.alt`       | ---                                  |         |
-| Masthead Image URL      | `mastheadImage.src`        | ---                                  |         |
-| Masthead Image caption  | `mastheadImage.alt`        | ---                                  |         |
+| Header                      | `EventContent` field       | formatting                           | value   |
+| --------------------------- | -------------------------- | ------------------------------------ | ------- |
+| Event Name                  | `title`                    | ---                                  |         |
+| Sub-title                   | `description`              | ---                                  |         |
+| Activation Date             | `startDate`                | YYYY-MM-DD                           |         |
+| Intro descriptive paragraph | Overview `paragraphs`      | ---                                  |         |
+| Locations impacted          | `region`                   | comma-delimited                      |         |
+| EGIS Gallery Page URL       | `egisDataGalleryUrl` \*\*  | ---                                  |         |
+| Theme                       | `themes`                   | ---                                  | respond |
+| Hazards                     | `categories`               | comma-delimited, see Hazards options |         |
+| Data                        | Event Data Gallery `cards` | comma-delimited                      |         |
+| Thumbnail Image URL         | `thumbnailImage.src`       | ---                                  |         |
+| Thumbnail Image caption     | `thumbnailImage.alt`       | ---                                  |         |
+| Masthead Image URL          | `mastheadImage.src`        | ---                                  |         |
+| Masthead Image caption      | `mastheadImage.alt`        | ---                                  |         |
 
 ### **Optional** (could be updated at a later date)
 
-| Item                    | `EventContent` field     | formatting | value      |
-| ----------------------- | ------------------------ | ---------- | ---------- |
-| Published Date          | `datePublished`          | YYYY-MM-DD |            |
-| End (Deactivation) Date | `endActivationDate` \*\* | YYYY-MM-DD |            |
-| Government link label   | `linkUSGovernment.label` | ---        | Learn more |
-| Government link         | `linkUSGovernment.href`  | ---        |            |
+| Item                            | `EventContent` field     | formatting | value      |
+| ------------------------------- | ------------------------ | ---------- | ---------- |
+| Published Date                  | `datePublished`          | YYYY-MM-DD |            |
+| End (Deactivation) Date         | `endActivationDate` \*\* | YYYY-MM-DD |            |
+| What the US Gov't is doing link | `linkUSGovernment.href`  | ---        |            |
+| Government link label           | `linkUSGovernment.label` | ---        | Learn more |
 
 ### **Reference**
 
@@ -68,3 +68,4 @@ Let's use this issue to coordinate work across teams, track handoffs, and monito
 [STAC]: https://disasters.openveda.cloud/api/stac/
 [Visualization Tool]: https://science.data.nasa.gov/disasters/data-visualization
 [Event Activation Workflow]: https://github.com/Disasters-Learning-Portal/disasters-portal/blob/develop/docs/event-activation-workflow.md
+[the program]: https://docs.google.com/spreadsheets/d/1lSkzn-j_RWV-m-MX997WhDQsRau5cdfT9UVnEMDakv4/edit?gid=0#gid=0
