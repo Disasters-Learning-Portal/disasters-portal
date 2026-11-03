@@ -43,6 +43,8 @@ Let's use this issue to coordinate work across teams, track handoffs, and monito
 | End (Deactivation) Date         | `endActivationDate` \*\* | YYYY-MM-DD |            |
 | What the US Gov't is doing link | `linkUSGovernment.href`  | ---        |            |
 | Government link label           | `linkUSGovernment.label` | ---        | Learn more |
+| FEMA link                       | `linkDHSFEMA.href`       | ---        | Learn more |
+| FEMA link label                 | `linkDHSFEMA.label`      | ---        | Learn more |
 
 ### **Reference**
 
@@ -53,7 +55,7 @@ Let's use this issue to coordinate work across teams, track handoffs, and monito
 
 ## Tasks per Team
 
-- [ ] [Portal] New `Event` Page with initial event information
+- [ ] [Leads] New `Event` Page with initial event information
 - [ ] [Data Services] Ingest the data and notify Plugins team when available.
 - [ ] [Plugins] Update the Visualization Tool as needed.
 - [ ] [Leads] Review that the event and associated data are accessible and functioning as expected.
