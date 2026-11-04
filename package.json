@@ -17,7 +17,7 @@
     "dead-code": "fallow dead-code"
   },
   "dependencies": {
-    "@teamimpact/veda-ui-blocks": "0.1.0-beta.25",
+    "@teamimpact/veda-ui-blocks": "0.1.0-beta.26",
     "next": "16.2.6",
     "react": "19.2.3",
     "react-dom": "19.2.3"
