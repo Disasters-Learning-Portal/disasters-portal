@@ -11,9 +11,6 @@ importers:
 
   .:
     dependencies:
-      '@tanstack/react-query':
-        specifier: ^5.99.0
-        version: 5.100.9(react@19.2.3)
       '@teamimpact/veda-ui-blocks':
         specifier: 0.1.0-beta.25
         version: 0.1.0-beta.25(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)

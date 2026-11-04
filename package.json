@@ -17,7 +17,6 @@
     "dead-code": "fallow dead-code"
   },
   "dependencies": {
-    "@tanstack/react-query": "^5.99.0",
     "@teamimpact/veda-ui-blocks": "0.1.0-beta.25",
     "@trussworks/react-uswds": "^11.0.0",
     "@uswds/uswds": "^3.13.0",
