@@ -1,7 +1,7 @@
 /**
  * Environment-specific URLs.
  *
- * All three are required at build time. There is no fallback: an unset
+ * All four are required at build time. There is no fallback: an unset
  * variable fails the build so a deployment can never silently have a missing required url.
  * See `.env.example` for local values and the README for
  * how Amplify and Github supply them.
@@ -30,6 +30,15 @@ export const STAC_API_URL = requireEnvVariable(
 export const RASTER_API_URL = requireEnvVariable(
   "NEXT_PUBLIC_RASTER_API_URL",
   process.env.NEXT_PUBLIC_RASTER_API_URL,
+);
+
+/**
+ * GSA Digital Analytics Program (DAP) script URL. Non-production builds append
+ * `dapdev=true` so their traffic goes to the DAP test property, not production.
+ */
+export const DAP_SCRIPT_SRC = requireEnvVariable(
+  "NEXT_PUBLIC_DAP_SCRIPT_SRC",
+  process.env.NEXT_PUBLIC_DAP_SCRIPT_SRC,
 );
 
 /** Defines an optional site base path when deployed to a subpath */
