@@ -77,19 +77,7 @@ export const DATASTORY__TOOLS_YOU_CAN_USE_MAPPING_FLOOD_IMPACTS: DataStoryConten
           that identifies existing waterways, urban areas, croplands, and forests, GIS specialists
           can flag where identified waters may be impacting urban and agricultural areas. NASA also
           produces daily flood hazard and surface water products using the MODIS instrument aboard
-          NASA’s Aqua and Terra satellites, available as{" "}
-          <Link href="https://maps.disasters.nasa.gov/arcgis/home/item.html?id=1f874c2210064c05a904fd46f1bf5dc2">
-            1-day
-          </Link>
-          ,{" "}
-          <Link href="https://maps.disasters.nasa.gov/arcgis/home/item.html?id=f7178cdbcc434ff09538999ab5ce8d83">
-            2-day
-          </Link>
-          , and{" "}
-          <Link href="https://maps.disasters.nasa.gov/arcgis/home/item.html?id=b33741d95e924507b75b334f16ec23f1">
-            3-day
-          </Link>{" "}
-          composites.
+          NASA’s Aqua and Terra satellites.
         </Fragment>,
         "The HydroSAR product suite includes radiometrically terrain corrected (RTC) polarization imagery (co- and cross-pole: VV/VH) and false color Red Green Blue (RGB) composite imagery derived from the dual-pol (VV/VH) RTC products. The RGB imagery is designed to highlight areas of water, vegetation and urban areas, similar to how users would view visible satellite imagery. SAR data can also be used in before-after comparisons, including change detection or time series, but this requires additional processing.",
         <Fragment key="hydrosar-credits">
