@@ -13,7 +13,8 @@
     "pretypecheck": "next typegen",
     "typecheck": "tsc --noEmit",
     "format": "biome format --write .",
-    "prepare": "lefthook install"
+    "prepare": "lefthook install",
+    "dead-code": "fallow dead-code"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.99.0",
@@ -36,6 +37,7 @@
     "@types/node": "^20.19.37",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "fallow": "^3.39.0",
     "lefthook": "^2.1.6",
     "typescript": "5.9.3"
   }
