@@ -14,9 +14,6 @@ importers:
       '@teamimpact/veda-ui-blocks':
         specifier: 0.1.0-beta.25
         version: 0.1.0-beta.25(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
-      '@trussworks/react-uswds':
-        specifier: ^11.0.0
-        version: 11.0.1(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(@uswds/uswds@3.13.0)(focus-trap-react@11.0.6(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@uswds/uswds':
         specifier: ^3.13.0
         version: 3.13.0
