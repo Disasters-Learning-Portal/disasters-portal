@@ -170,7 +170,9 @@ export type ContentBlock =
 /**
  * Content dates, authored as `YYYY-MM-DD` and formatted at render time.
  *
- * Each date means something different (agreed with Disasters in #550):
+ * Each date means something different, as agreed with Disasters in
+ * https://github.com/Disasters-Learning-Portal/disasters-portal/issues/550#issuecomment-5834904436
+ *
  * - `datePublished` ("Published:"): day a one-off piece went live. Never changes.
  *   News, Story, Data story.
  * - `dateUpdated` ("Updated:"): last time a living page changed. Bump it on every
