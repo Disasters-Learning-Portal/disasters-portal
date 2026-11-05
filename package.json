@@ -13,18 +13,14 @@
     "pretypecheck": "next typegen",
     "typecheck": "tsc --noEmit",
     "format": "biome format --write .",
-    "prepare": "lefthook install"
+    "prepare": "lefthook install",
+    "dead-code": "fallow dead-code"
   },
   "dependencies": {
-    "@tanstack/react-query": "^5.99.0",
-    "@teamimpact/veda-ui-blocks": "0.1.0-beta.25",
-    "@trussworks/react-uswds": "^11.0.0",
-    "@uswds/uswds": "^3.13.0",
-    "maplibre-gl": "^5.23.0",
+    "@teamimpact/veda-ui-blocks": "0.1.0-beta.26",
     "next": "16.4.1",
     "react": "19.2.3",
-    "react-dom": "19.2.3",
-    "react-map-gl": "^8.1.1"
+    "react-dom": "19.2.3"
   },
   "pnpm": {
     "overrides": {
@@ -36,6 +32,7 @@
     "@types/node": "^20.19.37",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "fallow": "^3.39.0",
     "lefthook": "^2.1.6",
     "typescript": "5.9.3"
   }
