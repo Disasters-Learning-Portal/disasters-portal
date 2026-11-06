@@ -4,7 +4,7 @@ import "@teamimpact/veda-ui-blocks/hds.css";
 
 import { HeaderWithCurrentPath } from "@/app/components";
 import { AppLink } from "@/app/components/AppLink";
-import { withBasePath } from "@/app/site-config/env.helpers";
+import { DAP_SCRIPT_SRC, withBasePath } from "@/app/site-config/env.helpers";
 import { MOCK_FOOTER_PROPS } from "@/app/site-config/footer";
 
 export const metadata: Metadata = {
@@ -27,6 +27,10 @@ export default function RootLayout({
         } as React.CSSProperties
       }
     >
+      <head>
+        {/* GSA Digital Analytics Program. id must stay "_fed_an_ua_tag": DAP reads its params via it */}
+        <script id="_fed_an_ua_tag" async type="text/javascript" src={DAP_SCRIPT_SRC} />
+      </head>
       <body
         className="minh-viewport"
         style={{

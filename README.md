@@ -24,7 +24,7 @@ Deploys are managed through Amplify and CloudFront (contacts: @amarouane-ABDELHA
 
 ## Environment URLs
 
-Three env vars are **required** (see .env.example). A missing one fails `typecheck` and `pnpm build` on purpose. See `app/site-config/env.helpers.ts`.
+Four env vars are **required** (see .env.example). A missing one fails `typecheck` and `pnpm build` on purpose. See `app/site-config/env.helpers.ts`.
 
 - **Local:** copy `.env.example` to `.env.local`. Next.js reads `.env.local` automatically. All .env files but .env.example are gitignored.
 - **Pull request checks:** `.github/workflows/pr-checks.yml` values are set in GitHub repository variables within repo Settings and should be synced with those provided in .env.example
@@ -36,6 +36,11 @@ Three env vars are **required** (see .env.example). A missing one fails `typeche
 | `NEXT_PUBLIC_DATA_VISUALIZATION_URL` | `https://dev.disasters.openveda.cloud/disasters/data-visualization` | `https://science.data.nasa.gov/disasters/data-visualization` |
 | `NEXT_PUBLIC_STAC_API_URL` | `https://dev.disasters.openveda.cloud/api/stac` | `https://disasters.openveda.cloud/api/stac` |
 | `NEXT_PUBLIC_RASTER_API_URL` | `https://dev.disasters.openveda.cloud/api/raster` | `https://disasters.openveda.cloud/api/raster` |
+| `NEXT_PUBLIC_DAP_SCRIPT_SRC` | `https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=NASA&subagency=GSFC&dapdev=true` | `https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=NASA&subagency=GSFC` |
+
+### Analytics (DAP) dev mode
+
+The [GSA Digital Analytics Program](https://github.com/digital-analytics-program/gov-wide-code/wiki/DAP-Quick-Technical-Guide) script loads in the root layout `<head>`, so it covers every page. Every non-production URL ends in `dapdev=true`, so local, PR preview, and `develop` traffic goes to the DAP test property and never reaches production analytics. Only `main` uses the URL without it.
 
 ### Why the visualization URL uses a different host in dev and prod
 
