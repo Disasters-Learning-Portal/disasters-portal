@@ -16,7 +16,7 @@ export const TRAINING__PORTAL_101: TrainingContent = {
     src: "/img/training/portal-101.webp",
     alt: "False-color satellite imagery of a city and surrounding terrain, as displayed in the Custom Visualization Tool",
   },
-  datePublished: "2026-10-02",
+  dateUpdated: "2026-10-02",
   themes: ["prepare", "respond", "recover", "resilience"],
   categories: [],
   mastheadImage: {

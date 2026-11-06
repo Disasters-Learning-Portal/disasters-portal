@@ -23,7 +23,8 @@ Let's use this issue to coordinate work across teams, track handoffs, and monito
 | --------------------------- | -------------------------- | ------------------------------------ | ------- |
 | Event Name                  | `title`                    | ---                                  |         |
 | Sub-title                   | `description`              | ---                                  |         |
-| Activation Date             | `startDate`                | YYYY-MM-DD                           |         |
+| Activation Date             | `startDate`                | YYYY-MM-DD, NASA response start      |         |
+| Page Updated Date           | `dateUpdated`              | YYYY-MM-DD, last page change         |         |
 | Intro descriptive paragraph | Overview `paragraphs`      | ---                                  |         |
 | Locations impacted          | `region`                   | comma-delimited                      |         |
 | EGIS Gallery Page URL       | `egisDataGalleryUrl` \*\*  | ---                                  |         |
@@ -39,7 +40,6 @@ Let's use this issue to coordinate work across teams, track handoffs, and monito
 
 | Item                            | `EventContent` field     | formatting | value      |
 | ------------------------------- | ------------------------ | ---------- | ---------- |
-| Published Date                  | `datePublished`          | YYYY-MM-DD |            |
 | End (Deactivation) Date         | `endActivationDate` \*\* | YYYY-MM-DD |            |
 | What the US Gov't is doing link | `linkUSGovernment.href`  | ---        |            |
 | Government link label           | `linkUSGovernment.label` | ---        | Learn more |

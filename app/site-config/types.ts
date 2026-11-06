@@ -170,6 +170,18 @@ export type ContentBlock =
 /**
  * Content dates, authored as `YYYY-MM-DD` and formatted at render time.
  *
+ * Each date means something different, as agreed with Disasters in
+ * https://github.com/Disasters-Learning-Portal/disasters-portal/issues/550#issuecomment-5834904436
+ *
+ * - `datePublished` ("Published:"): day a one-off piece went live. Never changes.
+ *   News, Story, Data story.
+ * - `dateUpdated` ("Updated:"): last time a living page changed. Bump it on every
+ *   content edit. Event, Training.
+ * - `startDate` (events only, sidebar): day NASA Disasters began responding. Describes
+ *   the disaster, not the page. MMGIS uses it too.
+ *
+ * Published/Updated show on the masthead only, never on cards.
+ *
  * Checks shape, not the calendar: 2026-02-30 passes. Years stay at 20xx to keep
  * the union small enough for TypeScript to represent (ts2590).
  */
@@ -192,7 +204,6 @@ export type InternalCardContent = {
   themes: Theme[];
   categories: Category[];
   description?: string;
-  datePublished?: DateString;
 };
 
 export type ExternalCardContent = InternalCardContent & { url: string };
@@ -201,7 +212,7 @@ export type GalleryCardContent = InternalCardContent | ExternalCardContent;
 
 export type TrainingContent = Omit<InternalCardContent, "contentType"> & {
   contentType: "training";
-  datePublished: DateString;
+  dateUpdated: DateString;
   mastheadImage: MastheadImage;
   body?: ContentBlock[]; // TODO: require body
   relatedContent?: string[];
@@ -223,18 +234,21 @@ export type DataContent = Omit<InternalCardContent, "contentType"> & {
 
 export type NewsContent = Omit<InternalCardContent, "contentType"> & {
   contentType: "news";
+  datePublished: DateString;
   mastheadImage: MastheadImage;
   body?: ContentBlock[]; // TODO: require body
 };
 
 export type StoryContent = Omit<InternalCardContent, "contentType"> & {
   contentType: "story";
+  datePublished: DateString;
   mastheadImage: MastheadImage;
   body?: ContentBlock[]; // TODO: require body
 };
 
 export type DataStoryContent = Omit<InternalCardContent, "contentType"> & {
   contentType: "datastory";
+  datePublished: DateString;
   mastheadImage: MastheadImage;
   body?: ContentBlock[]; // TODO: require body
 };
@@ -245,6 +259,7 @@ export type DataStoryContentExternal = Omit<ExternalCardContent, "contentType"> 
 
 export type EventContent = Omit<InternalCardContent, "contentType"> & {
   contentType: "event";
+  dateUpdated: DateString;
   mastheadImage: MastheadImage;
   isLatest?: boolean;
   startDate: DateString;

@@ -55,7 +55,7 @@ sequenceDiagram
         end
         opt Text & Content Updates
             Disasters->>Portal: Request text updates for Event Page
-            Portal-->>Portal: Update Event Page text & metadata
+            Portal-->>Portal: Update Event Page text & metadata, bump dateUpdated
             note over Portal: M-F
         end
     end

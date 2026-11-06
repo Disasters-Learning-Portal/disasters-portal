@@ -14,7 +14,7 @@ export default async function TrainingItemPage(props: PageProps<"/training/[id]"
 
   const {
     contentType,
-    datePublished,
+    dateUpdated,
     mastheadImage,
     title,
     subtitle,
@@ -30,7 +30,7 @@ export default async function TrainingItemPage(props: PageProps<"/training/[id]"
         mastheadImage,
         title,
         subtitle,
-        datePublished,
+        dateUpdated,
         callToAction: pdfLink && { ...pdfLink, as: PrintLink },
       })}
       contentType={contentType}
