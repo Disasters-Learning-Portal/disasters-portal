@@ -15,8 +15,6 @@ Let's use this issue to coordinate work across teams, track handoffs, and monito
 
 ## Event Details
 
-\*\* Not yet in the schema
-
 ### **Minimum Required** (by the code or [the program])
 
 | Header                      | `EventContent` field       | formatting                           | value   |
