@@ -38,8 +38,8 @@ export const makeTextTagProps = (
   ...tagProps,
 });
 
-const makeDateTagProps = (date: DateString) =>
-  childrenToLabel(makeTextTagProps(`Published: ${toNASAStyleDate(date)}`));
+const makeDateTagProps = (label: "Published" | "Updated", date: DateString) =>
+  childrenToLabel(makeTextTagProps(`${label}: ${toNASAStyleDate(date)}`));
 
 export const makeThemeTagProps = (tag: Theme) => {
   const { label } = CONTENT_THEMES[tag];
@@ -70,6 +70,7 @@ export type CardMastheadPropsArgs = Omit<
   title?: string;
   theme?: Theme;
   datePublished?: DateString;
+  dateUpdated?: DateString;
 };
 
 export const makeCardMastHeadProps = ({
@@ -78,6 +79,7 @@ export const makeCardMastHeadProps = ({
   subtitle,
   theme,
   datePublished,
+  dateUpdated,
   callToAction,
   ...rest
 }: CardMastheadPropsArgs): CardProps<typeof AppLink> => ({
@@ -87,7 +89,9 @@ export const makeCardMastHeadProps = ({
   ) : (
     mastheadImage
   ),
-  tag: datePublished && makeDateTagProps(datePublished),
+  tag: datePublished
+    ? makeDateTagProps("Published", datePublished)
+    : dateUpdated && makeDateTagProps("Updated", dateUpdated),
   title: title ?? (theme ? CONTENT_THEMES[theme].label : undefined),
   description: subtitle,
   callToAction: callToAction && {
