@@ -12,6 +12,7 @@
     "lint:ci": "biome ci .",
     "pretypecheck": "next typegen",
     "typecheck": "tsc --noEmit",
+    "test": "vitest run",
     "format": "biome format --write .",
     "prepare": "lefthook install",
     "dead-code": "fallow dead-code"
@@ -34,6 +35,7 @@
     "@types/react-dom": "^19",
     "fallow": "^3.39.0",
     "lefthook": "^2.1.6",
-    "typescript": "5.9.3"
+    "typescript": "5.9.3",
+    "vitest": "^4.1.12"
   }
 }
