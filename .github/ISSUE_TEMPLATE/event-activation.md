@@ -48,6 +48,7 @@ Let's use this issue to coordinate work across teams, track handoffs, and monito
 
 ### **Reference**
 
+- Field specs for [`EventContent`](https://github.com/Disasters-Learning-Portal/disasters-portal/blob/develop/docs/content-specs/event.md)
 - Example [EGIS Data Gallery Page URL](https://gis.earthdata.nasa.gov/portal/home/group.html?id=15f22eae89184fb38eaa2118b957bfe9)
 - Possible [`DATA` layers](https://github.com/Disasters-Learning-Portal/disasters-portal/blob/main/app/site-config/data/index.ts)
 - Possible Hazard options are [`CONTENT_CATEGORIES`](https://github.com/Disasters-Learning-Portal/disasters-portal/blob/main/app/site-config/types.ts)

@@ -169,18 +169,8 @@ export type ContentBlock =
 
 /**
  * Content dates, authored as `YYYY-MM-DD` and formatted at render time.
- *
- * Each date means something different, as agreed with Disasters in
+ * What each date means was agreed with Disasters in
  * https://github.com/Disasters-Learning-Portal/disasters-portal/issues/550#issuecomment-5834904436
- *
- * - `datePublished` ("Published:"): day a one-off piece went live. Never changes.
- *   News, Story, Data story.
- * - `dateUpdated` ("Updated:"): last time a living page changed. Bump it on every
- *   content edit. Event, Training.
- * - `startDate` (events only, sidebar): day NASA Disasters began responding. Describes
- *   the disaster, not the page. MMGIS uses it too.
- *
- * Published/Updated show on the masthead only, never on cards.
  *
  * Checks shape, not the calendar: 2026-02-30 passes. Years stay at 20xx to keep
  * the union small enough for TypeScript to represent (ts2590).
@@ -192,17 +182,63 @@ type MM = `0${OneToNine}` | `1${0 | 1 | 2}`;
 type DD = `0${OneToNine}` | `${1 | 2}${ZeroToNine}` | `3${0 | 1}`;
 export type DateString = `${YYYY}-${MM}-${DD}`;
 
+type PublishedContent = {
+  /**
+   * When this content went live. (This date will not change.) Shown only on the masthead.
+   * @label Published
+   */
+  datePublished: DateString;
+};
+type UpdatedContent = {
+  /**
+   * Last time this content changed. (Update on every edit.) Shown only on the masthead.
+   * @label Updated
+   */
+  dateUpdated: DateString;
+};
+
 export type InternalCardContent = {
+  /**
+   * Lowercase words separated by hyphens; usually a shortened title.
+   * @label URL slug
+   */
   id: string;
+  /**
+   * @label TYPE
+   */
   contentType: ContentType;
+  /**
+   * Shown on the masthead and on every card, so it must fit the narrowest card or expect it to be truncated.
+   * @label Title
+   * @maxLength 100
+   * @recommendedLength 75
+   */
   title: string;
+  /**
+   * Added temporarily to triage a few extra long titles.
+   * @deprecated
+   */
   subtitle?: string;
   thumbnailImage: {
+    /**
+     * Used in Cards. Follow the guidelines in [images.md](images.md)
+     */
     src: string;
     alt: string;
   };
+  /**
+   * @label NEED
+   */
   themes: Theme[];
+  /**
+   * @label HAZARD
+   */
   categories: Category[];
+  /**
+   * Shown on cards, except for Event pages, where its shown on the masthead.
+   * @maxLength 200
+   * @recommendedLength 150
+   */
   description?: string;
 };
 
@@ -210,14 +246,14 @@ export type ExternalCardContent = InternalCardContent & { url: string };
 
 export type GalleryCardContent = InternalCardContent | ExternalCardContent;
 
-export type TrainingContent = Omit<InternalCardContent, "contentType"> & {
-  contentType: "training";
-  dateUpdated: DateString;
-  mastheadImage: MastheadImage;
-  body?: ContentBlock[]; // TODO: require body
-  relatedContent?: string[];
-  pdfLink?: { label: string; href: string };
-};
+export type TrainingContent = Omit<InternalCardContent, "contentType"> &
+  UpdatedContent & {
+    contentType: "training";
+    mastheadImage: MastheadImage;
+    body?: ContentBlock[]; // TODO: require body
+    relatedContent?: string[];
+    pdfLink?: { label: string; href: string };
+  };
 
 export type TrainingContentExternal = Omit<ExternalCardContent, "contentType"> & {
   contentType: "training";
@@ -232,43 +268,65 @@ export type DataContent = Omit<InternalCardContent, "contentType"> & {
   exploreDataUrl?: string;
 };
 
-export type NewsContent = Omit<InternalCardContent, "contentType"> & {
-  contentType: "news";
-  datePublished: DateString;
-  mastheadImage: MastheadImage;
-  body?: ContentBlock[]; // TODO: require body
-};
+export type NewsContent = Omit<InternalCardContent, "contentType"> &
+  PublishedContent & {
+    contentType: "news";
+    mastheadImage: MastheadImage;
+    body?: ContentBlock[]; // TODO: require body
+  };
 
-export type StoryContent = Omit<InternalCardContent, "contentType"> & {
-  contentType: "story";
-  datePublished: DateString;
-  mastheadImage: MastheadImage;
-  body?: ContentBlock[]; // TODO: require body
-};
+export type StoryContent = Omit<InternalCardContent, "contentType"> &
+  PublishedContent & {
+    contentType: "story";
+    mastheadImage: MastheadImage;
+    body?: ContentBlock[]; // TODO: require body
+  };
 
-export type DataStoryContent = Omit<InternalCardContent, "contentType"> & {
-  contentType: "datastory";
-  datePublished: DateString;
-  mastheadImage: MastheadImage;
-  body?: ContentBlock[]; // TODO: require body
-};
+export type DataStoryContent = Omit<InternalCardContent, "contentType"> &
+  PublishedContent & {
+    contentType: "datastory";
+    mastheadImage: MastheadImage;
+    body?: ContentBlock[]; // TODO: require body
+  };
 
 export type DataStoryContentExternal = Omit<ExternalCardContent, "contentType"> & {
   contentType: "datastory";
 };
 
-export type EventContent = Omit<InternalCardContent, "contentType"> & {
-  contentType: "event";
-  dateUpdated: DateString;
-  mastheadImage: MastheadImage;
-  isLatest?: boolean;
-  startDate: DateString;
-  region: string;
-  linkDHSFEMA?: { label: string; href: string };
-  linkUSGovernment?: { label: string; href: string };
-  body?: ContentBlock[]; // TODO: require body
-  relatedContent?: string[];
-};
+export type EventContent = Omit<InternalCardContent, "contentType"> &
+  UpdatedContent & {
+    contentType: "event";
+    mastheadImage: MastheadImage;
+    /** Adds the `active` tag to the event's card, except in the gallery. */
+    isLatest?: boolean;
+    /**
+     * Activation Date: when NASA Disasters began responding to the Disaster.
+     * @label Start Date
+     */
+    startDate: DateString;
+    /**
+     * Locations impacted. Comma-delimited list. Shown in the sidebar.
+     * @label Region
+     */
+    region: string;
+    /**
+     * Shown in the event overview.
+     * @label What DHS and FEMA are doing
+     */
+    linkDHSFEMA?: { label: string; href: string };
+    /**
+     * Shown in the event overview.
+     * @label What the U.S. government is doing
+     */
+    linkUSGovernment?: { label: string; href: string };
+    /**
+     * Example [EGIS Data Gallery Page URL](https://gis.earthdata.nasa.gov/portal/home/group.html?id=15f22eae89184fb38eaa2118b957bfe9)
+     */
+    egisDataGalleryUrl?: string;
+    body?: ContentBlock[]; // TODO: require body
+    /** IDs of related content. Not shown on event pages yet. */
+    relatedContent?: string[];
+  };
 
 export type InternalContent =
   | DataContent
@@ -294,6 +352,9 @@ export type ThemeContent = {
 };
 
 type MastheadImage = {
+  /**
+   * Follow the guidelines in [images.md](images.md)
+   */
   src: string;
   alt: string;
 };
