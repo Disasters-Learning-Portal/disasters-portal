@@ -27,7 +27,7 @@ Let's use this issue to coordinate work across teams, track handoffs, and monito
 | Page Updated Date           | `dateUpdated`              | YYYY-MM-DD, last page change         |         |
 | Intro descriptive paragraph | Overview `paragraphs`      | ---                                  |         |
 | Locations impacted          | `region`                   | comma-delimited                      |         |
-| EGIS Gallery Page URL       | `egisDataGalleryUrl` \*\*  | ---                                  |         |
+| EGIS Gallery Page URL       | `egisDataGalleryUrl`       | ---                                  |         |
 | Theme                       | `themes`                   | ---                                  | respond |
 | Hazards                     | `categories`               | comma-delimited, see Hazards options |         |
 | Data                        | Event Data Gallery `cards` | comma-delimited                      |         |
@@ -43,7 +43,7 @@ Let's use this issue to coordinate work across teams, track handoffs, and monito
 | End (Deactivation) Date         | `endActivationDate` \*\* | YYYY-MM-DD |            |
 | What the US Gov't is doing link | `linkUSGovernment.href`  | ---        |            |
 | Government link label           | `linkUSGovernment.label` | ---        | Learn more |
-| FEMA link                       | `linkDHSFEMA.href`       | ---        | Learn more |
+| FEMA link                       | `linkDHSFEMA.href`       | ---        |            |
 | FEMA link label                 | `linkDHSFEMA.label`      | ---        | Learn more |
 
 ### **Reference**

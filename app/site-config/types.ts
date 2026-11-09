@@ -320,6 +320,7 @@ export type EventContent = Omit<InternalCardContent, "contentType"> &
      */
     linkUSGovernment?: { label: string; href: string };
     /**
+     * Provided by the Disasters team as part of an Event Activation.
      * Example [EGIS Data Gallery Page URL](https://gis.earthdata.nasa.gov/portal/home/group.html?id=15f22eae89184fb38eaa2118b957bfe9)
      */
     egisDataGalleryUrl?: string;
