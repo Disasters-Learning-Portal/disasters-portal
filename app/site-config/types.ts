@@ -301,12 +301,17 @@ export type EventContent = Omit<InternalCardContent, "contentType"> &
     isLatest?: boolean;
     /**
      * Activation Date: when NASA Disasters began responding to the Disaster.
-     * @label Start Date
+     * @label START DATE
      */
     startDate: DateString;
     /**
+     * End Activation Date: when NASA Disasters stops responding to the Disaster.
+     * @label END DATE
+     */
+    endActivationDate?: DateString;
+    /**
      * Locations impacted. Comma-delimited list. Shown in the sidebar.
-     * @label Region
+     * @label REGION
      */
     region: string;
     /**

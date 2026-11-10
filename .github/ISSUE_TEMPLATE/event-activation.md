@@ -38,7 +38,7 @@ Let's use this issue to coordinate work across teams, track handoffs, and monito
 
 | Item                            | `EventContent` field     | formatting | value      |
 | ------------------------------- | ------------------------ | ---------- | ---------- |
-| End (Deactivation) Date         | `endActivationDate` \*\* | YYYY-MM-DD |            |
+| End (Deactivation) Date         | `endActivationDate`      | YYYY-MM-DD |            |
 | What the US Gov't is doing link | `linkUSGovernment.href`  | ---        |            |
 | Government link label           | `linkUSGovernment.label` | ---        | Learn more |
 | FEMA link                       | `linkDHSFEMA.href`       | ---        |            |

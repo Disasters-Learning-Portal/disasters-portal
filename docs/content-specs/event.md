@@ -17,10 +17,11 @@
 | `mastheadImage.src` |  | Yes | string |  | Follow the guidelines in [images.md](images.md) |
 | `mastheadImage.alt` |  | Yes | string |  |  |
 | `isLatest` |  | No | boolean |  | Adds the `active` tag to the event's card, except in the gallery. |
-| `startDate` | Start Date | Yes | Date (YYYY-MM-DD) |  | Activation Date: when NASA Disasters began responding to the Disaster. |
-| `region` | Region | Yes | string |  | Locations impacted. Comma-delimited list. Shown in the sidebar. |
+| `startDate` | START DATE | Yes | Date (YYYY-MM-DD) |  | Activation Date: when NASA Disasters began responding to the Disaster. |
+| `endActivationDate` | END DATE | No | Date (YYYY-MM-DD) |  | End Activation Date: when NASA Disasters stops responding to the Disaster. |
+| `region` | REGION | Yes | string |  | Locations impacted. Comma-delimited list. Shown in the sidebar. |
 | `linkDHSFEMA` | What DHS and FEMA are doing | No | Link (label and href) |  | Shown in the event overview. |
 | `linkUSGovernment` | What the U.S. government is doing | No | Link (label and href) |  | Shown in the event overview. |
-| `egisDataGalleryUrl` |  | No | string |  | Example [EGIS Data Gallery Page URL](https://gis.earthdata.nasa.gov/portal/home/group.html?id=15f22eae89184fb38eaa2118b957bfe9) |
+| `egisDataGalleryUrl` |  | No | string |  | Provided by the Disasters team as part of an Event Activation. Example [EGIS Data Gallery Page URL](https://gis.earthdata.nasa.gov/portal/home/group.html?id=15f22eae89184fb38eaa2118b957bfe9) |
 | `body` |  | No | Content blocks (see blocks table) |  |  |
 | `relatedContent` |  | No | string[] |  | IDs of related content. Not shown on event pages yet. |
