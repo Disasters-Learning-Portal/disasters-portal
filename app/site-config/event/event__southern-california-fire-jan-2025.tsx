@@ -18,6 +18,14 @@ export const EVENT__SOUTHERN_CALIFORNIA_FIRE_JAN_2025: EventContent = {
     src: "/img/event/southern-california-fire-jan-2025.webp",
     alt: "Infrared satellite imagery of the Palisades fire in Malibu, CA, from Jan. 12, 2025.",
   },
+  horizontalImage: {
+    src: "/img/event/southern-california-fire-jan-2025.webp",
+    alt: "Infrared satellite imagery of the Palisades fire in Malibu, CA, from Jan. 12, 2025.",
+  },
+  verticalImage: {
+    src: "/img/event/southern-california-fire-jan-2025.webp",
+    alt: "Infrared satellite imagery of the Palisades fire in Malibu, CA, from Jan. 12, 2025.",
+  },
   mastheadImage: {
     src: "/img/event/southern-california-fire-jan-2025.webp",
     alt: "Infrared satellite imagery of the Palisades fire in Malibu, CA, from Jan. 12, 2025.",

@@ -16,6 +16,16 @@ export const DATA__OPERA_DIST_ALERT_GEN_DIST_STATUS: DataContent = {
     alt: "OPERA DIST-ALERT disturbance status over the Texas Hill Country after the July 2025 floods",
   },
 
+  horizontalImage: {
+    src: "/img/data/opera-dist-alert-gen-dist-status.webp",
+    alt: "OPERA DIST-ALERT disturbance status over the Texas Hill Country after the July 2025 floods",
+  },
+
+  verticalImage: {
+    src: "/img/data/opera-dist-alert-gen-dist-status.webp",
+    alt: "OPERA DIST-ALERT disturbance status over the Texas Hill Country after the July 2025 floods",
+  },
+
   mastheadImage: {
     src: "/img/data/opera-dist-alert-gen-dist-status.webp",
     alt: "OPERA DIST-ALERT disturbance status over the Texas Hill Country after the July 2025 floods",

@@ -16,6 +16,16 @@ export const DATA__NISAR_GUNW_DISPLACEMENT: DataContent = {
     alt: "NISAR GUNW surface displacement imagery",
   },
 
+  horizontalImage: {
+    src: "/img/data/nisar-gunw-displacement.webp",
+    alt: "NISAR GUNW surface displacement imagery",
+  },
+
+  verticalImage: {
+    src: "/img/data/nisar-gunw-displacement.webp",
+    alt: "NISAR GUNW surface displacement imagery",
+  },
+
   mastheadImage: {
     src: "/img/data/nisar-gunw-displacement.webp",
     alt: "NISAR GUNW surface displacement imagery",

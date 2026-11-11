@@ -11,6 +11,14 @@ export const NEWS__DRIVING_HUMANITARIAN_INNOVATION_EARTH_SCIENCE: NewsContent = 
     src: "/img/news/driving-humanitarian-innovation.webp",
     alt: "A brightly colored NASA Lifelines mural depicting a satellite, a city street and metro bus, a bird in flight, children pointing at a map of Washington, D.C., and a group of people working together under a satellite map",
   },
+  horizontalImage: {
+    src: "/img/news/driving-humanitarian-innovation.webp",
+    alt: "A brightly colored NASA Lifelines mural depicting a satellite, a city street and metro bus, a bird in flight, children pointing at a map of Washington, D.C., and a group of people working together under a satellite map",
+  },
+  verticalImage: {
+    src: "/img/news/driving-humanitarian-innovation.webp",
+    alt: "A brightly colored NASA Lifelines mural depicting a satellite, a city street and metro bus, a bird in flight, children pointing at a map of Washington, D.C., and a group of people working together under a satellite map",
+  },
   mastheadImage: {
     src: "/img/news/driving-humanitarian-innovation.webp",
     alt: "A brightly colored NASA Lifelines mural depicting a satellite, a city street and metro bus, a bird in flight, children pointing at a map of Washington, D.C., and a group of people working together under a satellite map",

@@ -18,6 +18,16 @@ export const EVENT__US_WINTER_STORM_JAN_2026: EventContent = {
     alt: "Hazard pattern swirls in shades of blue",
   },
 
+  horizontalImage: {
+    src: "/img/event/us-winter-storm-jan-2026-hero.webp",
+    alt: "Hazard pattern swirls in shades of blue",
+  },
+
+  verticalImage: {
+    src: "/img/event/us-winter-storm-jan-2026-hero.webp",
+    alt: "Hazard pattern swirls in shades of blue",
+  },
+
   mastheadImage: {
     src: "/img/event/us-winter-storm-jan-2026-hero.webp",
     alt: "Hazard pattern swirls in shades of blue",

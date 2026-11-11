@@ -16,6 +16,16 @@ export const DATA__SENTINEL_2_MNDWI: DataContent = {
     alt: "Sentinel-2 Modified Normalized Difference Water Index (MNDWI)",
   },
 
+  horizontalImage: {
+    src: "/img/data/sentinel-2-mndwi.webp",
+    alt: "Sentinel-2 Modified Normalized Difference Water Index (MNDWI)",
+  },
+
+  verticalImage: {
+    src: "/img/data/sentinel-2-mndwi.webp",
+    alt: "Sentinel-2 Modified Normalized Difference Water Index (MNDWI)",
+  },
+
   mastheadImage: {
     src: "/img/data/sentinel-2-mndwi.webp",
     alt: "Sentinel-2 Modified Normalized Difference Water Index (MNDWI)",

@@ -15,6 +15,16 @@ export const DATA__WB57_DYNAMITE: DataContent = {
     alt: "NASA's high-altitude WB-57 aircraft with the DyNAMITE instrument affixed to its nose",
   },
 
+  horizontalImage: {
+    src: "/img/data/wb57-dynamite.webp",
+    alt: "NASA's high-altitude WB-57 aircraft with the DyNAMITE instrument affixed to its nose",
+  },
+
+  verticalImage: {
+    src: "/img/data/wb57-dynamite.webp",
+    alt: "NASA's high-altitude WB-57 aircraft with the DyNAMITE instrument affixed to its nose",
+  },
+
   mastheadImage: {
     src: "/img/data/wb57-dynamite.webp",
     alt: "NASA's high-altitude WB-57 aircraft with the DyNAMITE instrument affixed to its nose",

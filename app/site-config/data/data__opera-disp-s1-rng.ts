@@ -16,6 +16,16 @@ export const DATA__OPERA_DISP_S1_RNG: DataContent = {
     alt: "OPERA DISP-S1 radar line-of-sight range change imagery",
   },
 
+  horizontalImage: {
+    src: "/img/data/opera-disp-s1-rng.webp",
+    alt: "OPERA DISP-S1 radar line-of-sight range change imagery",
+  },
+
+  verticalImage: {
+    src: "/img/data/opera-disp-s1-rng.webp",
+    alt: "OPERA DISP-S1 radar line-of-sight range change imagery",
+  },
+
   mastheadImage: {
     src: "/img/data/opera-disp-s1-rng.webp",
     alt: "OPERA DISP-S1 radar line-of-sight range change imagery",

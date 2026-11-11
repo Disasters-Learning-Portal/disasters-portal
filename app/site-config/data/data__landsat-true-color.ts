@@ -16,6 +16,16 @@ export const DATA__LANDSAT_TRUE_COLOR: DataContent = {
     alt: "Landsat True Color imagery example",
   },
 
+  horizontalImage: {
+    src: "/img/data/landsat-true-color.webp",
+    alt: "Landsat True Color imagery example",
+  },
+
+  verticalImage: {
+    src: "/img/data/landsat-true-color.webp",
+    alt: "Landsat True Color imagery example",
+  },
+
   mastheadImage: {
     src: "/img/data/landsat-true-color.webp",
     alt: "Landsat True Color imagery example",

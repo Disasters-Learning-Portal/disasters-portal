@@ -10,6 +10,14 @@ export const TRAINING__INTRODUCTION_TO_SAR: TrainingContentExternal = {
     src: "/img/training/introduction-to-sar.webp",
     alt: "HydroSAR flood mapping over Memphis, Tennessee",
   },
+  horizontalImage: {
+    src: "/img/training/introduction-to-sar.webp",
+    alt: "HydroSAR flood mapping over Memphis, Tennessee",
+  },
+  verticalImage: {
+    src: "/img/training/introduction-to-sar.webp",
+    alt: "HydroSAR flood mapping over Memphis, Tennessee",
+  },
   url: "https://www.earthdata.nasa.gov/learn/trainings/introduction-synthetic-aperture-radar-sar-its-applications",
   themes: ["prepare"],
   categories: [],
