@@ -167,40 +167,12 @@ export type ContentBlock =
       card: Omit<CardFeaturedPropsArgs, "title"> & { title: string };
     };
 
-/**
- * Content dates, authored as `YYYY-MM-DD` and formatted at render time.
- *
- * Each date means something different, as agreed with Disasters in
- * https://github.com/Disasters-Learning-Portal/disasters-portal/issues/550#issuecomment-5834904436
- *
- * - `datePublished` ("Published:"): day a one-off piece went live. Never changes.
- *   News, Story, Data story.
- * - `dateUpdated` ("Updated:"): last time a living page changed. Bump it on every
- *   content edit. Event, Training.
- * - `startDate` (events only, sidebar): day NASA Disasters began responding. Describes
- *   the disaster, not the page. MMGIS uses it too.
- *
- * Published/Updated show on the masthead only, never on cards.
- *
- * Checks shape, not the calendar: 2026-02-30 passes. Years stay at 20xx to keep
- * the union small enough for TypeScript to represent (ts2590).
- */
-type OneToNine = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
-type ZeroToNine = 0 | OneToNine;
-type YYYY = `20${ZeroToNine}${ZeroToNine}`;
-type MM = `0${OneToNine}` | `1${0 | 1 | 2}`;
-type DD = `0${OneToNine}` | `${1 | 2}${ZeroToNine}` | `3${0 | 1}`;
-export type DateString = `${YYYY}-${MM}-${DD}`;
-
 export type InternalCardContent = {
   id: string;
   contentType: ContentType;
   title: string;
   subtitle?: string;
-  thumbnailImage: {
-    src: string;
-    alt: string;
-  };
+  thumbnailImage: Image;
   themes: Theme[];
   categories: Category[];
   description?: string;
@@ -213,7 +185,7 @@ export type GalleryCardContent = InternalCardContent | ExternalCardContent;
 export type TrainingContent = Omit<InternalCardContent, "contentType"> & {
   contentType: "training";
   dateUpdated: DateString;
-  mastheadImage: MastheadImage;
+  mastheadImage: Image;
   body?: ContentBlock[]; // TODO: require body
   relatedContent?: string[];
   pdfLink?: { label: string; href: string };
@@ -225,7 +197,7 @@ export type TrainingContentExternal = Omit<ExternalCardContent, "contentType"> &
 
 export type DataContent = Omit<InternalCardContent, "contentType"> & {
   contentType: "data";
-  mastheadImage: MastheadImage;
+  mastheadImage: Image;
   body?: ContentBlock[]; // TODO: require body
   relatedContent?: string[];
   /** The sidebar CTA renders only when this is set. */
@@ -235,21 +207,21 @@ export type DataContent = Omit<InternalCardContent, "contentType"> & {
 export type NewsContent = Omit<InternalCardContent, "contentType"> & {
   contentType: "news";
   datePublished: DateString;
-  mastheadImage: MastheadImage;
+  mastheadImage: Image;
   body?: ContentBlock[]; // TODO: require body
 };
 
 export type StoryContent = Omit<InternalCardContent, "contentType"> & {
   contentType: "story";
   datePublished: DateString;
-  mastheadImage: MastheadImage;
+  mastheadImage: Image;
   body?: ContentBlock[]; // TODO: require body
 };
 
 export type DataStoryContent = Omit<InternalCardContent, "contentType"> & {
   contentType: "datastory";
   datePublished: DateString;
-  mastheadImage: MastheadImage;
+  mastheadImage: Image;
   body?: ContentBlock[]; // TODO: require body
 };
 
@@ -260,7 +232,7 @@ export type DataStoryContentExternal = Omit<ExternalCardContent, "contentType"> 
 export type EventContent = Omit<InternalCardContent, "contentType"> & {
   contentType: "event";
   dateUpdated: DateString;
-  mastheadImage: MastheadImage;
+  mastheadImage: Image;
   isLatest?: boolean;
   startDate: DateString;
   region: string;
@@ -288,14 +260,30 @@ export type ThemeContent = {
   id: string;
   title?: string;
   subtitle: string;
-  mastheadImage: MastheadImage;
+  mastheadImage: Image;
   theme: Theme;
   body: ContentBlock[];
 };
 
-type MastheadImage = {
+/**
+ * Utility Types
+ */
+
+export type IterableItemWithId<T> = T & { id: string };
+
+export type Image = {
   src: string;
   alt: string;
 };
 
-export type IterableItemWithId<T> = T & { id: string };
+/**
+ * Content dates, authored as `YYYY-MM-DD` and formatted at render time.
+ * Checks shape, not the calendar: 2026-02-30 passes. Years stay at 20xx to keep
+ * the union small enough for TypeScript to represent (ts2590).
+ */
+type OneToNine = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
+type ZeroToNine = 0 | OneToNine;
+type YYYY = `20${ZeroToNine}${ZeroToNine}`;
+type MM = `0${OneToNine}` | `1${0 | 1 | 2}`;
+type DD = `0${OneToNine}` | `${1 | 2}${ZeroToNine}` | `3${0 | 1}`;
+export type DateString = `${YYYY}-${MM}-${DD}`;
