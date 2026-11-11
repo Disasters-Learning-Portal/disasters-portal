@@ -10,6 +10,14 @@ export const RESILIENCE_CONTENT: ThemeContent = {
     alt: "A tower crane rises over high-rise buildings under construction, silhouetted against a city skyline at sunset.",
     src: "/img/theme/resilience-masthead.webp",
   },
+  horizontalImage: {
+    alt: "A tower crane rises over high-rise buildings under construction, silhouetted against a city skyline at sunset.",
+    src: "/img/theme/resilience-masthead.webp",
+  },
+  verticalImage: {
+    alt: "A tower crane rises over high-rise buildings under construction, silhouetted against a city skyline at sunset.",
+    src: "/img/theme/resilience-masthead.webp",
+  },
   subtitle: "Safeguard communities for enduring impact",
   theme: "resilience",
   body: [

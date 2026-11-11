@@ -263,6 +263,8 @@ export type ThemeContent = {
   title?: string;
   subtitle: string;
   mastheadImage: Image;
+  horizontalImage: Image;
+  verticalImage: Image;
   theme: Theme;
   body: ContentBlock[];
 };
