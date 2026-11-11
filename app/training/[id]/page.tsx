@@ -27,7 +27,7 @@ export default async function TrainingItemPage(props: PageProps<"/training/[id]"
   return (
     <ContentPageLayout
       masthead={makeCardMastHeadProps({
-        mastheadImage,
+        image: mastheadImage,
         title,
         subtitle,
         dateUpdated,

@@ -25,7 +25,7 @@ export const transformEventToPageMastHeadProps = (
   const { dateUpdated, mastheadImage, title, subtitle, description } = event;
 
   return makeCardMastHeadProps({
-    mastheadImage,
+    image: mastheadImage,
     title,
     subtitle: subtitle ?? description,
     dateUpdated,
