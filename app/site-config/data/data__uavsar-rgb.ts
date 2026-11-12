@@ -26,11 +26,6 @@ export const DATA__UAVSAR_RGB: DataContent = {
     alt: "UAVSAR false color polarimetric radar swaths over central Florida collected October 14, 2024, with vegetation in green, inundated vegetation in pink, and smooth surfaces and open water in black",
   },
 
-  mastheadImage: {
-    src: "/img/data/uavsar-rgb.webp",
-    alt: "UAVSAR false color polarimetric radar swaths over central Florida collected October 14, 2024, with vegetation in green, inundated vegetation in pink, and smooth surfaces and open water in black",
-  },
-
   themes: ["respond", "recover"],
 
   categories: ["flood", "tropical cyclone", "severe weather"],
