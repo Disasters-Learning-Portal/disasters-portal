@@ -158,11 +158,11 @@ describe("makeCardCarouselProps", () => {
 });
 
 describe("makeCardMastHeadProps", () => {
-  const mastheadImage = { src: "/masthead.jpg", alt: "Masthead" };
+  const image = { src: "/masthead.jpg", alt: "Masthead" };
 
   it("shows the published date over the updated date", () => {
     const props = makeCardMastHeadProps({
-      mastheadImage,
+      image,
       title: "Title",
       datePublished: "2026-01-05",
       dateUpdated: "2026-02-10",
@@ -172,7 +172,7 @@ describe("makeCardMastHeadProps", () => {
 
   it("shows the updated date when there is no published date", () => {
     const props = makeCardMastHeadProps({
-      mastheadImage,
+      image,
       title: "Title",
       dateUpdated: "2026-02-10",
     });
@@ -180,6 +180,6 @@ describe("makeCardMastHeadProps", () => {
   });
 
   it("falls back to the theme label when there is no title", () => {
-    expect(makeCardMastHeadProps({ mastheadImage, theme: "recover" }).title).toBe("Recover");
+    expect(makeCardMastHeadProps({ image, theme: "recover" }).title).toBe("Recover");
   });
 });

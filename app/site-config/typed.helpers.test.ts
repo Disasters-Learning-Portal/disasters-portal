@@ -4,8 +4,8 @@ import {
   getTypedEntries,
   isCategory,
   isContentType,
+  isImage,
   isInternalContent,
-  isMastHeadImage,
   isTheme,
   pickKeys,
   typedMap,
@@ -57,16 +57,16 @@ describe("isInternalContent", () => {
   });
 });
 
-describe("isMastHeadImage", () => {
+describe("isImage", () => {
   it("is true for an object with src and alt", () => {
-    expect(isMastHeadImage({ src: "/a.jpg", alt: "A" })).toBe(true);
+    expect(isImage({ src: "/a.jpg", alt: "A" })).toBe(true);
   });
 
   it("is false when src or alt is missing, or the value is not an object", () => {
-    expect(isMastHeadImage({ src: "/a.jpg" })).toBe(false);
-    expect(isMastHeadImage({ alt: "A" })).toBe(false);
-    expect(isMastHeadImage(null)).toBe(false);
-    expect(isMastHeadImage("/a.jpg")).toBe(false);
+    expect(isImage({ src: "/a.jpg" })).toBe(false);
+    expect(isImage({ alt: "A" })).toBe(false);
+    expect(isImage(null)).toBe(false);
+    expect(isImage("/a.jpg")).toBe(false);
   });
 });
 
