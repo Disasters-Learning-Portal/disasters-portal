@@ -26,11 +26,6 @@ export const DATA__OPERA_DSWX: DataContent = {
     alt: "OPERA Dynamic Surface Water Extent (DSWx) water map",
   },
 
-  mastheadImage: {
-    src: "/img/data/opera-dswx.webp",
-    alt: "OPERA Dynamic Surface Water Extent (DSWx) water map",
-  },
-
   themes: ["respond", "recover", "prepare"],
 
   categories: ["flood", "tropical cyclone", "severe weather"],

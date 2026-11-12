@@ -26,11 +26,6 @@ export const DATA__SENTINEL_2_NATURAL_COLOR: DataContent = {
     alt: "Sentinel-2 natural color imagery",
   },
 
-  mastheadImage: {
-    src: "/img/data/sentinel-2-natural-color.webp",
-    alt: "Sentinel-2 natural color imagery",
-  },
-
   themes: ["respond", "resilience", "prepare", "recover"],
 
   categories: [

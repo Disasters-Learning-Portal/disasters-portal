@@ -19,10 +19,6 @@ export const DATA__AVIRIS_3_QUICKLOOK_COLOR_IMAGERY: DataContent = {
     src: "/img/data/aviris-3-quicklook-color-imagery.webp",
     alt: "AVIRIS-3 Quicklook False Color imagery example",
   },
-  mastheadImage: {
-    src: "/img/data/aviris-3-quicklook-color-imagery.webp",
-    alt: "AVIRIS-3 Quicklook False Color imagery example",
-  },
   themes: ["respond"],
   categories: ["fire"],
   relatedContent: ["aviris-3-dnbr"],

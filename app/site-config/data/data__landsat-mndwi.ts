@@ -26,11 +26,6 @@ export const DATA__LANDSAT_MNDWI: DataContent = {
     alt: "Landsat Modified Normalized Difference Water Index (MNDWI)",
   },
 
-  mastheadImage: {
-    src: "/img/data/landsat-mndwi.webp",
-    alt: "Landsat Modified Normalized Difference Water Index (MNDWI)",
-  },
-
   themes: ["respond", "resilience", "prepare", "recover"],
 
   categories: ["severe weather", "flood", "tropical cyclone", "winter weather"],

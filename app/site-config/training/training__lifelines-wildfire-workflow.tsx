@@ -23,10 +23,6 @@ export const TRAINING__LIFELINES_WILDFIRE_WORKFLOW: TrainingContent = {
   dateUpdated: "2026-01-15",
   themes: ["respond", "prepare"],
   categories: ["fire"],
-  mastheadImage: {
-    src: "/img/training/lifelines-wildfire-workflow.webp",
-    alt: "Satellite-derived wildfire data workflow showing fire detections and risk zones",
-  },
   body: [
     {
       type: "text",

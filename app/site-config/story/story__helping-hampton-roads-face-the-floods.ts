@@ -19,15 +19,6 @@ export const STORY__HELPING_HAMPTON_ROADS_FACE_THE_FLOODS: StoryContent = {
     src: "/img/story/helping-hampton-roads-face-the-floods.webp",
     alt: "Floodwater covers a road intersection up to the curbside traffic signals during a storm.",
   },
-  mastheadImage: {
-    // TODO: the source document supplies no caption or credit for this photo. The file the
-    // content team provided is named Hurricane_Isabel_flood_water; confirm the event and the
-    // photo credit before launch.
-    src: "/img/story/helping-hampton-roads-face-the-floods.webp",
-    alt:
-      "Floodwater submerges a road intersection during a storm, rising past the base of the " +
-      "traffic signals and surrounding buildings and trees.",
-  },
   themes: ["resilience"],
   categories: ["flood", "hurricane"],
   body: [

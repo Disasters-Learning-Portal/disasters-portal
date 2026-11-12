@@ -20,10 +20,6 @@ export const STORY__FINDING_FLOODS: StoryContent = {
     src: "/img/story/finding-floods.webp",
     alt: "Flooded river in Kerrville, Texas showing significant flood waters",
   },
-  mastheadImage: {
-    src: "/img/story/finding-floods.webp",
-    alt: "Flooded river in Kerrville, Texas showing significant flood waters",
-  },
   themes: ["respond"],
   categories: ["flood"],
   body: [

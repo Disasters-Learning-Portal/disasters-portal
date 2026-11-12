@@ -20,10 +20,6 @@ export const STORY__STRENGTHENING_SEVERE_WEATHER_READINESS: StoryContent = {
     src: "/img/story/severe-weather.webp",
     alt: "Overhead view of tornado damage in Chattanooga, Tennessee",
   },
-  mastheadImage: {
-    src: "/img/story/severe-weather.webp",
-    alt: "Overhead view of tornado damage in Chattanooga, Tennessee",
-  },
   themes: ["prepare"],
   categories: ["severe weather"],
   body: [
