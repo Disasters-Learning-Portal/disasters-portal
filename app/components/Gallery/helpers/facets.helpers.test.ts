@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import type { GalleryCardContent } from "@/app/site-config/types";
+import { createTestCard } from "@/app/site-config/content.fixtures";
 import {
   collectAvailableFacets,
   EMPTY_FACETS,
@@ -12,23 +12,17 @@ import {
   toggleFacetValue,
 } from "./facets.helpers";
 
-const floodNews: GalleryCardContent = {
-  id: "flood-news",
+const floodNews = createTestCard("flood-news", {
   contentType: "news",
-  title: "Flood news",
-  thumbnailImage: { src: "/thumb.jpg", alt: "Thumbnail" },
   themes: ["respond"],
   categories: ["flood"],
-};
+});
 
-const fireData: GalleryCardContent = {
-  id: "fire-data",
+const fireData = createTestCard("fire-data", {
   contentType: "data",
-  title: "Fire data",
-  thumbnailImage: { src: "/thumb.jpg", alt: "Thumbnail" },
   themes: ["prepare", "recover"],
   categories: ["fire"],
-};
+});
 
 describe("getFacetLabel", () => {
   it("uses the theme or content type label, otherwise title case", () => {
@@ -80,7 +74,7 @@ describe("matchesFacets", () => {
   });
 
   it("does not match an item with no values in a selected facet", () => {
-    const uncategorized = { ...floodNews, categories: [] };
+    const uncategorized = createTestCard("uncategorized", { categories: [] });
     expect(matchesFacets(uncategorized, { ...EMPTY_FACETS, hazards: ["fire"] })).toBe(false);
   });
 });
