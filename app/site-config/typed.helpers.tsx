@@ -26,19 +26,12 @@ export function isInternalContent<T extends Content>(c: T): c is Exclude<T, Exte
 }
 
 /**
- * Narrows an unknown value to a `MastheadImage`-shaped object.
+ * Narrows an unknown value to a `Image`-shaped object.
  * Checks for the two required fields (`src` and `alt`) so that callers can
  * safely access them after the guard.
  */
-export function isMastHeadImage(
-  mastheadImage: unknown,
-): mastheadImage is { src: string; alt: string } {
-  return (
-    typeof mastheadImage === "object" &&
-    mastheadImage !== null &&
-    "src" in mastheadImage &&
-    "alt" in mastheadImage
-  );
+export function isImage(image: unknown): image is { src: string; alt: string } {
+  return typeof image === "object" && image !== null && "src" in image && "alt" in image;
 }
 
 /**

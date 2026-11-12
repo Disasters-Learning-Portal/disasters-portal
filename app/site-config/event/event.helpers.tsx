@@ -22,13 +22,13 @@ export const transformEventToCardSimpleProps = (
 export const transformEventToPageMastHeadProps = (
   event: EventContent,
 ): ReturnType<typeof makeCardMastHeadProps> => {
-  const { datePublished, mastheadImage, title, subtitle, description } = event;
+  const { dateUpdated, mastheadImage, title, subtitle, description } = event;
 
   return makeCardMastHeadProps({
-    mastheadImage,
+    image: mastheadImage,
     title,
     subtitle: subtitle ?? description,
-    datePublished,
+    dateUpdated,
   });
 };
 
