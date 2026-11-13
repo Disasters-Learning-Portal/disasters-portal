@@ -16,7 +16,7 @@ export default async function DataItemPage(props: PageProps<"/data-gallery/[id]"
   const {
     contentType,
     title,
-    mastheadImage,
+    horizontalImage,
     themes,
     categories,
     body,
@@ -43,7 +43,7 @@ export default async function DataItemPage(props: PageProps<"/data-gallery/[id]"
   return (
     <ContentPageLayout
       masthead={makeCardMastHeadProps({
-        image: mastheadImage,
+        image: horizontalImage,
         title,
         callToAction: exploreDataUrl
           ? { label: "Explore Data", href: exploreDataUrl, isExternal: true }
