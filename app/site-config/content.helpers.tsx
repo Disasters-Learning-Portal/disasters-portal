@@ -14,10 +14,11 @@ import {
   type ContentType,
   type DateString,
   type GalleryCardContent,
+  type Image,
   type IterableItemWithId,
   type Theme,
 } from "@/app/site-config/types";
-import { isInternalContent, isMastHeadImage, pickKeys } from "./typed.helpers";
+import { isImage, isInternalContent, pickKeys } from "./typed.helpers";
 
 export const makeOutlineTagProps = (
   tag: string,
@@ -61,12 +62,7 @@ export type CardMastheadPropsArgs = Omit<
   CardProps<typeof AppLink>,
   "title" | "image" | "colorMode" | "isMastHead" | "tag" | "callToActionSecondary"
 > & {
-  mastheadImage:
-    | {
-        alt: string;
-        src: string;
-      }
-    | CardProps["image"];
+  image: Image | CardProps["image"];
   title?: string;
   theme?: Theme;
   datePublished?: DateString;
@@ -74,7 +70,7 @@ export type CardMastheadPropsArgs = Omit<
 };
 
 export const makeCardMastHeadProps = ({
-  mastheadImage,
+  image,
   title,
   subtitle,
   theme,
@@ -84,11 +80,7 @@ export const makeCardMastHeadProps = ({
   ...rest
 }: CardMastheadPropsArgs): CardProps<typeof AppLink> => ({
   className: "blocks-card--contentpage",
-  image: isMastHeadImage(mastheadImage) ? (
-    <AppImage {...mastheadImage} sizes="100vw" fill preload={true} />
-  ) : (
-    mastheadImage
-  ),
+  image: isImage(image) ? <AppImage {...image} sizes="100vw" fill preload={true} /> : image,
   tag: datePublished
     ? makeDateTagProps("Published", datePublished)
     : dateUpdated && makeDateTagProps("Updated", dateUpdated),
