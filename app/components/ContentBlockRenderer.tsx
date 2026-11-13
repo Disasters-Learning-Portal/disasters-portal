@@ -1,16 +1,14 @@
 import { Carousel } from "@teamimpact/veda-ui-blocks";
-import {
-  ImageComparison,
-  Section,
-  SectionCardDetailed,
-  SectionCardFeatured,
-  SectionCardSimple,
-  SectionHeading,
-} from "@/app/components";
 import { AppImage } from "@/app/components/AppImage";
 import { AppLinkStyled } from "@/app/components/AppLink";
 import { AppVideo } from "@/app/components/AppVideo";
 import { StacCompareBlock, StacSingleLayerBlock } from "@/app/components/blocks";
+import { ImageComparison } from "@/app/components/ImageComparison";
+import { Section } from "@/app/components/Section";
+import { SectionCardDetailed } from "@/app/components/SectionCardDetailed";
+import { SectionCardFeatured } from "@/app/components/SectionCardFeatured";
+import { SectionCardSimple } from "@/app/components/SectionCardSimple";
+import { SectionHeading } from "@/app/components/SectionHeading";
 import {
   makeCardDetailedImageLeftProps,
   makeCardFeaturedProps,

@@ -1,6 +1,4 @@
 import {
-  type Category,
-  CONTENT_CATEGORIES,
   CONTENT_THEMES,
   CONTENT_TYPES,
   type Content,
@@ -11,8 +9,6 @@ import {
 
 export const isTheme = (value: string): value is Theme => value in CONTENT_THEMES;
 export const isContentType = (value: string): value is ContentType => value in CONTENT_TYPES;
-export const isCategory = (value: string): value is Category =>
-  (CONTENT_CATEGORIES as readonly string[]).includes(value);
 
 /**
  * Narrows content items to their internal variants, excluding any external (URL-only) types.

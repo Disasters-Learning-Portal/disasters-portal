@@ -30,7 +30,7 @@ export const makeOutlineTagProps = (
   ...tagProps,
 });
 
-export const makeTextTagProps = (
+const makeTextTagProps = (
   tag: string,
   tagProps?: Omit<TagProps, "variant" | "size" | "children">,
 ) => ({
@@ -299,41 +299,6 @@ export const makeCardSimpleProps = ({
   isExternal: !!url,
   as: AppLink,
   description: subtitle ?? description,
-  ...rest,
-});
-
-type CardCarouselPropsArgs = Omit<
-  CardProps,
-  "image" | "imagePosition" | "tag" | "callToAction" | "colorMode"
-> & {
-  id: string;
-  contentType: ContentType;
-  thumbnailImage: {
-    alt: string;
-    src: string;
-  };
-  url?: string;
-};
-
-export const makeCardCarouselProps = ({
-  id,
-  contentType,
-  thumbnailImage,
-  url,
-  ...rest
-}: CardCarouselPropsArgs): IterableItemWithId<CardProps<typeof AppLink>> => ({
-  id,
-  image: (
-    <AppImage
-      {...thumbnailImage}
-      fill
-      sizes="(max-width: 640px) 100vw, (max-width: 1400px) 50vw, 700px"
-    />
-  ),
-  tag: childrenToLabel(makeOutlineTagProps(makeContentTypeTagProps(contentType))),
-  callToAction: makeCardCTAProps({ id, contentType, url }),
-  imagePosition: "cover",
-  colorMode: "dark",
   ...rest,
 });
 

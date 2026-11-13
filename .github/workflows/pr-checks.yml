@@ -1,4 +1,4 @@
-# Runs lint, typecheck, and build checks on PRs.
+# Runs lint, typecheck, dead-code, and build checks on PRs.
 # Skips draft PRs to save CI resources.
 
 name: PR Checks
@@ -48,6 +48,19 @@ jobs:
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - run: pnpm typecheck
+
+  check-dead-code:
+    if: github.event.pull_request.draft == false
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: ${{ env.NODE }}
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm dead-code
 
   build:
     if: github.event.pull_request.draft == false
