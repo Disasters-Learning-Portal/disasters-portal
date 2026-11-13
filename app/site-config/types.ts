@@ -167,14 +167,54 @@ export type ContentBlock =
       card: Omit<CardFeaturedPropsArgs, "title"> & { title: string };
     };
 
+type PublishedContent = {
+  /**
+   * When this content went live. (This date will not change.) Shown only on the masthead.
+   * @label Published
+   */
+  datePublished: DateString;
+};
+type UpdatedContent = {
+  /**
+   * Last time this content changed. (Update on every edit.) Shown only on the masthead.
+   * @label Updated
+   */
+  dateUpdated: DateString;
+};
+
 export type InternalCardContent = {
+  /**
+   * Lowercase words separated by hyphens; usually a shortened title.
+   * @label URL slug
+   */
   id: string;
+  /**
+   * @label TYPE
+   */
   contentType: ContentType;
+  /**
+   * Shown on the masthead and on every card, so it must fit the narrowest card or expect it to be truncated.
+   * @label Title
+   * @maxLength 100
+   * @recommendedLength 75
+   */
   title: string;
+  /**
+   * Added temporarily to triage a few extra long titles.
+   * @deprecated
+   */
   subtitle?: string;
   thumbnailImage: Image;
   themes: Theme[];
+  /**
+   * @label HAZARD
+   */
   categories: Category[];
+  /**
+   * Shown on cards, except for Event pages, where its shown on the masthead.
+   * @maxLength 200
+   * @recommendedLength 150
+   */
   description?: string;
 };
 
@@ -182,14 +222,14 @@ export type ExternalCardContent = InternalCardContent & { url: string };
 
 export type GalleryCardContent = InternalCardContent | ExternalCardContent;
 
-export type TrainingContent = Omit<InternalCardContent, "contentType"> & {
-  contentType: "training";
-  dateUpdated: DateString;
-  mastheadImage: Image;
-  body?: ContentBlock[]; // TODO: require body
-  relatedContent?: string[];
-  pdfLink?: { label: string; href: string };
-};
+export type TrainingContent = Omit<InternalCardContent, "contentType"> &
+  UpdatedContent & {
+    contentType: "training";
+    mastheadImage: Image;
+    body?: ContentBlock[]; // TODO: require body
+    relatedContent?: string[];
+    pdfLink?: { label: string; href: string };
+  };
 
 export type TrainingContentExternal = Omit<ExternalCardContent, "contentType"> & {
   contentType: "training";
@@ -204,43 +244,71 @@ export type DataContent = Omit<InternalCardContent, "contentType"> & {
   exploreDataUrl?: string;
 };
 
-export type NewsContent = Omit<InternalCardContent, "contentType"> & {
-  contentType: "news";
-  datePublished: DateString;
-  mastheadImage: Image;
-  body?: ContentBlock[]; // TODO: require body
-};
+export type NewsContent = Omit<InternalCardContent, "contentType"> &
+  PublishedContent & {
+    contentType: "news";
+    mastheadImage: Image;
+    body?: ContentBlock[]; // TODO: require body
+  };
 
-export type StoryContent = Omit<InternalCardContent, "contentType"> & {
-  contentType: "story";
-  datePublished: DateString;
-  mastheadImage: Image;
-  body?: ContentBlock[]; // TODO: require body
-};
+export type StoryContent = Omit<InternalCardContent, "contentType"> &
+  PublishedContent & {
+    contentType: "story";
+    mastheadImage: Image;
+    body?: ContentBlock[]; // TODO: require body
+  };
 
-export type DataStoryContent = Omit<InternalCardContent, "contentType"> & {
-  contentType: "datastory";
-  datePublished: DateString;
-  mastheadImage: Image;
-  body?: ContentBlock[]; // TODO: require body
-};
+export type DataStoryContent = Omit<InternalCardContent, "contentType"> &
+  PublishedContent & {
+    contentType: "datastory";
+    mastheadImage: Image;
+    body?: ContentBlock[]; // TODO: require body
+  };
 
 export type DataStoryContentExternal = Omit<ExternalCardContent, "contentType"> & {
   contentType: "datastory";
 };
 
-export type EventContent = Omit<InternalCardContent, "contentType"> & {
-  contentType: "event";
-  dateUpdated: DateString;
-  mastheadImage: Image;
-  isLatest?: boolean;
-  startDate: DateString;
-  region: string;
-  linkDHSFEMA?: { label: string; href: string };
-  linkUSGovernment?: { label: string; href: string };
-  body?: ContentBlock[]; // TODO: require body
-  relatedContent?: string[];
-};
+export type EventContent = Omit<InternalCardContent, "contentType"> &
+  UpdatedContent & {
+    contentType: "event";
+    mastheadImage: Image;
+    /** Adds the `active` tag to the event's card, except in the gallery. */
+    isLatest?: boolean;
+    /**
+     * Activation Date: when NASA Disasters began responding to the Disaster.
+     * @label START DATE
+     */
+    startDate: DateString;
+    /**
+     * End Activation Date: when NASA Disasters stops responding to the Disaster.
+     * @label END DATE
+     */
+    endActivationDate?: DateString;
+    /**
+     * Locations impacted. Comma-delimited list. Shown in the sidebar.
+     * @label REGION
+     */
+    region: string;
+    /**
+     * Shown in the event overview.
+     * @label What DHS and FEMA are doing
+     */
+    linkDHSFEMA?: { label: string; href: string };
+    /**
+     * Shown in the event overview.
+     * @label What the U.S. government is doing
+     */
+    linkUSGovernment?: { label: string; href: string };
+    /**
+     * Provided by the Disasters team as part of an Event Activation.
+     * Example [EGIS Data Gallery Page URL](https://gis.earthdata.nasa.gov/portal/home/group.html?id=15f22eae89184fb38eaa2118b957bfe9)
+     */
+    egisDataGalleryUrl?: string;
+    body?: ContentBlock[]; // TODO: require body
+    /** IDs of related content. Not shown on event pages yet. */
+    relatedContent?: string[];
+  };
 
 export type InternalContent =
   | DataContent
@@ -265,13 +333,10 @@ export type ThemeContent = {
   body: ContentBlock[];
 };
 
-/**
- * Utility Types
- */
-
-export type IterableItemWithId<T> = T & { id: string };
-
-export type Image = {
+type Image = {
+  /**
+   * Follow the guidelines in [images.md](images.md)
+   */
   src: string;
   alt: string;
 };

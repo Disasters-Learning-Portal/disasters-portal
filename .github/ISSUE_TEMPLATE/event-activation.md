@@ -15,8 +15,6 @@ Let's use this issue to coordinate work across teams, track handoffs, and monito
 
 ## Event Details
 
-\*\* Not yet in the schema
-
 ### **Minimum Required** (by the code or [the program])
 
 | Header                      | `EventContent` field       | formatting                           | value   |
@@ -27,7 +25,7 @@ Let's use this issue to coordinate work across teams, track handoffs, and monito
 | Page Updated Date           | `dateUpdated`              | YYYY-MM-DD, last page change         |         |
 | Intro descriptive paragraph | Overview `paragraphs`      | ---                                  |         |
 | Locations impacted          | `region`                   | comma-delimited                      |         |
-| EGIS Gallery Page URL       | `egisDataGalleryUrl` \*\*  | ---                                  |         |
+| EGIS Gallery Page URL       | `egisDataGalleryUrl`       | ---                                  |         |
 | Theme                       | `themes`                   | ---                                  | respond |
 | Hazards                     | `categories`               | comma-delimited, see Hazards options |         |
 | Data                        | Event Data Gallery `cards` | comma-delimited                      |         |
@@ -40,14 +38,15 @@ Let's use this issue to coordinate work across teams, track handoffs, and monito
 
 | Item                            | `EventContent` field     | formatting | value      |
 | ------------------------------- | ------------------------ | ---------- | ---------- |
-| End (Deactivation) Date         | `endActivationDate` \*\* | YYYY-MM-DD |            |
+| End (Deactivation) Date         | `endActivationDate`      | YYYY-MM-DD |            |
 | What the US Gov't is doing link | `linkUSGovernment.href`  | ---        |            |
 | Government link label           | `linkUSGovernment.label` | ---        | Learn more |
-| FEMA link                       | `linkDHSFEMA.href`       | ---        | Learn more |
+| FEMA link                       | `linkDHSFEMA.href`       | ---        |            |
 | FEMA link label                 | `linkDHSFEMA.label`      | ---        | Learn more |
 
 ### **Reference**
 
+- Field specs for [`EventContent`](https://github.com/Disasters-Learning-Portal/disasters-portal/blob/develop/docs/content-specs/event.md)
 - Example [EGIS Data Gallery Page URL](https://gis.earthdata.nasa.gov/portal/home/group.html?id=15f22eae89184fb38eaa2118b957bfe9)
 - Possible [`DATA` layers](https://github.com/Disasters-Learning-Portal/disasters-portal/blob/main/app/site-config/data/index.ts)
 - Possible Hazard options are [`CONTENT_CATEGORIES`](https://github.com/Disasters-Learning-Portal/disasters-portal/blob/main/app/site-config/types.ts)
