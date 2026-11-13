@@ -167,21 +167,6 @@ export type ContentBlock =
       card: Omit<CardFeaturedPropsArgs, "title"> & { title: string };
     };
 
-/**
- * Content dates, authored as `YYYY-MM-DD` and formatted at render time.
- * What each date means was agreed with Disasters in
- * https://github.com/Disasters-Learning-Portal/disasters-portal/issues/550#issuecomment-5834904436
- *
- * Checks shape, not the calendar: 2026-02-30 passes. Years stay at 20xx to keep
- * the union small enough for TypeScript to represent (ts2590).
- */
-type OneToNine = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
-type ZeroToNine = 0 | OneToNine;
-type YYYY = `20${ZeroToNine}${ZeroToNine}`;
-type MM = `0${OneToNine}` | `1${0 | 1 | 2}`;
-type DD = `0${OneToNine}` | `${1 | 2}${ZeroToNine}` | `3${0 | 1}`;
-export type DateString = `${YYYY}-${MM}-${DD}`;
-
 type PublishedContent = {
   /**
    * When this content went live. (This date will not change.) Shown only on the masthead.
@@ -219,16 +204,7 @@ export type InternalCardContent = {
    * @deprecated
    */
   subtitle?: string;
-  thumbnailImage: {
-    /**
-     * Used in Cards. Follow the guidelines in [images.md](images.md)
-     */
-    src: string;
-    alt: string;
-  };
-  /**
-   * @label NEED
-   */
+  thumbnailImage: Image;
   themes: Theme[];
   /**
    * @label HAZARD
@@ -249,7 +225,7 @@ export type GalleryCardContent = InternalCardContent | ExternalCardContent;
 export type TrainingContent = Omit<InternalCardContent, "contentType"> &
   UpdatedContent & {
     contentType: "training";
-    mastheadImage: MastheadImage;
+    mastheadImage: Image;
     body?: ContentBlock[]; // TODO: require body
     relatedContent?: string[];
     pdfLink?: { label: string; href: string };
@@ -261,7 +237,7 @@ export type TrainingContentExternal = Omit<ExternalCardContent, "contentType"> &
 
 export type DataContent = Omit<InternalCardContent, "contentType"> & {
   contentType: "data";
-  mastheadImage: MastheadImage;
+  mastheadImage: Image;
   body?: ContentBlock[]; // TODO: require body
   relatedContent?: string[];
   /** The sidebar CTA renders only when this is set. */
@@ -271,21 +247,21 @@ export type DataContent = Omit<InternalCardContent, "contentType"> & {
 export type NewsContent = Omit<InternalCardContent, "contentType"> &
   PublishedContent & {
     contentType: "news";
-    mastheadImage: MastheadImage;
+    mastheadImage: Image;
     body?: ContentBlock[]; // TODO: require body
   };
 
 export type StoryContent = Omit<InternalCardContent, "contentType"> &
   PublishedContent & {
     contentType: "story";
-    mastheadImage: MastheadImage;
+    mastheadImage: Image;
     body?: ContentBlock[]; // TODO: require body
   };
 
 export type DataStoryContent = Omit<InternalCardContent, "contentType"> &
   PublishedContent & {
     contentType: "datastory";
-    mastheadImage: MastheadImage;
+    mastheadImage: Image;
     body?: ContentBlock[]; // TODO: require body
   };
 
@@ -296,7 +272,7 @@ export type DataStoryContentExternal = Omit<ExternalCardContent, "contentType"> 
 export type EventContent = Omit<InternalCardContent, "contentType"> &
   UpdatedContent & {
     contentType: "event";
-    mastheadImage: MastheadImage;
+    mastheadImage: Image;
     /** Adds the `active` tag to the event's card, except in the gallery. */
     isLatest?: boolean;
     /**
@@ -352,12 +328,12 @@ export type ThemeContent = {
   id: string;
   title?: string;
   subtitle: string;
-  mastheadImage: MastheadImage;
+  mastheadImage: Image;
   theme: Theme;
   body: ContentBlock[];
 };
 
-type MastheadImage = {
+type Image = {
   /**
    * Follow the guidelines in [images.md](images.md)
    */
@@ -365,4 +341,14 @@ type MastheadImage = {
   alt: string;
 };
 
-export type IterableItemWithId<T> = T & { id: string };
+/**
+ * Content dates, authored as `YYYY-MM-DD` and formatted at render time.
+ * Checks shape, not the calendar: 2026-02-30 passes. Years stay at 20xx to keep
+ * the union small enough for TypeScript to represent (ts2590).
+ */
+type OneToNine = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
+type ZeroToNine = 0 | OneToNine;
+type YYYY = `20${ZeroToNine}${ZeroToNine}`;
+type MM = `0${OneToNine}` | `1${0 | 1 | 2}`;
+type DD = `0${OneToNine}` | `${1 | 2}${ZeroToNine}` | `3${0 | 1}`;
+export type DateString = `${YYYY}-${MM}-${DD}`;

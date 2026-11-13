@@ -32,7 +32,7 @@ export default async function NewsEventsStoriesItemPage(
         isEvent
           ? transformEventToPageMastHeadProps(contentItem)
           : makeCardMastHeadProps({
-              mastheadImage,
+              image: mastheadImage,
               title,
               subtitle,
               datePublished: contentItem.datePublished,
