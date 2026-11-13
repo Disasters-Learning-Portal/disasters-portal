@@ -16,6 +16,16 @@ export const DATA__OPERA_DISP_S1_COHERENCE: DataContent = {
     alt: "OPERA DISP-S1 interferometric coherence imagery",
   },
 
+  horizontalImage: {
+    src: "/img/data/opera-disp-s1-coherence.webp",
+    alt: "OPERA DISP-S1 interferometric coherence imagery",
+  },
+
+  verticalImage: {
+    src: "/img/data/opera-disp-s1-coherence.webp",
+    alt: "OPERA DISP-S1 interferometric coherence imagery",
+  },
+
   mastheadImage: {
     src: "/img/data/opera-disp-s1-coherence.webp",
     alt: "OPERA DISP-S1 interferometric coherence imagery",

@@ -10,6 +10,14 @@ export const PREPARE_CONTENT: ThemeContent = {
     alt: "A shelf cloud at the leading edge of an advancing thunderstorm sweeps over a city skyline at dusk.",
     src: "/img/theme/prepare-masthead.webp",
   },
+  horizontalImage: {
+    alt: "A shelf cloud at the leading edge of an advancing thunderstorm sweeps over a city skyline at dusk.",
+    src: "/img/theme/prepare-masthead.webp",
+  },
+  verticalImage: {
+    alt: "A shelf cloud at the leading edge of an advancing thunderstorm sweeps over a city skyline at dusk.",
+    src: "/img/theme/prepare-masthead.webp",
+  },
   subtitle: "Anticipate risk and boost readiness",
   theme: "prepare",
   body: [

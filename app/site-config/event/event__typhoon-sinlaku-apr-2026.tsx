@@ -15,6 +15,14 @@ export const EVENT__TYPHOON_SINLAKU_APR_2026: EventContent = {
     src: "/img/event/typhoon-sinlaku-2026.webp",
     alt: "Banner Image: Suomi-NPP VIIRS Image of Typhoon Sinlaku with boundary overlay of the Mariana Islands, collected on April 13, 2026. Credit: NASA",
   },
+  horizontalImage: {
+    src: "/img/event/typhoon-sinlaku-2026.webp",
+    alt: "Banner Image: Suomi-NPP VIIRS Image of Typhoon Sinlaku with boundary overlay of the Mariana Islands, collected on April 13, 2026. Credit: NASA",
+  },
+  verticalImage: {
+    src: "/img/event/typhoon-sinlaku-2026.webp",
+    alt: "Banner Image: Suomi-NPP VIIRS Image of Typhoon Sinlaku with boundary overlay of the Mariana Islands, collected on April 13, 2026. Credit: NASA",
+  },
   mastheadImage: {
     src: "/img/event/typhoon-sinlaku-2026.webp",
     alt: "Banner Image: Suomi-NPP VIIRS Image of Typhoon Sinlaku with boundary overlay of the Mariana Islands, collected on April 13, 2026. Credit: NASA",
@@ -54,8 +62,8 @@ export const EVENT__TYPHOON_SINLAKU_APR_2026: EventContent = {
       alt: "Radar backscatter image of Antonio B Won Pat International Airport in Guam, captured by satellites on April 14, 2026",
       caption:
         'Radar backscatter image of Antonio B Won Pat International Airport in Guam, captured by satellites on April 14, 2026. Synthetic aperture radar (SAR) sensors have the ability to "see through" clouds to capture images of homes and infrastructure even in the midst of a hurricane. This image includes copyrighted material of Umbra. All rights reserved. This work utilized data made available through the NASA Commercial Satellite Data Acquisition (CSDA) program.',
-      width: 1920,
-      height: 1080,
+      width: 624,
+      height: 364,
     },
     {
       type: "sectionCardGallery",

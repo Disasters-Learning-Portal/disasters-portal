@@ -16,6 +16,16 @@ export const DATA__BLACK_MARBLE_BLUE_YELLOW: DataContent = {
     alt: "Black Marble Nighttime Blue/Yellow Composite imagery",
   },
 
+  horizontalImage: {
+    src: "/img/data/black-marble-blue-yellow.webp",
+    alt: "Black Marble Nighttime Blue/Yellow Composite imagery",
+  },
+
+  verticalImage: {
+    src: "/img/data/black-marble-blue-yellow.webp",
+    alt: "Black Marble Nighttime Blue/Yellow Composite imagery",
+  },
+
   mastheadImage: {
     src: "/img/data/black-marble-blue-yellow.webp",
     alt: "Black Marble Nighttime Blue/Yellow Composite imagery",

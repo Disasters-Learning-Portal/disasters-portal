@@ -173,6 +173,8 @@ export type InternalCardContent = {
   title: string;
   subtitle?: string;
   thumbnailImage: Image;
+  horizontalImage: Image;
+  verticalImage: Image;
   themes: Theme[];
   categories: Category[];
   description?: string;
@@ -261,6 +263,8 @@ export type ThemeContent = {
   title?: string;
   subtitle: string;
   mastheadImage: Image;
+  horizontalImage: Image;
+  verticalImage: Image;
   theme: Theme;
   body: ContentBlock[];
 };

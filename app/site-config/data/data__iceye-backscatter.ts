@@ -15,6 +15,16 @@ export const DATA__ICEYE_BACKSCATTER: DataContent = {
     alt: "ICEYE synthetic aperture radar image of a frozen river system, February 2026",
   },
 
+  horizontalImage: {
+    src: "/img/data/iceye-backscatter.webp",
+    alt: "ICEYE synthetic aperture radar image of a frozen river system, February 2026",
+  },
+
+  verticalImage: {
+    src: "/img/data/iceye-backscatter.webp",
+    alt: "ICEYE synthetic aperture radar image of a frozen river system, February 2026",
+  },
+
   mastheadImage: {
     src: "/img/data/iceye-backscatter.webp",
     alt: "ICEYE synthetic aperture radar image of a frozen river system, February 2026",

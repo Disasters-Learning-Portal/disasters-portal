@@ -15,6 +15,16 @@ export const DATA__SENTINEL_2_NDVI: DataContent = {
     alt: "Sentinel-2 Normalized Difference Vegetation Index (NDVI)",
   },
 
+  horizontalImage: {
+    src: "/img/data/sentinel-2-ndvi.webp",
+    alt: "Sentinel-2 Normalized Difference Vegetation Index (NDVI)",
+  },
+
+  verticalImage: {
+    src: "/img/data/sentinel-2-ndvi.webp",
+    alt: "Sentinel-2 Normalized Difference Vegetation Index (NDVI)",
+  },
+
   mastheadImage: {
     src: "/img/data/sentinel-2-ndvi.webp",
     alt: "Sentinel-2 Normalized Difference Vegetation Index (NDVI)",
