@@ -23,7 +23,7 @@ jobs:
         && contains(github.event.pull_request.labels.*.name, 'PM-Update'))
     steps:
       - name: Comment and tag recipients
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9.0.0
         env:
           RECIPIENTS: ${{ vars.PM_UPDATE_RECIPIENTS }}
         with:
