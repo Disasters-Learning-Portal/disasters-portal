@@ -16,6 +16,16 @@ export const DATA__OPERA_DISP_S1_UNW: DataContent = {
     alt: "OPERA DISP-S1 unwrapped interferometric phase imagery",
   },
 
+  horizontalImage: {
+    src: "/img/data/opera-disp-s1-unw.webp",
+    alt: "OPERA DISP-S1 unwrapped interferometric phase imagery",
+  },
+
+  verticalImage: {
+    src: "/img/data/opera-disp-s1-unw.webp",
+    alt: "OPERA DISP-S1 unwrapped interferometric phase imagery",
+  },
+
   mastheadImage: {
     src: "/img/data/opera-disp-s1-unw.webp",
     alt: "OPERA DISP-S1 unwrapped interferometric phase imagery",

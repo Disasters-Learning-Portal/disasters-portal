@@ -16,6 +16,16 @@ export const DATA__BLACK_MARBLE_BRDF: DataContent = {
     alt: "Black Marble nighttime lights composite over Georgia and the Carolinas",
   },
 
+  horizontalImage: {
+    src: "/img/data/black-marble-brdf.webp",
+    alt: "Black Marble nighttime lights composite over Georgia and the Carolinas",
+  },
+
+  verticalImage: {
+    src: "/img/data/black-marble-brdf.webp",
+    alt: "Black Marble nighttime lights composite over Georgia and the Carolinas",
+  },
+
   mastheadImage: {
     src: "/img/data/black-marble-brdf.webp",
     alt: "Black Marble nighttime lights composite over Georgia and the Carolinas",

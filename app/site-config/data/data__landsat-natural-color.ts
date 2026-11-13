@@ -16,6 +16,16 @@ export const DATA__LANDSAT_NATURAL_COLOR: DataContent = {
     alt: "Landsat Natural Color imagery example",
   },
 
+  horizontalImage: {
+    src: "/img/data/landsat-natural-color.webp",
+    alt: "Landsat Natural Color imagery example",
+  },
+
+  verticalImage: {
+    src: "/img/data/landsat-natural-color.webp",
+    alt: "Landsat Natural Color imagery example",
+  },
+
   mastheadImage: {
     src: "/img/data/landsat-natural-color.webp",
     alt: "Landsat Natural Color imagery example",

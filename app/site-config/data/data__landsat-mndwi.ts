@@ -16,6 +16,16 @@ export const DATA__LANDSAT_MNDWI: DataContent = {
     alt: "Landsat Modified Normalized Difference Water Index (MNDWI)",
   },
 
+  horizontalImage: {
+    src: "/img/data/landsat-mndwi.webp",
+    alt: "Landsat Modified Normalized Difference Water Index (MNDWI)",
+  },
+
+  verticalImage: {
+    src: "/img/data/landsat-mndwi.webp",
+    alt: "Landsat Modified Normalized Difference Water Index (MNDWI)",
+  },
+
   mastheadImage: {
     src: "/img/data/landsat-mndwi.webp",
     alt: "Landsat Modified Normalized Difference Water Index (MNDWI)",

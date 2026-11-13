@@ -15,6 +15,16 @@ export const DATA__SATELLOGIC_COLOR_INFRARED: DataContent = {
     alt: "Satellogic satellite image of a dam and reservoir with surrounding roads, buildings, and vegetation",
   },
 
+  horizontalImage: {
+    src: "/img/data/satellogic-color-infrared.webp",
+    alt: "Satellogic satellite image of a dam and reservoir with surrounding roads, buildings, and vegetation",
+  },
+
+  verticalImage: {
+    src: "/img/data/satellogic-color-infrared.webp",
+    alt: "Satellogic satellite image of a dam and reservoir with surrounding roads, buildings, and vegetation",
+  },
+
   mastheadImage: {
     src: "/img/data/satellogic-color-infrared.webp",
     alt: "Satellogic satellite image of a dam and reservoir with surrounding roads, buildings, and vegetation",

@@ -16,6 +16,16 @@ export const DATA__SENTINEL_1_DAMAGE_ASSESSMENT: DataContent = {
     alt: "Sentinel-1 Likely Damaged Areas imagery",
   },
 
+  horizontalImage: {
+    src: "/img/data/sentinel-1-damage-assessment.webp",
+    alt: "Sentinel-1 Likely Damaged Areas imagery",
+  },
+
+  verticalImage: {
+    src: "/img/data/sentinel-1-damage-assessment.webp",
+    alt: "Sentinel-1 Likely Damaged Areas imagery",
+  },
+
   mastheadImage: {
     src: "/img/data/sentinel-1-damage-assessment.webp",
     alt: "Sentinel-1 Likely Damaged Areas imagery",

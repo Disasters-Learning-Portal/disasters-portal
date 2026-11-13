@@ -16,6 +16,16 @@ export const DATA__UAVSAR_UNET_CLASSIFIED: DataContent = {
     alt: "UAVSAR U-Net flood classification over central Texas from July 2025, shown over aerial imagery of a river and reservoir system, with open water and inundation in blue, flooded developed areas in red, and flooded cropland in orange",
   },
 
+  horizontalImage: {
+    src: "/img/event/texas-floods-july-2025.webp",
+    alt: "UAVSAR U-Net flood classification over central Texas from July 2025, shown over aerial imagery of a river and reservoir system, with open water and inundation in blue, flooded developed areas in red, and flooded cropland in orange",
+  },
+
+  verticalImage: {
+    src: "/img/event/texas-floods-july-2025.webp",
+    alt: "UAVSAR U-Net flood classification over central Texas from July 2025, shown over aerial imagery of a river and reservoir system, with open water and inundation in blue, flooded developed areas in red, and flooded cropland in orange",
+  },
+
   mastheadImage: {
     src: "/img/event/texas-floods-july-2025.webp",
     alt: "UAVSAR U-Net flood classification over central Texas from July 2025, shown over aerial imagery of a river and reservoir system, with open water and inundation in blue, flooded developed areas in red, and flooded cropland in orange",

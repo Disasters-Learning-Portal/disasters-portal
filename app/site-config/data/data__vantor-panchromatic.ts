@@ -16,6 +16,16 @@ export const DATA__VANTOR_PANCHROMATIC: DataContent = {
     alt: "Vantor panchromatic grayscale satellite image of a dense hillside city, with individual buildings, streets, and steep forested ridges visible in fine detail",
   },
 
+  horizontalImage: {
+    src: "/img/data/vantor-panchromatic.webp",
+    alt: "Vantor panchromatic grayscale satellite image of a dense hillside city, with individual buildings, streets, and steep forested ridges visible in fine detail",
+  },
+
+  verticalImage: {
+    src: "/img/data/vantor-panchromatic.webp",
+    alt: "Vantor panchromatic grayscale satellite image of a dense hillside city, with individual buildings, streets, and steep forested ridges visible in fine detail",
+  },
+
   mastheadImage: {
     src: "/img/data/vantor-panchromatic.webp",
     alt: "Vantor panchromatic grayscale satellite image of a dense hillside city, with individual buildings, streets, and steep forested ridges visible in fine detail",

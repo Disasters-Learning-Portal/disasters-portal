@@ -16,6 +16,16 @@ export const DATA__BLACK_MARBLE_HD: DataContent = {
     alt: "HD Black Marble nighttime lights imagery",
   },
 
+  horizontalImage: {
+    src: "/img/data/black-marble-hd.webp",
+    alt: "HD Black Marble nighttime lights imagery",
+  },
+
+  verticalImage: {
+    src: "/img/data/black-marble-hd.webp",
+    alt: "HD Black Marble nighttime lights imagery",
+  },
+
   mastheadImage: {
     src: "/img/data/black-marble-hd.webp",
     alt: "NASA VEDA Black Marble HD nighttime lights imagery",

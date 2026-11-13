@@ -16,6 +16,16 @@ export const DATA__SENTINEL_1_SENTINEL_2_BURN_SEVERITY: DataContent = {
     alt: "Sentinel-1 and Sentinel-2 combined burn severity imagery",
   },
 
+  horizontalImage: {
+    src: "/img/data/sentinel-1-sentinel-2-burn-severity.webp",
+    alt: "Sentinel-1 and Sentinel-2 combined burn severity imagery",
+  },
+
+  verticalImage: {
+    src: "/img/data/sentinel-1-sentinel-2-burn-severity.webp",
+    alt: "Sentinel-1 and Sentinel-2 combined burn severity imagery",
+  },
+
   mastheadImage: {
     src: "/img/data/sentinel-1-sentinel-2-burn-severity.webp",
     alt: "Sentinel-1 and Sentinel-2 combined burn severity imagery",

@@ -10,6 +10,14 @@ export const TRAINING__EO_PRE_POST_FIRE_MONITORING: TrainingContentExternal = {
     src: "/img/training/eo-pre-post-fire-monitoring.webp",
     alt: "Planet Labs image of Los Angeles fires in Altadena",
   },
+  horizontalImage: {
+    src: "/img/training/eo-pre-post-fire-monitoring.webp",
+    alt: "Planet Labs image of Los Angeles fires in Altadena",
+  },
+  verticalImage: {
+    src: "/img/training/eo-pre-post-fire-monitoring.webp",
+    alt: "Planet Labs image of Los Angeles fires in Altadena",
+  },
   url: "https://www.earthdata.nasa.gov/learn/trainings/using-earth-observations-pre-post-fire-monitoring ",
   themes: [],
   categories: [],

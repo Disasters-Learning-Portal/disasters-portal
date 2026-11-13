@@ -24,6 +24,8 @@ import type {
 export const RESPOND_CONTENT: ThemeContent = {
   id: "respond",
   mastheadImage: { alt: "", src: "/img/theme/respond-masthead.webp" },
+  horizontalImage: { alt: "", src: "/img/theme/respond-masthead.webp" },
+  verticalImage: { alt: "", src: "/img/theme/respond-masthead.webp" },
   subtitle: "Support real-time decisions with timely insights",
   theme: "respond",
   body: [

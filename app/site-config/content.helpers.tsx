@@ -170,6 +170,8 @@ export const makeGalleryCardContent = (content: Content): GalleryCardContent => 
     "subtitle",
     "description",
     "thumbnailImage",
+    "verticalImage",
+    "horizontalImage",
     "themes",
     "categories",
   ]);

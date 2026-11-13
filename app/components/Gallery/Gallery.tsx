@@ -75,7 +75,8 @@ function GalleryInner({ items }: GalleryProps) {
       />
       <div className="grid-row grid-gap">
         {/* remove subtitle from rendering on card but keep it available to search */}
-        {pageItems.map(({ subtitle, description, ...item }) => {
+        {/* TODO - disasters-portal#704 - remove horizontalImage and verticalImage temporarily from rendering on card */}
+        {pageItems.map(({ subtitle, description, horizontalImage, verticalImage, ...item }) => {
           const { id, ...cardProps } = makeCardDetailedProps({
             ...item,
             description: subtitle ?? description,

@@ -16,6 +16,16 @@ export const DATA__UAVSAR_UNET_CLASSIFIED_GRAYSCALE: DataContent = {
     alt: "UAVSAR U-Net flood classification over central Texas from July 2025, shown here in the color rendering while the grayscale source imagery is unavailable",
   },
 
+  horizontalImage: {
+    src: "/img/data/uavsar-unet-classified-grayscale.webp",
+    alt: "UAVSAR U-Net flood classification over central Texas from July 2025, shown here in the color rendering while the grayscale source imagery is unavailable",
+  },
+
+  verticalImage: {
+    src: "/img/data/uavsar-unet-classified-grayscale.webp",
+    alt: "UAVSAR U-Net flood classification over central Texas from July 2025, shown here in the color rendering while the grayscale source imagery is unavailable",
+  },
+
   mastheadImage: {
     src: "/img/data/uavsar-unet-classified-grayscale.webp",
     alt: "UAVSAR U-Net flood classification over central Texas from July 2025, shown here in the color rendering while the grayscale source imagery is unavailable",
