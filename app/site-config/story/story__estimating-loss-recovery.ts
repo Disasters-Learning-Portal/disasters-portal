@@ -44,8 +44,8 @@ export const STORY__ESTIMATING_LOSS_RECOVERY: StoryContent = {
       alt: "",
       caption:
         "The Graves County courthouse in Mayfield, Kentucky was severely damaged by an EF4 tornado on Dec. 10, 2021. Images from left to right above show the building before the disaster, debris clearing about a month into recovery, and building reconstruction, more than four years after the storm. Credits: Left image used under CC 2.0/Paul Sableman, May 26, 2018, Center image Liz Roll/FEMA, Jan. 18, 2022, Right image, Seph Allen/NASA April 5, 2026.",
-      height: 1920,
-      width: 1080,
+      height: 640,
+      width: 1627,
     },
     {
       type: "text",
@@ -74,8 +74,8 @@ export const STORY__ESTIMATING_LOSS_RECOVERY: StoryContent = {
       alt: "",
       caption:
         "NIST (National Institute of Standards and Technology) inspectors survey earthquake damage to buildings in Turkey weeks after historic Feb. 2023 earthquakes. Credits: M. Speicher/NIST",
-      height: 1920,
-      width: 1080,
+      height: 859,
+      width: 1200,
     },
     {
       type: "text",
@@ -89,8 +89,8 @@ export const STORY__ESTIMATING_LOSS_RECOVERY: StoryContent = {
       alt: "",
       caption:
         "GEDI predicts a value for a given disaster event or planning scenario, giving governments, financial institutions, and community leaders a consistent, comparable basis for understanding economic disruption.",
-      height: 1920,
-      width: 1080,
+      height: 622,
+      width: 1244,
     },
     {
       type: "text",
