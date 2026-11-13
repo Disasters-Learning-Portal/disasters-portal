@@ -26,11 +26,6 @@ export const DATA__LANDSAT_COLOR_INFRARED: DataContent = {
     alt: "Landsat Color Infrared imagery example",
   },
 
-  mastheadImage: {
-    src: "/img/data/landsat-color-infrared.webp",
-    alt: "Landsat Color Infrared imagery example",
-  },
-
   themes: ["respond", "resilience", "prepare", "recover"],
 
   categories: [

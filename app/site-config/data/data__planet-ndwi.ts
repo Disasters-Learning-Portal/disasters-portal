@@ -25,11 +25,6 @@ export const DATA__PLANET_NDWI: DataContent = {
     alt: "Planet Normalized Difference Water Index (NDWI)",
   },
 
-  mastheadImage: {
-    src: "/img/data/planet-ndwi.webp",
-    alt: "Planet Normalized Difference Water Index (NDWI)",
-  },
-
   themes: ["respond", "resilience", "prepare", "recover"],
 
   categories: [

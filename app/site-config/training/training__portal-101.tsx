@@ -27,10 +27,6 @@ export const TRAINING__PORTAL_101: TrainingContent = {
   dateUpdated: "2026-10-02",
   themes: ["prepare", "respond", "recover", "resilience"],
   categories: [],
-  mastheadImage: {
-    src: "/img/training/portal-101.webp",
-    alt: "False-color satellite imagery of a city and surrounding terrain, as displayed in the Custom Visualization Tool",
-  },
   // PrintLink prints this page rather than following the href; the href is the
   // page itself so the control degrades to a no-op without JS.
   pdfLink: { label: "Download PDF", href: "/training/portal-101" },

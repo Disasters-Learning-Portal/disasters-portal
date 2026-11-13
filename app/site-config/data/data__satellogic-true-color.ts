@@ -25,11 +25,6 @@ export const DATA__SATELLOGIC_TRUE_COLOR: DataContent = {
     alt: "Satellogic true color satellite image of a dam and reservoir with surrounding roads, buildings, and vegetation",
   },
 
-  mastheadImage: {
-    src: "/img/data/satellogic-true-color.webp",
-    alt: "Satellogic true color satellite image of a dam and reservoir with surrounding roads, buildings, and vegetation",
-  },
-
   themes: ["respond", "resilience", "prepare", "recover"],
 
   categories: [

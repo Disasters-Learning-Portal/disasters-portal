@@ -26,11 +26,6 @@ export const DATA__UMBRA_SIGMA_NAUGHT: DataContent = {
     alt: "Umbra radar backscatter image of Antonio B. Won Pat International Airport in Guam",
   },
 
-  mastheadImage: {
-    src: "/img/event/typhoon-sinlaku-2026__umbra-guam.webp",
-    alt: "Umbra radar backscatter image of Antonio B. Won Pat International Airport in Guam",
-  },
-
   themes: ["respond", "prepare", "recover"],
 
   categories: [

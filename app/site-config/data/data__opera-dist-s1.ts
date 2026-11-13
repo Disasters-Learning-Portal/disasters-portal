@@ -26,11 +26,6 @@ export const DATA__OPERA_DIST_S1: DataContent = {
     alt: "OPERA DIST-S1 surface disturbance imagery",
   },
 
-  mastheadImage: {
-    src: "/img/data/opera-dist-s1.webp",
-    alt: "OPERA DIST-S1 surface disturbance imagery",
-  },
-
   themes: ["respond", "recover"],
 
   categories: ["fire"],

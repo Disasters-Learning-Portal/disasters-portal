@@ -25,11 +25,6 @@ export const DATA__PLANET_NDVI: DataContent = {
     alt: "Planet Normalized Difference Vegetation Index (NDVI)",
   },
 
-  mastheadImage: {
-    src: "/img/data/planet-ndvi.webp",
-    alt: "Planet Normalized Difference Vegetation Index (NDVI)",
-  },
-
   themes: ["respond", "resilience", "prepare", "recover"],
 
   categories: [

@@ -20,10 +20,6 @@ export const EVENT__HURRICANE_ISAIAS_OCT_2026: EventContent = {
     src: "/img/event/template-hero.webp",
     alt: "Hurricane Isaias October 2026",
   },
-  mastheadImage: {
-    src: "/img/event/template-hero.webp",
-    alt: "Hurricane Isaias October 2026",
-  },
   themes: ["respond"],
   categories: ["tropical cyclone", "flood"],
   region: "Florida, Alabama, Georgia, South Carolina",

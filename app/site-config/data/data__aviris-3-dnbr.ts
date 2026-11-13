@@ -26,11 +26,6 @@ export const DATA__AVIRIS_3_DNBR: DataContent = {
     alt: "AVIRIS-3 differenced Normalized Burn Ratio imagery example",
   },
 
-  mastheadImage: {
-    src: "/img/data/aviris-3-dnbr.webp",
-    alt: "AVIRIS-3 differenced Normalized Burn Ratio imagery example",
-  },
-
   themes: ["respond", "recover"],
 
   categories: ["fire"],

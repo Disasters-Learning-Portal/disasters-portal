@@ -29,11 +29,6 @@ export const EVENT__HURRICANE_HELENE_SEPT_2024: EventContent = {
     alt: "Hurricane Helene satellite imagery",
   },
 
-  mastheadImage: {
-    src: "/img/event/hurricane-helene-sept-2024.webp",
-    alt: "Hurricane Helene satellite imagery",
-  },
-
   themes: ["respond"],
 
   categories: ["tropical cyclone"],

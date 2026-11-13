@@ -26,11 +26,6 @@ export const DATA__GAIA: DataContent = {
     alt: "GAIA gridded building exposure across the Los Angeles basin, where color shows modeled built-up area per 100-meter grid cell, from dark blue in the lowest range to orange and red in the densest urban core",
   },
 
-  mastheadImage: {
-    src: "/img/data/gaia-building-exposure.webp",
-    alt: "GAIA gridded building exposure across the Los Angeles basin, where color shows modeled built-up area per 100-meter grid cell, from dark blue in the lowest range to orange and red in the densest urban core",
-  },
-
   themes: ["respond", "prepare", "recover"],
 
   // Applicable to any disaster type, so every hazard is tagged.

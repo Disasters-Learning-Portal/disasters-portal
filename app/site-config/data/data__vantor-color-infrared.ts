@@ -26,11 +26,6 @@ export const DATA__VANTOR_COLOR_INFRARED: DataContent = {
     alt: "Vantor color infrared satellite image in which farmland and tree cover appear bright red while streets, rooftops, and a highway appear in pale gray and cyan",
   },
 
-  mastheadImage: {
-    src: "/img/data/vantor-color-infrared.webp",
-    alt: "Vantor color infrared satellite image in which farmland and tree cover appear bright red while streets, rooftops, and a highway appear in pale gray and cyan",
-  },
-
   themes: ["respond", "resilience", "prepare", "recover"],
 
   categories: [

@@ -25,11 +25,6 @@ export const DATA__PLANET_NDVI_CHANGE: DataContent = {
     alt: "Planet NDVI Change",
   },
 
-  mastheadImage: {
-    src: "/img/data/planet-ndvi-change.webp",
-    alt: "Planet NDVI Change",
-  },
-
   themes: ["respond", "resilience", "prepare", "recover"],
 
   categories: [
