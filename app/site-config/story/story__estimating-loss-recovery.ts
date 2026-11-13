@@ -14,6 +14,14 @@ export const STORY__ESTIMATING_LOSS_RECOVERY: StoryContent = {
     src: "/img/story/estimating-loss-recovery.webp",
     alt: "Community recovery efforts in Mayfield after disaster, showing rebuilding in progress",
   },
+  horizontalImage: {
+    src: "/img/story/estimating-loss-recovery.webp",
+    alt: "Community recovery efforts in Mayfield after disaster, showing rebuilding in progress",
+  },
+  verticalImage: {
+    src: "/img/story/estimating-loss-recovery.webp",
+    alt: "Community recovery efforts in Mayfield after disaster, showing rebuilding in progress",
+  },
   mastheadImage: {
     src: "/img/story/estimating-loss-recovery.webp",
     alt: "Community recovery efforts in Mayfield after disaster, showing rebuilding in progress",

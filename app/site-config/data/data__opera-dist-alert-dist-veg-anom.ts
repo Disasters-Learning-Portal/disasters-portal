@@ -16,6 +16,16 @@ export const DATA__OPERA_DIST_ALERT_DIST_VEG_ANOM: DataContent = {
     alt: "OPERA DIST-ALERT maximum vegetation anomaly over the Los Angeles area on January 14, 2025, with the Palisades burn scar near the coast and the Eaton burn scar to the northeast showing as bright clusters of detected vegetation loss against dark unaffected terrain",
   },
 
+  horizontalImage: {
+    src: "/img/data/opera-dist-alert-dist-veg-anom.webp",
+    alt: "OPERA DIST-ALERT maximum vegetation anomaly over the Los Angeles area on January 14, 2025, with the Palisades burn scar near the coast and the Eaton burn scar to the northeast showing as bright clusters of detected vegetation loss against dark unaffected terrain",
+  },
+
+  verticalImage: {
+    src: "/img/data/opera-dist-alert-dist-veg-anom.webp",
+    alt: "OPERA DIST-ALERT maximum vegetation anomaly over the Los Angeles area on January 14, 2025, with the Palisades burn scar near the coast and the Eaton burn scar to the northeast showing as bright clusters of detected vegetation loss against dark unaffected terrain",
+  },
+
   mastheadImage: {
     src: "/img/data/opera-dist-alert-dist-veg-anom.webp",
     alt: "OPERA DIST-ALERT maximum vegetation anomaly over the Los Angeles area on January 14, 2025, with the Palisades burn scar near the coast and the Eaton burn scar to the northeast showing as bright clusters of detected vegetation loss against dark unaffected terrain",

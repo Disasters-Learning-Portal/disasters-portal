@@ -22,6 +22,16 @@ export const EVENT__VENEZUELA_EQ_JUN_2026: EventContent = {
     alt: "Damage and hazard impacts from the June 2026 Venezuela earthquakes",
   },
 
+  horizontalImage: {
+    src: "/img/event/venezuela-earthquake-jun-2026-hero.webp",
+    alt: "Damage and hazard impacts from the June 2026 Venezuela earthquakes",
+  },
+
+  verticalImage: {
+    src: "/img/event/venezuela-earthquake-jun-2026-hero.webp",
+    alt: "Damage and hazard impacts from the June 2026 Venezuela earthquakes",
+  },
+
   mastheadImage: {
     src: "/img/event/venezuela-earthquake-jun-2026-hero.webp",
     alt: "Damage and hazard impacts from the June 2026 Venezuela earthquakes",

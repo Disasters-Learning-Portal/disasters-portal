@@ -10,6 +10,14 @@ export const TRAINING__FUNDAMENTALS_REMOTE_SENSING: TrainingContentExternal = {
     src: "/img/training/fundamentals-remote-sensing.webp",
     alt: "NISAR satellite orbiting Earth",
   },
+  horizontalImage: {
+    src: "/img/training/fundamentals-remote-sensing.webp",
+    alt: "NISAR satellite orbiting Earth",
+  },
+  verticalImage: {
+    src: "/img/training/fundamentals-remote-sensing.webp",
+    alt: "NISAR satellite orbiting Earth",
+  },
   url: "https://www.earthdata.nasa.gov/learn/trainings/fundamentals-remote-sensing",
   themes: ["prepare"],
   categories: [],

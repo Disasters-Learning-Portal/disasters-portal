@@ -16,6 +16,16 @@ export const DATA__LANDSAT_NBR: DataContent = {
     alt: "Landsat Normalized Burn Ratio (NBR)",
   },
 
+  horizontalImage: {
+    src: "/img/data/landsat-nbr.webp",
+    alt: "Landsat Normalized Burn Ratio (NBR)",
+  },
+
+  verticalImage: {
+    src: "/img/data/landsat-nbr.webp",
+    alt: "Landsat Normalized Burn Ratio (NBR)",
+  },
+
   mastheadImage: {
     src: "/img/data/landsat-nbr.webp",
     alt: "Landsat Normalized Burn Ratio (NBR)",

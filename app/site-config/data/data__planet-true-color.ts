@@ -15,6 +15,16 @@ export const DATA__PLANET_TRUE_COLOR: DataContent = {
     alt: "Planet True Color imagery example",
   },
 
+  horizontalImage: {
+    src: "/img/data/planet-true-color.webp",
+    alt: "Planet True Color imagery example",
+  },
+
+  verticalImage: {
+    src: "/img/data/planet-true-color.webp",
+    alt: "Planet True Color imagery example",
+  },
+
   mastheadImage: {
     src: "/img/data/planet-true-color.webp",
     alt: "Planet True Color imagery example",
