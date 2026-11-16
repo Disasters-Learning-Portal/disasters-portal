@@ -12,7 +12,11 @@ export const EVENT__HURRICANE_ISAIAS_OCT_2026: EventContent = {
     src: "/img/event/template-hero.webp",
     alt: "Hurricane Isaias October 2026",
   },
-  mastheadImage: {
+  horizontalImage: {
+    src: "/img/event/template-hero.webp",
+    alt: "Hurricane Isaias October 2026",
+  },
+  verticalImage: {
     src: "/img/event/template-hero.webp",
     alt: "Hurricane Isaias October 2026",
   },

@@ -6,7 +6,11 @@ import { TRAINING__SEA_LEVEL_CHANGE_TOOLS } from "../training/training__sea-leve
 
 export const RESILIENCE_CONTENT: ThemeContent = {
   id: "resilience",
-  mastheadImage: {
+  horizontalImage: {
+    alt: "A tower crane rises over high-rise buildings under construction, silhouetted against a city skyline at sunset.",
+    src: "/img/theme/resilience-masthead.webp",
+  },
+  verticalImage: {
     alt: "A tower crane rises over high-rise buildings under construction, silhouetted against a city skyline at sunset.",
     src: "/img/theme/resilience-masthead.webp",
   },

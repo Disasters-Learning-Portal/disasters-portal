@@ -205,6 +205,8 @@ export type InternalCardContent = {
    */
   subtitle?: string;
   thumbnailImage: Image;
+  horizontalImage: Image;
+  verticalImage: Image;
   themes: Theme[];
   /**
    * @label HAZARD
@@ -225,7 +227,6 @@ export type GalleryCardContent = InternalCardContent | ExternalCardContent;
 export type TrainingContent = Omit<InternalCardContent, "contentType"> &
   UpdatedContent & {
     contentType: "training";
-    mastheadImage: Image;
     body?: ContentBlock[]; // TODO: require body
     relatedContent?: string[];
     pdfLink?: { label: string; href: string };
@@ -237,7 +238,6 @@ export type TrainingContentExternal = Omit<ExternalCardContent, "contentType"> &
 
 export type DataContent = Omit<InternalCardContent, "contentType"> & {
   contentType: "data";
-  mastheadImage: Image;
   body?: ContentBlock[]; // TODO: require body
   relatedContent?: string[];
   /** The sidebar CTA renders only when this is set. */
@@ -247,21 +247,18 @@ export type DataContent = Omit<InternalCardContent, "contentType"> & {
 export type NewsContent = Omit<InternalCardContent, "contentType"> &
   PublishedContent & {
     contentType: "news";
-    mastheadImage: Image;
     body?: ContentBlock[]; // TODO: require body
   };
 
 export type StoryContent = Omit<InternalCardContent, "contentType"> &
   PublishedContent & {
     contentType: "story";
-    mastheadImage: Image;
     body?: ContentBlock[]; // TODO: require body
   };
 
 export type DataStoryContent = Omit<InternalCardContent, "contentType"> &
   PublishedContent & {
     contentType: "datastory";
-    mastheadImage: Image;
     body?: ContentBlock[]; // TODO: require body
   };
 
@@ -272,7 +269,6 @@ export type DataStoryContentExternal = Omit<ExternalCardContent, "contentType"> 
 export type EventContent = Omit<InternalCardContent, "contentType"> &
   UpdatedContent & {
     contentType: "event";
-    mastheadImage: Image;
     /** Adds the `active` tag to the event's card, except in the gallery. */
     isLatest?: boolean;
     /**
@@ -328,7 +324,8 @@ export type ThemeContent = {
   id: string;
   title?: string;
   subtitle: string;
-  mastheadImage: Image;
+  horizontalImage: Image;
+  verticalImage: Image;
   theme: Theme;
   body: ContentBlock[];
 };

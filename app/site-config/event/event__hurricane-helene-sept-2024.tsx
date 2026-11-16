@@ -19,7 +19,12 @@ export const EVENT__HURRICANE_HELENE_SEPT_2024: EventContent = {
     alt: "Hurricane Helene satellite imagery",
   },
 
-  mastheadImage: {
+  horizontalImage: {
+    src: "/img/event/hurricane-helene-sept-2024.webp",
+    alt: "Hurricane Helene satellite imagery",
+  },
+
+  verticalImage: {
     src: "/img/event/hurricane-helene-sept-2024.webp",
     alt: "Hurricane Helene satellite imagery",
   },

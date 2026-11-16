@@ -10,6 +10,14 @@ export const TRAINING__EO_INSURANCE_FINANCE_DECISION_MAKING: TrainingContentExte
     src: "/img/training/eo-insurance-finance-decision-making.webp",
     alt: "Satellite view of a flooded river system carrying heavy sediment across farmland and wetlands",
   },
+  horizontalImage: {
+    src: "/img/training/eo-insurance-finance-decision-making.webp",
+    alt: "Satellite view of a flooded river system carrying heavy sediment across farmland and wetlands",
+  },
+  verticalImage: {
+    src: "/img/training/eo-insurance-finance-decision-making.webp",
+    alt: "Satellite view of a flooded river system carrying heavy sediment across farmland and wetlands",
+  },
   url: "https://www.earthdata.nasa.gov/learn/trainings/earth-observations-support-insurance-finance-sector-decision-making",
   themes: [],
   categories: [],

@@ -13,7 +13,11 @@ export const STORY__BUILDING_RESILIENCE_COASTAL_COMMUNITIES: StoryContent = {
     src: "/img/story/coastal-resilience.webp",
     alt: "Destroyed houses on a beach in the Caribbean following Hurricane Irma",
   },
-  mastheadImage: {
+  horizontalImage: {
+    src: "/img/story/coastal-resilience.webp",
+    alt: "Destroyed houses on a beach in the Caribbean following Hurricane Irma",
+  },
+  verticalImage: {
     src: "/img/story/coastal-resilience.webp",
     alt: "Destroyed houses on a beach in the Caribbean following Hurricane Irma",
   },
