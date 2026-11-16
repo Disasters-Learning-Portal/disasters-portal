@@ -30,7 +30,7 @@ const MOCK_FEATURE_CTACARDS_SECTION = (
 
 export const MOCK_CARD_MASTHEAD: CardMastheadPropsArgs = {
   className: "blocks-card--homepage",
-  mastheadImage: (
+  image: (
     <AppVideo
       src="/img/home/home-card-hero-video.mp4"
       aria-hidden="true"

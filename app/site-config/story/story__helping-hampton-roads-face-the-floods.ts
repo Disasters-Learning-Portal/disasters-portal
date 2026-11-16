@@ -5,6 +5,7 @@ export const STORY__HELPING_HAMPTON_ROADS_FACE_THE_FLOODS: StoryContent = {
   id: "helping-hampton-roads-face-the-floods",
   contentType: "story",
   title: "When the Next Flood Hits, Will Your City Be Ready?",
+  datePublished: "2026-10-01",
   subtitle: "Sea Level Rise Meets Sinking Land in a Region the Nation Depends On",
   thumbnailImage: {
     src: "/img/story/helping-hampton-roads-face-the-floods.webp",

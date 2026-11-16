@@ -1,5 +1,7 @@
-export const TRAINING_CARD_MASTHEAD = {
-  mastheadImage: {
+import type { CardMastheadPropsArgs } from "@/app/site-config/content.helpers";
+
+export const TRAINING_CARD_MASTHEAD: CardMastheadPropsArgs = {
+  image: {
     alt: "Participants seated around a large conference table during a training session.",
     src: "/img/training/training-masthead.webp",
   },

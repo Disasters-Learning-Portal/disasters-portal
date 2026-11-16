@@ -1,5 +1,7 @@
-export const DATA_GALLERY_CARD_MASTHEAD = {
-  mastheadImage: {
+import type { CardMastheadPropsArgs } from "@/app/site-config/content.helpers";
+
+export const DATA_GALLERY_CARD_MASTHEAD: CardMastheadPropsArgs = {
+  image: {
     alt: "False-color satellite view of a meandering river and its floodplain, with vegetation in bright green and standing water in dark blue.",
     src: "/img/data/data-gallery-masthead.webp",
   },

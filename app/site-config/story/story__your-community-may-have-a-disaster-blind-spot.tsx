@@ -7,6 +7,7 @@ export const STORY__YOUR_COMMUNITY_MAY_HAVE_A_DISASTER_BLIND_SPOT: StoryContent 
   id: "your-community-may-have-a-disaster-blind-spot",
   contentType: "story",
   title: "Your Community May Have a Disaster Blind Spot. Foresight is Built to Find It.",
+  datePublished: "2026-09-29",
   thumbnailImage: {
     src: "/img/story/your-community-may-have-a-disaster-blind-spot.webp",
     alt: "A deep fissure splits a cobblestone street after an earthquake, with an overturned cart tipped into the crack and damaged buildings beyond.",

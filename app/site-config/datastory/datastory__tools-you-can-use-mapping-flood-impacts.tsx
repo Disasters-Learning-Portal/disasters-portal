@@ -6,6 +6,7 @@ export const DATASTORY__TOOLS_YOU_CAN_USE_MAPPING_FLOOD_IMPACTS: DataStoryConten
   id: "tools-you-can-use-mapping-flood-impacts",
   contentType: "datastory",
   title: "Tools You Can Use",
+  datePublished: "2026-09-15",
   subtitle: "Mapping Flood Impacts",
   thumbnailImage: {
     src: "/img/datastory/mapping-flood-impacts.webp",

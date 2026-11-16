@@ -1,81 +1,6 @@
-import type { StyleSpecification } from "maplibre-gl";
+import { CARTO_DARK_WITH_LABELS_BASEMAP_STYLE } from "@teamimpact/veda-ui-blocks";
 
 import { RASTER_API_URL, STAC_API_URL } from "@/app/site-config/env.helpers";
-
-export const BASEMAP_STYLES = {
-  nasaBlueMarble: {
-    version: 8,
-    sources: {
-      "nasa-blue-marble": {
-        type: "raster",
-        tiles: [
-          "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/BlueMarble_NextGeneration/default/GoogleMapsCompatible_Level8/{z}/{y}/{x}.jpeg",
-        ],
-        tileSize: 256,
-        maxzoom: 8,
-        attribution: "Imagery courtesy NASA EOSDIS/GIBS",
-      },
-    },
-    layers: [
-      {
-        id: "nasa-blue-marble",
-        type: "raster",
-        source: "nasa-blue-marble",
-      },
-    ],
-  } satisfies StyleSpecification,
-  dark: {
-    version: 8,
-    name: "Dark",
-    sources: {
-      osm: {
-        type: "raster",
-        tiles: ["https://tile.openstreetmap.org/{z}/{x}/{y}.png"],
-        tileSize: 256,
-      },
-    },
-    layers: [
-      {
-        id: "background",
-        type: "background",
-        paint: { "background-color": "#1a1a1a" },
-      },
-      {
-        id: "osm",
-        type: "raster",
-        source: "osm",
-        minzoom: 0,
-        maxzoom: 18,
-        paint: { "raster-opacity": 0.5 },
-      },
-    ],
-  } satisfies StyleSpecification,
-  light: {
-    version: 8,
-    name: "Light",
-    sources: {
-      osm: {
-        type: "raster",
-        tiles: ["https://tile.openstreetmap.org/{z}/{x}/{y}.png"],
-        tileSize: 256,
-      },
-    },
-    layers: [
-      {
-        id: "background",
-        type: "background",
-        paint: { "background-color": "#f5f5f5" },
-      },
-      {
-        id: "osm",
-        type: "raster",
-        source: "osm",
-        minzoom: 0,
-        maxzoom: 18,
-      },
-    ],
-  } satisfies StyleSpecification,
-};
 
 const STAC_ENDPOINTS = {
   stacApiUrl: STAC_API_URL,
@@ -86,6 +11,6 @@ export const US_VIEW_STATE = { longitude: -98.0, latitude: 38.5, zoom: 4 };
 
 export const DEFAULT_STAC_CONFIG = {
   ...STAC_ENDPOINTS,
-  baseMapStyle: BASEMAP_STYLES.nasaBlueMarble,
+  baseMapStyle: CARTO_DARK_WITH_LABELS_BASEMAP_STYLE,
   initialViewState: US_VIEW_STATE,
 };
