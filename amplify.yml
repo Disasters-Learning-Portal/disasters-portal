@@ -3,8 +3,10 @@ frontend:
   phases:
     preBuild:
       commands:
+        - nvm install # reads .nvmrc
+        - nvm use
         - corepack enable
-        - corepack prepare pnpm@latest --activate
+        - pnpm config set store-dir .pnpm-store
         - pnpm install --frozen-lockfile
     build:
       commands:
@@ -12,9 +14,8 @@ frontend:
   artifacts:
     baseDirectory: .next
     files:
-      - '**/*'
+      - "**/*"
   cache:
     paths:
-      - node_modules/**/*
       - .next/cache/**/*
       - .pnpm-store/**/*
