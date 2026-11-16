@@ -26,11 +26,6 @@ export const DATA__HYDROSAR_S1_CLASSIFICATIONS: DataContent = {
     alt: "HydroSAR Sentinel-1 water extent classifications",
   },
 
-  mastheadImage: {
-    src: "/img/data/hydrosar-s1-classifications.webp",
-    alt: "HydroSAR Sentinel-1 water extent classifications",
-  },
-
   themes: ["respond", "recover"],
 
   categories: ["flood", "tropical cyclone", "severe weather"],

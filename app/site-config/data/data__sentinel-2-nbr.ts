@@ -19,10 +19,6 @@ export const DATA__SENTINEL_2_NBR: DataContent = {
     src: "/img/data/sentinel-2-nbr.webp",
     alt: "Sentinel-2 Normalized Burn Ratio (NBR)",
   },
-  mastheadImage: {
-    src: "/img/data/sentinel-2-nbr.webp",
-    alt: "Sentinel-2 Normalized Burn Ratio (NBR)",
-  },
   themes: ["respond", "recover"],
   categories: ["fire"],
   relatedContent: ["sentinel-2-dnbr"],
