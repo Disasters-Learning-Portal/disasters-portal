@@ -23,10 +23,6 @@ export const EVENT__TYPHOON_SINLAKU_APR_2026: EventContent = {
     src: "/img/event/typhoon-sinlaku-2026.webp",
     alt: "Banner Image: Suomi-NPP VIIRS Image of Typhoon Sinlaku with boundary overlay of the Mariana Islands, collected on April 13, 2026. Credit: NASA",
   },
-  mastheadImage: {
-    src: "/img/event/typhoon-sinlaku-2026.webp",
-    alt: "Banner Image: Suomi-NPP VIIRS Image of Typhoon Sinlaku with boundary overlay of the Mariana Islands, collected on April 13, 2026. Credit: NASA",
-  },
   themes: ["respond"],
   categories: ["tropical cyclone"],
   region: "Northern Mariana Islands, Oceania",

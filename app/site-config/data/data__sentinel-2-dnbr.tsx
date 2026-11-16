@@ -27,11 +27,6 @@ export const DATA__SENTINEL_2_DNBR: DataContent = {
     alt: "Sentinel-2 Differenced Normalized Burn Ratio (dNBR)",
   },
 
-  mastheadImage: {
-    src: "/img/data/sentinel-2-dnbr.webp",
-    alt: "Sentinel-2 Differenced Normalized Burn Ratio (dNBR)",
-  },
-
   themes: ["respond", "recover"],
 
   categories: ["fire"],
