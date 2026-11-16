@@ -16,13 +16,17 @@ export const TRAINING__PORTAL_101: TrainingContent = {
     src: "/img/training/portal-101.webp",
     alt: "False-color satellite imagery of a city and surrounding terrain, as displayed in the Custom Visualization Tool",
   },
-  dateUpdated: "2026-10-02",
-  themes: ["prepare", "respond", "recover", "resilience"],
-  categories: [],
-  mastheadImage: {
+  horizontalImage: {
     src: "/img/training/portal-101.webp",
     alt: "False-color satellite imagery of a city and surrounding terrain, as displayed in the Custom Visualization Tool",
   },
+  verticalImage: {
+    src: "/img/training/portal-101.webp",
+    alt: "False-color satellite imagery of a city and surrounding terrain, as displayed in the Custom Visualization Tool",
+  },
+  dateUpdated: "2026-10-02",
+  themes: ["prepare", "respond", "recover", "resilience"],
+  categories: [],
   // PrintLink prints this page rather than following the href; the href is the
   // page itself so the control degrades to a no-op without JS.
   pdfLink: { label: "Download PDF", href: "/training/portal-101" },

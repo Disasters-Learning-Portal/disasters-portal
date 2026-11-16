@@ -16,7 +16,12 @@ export const DATA__VANTOR_TRUE_COLOR: DataContent = {
     alt: "Vantor true color satellite image of a dense residential city edge meeting farmland, crossed by a highway and dotted with cumulus clouds",
   },
 
-  mastheadImage: {
+  horizontalImage: {
+    src: "/img/data/vantor-true-color.webp",
+    alt: "Vantor true color satellite image of a dense residential city edge meeting farmland, crossed by a highway and dotted with cumulus clouds",
+  },
+
+  verticalImage: {
     src: "/img/data/vantor-true-color.webp",
     alt: "Vantor true color satellite image of a dense residential city edge meeting farmland, crossed by a highway and dotted with cumulus clouds",
   },

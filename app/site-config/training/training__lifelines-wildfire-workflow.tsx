@@ -12,13 +12,17 @@ export const TRAINING__LIFELINES_WILDFIRE_WORKFLOW: TrainingContent = {
     src: "/img/training/lifelines-wildfire-workflow.webp",
     alt: "NASA Lifelines Data Studio cover image showing wildfire data workflow",
   },
+  horizontalImage: {
+    src: "/img/training/lifelines-wildfire-workflow.webp",
+    alt: "NASA Lifelines Data Studio cover image showing wildfire data workflow",
+  },
+  verticalImage: {
+    src: "/img/training/lifelines-wildfire-workflow.webp",
+    alt: "NASA Lifelines Data Studio cover image showing wildfire data workflow",
+  },
   dateUpdated: "2026-01-15",
   themes: ["respond", "prepare"],
   categories: ["fire"],
-  mastheadImage: {
-    src: "/img/training/lifelines-wildfire-workflow.webp",
-    alt: "Satellite-derived wildfire data workflow showing fire detections and risk zones",
-  },
   body: [
     {
       type: "text",

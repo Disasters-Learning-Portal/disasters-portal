@@ -16,7 +16,12 @@ export const DATA__OPERA_DISP_S1_WRP: DataContent = {
     alt: "OPERA DISP-S1 wrapped interferometric phase imagery",
   },
 
-  mastheadImage: {
+  horizontalImage: {
+    src: "/img/data/opera-disp-s1-wrp.webp",
+    alt: "OPERA DISP-S1 wrapped interferometric phase imagery",
+  },
+
+  verticalImage: {
     src: "/img/data/opera-disp-s1-wrp.webp",
     alt: "OPERA DISP-S1 wrapped interferometric phase imagery",
   },

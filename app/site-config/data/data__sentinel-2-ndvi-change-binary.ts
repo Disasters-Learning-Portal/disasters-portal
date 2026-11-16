@@ -16,7 +16,12 @@ export const DATA__SENTINEL_2_NDVI_CHANGE_BINARY: DataContent = {
     alt: "Sentinel-2 binary Normalized Difference Vegetation Index change imagery highlighting areas with substantial vegetation decrease",
   },
 
-  mastheadImage: {
+  horizontalImage: {
+    src: "/img/data/sentinel-2-ndvi-change-binary.webp",
+    alt: "Sentinel-2 binary Normalized Difference Vegetation Index change imagery highlighting areas with substantial vegetation decrease",
+  },
+
+  verticalImage: {
     src: "/img/data/sentinel-2-ndvi-change-binary.webp",
     alt: "Sentinel-2 binary Normalized Difference Vegetation Index change imagery highlighting areas with substantial vegetation decrease",
   },

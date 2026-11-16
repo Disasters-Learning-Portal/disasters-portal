@@ -16,7 +16,12 @@ export const DATA__OPERA_DIST_ALERT_DIST_VEG_STATUS: DataContent = {
     alt: "OPERA DIST-ALERT vegetation disturbance status imagery",
   },
 
-  mastheadImage: {
+  horizontalImage: {
+    src: "/img/data/opera-dist-alert-dist-veg-status.webp",
+    alt: "OPERA DIST-ALERT vegetation disturbance status imagery",
+  },
+
+  verticalImage: {
     src: "/img/data/opera-dist-alert-dist-veg-status.webp",
     alt: "OPERA DIST-ALERT vegetation disturbance status imagery",
   },

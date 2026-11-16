@@ -21,7 +21,7 @@ import {
 import { pickKeys, typedMap } from "@/app/site-config/typed.helpers";
 
 export default function RespondPage() {
-  const { theme, subtitle, mastheadImage } = RESPOND_CONTENT;
+  const { theme, subtitle, horizontalImage } = RESPOND_CONTENT;
 
   const stories: CardSimplePropsArgs[] = RESPOND_STORIES.slice(0, 2).map((i) =>
     pickKeys(i, ["id", "contentType", "thumbnailImage", "themes", "title", "subtitle"]),
@@ -39,7 +39,7 @@ export default function RespondPage() {
 
   return (
     <>
-      <PageMasthead {...makeCardMastHeadProps({ subtitle, theme, image: mastheadImage })} />
+      <PageMasthead {...makeCardMastHeadProps({ subtitle, theme, image: horizontalImage })} />
       <SectionCardSimpleMini
         sectionHeading={
           <SectionHeading

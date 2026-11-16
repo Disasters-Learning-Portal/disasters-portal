@@ -18,9 +18,13 @@ export const EVENT__TEXAS_FLOODS_JULY_2025: EventContent = {
     src: "/img/event/texas-floods-july-2025.webp",
     alt: "UAVSAR flood classification around Lake Travis, Texas showing water and affected land cover",
   },
-  mastheadImage: {
+  horizontalImage: {
     src: "/img/event/texas-floods-july-2025.webp",
-    alt: "Flooded river and neighborhoods in Kerrville, Texas after July 2025 flooding",
+    alt: "UAVSAR flood classification around Lake Travis, Texas showing water and affected land cover",
+  },
+  verticalImage: {
+    src: "/img/event/texas-floods-july-2025.webp",
+    alt: "UAVSAR flood classification around Lake Travis, Texas showing water and affected land cover",
   },
   themes: ["respond"],
   categories: ["flood"],

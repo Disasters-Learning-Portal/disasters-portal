@@ -11,7 +11,11 @@ export const NEWS__NASA_SELECTS_SEVEN_NEW_PROJECTS: NewsContent = {
     src: "/img/news/nasa-seven-new-projects.webp",
     alt: "Satellite map of nighttime lights in Augusta, Georgia, with many areas dark following power outages from Hurricane Helene",
   },
-  mastheadImage: {
+  horizontalImage: {
+    src: "/img/news/nasa-seven-new-projects.webp",
+    alt: "Satellite map of nighttime lights in Augusta, Georgia, with many areas dark following power outages from Hurricane Helene",
+  },
+  verticalImage: {
     src: "/img/news/nasa-seven-new-projects.webp",
     alt: "Satellite map of nighttime lights in Augusta, Georgia, with many areas dark following power outages from Hurricane Helene",
   },

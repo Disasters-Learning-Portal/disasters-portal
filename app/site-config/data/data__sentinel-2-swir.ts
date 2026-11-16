@@ -16,10 +16,16 @@ export const DATA__SENTINEL_2_SWIR: DataContent = {
     alt: "Sentinel-2 Shortwave Infrared imagery example",
   },
 
-  mastheadImage: {
+  horizontalImage: {
     src: "/img/data/sentinel-2-swir.webp",
     alt: "Sentinel-2 Shortwave Infrared imagery example",
   },
+
+  verticalImage: {
+    src: "/img/data/sentinel-2-swir.webp",
+    alt: "Sentinel-2 Shortwave Infrared imagery example",
+  },
+
   themes: ["prepare", "respond", "recover", "resilience"],
   categories: [
     "severe weather",
