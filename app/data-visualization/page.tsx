@@ -1,4 +1,4 @@
-import { PageStatus } from "@/app/components/";
+import { PageStatus } from "@/app/components";
 
 export default function DataVisualizationPage() {
   return (

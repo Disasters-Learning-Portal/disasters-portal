@@ -1,7 +1,7 @@
-// fallow-ignore-file circular-dependency
 // fallow-ignore-file unused-export
 // fallow-ignore-file unused-type
 export { AppImage } from "./AppImage";
+export { AppLink } from "./AppLink";
 export * from "./blocks";
 export { ContentBlockRenderer } from "./ContentBlockRenderer";
 export { ContentPageLayout } from "./ContentPageLayout";

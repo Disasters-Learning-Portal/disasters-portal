@@ -33,6 +33,50 @@
   },
   "overrides": [
     {
+      "includes": ["app/**/page.tsx", "app/**/layout.tsx", "app/**/not-found.tsx"],
+      "linter": {
+        "rules": {
+          "style": {
+            "noRestrictedImports": {
+              "level": "error",
+              "options": {
+                "paths": {
+                  "next/link": "Use AppLink (@/app/components/AppLink) for type definitions or 'as' prop definitions with base path support. Use AppLinkStyled for link components to be rendered with base path support.",
+                  "next/image": "Use AppImage (@/app/components/AppImage) for base path support."
+                },
+                "patterns": [
+                  {
+                    "group": ["@/app/components/*", "./components/*", "../components/*"],
+                    "message": "Routes import components from the barrel (@/app/components)."
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "includes": ["app/components/**"],
+      "linter": {
+        "rules": {
+          "style": {
+            "noRestrictedImports": {
+              "level": "error",
+              "options": {
+                "paths": {
+                  "next/link": "Use AppLink (@/app/components/AppLink) for type definitions or 'as' prop definitions with base path support. Use AppLinkStyled for link components to be rendered with base path support.",
+                  "next/image": "Use AppImage (@/app/components/AppImage) for base path support.",
+                  "@/app/components": "Import siblings directly (e.g. @/app/components/Section). The barrel re-exports this file, so importing it creates a cycle.",
+                  "@/app/components/": "Import siblings directly (e.g. @/app/components/Section). The barrel re-exports this file, so importing it creates a cycle."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
       "includes": ["app/components/AppLink.tsx", "app/components/AppImage.tsx"],
       "linter": {
         "rules": {
