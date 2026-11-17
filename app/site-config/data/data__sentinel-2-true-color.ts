@@ -26,10 +26,6 @@ export const DATA__SENTINEL_2_TRUE_COLOR: DataContent = {
     alt: "Sentinel-2 True Color imagery example",
   },
 
-  mastheadImage: {
-    src: "/img/data/sentinel-2-true-color.webp",
-    alt: "Sentinel-2 True Color imagery example",
-  },
   themes: ["respond", "resilience", "prepare", "recover"],
   categories: [
     "severe weather",
