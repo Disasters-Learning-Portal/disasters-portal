@@ -11,6 +11,7 @@ import { AppImage } from "@/app/components/AppImage";
 import { AppLinkStyled } from "@/app/components/AppLink";
 import { AppVideo } from "@/app/components/AppVideo";
 import { StacCompareBlock, StacSingleLayerBlock } from "@/app/components/blocks";
+import { ContentBlockImage } from "@/app/components/ContentBlockImage";
 import {
   makeCardDetailedImageLeftProps,
   makeCardFeaturedProps,
@@ -117,20 +118,12 @@ export const ContentBlockRenderer = ({
           {block.heading && (
             <SectionHeading headingAs={block.headingLevel}>{block.heading}</SectionHeading>
           )}
-          <figure className="margin-0">
-            <AppImage
-              src={block.src}
-              alt={block.alt}
-              width={block.width}
-              height={block.height}
-              className={`width-full height-auto ${block.maxWidth ? `maxw-${block.maxWidth}` : ""}`}
-            />
-            {block.caption && (
-              <figcaption className="font-body-3xs line-height-body-3 measure-6 text-base-dark margin-top-1">
-                {block.caption}
-              </figcaption>
-            )}
-          </figure>
+          <ContentBlockImage
+            src={block.src}
+            alt={block.alt}
+            maxWidth={block.maxWidth}
+            caption={block.caption}
+          />
         </Section>
       );
 

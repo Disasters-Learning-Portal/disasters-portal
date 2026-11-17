@@ -1,5 +1,9 @@
 export { AppImage } from "./AppImage";
 export * from "./blocks";
+export {
+  ContentBlockImage as BlockImage,
+  type ContentBlockImageProps as BlockImageProps,
+} from "./ContentBlockImage";
 export { ContentBlockRenderer } from "./ContentBlockRenderer";
 export { ContentPageLayout } from "./ContentPageLayout";
 export { Gallery, type GalleryProps } from "./Gallery/Gallery";
