@@ -26,11 +26,6 @@ export const DATA__UAVSAR_QUICKLOOK_CLASSIFIED: DataContent = {
     alt: "UAVSAR quicklook flood classification over Tampa Bay, Florida collected October 14, 2024, with open water in blue, land in grey, and detected flooding in cyan",
   },
 
-  mastheadImage: {
-    src: "/img/data/uavsar-quicklook-classified.webp",
-    alt: "UAVSAR quicklook flood classification over Tampa Bay, Florida collected October 14, 2024, with open water in blue, land in grey, and detected flooding in cyan",
-  },
-
   themes: ["respond"],
 
   categories: ["flood", "tropical cyclone", "severe weather"],

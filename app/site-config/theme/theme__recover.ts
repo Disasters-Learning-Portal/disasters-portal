@@ -14,10 +14,6 @@ import type {
 
 export const RECOVER_CONTENT: ThemeContent = {
   id: "recover",
-  mastheadImage: {
-    alt: "Debris removal operations along 6th street in Mayfield, Kentucky, Feb. 8, 2022. The Louisville District was working under the direction of FEMA at the request of the state and local government to perform debris removal in Graves County. Credits: Katelyn Newton / U.S. Army Corps of Engineers, Louisville District.",
-    src: "/img/theme/recover-masthead.webp",
-  },
   horizontalImage: {
     alt: "Debris removal operations along 6th street in Mayfield, Kentucky, Feb. 8, 2022. The Louisville District was working under the direction of FEMA at the request of the state and local government to perform debris removal in Graves County. Credits: Katelyn Newton / U.S. Army Corps of Engineers, Louisville District.",
     src: "/img/theme/recover-masthead.webp",
