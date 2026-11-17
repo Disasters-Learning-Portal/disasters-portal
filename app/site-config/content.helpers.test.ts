@@ -53,7 +53,6 @@ describe("makeGalleryCardContent", () => {
       ...card,
       contentType: "news",
       datePublished: "2026-01-01",
-      mastheadImage: { src: "/masthead.jpg", alt: "Masthead" },
       body: [{ type: "note", text: "Body" }],
     };
     expect(makeGalleryCardContent(news)).toEqual({ ...card, contentType: "news" });

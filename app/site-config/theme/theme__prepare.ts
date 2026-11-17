@@ -6,10 +6,6 @@ import { TRAINING__MONITORING_PREDICTING_FLOODS } from "../training/training__mo
 
 export const PREPARE_CONTENT: ThemeContent = {
   id: "prepare",
-  mastheadImage: {
-    alt: "A shelf cloud at the leading edge of an advancing thunderstorm sweeps over a city skyline at dusk.",
-    src: "/img/theme/prepare-masthead.webp",
-  },
   horizontalImage: {
     alt: "A shelf cloud at the leading edge of an advancing thunderstorm sweeps over a city skyline at dusk.",
     src: "/img/theme/prepare-masthead.webp",

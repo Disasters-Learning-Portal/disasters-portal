@@ -25,11 +25,6 @@ export const DATA__CAPELLA_BACKSCATTER: DataContent = {
     alt: "Capella SAR backscatter image of Waialua on the North Shore of Oahu, Hawaii, collected March 20, 2026, with dark returns along Paomoho Stream indicating likely flooding",
   },
 
-  mastheadImage: {
-    src: "/img/data/capella-backscatter.webp",
-    alt: "Capella SAR backscatter image of Waialua on the North Shore of Oahu, Hawaii, collected March 20, 2026, with dark returns along Paomoho Stream indicating likely flooding",
-  },
-
   themes: ["respond", "prepare", "recover"],
 
   categories: [

@@ -28,11 +28,6 @@ export const DATA__AVIRIS_3_CHAR_AND_ASH: DataContent = {
     alt: "AVIRIS-3 relative char and ash fraction over the Palisades Fire, January 11, 2025",
   },
 
-  mastheadImage: {
-    src: "/img/data/aviris-3-char-and-ash.webp",
-    alt: "AVIRIS-3 relative char and ash fraction over the Palisades Fire, January 11, 2025",
-  },
-
   themes: ["respond", "recover"],
 
   categories: ["fire"],
