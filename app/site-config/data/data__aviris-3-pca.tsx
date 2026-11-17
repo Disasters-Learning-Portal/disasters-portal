@@ -28,11 +28,6 @@ export const DATA__AVIRIS_3_PCA: DataContent = {
     alt: "AVIRIS-3 principal component analysis of the Palisades Fire, January 11, 2025",
   },
 
-  mastheadImage: {
-    src: "/img/data/aviris-3-pca.webp",
-    alt: "AVIRIS-3 principal component analysis of the Palisades Fire, January 11, 2025",
-  },
-
   themes: ["respond"],
 
   categories: ["fire"],

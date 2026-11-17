@@ -18,7 +18,6 @@ const event: EventContent = {
   themes: ["respond"],
   categories: ["flood"],
   dateUpdated: "2025-07-10",
-  mastheadImage: { src: "/masthead.jpg", alt: "Masthead" },
   startDate: "2025-07-04",
   region: "Texas, USA",
 };
