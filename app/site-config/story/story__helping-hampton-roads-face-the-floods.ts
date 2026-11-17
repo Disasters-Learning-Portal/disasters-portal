@@ -84,8 +84,6 @@ export const STORY__HELPING_HAMPTON_ROADS_FACE_THE_FLOODS: StoryContent = {
         "Modeled flood data from 2016’s Hurricane Matthew combined with detailed 3D city data shows " +
         "flood waters inundating Virginia Beach in unprecedented detail. Credit: NASA, J. Derek " +
         "Loftis, Ph.D., Virginia Institute of Marine Science, William & Mary.",
-      width: 1280,
-      height: 724,
     },
     {
       type: "text",
@@ -116,8 +114,6 @@ export const STORY__HELPING_HAMPTON_ROADS_FACE_THE_FLOODS: StoryContent = {
         "A day-by-day timelapse of modeled flood extent across the same event, viewed from above. " +
         "Credits: NASA, J. Derek Loftis, Ph.D., Virginia Institute of Marine Science, William & " +
         "Mary.",
-      width: 1280,
-      height: 654,
     },
     {
       type: "text",
@@ -153,8 +149,6 @@ export const STORY__HELPING_HAMPTON_ROADS_FACE_THE_FLOODS: StoryContent = {
       caption:
         "Future flood projections and their impacts to neighborhoods shown in the VA CORES " +
         "dashboard. Credit: Old Dominion University",
-      width: 936,
-      height: 541,
     },
     {
       type: "text",
