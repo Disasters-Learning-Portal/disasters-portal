@@ -5,11 +5,13 @@ import type { AppLink } from "@/app/components/AppLink";
 import type { IterableItemWithId } from "@/app/site-config/types";
 import { getGridColumnClass } from "./component.helpers";
 
+/** @expected-unused */
 export type SectionCardCarouselProps = SectionProps & {
   sectionHeading?: ReactNode;
   cards: IterableItemWithId<CardProps<typeof AppLink>>[];
 };
 
+/** @expected-unused */
 export const SectionCardCarousel = ({
   sectionHeading,
   cards,
