@@ -11,6 +11,7 @@ import {
 
 export const isTheme = (value: string): value is Theme => value in CONTENT_THEMES;
 export const isContentType = (value: string): value is ContentType => value in CONTENT_TYPES;
+/** @expected-unused */
 export const isCategory = (value: string): value is Category =>
   (CONTENT_CATEGORIES as readonly string[]).includes(value);
 

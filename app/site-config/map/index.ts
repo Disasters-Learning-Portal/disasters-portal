@@ -7,7 +7,7 @@ const STAC_ENDPOINTS = {
   titilerBaseUrl: RASTER_API_URL,
 };
 
-export const US_VIEW_STATE = { longitude: -98.0, latitude: 38.5, zoom: 4 };
+const US_VIEW_STATE = { longitude: -98.0, latitude: 38.5, zoom: 4 };
 
 export const DEFAULT_STAC_CONFIG = {
   ...STAC_ENDPOINTS,
