@@ -15,7 +15,7 @@ export default async function TrainingItemPage(props: PageProps<"/training/[id]"
   const {
     contentType,
     dateUpdated,
-    mastheadImage,
+    horizontalImage,
     title,
     subtitle,
     themes,
@@ -27,7 +27,7 @@ export default async function TrainingItemPage(props: PageProps<"/training/[id]"
   return (
     <ContentPageLayout
       masthead={makeCardMastHeadProps({
-        image: mastheadImage,
+        image: horizontalImage,
         title,
         subtitle,
         dateUpdated,

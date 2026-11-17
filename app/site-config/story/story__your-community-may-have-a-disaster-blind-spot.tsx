@@ -20,10 +20,6 @@ export const STORY__YOUR_COMMUNITY_MAY_HAVE_A_DISASTER_BLIND_SPOT: StoryContent 
     src: "/img/story/your-community-may-have-a-disaster-blind-spot.webp",
     alt: "A deep fissure splits a cobblestone street after an earthquake, with an overturned cart tipped into the crack and damaged buildings beyond.",
   },
-  mastheadImage: {
-    src: "/img/story/your-community-may-have-a-disaster-blind-spot.webp",
-    alt: "A black and white photo shows a wagon falling into a fissure in one of San Francisco's streets that was caused by a historic earthquake, April 18, 1906. Credit: Sonoma County Library Photograph Collection",
-  },
   themes: ["prepare"],
   categories: ["heat", "flood", "severe weather"],
   body: [
