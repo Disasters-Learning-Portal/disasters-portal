@@ -132,9 +132,6 @@ export function matchesFacets(item: GalleryCardContent, facets: FacetSelection):
 export function collectAvailableFacets(items: GalleryCardContent[]): FacetSelection {
   return mapFacets((config) => {
     const present = new Set(items.flatMap((item) => config.getItemValues(item)));
-    if (config.title === "Event") {
-      return config.options as string[];
-    }
     return config.options.filter((value) => present.has(value));
   });
 }
