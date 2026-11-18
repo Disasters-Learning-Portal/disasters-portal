@@ -85,10 +85,13 @@ export function FilterDrawer({
                 <Select
                   name={sectionId}
                   label={group.title}
-                  options={group.options.map((option) => ({
-                    label: events.find((e) => e.value === option.value)?.label ?? option.value,
-                    value: option.value,
-                  }))}
+                  options={[
+                    { value: "", label: "" },
+                    ...group.options.map((option) => ({
+                      label: events.find((e) => e.value === option.value)?.label ?? option.value,
+                      value: option.value,
+                    })),
+                  ]}
                   selectProps={{
                     onChange: (e) => {
                       setDraft(setFacetValue(draft, group.key, e.target.value));
