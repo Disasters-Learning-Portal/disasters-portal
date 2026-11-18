@@ -79,6 +79,9 @@ export function makeEventsFilterOptions(): EventOption[] {
 export function getFacetLabel(value: string): string {
   if (isTheme(value)) return CONTENT_THEMES[value].label;
   if (isContentType(value)) return CONTENT_TYPES[value].label;
+  const event = makeEventsFilterOptions().find((option) => option.value === value);
+  if (event) return toTitleCase(event.label);
+
   return toTitleCase(value);
 }
 
