@@ -3,7 +3,7 @@ import {
   PageMasthead,
   SectionCardSimple,
   SectionHeading,
-} from "@/app/components/";
+} from "@/app/components";
 import {
   type CardSimplePropsArgs,
   makeCardMastHeadProps,
