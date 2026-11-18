@@ -1,8 +1,8 @@
 import type { CardSimpleProps } from "@teamimpact/veda-ui-blocks";
 import { CardSimple } from "@teamimpact/veda-ui-blocks";
 import type { ReactNode } from "react";
-import { Section, type SectionProps } from "@/app/components";
 import type { AppLink } from "@/app/components/AppLink";
+import { Section, type SectionProps } from "@/app/components/Section";
 import type { IterableItemWithId } from "@/app/site-config/types";
 import { getCardSimpleSize, getGridColumnClass } from "./component.helpers";
 

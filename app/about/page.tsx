@@ -1,6 +1,5 @@
 import { Link } from "@teamimpact/veda-ui-blocks";
-import { Section } from "@/app/components";
-import { AppImage } from "@/app/components/AppImage";
+import { AppImage, Section } from "@/app/components";
 import { ABOUT_TEAM } from "@/app/site-config/about";
 
 export default function AboutPage() {

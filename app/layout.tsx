@@ -2,8 +2,7 @@ import { Footer } from "@teamimpact/veda-ui-blocks";
 import type { Metadata } from "next";
 import "@teamimpact/veda-ui-blocks/hds.css";
 
-import { HeaderWithCurrentPath } from "@/app/components";
-import { AppLink } from "@/app/components/AppLink";
+import { AppLink, HeaderWithCurrentPath } from "@/app/components";
 import { withBasePath } from "@/app/site-config/env.helpers";
 import { MOCK_FOOTER_PROPS } from "@/app/site-config/footer";
 
