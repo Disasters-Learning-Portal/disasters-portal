@@ -1,8 +1,7 @@
 // fallow-ignore-file unused-export
 // fallow-ignore-file unused-type
 export { AppImage } from "./AppImage";
-export { AppLink } from "./AppLink";
-export * from "./blocks";
+export { AppLink, AppLinkStyled } from "./AppLink";
 export { ContentBlockRenderer } from "./ContentBlockRenderer";
 export { ContentPageLayout } from "./ContentPageLayout";
 export { Gallery, type GalleryProps } from "./Gallery/Gallery";
@@ -21,3 +20,5 @@ export { SectionCardSimpleMini } from "./SectionCardSimpleMini";
 export { SectionCardSimpleMosaic } from "./SectionCardSimpleMosaic";
 export { SectionHeading } from "./SectionHeading";
 export { SectionOverview } from "./SectionOverview";
+export { StacCompareBlock } from "./StacCompareBlock";
+export { StacSingleLayerBlock } from "./StacSingleLayerBlock";

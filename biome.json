@@ -41,8 +41,8 @@
               "level": "error",
               "options": {
                 "paths": {
-                  "next/link": "Use AppLink (@/app/components/AppLink) for type definitions or 'as' prop definitions with base path support. Use AppLinkStyled for link components to be rendered with base path support.",
-                  "next/image": "Use AppImage (@/app/components/AppImage) for base path support."
+                  "next/link": "Use AppLink (@/app/components) for type definitions or 'as' prop definitions with base path support. Use AppLinkStyled (@/app/components) for link components to be rendered with base path support.",
+                  "next/image": "Use AppImage (@/app/components) for base path support."
                 },
                 "patterns": [
                   {
@@ -65,7 +65,7 @@
               "level": "error",
               "options": {
                 "paths": {
-                  "next/link": "Use AppLink (@/app/components/AppLink) for type definitions or 'as' prop definitions with base path support. Use AppLinkStyled for link components to be rendered with base path support.",
+                  "next/link": "Use AppLink (@/app/components/AppLink) for type definitions or 'as' prop definitions with base path support. Use AppLinkStyled (@/app/components/AppLink) for link components to be rendered with base path support.",
                   "next/image": "Use AppImage (@/app/components/AppImage) for base path support.",
                   "@/app/components": "Import siblings directly (e.g. @/app/components/Section). The barrel re-exports this file, so importing it creates a cycle.",
                   "@/app/components/": "Import siblings directly (e.g. @/app/components/Section). The barrel re-exports this file, so importing it creates a cycle."
