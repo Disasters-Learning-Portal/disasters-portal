@@ -141,8 +141,7 @@ export function setFacetValue(
   key: keyof FacetSelection,
   value: string,
 ): FacetSelection {
-  const next = value in facets[key] ? [] : [value];
-  return { ...facets, [key]: next } as FacetSelection;
+  return { ...facets, [key]: value ? [value] : [] };
 }
 
 export function toggleFacetValue(
