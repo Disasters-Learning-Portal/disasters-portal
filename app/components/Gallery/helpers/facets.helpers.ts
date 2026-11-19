@@ -1,4 +1,5 @@
 import { toTitleCase } from "@/app/site-config/content.helpers";
+import { EVENTS } from "@/app/site-config/event";
 import { isContentType, isTheme } from "@/app/site-config/typed.helpers";
 import {
   type Category,
@@ -14,9 +15,15 @@ export type FacetSelection = {
   themes: Theme[];
   hazards: Category[];
   contentTypes: ContentType[];
+  events: string[];
 };
 
-export const EMPTY_FACETS: FacetSelection = { themes: [], hazards: [], contentTypes: [] };
+export const EMPTY_FACETS: FacetSelection = {
+  themes: [],
+  hazards: [],
+  contentTypes: [],
+  events: [],
+};
 
 type FacetConfig = {
   param: string;
@@ -54,11 +61,27 @@ const FACETS: Record<keyof FacetSelection, FacetConfig> = {
     getItemValues: (item) => [item.contentType],
     hideWhenSingleOption: true,
   },
+  events: {
+    param: "event",
+    title: "Event",
+    options: makeEventsFilterOptions().map((option) => option.value),
+    getItemValues: (item) => (item.events ? item.events : []),
+    hideWhenSingleOption: false,
+  },
 };
+
+type EventOption = { value: string; label: string };
+
+export function makeEventsFilterOptions(): EventOption[] {
+  return EVENTS.map((event) => ({ value: event.id, label: event.title }));
+}
 
 export function getFacetLabel(value: string): string {
   if (isTheme(value)) return CONTENT_THEMES[value].label;
   if (isContentType(value)) return CONTENT_TYPES[value].label;
+  const event = makeEventsFilterOptions().find((option) => option.value === value);
+  if (event) return toTitleCase(event.label);
+
   return toTitleCase(value);
 }
 
@@ -72,6 +95,7 @@ function mapFacets(pick: (config: FacetConfig) => string[]): FacetSelection {
     themes: pick(FACETS.themes) as Theme[],
     hazards: pick(FACETS.hazards) as Category[],
     contentTypes: pick(FACETS.contentTypes) as ContentType[],
+    events: pick(FACETS.events) as string[],
   };
 }
 
@@ -110,6 +134,14 @@ export function collectAvailableFacets(items: GalleryCardContent[]): FacetSelect
     const present = new Set(items.flatMap((item) => config.getItemValues(item)));
     return config.options.filter((value) => present.has(value));
   });
+}
+
+export function setFacetValue(
+  facets: FacetSelection,
+  key: keyof FacetSelection,
+  value: string,
+): FacetSelection {
+  return { ...facets, [key]: value ? [value] : [] };
 }
 
 export function toggleFacetValue(

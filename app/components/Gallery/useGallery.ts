@@ -2,6 +2,7 @@
 
 import { usePathname, useSearchParams } from "next/navigation";
 import { useMemo } from "react";
+import { withBasePath } from "@/app/site-config/env.helpers";
 import type { GalleryCardContent } from "@/app/site-config/types";
 import {
   collectAvailableFacets,
@@ -72,7 +73,9 @@ export function useGallery(items: GalleryCardContent[]): UseGalleryResult {
     parsePageParam(searchParams),
   );
 
-  const setFilters = (next: FilterState) => applyUrl(buildFiltersUrl(searchParams, pathname, next));
+  // replaceState bypasses the router, so it needs the basePath that usePathname strips
+  const setFilters = (next: FilterState) =>
+    applyUrl(buildFiltersUrl(searchParams, withBasePath(pathname), next));
 
   return {
     pageItems,

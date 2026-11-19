@@ -174,6 +174,7 @@ export const makeGalleryCardContent = (content: Content): GalleryCardContent => 
     "horizontalImage",
     "themes",
     "categories",
+    "events",
   ]);
   return isInternalContent(content) ? base : { ...base, url: content.url };
 };

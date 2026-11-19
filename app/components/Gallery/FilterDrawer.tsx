@@ -1,12 +1,14 @@
 "use client";
 
-import { Accordion, Checkbox, Drawer, Link } from "@teamimpact/veda-ui-blocks";
+import { Accordion, Checkbox, Drawer, Link, Select } from "@teamimpact/veda-ui-blocks";
 import { useEffect, useState } from "react";
 import {
   EMPTY_FACETS,
   type FacetSelection,
   getFacetLabel,
   listFacetOptions,
+  makeEventsFilterOptions,
+  setFacetValue,
   toggleFacetValue,
 } from "./helpers/facets.helpers";
 
@@ -33,6 +35,7 @@ export function FilterDrawer({
   onApply,
 }: FilterDrawerProps) {
   const [draft, setDraft] = useState(EMPTY_FACETS);
+  const events = makeEventsFilterOptions();
 
   // Reseed the draft on open and whenever the applied selection changes
   // (e.g. back/forward while open), so Apply never reverts the URL.
@@ -77,18 +80,39 @@ export function FilterDrawer({
             id: sectionId,
             title: group.title,
             expanded: true,
-            content: group.options.map((option) => (
-              <Checkbox
-                key={option.value}
-                name={sectionId}
-                label={getFacetLabel(option.value)}
-                value={option.value}
-                inputProps={{
-                  checked: option.selected,
-                  onChange: () => setDraft(toggleFacetValue(draft, group.key, option.value)),
-                }}
-              />
-            )),
+            content:
+              group.title === "Event" ? (
+                <Select
+                  name={sectionId}
+                  label={group.title}
+                  options={[
+                    { value: "", label: "Select an event" },
+                    ...group.options.map((option) => ({
+                      label: events.find((e) => e.value === option.value)?.label ?? option.value,
+                      value: option.value,
+                    })),
+                  ]}
+                  selectProps={{
+                    value: draft[group.key][0] ?? "",
+                    onChange: (e) => {
+                      setDraft(setFacetValue(draft, group.key, e.target.value));
+                    },
+                  }}
+                />
+              ) : (
+                group.options.map((option) => (
+                  <Checkbox
+                    key={option.value}
+                    name={sectionId}
+                    label={getFacetLabel(option.value)}
+                    value={option.value}
+                    inputProps={{
+                      checked: option.selected,
+                      onChange: () => setDraft(toggleFacetValue(draft, group.key, option.value)),
+                    }}
+                  />
+                ))
+              ),
           };
         })}
       />

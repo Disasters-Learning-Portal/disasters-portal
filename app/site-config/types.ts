@@ -178,6 +178,7 @@ export type InternalCardContent = {
   themes: Theme[];
   categories: Category[];
   description?: string;
+  events?: string[];
 };
 
 export type ExternalCardContent = InternalCardContent & { url: string };
