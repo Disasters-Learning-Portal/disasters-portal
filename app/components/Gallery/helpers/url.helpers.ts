@@ -2,8 +2,8 @@ import { FACET_PARAMS, parseFacets, setFacetParams } from "./facets.helpers";
 import type { FilterState } from "./filters.helpers";
 
 export const QUERY_PARAM = "q";
-export const PAGE_PARAM = "page";
-export const PRESERVED_PARAMS: readonly string[] = [QUERY_PARAM, PAGE_PARAM, ...FACET_PARAMS];
+const PAGE_PARAM = "page";
+const PRESERVED_PARAMS: readonly string[] = [QUERY_PARAM, PAGE_PARAM, ...FACET_PARAMS];
 
 export function parseFilters(params: URLSearchParams): FilterState {
   return {
