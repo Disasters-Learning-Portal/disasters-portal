@@ -155,7 +155,7 @@ export type ContentBlock =
         id: string;
         title: string;
         description?: string;
-        thumbnailImage: { src: string; alt: string };
+        image: { src: string; alt: string };
         /** Rendered as a Tag above the title. */
         tag?: string;
       }[];

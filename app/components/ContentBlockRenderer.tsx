@@ -236,11 +236,11 @@ export const ContentBlockRenderer = ({
           )}
           <Carousel
             maxVisibleItems={block.maxVisibleItems ?? 2}
-            items={block.items.map(({ title, description, thumbnailImage, tag }) => ({
+            items={block.items.map(({ title, description, image, tag }) => ({
               // The section heading is h2, so card titles must be h3.
               title: <h3 className="blocks-card__title">{title}</h3>,
               description,
-              image: <AppImage {...thumbnailImage} fill sizes="(max-width: 640px) 100vw, 50vw" />,
+              image: <AppImage {...image} fill sizes="(max-width: 640px) 100vw, 50vw" />,
               ...(tag ? { tag: { label: tag } } : {}),
             }))}
           />
