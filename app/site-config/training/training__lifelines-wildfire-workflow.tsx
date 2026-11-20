@@ -77,8 +77,6 @@ export const TRAINING__LIFELINES_WILDFIRE_WORKFLOW: TrainingContent = {
       type: "image",
       src: "/img/training/lifelines-wildfire-workflow/lifelines-logo-blue.webp",
       alt: "NASA Lifelines logo",
-      width: 1495,
-      height: 190,
       maxWidth: "card-lg",
     },
     {

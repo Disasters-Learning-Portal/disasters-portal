@@ -53,8 +53,6 @@ export const STORY__YOUR_COMMUNITY_MAY_HAVE_A_DISASTER_BLIND_SPOT: StoryContent 
       alt: "A powerful thunderstorm with lightning approaches on the horizon at sunset over a desert highway near Belen, New Mexico, Jul 27, 2019. Credit: Raychel Sanner/Pexels",
       caption:
         "The storm is already on the horizon. The question is whether the plan was built for it. Credit: Raychel Sanner/Pexels",
-      width: 1280,
-      height: 840,
     },
     {
       type: "text",
@@ -84,8 +82,6 @@ export const STORY__YOUR_COMMUNITY_MAY_HAVE_A_DISASTER_BLIND_SPOT: StoryContent 
       alt: "Left: community members seated around tables in a meeting room take part in a disaster scenario exercise. Right: a smiling woman holds a paper grocery bag while distributing food from a pantry.",
       caption:
         "Left: Community members in Yazoo City, Mississippi participate in a disaster scenario exercise with the project team, led by Tufts University, Aug. 10, 2023. Right: Evangelist Catherine Cowans, Founder of True Light Ministry, distributes food to a person in need in Yazoo City, Mississippi. Disaster scenario exercises that involve the community enable better understanding of what actions to take, who to contact, and where to go in the event of a disaster. Photos provided by Erin Coughlan de Perez, Tufts University",
-      width: 1285,
-      height: 633,
     },
     {
       type: "text",
@@ -118,8 +114,6 @@ export const STORY__YOUR_COMMUNITY_MAY_HAVE_A_DISASTER_BLIND_SPOT: StoryContent 
       heading: "Explore the Foresight Tool",
       src: "/img/story/your-community-may-have-a-disaster-blind-spot__scenario-library.webp",
       alt: "A mock-up of the Foresight in Disaster Management Scenario Library interface, showing a tabletop exercise scenario broken into timed injects.",
-      width: 1000,
-      height: 2152,
     },
     {
       type: "text",
