@@ -1,11 +1,10 @@
 // fallow-ignore-file unused-export
 // fallow-ignore-file unused-type
+// Only client-safe components belong here; server-only modules (e.g. those
+// importing node: builtins) must be imported directly to avoid dragging the
+// "use client" directive across the server boundary.
 export { AppImage } from "./AppImage";
 export { AppLink, AppLinkStyled } from "./AppLink";
-export {
-  ContentBlockImage as BlockImage,
-  type ContentBlockImageProps as BlockImageProps,
-} from "./ContentBlockImage";
 export { ContentBlockRenderer } from "./ContentBlockRenderer";
 export { ContentPageLayout } from "./ContentPageLayout";
 export { Gallery, type GalleryProps } from "./Gallery/Gallery";
