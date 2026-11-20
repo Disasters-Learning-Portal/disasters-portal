@@ -8,6 +8,8 @@ export type ContentBlockImageProps = {
   alt: string;
   maxWidth?: "card" | "card-lg" | "mobile" | "mobile-lg" | "tablet";
   caption?: string;
+  width?: number;
+  height?: number;
 };
 
 export const ContentBlockImage = async ({
@@ -15,9 +17,19 @@ export const ContentBlockImage = async ({
   alt,
   maxWidth,
   caption,
+  width: widthProp,
+  height: heightProp,
 }: ContentBlockImageProps) => {
-  const file = await readFile(path.join("public", src));
-  const { width, height } = imageSize(file);
+  let width = widthProp;
+  let height = heightProp;
+
+  if (!width || !height) {
+    const file = await readFile(path.join("public", src));
+    const dimensions = imageSize(file);
+    width = dimensions.width;
+    height = dimensions.height;
+  }
+
   return (
     <figure className="margin-0">
       <AppImage

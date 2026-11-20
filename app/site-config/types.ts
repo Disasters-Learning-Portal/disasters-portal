@@ -116,6 +116,8 @@ export type ContentBlock =
       /** USWDS maxw-* token. The image fills the column unless capped here. */
       maxWidth?: "card" | "card-lg" | "mobile" | "mobile-lg" | "tablet";
       caption?: string;
+      height?: number;
+      width?: number;
     }
   | (StacSingleLayerMapProps &
       GeoConfig & {

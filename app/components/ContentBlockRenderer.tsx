@@ -122,6 +122,8 @@ export const ContentBlockRenderer = ({
             alt={block.alt}
             maxWidth={block.maxWidth}
             caption={block.caption}
+            height={block.height}
+            width={block.width}
           />
         </Section>
       );
