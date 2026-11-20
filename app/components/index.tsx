@@ -1,5 +1,7 @@
+// fallow-ignore-file unused-export
+// fallow-ignore-file unused-type
 export { AppImage } from "./AppImage";
-export * from "./blocks";
+export { AppLink, AppLinkStyled } from "./AppLink";
 export {
   ContentBlockImage as BlockImage,
   type ContentBlockImageProps as BlockImageProps,
@@ -22,3 +24,5 @@ export { SectionCardSimpleMini } from "./SectionCardSimpleMini";
 export { SectionCardSimpleMosaic } from "./SectionCardSimpleMosaic";
 export { SectionHeading } from "./SectionHeading";
 export { SectionOverview } from "./SectionOverview";
+export { StacCompareBlock } from "./StacCompareBlock";
+export { StacSingleLayerBlock } from "./StacSingleLayerBlock";

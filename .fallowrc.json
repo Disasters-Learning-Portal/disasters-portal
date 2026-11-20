@@ -1,0 +1,4 @@
+{
+  "ignoreUnresolvedImports": ["@/.next/types/*"],
+  "rules": { "stale-suppressions": "error" }
+}

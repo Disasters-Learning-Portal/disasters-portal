@@ -1,4 +1,4 @@
-import { ContentBlockRenderer, PageMasthead } from "@/app/components/";
+import { ContentBlockRenderer, PageMasthead } from "@/app/components";
 import { makeCardMastHeadProps } from "@/app/site-config/content.helpers";
 import { PREPARE_CONTENT } from "@/app/site-config/theme/theme__prepare";
 
