@@ -172,7 +172,6 @@ export type InternalCardContent = {
   contentType: ContentType;
   title: string;
   subtitle?: string;
-  thumbnailImage: Image;
   horizontalImage: Image;
   verticalImage: Image;
   themes: Theme[];
