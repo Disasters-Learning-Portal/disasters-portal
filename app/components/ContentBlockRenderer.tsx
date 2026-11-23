@@ -199,7 +199,17 @@ export const ContentBlockRenderer = ({
 
     case "sectionCardGallery": {
       const cards = block.cards.map(
-        ({ id, contentType, title, description, thumbnailImage, categories, themes, ...rest }) =>
+        ({
+          id,
+          contentType,
+          title,
+          description,
+          horizontalImage,
+          verticalImage,
+          categories,
+          themes,
+          ...rest
+        }) =>
           makeCardDetailedImageLeftProps({
             id,
             contentType,
@@ -212,7 +222,8 @@ export const ContentBlockRenderer = ({
               </h3>
             ),
             description,
-            thumbnailImage,
+            horizontalImage,
+            verticalImage,
             themes,
             categories,
             url: "url" in rest ? rest.url : undefined,
