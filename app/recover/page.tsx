@@ -20,11 +20,19 @@ export default function RecoverPage() {
   const { theme, subtitle, horizontalImage } = RECOVER_CONTENT;
 
   const stories: CardSimplePropsArgs[] = RECOVER_STORIES.slice(0, 1).map((i) =>
-    pickKeys(i, ["id", "contentType", "thumbnailImage", "themes", "title", "subtitle"]),
+    pickKeys(i, [
+      "id",
+      "contentType",
+      "horizontalImage",
+      "verticalImage",
+      "themes",
+      "title",
+      "subtitle",
+    ]),
   );
 
   const trainings: CardSimplePropsArgs[] = RECOVER_TRAININGS.map((i) => ({
-    ...pickKeys(i, ["id", "contentType", "thumbnailImage", "title", "subtitle"]),
+    ...pickKeys(i, ["id", "contentType", "horizontalImage", "verticalImage", "title", "subtitle"]),
     ...("url" in i ? { url: i.url } : {}),
   }));
 

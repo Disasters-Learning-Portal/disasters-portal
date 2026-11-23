@@ -22,7 +22,15 @@ export const PREPARE_CONTENT: ThemeContent = {
       heading: "Stories of Impact",
       link: { href: "/news-events-stories?type=story", label: "More Stories of Impact" },
       cards: [STORY__YOUR_COMMUNITY_MAY_HAVE_A_DISASTER_BLIND_SPOT].map((i) =>
-        pickKeys(i, ["id", "contentType", "thumbnailImage", "themes", "title", "subtitle"]),
+        pickKeys(i, [
+          "id",
+          "contentType",
+          "horizontalImage",
+          "verticalImage",
+          "themes",
+          "title",
+          "subtitle",
+        ]),
       ),
     },
     {

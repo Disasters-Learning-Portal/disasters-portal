@@ -1,13 +1,12 @@
-import { CardSimple, type CardSimpleProps } from "@teamimpact/veda-ui-blocks";
+import { CardSimple } from "@teamimpact/veda-ui-blocks";
 import type { ReactNode } from "react";
-import type { AppLink } from "@/app/components/AppLink";
 import { Section, type SectionProps } from "@/app/components/Section";
-import type { IterableItemWithId } from "@/app/site-config/types";
+import type { makeCardSimpleProps } from "../site-config/content.helpers";
 import { getGridColumnClass } from "./component.helpers";
 
 type SectionCardSimpleMiniProps = SectionProps & {
   sectionHeading?: ReactNode;
-  cards: IterableItemWithId<CardSimpleProps<typeof AppLink>>[];
+  cards: ReturnType<typeof makeCardSimpleProps>[];
 };
 
 export const SectionCardSimpleMini = ({
@@ -21,9 +20,9 @@ export const SectionCardSimpleMini = ({
     <Section {...sectionProps}>
       {sectionHeading && sectionHeading}
       <div className="grid-row grid-gap-2 margin-bottom-neg-2">
-        {cards.map((props) => (
-          <div key={props.id} className={`${gridColumnClass} margin-bottom-2 height-card`}>
-            <CardSimple {...props} size="sm" colorMode="dark" />
+        {cards.map(({ id, horizontalImage: image, verticalImage: _, ...rest }) => (
+          <div key={id} className={`${gridColumnClass} margin-bottom-2 height-card`}>
+            <CardSimple {...rest} image={image} size="sm" colorMode="dark" />
           </div>
         ))}
       </div>

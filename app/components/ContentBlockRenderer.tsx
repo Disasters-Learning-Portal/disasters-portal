@@ -154,12 +154,23 @@ export const ContentBlockRenderer = ({
 
     case "sectionCardSimple": {
       const cards = block.cards.map(
-        ({ id, contentType, themes, thumbnailImage, title, subtitle, description, ...rest }) => ({
+        ({
+          id,
+          contentType,
+          themes,
+          horizontalImage,
+          verticalImage,
+          title,
+          subtitle,
+          description,
+          ...rest
+        }) => ({
           ...makeCardSimpleProps({
             id,
             contentType,
             themes,
-            thumbnailImage,
+            horizontalImage,
+            verticalImage,
             title,
             subtitle,
             description,
