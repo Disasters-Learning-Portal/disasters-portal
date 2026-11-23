@@ -208,7 +208,11 @@ export type CardDetailedPropsArgs = Omit<
 > & {
   id: string;
   contentType: ContentType;
-  thumbnailImage: {
+  horizontalImage: {
+    alt: string;
+    src: string;
+  };
+  verticalImage: {
     alt: string;
     src: string;
   };
@@ -220,7 +224,8 @@ export type CardDetailedPropsArgs = Omit<
 export const makeCardDetailedProps = ({
   id,
   contentType,
-  thumbnailImage,
+  horizontalImage,
+  verticalImage,
   themes,
   categories,
   url,
@@ -229,7 +234,7 @@ export const makeCardDetailedProps = ({
   id,
   image: (
     <AppImage
-      {...thumbnailImage}
+      {...horizontalImage}
       fill
       sizes="(max-width: 640px) 100vw, (max-width: 1400px) 50vw, 700px"
     />
@@ -243,14 +248,15 @@ export const makeCardDetailedProps = ({
 export const makeCardDetailedImageLeftProps = ({
   id,
   contentType,
-  thumbnailImage,
+  horizontalImage,
+  verticalImage,
   themes,
   categories,
   url,
   ...rest
 }: CardDetailedPropsArgs): IterableItemWithId<CardDetailedProps<typeof AppLink>> => ({
   id,
-  image: <AppImage {...thumbnailImage} fill sizes="200px" />,
+  image: <AppImage {...verticalImage} fill sizes="200px" />,
   imagePosition: "left",
   tags: makeCardTagProps(themes, categories, contentType),
   callToAction: makeCardCTAProps({ id, contentType, url }),
