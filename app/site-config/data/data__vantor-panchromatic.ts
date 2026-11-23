@@ -11,11 +11,6 @@ export const DATA__VANTOR_PANCHROMATIC: DataContent = {
   description:
     "Vantor Panchromatic imagery collects all visible light into a single grayscale band at 30 centimeters per pixel, the sharpest view in the delivery, for reading structural damage where fine detail matters more than color.",
 
-  thumbnailImage: {
-    src: "/img/data/vantor-panchromatic.webp",
-    alt: "Vantor panchromatic grayscale satellite image of a dense hillside city, with individual buildings, streets, and steep forested ridges visible in fine detail",
-  },
-
   horizontalImage: {
     src: "/img/data/vantor-panchromatic.webp",
     alt: "Vantor panchromatic grayscale satellite image of a dense hillside city, with individual buildings, streets, and steep forested ridges visible in fine detail",

@@ -11,11 +11,6 @@ export const DATA__VANTOR_COLOR_INFRARED: DataContent = {
   description:
     "Vantor Color Infrared imagery combines the near-infrared, red, and green bands of the WorldView eight-band multispectral sensors into a false-color view in which healthy vegetation glows red and water reads near-black, sharpening the distinction between damaged and intact ground cover.",
 
-  thumbnailImage: {
-    src: "/img/data/vantor-color-infrared.webp",
-    alt: "Vantor color infrared satellite image in which farmland and tree cover appear bright red while streets, rooftops, and a highway appear in pale gray and cyan",
-  },
-
   horizontalImage: {
     src: "/img/data/vantor-color-infrared.webp",
     alt: "Vantor color infrared satellite image in which farmland and tree cover appear bright red while streets, rooftops, and a highway appear in pale gray and cyan",

@@ -11,11 +11,6 @@ export const DATA__SENTINEL_2_COLOR_INFRARED: DataContent = {
   description:
     "Created using near-infrared, red, and green channels to highlight vegetation, water, burned areas, and other surface changes associated with floods, fires, and other hazards.",
 
-  thumbnailImage: {
-    src: "/img/data/sentinel-2-color-infrared.webp",
-    alt: "Sentinel-2 Color Infrared imagery example",
-  },
-
   horizontalImage: {
     src: "/img/data/sentinel-2-color-infrared.webp",
     alt: "Sentinel-2 Color Infrared imagery example",

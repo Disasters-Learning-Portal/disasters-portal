@@ -11,11 +11,6 @@ export const DATA__UAVSAR_RGB: DataContent = {
   description:
     "Fully polarimetric L-band radar imagery from NASA's airborne UAVSAR instrument, rendered as a false color composite of the HH, HV, and VV polarization channels to reveal flooding and inundation beneath tree canopy that optical imagery cannot see.",
 
-  thumbnailImage: {
-    src: "/img/data/uavsar-rgb.webp",
-    alt: "UAVSAR false color polarimetric radar swaths over central Florida collected October 14, 2024, with vegetation in green, inundated vegetation in pink, and smooth surfaces and open water in black",
-  },
-
   horizontalImage: {
     src: "/img/data/uavsar-rgb.webp",
     alt: "UAVSAR false color polarimetric radar swaths over central Florida collected October 14, 2024, with vegetation in green, inundated vegetation in pink, and smooth surfaces and open water in black",

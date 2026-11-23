@@ -11,11 +11,6 @@ export const DATA__UMBRA_SIGMA_NAUGHT: DataContent = {
   description:
     "Sigma Naught backscatter derived from high-resolution Umbra synthetic aperture radar (SAR) imagery acquired through NASA's Commercial Satellite Data Acquisition (CSDA) Program.",
 
-  thumbnailImage: {
-    src: "/img/event/typhoon-sinlaku-2026__umbra-guam.webp",
-    alt: "Umbra radar backscatter image of Antonio B. Won Pat International Airport in Guam",
-  },
-
   horizontalImage: {
     src: "/img/event/typhoon-sinlaku-2026__umbra-guam.webp",
     alt: "Umbra radar backscatter image of Antonio B. Won Pat International Airport in Guam",

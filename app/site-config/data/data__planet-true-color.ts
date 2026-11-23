@@ -10,11 +10,6 @@ export const DATA__PLANET_TRUE_COLOR: DataContent = {
   description:
     "Planet True Color imagery combines red, green, and blue PlanetScope observations to provide a high-resolution, natural-looking view of the Earth's surface for disaster response and assessment.",
 
-  thumbnailImage: {
-    src: "/img/data/planet-true-color.webp",
-    alt: "Planet True Color imagery example",
-  },
-
   horizontalImage: {
     src: "/img/data/planet-true-color.webp",
     alt: "Planet True Color imagery example",

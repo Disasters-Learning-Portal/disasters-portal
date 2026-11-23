@@ -14,11 +14,6 @@ export const EVENT__HURRICANE_HELENE_SEPT_2024: EventContent = {
 
   dateUpdated: "2024-09-26",
 
-  thumbnailImage: {
-    src: "/img/event/hurricane-helene-sept-2024.webp",
-    alt: "Hurricane Helene satellite imagery",
-  },
-
   horizontalImage: {
     src: "/img/event/hurricane-helene-sept-2024.webp",
     alt: "Hurricane Helene satellite imagery",

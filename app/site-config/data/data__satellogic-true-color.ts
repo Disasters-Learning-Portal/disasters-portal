@@ -10,11 +10,6 @@ export const DATA__SATELLOGIC_TRUE_COLOR: DataContent = {
   description:
     "Satellogic True Color imagery combines red, green, and blue observations from Satellogic's high-resolution multispectral satellites to provide a natural-looking, sub-meter to meter-scale view of the Earth's surface for disaster response and assessment.",
 
-  thumbnailImage: {
-    src: "/img/data/satellogic-true-color.webp",
-    alt: "Satellogic true color satellite image of a dam and reservoir with surrounding roads, buildings, and vegetation",
-  },
-
   horizontalImage: {
     src: "/img/data/satellogic-true-color.webp",
     alt: "Satellogic true color satellite image of a dam and reservoir with surrounding roads, buildings, and vegetation",

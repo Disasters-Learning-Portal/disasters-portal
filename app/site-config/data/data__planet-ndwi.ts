@@ -10,11 +10,6 @@ export const DATA__PLANET_NDWI: DataContent = {
   description:
     "Normalized Difference Water Index (NDWI) derived from PlanetScope observations, using green and near-infrared reflectance to highlight surface water and water-related changes at high spatial resolution.",
 
-  thumbnailImage: {
-    src: "/img/data/planet-ndwi.webp",
-    alt: "Planet Normalized Difference Water Index (NDWI)",
-  },
-
   horizontalImage: {
     src: "/img/data/planet-ndwi.webp",
     alt: "Planet Normalized Difference Water Index (NDWI)",

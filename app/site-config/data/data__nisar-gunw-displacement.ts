@@ -11,11 +11,6 @@ export const DATA__NISAR_GUNW_DISPLACEMENT: DataContent = {
   description:
     "The NISAR Geocoded Unwrapped Interferogram (GUNW) displacement product uses L-band synthetic aperture radar observations from two acquisitions to measure changes in the Earth's surface along the radar line of sight.",
 
-  thumbnailImage: {
-    src: "/img/data/nisar-gunw-displacement.webp",
-    alt: "NISAR GUNW surface displacement imagery",
-  },
-
   horizontalImage: {
     src: "/img/data/nisar-gunw-displacement.webp",
     alt: "NISAR GUNW surface displacement imagery",

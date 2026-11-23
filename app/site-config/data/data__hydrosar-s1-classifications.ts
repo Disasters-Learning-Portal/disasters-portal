@@ -11,11 +11,6 @@ export const DATA__HYDROSAR_S1_CLASSIFICATIONS: DataContent = {
   description:
     "HydroSAR Sentinel-1 Water Extent Classifications identify post-event open water and inundated developed, vegetated, and agricultural areas from synthetic aperture radar observations.",
 
-  thumbnailImage: {
-    src: "/img/data/hydrosar-s1-classifications.webp",
-    alt: "HydroSAR Sentinel-1 water extent classifications",
-  },
-
   horizontalImage: {
     src: "/img/data/hydrosar-s1-classifications.webp",
     alt: "HydroSAR Sentinel-1 water extent classifications",

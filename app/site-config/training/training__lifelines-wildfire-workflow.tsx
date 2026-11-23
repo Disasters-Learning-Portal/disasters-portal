@@ -8,10 +8,6 @@ export const TRAINING__LIFELINES_WILDFIRE_WORKFLOW: TrainingContent = {
   title: "NASA Lifelines Data Studio: Wildfire Early Warning Workflow",
   description:
     "This training module introduces a near real-time approach to wildfire early warning built on freely available NASA satellite data.",
-  thumbnailImage: {
-    src: "/img/training/lifelines-wildfire-workflow.webp",
-    alt: "NASA Lifelines Data Studio cover image showing wildfire data workflow",
-  },
   horizontalImage: {
     src: "/img/training/lifelines-wildfire-workflow.webp",
     alt: "NASA Lifelines Data Studio cover image showing wildfire data workflow",

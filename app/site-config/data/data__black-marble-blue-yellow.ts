@@ -11,11 +11,6 @@ export const DATA__BLACK_MARBLE_BLUE_YELLOW: DataContent = {
   description:
     "The Black Marble Nighttime Blue/Yellow Composite uses VIIRS nighttime observations to visualize artificial lights, fires, and clouds, supporting assessment of potential power outages and other disaster impacts.",
 
-  thumbnailImage: {
-    src: "/img/data/black-marble-blue-yellow.webp",
-    alt: "Black Marble Nighttime Blue/Yellow Composite imagery",
-  },
-
   horizontalImage: {
     src: "/img/data/black-marble-blue-yellow.webp",
     alt: "Black Marble Nighttime Blue/Yellow Composite imagery",

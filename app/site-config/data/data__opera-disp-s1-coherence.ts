@@ -11,11 +11,6 @@ export const DATA__OPERA_DISP_S1_COHERENCE: DataContent = {
   description:
     "The OPERA Displacement Coherence product provides interferometric coherence imagery from Sentinel-1 acquisition pairs to indicate the consistency and reliability of radar measurements used for surface displacement analysis.",
 
-  thumbnailImage: {
-    src: "/img/data/opera-disp-s1-coherence.webp",
-    alt: "OPERA DISP-S1 interferometric coherence imagery",
-  },
-
   horizontalImage: {
     src: "/img/data/opera-disp-s1-coherence.webp",
     alt: "OPERA DISP-S1 interferometric coherence imagery",

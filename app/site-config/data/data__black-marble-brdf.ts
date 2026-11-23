@@ -11,11 +11,6 @@ export const DATA__BLACK_MARBLE_BRDF: DataContent = {
   description:
     "Daily VIIRS nighttime lights corrected for moonlight, atmosphere, and viewing geometry (BRDF), delivered with a cloud-free monthly pre-event composite and a daily cloud mask for assessing power outages and recovery after disasters.",
 
-  thumbnailImage: {
-    src: "/img/data/black-marble-brdf.webp",
-    alt: "Black Marble nighttime lights composite over Georgia and the Carolinas",
-  },
-
   horizontalImage: {
     src: "/img/data/black-marble-brdf.webp",
     alt: "Black Marble nighttime lights composite over Georgia and the Carolinas",

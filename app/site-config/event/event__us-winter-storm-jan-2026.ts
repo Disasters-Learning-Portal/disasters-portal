@@ -13,11 +13,6 @@ export const EVENT__US_WINTER_STORM_JAN_2026: EventContent = {
 
   dateUpdated: "2026-01-28",
 
-  thumbnailImage: {
-    src: "/img/event/us-winter-storm-jan-2026-hero.webp",
-    alt: "Hazard pattern swirls in shades of blue",
-  },
-
   horizontalImage: {
     src: "/img/event/us-winter-storm-jan-2026-hero.webp",
     alt: "Hazard pattern swirls in shades of blue",

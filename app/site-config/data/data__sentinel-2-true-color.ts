@@ -11,11 +11,6 @@ export const DATA__SENTINEL_2_TRUE_COLOR: DataContent = {
   description:
     "A visible-light composite created from Sentinel-2 red, green, and blue observations to show the Earth's surface approximately as it would appear to the human eye from space.",
 
-  thumbnailImage: {
-    src: "/img/data/sentinel-2-true-color.webp",
-    alt: "Sentinel-2 True Color imagery example",
-  },
-
   horizontalImage: {
     src: "/img/data/sentinel-2-true-color.webp",
     alt: "Sentinel-2 True Color imagery example",

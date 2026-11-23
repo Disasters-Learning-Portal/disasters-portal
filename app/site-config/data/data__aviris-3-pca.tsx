@@ -13,11 +13,6 @@ export const DATA__AVIRIS_3_PCA: DataContent = {
   description:
     "The AVIRIS-3 Principal Component Analysis (PCA) product compresses 284 bands of imaging spectroscopy into a three-color image, so surfaces that share a spectral signature — such as burned structures — share a color.",
 
-  thumbnailImage: {
-    src: "/img/data/aviris-3-pca.webp",
-    alt: "AVIRIS-3 principal component analysis of the Palisades Fire, January 11, 2025",
-  },
-
   horizontalImage: {
     src: "/img/data/aviris-3-pca.webp",
     alt: "AVIRIS-3 principal component analysis of the Palisades Fire, January 11, 2025",

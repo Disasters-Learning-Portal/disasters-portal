@@ -9,10 +9,6 @@ export const STORY__BUILDING_RESILIENCE_COASTAL_COMMUNITIES: StoryContent = {
   datePublished: "2025-07-29",
   description:
     "From Virginia to the Caribbean, NASA’s Disasters Program and its partners are developing cutting-edge tools to help communities withstand the growing impacts of hurricanes, floods, and other hazards.",
-  thumbnailImage: {
-    src: "/img/story/coastal-resilience.webp",
-    alt: "Destroyed houses on a beach in the Caribbean following Hurricane Irma",
-  },
   horizontalImage: {
     src: "/img/story/coastal-resilience.webp",
     alt: "Destroyed houses on a beach in the Caribbean following Hurricane Irma",

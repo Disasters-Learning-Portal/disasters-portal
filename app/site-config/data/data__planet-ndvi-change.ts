@@ -10,11 +10,6 @@ export const DATA__PLANET_NDVI_CHANGE: DataContent = {
   description:
     "Change in Normalized Difference Vegetation Index (NDVI) between two PlanetScope acquisitions, highlighting where vegetation has been lost, stressed, or has recovered between a pre-event baseline and a later observation.",
 
-  thumbnailImage: {
-    src: "/img/data/planet-ndvi-change.webp",
-    alt: "Planet NDVI Change",
-  },
-
   horizontalImage: {
     src: "/img/data/planet-ndvi-change.webp",
     alt: "Planet NDVI Change",

@@ -11,11 +11,6 @@ export const DATA__UAVSAR_QUICKLOOK_CLASSIFIED: DataContent = {
   description:
     "Preliminary flood classification generated from UAVSAR radar imagery within hours of a flight, providing an early view of open water and inundated areas while the fully processed classification is still being produced.",
 
-  thumbnailImage: {
-    src: "/img/data/uavsar-quicklook-classified.webp",
-    alt: "UAVSAR quicklook flood classification over Tampa Bay, Florida collected October 14, 2024, with open water in blue, land in grey, and detected flooding in cyan",
-  },
-
   horizontalImage: {
     src: "/img/data/uavsar-quicklook-classified.webp",
     alt: "UAVSAR quicklook flood classification over Tampa Bay, Florida collected October 14, 2024, with open water in blue, land in grey, and detected flooding in cyan",

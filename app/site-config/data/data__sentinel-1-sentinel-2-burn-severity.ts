@@ -11,11 +11,6 @@ export const DATA__SENTINEL_1_SENTINEL_2_BURN_SEVERITY: DataContent = {
   description:
     "This combined Sentinel-1 and Sentinel-2 product maps burned vegetation and urban areas and provides relative burn severity information using changes in optical reflectance and synthetic aperture radar backscatter.",
 
-  thumbnailImage: {
-    src: "/img/data/sentinel-1-sentinel-2-burn-severity.webp",
-    alt: "Sentinel-1 and Sentinel-2 combined burn severity imagery",
-  },
-
   horizontalImage: {
     src: "/img/data/sentinel-1-sentinel-2-burn-severity.webp",
     alt: "Sentinel-1 and Sentinel-2 combined burn severity imagery",

@@ -11,11 +11,6 @@ export const DATA__OPERA_DSWX: DataContent = {
   description:
     "The OPERA Dynamic Surface Water Extent (DSWx) product maps the presence of surface water, derived from both optical Harmonized Landsat Sentinel-2 observations and Sentinel-1 synthetic aperture radar, to support flood mapping and monitoring of open water.",
 
-  thumbnailImage: {
-    src: "/img/data/opera-dswx.webp",
-    alt: "OPERA Dynamic Surface Water Extent (DSWx) water map",
-  },
-
   horizontalImage: {
     src: "/img/data/opera-dswx.webp",
     alt: "OPERA Dynamic Surface Water Extent (DSWx) water map",

@@ -11,11 +11,6 @@ export const DATA__UAVSAR_DISPLACEMENT: DataContent = {
   description:
     "Ground displacement measured along the radar line of sight from repeat-pass UAVSAR interferometry, produced by the ARIA and UAVSAR teams at NASA's Jet Propulsion Laboratory to identify areas of significant surface motion.",
 
-  thumbnailImage: {
-    src: "/img/data/uavsar-displacement.webp",
-    alt: "UAVSAR interferometric surface displacement over the Palos Verdes Peninsula, California from October 2024, with motion away from the radar in red and motion toward the radar in blue",
-  },
-
   horizontalImage: {
     src: "/img/data/uavsar-displacement.webp",
     alt: "UAVSAR interferometric surface displacement over the Palos Verdes Peninsula, California from October 2024, with motion away from the radar in red and motion toward the radar in blue",

@@ -8,10 +8,6 @@ export const STORY__STRENGTHENING_SEVERE_WEATHER_READINESS: StoryContent = {
   datePublished: "2025-04-29",
   description:
     "Severe weather events, such as powerful thunderstorms, destructive hailstorms, and intense windstorms, pose ongoing threats to communities throughout most of the U.S.",
-  thumbnailImage: {
-    src: "/img/story/severe-weather.webp",
-    alt: "Overhead view of tornado damage in Chattanooga, Tennessee",
-  },
   horizontalImage: {
     src: "/img/story/severe-weather.webp",
     alt: "Overhead view of tornado damage in Chattanooga, Tennessee",

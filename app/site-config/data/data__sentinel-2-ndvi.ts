@@ -10,11 +10,6 @@ export const DATA__SENTINEL_2_NDVI: DataContent = {
   description:
     "Normalized Difference Vegetation Index (NDVI) uses near-infrared and red reflectance to indicate the presence and relative condition of green vegetation.",
 
-  thumbnailImage: {
-    src: "/img/data/sentinel-2-ndvi.webp",
-    alt: "Sentinel-2 Normalized Difference Vegetation Index (NDVI)",
-  },
-
   horizontalImage: {
     src: "/img/data/sentinel-2-ndvi.webp",
     alt: "Sentinel-2 Normalized Difference Vegetation Index (NDVI)",

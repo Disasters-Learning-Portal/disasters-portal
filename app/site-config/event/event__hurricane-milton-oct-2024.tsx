@@ -14,11 +14,6 @@ export const EVENT__HURRICANE_MILTON_OCT_2024: EventContent = {
 
   dateUpdated: "2024-10-10",
 
-  thumbnailImage: {
-    src: "/img/event/hurricane-milton-oct-2024.webp",
-    alt: "Hurricane Milton satellite imagery",
-  },
-
   horizontalImage: {
     src: "/img/event/hurricane-milton-oct-2024.webp",
     alt: "Hurricane Milton satellite imagery",

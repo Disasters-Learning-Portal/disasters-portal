@@ -11,11 +11,6 @@ export const DATA__SENTINEL_1_DAMAGE_ASSESSMENT: DataContent = {
   description:
     "The Sentinel-1 Likely Damaged Areas product uses coherent change detection from interferometric SAR imagery to identify urban and built-up areas likely damaged or destroyed by the January 2025 Southern California wildfires.",
 
-  thumbnailImage: {
-    src: "/img/data/sentinel-1-damage-assessment.webp",
-    alt: "Sentinel-1 Likely Damaged Areas imagery",
-  },
-
   horizontalImage: {
     src: "/img/data/sentinel-1-damage-assessment.webp",
     alt: "Sentinel-1 Likely Damaged Areas imagery",

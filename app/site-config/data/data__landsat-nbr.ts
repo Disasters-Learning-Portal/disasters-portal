@@ -11,11 +11,6 @@ export const DATA__LANDSAT_NBR: DataContent = {
   description:
     "Normalized Burn Ratio (NBR) is defined mathematically as (NIR - SWIR)/(NIR + SWIR), where NIR is near-infrared and SWIR is shortwave infrared. NBR is commonly used as a proxy to identify areas of burned or charred vegetation.",
 
-  thumbnailImage: {
-    src: "/img/data/landsat-nbr.webp",
-    alt: "Landsat Normalized Burn Ratio (NBR)",
-  },
-
   horizontalImage: {
     src: "/img/data/landsat-nbr.webp",
     alt: "Landsat Normalized Burn Ratio (NBR)",

@@ -10,11 +10,6 @@ export const DATA__ICEYE_BACKSCATTER: DataContent = {
   description:
     "Sigma Naught backscatter derived from high-resolution ICEYE synthetic aperture radar (SAR) imagery acquired through NASA's Commercial Satellite Data Acquisition (CSDA) Program.",
 
-  thumbnailImage: {
-    src: "/img/data/iceye-backscatter.webp",
-    alt: "ICEYE synthetic aperture radar image of a frozen river system, February 2026",
-  },
-
   horizontalImage: {
     src: "/img/data/iceye-backscatter.webp",
     alt: "ICEYE synthetic aperture radar image of a frozen river system, February 2026",

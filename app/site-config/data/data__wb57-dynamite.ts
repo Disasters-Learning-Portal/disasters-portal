@@ -10,11 +10,6 @@ export const DATA__WB57_DYNAMITE: DataContent = {
   description:
     "High-resolution visible and infrared imagery collected by the DyNAMITE instrument aboard NASA's WB-57 high-altitude aircraft, streamed to responders during flight.",
 
-  thumbnailImage: {
-    src: "/img/data/wb57-dynamite.webp",
-    alt: "NASA's high-altitude WB-57 aircraft with the DyNAMITE instrument affixed to its nose",
-  },
-
   horizontalImage: {
     src: "/img/data/wb57-dynamite.webp",
     alt: "NASA's high-altitude WB-57 aircraft with the DyNAMITE instrument affixed to its nose",

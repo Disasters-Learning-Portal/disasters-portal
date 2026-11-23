@@ -6,10 +6,6 @@ export const TRAINING__FUNDAMENTALS_REMOTE_SENSING: TrainingContentExternal = {
   title: "Fundamentals of Remote Sensing",
   description:
     "This ARSET training introduces participants to the underlying science of satellite remote sensing.",
-  thumbnailImage: {
-    src: "/img/training/fundamentals-remote-sensing.webp",
-    alt: "NISAR satellite orbiting Earth",
-  },
   horizontalImage: {
     src: "/img/training/fundamentals-remote-sensing.webp",
     alt: "NISAR satellite orbiting Earth",
