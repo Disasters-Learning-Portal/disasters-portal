@@ -2,9 +2,9 @@ import {
   ContentBlockRenderer,
   PageMasthead,
   SectionCardSimple,
+  SectionCardSimpleMini,
   SectionHeading,
-} from "@/app/components/";
-import { SectionCardSimpleMini } from "@/app/components/SectionCardSimpleMini";
+} from "@/app/components";
 import {
   type CardSimplePropsArgs,
   makeCardMastHeadProps,

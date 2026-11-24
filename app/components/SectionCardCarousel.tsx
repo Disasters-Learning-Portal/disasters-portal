@@ -1,15 +1,17 @@
 import { Card, type CardProps } from "@teamimpact/veda-ui-blocks";
 import type { ReactNode } from "react";
-import { Section, type SectionProps } from "@/app/components/";
 import type { AppLink } from "@/app/components/AppLink";
+import { Section, type SectionProps } from "@/app/components/Section";
 import type { IterableItemWithId } from "@/app/site-config/types";
 import { getGridColumnClass } from "./component.helpers";
 
+/** @expected-unused */
 export type SectionCardCarouselProps = SectionProps & {
   sectionHeading?: ReactNode;
   cards: IterableItemWithId<CardProps<typeof AppLink>>[];
 };
 
+/** @expected-unused */
 export const SectionCardCarousel = ({
   sectionHeading,
   cards,

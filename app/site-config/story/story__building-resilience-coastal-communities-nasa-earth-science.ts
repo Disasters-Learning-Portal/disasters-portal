@@ -34,8 +34,6 @@ export const STORY__BUILDING_RESILIENCE_COASTAL_COMMUNITIES: StoryContent = {
       type: "image",
       src: "/img/story/coastal-resilience__norfolk-naval.webp",
       alt: "Aerial photo of U.S. Naval ships docked in Norfolk, Virginia",
-      width: 1200,
-      height: 587,
       caption:
         "Norfolk Naval Station is one of many critical facilities in Hampton Roads benefiting from NASA’s advanced modeling and planning tools designed to reduce flood risk and strengthen coastal resilience. Credits: Mass Communication Specialist 2nd Class Ernest R. Scott / U.S. Navy",
     },
@@ -59,8 +57,6 @@ export const STORY__BUILDING_RESILIENCE_COASTAL_COMMUNITIES: StoryContent = {
       type: "image",
       src: "/img/story/coastal-resilience__dominican-republic.webp",
       alt: "Emergency responders participating in a simulated rescue amid rubble during a disaster-relief exercise",
-      width: 1200,
-      height: 800,
       caption:
         "Dominican Republic organizations participate in realistic disaster-relief exercises during media day of Fuerzas Aliadas Humanitarias 2019 at Campamento Militar 16 De Agosto in Santo Domingo, Dominican Republic, May 14, 2019. Credit: Miguel Ruiz/U.S. Army 100th Mobile Public Affairs Detachment",
     },
@@ -84,8 +80,6 @@ export const STORY__BUILDING_RESILIENCE_COASTAL_COMMUNITIES: StoryContent = {
       type: "image",
       src: "/img/story/coastal-resilience.webp",
       alt: "Destroyed houses on a beach in Road Town, Tortola, following Hurricane Irma",
-      width: 1200,
-      height: 800,
       caption:
         "A view of the destruction in Road Town, Tortola, the capital of the British Virgin Islands, from Hurricane Irma. Credit: Russel Wakins DFID/flickr.com/CC BY 2.0",
     },
