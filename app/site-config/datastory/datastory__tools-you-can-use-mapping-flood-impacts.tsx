@@ -22,7 +22,6 @@ export const DATASTORY__TOOLS_YOU_CAN_USE_MAPPING_FLOOD_IMPACTS: DataStoryConten
   },
   themes: ["respond"],
   categories: ["flood", "severe weather"],
-  events: ["texas-floods-july-2025", "hurricane-helene-sept-2024"],
   body: [
     {
       type: "text",

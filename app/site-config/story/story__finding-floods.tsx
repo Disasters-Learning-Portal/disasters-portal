@@ -22,7 +22,6 @@ export const STORY__FINDING_FLOODS: StoryContent = {
   },
   themes: ["respond"],
   categories: ["flood"],
-  events: ["texas-floods-july-2025"],
   body: [
     {
       type: "text",
