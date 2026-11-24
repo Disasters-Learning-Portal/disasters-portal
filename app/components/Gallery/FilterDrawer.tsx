@@ -85,6 +85,7 @@ export function FilterDrawer({
                 <Select
                   name={sectionId}
                   label={group.title}
+                  labelProps={{ className: "usa-sr-only" }}
                   options={[
                     { value: "", label: "Select an event" },
                     ...group.options.map((option) => ({

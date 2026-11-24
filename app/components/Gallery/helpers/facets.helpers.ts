@@ -14,15 +14,15 @@ import {
 export type FacetSelection = {
   themes: Theme[];
   hazards: Category[];
-  contentTypes: ContentType[];
   events: string[];
+  contentTypes: ContentType[];
 };
 
 export const EMPTY_FACETS: FacetSelection = {
   themes: [],
   hazards: [],
-  contentTypes: [],
   events: [],
+  contentTypes: [],
 };
 
 type FacetConfig = {
@@ -54,19 +54,19 @@ const FACETS: Record<keyof FacetSelection, FacetConfig> = {
     options: CONTENT_CATEGORIES,
     getItemValues: (item) => item.categories,
   },
-  contentTypes: {
-    param: "type",
-    title: "Content Type",
-    options: Object.keys(CONTENT_TYPES),
-    getItemValues: (item) => [item.contentType],
-    hideWhenSingleOption: true,
-  },
   events: {
     param: "event",
     title: "Event",
     options: makeEventsFilterOptions().map((option) => option.value),
     getItemValues: (item) => (item.events ? item.events : []),
     hideWhenSingleOption: false,
+  },
+  contentTypes: {
+    param: "type",
+    title: "Content Type",
+    options: Object.keys(CONTENT_TYPES),
+    getItemValues: (item) => [item.contentType],
+    hideWhenSingleOption: true,
   },
 };
 
@@ -94,8 +94,8 @@ function mapFacets(pick: (config: FacetConfig) => string[]): FacetSelection {
   return {
     themes: pick(FACETS.themes) as Theme[],
     hazards: pick(FACETS.hazards) as Category[],
-    contentTypes: pick(FACETS.contentTypes) as ContentType[],
     events: pick(FACETS.events) as string[],
+    contentTypes: pick(FACETS.contentTypes) as ContentType[],
   };
 }
 
