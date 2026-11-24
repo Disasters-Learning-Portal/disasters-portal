@@ -10,11 +10,6 @@ export const DATA__SATELLOGIC_COLOR_INFRARED: DataContent = {
   description:
     "Satellogic Color Infrared imagery combines near-infrared, red, and green observations from Satellogic's high-resolution multispectral satellites to highlight vegetation, water, and burned or damaged areas affected by floods, storms, fires, and other hazards.",
 
-  thumbnailImage: {
-    src: "/img/data/satellogic-color-infrared.webp",
-    alt: "Satellogic satellite image of a dam and reservoir with surrounding roads, buildings, and vegetation",
-  },
-
   horizontalImage: {
     src: "/img/data/satellogic-color-infrared.webp",
     alt: "Satellogic satellite image of a dam and reservoir with surrounding roads, buildings, and vegetation",

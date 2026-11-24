@@ -11,11 +11,6 @@ export const DATA__ECOSTRESS_LAND_SURFACE_TEMPERATURE: DataContent = {
   description:
     "Atmospherically corrected land surface temperature measured from the International Space Station by the ECOSTRESS thermal infrared radiometer, showing how hot the ground, vegetation, rooftops, and other surfaces actually are.",
 
-  thumbnailImage: {
-    src: "/img/data/ecostress-land-surface-temperature.webp",
-    alt: "ECOSTRESS nighttime land surface temperature over the Los Angeles, California area on January 8, 2025, showing elevated surface temperatures associated with actively burning wildfires",
-  },
-
   horizontalImage: {
     src: "/img/data/ecostress-land-surface-temperature.webp",
     alt: "ECOSTRESS nighttime land surface temperature over the Los Angeles, California area on January 8, 2025, showing elevated surface temperatures associated with actively burning wildfires",

@@ -11,11 +11,6 @@ export const DATA__LANDSAT_COLOR_INFRARED: DataContent = {
   description:
     "Created using near-infrared, red, and green channels to highlight vegetation, water, burned areas, and other surface changes associated with natural hazards.",
 
-  thumbnailImage: {
-    src: "/img/data/landsat-color-infrared.webp",
-    alt: "Landsat Color Infrared imagery example",
-  },
-
   horizontalImage: {
     src: "/img/data/landsat-color-infrared.webp",
     alt: "Landsat Color Infrared imagery example",

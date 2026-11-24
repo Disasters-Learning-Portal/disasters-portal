@@ -6,10 +6,6 @@ export const TRAINING__INTRODUCTION_TO_SAR: TrainingContentExternal = {
   title: "An Introduction to SAR and its Applications",
   description:
     "This ARSET training provides an introduction to SAR, as well as a review of openly available SAR satellite data.",
-  thumbnailImage: {
-    src: "/img/training/introduction-to-sar.webp",
-    alt: "HydroSAR flood mapping over Memphis, Tennessee",
-  },
   horizontalImage: {
     src: "/img/training/introduction-to-sar.webp",
     alt: "HydroSAR flood mapping over Memphis, Tennessee",

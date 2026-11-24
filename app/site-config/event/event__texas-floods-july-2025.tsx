@@ -14,10 +14,6 @@ export const EVENT__TEXAS_FLOODS_JULY_2025: EventContent = {
   title: "Texas Floods July 2025",
   description:
     "Following catastrophic flooding in Texas Hill Country, NASA supported response agencies with satellite and airborne data to assess flood extent and aid search and rescue.",
-  thumbnailImage: {
-    src: "/img/event/texas-floods-july-2025.webp",
-    alt: "UAVSAR flood classification around Lake Travis, Texas showing water and affected land cover",
-  },
   horizontalImage: {
     src: "/img/event/texas-floods-july-2025.webp",
     alt: "UAVSAR flood classification around Lake Travis, Texas showing water and affected land cover",

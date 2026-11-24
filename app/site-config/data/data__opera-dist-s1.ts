@@ -11,11 +11,6 @@ export const DATA__OPERA_DIST_S1: DataContent = {
   description:
     "The OPERA Surface Disturbance from Sentinel-1 (DIST-S1) product provides maps of surface disturbance detected from Sentinel-1 synthetic aperture radar (SAR) observations, with per-pixel classifications indicating the confidence of detected disturbance.",
 
-  thumbnailImage: {
-    src: "/img/data/opera-dist-s1.webp",
-    alt: "OPERA DIST-S1 surface disturbance imagery",
-  },
-
   horizontalImage: {
     src: "/img/data/opera-dist-s1.webp",
     alt: "OPERA DIST-S1 surface disturbance imagery",

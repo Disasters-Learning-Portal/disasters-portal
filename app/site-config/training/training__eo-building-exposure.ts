@@ -6,10 +6,6 @@ export const TRAINING__EO_BUILDING_EXPOSURE: TrainingContent = {
   title: "Understanding EO-based Building Exposure Data",
   description:
     "This training provides an overview of building exposure data, the building exposure development process, and case studies of using building exposure data.",
-  thumbnailImage: {
-    src: "/img/training/eo-building-exposure.webp",
-    alt: "Los Angeles building exposure map showing building risk data across the city",
-  },
   horizontalImage: {
     src: "/img/training/eo-building-exposure.webp",
     alt: "Los Angeles building exposure map showing building risk data across the city",

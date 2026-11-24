@@ -11,11 +11,6 @@ export const DATA__LANDSAT_TRUE_COLOR: DataContent = {
   description:
     "The Landsat True Color RGB composite provides a natural-looking view of the Earth's surface similar to how it would appear to the human eye.",
 
-  thumbnailImage: {
-    src: "/img/data/landsat-true-color.webp",
-    alt: "Landsat True Color imagery example",
-  },
-
   horizontalImage: {
     src: "/img/data/landsat-true-color.webp",
     alt: "Landsat True Color imagery example",

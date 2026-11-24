@@ -7,10 +7,6 @@ export const NEWS__NASA_SELECTS_SEVEN_NEW_PROJECTS: NewsContent = {
   datePublished: "2024-12-20",
   description:
     "The NASA Disasters Program has selected seven groundbreaking projects that will harness the power of Earth observations to help communities better understand, prepare for, and recover from disasters and extreme events.",
-  thumbnailImage: {
-    src: "/img/news/nasa-seven-new-projects.webp",
-    alt: "Satellite map of nighttime lights in Augusta, Georgia, with many areas dark following power outages from Hurricane Helene",
-  },
   horizontalImage: {
     src: "/img/news/nasa-seven-new-projects.webp",
     alt: "Satellite map of nighttime lights in Augusta, Georgia, with many areas dark following power outages from Hurricane Helene",

@@ -12,11 +12,6 @@ export const DATA__SENTINEL_2_DNBR: DataContent = {
   description:
     "Differenced Normalized Burn Ratio (dNBR) compares pre- and post-fire Sentinel-2 observations to highlight changes in vegetation associated with burning and provide a proxy for relative vegetation burn severity.",
 
-  thumbnailImage: {
-    src: "/img/data/sentinel-2-dnbr.webp",
-    alt: "Sentinel-2 Differenced Normalized Burn Ratio (dNBR)",
-  },
-
   horizontalImage: {
     src: "/img/data/sentinel-2-dnbr.webp",
     alt: "Sentinel-2 Differenced Normalized Burn Ratio (dNBR)",

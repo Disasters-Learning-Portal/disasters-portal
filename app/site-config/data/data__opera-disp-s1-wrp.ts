@@ -11,11 +11,6 @@ export const DATA__OPERA_DISP_S1_WRP: DataContent = {
   description:
     "The OPERA DISP-S1 Wrapped Phase product displays Sentinel-1 interferometric phase differences between acquisition pairs before phase unwrapping, highlighting spatial patterns associated with surface deformation.",
 
-  thumbnailImage: {
-    src: "/img/data/opera-disp-s1-wrp.webp",
-    alt: "OPERA DISP-S1 wrapped interferometric phase imagery",
-  },
-
   horizontalImage: {
     src: "/img/data/opera-disp-s1-wrp.webp",
     alt: "OPERA DISP-S1 wrapped interferometric phase imagery",

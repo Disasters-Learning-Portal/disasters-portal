@@ -11,11 +11,6 @@ export const DATA__BLACK_MARBLE_HD: DataContent = {
   description:
     "HD Black Marble combines VIIRS nighttime lights with Landsat-derived land surface information and OpenStreetMap road networks to create enhanced 30-meter nighttime light imagery for disaster impact assessment.",
 
-  thumbnailImage: {
-    src: "/img/data/black-marble-hd.webp",
-    alt: "HD Black Marble nighttime lights imagery",
-  },
-
   horizontalImage: {
     src: "/img/data/black-marble-hd.webp",
     alt: "HD Black Marble nighttime lights imagery",

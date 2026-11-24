@@ -11,11 +11,6 @@ export const DATA__OPERA_RTC_RGB_MOSAIC: DataContent = {
   description:
     "The OPERA RTC RGB Mosaic is a false-color mosaic derived from radiometrically terrain-corrected Sentinel-1 radar backscatter and designed to support visual interpretation of land and water surface conditions during disasters.",
 
-  thumbnailImage: {
-    src: "/img/data/opera-rtc-rgb-mosaic.webp",
-    alt: "OPERA RTC RGB mosaic imagery",
-  },
-
   horizontalImage: {
     src: "/img/data/opera-rtc-rgb-mosaic.webp",
     alt: "OPERA RTC RGB mosaic imagery",

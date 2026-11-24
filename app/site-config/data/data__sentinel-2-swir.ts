@@ -11,11 +11,6 @@ export const DATA__SENTINEL_2_SWIR: DataContent = {
   description:
     "A false color composite created from Sentinel-2 shortwave infrared, near-infrared, and red observations to highlight differences among water, vegetation, burned areas, snow, bare ground, and developed surfaces.",
 
-  thumbnailImage: {
-    src: "/img/data/sentinel-2-swir.webp",
-    alt: "Sentinel-2 Shortwave Infrared imagery example",
-  },
-
   horizontalImage: {
     src: "/img/data/sentinel-2-swir.webp",
     alt: "Sentinel-2 Shortwave Infrared imagery example",

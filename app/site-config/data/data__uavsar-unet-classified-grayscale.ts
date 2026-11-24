@@ -11,11 +11,6 @@ export const DATA__UAVSAR_UNET_CLASSIFIED_GRAYSCALE: DataContent = {
   description:
     "A single-band grayscale rendering of the UAVSAR U-Net flood classification, intended for use as an analysis-ready input layer or as a neutral underlay beneath other thematic map layers.",
 
-  thumbnailImage: {
-    src: "/img/data/uavsar-unet-classified-grayscale.webp",
-    alt: "UAVSAR U-Net flood classification over central Texas from July 2025, shown here in the color rendering while the grayscale source imagery is unavailable",
-  },
-
   horizontalImage: {
     src: "/img/data/uavsar-unet-classified-grayscale.webp",
     alt: "UAVSAR U-Net flood classification over central Texas from July 2025, shown here in the color rendering while the grayscale source imagery is unavailable",

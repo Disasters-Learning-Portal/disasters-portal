@@ -8,10 +8,6 @@ export const STORY__FINDING_FLOODS: StoryContent = {
   contentType: "story",
   title: "Finding the Floods",
   datePublished: "2026-09-30",
-  thumbnailImage: {
-    src: "/img/story/finding-floods.webp",
-    alt: "Flooded river in Kerrville, Texas showing significant flood waters",
-  },
   horizontalImage: {
     src: "/img/story/finding-floods.webp",
     alt: "Flooded river in Kerrville, Texas showing significant flood waters",

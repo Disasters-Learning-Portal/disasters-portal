@@ -11,11 +11,6 @@ export const DATA__OPERA_DIST_ALERT_DIST_VEG_STATUS: DataContent = {
   description:
     "The OPERA Land Surface Disturbance Alert (DIST-ALERT) VEG-DIST-STATUS layer identifies vegetation disturbance, its detection stage, and whether the maximum observed vegetation loss is below or at least 50%.",
 
-  thumbnailImage: {
-    src: "/img/data/opera-dist-alert-dist-veg-status.webp",
-    alt: "OPERA DIST-ALERT vegetation disturbance status imagery",
-  },
-
   horizontalImage: {
     src: "/img/data/opera-dist-alert-dist-veg-status.webp",
     alt: "OPERA DIST-ALERT vegetation disturbance status imagery",

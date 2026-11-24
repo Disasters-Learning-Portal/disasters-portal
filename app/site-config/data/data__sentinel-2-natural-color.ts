@@ -11,11 +11,6 @@ export const DATA__SENTINEL_2_NATURAL_COLOR: DataContent = {
   description:
     "Natural color imagery from Sentinel-2 combines the red, green, and blue bands of the MultiSpectral Instrument into a view approximating what the human eye would see, supporting visual assessment of surface conditions before and after a disaster.",
 
-  thumbnailImage: {
-    src: "/img/data/sentinel-2-natural-color.webp",
-    alt: "Sentinel-2 natural color imagery",
-  },
-
   horizontalImage: {
     src: "/img/data/sentinel-2-natural-color.webp",
     alt: "Sentinel-2 natural color imagery",

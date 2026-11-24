@@ -11,11 +11,6 @@ export const DATA__OPERA_DISP_S1_RNG: DataContent = {
   description:
     "The OPERA DISP-S1 Range Change product provides Sentinel-1 interferometric measurements of relative surface motion along the radar line of sight between reference and secondary satellite acquisitions.",
 
-  thumbnailImage: {
-    src: "/img/data/opera-disp-s1-rng.webp",
-    alt: "OPERA DISP-S1 radar line-of-sight range change imagery",
-  },
-
   horizontalImage: {
     src: "/img/data/opera-disp-s1-rng.webp",
     alt: "OPERA DISP-S1 radar line-of-sight range change imagery",

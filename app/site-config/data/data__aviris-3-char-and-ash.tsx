@@ -13,11 +13,6 @@ export const DATA__AVIRIS_3_CHAR_AND_ASH: DataContent = {
   description:
     "The AVIRIS-3 Relative Char and Ash product estimates the fraction of each pixel covered by char and ash, using spectral unmixing of airborne imaging spectroscopy measurements.",
 
-  thumbnailImage: {
-    src: "/img/data/aviris-3-char-and-ash.webp",
-    alt: "AVIRIS-3 relative char and ash fraction over the Palisades Fire, January 11, 2025",
-  },
-
   horizontalImage: {
     src: "/img/data/aviris-3-char-and-ash.webp",
     alt: "AVIRIS-3 relative char and ash fraction over the Palisades Fire, January 11, 2025",

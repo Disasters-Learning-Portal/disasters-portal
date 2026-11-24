@@ -10,10 +10,6 @@ export const STORY__ESTIMATING_LOSS_RECOVERY: StoryContent = {
   title: "When Every Dollar Counts",
   datePublished: "2026-09-30",
   subtitle: "Estimating Loss to Speed Recovery",
-  thumbnailImage: {
-    src: "/img/story/estimating-loss-recovery.webp",
-    alt: "Community recovery efforts in Mayfield after disaster, showing rebuilding in progress",
-  },
   horizontalImage: {
     src: "/img/story/estimating-loss-recovery.webp",
     alt: "Community recovery efforts in Mayfield after disaster, showing rebuilding in progress",

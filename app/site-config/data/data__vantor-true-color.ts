@@ -11,11 +11,6 @@ export const DATA__VANTOR_TRUE_COLOR: DataContent = {
   description:
     "Vantor True Color imagery combines the red, green, and blue bands of the WorldView eight-band multispectral sensors into a natural-looking view of the surface at roughly a third of a meter per pixel, supporting visual assessment at the scale of individual buildings.",
 
-  thumbnailImage: {
-    src: "/img/data/vantor-true-color.webp",
-    alt: "Vantor true color satellite image of a dense residential city edge meeting farmland, crossed by a highway and dotted with cumulus clouds",
-  },
-
   horizontalImage: {
     src: "/img/data/vantor-true-color.webp",
     alt: "Vantor true color satellite image of a dense residential city edge meeting farmland, crossed by a highway and dotted with cumulus clouds",

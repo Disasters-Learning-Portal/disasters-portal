@@ -11,11 +11,6 @@ export const DATA__LANDSAT_NDVI: DataContent = {
   description:
     "Normalized Difference Vegetation Index (NDVI) uses near-infrared and red reflectance to indicate the presence and relative condition of green vegetation.",
 
-  thumbnailImage: {
-    src: "/img/data/landsat-ndvi.webp",
-    alt: "Landsat Normalized Difference Vegetation Index (NDVI)",
-  },
-
   horizontalImage: {
     src: "/img/data/landsat-ndvi.webp",
     alt: "Landsat Normalized Difference Vegetation Index (NDVI)",

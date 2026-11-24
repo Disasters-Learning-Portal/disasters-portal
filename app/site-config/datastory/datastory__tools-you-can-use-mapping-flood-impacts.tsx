@@ -8,10 +8,6 @@ export const DATASTORY__TOOLS_YOU_CAN_USE_MAPPING_FLOOD_IMPACTS: DataStoryConten
   title: "Tools You Can Use",
   datePublished: "2026-09-15",
   subtitle: "Mapping Flood Impacts",
-  thumbnailImage: {
-    src: "/img/datastory/mapping-flood-impacts.webp",
-    alt: "Satellite map of surface water extents in the central U.S., with water shown in blue and land in white",
-  },
   horizontalImage: {
     src: "/img/datastory/mapping-flood-impacts.webp",
     alt: "Satellite map of surface water extents in the central U.S., with water shown in blue and land in white",

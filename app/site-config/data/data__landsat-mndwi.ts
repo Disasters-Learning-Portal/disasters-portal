@@ -11,11 +11,6 @@ export const DATA__LANDSAT_MNDWI: DataContent = {
   description:
     "Modified Normalized Difference Water Index (MNDWI) uses green and shortwave-infrared reflectance to enhance open water features and suppress vegetation, soil, and built-up surfaces.",
 
-  thumbnailImage: {
-    src: "/img/data/landsat-mndwi.webp",
-    alt: "Landsat Modified Normalized Difference Water Index (MNDWI)",
-  },
-
   horizontalImage: {
     src: "/img/data/landsat-mndwi.webp",
     alt: "Landsat Modified Normalized Difference Water Index (MNDWI)",

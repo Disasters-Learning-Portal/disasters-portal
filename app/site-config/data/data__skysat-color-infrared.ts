@@ -10,11 +10,6 @@ export const DATA__SKYSAT_COLOR_INFRARED: DataContent = {
   description:
     "Planet SkySat Color Infrared imagery combines near-infrared, red, and green observations from Planet's SkySat constellation to highlight vegetation, water, and burned areas at very high resolution.",
 
-  thumbnailImage: {
-    src: "/img/data/skysat-color-infrared.webp",
-    alt: "Planet SkySat color infrared image of southern Saipan following Typhoon Sinlaku in April 2026, with healthy vegetation in bright red, the island's international airport at center right, and the reef along the western coast",
-  },
-
   horizontalImage: {
     src: "/img/data/skysat-color-infrared.webp",
     alt: "Planet SkySat color infrared image of southern Saipan following Typhoon Sinlaku in April 2026, with healthy vegetation in bright red, the island's international airport at center right, and the reef along the western coast",

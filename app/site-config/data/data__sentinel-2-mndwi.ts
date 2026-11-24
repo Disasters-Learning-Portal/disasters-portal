@@ -11,11 +11,6 @@ export const DATA__SENTINEL_2_MNDWI: DataContent = {
   description:
     "Modified Normalized Difference Water Index (MNDWI) uses green and shortwave-infrared reflectance to enhance open water features and suppress vegetation, soil, and built-up surfaces.",
 
-  thumbnailImage: {
-    src: "/img/data/sentinel-2-mndwi.webp",
-    alt: "Sentinel-2 Modified Normalized Difference Water Index (MNDWI)",
-  },
-
   horizontalImage: {
     src: "/img/data/sentinel-2-mndwi.webp",
     alt: "Sentinel-2 Modified Normalized Difference Water Index (MNDWI)",

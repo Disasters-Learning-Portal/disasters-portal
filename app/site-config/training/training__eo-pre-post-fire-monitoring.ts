@@ -6,10 +6,6 @@ export const TRAINING__EO_PRE_POST_FIRE_MONITORING: TrainingContentExternal = {
   title: "Using Earth Observations for Pre- and Post-Fire Monitoring",
   description:
     "This ARSET training reviews pre-fire risk assessment and post-fire mapping using open-source tools.",
-  thumbnailImage: {
-    src: "/img/training/eo-pre-post-fire-monitoring.webp",
-    alt: "Planet Labs image of Los Angeles fires in Altadena",
-  },
   horizontalImage: {
     src: "/img/training/eo-pre-post-fire-monitoring.webp",
     alt: "Planet Labs image of Los Angeles fires in Altadena",

@@ -11,11 +11,6 @@ export const DATA__AVIRIS_3_DNBR: DataContent = {
   description:
     "The AVIRIS-3 Differenced Normalized Burn Ratio (dNBR) product uses high-resolution imaging spectroscopy to identify vegetation change associated with wildfire and provide a proxy for burn severity.",
 
-  thumbnailImage: {
-    src: "/img/data/aviris-3-dnbr.webp",
-    alt: "AVIRIS-3 differenced Normalized Burn Ratio imagery example",
-  },
-
   horizontalImage: {
     src: "/img/data/aviris-3-dnbr.webp",
     alt: "AVIRIS-3 differenced Normalized Burn Ratio imagery example",

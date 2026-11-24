@@ -11,10 +11,6 @@ export const STORY__STUDY_REVEALS_HEAT_RISK_ELDERLY_AUSTIN: StoryContent = {
   datePublished: "2026-04-13",
   description:
     "For most people, home is where they go to escape the heat. But for older adults in Austin, Texas, a new study reveals that staying indoors during extreme heat may carry unexpected risks.",
-  thumbnailImage: {
-    src: "/img/story/austin-heat-risk.webp",
-    alt: "Photo of the Austin, Texas skyline",
-  },
   horizontalImage: {
     src: "/img/story/austin-heat-risk.webp",
     alt: "Photo of the Austin, Texas skyline",

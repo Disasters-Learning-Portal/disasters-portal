@@ -11,11 +11,6 @@ export const DATA__LANDSAT_NATURAL_COLOR: DataContent = {
   description:
     "The Landsat Natural Color composite uses shortwave infrared, near-infrared, and red channels to emphasize vegetation, water, urban areas, and other surface features.",
 
-  thumbnailImage: {
-    src: "/img/data/landsat-natural-color.webp",
-    alt: "Landsat Natural Color imagery example",
-  },
-
   horizontalImage: {
     src: "/img/data/landsat-natural-color.webp",
     alt: "Landsat Natural Color imagery example",

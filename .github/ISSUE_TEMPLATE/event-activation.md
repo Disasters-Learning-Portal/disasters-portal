@@ -31,8 +31,10 @@ Let's use this issue to coordinate work across teams, track handoffs, and monito
 | Theme                       | `themes`                   | ---                                  | respond |
 | Hazards                     | `categories`               | comma-delimited, see Hazards options |         |
 | Data                        | Event Data Gallery `cards` | comma-delimited                      |         |
-| Thumbnail Image URL         | `thumbnailImage.src`       | ---                                  |         |
-| Thumbnail Image caption     | `thumbnailImage.alt`       | ---                                  |         |
+| Horizontal Image URL        | `horizontalImage.src`      | ---                                  |         |
+| Horizontal Image caption    | `horizontalImage.alt`      | ---                                  |         |
+| Vertical Image URL          | `verticalImage.src`        | ---                                  |         |
+| Vertical Image caption      | `verticalImage.alt`        | ---                                  |         |
 | Masthead Image URL          | `mastheadImage.src`        | ---                                  |         |
 | Masthead Image caption      | `mastheadImage.alt`        | ---                                  |         |
 

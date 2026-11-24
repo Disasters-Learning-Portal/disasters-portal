@@ -11,11 +11,6 @@ export const DATA__OPERA_DISP_S1_UNW: DataContent = {
   description:
     "The OPERA DISP-S1 Unwrapped Phase product provides a continuous representation of Sentinel-1 interferometric phase differences used to derive radar line-of-sight surface displacement.",
 
-  thumbnailImage: {
-    src: "/img/data/opera-disp-s1-unw.webp",
-    alt: "OPERA DISP-S1 unwrapped interferometric phase imagery",
-  },
-
   horizontalImage: {
     src: "/img/data/opera-disp-s1-unw.webp",
     alt: "OPERA DISP-S1 unwrapped interferometric phase imagery",

@@ -12,10 +12,6 @@ export const TRAINING__PORTAL_101: TrainingContent = {
   subtitle: "A page-by-page guide to the NASA Disasters PORTAL",
   description:
     "Page-by-page user guidance for the NASA Disasters PORTAL, from the homepage and thematic need pages to the Custom Visualization Tool, plus example user pathways.",
-  thumbnailImage: {
-    src: "/img/training/portal-101.webp",
-    alt: "False-color satellite imagery of a city and surrounding terrain, as displayed in the Custom Visualization Tool",
-  },
   horizontalImage: {
     src: "/img/training/portal-101.webp",
     alt: "False-color satellite imagery of a city and surrounding terrain, as displayed in the Custom Visualization Tool",

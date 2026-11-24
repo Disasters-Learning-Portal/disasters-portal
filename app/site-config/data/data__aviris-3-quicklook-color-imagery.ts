@@ -7,10 +7,6 @@ export const DATA__AVIRIS_3_QUICKLOOK_COLOR_IMAGERY: DataContent = {
   title: "AVIRIS-3 Quicklook False Color Imagery",
   description:
     "The AVIRIS-3 false color quicklook imagery provides at-sensor radiance data from high resolution, hyperspectral sensor which can provide a snapshot of burned areas, ash distribution and smoke emissions. ",
-  thumbnailImage: {
-    src: "/img/data/aviris-3-quicklook-color-imagery.webp",
-    alt: "AVIRIS-3 Quicklook False Color imagery example",
-  },
   horizontalImage: {
     src: "/img/data/aviris-3-quicklook-color-imagery.webp",
     alt: "AVIRIS-3 Quicklook False Color imagery example",

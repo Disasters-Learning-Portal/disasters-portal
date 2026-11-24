@@ -10,11 +10,6 @@ export const DATA__SKYSAT_TRUE_COLOR: DataContent = {
   description:
     "Planet SkySat True Color imagery combines red, green, and blue observations from Planet's SkySat constellation to provide very-high-resolution, natural-looking views of the Earth's surface for disaster response and assessment.",
 
-  thumbnailImage: {
-    src: "/img/data/skysat-true-color.webp",
-    alt: "Planet Labs satellite image of farmland, towns, and industrial sites along the Mississippi River in Louisiana, from NASA's Commercial Satellite Data Acquisition Program",
-  },
-
   horizontalImage: {
     src: "/img/data/skysat-true-color.webp",
     alt: "Planet Labs satellite image of farmland, towns, and industrial sites along the Mississippi River in Louisiana, from NASA's Commercial Satellite Data Acquisition Program",
