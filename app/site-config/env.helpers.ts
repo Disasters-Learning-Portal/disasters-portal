@@ -6,28 +6,37 @@
  * See `.env.example` for local values and the README for
  * how Amplify and Github supply them.
  */
-function requireEnvVariable(name: string, value: string | undefined): string {
+function requireUrlEnvVar(name: string, value: string | undefined): string {
   if (!value) {
     throw new Error(`Missing required environment variable ${name}. See .env.example.`);
   }
+
   // strip trailing slashes so callers can append paths and query strings
-  return value.replace(/\/+$/, "");
+  const stripped = value.replace(/\/+$/, "");
+
+  let _parsed: URL;
+  try {
+    _parsed = new URL(stripped);
+  } catch {
+    throw new Error(`Invalid URL in environment variable ${name}: ${value}. See .env.example.`);
+  }
+  return stripped;
 }
 
 /** Base URL of the MMGIS data visualization tool. */
-export const DATA_VISUALIZATION_URL = requireEnvVariable(
+export const DATA_VISUALIZATION_URL = requireUrlEnvVar(
   "NEXT_PUBLIC_DATA_VISUALIZATION_URL",
   process.env.NEXT_PUBLIC_DATA_VISUALIZATION_URL,
 );
 
 /** STAC API root used by the map blocks. */
-export const STAC_API_URL = requireEnvVariable(
+export const STAC_API_URL = requireUrlEnvVar(
   "NEXT_PUBLIC_STAC_API_URL",
   process.env.NEXT_PUBLIC_STAC_API_URL,
 );
 
 /** Raster API (TiTiler) root used by the map blocks. */
-export const RASTER_API_URL = requireEnvVariable(
+export const RASTER_API_URL = requireUrlEnvVar(
   "NEXT_PUBLIC_RASTER_API_URL",
   process.env.NEXT_PUBLIC_RASTER_API_URL,
 );
