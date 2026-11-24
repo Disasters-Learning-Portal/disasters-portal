@@ -20,6 +20,12 @@ import {
 } from "@/app/site-config/types";
 import { isImage, isInternalContent, pickKeys } from "./typed.helpers";
 
+// Takes in prop object with `children`, and rekeys as `label` for components with nested component props.
+const childrenToLabel = <T extends { children: string }>({ children, ...rest }: T) => ({
+  label: children,
+  ...rest,
+});
+
 export const makeOutlineTagProps = (
   tag: string,
   tagProps?: Omit<TagProps, "variant" | "size" | "children">,
@@ -52,10 +58,28 @@ export const makeContentTypeTagProps = (tag: ContentType) => {
   return label;
 };
 
-// Takes in prop object with `children`, and rekeys as `label` for components with nested component props.
-const childrenToLabel = <T extends { children: string }>({ children, ...rest }: T) => ({
-  label: children,
-  ...rest,
+const makeCardTagProps = (themes: Theme[] = [], categories: Category[] = [], type: ContentType) =>
+  [
+    ...themes.map((t) => makeOutlineTagProps(makeThemeTagProps(t))),
+    ...categories.map((c) => makeOutlineTagProps(c)),
+    makeOutlineTagProps(makeContentTypeTagProps(type)),
+  ].map(childrenToLabel);
+
+const makeCardCTAProps = ({
+  id,
+  contentType,
+  url,
+}: {
+  id: string;
+  contentType: ContentType;
+  url?: string;
+}) => ({
+  href: url ? url : `${CONTENT_TYPES[contentType].route}/${id}`,
+  label: `View ${toTitleCase(CONTENT_TYPES[contentType].label)}`,
+  variant: "arrow" as const,
+  color: "secondary" as const,
+  isExternal: !!url,
+  as: AppLink,
 });
 
 export type CardMastheadPropsArgs = Omit<
@@ -184,7 +208,11 @@ export type CardDetailedPropsArgs = Omit<
 > & {
   id: string;
   contentType: ContentType;
-  thumbnailImage: {
+  horizontalImage: {
+    alt: string;
+    src: string;
+  };
+  verticalImage: {
     alt: string;
     src: string;
   };
@@ -193,34 +221,11 @@ export type CardDetailedPropsArgs = Omit<
   url?: string;
 };
 
-const makeCardCTAProps = ({
-  id,
-  contentType,
-  url,
-}: {
-  id: string;
-  contentType: ContentType;
-  url?: string;
-}) => ({
-  href: url ? url : `${CONTENT_TYPES[contentType].route}/${id}`,
-  label: `View ${toTitleCase(CONTENT_TYPES[contentType].label)}`,
-  variant: "arrow" as const,
-  color: "secondary" as const,
-  isExternal: !!url,
-  as: AppLink,
-});
-
-const makeCardTagProps = (themes: Theme[] = [], categories: Category[] = [], type: ContentType) =>
-  [
-    ...themes.map((t) => makeOutlineTagProps(makeThemeTagProps(t))),
-    ...categories.map((c) => makeOutlineTagProps(c)),
-    makeOutlineTagProps(makeContentTypeTagProps(type)),
-  ].map(childrenToLabel);
-
 export const makeCardDetailedProps = ({
   id,
   contentType,
-  thumbnailImage,
+  horizontalImage,
+  verticalImage,
   themes,
   categories,
   url,
@@ -229,7 +234,7 @@ export const makeCardDetailedProps = ({
   id,
   image: (
     <AppImage
-      {...thumbnailImage}
+      {...horizontalImage}
       fill
       sizes="(max-width: 640px) 100vw, (max-width: 1400px) 50vw, 700px"
     />
@@ -243,14 +248,15 @@ export const makeCardDetailedProps = ({
 export const makeCardDetailedImageLeftProps = ({
   id,
   contentType,
-  thumbnailImage,
+  horizontalImage,
+  verticalImage,
   themes,
   categories,
   url,
   ...rest
 }: CardDetailedPropsArgs): IterableItemWithId<CardDetailedProps<typeof AppLink>> => ({
   id,
-  image: <AppImage {...thumbnailImage} fill sizes="200px" />,
+  image: <AppImage {...verticalImage} fill sizes="200px" />,
   imagePosition: "left",
   tags: makeCardTagProps(themes, categories, contentType),
   callToAction: makeCardCTAProps({ id, contentType, url }),
