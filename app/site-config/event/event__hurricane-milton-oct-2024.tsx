@@ -55,8 +55,6 @@ export const EVENT__HURRICANE_MILTON_OCT_2024: EventContent = {
       type: "image",
       src: "/img/event/hurricane-milton-uavsar-st-johns-river.webp",
       alt: "UAVSAR flood mapping near the St. Johns River, Florida, after Hurricane Milton.",
-      width: 850,
-      height: 705,
       caption:
         "This map shows UAVSAR data from the area surrounding St. Johns River, Florida, which saw flooding from Hurricane Milton. The map compares false-color raster data (right) with derived water extents (left), which can aid in detecting flooded areas. In the water extent map on the left, blue indicates open water, cyan indicates potentially flooded vegetation, and pink indicates potentially flooded urban areas. On the right RGB raster map, green indicates vegetated areas, pink indicates inundated forest and fields as well as urban areas, and black and dark gray indicate open water and smooth surfaces such as roads and bare ground. Credits: NASA JPL, NASA Disasters Program",
     },
