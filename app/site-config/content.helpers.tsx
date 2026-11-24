@@ -315,7 +315,6 @@ type CardCarouselPropsArgs = Omit<
   url?: string;
 };
 
-/** @expected-unused */
 export const makeCardCarouselProps = ({
   id,
   contentType,
