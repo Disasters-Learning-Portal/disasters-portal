@@ -7,7 +7,6 @@ import {
   type FacetSelection,
   getFacetLabel,
   listFacetOptions,
-  makeEventsFilterOptions,
   setFacetValue,
   toggleFacetValue,
 } from "./helpers/facets.helpers";
@@ -35,7 +34,6 @@ export function FilterDrawer({
   onApply,
 }: FilterDrawerProps) {
   const [draft, setDraft] = useState(EMPTY_FACETS);
-  const events = makeEventsFilterOptions();
 
   // Reseed the draft on open and whenever the applied selection changes
   // (e.g. back/forward while open), so Apply never reverts the URL.
@@ -81,7 +79,7 @@ export function FilterDrawer({
             title: group.title,
             expanded: true,
             content:
-              group.title === "Event" ? (
+              group.key === "events" ? (
                 <Select
                   name={sectionId}
                   label={group.title}
@@ -89,7 +87,7 @@ export function FilterDrawer({
                   options={[
                     { value: "", label: "Select an event" },
                     ...group.options.map((option) => ({
-                      label: events.find((e) => e.value === option.value)?.label ?? option.value,
+                      label: getFacetLabel(option.value),
                       value: option.value,
                     })),
                   ]}

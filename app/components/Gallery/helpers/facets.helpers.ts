@@ -57,9 +57,8 @@ const FACETS: Record<keyof FacetSelection, FacetConfig> = {
   events: {
     param: "event",
     title: "Event",
-    options: makeEventsFilterOptions().map((option) => option.value),
-    getItemValues: (item) => (item.events ? item.events : []),
-    hideWhenSingleOption: false,
+    options: EVENTS.map((event) => event.id),
+    getItemValues: (item) => item.events ?? [],
   },
   contentTypes: {
     param: "type",
@@ -70,18 +69,11 @@ const FACETS: Record<keyof FacetSelection, FacetConfig> = {
   },
 };
 
-type EventOption = { value: string; label: string };
-
-export function makeEventsFilterOptions(): EventOption[] {
-  return EVENTS.map((event) => ({ value: event.id, label: event.title }));
-}
-
 export function getFacetLabel(value: string): string {
   if (isTheme(value)) return CONTENT_THEMES[value].label;
   if (isContentType(value)) return CONTENT_TYPES[value].label;
-  const event = makeEventsFilterOptions().find((option) => option.value === value);
-  if (event) return toTitleCase(event.label);
-
+  const event = EVENTS.find((entry) => entry.id === value);
+  if (event) return event.title;
   return toTitleCase(value);
 }
 
