@@ -12,6 +12,11 @@ import { NEWS } from "@/app/site-config/news";
 import { STORIES } from "@/app/site-config/story";
 import { isInternalContent } from "@/app/site-config/typed.helpers";
 
+export const generateStaticParams = () =>
+  [...STORIES, ...DATASTORIES, ...NEWS, ...EVENTS]
+    .filter(isInternalContent)
+    .map(({ id }) => ({ id }));
+
 export default async function NewsEventsStoriesItemPage(
   props: PageProps<"/news-events-stories/[id]">,
 ) {
