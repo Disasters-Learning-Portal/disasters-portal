@@ -56,6 +56,7 @@ Let's use this issue to coordinate work across teams, track handoffs, and monito
 ## Tasks per Team
 
 - [ ] [Leads] New `Event` Page with initial event information
+- [ ] [Leads] Add the event `id` to the `events` field of related content (news, stories, data stories, data, training), so it shows in the gallery Event filter
 - [ ] [Data Services] Ingest the data and notify Plugins team when available.
 - [ ] [Plugins] Update the Visualization Tool as needed.
 - [ ] [Leads] Review that the event and associated data are accessible and functioning as expected.
