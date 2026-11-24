@@ -30,7 +30,7 @@ export const makeOutlineTagProps = (
   ...tagProps,
 });
 
-export const makeTextTagProps = (
+const makeTextTagProps = (
   tag: string,
   tagProps?: Omit<TagProps, "variant" | "size" | "children">,
 ) => ({
@@ -315,6 +315,7 @@ type CardCarouselPropsArgs = Omit<
   url?: string;
 };
 
+/** @expected-unused */
 export const makeCardCarouselProps = ({
   id,
   contentType,

@@ -1,4 +1,4 @@
-import { PageStatus } from "./components/PageStatus";
+import { PageStatus } from "@/app/components";
 
 export default function NotFoundPage() {
   return (

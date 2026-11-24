@@ -54,13 +54,14 @@ describe.each([
     vi.unstubAllEnvs();
   });
 
-  const importWith = async (value: string) => {
+  const importWith = async (value?: string) => {
     vi.stubEnv(variable, value);
     vi.resetModules();
     return import("./env.helpers");
   };
 
   it("fails when missing", async () => {
+    await expect(importWith()).rejects.toThrow(`Missing required environment variable ${variable}`);
     await expect(importWith("")).rejects.toThrow(
       `Missing required environment variable ${variable}`,
     );
@@ -69,5 +70,17 @@ describe.each([
   it("strips trailing slashes", async () => {
     const module = await importWith("https://example.test/path//");
     expect(module[constant]).toBe("https://example.test/path");
+  });
+
+  it("fails when not a parseable URL", async () => {
+    await expect(importWith("not a url")).rejects.toThrow(
+      `Invalid URL in environment variable ${variable}`,
+    );
+    await expect(importWith("/file-path")).rejects.toThrow(
+      `Invalid URL in environment variable ${variable}`,
+    );
+    await expect(importWith("/")).rejects.toThrow(
+      `Invalid URL in environment variable ${variable}`,
+    );
   });
 });

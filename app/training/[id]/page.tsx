@@ -1,10 +1,12 @@
 import { notFound } from "next/navigation";
-import { ContentPageLayout } from "@/app/components";
-import { PrintLink } from "@/app/components/PrintLink";
+import { ContentPageLayout, PrintLink } from "@/app/components";
 import { makeCardMastHeadProps } from "@/app/site-config/content.helpers";
 
 import { TRAININGS } from "@/app/site-config/training";
 import { isInternalContent } from "@/app/site-config/typed.helpers";
+
+export const generateStaticParams = () =>
+  TRAININGS.filter(isInternalContent).map(({ id }) => ({ id }));
 
 export default async function TrainingItemPage(props: PageProps<"/training/[id]">) {
   const { id } = await props.params;
