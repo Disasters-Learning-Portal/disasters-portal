@@ -12,7 +12,11 @@ export const DATASTORY__TOOLS_YOU_CAN_USE_MAPPING_FLOOD_IMPACTS: DataStoryConten
     src: "/img/datastory/mapping-flood-impacts.webp",
     alt: "Satellite map of surface water extents in the central U.S., with water shown in blue and land in white",
   },
-  mastheadImage: {
+  horizontalImage: {
+    src: "/img/datastory/mapping-flood-impacts.webp",
+    alt: "Satellite map of surface water extents in the central U.S., with water shown in blue and land in white",
+  },
+  verticalImage: {
     src: "/img/datastory/mapping-flood-impacts.webp",
     alt: "Satellite map of surface water extents in the central U.S., with water shown in blue and land in white",
   },
@@ -49,8 +53,6 @@ export const DATASTORY__TOOLS_YOU_CAN_USE_MAPPING_FLOOD_IMPACTS: DataStoryConten
       type: "image",
       src: "/img/datastory/mapping-flood-impacts__hydrosar.webp",
       alt: "HydroSAR surface water extents in blue over grayscale Sentinel-1 VH radar imagery of the Mississippi and Ohio river valleys, with flooding spread across tributaries and low-lying farmland",
-      width: 850,
-      height: 903,
       caption:
         "The Copernicus Sentinel-1 satellite collected synthetic aperture radar (SAR) imagery over the southeast and central U.S. from April 4-9, 2025, capturing flooding from severe storms. HydroSAR surface water extents are shown in blue, overlaid on VH cross-pol SAR imagery (grayscale), in which still water and other flat surfaces appear dark, while diffuse scatterers like vegetation appear in lighter shades. The scene spans the Mississippi and Ohio river valleys across Missouri, Arkansas, Kentucky and Tennessee, with Kentucky Lake at right. Credits: NASA Disasters Program, Alaska Satellite Facility. Contains modified Copernicus Sentinel data (2025) processed by ESA.",
     },
@@ -110,8 +112,6 @@ export const DATASTORY__TOOLS_YOU_CAN_USE_MAPPING_FLOOD_IMPACTS: DataStoryConten
       type: "image",
       src: "/img/datastory/mapping-flood-impacts__black-marble.webp",
       alt: "Black Marble nighttime imagery over Missouri, Arkansas, Kentucky and Tennessee, with city lights in yellow against blue cloud cover",
-      width: 850,
-      height: 583,
       caption:
         "Black Marble Nighttime Blue/Yellow Composite imagery over parts of Missouri, Arkansas, Kentucky and Tennessee on April 7, 2025, as skies cleared behind the early-April storms. City lights appear in yellow and cloud cover in blue. Read night to night across an event, the product shows where lights go dark and when they come back, which is how it is used to spot prolonged outages in rural and off-grid communities. Outages were minimal for this incident. Credits: NASA Worldview, NASA/GSFC/ESDIS",
     },
@@ -171,8 +171,6 @@ export const DATASTORY__TOOLS_YOU_CAN_USE_MAPPING_FLOOD_IMPACTS: DataStoryConten
       type: "image",
       src: "/img/datastory/mapping-flood-impacts__lhasa.webp",
       alt: "Global map of landslide hazard from NASA's LHASA model, with red and yellow along mountain ranges and dark blue elsewhere",
-      width: 1600,
-      height: 975,
       caption:
         "A global landslide nowcast from NASA's Landslide Hazard Assessment for Situational Awareness (LHASA) model, June 2021. Red and yellow along mountain ranges indicate the highest landslide hazard; dark blue indicates the lowest. Credit: NASA",
     },

@@ -16,7 +16,12 @@ export const DATA__LANDSAT_NDVI: DataContent = {
     alt: "Landsat Normalized Difference Vegetation Index (NDVI)",
   },
 
-  mastheadImage: {
+  horizontalImage: {
+    src: "/img/data/landsat-ndvi.webp",
+    alt: "Landsat Normalized Difference Vegetation Index (NDVI)",
+  },
+
+  verticalImage: {
     src: "/img/data/landsat-ndvi.webp",
     alt: "Landsat Normalized Difference Vegetation Index (NDVI)",
   },

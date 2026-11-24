@@ -22,7 +22,12 @@ export const EVENT__VENEZUELA_EQ_JUN_2026: EventContent = {
     alt: "Damage and hazard impacts from the June 2026 Venezuela earthquakes",
   },
 
-  mastheadImage: {
+  horizontalImage: {
+    src: "/img/event/venezuela-earthquake-jun-2026-hero.webp",
+    alt: "Damage and hazard impacts from the June 2026 Venezuela earthquakes",
+  },
+
+  verticalImage: {
     src: "/img/event/venezuela-earthquake-jun-2026-hero.webp",
     alt: "Damage and hazard impacts from the June 2026 Venezuela earthquakes",
   },
@@ -68,8 +73,6 @@ export const EVENT__VENEZUELA_EQ_JUN_2026: EventContent = {
       type: "image",
       src: "/img/event/venezuela-earthquake-damage-assessment-jun-2026.webp",
       alt: "Structure-level damage assessment data for the June 2026 Venezuela earthquakes.",
-      width: 1280,
-      height: 672,
       caption:
         "NASA-funded researchers at Oregon State University produced structure-level damage assessment data based on Sentinel-1 SAR. This data was incorporated into national and international dashboards supporting search and rescue. Credit: NASA",
     },

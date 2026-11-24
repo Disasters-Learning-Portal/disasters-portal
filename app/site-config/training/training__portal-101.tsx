@@ -16,13 +16,17 @@ export const TRAINING__PORTAL_101: TrainingContent = {
     src: "/img/training/portal-101.webp",
     alt: "False-color satellite imagery of a city and surrounding terrain, as displayed in the Custom Visualization Tool",
   },
-  dateUpdated: "2026-10-02",
-  themes: ["prepare", "respond", "recover", "resilience"],
-  categories: [],
-  mastheadImage: {
+  horizontalImage: {
     src: "/img/training/portal-101.webp",
     alt: "False-color satellite imagery of a city and surrounding terrain, as displayed in the Custom Visualization Tool",
   },
+  verticalImage: {
+    src: "/img/training/portal-101.webp",
+    alt: "False-color satellite imagery of a city and surrounding terrain, as displayed in the Custom Visualization Tool",
+  },
+  dateUpdated: "2026-10-02",
+  themes: ["prepare", "respond", "recover", "resilience"],
+  categories: [],
   // PrintLink prints this page rather than following the href; the href is the
   // page itself so the control degrades to a no-op without JS.
   pdfLink: { label: "Download PDF", href: "/training/portal-101" },
@@ -71,8 +75,6 @@ export const TRAINING__PORTAL_101: TrainingContent = {
       type: "image",
       src: `${IMG}/top-navigation.webp`,
       alt: "The PORTAL top navigation bar: the NASA Disasters Program logo on the left, then About Us, Explore By Need, Explore Data, and Resources & Learning.",
-      width: 2580,
-      height: 122,
     },
     {
       type: "text",
@@ -296,8 +298,6 @@ export const TRAINING__PORTAL_101: TrainingContent = {
       type: "image",
       src: `${IMG}/custom-visualization-tool.webp`,
       alt: "The Custom Visualization Tool default view. A red outline marks the Hazard and Event icons stacked in the far-left navigation rail, beside the Hazard filter and data overlay list and a map of the United States.",
-      width: 1440,
-      height: 824,
     },
     {
       type: "text",
@@ -358,8 +358,6 @@ export const TRAINING__PORTAL_101: TrainingContent = {
       type: "image",
       src: `${IMG}/custom-visualization-tool-components.webp`,
       alt: "The Custom Visualization Tool with eight red outlines, each numbered to match the component list above: 1 around the timeline along the bottom, 2 around the data overlay list in the left pane, and 3 to 8 around the search, basemap, ruler, zoom, share and Analyze Area controls above the top right of the map.",
-      width: 1440,
-      height: 824,
       caption: "The numbered outlines correspond to the components described below.",
     },
     {
@@ -388,8 +386,6 @@ export const TRAINING__PORTAL_101: TrainingContent = {
       type: "image",
       src: `${IMG}/timeline-component.webp`,
       alt: "The timeline component: a date picker and Compare date control on the left, playback controls and a Day interval selector in the center, and zoom and display controls on the right, above six data layers whose available dates are charted as bars across a 2023 to 2026 axis, with a tooltip naming the next date for one layer.",
-      width: 2582,
-      height: 480,
     },
     {
       type: "text",
@@ -411,8 +407,6 @@ export const TRAINING__PORTAL_101: TrainingContent = {
       type: "image",
       src: `${IMG}/analyze-area-panel.webp`,
       alt: "The Analyze areas panel open in the top right of the map, offering Search, Inspect, Draw and Upload tabs above a search field for a country or region, beside an OPERA Vegetation Disturbance Status layer drawn over the map.",
-      width: 1440,
-      height: 289,
     },
     {
       type: "text",
@@ -434,8 +428,6 @@ export const TRAINING__PORTAL_101: TrainingContent = {
       type: "image",
       src: `${IMG}/analyze-area-results.webp`,
       alt: "An Analysis results panel for GPM IMERG Precipitation beside an area of interest drawn over a precipitation layer for Typhoon Sinlaku, reporting a mean of 1.01 over 33% of 4,849 pixels marked valid, with a histogram and minimum, maximum, median, standard deviation and percentile values.",
-      width: 1440,
-      height: 823,
     },
     {
       type: "text",
@@ -458,8 +450,6 @@ export const TRAINING__PORTAL_101: TrainingContent = {
       type: "image",
       src: `${IMG}/hazard-sub-navigation.webp`,
       alt: "The Hazard filter open in the left navigation pane, listing All Hazards, Earthquake, Fire, Flood, Landslide, SevereWx, Tropical Cyclone and Winter Weather with their dataset counts, over false-color satellite imagery.",
-      width: 1440,
-      height: 419,
     },
 
     {

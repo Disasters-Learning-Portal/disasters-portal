@@ -15,7 +15,12 @@ export const DATA__PLANET_NDVI_CHANGE: DataContent = {
     alt: "Planet NDVI Change",
   },
 
-  mastheadImage: {
+  horizontalImage: {
+    src: "/img/data/planet-ndvi-change.webp",
+    alt: "Planet NDVI Change",
+  },
+
+  verticalImage: {
     src: "/img/data/planet-ndvi-change.webp",
     alt: "Planet NDVI Change",
   },

@@ -12,7 +12,11 @@ export const STORY__FINDING_FLOODS: StoryContent = {
     src: "/img/story/finding-floods.webp",
     alt: "Flooded river in Kerrville, Texas showing significant flood waters",
   },
-  mastheadImage: {
+  horizontalImage: {
+    src: "/img/story/finding-floods.webp",
+    alt: "Flooded river in Kerrville, Texas showing significant flood waters",
+  },
+  verticalImage: {
     src: "/img/story/finding-floods.webp",
     alt: "Flooded river in Kerrville, Texas showing significant flood waters",
   },
@@ -34,8 +38,6 @@ export const STORY__FINDING_FLOODS: StoryContent = {
       alt: "U.S. Air Force Master Sgt. Randy McKnight inspects the flood debris in Kerrville, Texas, July 11, 2025. Credit: Photo by Zelideth Rodriguez, 502nd Air Base Wing",
       caption:
         "U.S. Air Force Master Sgt. Randy McKnight inspects the flood debris in Kerrville, Texas, July 11, 2025. Credit: Photo by Zelideth Rodriguez, 502nd Air Base Wing",
-      width: 1400,
-      height: 1400,
     },
     {
       type: "text",
@@ -60,8 +62,6 @@ export const STORY__FINDING_FLOODS: StoryContent = {
       alt: "NASA's high-altitude WB-57 aircraft departed July 8, 2025, from Ellington Field in Houston, TX. The DyNAMITE instrument is seen here affixed to its nose. Credit: NASA",
       caption:
         "NASA's high-altitude WB-57 aircraft departed July 8, 2025, from Ellington Field in Houston, TX. The DyNAMITE instrument is seen here affixed to its nose. Credit: NASA",
-      width: 1400,
-      height: 1400,
     },
     {
       type: "text",

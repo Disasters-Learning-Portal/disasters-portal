@@ -10,6 +10,14 @@ export const TRAINING__BUILDING_CLIMATE_RISK_ASSESSMENTS: TrainingContentExterna
     src: "/img/training/building-climate-risk-assessments.webp",
     alt: "Satellite view of the Cape Canaveral coastline, where launch complexes and causeways sit between wetlands and the Atlantic shoreline",
   },
+  horizontalImage: {
+    src: "/img/training/building-climate-risk-assessments.webp",
+    alt: "Satellite view of the Cape Canaveral coastline, where launch complexes and causeways sit between wetlands and the Atlantic shoreline",
+  },
+  verticalImage: {
+    src: "/img/training/building-climate-risk-assessments.webp",
+    alt: "Satellite view of the Cape Canaveral coastline, where launch complexes and causeways sit between wetlands and the Atlantic shoreline",
+  },
   url: "https://www.earthdata.nasa.gov/learn/trainings/building-climate-risk-assessments-from-local-vulnerability-exposure",
   themes: [],
   categories: [],

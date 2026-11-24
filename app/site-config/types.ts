@@ -113,11 +113,11 @@ export type ContentBlock =
       headingLevel?: "h2" | "h3" | "h4";
       src: string;
       alt: string;
-      width: number;
-      height: number;
       /** USWDS maxw-* token. The image fills the column unless capped here. */
       maxWidth?: "card" | "card-lg" | "mobile" | "mobile-lg" | "tablet";
       caption?: string;
+      height?: number;
+      width?: number;
     }
   | (StacSingleLayerMapProps &
       GeoConfig & {
@@ -173,6 +173,8 @@ export type InternalCardContent = {
   title: string;
   subtitle?: string;
   thumbnailImage: Image;
+  horizontalImage: Image;
+  verticalImage: Image;
   themes: Theme[];
   categories: Category[];
   description?: string;
@@ -185,7 +187,6 @@ export type GalleryCardContent = InternalCardContent | ExternalCardContent;
 export type TrainingContent = Omit<InternalCardContent, "contentType"> & {
   contentType: "training";
   dateUpdated: DateString;
-  mastheadImage: Image;
   body?: ContentBlock[]; // TODO: require body
   relatedContent?: string[];
   pdfLink?: { label: string; href: string };
@@ -197,7 +198,6 @@ export type TrainingContentExternal = Omit<ExternalCardContent, "contentType"> &
 
 export type DataContent = Omit<InternalCardContent, "contentType"> & {
   contentType: "data";
-  mastheadImage: Image;
   body?: ContentBlock[]; // TODO: require body
   relatedContent?: string[];
   /** The sidebar CTA renders only when this is set. */
@@ -207,21 +207,18 @@ export type DataContent = Omit<InternalCardContent, "contentType"> & {
 export type NewsContent = Omit<InternalCardContent, "contentType"> & {
   contentType: "news";
   datePublished: DateString;
-  mastheadImage: Image;
   body?: ContentBlock[]; // TODO: require body
 };
 
 export type StoryContent = Omit<InternalCardContent, "contentType"> & {
   contentType: "story";
   datePublished: DateString;
-  mastheadImage: Image;
   body?: ContentBlock[]; // TODO: require body
 };
 
 export type DataStoryContent = Omit<InternalCardContent, "contentType"> & {
   contentType: "datastory";
   datePublished: DateString;
-  mastheadImage: Image;
   body?: ContentBlock[]; // TODO: require body
 };
 
@@ -232,7 +229,6 @@ export type DataStoryContentExternal = Omit<ExternalCardContent, "contentType"> 
 export type EventContent = Omit<InternalCardContent, "contentType"> & {
   contentType: "event";
   dateUpdated: DateString;
-  mastheadImage: Image;
   isLatest?: boolean;
   startDate: DateString;
   region: string;
@@ -260,7 +256,8 @@ export type ThemeContent = {
   id: string;
   title?: string;
   subtitle: string;
-  mastheadImage: Image;
+  horizontalImage: Image;
+  verticalImage: Image;
   theme: Theme;
   body: ContentBlock[];
 };

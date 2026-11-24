@@ -7,6 +7,8 @@ import { EVENTS } from "@/app/site-config/event";
 import { isInternalContent } from "@/app/site-config/typed.helpers";
 import { CONTENT_TYPES } from "@/app/site-config/types";
 
+export const generateStaticParams = () => DATA.filter(isInternalContent).map(({ id }) => ({ id }));
+
 export default async function DataItemPage(props: PageProps<"/data-gallery/[id]">) {
   const { id } = await props.params;
   const dataItem = DATA.filter(isInternalContent).find((d) => d.id === id);
@@ -16,7 +18,7 @@ export default async function DataItemPage(props: PageProps<"/data-gallery/[id]"
   const {
     contentType,
     title,
-    mastheadImage,
+    horizontalImage,
     themes,
     categories,
     body,
@@ -43,7 +45,7 @@ export default async function DataItemPage(props: PageProps<"/data-gallery/[id]"
   return (
     <ContentPageLayout
       masthead={makeCardMastHeadProps({
-        image: mastheadImage,
+        image: horizontalImage,
         title,
         callToAction: exploreDataUrl
           ? { label: "Explore Data", href: exploreDataUrl, isExternal: true }

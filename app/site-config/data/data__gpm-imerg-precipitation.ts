@@ -16,7 +16,12 @@ export const DATA__GPM_IMERG_PRECIPITATION: DataContent = {
     alt: "GPM IMERG accumulated precipitation from Typhoon Sinlaku over Guam and Saipan, April 2026",
   },
 
-  mastheadImage: {
+  horizontalImage: {
+    src: "/img/data/gpm-imerg-precipitation.webp",
+    alt: "GPM IMERG accumulated precipitation from Typhoon Sinlaku over Guam and Saipan, April 2026",
+  },
+
+  verticalImage: {
     src: "/img/data/gpm-imerg-precipitation.webp",
     alt: "GPM IMERG accumulated precipitation from Typhoon Sinlaku over Guam and Saipan, April 2026",
   },

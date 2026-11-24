@@ -16,7 +16,12 @@ export const DATA__OPERA_RTC_RGB_MOSAIC: DataContent = {
     alt: "OPERA RTC RGB mosaic imagery",
   },
 
-  mastheadImage: {
+  horizontalImage: {
+    src: "/img/data/opera-rtc-rgb-mosaic.webp",
+    alt: "OPERA RTC RGB mosaic imagery",
+  },
+
+  verticalImage: {
     src: "/img/data/opera-rtc-rgb-mosaic.webp",
     alt: "OPERA RTC RGB mosaic imagery",
   },

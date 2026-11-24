@@ -12,7 +12,11 @@ export const STORY__STRENGTHENING_SEVERE_WEATHER_READINESS: StoryContent = {
     src: "/img/story/severe-weather.webp",
     alt: "Overhead view of tornado damage in Chattanooga, Tennessee",
   },
-  mastheadImage: {
+  horizontalImage: {
+    src: "/img/story/severe-weather.webp",
+    alt: "Overhead view of tornado damage in Chattanooga, Tennessee",
+  },
+  verticalImage: {
     src: "/img/story/severe-weather.webp",
     alt: "Overhead view of tornado damage in Chattanooga, Tennessee",
   },
@@ -29,8 +33,6 @@ export const STORY__STRENGTHENING_SEVERE_WEATHER_READINESS: StoryContent = {
       type: "image",
       src: "/img/story/severe-weather__lake-city-tornado.webp",
       alt: "Destroyed houses and rubble under a cloudy sky in Lake City, Arkansas",
-      width: 576,
-      height: 355,
       caption:
         "Homes destroyed in Lake City, Arkansas during a wave of tornadoes that moved across the region April 2, 2025. Credits: National Weather Service Forecast Office in Memphis, Tennessee",
     },
@@ -52,8 +54,6 @@ export const STORY__STRENGTHENING_SEVERE_WEATHER_READINESS: StoryContent = {
       type: "image",
       src: "/img/story/severe-weather__houston-towers.webp",
       alt: "Downed power transmission lines under a cloudy sky in Houston, Texas",
-      width: 864,
-      height: 531,
       caption:
         "Straight-line wind damage inflicted transmission towers in Houston, Texas. Credits: National Weather Service",
     },

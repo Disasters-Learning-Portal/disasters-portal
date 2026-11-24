@@ -15,7 +15,11 @@ export const STORY__STUDY_REVEALS_HEAT_RISK_ELDERLY_AUSTIN: StoryContent = {
     src: "/img/story/austin-heat-risk.webp",
     alt: "Photo of the Austin, Texas skyline",
   },
-  mastheadImage: {
+  horizontalImage: {
+    src: "/img/story/austin-heat-risk.webp",
+    alt: "Photo of the Austin, Texas skyline",
+  },
+  verticalImage: {
     src: "/img/story/austin-heat-risk.webp",
     alt: "Photo of the Austin, Texas skyline",
   },
@@ -48,8 +52,6 @@ export const STORY__STUDY_REVEALS_HEAT_RISK_ELDERLY_AUSTIN: StoryContent = {
       type: "image",
       src: "/img/story/austin-heat-risk__risk-map.webp",
       alt: "A graphic from the Building and Environment study showing extreme heat risk at the neighborhood scale in Austin, Texas",
-      width: 1400,
-      height: 1283,
       caption:
         "A graphic from the study published Feb. 1, 2026 in Building and Environment, shows (a), (c) Median extreme heat risk at the neighborhood scale during the extreme event (Heatwave + power outage), (b), (d) Increase (in %) of extreme heat risk due to additional urban heating or climatic shifts. Credits: From comfort to survival: Indoor heat vulnerability during extreme events, Calvin J. Lin, Drury B. Crawley, Marc Coudert, Dev Niyogi, Zoltan Nagy",
     },
