@@ -22,7 +22,15 @@ export const RESILIENCE_CONTENT: ThemeContent = {
       heading: "Stories of Impact",
       link: { href: "/news-events-stories?type=story", label: "More Stories of Impact" },
       cards: [STORY__HELPING_HAMPTON_ROADS_FACE_THE_FLOODS].map((i) =>
-        pickKeys(i, ["id", "contentType", "thumbnailImage", "themes", "title", "subtitle"]),
+        pickKeys(i, [
+          "id",
+          "contentType",
+          "horizontalImage",
+          "verticalImage",
+          "themes",
+          "title",
+          "subtitle",
+        ]),
       ),
     },
     {

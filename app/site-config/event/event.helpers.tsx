@@ -9,11 +9,12 @@ import type { EventContent } from "@/app/site-config/types";
 export const transformEventToCardSimpleProps = (
   event: EventContent,
 ): ReturnType<typeof makeCardSimpleProps> => {
-  const { isLatest, id, contentType, thumbnailImage, title } = event;
+  const { isLatest, id, contentType, horizontalImage, verticalImage, title } = event;
   return makeCardSimpleProps({
     id,
     contentType,
-    thumbnailImage,
+    horizontalImage,
+    verticalImage,
     title,
     ...(isLatest ? { tag: "active" } : {}),
   });

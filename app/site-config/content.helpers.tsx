@@ -259,11 +259,15 @@ export const makeCardDetailedImageLeftProps = ({
 
 export type CardSimplePropsArgs = Omit<
   CardSimpleProps,
-  "image" | "tag" | "isExternal" | "href" | "as"
+  "as" | "colorMode" | "image" | "isExternal" | "size" | "tag"
 > & {
   id: string;
   contentType: ContentType;
-  thumbnailImage: {
+  horizontalImage: {
+    alt: string;
+    src: string;
+  };
+  verticalImage: {
     alt: string;
     src: string;
   };
@@ -278,14 +282,21 @@ export const makeCardSimpleProps = ({
   contentType,
   description,
   subtitle,
-  thumbnailImage,
+  horizontalImage,
+  verticalImage,
   tag,
   themes,
   url,
   ...rest
-}: CardSimplePropsArgs): IterableItemWithId<CardSimpleProps<typeof AppLink>> => ({
+}: CardSimplePropsArgs): IterableItemWithId<
+  Omit<CardSimpleProps<typeof AppLink>, "image"> & {
+    horizontalImage: CardSimpleProps["image"];
+    verticalImage: CardSimpleProps["image"];
+  }
+> => ({
   id,
-  image: <AppImage {...thumbnailImage} fill sizes="(max-width: 1400px) 100vw, 1400px" />,
+  horizontalImage: <AppImage {...horizontalImage} fill sizes="(max-width: 1400px) 100vw, 1400px" />,
+  verticalImage: <AppImage {...verticalImage} fill sizes="(max-width: 1400px) 100vw, 1400px" />,
   colorMode: "dark",
   // tag is set on active event
   tag: childrenToLabel(

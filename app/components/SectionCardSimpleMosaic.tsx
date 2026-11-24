@@ -1,14 +1,16 @@
-import { CardSimple, type CardSimpleProps } from "@teamimpact/veda-ui-blocks";
+import { CardSimple } from "@teamimpact/veda-ui-blocks";
 import type { ReactNode } from "react";
-import type { AppLink } from "@/app/components/AppLink";
 import { Section, type SectionProps } from "@/app/components/Section";
-import type { IterableItemWithId } from "@/app/site-config/types";
-
-type MosaicCard = IterableItemWithId<CardSimpleProps<typeof AppLink>>;
+import type { makeCardSimpleProps } from "@/app/site-config/content.helpers";
 
 type SectionCardSimpleMosaicProps = SectionProps & {
   sectionHeading?: ReactNode;
-  cards: [MosaicCard, MosaicCard, MosaicCard, MosaicCard];
+  cards: [
+    ReturnType<typeof makeCardSimpleProps>,
+    ReturnType<typeof makeCardSimpleProps>,
+    ReturnType<typeof makeCardSimpleProps>,
+    ReturnType<typeof makeCardSimpleProps>,
+  ];
 };
 
 /**
@@ -21,25 +23,31 @@ export const SectionCardSimpleMosaic = ({
   children,
   ...sectionProps
 }: SectionCardSimpleMosaicProps) => {
+  const [
+    { verticalImage: v0, horizontalImage: _h0, ...rest0 },
+    { verticalImage: v1, horizontalImage: _h1, ...rest1 },
+    { verticalImage: _v2, horizontalImage: h2, ...rest2 },
+    { verticalImage: _v3, horizontalImage: h3, ...rest3 },
+  ] = cards;
   return (
     <Section {...sectionProps}>
       {sectionHeading && sectionHeading}
       <div className="grid-row grid-gap-2 margin-bottom-neg-2">
         {/* Featured card: full-width → desktop: 2 of 4 cols */}
         <div className="grid-col-12 desktop:grid-col-6 margin-bottom-2 height-card-md">
-          <CardSimple {...cards[0]} colorMode="dark" />
+          <CardSimple {...rest0} image={v0} colorMode="dark" />
         </div>
         {/* Regular card: full-width → tablet: half → desktop: 1 of 4 cols */}
         <div className="grid-col-12 tablet:grid-col-6 desktop:grid-col-3 margin-bottom-2 height-card-md">
-          <CardSimple {...cards[1]} size="sm" colorMode="dark" />
+          <CardSimple {...rest1} image={v1} size="sm" colorMode="dark" />
         </div>
         {/* Stacked half-height cards: full-width → tablet: half → desktop: 1 of 4 cols */}
         <div className="grid-col-12 tablet:grid-col-6 desktop:grid-col-3 margin-bottom-2 display-flex flex-column height-card-md">
           <div className="flex-1 margin-bottom-2">
-            <CardSimple {...cards[2]} size="sm" colorMode="dark" />
+            <CardSimple {...rest2} image={h2} size="sm" colorMode="dark" />
           </div>
           <div className="flex-1">
-            <CardSimple {...cards[3]} size="sm" colorMode="dark" />
+            <CardSimple {...rest3} image={h3} size="sm" colorMode="dark" />
           </div>
         </div>
       </div>
