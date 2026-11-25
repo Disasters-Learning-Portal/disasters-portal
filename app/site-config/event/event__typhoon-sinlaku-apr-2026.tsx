@@ -5,22 +5,22 @@ import { DATA__TYPHOON_SINLAKU_APR_2026 } from "@/app/site-config/data";
 import type { EventContent } from "@/app/site-config/types";
 
 export const EVENT__TYPHOON_SINLAKU_APR_2026: EventContent = {
-  id: "typhoon-sinlaku-2026",
+  id: "typhoon-sinlaku-apr-2026",
   contentType: "event",
   title: "Typhoon Sinlaku April 2026",
   description:
     "Typhoon Sinlaku impacted Guam and the Northern Mariana Islands, prompting NASA to support federal response partners with satellite data and mapping to assess power outages, flooding, landslide hazards, and storm impacts where ground-based observations were limited.",
   dateUpdated: "2026-04-24",
   thumbnailImage: {
-    src: "/img/event/typhoon-sinlaku-2026.webp",
+    src: "/img/event/typhoon-sinlaku-apr-2026.webp",
     alt: "Banner Image: Suomi-NPP VIIRS Image of Typhoon Sinlaku with boundary overlay of the Mariana Islands, collected on April 13, 2026. Credit: NASA",
   },
   horizontalImage: {
-    src: "/img/event/typhoon-sinlaku-2026.webp",
+    src: "/img/event/typhoon-sinlaku-apr-2026.webp",
     alt: "Banner Image: Suomi-NPP VIIRS Image of Typhoon Sinlaku with boundary overlay of the Mariana Islands, collected on April 13, 2026. Credit: NASA",
   },
   verticalImage: {
-    src: "/img/event/typhoon-sinlaku-2026.webp",
+    src: "/img/event/typhoon-sinlaku-apr-2026.webp",
     alt: "Banner Image: Suomi-NPP VIIRS Image of Typhoon Sinlaku with boundary overlay of the Mariana Islands, collected on April 13, 2026. Credit: NASA",
   },
   themes: ["respond"],
@@ -54,7 +54,7 @@ export const EVENT__TYPHOON_SINLAKU_APR_2026: EventContent = {
     },
     {
       type: "image",
-      src: "/img/event/typhoon-sinlaku-2026__umbra-guam.webp",
+      src: "/img/event/typhoon-sinlaku-apr-2026__umbra-guam.webp",
       alt: "Radar backscatter image of Antonio B Won Pat International Airport in Guam, captured by satellites on April 14, 2026",
       caption:
         'Radar backscatter image of Antonio B Won Pat International Airport in Guam, captured by satellites on April 14, 2026. Synthetic aperture radar (SAR) sensors have the ability to "see through" clouds to capture images of homes and infrastructure even in the midst of a hurricane. This image includes copyrighted material of Umbra. All rights reserved. This work utilized data made available through the NASA Commercial Satellite Data Acquisition (CSDA) program.',
