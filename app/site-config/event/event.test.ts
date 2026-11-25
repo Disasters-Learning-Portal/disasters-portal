@@ -35,7 +35,12 @@ describe("EVENTS barrel", () => {
   });
 });
 
-describe.each(eventFiles)("event content file: $file", ({ id, exports }) => {
+describe.each(eventFiles)("event content file: $file", ({ file, id, exports }) => {
+  it("is named 'event__<id>' matching the exported id", () => {
+    const basename = file.replace(/\.tsx?$/, "");
+    expect(basename).toBe(`event__${exports[0].id}`);
+  });
+
   it("exports exactly one variable", () => {
     expect(exports).toHaveLength(1);
   });
