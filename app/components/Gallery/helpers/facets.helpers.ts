@@ -1,4 +1,5 @@
 import { toTitleCase } from "@/app/site-config/content.helpers";
+import { EVENTS } from "@/app/site-config/event";
 import { isContentType, isTheme } from "@/app/site-config/typed.helpers";
 import {
   type Category,
@@ -13,10 +14,16 @@ import {
 export type FacetSelection = {
   themes: Theme[];
   hazards: Category[];
+  events: string[];
   contentTypes: ContentType[];
 };
 
-export const EMPTY_FACETS: FacetSelection = { themes: [], hazards: [], contentTypes: [] };
+export const EMPTY_FACETS: FacetSelection = {
+  themes: [],
+  hazards: [],
+  events: [],
+  contentTypes: [],
+};
 
 type FacetConfig = {
   param: string;
@@ -47,6 +54,12 @@ const FACETS: Record<keyof FacetSelection, FacetConfig> = {
     options: CONTENT_CATEGORIES,
     getItemValues: (item) => item.categories,
   },
+  events: {
+    param: "event",
+    title: "Event",
+    options: EVENTS.map((event) => event.id),
+    getItemValues: (item) => item.events ?? [],
+  },
   contentTypes: {
     param: "type",
     title: "Content Type",
@@ -59,6 +72,8 @@ const FACETS: Record<keyof FacetSelection, FacetConfig> = {
 export function getFacetLabel(value: string): string {
   if (isTheme(value)) return CONTENT_THEMES[value].label;
   if (isContentType(value)) return CONTENT_TYPES[value].label;
+  const event = EVENTS.find((entry) => entry.id === value);
+  if (event) return event.title;
   return toTitleCase(value);
 }
 
@@ -71,6 +86,7 @@ function mapFacets(pick: (config: FacetConfig) => string[]): FacetSelection {
   return {
     themes: pick(FACETS.themes) as Theme[],
     hazards: pick(FACETS.hazards) as Category[],
+    events: pick(FACETS.events) as string[],
     contentTypes: pick(FACETS.contentTypes) as ContentType[],
   };
 }
@@ -110,6 +126,14 @@ export function collectAvailableFacets(items: GalleryCardContent[]): FacetSelect
     const present = new Set(items.flatMap((item) => config.getItemValues(item)));
     return config.options.filter((value) => present.has(value));
   });
+}
+
+export function setFacetValue(
+  facets: FacetSelection,
+  key: keyof FacetSelection,
+  value: string,
+): FacetSelection {
+  return { ...facets, [key]: value ? [value] : [] };
 }
 
 export function toggleFacetValue(
