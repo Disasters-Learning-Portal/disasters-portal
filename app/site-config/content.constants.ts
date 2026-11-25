@@ -16,11 +16,6 @@ export const CONTENT_DESCRIPTION_MAX_LENGTH = 265;
 export const HORIZONTAL_IMAGE_RATIO_RANGE = { min: 1.49, max: 2.55 };
 
 /**
- * Allowed width-to-height ratio range for vertical content images.
- */
-export const VERTICAL_IMAGE_RATIO_RANGE = { min: 1.49, max: 2.55 };
-
-/**
  * Placeholder image src used while authoring new content. Validation tests
  * that enforce filename conventions skip entries still using this.
  */
